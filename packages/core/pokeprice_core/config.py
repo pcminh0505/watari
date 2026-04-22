@@ -26,6 +26,15 @@ class Settings(BaseSettings):
     log_level: str = "INFO"
     sentry_dsn: str = ""
 
+    # API auth + rate limiting
+    # Header used to carry the raw API key; case-insensitive per RFC 7230.
+    api_key_header: str = "X-API-Key"
+    # Per-tier token-bucket: "tier:capacity:refill_per_sec". Comma-separated.
+    # capacity = max burst, refill = sustained rate. A minute-ish view:
+    #   60:1.0  ≈ 60 req burst, 60 req/min sustained.
+    # 'free' MUST be present (anonymous + fallback tier).
+    api_rate_limits: str = "free:60:1.0,paid:600:10.0,admin:6000:100.0"
+
     @property
     def sync_database_url(self) -> str:
         return self.database_url.replace("+asyncpg", "+psycopg2")

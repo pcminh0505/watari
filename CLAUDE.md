@@ -6,7 +6,7 @@
 > Update it whenever the architecture changes — especially after a
 > destructive migration, a new source, or a schema split.
 >
-> Last updated: 2026-04-22 (end of Catalog v3 rollout).
+> Last updated: 2026-04-22 (Catalog v3 + API v1 read layer + API-key auth / rate limiting).
 
 ---
 
@@ -143,6 +143,72 @@ Helpers live in `packages/core/pokeprice_core/catalog.py`
 exactly 3 / 4 segments. If a set_code ever contains a hyphen (e.g. `"sv-p"`)
 they will misparse. None of the current 28 set codes contain hyphens.
 
+### 3.5 API layer (`packages/api/`, read-only)
+
+Built on FastAPI. Thin read layer over the v3 catalog + materialized views.
+The ORM session is provided per-request via `Annotated[AsyncSession,
+Depends(get_session)]` aliased as `SessionDep`.
+
+Routers (all under `packages/api/pokeprice_api/routers/`):
+
+| Route                                     | Returns                 | Source                               |
+| ----------------------------------------- | ----------------------- | ------------------------------------ |
+| `GET /healthz`                            | `{"status": "ok"}`      | —                                    |
+| `GET /sets` (`?era=sv`)                   | `list[SetOut]`          | `sets` table                         |
+| `GET /sets/{set_code}`                    | `SetOut` / 404          | `sets` table (case-insensitive)      |
+| `GET /sets/{set_code}/cards` (`?variant=&rarity=&tracked_only=`) | `list[CardWithArtwork]` | `cards ⋈ artworks`                   |
+| `GET /cards/{card_id}`                    | `CardWithArtwork` / 404 | `cards ⋈ artworks`                   |
+| `GET /cards/{card_id}/prices`             | `list[LatestPrice]`     | **`mv_latest_price`**                |
+| `GET /cards/{card_id}/history` (`?days=&source=&condition=&limit=`) | `list[PricePointOut]`   | `price_points`                       |
+| `GET /cards/{card_id}/spread`             | `list[SpreadRow]`       | **`mv_cross_source_spread`**         |
+
+**Rules:**
+- Latency-sensitive endpoints (`/prices`, `/spread`) read from MVs, not
+  `price_points` directly. If you add a new aggregate, add an MV in the
+  same Alembic migration that creates it, and refresh it post-scrape.
+- Responses for card endpoints use `CardWithArtwork` — artwork-level
+  fields (`name_ja`, `rarity_code`, `image_url`, …) are denormalized
+  onto the card row so clients don't need to join.
+
+**Auth + rate limiting** (`auth.py`, `ratelimit.py`):
+
+- `X-API-Key` header (name configurable via `settings.api_key_header`).
+  Missing → anonymous, `free` tier, rate-limit bucket is `ip:{client_ip}`.
+  Present but unknown/revoked → 401. Present and valid → authenticated,
+  bucket is `key:{api_key_id}`, tier comes from the DB row.
+- `api_keys` stores only `(key_hash = sha256(plaintext), key_prefix,
+  owner_email, tier, last_used_at, revoked_at)`. The plaintext is never
+  persisted — CLI issuance prints it once and the caller stores it.
+  `last_used_at` is bumped at most once per minute per key.
+- Rate limiter: Redis token bucket (Lua script for atomicity). Config:
+  `settings.api_rate_limits = "free:60:1.0,paid:600:10.0,admin:6000:100.0"`
+  (`tier:capacity:tokens_per_sec`; `free` is mandatory). Installed on
+  `app.state.rate_limiter` in the FastAPI lifespan.
+- Applied as a **router-level dependency** (`dependencies=[Depends(
+  rate_limit_dep)]`) on every router except `/healthz`. Every rate-limited
+  response carries `X-RateLimit-{Tier,Limit,Remaining}`; denied requests
+  return **429** with `Retry-After`.
+
+**Run:** `make api` (prod) or `make api-dev` (reload). Entry point is
+`pokeprice-api` console script → `pokeprice_api/__main__.py:main` →
+`pokeprice_api.cli:main`.
+
+**CLI subcommands:**
+
+- `pokeprice-api serve [--host --port --reload]` — run uvicorn (also the
+  implicit default, so legacy top-level flags still work).
+- `pokeprice-api create-key --owner EMAIL [--tier free|paid|admin]` —
+  mints a key; prints the plaintext exactly once. Store only the hash.
+- `pokeprice-api revoke-key PREFIX` — sets `revoked_at` by key prefix.
+- `pokeprice-api list-keys [--include-revoked]` — metadata-only listing.
+
+**Tests:** `tests/unit/test_api.py` (12) uses `dependency_overrides` to
+swap `get_session` and `rate_limit_dep` for a FakeSession + anonymous
+no-op, keeping endpoint-shape tests infra-free. Auth / rate-limit /
+CLI have their own files (`test_api_auth.py` 9, `test_api_ratelimit.py`
+8, `test_api_cli.py` 7). None of the API tests require Postgres or
+Redis.
+
 ---
 
 ## 4. What works right now
@@ -158,7 +224,8 @@ they will misparse. None of the current 28 set codes contain hyphens.
 | `make catalog-seed-cards`         | SV2A: 210 artworks / 516 prints · M2A: 250 / 250 |
 | `make catalog-verify`             | 0 orphans · 0 artworks missing rarity/img · 128 missing JA (all M2A Commons) |
 | `make scrape-cardrush SET=SV2A … --rarity SAR` | 32 rows written, 11 in-stock / 21 sold-out |
-| `uv run pytest`                   | **120 passed**                            |
+| `uv run pytest`                   | **156 passed** (132 prior + 9 auth + 8 ratelimit + 7 CLI) |
+| `uv run python -c "from pokeprice_api import app"` | app imports, 12 routes registered; `/healthz` has no deps, other routes carry `rate_limit_dep` |
 
 ### 4.2 Data that's already committed
 
@@ -196,14 +263,16 @@ they will misparse. None of the current 28 set codes contain hyphens.
 
 ### 5.2 Medium-term
 
-- **API layer (`packages/api/`) rewrite against v3 schema.**
-  Read-side endpoints: `/sets`, `/sets/{code}/cards`, `/cards/{card_id}/prices`,
-  `/cards/{card_id}/spread`. Use `CardWithArtwork` DTO for denormalized
-  responses. Nothing in `api/` has been touched yet post-split — expect lint errors.
+- **API polish.** Add pagination (`limit`/`offset`) to `/sets/{code}/cards`,
+  E-Tag / `Cache-Control` headers on `/cards/{card_id}/prices` and
+  `/spread`, and OpenAPI examples. Consider a `/cards/search?name=...`
+  endpoint backed by `artworks.name_ja` + `name_en`.
+- **Live rate-limit integration test.** The unit suite stubs Redis via a
+  fake limiter. We don't yet have a smoke test that drives the real Lua
+  token-bucket against the `docker-compose` Redis. Worth adding once CI
+  has service containers.
 - **Scheduler + dispatcher.** Currently placeholder packages. Wire up a
   nightly schedule: SNKRDUNK nightly, Cardrush a few times a day per era.
-- **API keys + rate limiting.** `api_keys` table already exists but the FastAPI
-  middleware isn't wired.
 
 ### 5.3 Nice-to-haves
 
@@ -237,6 +306,22 @@ they will misparse. None of the current 28 set codes contain hyphens.
 9. **`ruamel.yaml` is used for `data/cards/`, `PyYAML` for `data/sets/`.**
    Sets YMLs are simple and diff-clean with PyYAML; card YMLs need round-trip
    preservation. Don't collapse them.
+10. **API `/prices` + `/spread` read from MVs.** If MVs get stale (because
+    nothing has refreshed them post-scrape), clients see old numbers with no
+    error. The MV refresh cadence is still unwired (§5.1). Don't "fix" the
+    latency issue by routing the endpoints back to `price_points` directly —
+    that's what the MVs are for. Fix the refresh instead.
+11. **FastAPI deps use `Annotated[AsyncSession, Depends(get_session)]`**
+    aliased as `SessionDep` at the top of each router file. Don't regress
+    to `Depends(get_session)` in defaults — ruff B008 will reject it.
+12. **Every non-healthz router carries `Depends(rate_limit_dep)` at the
+    router level.** Don't add a new router without it, and don't move
+    `rate_limit_dep` onto individual handlers (we rely on it running once
+    per request and stamping `X-RateLimit-*` headers uniformly).
+13. **API-key plaintext is never stored.** Only `sha256(plaintext)` goes
+    into `api_keys.key_hash`. `mint_api_key()` returns the plaintext; the
+    CLI prints it exactly once at issuance. Never log the plaintext and
+    never read it back from the DB (it isn't there).
 
 ---
 
@@ -259,8 +344,17 @@ make scrape-cardrush SET=SV2A                # one set
 make scrape-cardrush ERA=SV                  # all sets in era
 make scrape-snkrdunk ERA=SV
 
+# API (read layer)
+make api                                     # prod: 0.0.0.0:8000
+make api-dev                                 # dev: 127.0.0.1:8000, reload
+
+# API-key management (writes to the `api_keys` table)
+uv run pokeprice-api create-key --owner dev@example.com --tier free
+uv run pokeprice-api revoke-key pk_ab12cd
+uv run pokeprice-api list-keys [--include-revoked]
+
 # Dev loop
-make test                                    # 120 tests
+make test                                    # 156 tests
 make lint
 make format
 

@@ -1,6 +1,7 @@
 .PHONY: up down test lint format migrate \
         catalog-seed-sets catalog-bootstrap catalog-seed-cards catalog-verify \
-        scrape-cardrush scrape-snkrdunk
+        scrape-cardrush scrape-snkrdunk \
+        api api-dev
 
 up:
 	docker compose up -d
@@ -48,3 +49,10 @@ scrape-cardrush:
 
 scrape-snkrdunk:
 	uv run python -m pokeprice_snkrdunk --era $(ERA)
+
+# --- API (FastAPI read-side) ---
+api:
+	uv run pokeprice-api --host 0.0.0.0 --port 8000
+
+api-dev:
+	uv run pokeprice-api --host 127.0.0.1 --port 8000 --reload
