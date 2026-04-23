@@ -5,17 +5,8 @@ from __future__ import annotations
 import logging
 from collections import Counter
 from dataclasses import dataclass, field
-from datetime import datetime, timezone
+from datetime import UTC, datetime
 
-from sqlalchemy import func, select
-from sqlalchemy.ext.asyncio import AsyncSession
-
-from pokeprice_cardrush.client import CardrushClient
-from pokeprice_cardrush.parser import (
-    ListingRow,
-    listing_row_to_price_point,
-    parse_listing_rows,
-)
 from pokeprice_core.bronze import ensure_bucket, write_bronze_set
 from pokeprice_core.db import async_session_factory
 from pokeprice_core.ingestion import (
@@ -25,6 +16,16 @@ from pokeprice_core.ingestion import (
     upsert_card_state,
 )
 from pokeprice_core.models import Card, Set, SourceEnum
+from pokeprice_core.mvs import refresh_price_mvs_if_needed
+from sqlalchemy import func, select
+from sqlalchemy.ext.asyncio import AsyncSession
+
+from pokeprice_cardrush.client import CardrushClient
+from pokeprice_cardrush.parser import (
+    ListingRow,
+    listing_row_to_price_point,
+    parse_listing_rows,
+)
 
 logger = logging.getLogger(__name__)
 
@@ -70,15 +71,11 @@ class ScrapeSetResult:
 
 
 async def _load_set(session: AsyncSession, set_code: str) -> Set | None:
-    result = await session.execute(
-        select(Set).where(Set.set_code == set_code.upper())
-    )
+    result = await session.execute(select(Set).where(Set.set_code == set_code.upper()))
     return result.scalar_one_or_none()
 
 
-async def _load_card_index(
-    session: AsyncSession, set_code: str
-) -> dict[tuple[str, str], str]:
+async def _load_card_index(session: AsyncSession, set_code: str) -> dict[tuple[str, str], str]:
     """Return ``{(local_id, variant): card_id}`` for tracked cards in a set."""
     stmt = (
         select(Card.card_id, Card.local_id, Card.variant)
@@ -86,10 +83,7 @@ async def _load_card_index(
         .order_by(Card.local_id, Card.variant)
     )
     result = await session.execute(stmt)
-    return {
-        (row.local_id, row.variant): row.card_id
-        for row in result.all()
-    }
+    return {(row.local_id, row.variant): row.card_id for row in result.all()}
 
 
 async def _load_rarities(session: AsyncSession, set_code: str) -> list[str]:
@@ -269,7 +263,7 @@ async def scrape_set(
             )
             result.run_id = run_id
 
-        observed_at = datetime.now(timezone.utc)
+        observed_at = datetime.now(UTC)
         status = "completed"
         error_summary: str | None = None
 
@@ -321,9 +315,7 @@ async def scrape_set(
             if run_id is not None:
                 try:
                     for card_id in result.cards_touched:
-                        await upsert_card_state(
-                            session, card_id, SOURCE, success=True
-                        )
+                        await upsert_card_state(session, card_id, SOURCE, success=True)
                 except Exception:  # noqa: BLE001
                     await session.rollback()
                 await finish_scrape_run(
@@ -335,6 +327,12 @@ async def scrape_set(
                     rows_written=result.rows_written,
                     error_summary=error_summary,
                 )
+
+    # Writes are committed; refresh the read-side MVs in a fresh session.
+    await refresh_price_mvs_if_needed(
+        rows_written=result.rows_written,
+        dry_run=dry_run,
+    )
 
     return result.summary()
 

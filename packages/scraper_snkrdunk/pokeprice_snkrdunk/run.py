@@ -13,7 +13,7 @@ The ScrapeRun row is finalized with aggregate counts once all cards are done.
 from __future__ import annotations
 
 import asyncio
-from datetime import datetime, timezone
+from datetime import UTC, datetime
 
 from pokeprice_core.bronze import ensure_bucket, write_bronze
 from pokeprice_core.db import async_session_factory
@@ -25,6 +25,7 @@ from pokeprice_core.ingestion import (
     upsert_card_state,
 )
 from pokeprice_core.models import SourceEnum
+from pokeprice_core.mvs import refresh_price_mvs_if_needed
 
 from pokeprice_snkrdunk.client import SnkrdunkClient
 from pokeprice_snkrdunk.parser import parse_sales_history
@@ -49,8 +50,12 @@ async def scrape_era(
         cards = await fetch_tracked_cards(session, era)
         if not cards:
             print(f"[snkrdunk] no tracked cards in era={era!r}")
-            return {"cards_attempted": 0, "cards_succeeded": 0, "rows_written": 0,
-                    "cards_not_found": 0}
+            return {
+                "cards_attempted": 0,
+                "cards_succeeded": 0,
+                "rows_written": 0,
+                "cards_not_found": 0,
+            }
 
         run_id = await start_scrape_run(
             session,
@@ -74,16 +79,20 @@ async def scrape_era(
                         if apparel is None:
                             not_found += 1
                             await upsert_card_state(
-                                session, card_id, SOURCE,
-                                success=False, error="not found on SNKRDUNK",
+                                session,
+                                card_id,
+                                SOURCE,
+                                success=False,
+                                error="not found on SNKRDUNK",
                             )
                             print(f"  [{attempted:3}/{len(cards)}] {card_id}: not found")
                             continue
 
                         entries, raw_pages = await client.fetch_sales_history(
-                            apparel["apparel_id"], limit=history_limit,
+                            apparel["apparel_id"],
+                            limit=history_limit,
                         )
-                        observed_at = datetime.now(timezone.utc)
+                        observed_at = datetime.now(UTC)
                         for i, raw in enumerate(raw_pages, start=1):
                             write_bronze(
                                 source=SOURCE,
@@ -114,8 +123,11 @@ async def scrape_era(
                         await session.rollback()
                         try:
                             await upsert_card_state(
-                                session, card_id, SOURCE,
-                                success=False, error=str(exc),
+                                session,
+                                card_id,
+                                SOURCE,
+                                success=False,
+                                error=str(exc),
                             )
                         except Exception:  # noqa: BLE001
                             await session.rollback()
@@ -139,12 +151,16 @@ async def scrape_era(
             f"[snkrdunk] done. attempted={attempted} succeeded={succeeded} "
             f"not_found={not_found} rows_written={rows_written}"
         )
-        return {
-            "cards_attempted": attempted,
-            "cards_succeeded": succeeded,
-            "rows_written": rows_written,
-            "cards_not_found": not_found,
-        }
+
+    # Outside the scrape session: writes are committed, refresh read-side MVs.
+    await refresh_price_mvs_if_needed(rows_written=rows_written)
+
+    return {
+        "cards_attempted": attempted,
+        "cards_succeeded": succeeded,
+        "rows_written": rows_written,
+        "cards_not_found": not_found,
+    }
 
 
 def _run(era: str, history_limit: int | None) -> dict[str, int]:

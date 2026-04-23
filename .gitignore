@@ -28,6 +28,9 @@ ENV/
 .DS_Store
 Thumbs.db
 
+# Local scratch / scrape logs
+tmp/
+
 # Testing
 .pytest_cache/
 htmlcov/

@@ -66,6 +66,31 @@ def test_parser_list_keys_include_revoked_flag() -> None:
     assert args2.include_revoked is True
 
 
+def test_parser_refresh_mvs_defaults_to_concurrent() -> None:
+    args = cli.build_parser().parse_args(["refresh-mvs"])
+    assert args.cmd == "refresh-mvs"
+    assert args.no_concurrently is False
+
+    args2 = cli.build_parser().parse_args(["refresh-mvs", "--no-concurrently"])
+    assert args2.no_concurrently is True
+
+
+def test_main_dispatches_refresh_mvs(monkeypatch) -> None:  # type: ignore[no-untyped-def]
+    captured: dict[str, Any] = {}
+
+    async def _fake_refresh(concurrently: bool) -> None:
+        captured["concurrently"] = concurrently
+
+    monkeypatch.setattr(cli, "_refresh_mvs", _fake_refresh)
+
+    cli.main(["refresh-mvs"])
+    assert captured == {"concurrently": True}
+
+    captured.clear()
+    cli.main(["refresh-mvs", "--no-concurrently"])
+    assert captured == {"concurrently": False}
+
+
 def test_main_defaults_to_serve_and_calls_uvicorn(monkeypatch) -> None:  # type: ignore[no-untyped-def]
     captured: dict[str, Any] = {}
 

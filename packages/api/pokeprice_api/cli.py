@@ -5,6 +5,7 @@ Subcommands:
     ``create-key``  Mint a new API key; prints the plaintext exactly once.
     ``revoke-key``  Revoke an API key by its ``key_prefix``.
     ``list-keys``   List stored keys (hashes and plaintexts are never shown).
+    ``refresh-mvs`` Manually refresh the three price materialized views.
 
 The ``serve`` subcommand is also the implicit default so the legacy
 invocation ``pokeprice-api --host ... --port ... --reload`` keeps working.
@@ -18,12 +19,14 @@ from datetime import UTC, datetime
 
 from pokeprice_core.db import async_session_factory
 from pokeprice_core.models import ApiKey
+from pokeprice_core.mvs import refresh_price_mvs
 from sqlalchemy import select
 
 from pokeprice_api.auth import mint_api_key
 
 SERVE_SUBCOMMANDS = {"serve"}
 KEY_SUBCOMMANDS = {"create-key", "revoke-key", "list-keys"}
+OPS_SUBCOMMANDS = {"refresh-mvs"}
 
 
 async def _create_key(owner: str, tier: str) -> None:
@@ -62,6 +65,15 @@ async def _revoke_key(prefix: str) -> None:
         row.revoked_at = datetime.now(UTC)
         await session.commit()
         print(f"revoked {row.key_prefix} (id={row.id}, owner={row.owner_email})")
+
+
+async def _refresh_mvs(concurrently: bool) -> None:
+    async with async_session_factory() as session:
+        refreshed = await refresh_price_mvs(session, concurrently=concurrently)
+    mode = "CONCURRENTLY" if concurrently else "non-concurrently"
+    print(f"refreshed {len(refreshed)} MV(s) {mode}:")
+    for name in refreshed:
+        print(f"  - {name}")
 
 
 async def _list_keys(include_revoked: bool) -> None:
@@ -119,6 +131,19 @@ def build_parser() -> argparse.ArgumentParser:
         help="Include revoked keys in the output.",
     )
 
+    rm = sub.add_parser(
+        "refresh-mvs",
+        help="Refresh the three price materialized views.",
+    )
+    rm.add_argument(
+        "--no-concurrently",
+        action="store_true",
+        help=(
+            "Use plain REFRESH (takes an AccessExclusive lock). "
+            "Default is CONCURRENTLY; useful as a fallback if a unique index is missing."
+        ),
+    )
+
     return parser
 
 
@@ -142,6 +167,8 @@ def main(argv: list[str] | None = None) -> None:
         asyncio.run(_revoke_key(args.prefix))
     elif cmd == "list-keys":
         asyncio.run(_list_keys(args.include_revoked))
+    elif cmd == "refresh-mvs":
+        asyncio.run(_refresh_mvs(concurrently=not args.no_concurrently))
     else:  # pragma: no cover — argparse rejects unknown subcommands first
         raise SystemExit(f"unknown command: {cmd}")
 
