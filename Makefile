@@ -1,7 +1,8 @@
 .PHONY: up down test lint format migrate \
         catalog-seed-sets catalog-bootstrap catalog-seed-cards catalog-verify \
         scrape-cardrush scrape-snkrdunk \
-        api api-dev
+        api api-dev \
+        db-dump-data db-prod-bootstrap
 
 up:
 	docker compose up -d
@@ -56,3 +57,10 @@ api:
 
 api-dev:
 	uv run pokeprice-api --host 127.0.0.1 --port 8000 --reload
+
+# --- Ops / deployment helpers ---
+db-dump-data:
+	./scripts/dump_prod_data.sh
+
+db-prod-bootstrap:
+	./scripts/prod_bootstrap.sh

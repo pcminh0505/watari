@@ -30,6 +30,8 @@ Thumbs.db
 
 # Local scratch / scrape logs
 tmp/
+dumps/*.sql
+dumps/*.sql.gz
 
 # Testing
 .pytest_cache/
