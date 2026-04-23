@@ -6,7 +6,7 @@
 > Update it whenever the architecture changes — especially after a
 > destructive migration, a new source, or a schema split.
 >
-> Last updated: 2026-04-23 (Full SV + ME seed: all 28 sets bootstrapped, card YML tree complete, 111k `price_points` across Cardrush + SNKRDUNK, MVs populated).
+> Last updated: 2026-04-24 (Full SV + ME seed + M1 → M1L rename: all 28 sets bootstrapped, card YML tree complete, 117k `price_points` across Cardrush + SNKRDUNK, MVs populated).
 
 ---
 
@@ -270,7 +270,7 @@ a fourth MV, **create its unique index in the same migration** or
 
 ## 4. What works right now
 
-### 4.1 End-to-end smoke (last run 2026-04-23, full SV + ME seed)
+### 4.1 End-to-end smoke (last run 2026-04-24, full SV + ME seed; M1 → M1L rename)
 
 | Step                                               | Result                                                                                         |
 | -------------------------------------------------- | ---------------------------------------------------------------------------------------------- |
@@ -279,39 +279,41 @@ a fourth MV, **create its unique index in the same migration** or
 | `make catalog-bootstrap SET=<code>` × 28           | all 28 sets bootstrapped; 3992 card YMLs written (SV2A 210 + M2A 250 previously, +26 new sets) |
 | `make catalog-seed-cards`                          | 3788 artworks / 4505 prints across 28 sets                                                     |
 | `make catalog-verify`                              | 0 orphans · 0 artworks missing img · 299 missing rarity · 243 missing JA (mostly early SV/M2A Commons) |
-| `make scrape-cardrush ERA=sv` + `ERA=me`           | ~13k Cardrush rows across 28 sets (SV3 needed one retry for 5 rarities that hit DNS flake)     |
-| `make scrape-snkrdunk ERA=<code>` × 28             | ~98k SNKRDUNK rows across 26 sets. 2 sets returned 0 rows: **SV1** (merged into `sv1v` on SNKRDUNK) and **M1** (no listings under `pkmn-tcg-m1-*` product numbers). |
-| `pokeprice-api refresh-mvs` (CONCURRENTLY)         | mv_latest_price 11 183 · mv_median_7d 399 · mv_cross_source_spread 189                          |
+| `make scrape-cardrush ERA=sv` + `ERA=me` + M1L retry | ~12.7k Cardrush rows across 28 sets (SV3 needed one retry for 5 rarities that hit DNS flake; M1 re-scraped as M1L)     |
+| `make scrape-snkrdunk ERA=<code>` × 28             | ~104k SNKRDUNK rows across 27 sets. **SV1 still returns 0 rows** (merged into `sv1v` on SNKRDUNK). **M1L now works** — the prior 0-row run was because we were asking for the wrong code (`pkmn-tcg-m1-*` is empty; the real product namespace is `pkmn-tcg-M1L-*`). |
+| `pokeprice-api refresh-mvs` (CONCURRENTLY)         | mv_latest_price 11 219 · mv_median_7d 417 · mv_cross_source_spread 198                          |
 | `uv run pytest`                                    | **163 passed**                                                                                 |
 
 ### 4.2 Data that's already committed
 
 - `data/sets/*.yml` — all 28 SV + ME sets with `pokellector_slug` filled.
-  Two sets renamed to match reality: **M2** `メガディメンション/Mega Dimension` →
+  Three sets renamed to match reality: **M2** `メガディメンション/Mega Dimension` →
   `インフェルノX/Inferno X`, **SV7A** `パラダイムトリガー (Paradigm Trigger, which
-  is actually S12a SWSH)` → `楽園ドラゴーナ/Paradise Dragona`.
+  is actually S12a SWSH)` → `楽園ドラゴーナ/Paradise Dragona`, and **M1 → M1L**
+  (official Pokémon abbreviation for `メガブレイブ / Mega Brave`; all JP sources —
+  pokecahack, tcg-portal.jp, bee-honpo, ポケモンWiki — call it `M1L`).
 - `data/cards/{SET}/*.yml` — 3992 files covering all 28 sets. The biggest
   individual sets are SV4A (360), SV2A (210), M2A (250), SV8A (237),
   SV11B/SV11W (174 each), SV3 (141), SV8 (138), SV7 (135), SV6 (133),
-  SV9/SV10 (132), M2 (116), SV1/SV1V (108).
+  SV9/SV10 (132), M2 (116), SV1/SV1V (108), M1L (92), M1S (90).
 
 ### 4.3 Price data in the DB (post-smoke snapshot)
 
 | Aggregate                | Value                                         |
 | ------------------------ | --------------------------------------------- |
-| `price_points` total     | 111 452 rows                                  |
-| Cardrush rows            | ~13 500 (all 28 sets covered)                 |
-| SNKRDUNK rows            | ~98 000 (26 sets; SV1 + M1 empty by design/source) |
-| Sets with both sources   | 26 / 28                                       |
+| `price_points` total     | 117 080 rows                                  |
+| Cardrush rows            | ~12 700 (all 28 sets covered)                 |
+| SNKRDUNK rows            | ~104 400 (27 sets; only SV1 empty — merged into `sv1v` upstream) |
+| Sets with both sources   | 27 / 28                                       |
 
 Per-set breakdown (sample highlights): SV2A 2606 CR + 13529 SD; M2A 528 + 18198;
-SV8A 381 + 15051; M2 401 + 6465; SV4A 250 + 5109; SV9 493 + 5213; SV1V 228 + 4923.
-The full table is in `docker exec … psql` output and on roadmap §5.
+SV8A 381 + 15051; M1L 211 + 5839; M2 401 + 6465; SV4A 250 + 5109; SV9 493 + 5213;
+SV1V 228 + 4923.
 
 MVs populated across all sets, so `/cards/{id}/prices`, `/cards/{id}/history`,
 and `/cards/{id}/spread` now return real data for the entire SV + ME universe
-(except SV1 and M1 have Cardrush-only prices — no spread rows for those
-two sets yet, since spread requires ≥2 sources).
+(except **SV1** which is Cardrush-only — no spread rows for that one set, since
+spread requires ≥2 sources).
 
 ---
 
@@ -319,17 +321,18 @@ two sets yet, since spread requires ≥2 sources).
 
 ### 5.1 Immediate follow-ups (next session can pick up directly)
 
-1. **Investigate SNKRDUNK coverage gaps for SV1 and M1.**
+1. **Investigate SNKRDUNK coverage gap for SV1.**
 
 - SV1 (Scarlet ex) returned 108/108 `not_found`. Manual probe of
   `pkmn-tcg-sv1-001` is empty, but `pkmn-tcg-sv1v-001` works. SNKRDUNK
   appears to list all Scarlet+Violet base-set cards under `SV1V` only;
   SV1's cards might be addressable via a different product-number prefix
-  (or might simply be unlisted). Low priority — Cardrush still gives 692
-  rows for SV1.
-- M1 (Mega Brave) returned 93/93 `not_found`. M1S works (3064 rows).
-  Probably too recent / not yet indexed on SNKRDUNK; revisit later.
-  Cardrush covers M1 (422 rows).
+  (or might simply be unlisted). Low priority — Cardrush still gives
+  ~700 rows for SV1.
+- (Previously M1 looked empty here too. That turned out to be wrong
+  naming on our side, not a SNKRDUNK gap — the official JP abbreviation
+  is **M1L**, not M1. See §6 gotcha #16 and the 2026-04-24 rename.
+  M1L now returns 93/93 cards with 5839 SNKRDUNK rows.)
 
 2. **Backfill missing `name_ja`.**
 
@@ -443,6 +446,17 @@ two sets yet, since spread requires ≥2 sources).
     `REFRESH MATERIALIZED VIEW CONCURRENTLY`. Add the index in the same
     Alembic migration that creates the MV. 005 covers
     `mv_latest_price` + `mv_median_7d`; 006 covers `mv_cross_source_spread`.
+16. **Use the official JP set abbreviation (the one printed on the card
+    / used by `jp.pokellector.com` and SNKRDUNK), not a guess.** The ME
+    era tripped this twice: Mega Brave is **M1L** (not `M1`) and Mega
+    Symphonia is **M1S**. Setting `set_code: M1` made Cardrush work
+    (Cardrush is lenient) but SNKRDUNK returned 0 rows on every card
+    because its product numbers are `pkmn-tcg-M1L-NNN`. If a new set's
+    SNKRDUNK run yields `succeeded=0 not_found=N`, **stop and probe the
+    product-number namespace manually** before assuming SNKRDUNK just
+    hasn't indexed it. The rename was destructive (drop + reseed +
+    re-scrape) — cheap at 5839 rows, potentially expensive at 50k+.
+    See also §4.2 for the M1 → M1L history.
 
 ---
 

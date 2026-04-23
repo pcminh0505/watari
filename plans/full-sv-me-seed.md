@@ -1,4 +1,4 @@
-# Plan — Full SV + ME catalog seed (2026-04-23)
+# Plan — Full SV + ME catalog seed (2026-04-23 → 2026-04-24)
 
 **Status**: shipped.
 **Scope**: Take the catalog from "SV2A + M2A only" (the two sets seeded as
@@ -6,6 +6,15 @@ part of the catalog-v3 rollout) to "every SV and ME set we care about,
 fully bootstrapped with price data in both sources".
 **Supersedes**: §5.1 item 1 of `CLAUDE.md` ("Bootstrap the remaining 26
 sets") — now done.
+
+> **2026-04-24 follow-up**: during verification we discovered the ME set
+> initially labelled `M1` (Mega Brave) is actually officially abbreviated
+> **`M1L`** by every JP source (pokecahack, tcg-portal.jp, bee-honpo,
+> ポケモンWiki). This also explained why the SNKRDUNK scrape for that set
+> had returned 0/93 rows: the product-number namespace is
+> `pkmn-tcg-M1L-*`, not `pkmn-tcg-m1-*`. We renamed `M1 → M1L` (YMLs,
+> DB, bronze payloads), re-scraped, and picked up 5,839 SNKRDUNK rows.
+> See the "M1 → M1L rename" section below.
 
 ---
 
@@ -33,28 +42,28 @@ sets") — now done.
   pipeline per `plans/catalog-v3-yml-contract.md`. No `# manual: true`
   overrides were added in this pass.
 
-### DB state after seed
+### DB state after seed (post M1 → M1L rename, 2026-04-24)
 
 | Table                    | Count   |
 | ------------------------ | ------- |
 | `sets`                   | 28      |
 | `artworks`               | 3,788   |
 | `cards` (prints)         | 4,505   |
-| `price_points`           | 111,452 |
-| `mv_latest_price`        | 11,183  |
-| `mv_median_7d`           | 399     |
-| `mv_cross_source_spread` | 189     |
-| `scrape_runs`            | 90      |
+| `price_points`           | 117,080 |
+| `mv_latest_price`        | 11,219  |
+| `mv_median_7d`           | 417     |
+| `mv_cross_source_spread` | 198     |
+| `scrape_runs`            | 92      |
 | Tests                    | 163 passed |
 
 ### Price scrapes
 
 - Cardrush: `make scrape-cardrush ERA=sv` + `ERA=me` covered all 28
-  sets. Net ~13.5k rows written. One transient DNS failure mid-SV3
-  dropped 5 rarities; `make scrape-cardrush SET=SV3` recovered them
-  (+493 rows).
-- SNKRDUNK: ran `make scrape-snkrdunk ERA=<code>` per set (28 runs).
-  Net ~98k rows written.
+  sets. Net ~12.7k rows written (after the M1 → M1L rename re-ran M1L
+  separately). One transient DNS failure mid-SV3 dropped 5 rarities;
+  `make scrape-cardrush SET=SV3` recovered them (+493 rows).
+- SNKRDUNK: ran `make scrape-snkrdunk ERA=<code>` per set (28 runs +
+  one M1L retry after rename). Net ~104.4k rows written.
 
 ---
 
@@ -65,11 +74,12 @@ sets") — now done.
    the Scarlet+Violet base cards under the `SV1V` product-number
    namespace. This is a source-side taxonomy choice we can't override
    without dual-indexing the same cards. Cardrush alone covers SV1
-   (692 rows).
+   (~700 rows).
 
-2. **M1 (Mega Brave) has no SNKRDUNK rows.** `pkmn-tcg-m1-001` is empty
-   but `pkmn-tcg-m1s-001` works. Likely a recency issue (M1 hasn't
-   been indexed there yet). Cardrush covers M1 (422 rows).
+2. ~~M1 (Mega Brave) has no SNKRDUNK rows.~~ **Resolved 2026-04-24**.
+   The set was mis-coded as `M1`; the official JP abbreviation is
+   `M1L`. After renaming (see below), SNKRDUNK returns 93/93 cards and
+   5,839 rows for the set.
 
 3. **243 artworks still lack `name_ja`.** Distribution:
    - SV4A: 88 (many Shiny Treasure reprints have no Cardrush listing)
@@ -116,3 +126,78 @@ To add a 29th set later:
    `resolve_apparel` as the `{era}` component of `pkmn-tcg-{era}-{NNN}`)
 
 The post-scrape hook refreshes the read-side MVs automatically.
+
+---
+
+## M1 → M1L rename (2026-04-24)
+
+**Trigger**: 0/93 SNKRDUNK rows for M1 looked like source-side recency.
+Spot-checking the raw API revealed the real issue:
+
+```
+# empty — the namespace doesn't exist
+GET https://snkrdunk.com/v1/apparels?productNumber=pkmn-tcg-m1-001   → {"apparels":[]}
+
+# populated — the real namespace
+GET https://snkrdunk.com/v1/apparels?productNumber=pkmn-tcg-m1l-001
+→ {"apparels":[{"id":628151,"productNumber":"pkmn-tcg-M1L-001","name":"Bulbasaur C [M1L 001/063]",…}]}
+```
+
+JP sources unanimously use **M1L** for Mega Brave (Aug 1 2025) and
+**M1S** for Mega Symphonia (same day). We had M1 / M1S which only half
+agreed with reality.
+
+**Steps we ran (documented in case a sibling rename is ever needed):**
+
+1. **YMLs** (git-tracked source of truth):
+
+   ```bash
+   cd packages/catalog/data
+   git mv sets/M1.yml sets/M1L.yml
+   git mv cards/M1    cards/M1L
+   # update `set_code: M1` → `set_code: M1L` and `# M1 #NNN.` → `# M1L #NNN.`
+   # in all 93 files (1 set YML + 92 card YMLs) via a small python one-liner.
+   ```
+
+2. **DB** — the rename changes `artwork_id` (`jp-m1-NNN` → `jp-m1l-NNN`)
+   and `card_id` (`jp-m1-NNN-variant` → `jp-m1l-NNN-variant`), both of
+   which are FK'd from `price_points` and `card_scrape_state`. Rather
+   than in-place UPDATE across four tables, we dropped + reseeded:
+
+   ```sql
+   BEGIN;
+   DELETE FROM price_points     WHERE card_id LIKE 'jp-m1-%';
+   DELETE FROM card_scrape_state WHERE card_id LIKE 'jp-m1-%';
+   DELETE FROM cards             WHERE set_code = 'M1';
+   DELETE FROM artworks          WHERE set_code = 'M1';
+   DELETE FROM sets              WHERE set_code = 'M1';
+   COMMIT;
+   ```
+
+   This destroyed 422 Cardrush rows + 0 SNKRDUNK rows. We re-scraped
+   M1L and recovered 211 Cardrush + 5,839 SNKRDUNK rows — net **+5,628**
+   rows, plus newly-populated `mv_cross_source_spread` entries for the
+   set.
+
+3. **Reseed + rescrape**:
+
+   ```bash
+   make catalog-seed-sets
+   make catalog-seed-cards SET=M1L
+   make scrape-cardrush SET=M1L
+   make scrape-snkrdunk ERA=m1l
+   ```
+
+   The post-scrape hook refreshed the MVs automatically.
+
+4. **Bronze**: we left the old `bronze/cardrush/M1/...` payloads in
+   MinIO untouched. They're historical artefacts that no longer
+   correspond to any live catalog row, which is fine — re-parses always
+   start from the current DB schema, never from bronze alone.
+
+**Tests**: 163/163 pass before and after.
+
+**New invariant added to CLAUDE.md §6 (#16)**: if a SNKRDUNK run yields
+`succeeded=0`, probe `pkmn-tcg-<set>-<local>` against the expected
+product-number namespace manually before assuming it's a source-side
+indexing gap.
