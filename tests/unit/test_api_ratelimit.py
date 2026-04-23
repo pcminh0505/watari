@@ -163,7 +163,7 @@ def test_allowed_request_sets_rate_limit_headers(rl_client) -> None:  # type: ig
     )
     client, limiter = rl_client([decision])
     # Handler runs with _NoopSession returning 0 rows, so 200 + [].
-    resp = client.get("/sets")
+    resp = client.get("/jp/sets")
     assert resp.status_code == 200
     assert resp.json() == []
     assert resp.headers.get("X-RateLimit-Tier") == "free"
@@ -180,7 +180,7 @@ def test_denied_request_returns_429_with_retry_after(rl_client) -> None:  # type
         bucket=Bucket(60, 1.0),
     )
     client, _ = rl_client([decision])
-    resp = client.get("/sets")
+    resp = client.get("/jp/sets")
     assert resp.status_code == 429
     assert resp.headers.get("Retry-After") == "5"
     assert resp.headers.get("X-RateLimit-Tier") == "free"

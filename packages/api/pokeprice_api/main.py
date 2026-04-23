@@ -12,11 +12,12 @@ from collections.abc import AsyncIterator
 from contextlib import asynccontextmanager
 
 import redis.asyncio as aioredis
-from fastapi import FastAPI
+from fastapi import APIRouter, Depends, FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from pokeprice_core.config import settings
 
-from pokeprice_api.ratelimit import RateLimiter, parse_rate_limits
+from pokeprice_api.deps import validate_lang
+from pokeprice_api.ratelimit import RateLimiter, parse_rate_limits, rate_limit_dep
 from pokeprice_api.routers import cards, prices, sets
 
 
@@ -44,7 +45,7 @@ def create_app() -> FastAPI:
     app = FastAPI(
         title="PokePrice API",
         version="0.1.0",
-        description="Read-only price + catalog API for the Japanese Pokémon TCG market.",
+        description="Read-only locale-aware price + catalog API for the Pokemon TCG market.",
         lifespan=lifespan,
     )
 
@@ -61,9 +62,14 @@ def create_app() -> FastAPI:
     async def healthz() -> dict[str, str]:
         return {"status": "ok"}
 
-    app.include_router(sets.router)
-    app.include_router(cards.router)
-    app.include_router(prices.router)
+    lang_router = APIRouter(
+        prefix="/{lang}",
+        dependencies=[Depends(validate_lang), Depends(rate_limit_dep)],
+    )
+    lang_router.include_router(sets.router)
+    lang_router.include_router(cards.router)
+    lang_router.include_router(prices.router)
+    app.include_router(lang_router)
 
     return app
 

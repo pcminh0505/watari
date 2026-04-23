@@ -172,23 +172,27 @@ Routers (all under `packages/api/pokeprice_api/routers/`):
 
 | Route                                                               | Returns                 | Source                          |
 | ------------------------------------------------------------------- | ----------------------- | ------------------------------- |
-| `GET /healthz`                                                      | `{"status": "ok"}`      | —                               |
-| `GET /sets` (`?era=sv`)                                             | `list[SetOut]`          | `sets` table                    |
-| `GET /sets/{set_code}`                                              | `SetOut` / 404          | `sets` table (case-insensitive) |
-| `GET /sets/{set_code}/cards` (`?variant=&rarity=&tracked_only=`)    | `list[CardWithArtwork]` | `cards ⋈ artworks`              |
-| `GET /cards/{card_id}`                                              | `CardWithArtwork` / 404 | `cards ⋈ artworks`              |
-| `GET /cards/{card_id}/prices`                                       | `list[LatestPrice]`     | `**mv_latest_price`\*\*         |
-| `GET /cards/{card_id}/history` (`?days=&source=&condition=&limit=`) | `list[PricePointOut]`   | `price_points`                  |
-| `GET /cards/{card_id}/spread`                                       | `list[SpreadRow]`       | `**mv_cross_source_spread**`    |
+| `GET /healthz` | `{"status": "ok"}` | — |
+| `GET /{lang}/sets` (`?era=sv`) | `list[SetOut]` | `sets` table (filtered by `sets.language`) |
+| `GET /{lang}/sets/{set_code}` | `SetOut` / 404 | `sets` table (case-insensitive `set_code`) |
+| `GET /{lang}/sets/{set_code}/cards` (`?variant=&rarity=&tracked_only=`) | `list[ArtworkDetail]` | `artworks ⋈ cards` |
+| `GET /{lang}/cards/{set_code}/{local_id}` | `ArtworkDetail` / 404 | `artworks ⋈ cards` |
+| `GET /{lang}/cards/{set_code}/{local_id}/prices` (`?variant=normal`) | `list[LatestPrice]` | `**mv_latest_price`\*\* |
+| `GET /{lang}/cards/{set_code}/{local_id}/history` (`?variant=normal&days=&source=&condition=&limit=`) | `list[PricePointOut]` | `price_points` |
+| `GET /{lang}/cards/{set_code}/{local_id}/spread` (`?variant=normal`) | `list[SpreadRow]` | `**mv_cross_source_spread**` |
 
 **Rules:**
 
-- Latency-sensitive endpoints (`/prices`, `/spread`) read from MVs, not
+- Latency-sensitive endpoints (`/{lang}/.../prices`, `/{lang}/.../spread`) read
+  from MVs, not
   `price_points` directly. If you add a new aggregate, add an MV in the
   same Alembic migration that creates it, and refresh it post-scrape.
-- Responses for card endpoints use `CardWithArtwork` — artwork-level
-  fields (`name_ja`, `rarity_code`, `image_url`, …) are denormalized
-  onto the card row so clients don't need to join.
+- Artwork endpoints (`/{lang}/sets/{set}/cards`, `/{lang}/cards/{set}/{local_id}`)
+  return artwork-level payloads (`ArtworkDetail`) with nested
+  `variants[]` (`variant`, `card_id`, `is_tracked`).
+- Variant-specific endpoints (`prices`, `history`, `spread`) resolve
+  `(set_code, local_id, variant)` → `card_id` internally; callers no longer
+  need to know the opaque `card_id` format.
 
 **Auth + rate limiting** (`auth.py`, `ratelimit.py`):
 
@@ -203,7 +207,9 @@ Routers (all under `packages/api/pokeprice_api/routers/`):
   `settings.api_rate_limits = "free:60:1.0,paid:600:10.0,admin:6000:100.0"`
   (`tier:capacity:tokens_per_sec`; `free` is mandatory). Installed on
   `app.state.rate_limiter` in the FastAPI lifespan.
-- Applied as a **router-level dependency** (`dependencies=[Depends( rate_limit_dep)]`) on every router except `/healthz`. Every rate-limited
+- Applied on the top-level locale router (`/{lang}`) as a shared dependency
+  (with `validate_lang`) so every non-healthz request is uniformly limited.
+  Every rate-limited
   response carries `X-RateLimit-{Tier,Limit,Remaining}`; denied requests
   return **429** with `Retry-After`.
 
@@ -223,7 +229,7 @@ Routers (all under `packages/api/pokeprice_api/routers/`):
   three price MVs. Handy after a catalog reseed, after importing a
   historical dump, or when a scrape hook failure left the MVs stale.
 
-**Tests:** `tests/unit/test_api.py` (12) uses `dependency_overrides` to
+**Tests:** `tests/unit/test_api.py` (15) uses `dependency_overrides` to
 swap `get_session` and `rate_limit_dep` for a FakeSession + anonymous
 no-op, keeping endpoint-shape tests infra-free. Auth / rate-limit /
 CLI / MV helpers have their own files (`test_api_auth.py` 9,
@@ -426,10 +432,10 @@ spread requires ≥2 sources).
 11. **FastAPI deps use `Annotated[AsyncSession, Depends(get_session)]`**
     aliased as `SessionDep` at the top of each router file. Don't regress
     to `Depends(get_session)` in defaults — ruff B008 will reject it.
-12. **Every non-healthz router carries `Depends(rate_limit_dep)` at the
-    router level.** Don't add a new router without it, and don't move
-    `rate_limit_dep` onto individual handlers (we rely on it running once
-    per request and stamping `X-RateLimit-`\* headers uniformly).
+12. **Rate-limit + locale validation live on the top-level `/{lang}` router
+    dependency chain.** Don't duplicate `Depends(rate_limit_dep)` on
+    individual sub-routers; we rely on one shared execution per request
+    to stamp `X-RateLimit-`\* headers uniformly.
 13. **API-key plaintext is never stored.** Only `sha256(plaintext)` goes
     into `api_keys.key_hash`. `mint_api_key()` returns the plaintext; the
     CLI prints it exactly once at issuance. Never log the plaintext and
@@ -457,6 +463,10 @@ spread requires ≥2 sources).
     hasn't indexed it. The rename was destructive (drop + reseed +
     re-scrape) — cheap at 5839 rows, potentially expensive at 50k+.
     See also §4.2 for the M1 → M1L history.
+17. **Every API lookup path is locale-prefixed (`/{lang}/...`).**
+    `sets.language` is the source of truth for locale routing. Keep
+    `/healthz` outside locale routing, and keep unsupported locales as
+    **404** (not 400) so unknown locale paths behave like missing routes.
 
 ---
 
@@ -482,6 +492,7 @@ make scrape-snkrdunk ERA=SV
 # API (read layer)
 make api                                     # prod: 0.0.0.0:8000
 make api-dev                                 # dev: 127.0.0.1:8000, reload
+curl "http://127.0.0.1:8000/jp/cards/SV2A/089/prices?variant=normal"
 
 # API-key management (writes to the `api_keys` table)
 uv run pokeprice-api create-key --owner dev@example.com --tier free
@@ -492,6 +503,10 @@ uv run pokeprice-api list-keys [--include-revoked]
 # you imported data out-of-band)
 uv run pokeprice-api refresh-mvs             # CONCURRENTLY (default)
 uv run pokeprice-api refresh-mvs --no-concurrently  # fallback
+
+# Deployment helpers
+make db-dump-data                            # data-only dump for prod rollout
+CONFIRM=yes DUMP_FILE=/tmp/pokeprice-data-<UTC>.sql.gz make db-prod-bootstrap
 
 # Dev loop
 make test                                    # 163 tests
@@ -520,3 +535,47 @@ uv run python -m pokeprice_cardrush --set SV2A --rarity SAR --max-pages 1
   the smoke results and commit/run date.
 - When you **discover a new gotcha**, add it to §6 so the next session doesn't
   rediscover it the hard way.
+
+## 10. Production deployment
+
+Goal: deploy schema + catalog deterministically, then import mutable price
+history from a narrow dump.
+
+### Why this shape
+
+- Schema should always come from Alembic (`migrate`), not from dump files.
+- Catalog (`sets` / `artworks` / `cards`) is already source-controlled in
+  `packages/catalog/data/**`, so we reseed it from YML.
+- Only price history (`price_points`, `card_scrape_state`, `scrape_runs`)
+  needs a dump for fast rollout/backfill.
+- Excluded from dump: `api_keys` (environment-specific), MVs (rebuild), and
+  `alembic_version` (owned by Alembic).
+
+### Scripts
+
+- `scripts/dump_prod_data.sh`
+  - Uses `docker compose exec -T postgres pg_dump ... --data-only`
+  - Dumps only `price_points`, `card_scrape_state`, `scrape_runs`
+  - Writes `dumps/pokeprice-data-<UTC>.sql.gz`
+- `scripts/prod_bootstrap.sh`
+  - Requires `CONFIRM=yes` and `DUMP_FILE=/abs/path/to/sql_or_sql.gz`
+  - Runs:
+    1. `make migrate`
+    2. `make catalog-seed-sets`
+    3. `make catalog-seed-cards`
+    4. `psql "$DATABASE_URL" -f <dump>`
+    5. `uv run pokeprice-api refresh-mvs`
+  - Fails fast if `DATABASE_URL` is missing.
+
+### Rollout runbook
+
+```bash
+# On source environment (dockerized local/staging)
+make db-dump-data
+scp dumps/pokeprice-data-<UTC>.sql.gz prod:/tmp/
+
+# On production host
+export DATABASE_URL=postgresql://...
+CONFIRM=yes DUMP_FILE=/tmp/pokeprice-data-<UTC>.sql.gz make db-prod-bootstrap
+uv run pokeprice-api create-key --owner ops@example.com --tier admin
+```

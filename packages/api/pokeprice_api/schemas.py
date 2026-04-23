@@ -12,6 +12,30 @@ from datetime import datetime
 from pydantic import BaseModel
 
 
+class VariantRef(BaseModel):
+    """One tracked print variant for an artwork."""
+
+    variant: str
+    card_id: str
+    is_tracked: bool
+
+
+class ArtworkDetail(BaseModel):
+    """Artwork-level response with nested print variants."""
+
+    artwork_id: str
+    set_code: str
+    local_id: str
+    language: str
+    name_ja: str | None = None
+    name_en: str | None = None
+    rarity_code: str | None = None
+    image_url: str | None = None
+    illustrator: str | None = None
+    category: str = "card"
+    variants: list[VariantRef]
+
+
 class LatestPrice(BaseModel):
     """One row of ``mv_latest_price``: most recent observation per (source, condition)."""
 

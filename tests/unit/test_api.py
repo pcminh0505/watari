@@ -1,10 +1,4 @@
-"""Unit tests for the FastAPI read-side app (packages/api).
-
-The tests use FastAPI's dependency-override mechanism to swap the real
-``AsyncSession`` for a canned fake, so they never touch Postgres or the
-materialized views. That keeps them fast and makes them the only regression
-harness the API layer needs until we add real integration tests.
-"""
+"""Unit tests for the FastAPI read-side app (packages/api)."""
 
 from __future__ import annotations
 
@@ -37,7 +31,6 @@ class FakeResult:
         self._rows = rows
         self._scalar = scalar
 
-    # scalars() path (used by select(Model) returning ORM instances)
     def scalars(self) -> FakeResult:
         return self
 
@@ -53,7 +46,6 @@ class FakeResult:
             return self._scalars[0] if self._scalars else None
         return self._scalar
 
-    # text()/mappings() path
     def mappings(self) -> FakeResult:
         return self
 
@@ -106,11 +98,7 @@ def _override_session(session: FakeSession) -> Any:
 
 
 async def _anonymous_ratelimit() -> AuthContext:
-    """Replacement for ``rate_limit_dep`` that always admits as anonymous.
-
-    The auth/ratelimit specifics have their own test files; endpoint-shape
-    tests don't care about them and would otherwise need Redis.
-    """
+    """Replacement for ``rate_limit_dep`` that always admits as anonymous."""
     return AuthContext(
         authed=False,
         tier="free",
@@ -134,18 +122,12 @@ def client_factory():  # type: ignore[no-untyped-def]
     return _make
 
 
-# --- Healthz -------------------------------------------------------------
-
-
 def test_healthz_returns_ok() -> None:
     app = create_app()
     with TestClient(app) as client:
         resp = client.get("/healthz")
     assert resp.status_code == 200
     assert resp.json() == {"status": "ok"}
-
-
-# --- /sets ---------------------------------------------------------------
 
 
 def _fake_set_row(set_code: str = "SV2A", era: str = "sv") -> Any:
@@ -172,7 +154,7 @@ def _fake_set_row(set_code: str = "SV2A", era: str = "sv") -> Any:
 def test_list_sets_returns_all(client_factory) -> None:  # type: ignore[no-untyped-def]
     rows = [_fake_set_row("SV2A"), _fake_set_row("M2A", era="me")]
     client, _ = client_factory([FakeResult(scalars=rows)])
-    resp = client.get("/sets")
+    resp = client.get("/jp/sets")
     assert resp.status_code == 200
     data = resp.json()
     assert len(data) == 2
@@ -182,94 +164,103 @@ def test_list_sets_returns_all(client_factory) -> None:  # type: ignore[no-untyp
 def test_list_sets_filters_by_era(client_factory) -> None:  # type: ignore[no-untyped-def]
     rows = [_fake_set_row("M2A", era="me")]
     client, session = client_factory([FakeResult(scalars=rows)])
-    resp = client.get("/sets?era=me")
+    resp = client.get("/jp/sets?era=me")
     assert resp.status_code == 200
     assert [d["set_code"] for d in resp.json()] == ["M2A"]
-    # sanity: the statement we executed was a Select
     stmt, _ = session.calls[0]
     assert isinstance(stmt, Select)
 
 
 def test_get_set_404_when_missing(client_factory) -> None:  # type: ignore[no-untyped-def]
     client, _ = client_factory([FakeResult(scalar=None)])
-    resp = client.get("/sets/NOPE")
+    resp = client.get("/jp/sets/NOPE")
     assert resp.status_code == 404
 
 
 def test_get_set_returns_row(client_factory) -> None:  # type: ignore[no-untyped-def]
     row = _fake_set_row("SV2A")
     client, _ = client_factory([FakeResult(scalar=row)])
-    resp = client.get("/sets/SV2A")
+    resp = client.get("/jp/sets/SV2A")
     assert resp.status_code == 200
     assert resp.json()["set_code"] == "SV2A"
 
 
-# --- /sets/{set_code}/cards + /cards/{card_id} ---------------------------
-
-
-def _fake_card_row(local_id: str, variant: str = "normal") -> dict[str, Any]:
-    now = datetime(2025, 1, 1, tzinfo=UTC)
+def _fake_artwork_row(local_id: str = "089") -> dict[str, Any]:
     return {
-        "card_id": f"jp-sv2a-{local_id}-{variant}",
         "artwork_id": f"jp-sv2a-{local_id}",
         "set_code": "SV2A",
         "local_id": local_id,
-        "variant": variant,
-        "is_tracked": True,
-        "source_refs": {},
-        "created_at": now,
-        "updated_at": now,
         "name_ja": "ベトベトン",
         "name_en": "Muk",
         "rarity_code": "U",
         "image_url": "https://example.com/muk.png",
         "illustrator": None,
         "category": "card",
+        "language": "jp",
     }
 
 
-def test_list_cards_for_set_denormalizes(client_factory) -> None:  # type: ignore[no-untyped-def]
-    # first call: set existence check; second: the card rows
+def _fake_variant_row(artwork_id: str, variant: str, *, tracked: bool = True) -> dict[str, Any]:
+    return {
+        "artwork_id": artwork_id,
+        "variant": variant,
+        "card_id": f"{artwork_id}-{variant}",
+        "is_tracked": tracked,
+    }
+
+
+def test_list_cards_for_set_returns_artwork_details(client_factory) -> None:  # type: ignore[no-untyped-def]
     set_exists = FakeResult(scalar="SV2A")
-    cards = FakeResult(rows=[_fake_card_row("089"), _fake_card_row("089", "master_ball_mirror")])
-    client, _ = client_factory([set_exists, cards])
-    resp = client.get("/sets/SV2A/cards")
+    artworks = FakeResult(rows=[_fake_artwork_row("089")])
+    variants = FakeResult(
+        rows=[
+            _fake_variant_row("jp-sv2a-089", "master_ball_mirror"),
+            _fake_variant_row("jp-sv2a-089", "normal"),
+        ]
+    )
+    client, _ = client_factory([set_exists, artworks, variants])
+    resp = client.get("/jp/sets/SV2A/cards")
     assert resp.status_code == 200
     data = resp.json()
-    assert len(data) == 2
+    assert len(data) == 1
     assert data[0]["name_ja"] == "ベトベトン"
-    assert data[0]["rarity_code"] == "U"
-    # variant is preserved in the response
-    assert {d["variant"] for d in data} == {"normal", "master_ball_mirror"}
+    assert [v["variant"] for v in data[0]["variants"]] == ["normal", "master_ball_mirror"]
 
 
 def test_list_cards_404_for_unknown_set(client_factory) -> None:  # type: ignore[no-untyped-def]
     client, _ = client_factory([FakeResult(scalar=None)])
-    resp = client.get("/sets/NOPE/cards")
+    resp = client.get("/jp/sets/NOPE/cards")
     assert resp.status_code == 404
 
 
-def test_get_card_by_id(client_factory) -> None:  # type: ignore[no-untyped-def]
-    row = _fake_card_row("089")
-    client, _ = client_factory([FakeResult(rows=[row])])
-    resp = client.get("/cards/jp-sv2a-089-normal")
+def test_get_card_by_set_and_local_id(client_factory) -> None:  # type: ignore[no-untyped-def]
+    artwork = FakeResult(rows=[_fake_artwork_row("089")])
+    variants = FakeResult(rows=[_fake_variant_row("jp-sv2a-089", "normal")])
+    client, _ = client_factory([artwork, variants])
+    resp = client.get("/jp/cards/SV2A/089")
     assert resp.status_code == 200
     body = resp.json()
-    assert body["card_id"] == "jp-sv2a-089-normal"
     assert body["artwork_id"] == "jp-sv2a-089"
+    assert body["variants"][0]["card_id"] == "jp-sv2a-089-normal"
 
 
 def test_get_card_404(client_factory) -> None:  # type: ignore[no-untyped-def]
     client, _ = client_factory([FakeResult(rows=[])])
-    resp = client.get("/cards/jp-sv2a-999-normal")
+    resp = client.get("/jp/cards/SV2A/999")
     assert resp.status_code == 404
 
 
-# --- prices / spread -----------------------------------------------------
-
-
 def test_latest_prices_from_mv(client_factory) -> None:  # type: ignore[no-untyped-def]
-    exists = FakeResult(scalar="jp-sv2a-089-normal")
+    now = datetime(2025, 4, 1, tzinfo=UTC)
+    card = _RowLike(
+        {
+            "card_id": "jp-sv2a-089-normal",
+            "set_code": "SV2A",
+            "local_id": "089",
+            "variant": "normal",
+        }
+    )
+    resolve = FakeResult(scalar=card)
     now = datetime(2025, 4, 1, tzinfo=UTC)
     mv_rows = FakeResult(
         rows=[
@@ -291,22 +282,33 @@ def test_latest_prices_from_mv(client_factory) -> None:  # type: ignore[no-untyp
             },
         ]
     )
-    client, _ = client_factory([exists, mv_rows])
-    resp = client.get("/cards/jp-sv2a-089-normal/prices")
+    client, _ = client_factory([resolve, mv_rows])
+    resp = client.get("/jp/cards/SV2A/089/prices")
     assert resp.status_code == 200
     prices = resp.json()
     assert len(prices) == 2
     assert {p["source"] for p in prices} == {"cardrush", "snkrdunk"}
 
 
-def test_prices_404_when_card_missing(client_factory) -> None:  # type: ignore[no-untyped-def]
-    client, _ = client_factory([FakeResult(scalar=None)])
-    resp = client.get("/cards/jp-xxx-001-normal/prices")
-    assert resp.status_code == 404
+def test_unpadded_local_id_is_accepted(client_factory) -> None:  # type: ignore[no-untyped-def]
+    artwork = FakeResult(rows=[_fake_artwork_row("089")])
+    variants = FakeResult(rows=[_fake_variant_row("jp-sv2a-089", "normal")])
+    client, _ = client_factory([artwork, variants])
+    resp = client.get("/jp/cards/SV2A/89")
+    assert resp.status_code == 200
+    assert resp.json()["local_id"] == "089"
 
 
 def test_spread_from_mv(client_factory) -> None:  # type: ignore[no-untyped-def]
-    exists = FakeResult(scalar="jp-sv2a-089-normal")
+    card = _RowLike(
+        {
+            "card_id": "jp-sv2a-089-normal",
+            "set_code": "SV2A",
+            "local_id": "089",
+            "variant": "normal",
+        }
+    )
+    resolve = FakeResult(scalar=card)
     spread_rows = FakeResult(
         rows=[
             {
@@ -319,10 +321,34 @@ def test_spread_from_mv(client_factory) -> None:  # type: ignore[no-untyped-def]
             }
         ]
     )
-    client, _ = client_factory([exists, spread_rows])
-    resp = client.get("/cards/jp-sv2a-089-normal/spread")
+    client, _ = client_factory([resolve, spread_rows])
+    resp = client.get("/jp/cards/SV2A/089/spread")
     assert resp.status_code == 200
     rows = resp.json()
     assert len(rows) == 1
     assert rows[0]["cardrush_floor"] == 500
     assert rows[0]["spread_pct"] == pytest.approx(0.111)
+
+
+def test_prices_400_for_unknown_variant_with_available_list(client_factory) -> None:  # type: ignore[no-untyped-def]
+    missing_variant = FakeResult(scalar=None)
+    available = FakeResult(rows=[{"variant": "normal"}, {"variant": "master_ball_mirror"}])
+    client, _ = client_factory([missing_variant, available])
+    resp = client.get("/jp/cards/SV2A/089/prices?variant=bogus")
+    assert resp.status_code == 400
+    assert "available variants" in resp.json()["detail"]
+
+
+def test_prices_404_when_artwork_missing(client_factory) -> None:  # type: ignore[no-untyped-def]
+    missing_variant = FakeResult(scalar=None)
+    no_available = FakeResult(rows=[])
+    client, _ = client_factory([missing_variant, no_available])
+    resp = client.get("/jp/cards/SV2A/999/prices")
+    assert resp.status_code == 404
+
+
+def test_unsupported_lang_returns_404(client_factory) -> None:  # type: ignore[no-untyped-def]
+    client, session = client_factory([])
+    resp = client.get("/xx/sets")
+    assert resp.status_code == 404
+    assert session.calls == []

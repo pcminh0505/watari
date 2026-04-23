@@ -11,19 +11,15 @@ from sqlalchemy import func, select
 from sqlalchemy.ext.asyncio import AsyncSession
 
 from pokeprice_api.deps import get_session
-from pokeprice_api.ratelimit import rate_limit_dep
 
-router = APIRouter(
-    prefix="/sets",
-    tags=["sets"],
-    dependencies=[Depends(rate_limit_dep)],
-)
+router = APIRouter(prefix="/sets", tags=["sets"])
 
 SessionDep = Annotated[AsyncSession, Depends(get_session)]
 
 
 @router.get("", response_model=list[SetOut])
 async def list_sets(
+    lang: str,
     session: SessionDep,
     era: str | None = Query(None, description="Filter by era_block (e.g. 'sv', 'me')"),
 ) -> list[Set]:
@@ -31,7 +27,7 @@ async def list_sets(
 
     Ordered by ``release_date`` desc, NULL-last, then ``set_code`` for stability.
     """
-    stmt = select(Set)
+    stmt = select(Set).where(Set.language == lang)
     if era is not None:
         stmt = stmt.where(Set.era_block == era)
     stmt = stmt.order_by(Set.release_date.desc().nulls_last(), Set.set_code)
@@ -41,11 +37,15 @@ async def list_sets(
 
 @router.get("/{set_code}", response_model=SetOut)
 async def get_set(
+    lang: str,
     set_code: str,
     session: SessionDep,
 ) -> Set:
     """Fetch a single set by ``set_code`` (case-insensitive)."""
-    stmt = select(Set).where(func.upper(Set.set_code) == set_code.upper())
+    stmt = select(Set).where(
+        Set.language == lang,
+        func.upper(Set.set_code) == set_code.upper(),
+    )
     result = await session.execute(stmt)
     obj = result.scalar_one_or_none()
     if obj is None:
