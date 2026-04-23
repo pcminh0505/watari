@@ -12,7 +12,7 @@ the site is displaying to Japanese users.
 from __future__ import annotations
 
 import re
-from datetime import datetime, timedelta, timezone
+from datetime import UTC, datetime, timedelta, timezone
 
 JST = timezone(timedelta(hours=9))
 
@@ -49,11 +49,11 @@ def parse_snkrdunk_date(value: str, *, now: datetime | None = None) -> datetime:
             delta = timedelta(days=value_int * 365)
         else:
             delta = timedelta()
-        return (reference - delta).astimezone(timezone.utc)
+        return (reference - delta).astimezone(UTC)
 
     m = _ABSOLUTE_RE.match(s)
     if m:
         y, mo, d = int(m.group(1)), int(m.group(2)), int(m.group(3))
-        return datetime(y, mo, d, tzinfo=JST).astimezone(timezone.utc)
+        return datetime(y, mo, d, tzinfo=JST).astimezone(UTC)
 
-    return reference.astimezone(timezone.utc)
+    return reference.astimezone(UTC)

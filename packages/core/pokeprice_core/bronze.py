@@ -1,6 +1,7 @@
 """Bronze layer — raw HTML/JSON storage in MinIO (S3-compatible)."""
 
 from datetime import datetime
+from typing import Any
 
 import boto3
 from botocore.exceptions import ClientError
@@ -8,7 +9,7 @@ from botocore.exceptions import ClientError
 from pokeprice_core.config import settings
 
 
-def _get_s3_client():  # type: ignore[no-untyped-def]
+def _get_s3_client() -> Any:
     return boto3.client(
         "s3",
         endpoint_url=settings.s3_endpoint_url,

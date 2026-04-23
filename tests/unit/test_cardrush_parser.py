@@ -2,7 +2,7 @@
 
 from __future__ import annotations
 
-from datetime import datetime, timezone
+from datetime import UTC, datetime
 
 from pokeprice_cardrush.parser import (
     ListingRow,
@@ -116,7 +116,7 @@ class TestListingRowToPricePoint:
             stock_qty=3,
             external_url="https://example.test/x",
         )
-        ts = datetime(2026, 4, 21, 12, 0, tzinfo=timezone.utc)
+        ts = datetime(2026, 4, 21, 12, 0, tzinfo=UTC)
         out = listing_row_to_price_point(
             row, card_id="jp-sv2a-183-normal", scrape_run_id=42, observed_at=ts
         )

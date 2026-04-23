@@ -10,7 +10,7 @@ import asyncio
 import logging
 import random
 from dataclasses import dataclass
-from typing import Any
+from typing import Any, cast
 
 from bs4 import BeautifulSoup
 from curl_cffi import requests as curl_requests
@@ -85,7 +85,7 @@ class CardrushClient:
         resp = await asyncio.to_thread(sess.get, url, timeout=self._timeout)
         if resp.status_code != 200:
             raise RuntimeError(f"Cardrush {url} -> HTTP {resp.status_code}")
-        return resp.text
+        return str(resp.text)
 
     async def search_all_pages(
         self,
@@ -119,10 +119,7 @@ class CardrushClient:
 
 def _has_next_page(soup: BeautifulSoup, current_page: int) -> bool:
     target = f"page={current_page + 1}"
-    for a in soup.select("a[href]"):
-        if target in (a.get("href") or ""):
-            return True
-    return False
+    return any(target in (a.get("href") or "") for a in soup.select("a[href]"))
 
 
 def parse_listings_from_html(html: str) -> list[CardrushListing]:
@@ -147,7 +144,7 @@ def parse_listings_from_html(html: str) -> list[CardrushListing]:
         if stock_el is None:
             sold_out = True
         else:
-            classes = stock_el.get("class") or []
+            classes: list[str] = stock_el.get_attribute_list("class")
             if "soldout" in classes:
                 sold_out = True
             else:
@@ -159,7 +156,7 @@ def parse_listings_from_html(html: str) -> list[CardrushListing]:
         external_url: str | None = None
         link_el = item.select_one("a[href]")
         if link_el is not None:
-            href = link_el.get("href") or ""
+            href = cast(str, link_el.get("href") or "")
             if href.startswith("http"):
                 external_url = href
             elif href:
@@ -168,7 +165,7 @@ def parse_listings_from_html(html: str) -> list[CardrushListing]:
         image_url: str | None = None
         img_el = item.select_one("img[src]")
         if img_el is not None:
-            src = img_el.get("src") or ""
+            src = cast(str, img_el.get("src") or "")
             if src.startswith("http"):
                 image_url = src
             elif src:

@@ -94,9 +94,7 @@ def parse_cardrush_product_name(name: str) -> ParsedCardrushName:
 
     # 2) rarity (prefer bracketed, else trailing bare token)
     rarity_code: str | None = None
-    if m := _BRACKET_RARITY_RE.search(name):
-        rarity_code = canonicalize_cardrush(m.group(1))
-    elif m := _TRAILING_RARITY_RE.search(name):
+    if (m := _BRACKET_RARITY_RE.search(name)) or (m := _TRAILING_RARITY_RE.search(name)):
         rarity_code = canonicalize_cardrush(m.group(1))
 
     # 3) variant

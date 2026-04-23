@@ -12,12 +12,12 @@ import pathlib
 from typing import Any
 
 import yaml
+from pokeprice_core.db import async_session_factory
+from pokeprice_core.models import Set
 from sqlalchemy.dialects.postgresql import insert as pg_insert
 from sqlalchemy.ext.asyncio import AsyncSession
 
 from pokeprice_catalog.paths import sets_dir
-from pokeprice_core.db import async_session_factory
-from pokeprice_core.models import Set
 
 logger = logging.getLogger(__name__)
 
@@ -99,7 +99,7 @@ async def upsert_sets(
     )
     result = await session.execute(stmt)
     await session.commit()
-    return len(rows), int(result.rowcount or 0)
+    return len(rows), int(result.rowcount or 0)  # type: ignore[attr-defined]
 
 
 async def run() -> dict[str, int]:

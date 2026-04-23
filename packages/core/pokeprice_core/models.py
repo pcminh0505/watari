@@ -13,6 +13,7 @@ Downstream (wiped on migration, same shape as before):
 
 from datetime import date, datetime
 from enum import StrEnum
+from typing import Any
 
 from sqlalchemy import (
     BigInteger,
@@ -69,7 +70,7 @@ class Set(Base):
         Text, ForeignKey("sets.set_code")
     )
     tcgdex_id: Mapped[str | None] = mapped_column(Text)
-    source_refs: Mapped[dict] = mapped_column(
+    source_refs: Mapped[dict[str, Any]] = mapped_column(
         JSONB, nullable=False, server_default="{}"
     )
     created_at: Mapped[datetime] = mapped_column(
@@ -107,7 +108,7 @@ class Artwork(Base):
         Text, nullable=False, server_default="card"
     )
     illustrator: Mapped[str | None] = mapped_column(Text)
-    source_refs: Mapped[dict] = mapped_column(
+    source_refs: Mapped[dict[str, Any]] = mapped_column(
         JSONB, nullable=False, server_default="{}"
     )
     created_at: Mapped[datetime] = mapped_column(
@@ -154,7 +155,7 @@ class Card(Base):
     is_tracked: Mapped[bool] = mapped_column(
         Boolean, nullable=False, server_default="true"
     )
-    source_refs: Mapped[dict] = mapped_column(
+    source_refs: Mapped[dict[str, Any]] = mapped_column(
         JSONB, nullable=False, server_default="{}"
     )
     created_at: Mapped[datetime] = mapped_column(
@@ -199,7 +200,7 @@ class ScrapeRun(Base):
     cards_succeeded: Mapped[int] = mapped_column(Integer, nullable=False, server_default="0")
     rows_written: Mapped[int] = mapped_column(Integer, nullable=False, server_default="0")
     error_summary: Mapped[str | None] = mapped_column(Text)
-    metadata_: Mapped[dict | None] = mapped_column("metadata", JSONB)
+    metadata_: Mapped[dict[str, Any] | None] = mapped_column("metadata", JSONB)
 
     __table_args__ = (Index("idx_scrape_runs_source_started", "source", started_at.desc()),)
 

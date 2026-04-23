@@ -18,7 +18,7 @@ Each scraper follows the same skeleton:
 
 from __future__ import annotations
 
-from datetime import datetime, timezone
+from datetime import UTC, datetime
 from typing import Any
 
 from sqlalchemy import func, select, update
@@ -60,7 +60,7 @@ async def finish_scrape_run(
         .where(ScrapeRun.id == run_id)
         .values(
             status=status,
-            finished_at=datetime.now(timezone.utc),
+            finished_at=datetime.now(UTC),
             cards_attempted=cards_attempted,
             cards_succeeded=cards_succeeded,
             rows_written=rows_written,
@@ -89,7 +89,7 @@ async def insert_price_points(
     stmt = pg_insert(PricePoint).values(rows).on_conflict_do_nothing()
     result = await session.execute(stmt)
     await session.commit()
-    return int(result.rowcount or 0)
+    return int(result.rowcount or 0)  # type: ignore[attr-defined]
 
 
 async def upsert_card_state(
@@ -101,7 +101,7 @@ async def upsert_card_state(
     error: str | None = None,
 ) -> None:
     """Update (or create) the per-(card, source) health row."""
-    now = datetime.now(timezone.utc)
+    now = datetime.now(UTC)
     base = {
         "card_id": card_id,
         "source": source,

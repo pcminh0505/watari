@@ -21,23 +21,6 @@ Anything not covered is tagged ``UNK`` and logged so we can extend the map.
 
 from __future__ import annotations
 
-CANONICAL_RARITIES: set[str] = {
-    "C",
-    "U",
-    "R",
-    "RR",
-    "AR",
-    "SR",
-    "SAR",
-    "UR",
-    "CSR",
-    "HR",
-    "RRR",
-    "MA",
-    "MUR",
-}
-
-
 TCGDEX_RARITY_MAP: dict[str, str] = {
     # --- TCGdex `rarity` values seen for Japanese sets (as of 2026-04) ---
     "Common": "C",

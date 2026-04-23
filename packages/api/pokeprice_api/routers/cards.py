@@ -6,8 +6,8 @@ from collections import defaultdict
 from typing import Annotated, Any
 
 from fastapi import APIRouter, Depends, HTTPException, Query
-from pokeprice_core.models import Artwork, Card, Set
 from pokeprice_core.catalog import pad_local_id
+from pokeprice_core.models import Artwork, Card, Set
 from sqlalchemy import func, select
 from sqlalchemy.ext.asyncio import AsyncSession
 
@@ -116,7 +116,9 @@ async def list_cards_for_set(
 
     details: list[ArtworkDetail] = []
     for artwork_id, row in artwork_by_id.items():
-        variants = sorted(variants_by_artwork[artwork_id], key=lambda v: _variant_sort_key(v.variant))
+        variants = sorted(
+            variants_by_artwork[artwork_id], key=lambda v: _variant_sort_key(v.variant)
+        )
         details.append(_row_to_artwork_detail(row, variants))
     details.sort(key=lambda d: d.local_id)
     return details

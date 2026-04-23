@@ -12,7 +12,6 @@ The ScrapeRun row is finalized with aggregate counts once all cards are done.
 
 from __future__ import annotations
 
-import asyncio
 from datetime import UTC, datetime
 
 from pokeprice_core.bronze import ensure_bucket, write_bronze
@@ -161,7 +160,3 @@ async def scrape_era(
         "rows_written": rows_written,
         "cards_not_found": not_found,
     }
-
-
-def _run(era: str, history_limit: int | None) -> dict[str, int]:
-    return asyncio.run(scrape_era(era, history_limit=history_limit))

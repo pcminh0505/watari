@@ -11,10 +11,10 @@ Reuses:
 from __future__ import annotations
 
 from dataclasses import dataclass
-from datetime import datetime, timezone
+from datetime import UTC, datetime
+from typing import cast
 
 from bs4 import BeautifulSoup
-
 from pokeprice_catalog.parser import parse_cardrush_product_name
 from pokeprice_core.catalog import pad_local_id
 from pokeprice_core.conditions import Condition, parse_cardrush_condition
@@ -81,7 +81,7 @@ def parse_listing_rows(html: str) -> list[ListingRow]:
         if stock_el is None:
             stock_qty = 0
         else:
-            classes = stock_el.get("class") or []
+            classes: list[str] = stock_el.get_attribute_list("class")
             if "soldout" in classes:
                 stock_qty = 0
             else:
@@ -90,7 +90,7 @@ def parse_listing_rows(html: str) -> list[ListingRow]:
         external_url: str | None = None
         link_el = item.select_one("a[href]")
         if link_el is not None:
-            href = link_el.get("href") or ""
+            href = cast(str, link_el.get("href") or "")
             if href.startswith("http"):
                 external_url = href
             elif href:
@@ -125,7 +125,7 @@ def listing_row_to_price_point(
     observed_at: datetime | None = None,
 ) -> dict[str, object]:
     """Convert a ``ListingRow`` (+ resolved ``card_id``) into a PricePoint dict."""
-    ts = observed_at or datetime.now(timezone.utc)
+    ts = observed_at or datetime.now(UTC)
     return {
         "card_id": card_id,
         "source": SourceEnum.cardrush,

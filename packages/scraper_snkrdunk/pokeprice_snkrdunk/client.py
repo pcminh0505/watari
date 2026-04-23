@@ -34,7 +34,7 @@ class SnkrdunkClient:
         )
         self._polite_delay_sec = polite_delay_sec
 
-    async def __aenter__(self) -> "SnkrdunkClient":
+    async def __aenter__(self) -> SnkrdunkClient:
         return self
 
     async def __aexit__(self, *exc: object) -> None:

@@ -2,7 +2,7 @@
 
 from __future__ import annotations
 
-from datetime import datetime, timedelta, timezone
+from datetime import UTC, datetime, timedelta, timezone
 
 from pokeprice_core.conditions import Condition
 from pokeprice_core.models import SourceEnum, SourceTypeEnum
@@ -15,46 +15,46 @@ JST = timezone(timedelta(hours=9))
 class TestParseSnkrdunkDate:
     def test_absolute_jst_to_utc(self):
         dt = parse_snkrdunk_date("2026/03/21")
-        assert dt.tzinfo == timezone.utc
+        assert dt.tzinfo == UTC
         assert (dt.year, dt.month, dt.day) == (2026, 3, 20)
         assert dt.hour == 15
 
     def test_relative_minutes(self):
         now = datetime(2026, 4, 21, 12, 0, 0, tzinfo=JST)
         dt = parse_snkrdunk_date("40分前", now=now)
-        assert dt == datetime(2026, 4, 21, 2, 20, tzinfo=timezone.utc)
+        assert dt == datetime(2026, 4, 21, 2, 20, tzinfo=UTC)
 
     def test_relative_hours(self):
         now = datetime(2026, 4, 21, 12, 0, 0, tzinfo=JST)
         dt = parse_snkrdunk_date("4時間前", now=now)
-        assert dt == datetime(2026, 4, 20, 23, 0, tzinfo=timezone.utc)
+        assert dt == datetime(2026, 4, 20, 23, 0, tzinfo=UTC)
 
     def test_relative_days(self):
         now = datetime(2026, 4, 21, 12, 0, 0, tzinfo=JST)
         dt = parse_snkrdunk_date("1日前", now=now)
-        assert dt == datetime(2026, 4, 20, 3, 0, tzinfo=timezone.utc)
+        assert dt == datetime(2026, 4, 20, 3, 0, tzinfo=UTC)
 
     def test_relative_weeks(self):
         now = datetime(2026, 4, 21, 12, 0, 0, tzinfo=JST)
         dt = parse_snkrdunk_date("2週間前", now=now)
-        assert (dt.tzinfo, dt.day) == (timezone.utc, 7)
+        assert (dt.tzinfo, dt.day) == (UTC, 7)
 
     def test_relative_months(self):
         now = datetime(2026, 4, 21, 12, 0, 0, tzinfo=JST)
         dt = parse_snkrdunk_date("3ヶ月前", now=now)
-        delta = now.astimezone(timezone.utc) - dt
+        delta = now.astimezone(UTC) - dt
         assert delta == timedelta(days=90)
 
     def test_relative_years(self):
         now = datetime(2026, 4, 21, 12, 0, 0, tzinfo=JST)
         dt = parse_snkrdunk_date("1年前", now=now)
-        delta = now.astimezone(timezone.utc) - dt
+        delta = now.astimezone(UTC) - dt
         assert delta == timedelta(days=365)
 
     def test_unknown_returns_reference_now(self):
         now = datetime(2026, 4, 21, 12, 0, 0, tzinfo=JST)
         dt = parse_snkrdunk_date("???", now=now)
-        assert dt == now.astimezone(timezone.utc)
+        assert dt == now.astimezone(UTC)
 
 
 SAMPLE_ENTRIES = [

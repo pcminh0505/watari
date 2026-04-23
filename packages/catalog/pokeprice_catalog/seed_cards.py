@@ -12,14 +12,14 @@ import pathlib
 from typing import Any
 
 import yaml
+from pokeprice_core.catalog import make_artwork_id, make_card_id, pad_local_id
+from pokeprice_core.db import async_session_factory
+from pokeprice_core.models import Artwork, Card, Set
 from sqlalchemy import select
 from sqlalchemy.dialects.postgresql import insert as pg_insert
 from sqlalchemy.ext.asyncio import AsyncSession
 
 from pokeprice_catalog.paths import cards_dir, cards_set_dir
-from pokeprice_core.catalog import make_artwork_id, make_card_id, pad_local_id
-from pokeprice_core.db import async_session_factory
-from pokeprice_core.models import Artwork, Card, Set
 
 logger = logging.getLogger(__name__)
 
@@ -120,7 +120,7 @@ async def _upsert_artworks(
     )
     result = await session.execute(stmt)
     await session.commit()
-    return int(result.rowcount or 0)
+    return int(result.rowcount or 0)  # type: ignore[attr-defined]
 
 
 async def _upsert_cards(
@@ -141,7 +141,7 @@ async def _upsert_cards(
     )
     result = await session.execute(stmt)
     await session.commit()
-    return int(result.rowcount or 0)
+    return int(result.rowcount or 0)  # type: ignore[attr-defined]
 
 
 async def _known_set_codes(session: AsyncSession) -> set[str]:

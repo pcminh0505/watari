@@ -18,18 +18,6 @@ import re
 
 DEFAULT_VARIANT = "normal"
 
-CANONICAL_VARIANTS: set[str] = {
-    "normal",
-    "reverse_holo",
-    "master_ball_mirror",
-    "poke_ball_mirror",
-    "quick_ball_mirror",
-    "ultra_ball_mirror",
-    "promo",
-    "jumbo",
-}
-
-
 # Ordered so a product name with several markers picks the most specific first.
 _CARDRUSH_VARIANT_PATTERNS: list[tuple[str, re.Pattern[str]]] = [
     ("master_ball_mirror", re.compile(r"マスターボール(?:柄|ミラー)")),

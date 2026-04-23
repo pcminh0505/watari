@@ -39,13 +39,6 @@ class ArtworkBase(BaseModel):
     source_refs: dict[str, Any] = {}
 
 
-class ArtworkOut(ArtworkBase):
-    created_at: datetime
-    updated_at: datetime
-
-    model_config = {"from_attributes": True}
-
-
 class CardBase(BaseModel):
     card_id: str
     artwork_id: str
@@ -61,17 +54,6 @@ class CardOut(CardBase):
     updated_at: datetime
 
     model_config = {"from_attributes": True}
-
-
-class CardWithArtwork(CardOut):
-    """Convenience DTO that denormalizes artwork-level fields onto a card."""
-
-    name_ja: str | None = None
-    name_en: str | None = None
-    rarity_code: str | None = None
-    image_url: str | None = None
-    illustrator: str | None = None
-    category: str = "card"
 
 
 class PricePointBase(BaseModel):

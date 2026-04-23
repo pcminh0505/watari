@@ -137,7 +137,7 @@ def load_card_yaml(path: pathlib.Path) -> dict[str, Any] | None:
     if not path.exists():
         return None
     import yaml as pyyaml  # pyyaml is fine for reading
-    return pyyaml.safe_load(path.read_text(encoding="utf-8"))
+    return pyyaml.safe_load(path.read_text(encoding="utf-8"))  # type: ignore[no-any-return]
 
 
 __all__ = [

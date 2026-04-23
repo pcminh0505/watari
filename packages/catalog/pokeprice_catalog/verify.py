@@ -5,11 +5,10 @@ from __future__ import annotations
 import logging
 from typing import Any
 
-from sqlalchemy import case, func, select
-from sqlalchemy.ext.asyncio import AsyncSession
-
 from pokeprice_core.db import async_session_factory
 from pokeprice_core.models import Artwork, Card, Set
+from sqlalchemy import case, func, select
+from sqlalchemy.ext.asyncio import AsyncSession
 
 logger = logging.getLogger(__name__)
 

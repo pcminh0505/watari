@@ -17,9 +17,13 @@ import logging
 import re
 from collections import defaultdict
 from dataclasses import dataclass
-from datetime import datetime, timezone
+from datetime import UTC, datetime
 from typing import Any
 
+from pokeprice_core.catalog import pad_local_id
+from pokeprice_core.db import async_session_factory
+from pokeprice_core.ingestion import finish_scrape_run, start_scrape_run
+from pokeprice_core.models import Set
 from sqlalchemy import select
 from sqlalchemy.ext.asyncio import AsyncSession
 
@@ -27,23 +31,18 @@ from pokeprice_catalog.cardrush_client import CardrushClient, parse_listings_fro
 from pokeprice_catalog.emit_yml import CardYamlPayload, EmitResult, write_card_yaml
 from pokeprice_catalog.parser import parse_cardrush_product_name
 from pokeprice_catalog.pokellector_client import (
+    PokellectorCardDetail,
     PokellectorCardStub,
     PokellectorClient,
-    PokellectorCardDetail,
     card_image_url,
     fetch_full_set,
 )
 from pokeprice_catalog.rarities import (
-    canonicalize_cardrush,
     canonicalize_pokellector,
     canonicalize_tcgdex,
 )
 from pokeprice_catalog.tcgdex_client import TcgdexClient
 from pokeprice_catalog.variants import DEFAULT_VARIANT
-from pokeprice_core.catalog import pad_local_id
-from pokeprice_core.db import async_session_factory
-from pokeprice_core.ingestion import finish_scrape_run, start_scrape_run
-from pokeprice_core.models import Set
 
 logger = logging.getLogger(__name__)
 
@@ -251,12 +250,11 @@ def _choose_rarity(
     *,
     pokellector: PokellectorCardDetail | None,
     tcgdex: TcgdexCardMeta | None,
-    cardrush_variants: set[str],
 ) -> str | None:
     """Pokellector wins when mappable; TCGdex fallback; else None.
 
-    Cardrush variants don't carry the rarity label for every variant reliably
-    (we lose context across pagination), so we don't consult them here.
+    Cardrush variants don't carry the rarity label reliably across pagination,
+    so we don't consult them here.
     """
     if pokellector and pokellector.rarity_raw:
         mapped = canonicalize_pokellector(pokellector.rarity_raw)
@@ -287,7 +285,6 @@ def _merge_one(
     rarity_code = _choose_rarity(
         pokellector=pokel_detail,
         tcgdex=tcgdex,
-        cardrush_variants=(cardrush.variants if cardrush else set()),
     )
 
     category = _infer_category(tcgdex=tcgdex, name_ja=name_ja, name_en=name_en)
@@ -363,7 +360,7 @@ async def bootstrap_set(
     with_tcgdex: bool = True,
 ) -> BootstrapSetResult:
     """Fetch + merge + emit one set's per-card YMLs."""
-    observed_at = datetime.now(timezone.utc)
+    observed_at = datetime.now(UTC)
 
     async with async_session_factory() as session:
         ctx = await _load_set_ctx(session, set_code)

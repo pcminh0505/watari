@@ -9,7 +9,7 @@ from __future__ import annotations
 import asyncio
 import logging
 import random
-from typing import Any
+from typing import Any, cast
 from urllib.parse import quote
 
 from curl_cffi import requests as curl_requests
@@ -79,7 +79,7 @@ class CardrushClient:
             raise TransientError(f"HTTP {resp.status_code} on {url}")
         if resp.status_code != 200:
             raise RuntimeError(f"unexpected HTTP {resp.status_code} on {url}")
-        return resp.text
+        return str(resp.text)
 
     async def fetch(self, url: str) -> str:
         """Fetch a URL with retry on transient errors."""
@@ -130,7 +130,7 @@ class CardrushClient:
                 link_el = item.select_one("a[href]")
                 if link_el is None:
                     continue
-                href = link_el.get("href") or ""
+                href = cast(str, link_el.get("href") or "")
                 if href:
                     fresh_urls.add(href)
 

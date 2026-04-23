@@ -18,11 +18,9 @@ import dataclasses
 import logging
 import re
 from collections.abc import Iterable
-from datetime import datetime, timezone
+from datetime import UTC, datetime
 
 import httpx
-from bs4 import BeautifulSoup
-
 from pokeprice_core.bronze import write_bronze_set
 
 logger = logging.getLogger(__name__)
@@ -207,7 +205,7 @@ class PokellectorClient:
         self._last_request = 0.0
         self._lock = asyncio.Lock()
 
-    async def __aenter__(self) -> "PokellectorClient":
+    async def __aenter__(self) -> PokellectorClient:
         return self
 
     async def __aexit__(self, *exc_info: object) -> None:
@@ -302,7 +300,7 @@ async def fetch_full_set(
     Returns ``(index, {local_id: detail})``. Missing detail pages are logged
     but don't abort the run.
     """
-    observed_at = observed_at or datetime.now(timezone.utc)
+    observed_at = observed_at or datetime.now(UTC)
 
     index_html = await client.fetch_set_index(
         set_slug, set_code=set_code, run_id=run_id, observed_at=observed_at, bronze=bronze

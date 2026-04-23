@@ -35,9 +35,5 @@ class Settings(BaseSettings):
     # 'free' MUST be present (anonymous + fallback tier).
     api_rate_limits: str = "free:60:1.0,paid:600:10.0,admin:6000:100.0"
 
-    @property
-    def sync_database_url(self) -> str:
-        return self.database_url.replace("+asyncpg", "+psycopg2")
-
 
 settings = Settings()
