@@ -6,7 +6,7 @@
 > Update it whenever the architecture changes — especially after a
 > destructive migration, a new source, or a schema split.
 >
-> Last updated: 2026-04-23 (Catalog v3 + API v1 + auth/rate-limit + post-scrape MV refresh hook).
+> Last updated: 2026-04-23 (Full SV + ME seed: all 28 sets bootstrapped, card YML tree complete, 111k `price_points` across Cardrush + SNKRDUNK, MVs populated).
 
 ---
 
@@ -270,39 +270,48 @@ a fourth MV, **create its unique index in the same migration** or
 
 ## 4. What works right now
 
-### 4.1 End-to-end smoke (last run 2026-04-23)
+### 4.1 End-to-end smoke (last run 2026-04-23, full SV + ME seed)
 
 | Step                                               | Result                                                                                         |
 | -------------------------------------------------- | ---------------------------------------------------------------------------------------------- |
 | `alembic upgrade head`                             | clean (head = `006_mv_spread_unique_index`)                                                    |
-| `make catalog-seed-sets`                           | 28 sets upserted                                                                               |
-| `make catalog-bootstrap SET={SV2A,M2A}`            | SV2A: 210 YMLs (3 variants) · M2A: 250 YMLs (1 variant)                                        |
-| `make catalog-seed-cards`                          | SV2A: 210 artworks / 516 prints · M2A: 250 / 250                                               |
-| `make catalog-verify`                              | 0 orphans · 0 artworks missing rarity/img · 128 missing JA (all M2A Commons)                   |
-| `make scrape-cardrush ERA=sv,me`                   | SV2A 1319 rows (516 cards) · M2A 264 rows (86 cards)                                           |
-| `make scrape-snkrdunk ERA=sv2a`                    | run 6: 516/516 cards, 6546 rows written                                                        |
-| `make scrape-snkrdunk ERA=m2a`                     | run 7: 249/250 cards (1 failed: asyncpg 32767 arg limit on a mega-history card), 17647 rows    |
-| `pokeprice-api refresh-mvs` (CONCURRENTLY)         | mv_latest_price 1824 · mv_median_7d 141 · mv_cross_source_spread 40                            |
-| `uv run pytest`                                    | **163 passed** (156 prior + 5 mvs + 2 cli refresh-mvs)                                         |
-| `uv run python -c "from pokeprice_api import app"` | app imports, 12 routes registered; `/healthz` has no deps, other routes carry `rate_limit_dep` |
+| `make catalog-seed-sets`                           | 28 sets upserted (all 23 SV + 5 ME)                                                            |
+| `make catalog-bootstrap SET=<code>` × 28           | all 28 sets bootstrapped; 3992 card YMLs written (SV2A 210 + M2A 250 previously, +26 new sets) |
+| `make catalog-seed-cards`                          | 3788 artworks / 4505 prints across 28 sets                                                     |
+| `make catalog-verify`                              | 0 orphans · 0 artworks missing img · 299 missing rarity · 243 missing JA (mostly early SV/M2A Commons) |
+| `make scrape-cardrush ERA=sv` + `ERA=me`           | ~13k Cardrush rows across 28 sets (SV3 needed one retry for 5 rarities that hit DNS flake)     |
+| `make scrape-snkrdunk ERA=<code>` × 28             | ~98k SNKRDUNK rows across 26 sets. 2 sets returned 0 rows: **SV1** (merged into `sv1v` on SNKRDUNK) and **M1** (no listings under `pkmn-tcg-m1-*` product numbers). |
+| `pokeprice-api refresh-mvs` (CONCURRENTLY)         | mv_latest_price 11 183 · mv_median_7d 399 · mv_cross_source_spread 189                          |
+| `uv run pytest`                                    | **163 passed**                                                                                 |
 
 ### 4.2 Data that's already committed
 
-- `data/sets/*.yml` — all 28 SV + ME sets we care about, with `pokellector_slug`
-  filled for the 2 we've bootstrapped (SV2A, M2A). The rest have `pokellector_slug: null`.
-- `data/cards/SV2A/*.yml` — 210 files, full coverage.
-- `data/cards/M2A/*.yml` — 250 files, full metadata except 128 JA names.
+- `data/sets/*.yml` — all 28 SV + ME sets with `pokellector_slug` filled.
+  Two sets renamed to match reality: **M2** `メガディメンション/Mega Dimension` →
+  `インフェルノX/Inferno X`, **SV7A** `パラダイムトリガー (Paradigm Trigger, which
+  is actually S12a SWSH)` → `楽園ドラゴーナ/Paradise Dragona`.
+- `data/cards/{SET}/*.yml` — 3992 files covering all 28 sets. The biggest
+  individual sets are SV4A (360), SV2A (210), M2A (250), SV8A (237),
+  SV11B/SV11W (174 each), SV3 (141), SV8 (138), SV7 (135), SV6 (133),
+  SV9/SV10 (132), M2 (116), SV1/SV1V (108).
 
 ### 4.3 Price data in the DB (post-smoke snapshot)
 
-| Source     | SV2A                 | M2A                    |
-| ---------- | -------------------- | ---------------------- |
-| Cardrush   | 1319 rows / 516 cards | 264 rows / 86 cards    |
-| SNKRDUNK   | 6546 rows / 516 cards | 17647 rows / 249 cards |
-| Total `price_points` | ~25.8k                                        |
+| Aggregate                | Value                                         |
+| ------------------------ | --------------------------------------------- |
+| `price_points` total     | 111 452 rows                                  |
+| Cardrush rows            | ~13 500 (all 28 sets covered)                 |
+| SNKRDUNK rows            | ~98 000 (26 sets; SV1 + M1 empty by design/source) |
+| Sets with both sources   | 26 / 28                                       |
 
-MVs now populated (see §4.1), so `/cards/{id}/prices` and
-`/cards/{id}/spread` return real data for SV2A and M2A.
+Per-set breakdown (sample highlights): SV2A 2606 CR + 13529 SD; M2A 528 + 18198;
+SV8A 381 + 15051; M2 401 + 6465; SV4A 250 + 5109; SV9 493 + 5213; SV1V 228 + 4923.
+The full table is in `docker exec … psql` output and on roadmap §5.
+
+MVs populated across all sets, so `/cards/{id}/prices`, `/cards/{id}/history`,
+and `/cards/{id}/spread` now return real data for the entire SV + ME universe
+(except SV1 and M1 have Cardrush-only prices — no spread rows for those
+two sets yet, since spread requires ≥2 sources).
 
 ---
 
@@ -310,29 +319,55 @@ MVs now populated (see §4.1), so `/cards/{id}/prices` and
 
 ### 5.1 Immediate follow-ups (next session can pick up directly)
 
-1. **Bootstrap the remaining 26 sets.**
+1. **Investigate SNKRDUNK coverage gaps for SV1 and M1.**
 
-- Fill `pokellector_slug` in each `data/sets/{SET}.yml`
-  (slug = URL path after `https://jp.pokellector.com/`, e.g. `Scarlet-ex-Expansion`).
-- Run `make catalog-bootstrap SET=<code>` per set. It's ~1–2 min per set.
-- Then `make catalog-seed-cards` once.
-- Commit the generated YMLs in batches per era block for reviewable diffs.
+- SV1 (Scarlet ex) returned 108/108 `not_found`. Manual probe of
+  `pkmn-tcg-sv1-001` is empty, but `pkmn-tcg-sv1v-001` works. SNKRDUNK
+  appears to list all Scarlet+Violet base-set cards under `SV1V` only;
+  SV1's cards might be addressable via a different product-number prefix
+  (or might simply be unlisted). Low priority — Cardrush still gives 692
+  rows for SV1.
+- M1 (Mega Brave) returned 93/93 `not_found`. M1S works (3064 rows).
+  Probably too recent / not yet indexed on SNKRDUNK; revisit later.
+  Cardrush covers M1 (422 rows).
 
-2. **Backfill missing `name_ja` for M2A Commons.**
+2. **Backfill missing `name_ja`.**
 
+- 243 artworks still lack a Japanese name. Most live in SV4A (88),
+  M2A (128) and a handful spread across early SV sets where Cardrush
+  doesn't list Commons.
 - Option A (preferred): wait for Cardrush to list Commons, re-bootstrap.
-- Option B: hand-fill from scans / the official tracker page, with `# manual: true`.
-- Option C: add SNKRDUNK as a third name_ja source (heavier: needs cookie auth).
+- Option B: hand-fill from scans / the official tracker page, with
+  `# manual: true` on line 1.
+- Option C: add SNKRDUNK as a third name_ja source (heavier: needs cookie
+  auth and a separate scraper path since SNKRDUNK doesn't have per-card
+  JA name in the sales-history endpoint).
 
-3. **Backfill price data for the new sets as they're bootstrapped.**
+3. **Re-run the weakly-covered rarities in SV3.**
 
-- After `catalog-bootstrap` + `catalog-seed-cards` for a new set, run
-  `make scrape-cardrush SET=<code>` and `make scrape-snkrdunk ERA=<code>`
-  to prime `price_points`. The post-scrape hook (§3.6) now handles MV
-  refresh automatically — you don't need a manual step.
-- **Known gotcha:** SNKRDUNK for mega-popular cards can trip the asyncpg
-  32767-query-arg limit when writing a card's full history in one insert
-  (one M2A card hit this on run 7). Low-priority fix: batch
+- The initial `ERA=sv` run hit a transient DNS failure during SV3
+  (5 rarities dropped). A follow-up `make scrape-cardrush SET=SV3`
+  backfilled them (493 new rows), so current state is fine, but future
+  full-era runs should consider adding an auto-retry on DNS / Cloudflare
+  timeouts at the rarity level before moving on. The
+  `pokeprice_cardrush/retry.py` layer already retries transient errors
+  once; bumping that to 2–3 would make a full era run self-healing.
+
+4. **Tracked-listings coverage is uneven between Cardrush and SNKRDUNK.**
+
+- Cardrush finds listings for most prints (often 86–516 cards per set)
+  but only the actively-listed ones have an in-stock `price_points` row.
+- SNKRDUNK resolves ~20–90 apparel IDs per set (you only get rows for
+  cards that have actually been sold on SNKRDUNK). That's expected —
+  SNKRDUNK is sold-comps only.
+- Don't "fix" this by lowering Cardrush's set-disambiguation filter
+  (`listings_dropped_wrong_set`); that filter is doing its job.
+
+5. **Known gotcha (unchanged from prior session):** SNKRDUNK for mega-popular
+  cards can trip the asyncpg 32767-query-arg limit when writing a card's
+  full history in one insert. SV8A and M2A each hit this on 1 card during
+  this seeding pass (`attempted=291 succeeded=290` and `attempted=250
+  succeeded=249` respectively). Low-priority fix: batch
   `insert_price_points` in chunks of, say, 1000 rows.
 
 ### 5.2 Medium-term
