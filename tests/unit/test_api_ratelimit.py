@@ -119,6 +119,9 @@ class _EmptyResult:
     def all(self) -> list[Any]:
         return []
 
+    def scalar_one(self) -> int:
+        return 0
+
     def scalar_one_or_none(self) -> Any:
         return None
 

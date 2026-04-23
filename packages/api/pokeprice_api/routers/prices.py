@@ -11,10 +11,12 @@ endpoint, which is bounded by ``days`` and ``limit``.
 
 from __future__ import annotations
 
+import hashlib
+import json
 from datetime import UTC, datetime, timedelta
-from typing import Annotated
+from typing import Annotated, Any
 
-from fastapi import APIRouter, Depends, HTTPException, Query
+from fastapi import APIRouter, Depends, HTTPException, Query, Request, Response
 from pokeprice_core.catalog import pad_local_id
 from pokeprice_core.models import Card, PricePoint, Set
 from pokeprice_core.schemas import PricePointOut
@@ -31,26 +33,18 @@ router = APIRouter(
 
 SessionDep = Annotated[AsyncSession, Depends(get_session)]
 
+# MV data refreshes only after a scrape run (a few times per day).
+_PRICE_CACHE = "public, max-age=300, stale-while-revalidate=60"
 
-async def _available_variants(
-    session: AsyncSession,
-    *,
-    lang: str,
-    set_code: str,
-    local_id: str,
-) -> list[str]:
-    stmt = (
-        select(Card.variant)
-        .join(Set, Set.set_code == Card.set_code)
-        .where(
-            Set.language == lang,
-            func.upper(Card.set_code) == set_code.upper(),
-            Card.local_id == local_id,
-        )
-        .order_by(Card.variant)
+
+def _compute_etag(data: list[Any]) -> str:
+    """Deterministic ETag from a list of Pydantic models."""
+    payload = json.dumps(
+        [row.model_dump(mode="json") for row in data],
+        sort_keys=True,
+        default=str,
     )
-    rows = (await session.execute(stmt)).all()
-    return [row.variant for row in rows]
+    return f'"{hashlib.sha256(payload.encode()).hexdigest()[:24]}"'
 
 
 async def _resolve_card(
@@ -61,35 +55,38 @@ async def _resolve_card(
     local_id: str,
     variant: str,
 ) -> Card:
-    normalized_local_id = pad_local_id(local_id)
+    """Resolve (lang, set_code, local_id, variant) → Card in a single query.
+
+    Fetches all prints for the artwork in one round-trip, then selects the
+    requested variant in Python.  If the variant is absent but siblings exist
+    the caller gets a 400 with an available-variants hint; if the artwork has
+    no prints at all the caller gets a 404.
+    """
+    normalized = pad_local_id(local_id)
     stmt = (
         select(Card)
         .join(Set, Set.set_code == Card.set_code)
         .where(
             Set.language == lang,
             func.upper(Card.set_code) == set_code.upper(),
-            Card.local_id == normalized_local_id,
-            Card.variant == variant,
+            Card.local_id == normalized,
         )
     )
-    card = (await session.execute(stmt)).scalar_one_or_none()
-    if card is not None:
-        return card
+    cards = (await session.execute(stmt)).scalars().all()
 
-    available = await _available_variants(
-        session,
-        lang=lang,
-        set_code=set_code,
-        local_id=normalized_local_id,
-    )
-    if available:
+    match = next((c for c in cards if c.variant == variant), None)
+    if match is not None:
+        return match
+
+    if cards:
+        available = sorted(c.variant for c in cards)
         raise HTTPException(
             status_code=400,
             detail=f"unknown variant {variant!r}; available variants: {available}",
         )
     raise HTTPException(
         status_code=404,
-        detail=f"card not found: {set_code}/{normalized_local_id}",
+        detail=f"card not found: {set_code}/{normalized}",
     )
 
 
@@ -99,9 +96,14 @@ async def latest_prices(
     set_code: str,
     local_id: str,
     session: SessionDep,
+    request: Request,
+    response: Response,
     variant: str = Query("normal", description="Variant slug (default: normal)"),
-) -> list[LatestPrice]:
-    """Latest observation per (source, condition) for a card, from ``mv_latest_price``."""
+) -> Any:
+    """Latest observation per (source, condition) for a card, from ``mv_latest_price``.
+
+    Supports conditional GET via ``If-None-Match`` / ``ETag``.
+    """
     card = await _resolve_card(
         session,
         lang=lang,
@@ -115,7 +117,14 @@ async def latest_prices(
         "ORDER BY source, condition"
     ).bindparams(bindparam("card_id", type_=None))
     rows = (await session.execute(stmt, {"card_id": card.card_id})).mappings().all()
-    return [LatestPrice.model_validate(dict(r)) for r in rows]
+    data = [LatestPrice.model_validate(dict(r)) for r in rows]
+
+    etag = _compute_etag(data)
+    if request.headers.get("if-none-match") == etag:
+        return Response(status_code=304, headers={"ETag": etag})
+    response.headers["Cache-Control"] = _PRICE_CACHE
+    response.headers["ETag"] = etag
+    return data
 
 
 @router.get("/history", response_model=list[PricePointOut])
@@ -124,11 +133,13 @@ async def price_history(
     set_code: str,
     local_id: str,
     session: SessionDep,
+    response: Response,
     variant: str = Query("normal", description="Variant slug (default: normal)"),
     days: int = Query(30, ge=1, le=365, description="Look back this many days"),
     source: str | None = Query(None, description="Filter by source (cardrush|snkrdunk)"),
     condition: str | None = Query(None, description="Filter by condition short-code"),
     limit: int = Query(500, ge=1, le=5000),
+    offset: int = Query(0, ge=0, description="Pagination offset"),
 ) -> list[PricePoint]:
     """Raw price_points for a card over the last ``days`` days, newest first."""
     card = await _resolve_card(
@@ -147,12 +158,15 @@ async def price_history(
         )
         .order_by(PricePoint.observed_at.desc())
         .limit(limit)
+        .offset(offset)
     )
     if source is not None:
         stmt = stmt.where(PricePoint.source == source)
     if condition is not None:
         stmt = stmt.where(PricePoint.condition == condition)
     result = await session.execute(stmt)
+    # Raw time-windowed data: never cache.
+    response.headers["Cache-Control"] = "no-store"
     return list(result.scalars().all())
 
 
@@ -162,9 +176,14 @@ async def cross_source_spread(
     set_code: str,
     local_id: str,
     session: SessionDep,
+    request: Request,
+    response: Response,
     variant: str = Query("normal", description="Variant slug (default: normal)"),
-) -> list[SpreadRow]:
-    """Cardrush-floor vs SNKRDUNK-median-7d spread per condition, from MV."""
+) -> Any:
+    """Cardrush-floor vs SNKRDUNK-median-7d spread per condition, from MV.
+
+    Supports conditional GET via ``If-None-Match`` / ``ETag``.
+    """
     card = await _resolve_card(
         session,
         lang=lang,
@@ -179,4 +198,11 @@ async def cross_source_spread(
         "ORDER BY condition"
     )
     rows = (await session.execute(stmt, {"card_id": card.card_id})).mappings().all()
-    return [SpreadRow.model_validate(dict(r)) for r in rows]
+    data = [SpreadRow.model_validate(dict(r)) for r in rows]
+
+    etag = _compute_etag(data)
+    if request.headers.get("if-none-match") == etag:
+        return Response(status_code=304, headers={"ETag": etag})
+    response.headers["Cache-Control"] = _PRICE_CACHE
+    response.headers["ETag"] = etag
+    return data

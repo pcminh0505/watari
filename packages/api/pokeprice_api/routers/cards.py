@@ -5,7 +5,7 @@ from __future__ import annotations
 from collections import defaultdict
 from typing import Annotated, Any
 
-from fastapi import APIRouter, Depends, HTTPException, Query
+from fastapi import APIRouter, Depends, HTTPException, Query, Response
 from pokeprice_core.catalog import pad_local_id
 from pokeprice_core.models import Artwork, Card, Set
 from sqlalchemy import func, select
@@ -17,6 +17,9 @@ from pokeprice_api.schemas import ArtworkDetail, VariantRef
 router = APIRouter(tags=["cards"])
 
 SessionDep = Annotated[AsyncSession, Depends(get_session)]
+
+# Catalog data changes only on explicit operator reseed.
+_CATALOG_CACHE = "public, max-age=3600, stale-while-revalidate=300"
 
 
 def _artwork_columns() -> tuple[Any, ...]:
@@ -48,14 +51,18 @@ async def list_cards_for_set(
     lang: str,
     set_code: str,
     session: SessionDep,
+    response: Response,
     variant: str | None = Query(None, description="Filter by variant slug"),
     rarity: str | None = Query(None, description="Filter by rarity_code (e.g. 'SAR')"),
     tracked_only: bool = Query(True, description="Only return is_tracked=True prints"),
+    limit: int = Query(100, ge=1, le=500, description="Max artworks per page"),
+    offset: int = Query(0, ge=0, description="Pagination offset"),
 ) -> list[ArtworkDetail]:
     """List artworks in a set with nested variant refs.
 
-    Matches ``set_code`` case-insensitively. Returned ordered by ``local_id``
-    for a stable shape.
+    Matches ``set_code`` case-insensitively.  Results are ordered by
+    ``local_id``.  ``X-Total-Count`` carries the total artwork count for the
+    given filters so clients can paginate.
     """
     # Validate the set exists to give a clean 404 instead of an empty list.
     exists_stmt = select(Set.set_code).where(
@@ -66,23 +73,37 @@ async def list_cards_for_set(
     if exists is None:
         raise HTTPException(status_code=404, detail=f"set not found: {set_code!r}")
 
-    stmt = (
-        select(*_artwork_columns())
-        .join(Card, Card.artwork_id == Artwork.artwork_id)
-        .join(Set, Set.set_code == Artwork.set_code)
-        .where(
+    # Base filter shared by the count query and the data query.
+    def _apply_filters(stmt: Any) -> Any:
+        stmt = stmt.where(
             Set.language == lang,
             func.upper(Artwork.set_code) == set_code.upper(),
         )
-        .order_by(Artwork.local_id)
-    )
-    if variant is not None:
-        stmt = stmt.where(Card.variant == variant)
-    if rarity is not None:
-        stmt = stmt.where(Artwork.rarity_code == rarity)
-    if tracked_only:
-        stmt = stmt.where(Card.is_tracked.is_(True))
+        if variant is not None:
+            stmt = stmt.where(Card.variant == variant)
+        if rarity is not None:
+            stmt = stmt.where(Artwork.rarity_code == rarity)
+        if tracked_only:
+            stmt = stmt.where(Card.is_tracked.is_(True))
+        return stmt
 
+    count_stmt = _apply_filters(
+        select(func.count(func.distinct(Artwork.artwork_id)))
+        .join(Card, Card.artwork_id == Artwork.artwork_id)
+        .join(Set, Set.set_code == Artwork.set_code)
+    )
+    total: int = (await session.execute(count_stmt)).scalar_one()
+    response.headers["X-Total-Count"] = str(total)
+    response.headers["Cache-Control"] = _CATALOG_CACHE
+
+    stmt = _apply_filters(
+        select(*_artwork_columns())
+        .join(Card, Card.artwork_id == Artwork.artwork_id)
+        .join(Set, Set.set_code == Artwork.set_code)
+        .order_by(Artwork.local_id)
+        .distinct()
+    )
+    stmt = stmt.limit(limit).offset(offset)
     artwork_rows = (await session.execute(stmt)).all()
     if not artwork_rows:
         return []
@@ -130,6 +151,7 @@ async def get_card(
     set_code: str,
     local_id: str,
     session: SessionDep,
+    response: Response,
 ) -> ArtworkDetail:
     """Fetch an artwork by set/local ID with all variants."""
     local_id = pad_local_id(local_id)
@@ -166,4 +188,5 @@ async def get_card(
         ],
         key=lambda v: _variant_sort_key(v.variant),
     )
+    response.headers["Cache-Control"] = _CATALOG_CACHE
     return _row_to_artwork_detail(row, variants)
