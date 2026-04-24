@@ -1,0 +1,97 @@
+name: Scheduled scrapers
+on:
+  schedule:
+    # Cardrush: 09:00 + 17:00 JST (= 00:00 + 08:00 UTC)
+    - cron: "0 0,8 * * *"
+    # SNKRDUNK: 03:00 JST (= 18:00 UTC previous day)
+    - cron: "0 18 * * *"
+  workflow_dispatch:
+    inputs:
+      job:
+        description: "cardrush-sv | cardrush-me | snkrdunk"
+        required: true
+
+jobs:
+  cardrush-sv:
+    if: >
+      (github.event_name == 'schedule' && contains(github.event.schedule, '0 0,8')) ||
+      (github.event_name == 'workflow_dispatch' && inputs.job == 'cardrush-sv')
+    runs-on: ubuntu-latest
+    steps:
+      - uses: superfly/flyctl-actions/setup-flyctl@master
+      - run: |
+          fly machine run registry.fly.io/watari-api:latest \
+            --app watari-api \
+            --command "uv run python -m watari_cardrush --era SV" \
+            --auto-destroy \
+            --vm-size shared-cpu-2x \
+            --region nrt \
+            --wait-timeout 1800
+        env:
+          FLY_API_TOKEN: ${{ secrets.FLY_API_TOKEN }}
+
+  cardrush-me:
+    if: >
+      (github.event_name == 'schedule' && contains(github.event.schedule, '0 0,8')) ||
+      (github.event_name == 'workflow_dispatch' && inputs.job == 'cardrush-me')
+    runs-on: ubuntu-latest
+    steps:
+      - uses: superfly/flyctl-actions/setup-flyctl@master
+      - run: |
+          fly machine run registry.fly.io/watari-api:latest \
+            --app watari-api \
+            --command "uv run python -m watari_cardrush --era ME" \
+            --auto-destroy \
+            --vm-size shared-cpu-2x \
+            --region nrt \
+            --wait-timeout 1800
+        env:
+          FLY_API_TOKEN: ${{ secrets.FLY_API_TOKEN }}
+
+  snkrdunk:
+    if: >
+      (github.event_name == 'schedule' && contains(github.event.schedule, '0 18')) ||
+      (github.event_name == 'workflow_dispatch' && inputs.job == 'snkrdunk')
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      max-parallel: 5
+      matrix:
+        era:
+          - sv1v
+          - sv2
+          - sv2a
+          - sv3
+          - sv3pt5
+          - sv4
+          - sv4pt5
+          - sv5
+          - sv6
+          - sv6a
+          - sv7
+          - sv7a
+          - sv8
+          - sv8a
+          - sv9
+          - sv9ex
+          - sv10
+          - sv10a
+          - sv11b
+          - sv11w
+          - sv12
+          - m1l
+          - m1s
+          - m2
+          - m2a
+    steps:
+      - uses: superfly/flyctl-actions/setup-flyctl@master
+      - run: |
+          fly machine run registry.fly.io/watari-api:latest \
+            --app watari-api \
+            --command "uv run python -m watari_snkrdunk --era ${{ matrix.era }}" \
+            --auto-destroy \
+            --vm-size shared-cpu-1x \
+            --region nrt \
+            --wait-timeout 600
+        env:
+          FLY_API_TOKEN: ${{ secrets.FLY_API_TOKEN }}
