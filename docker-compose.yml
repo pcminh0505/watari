@@ -6,11 +6,11 @@ services:
       POSTGRES_PASSWORD: watari
       POSTGRES_DB: watari
     ports:
-      - "5433:5432"
+      - "5432:5432"
     volumes:
       - pg-data:/var/lib/postgresql/data
     healthcheck:
-      test: ["CMD-SHELL", "pg_isready -U watari"]
+      test: [ "CMD-SHELL", "pg_isready -U watari" ]
       interval: 5s
       timeout: 5s
       retries: 5
@@ -27,7 +27,7 @@ services:
     volumes:
       - minio-data:/data
     healthcheck:
-      test: ["CMD", "curl", "-f", "http://localhost:9000/minio/health/live"]
+      test: [ "CMD", "curl", "-f", "http://localhost:9000/minio/health/live" ]
       interval: 10s
       timeout: 5s
       retries: 3
@@ -37,7 +37,7 @@ services:
     ports:
       - "6379:6379"
     healthcheck:
-      test: ["CMD", "redis-cli", "ping"]
+      test: [ "CMD", "redis-cli", "ping" ]
       interval: 5s
       timeout: 5s
       retries: 3
