@@ -29,7 +29,7 @@ class Settings(BaseSettings):
         clean_params = {
             k: vals
             for k, vals in parse_qs(parsed.query, keep_blank_values=True).items()
-            if k not in ("ssl", "sslmode")
+            if k not in ("ssl", "sslmode", "channel_binding")
         }
         new_query = urlencode({k: vals[0] for k, vals in clean_params.items()})
         return urlunparse(parsed._replace(query=new_query))
