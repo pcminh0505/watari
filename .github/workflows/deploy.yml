@@ -32,7 +32,7 @@ jobs:
           flyctl machine run registry.fly.io/watari-api:latest \
             --app watari-api \
             --command "uv run alembic upgrade head" \
-            --auto-destroy \
+            --rm \
             --region sin \
             --wait-timeout 120
         env:

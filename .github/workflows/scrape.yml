@@ -23,7 +23,7 @@ jobs:
           flyctl machine run registry.fly.io/watari-api:latest \
             --app watari-api \
             --command "uv run python -m watari_cardrush --era SV" \
-            --auto-destroy \
+            --rm \
             --vm-size shared-cpu-2x \
             --region sin \
             --wait-timeout 1800
@@ -41,7 +41,7 @@ jobs:
           flyctl machine run registry.fly.io/watari-api:latest \
             --app watari-api \
             --command "uv run python -m watari_cardrush --era ME" \
-            --auto-destroy \
+            --rm \
             --vm-size shared-cpu-2x \
             --region sin \
             --wait-timeout 1800
@@ -89,7 +89,7 @@ jobs:
           flyctl machine run registry.fly.io/watari-api:latest \
             --app watari-api \
             --command "uv run python -m watari_snkrdunk --era ${{ matrix.era }}" \
-            --auto-destroy \
+            --rm \
             --vm-size shared-cpu-1x \
             --region sin \
             --wait-timeout 600
