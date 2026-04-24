@@ -1,5 +1,6 @@
 """Application settings via pydantic-settings, reads .env."""
 
+from pydantic import field_validator
 from pydantic_settings import BaseSettings, SettingsConfigDict
 
 
@@ -8,6 +9,17 @@ class Settings(BaseSettings):
 
     # Infrastructure
     database_url: str = "postgresql+asyncpg://watari:watari@localhost:5433/watari"
+
+    @field_validator("database_url", mode="before")
+    @classmethod
+    def normalise_database_url(cls, v: str) -> str:
+        # Fly.io pg attach sets DATABASE_URL as postgres:// or postgresql://
+        # SQLAlchemy asyncpg requires postgresql+asyncpg://
+        if v.startswith("postgres://"):
+            return v.replace("postgres://", "postgresql+asyncpg://", 1)
+        if v.startswith("postgresql://"):
+            return v.replace("postgresql://", "postgresql+asyncpg://", 1)
+        return v
     redis_url: str = "redis://localhost:6379/0"
     s3_endpoint_url: str = "http://localhost:9000"
     s3_bucket_bronze: str = "watari-bronze"

@@ -11,6 +11,9 @@ COPY pyproject.toml uv.lock ./
 COPY packages/ packages/
 RUN uv sync --all-packages --no-dev --frozen
 
+COPY alembic.ini ./
+COPY migrations/ migrations/
+
 # Default: run the API
 ENV PORT=8000
 CMD ["uv", "run", "watari-api", "serve", "--host", "0.0.0.0", "--port", "8000"]
