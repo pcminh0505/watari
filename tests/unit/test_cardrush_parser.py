@@ -4,13 +4,13 @@ from __future__ import annotations
 
 from datetime import UTC, datetime
 
-from pokeprice_cardrush.parser import (
+from watari_cardrush.parser import (
     ListingRow,
     listing_row_to_price_point,
     parse_listing_rows,
 )
-from pokeprice_core.conditions import Condition
-from pokeprice_core.models import SourceEnum, SourceTypeEnum
+from watari_core.conditions import Condition
+from watari_core.models import SourceEnum, SourceTypeEnum
 
 SAMPLE_HTML = """
 <div class="item_data">

@@ -1,13 +1,13 @@
-"""Unit tests for pokeprice_snkrdunk.parser and dates (no network)."""
+"""Unit tests for watari_snkrdunk.parser and dates (no network)."""
 
 from __future__ import annotations
 
 from datetime import UTC, datetime, timedelta, timezone
 
-from pokeprice_core.conditions import Condition
-from pokeprice_core.models import SourceEnum, SourceTypeEnum
-from pokeprice_snkrdunk.dates import parse_snkrdunk_date
-from pokeprice_snkrdunk.parser import parse_sales_history
+from watari_core.conditions import Condition
+from watari_core.models import SourceEnum, SourceTypeEnum
+from watari_snkrdunk.dates import parse_snkrdunk_date
+from watari_snkrdunk.parser import parse_sales_history
 
 JST = timezone(timedelta(hours=9))
 

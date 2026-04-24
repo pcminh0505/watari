@@ -225,7 +225,7 @@ One-shot script that fills `packages/catalog/data/cards/{set}/*.yml` from all th
 Implementation slot:
 
 ```
-packages/catalog/pokeprice_catalog/
+packages/catalog/watari_catalog/
 ├── bootstrap/
 │   ├── __init__.py
 │   ├── pokellector_client.py    # new: plain httpx, no curl_cffi
@@ -252,13 +252,13 @@ Replaces the existing multi-stage enrichment. Network-free after bootstrap.
 
 ```bash
 # One-time per-set bootstrap (generates YML, commits to git):
-uv run python -m pokeprice_catalog bootstrap-set --set SV2A
+uv run python -m watari_catalog bootstrap-set --set SV2A
 # ...review diff, commit...
 
 # Runtime build of the DB (idempotent, no network):
-uv run python -m pokeprice_catalog seed-sets          # sets/*.yml → sets table
-uv run python -m pokeprice_catalog seed-cards          # cards/*.yml → artworks + cards
-uv run python -m pokeprice_catalog verify
+uv run python -m watari_catalog seed-sets          # sets/*.yml → sets table
+uv run python -m watari_catalog seed-cards          # cards/*.yml → artworks + cards
+uv run python -m watari_catalog verify
 ```
 
 `seed-cards` reads the YML tree top-down:

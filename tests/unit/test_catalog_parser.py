@@ -1,6 +1,6 @@
 """Unit tests for the Cardrush product-name parser."""
 
-from pokeprice_catalog.parser import parse_cardrush_product_name
+from watari_catalog.parser import parse_cardrush_product_name
 
 
 class TestParseCardrushProductName:

@@ -6,4 +6,4 @@ def test_smoke():
 
 
 def test_import_core():
-    import pokeprice_core  # noqa: F401
+    import watari_core  # noqa: F401

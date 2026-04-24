@@ -8,14 +8,14 @@ resolution-markers = [
 
 [manifest]
 members = [
-    "pokeprice",
-    "pokeprice-api",
-    "pokeprice-cardrush",
-    "pokeprice-catalog",
-    "pokeprice-core",
-    "pokeprice-dispatcher",
-    "pokeprice-scheduler",
-    "pokeprice-snkrdunk",
+    "watari",
+    "watari-api",
+    "watari-cardrush",
+    "watari-catalog",
+    "watari-core",
+    "watari-dispatcher",
+    "watari-scheduler",
+    "watari-snkrdunk",
 ]
 
 [[package]]
@@ -917,186 +917,6 @@ wheels = [
 ]
 
 [[package]]
-name = "pokeprice"
-version = "0.1.0"
-source = { virtual = "." }
-dependencies = [
-    { name = "pokeprice-api" },
-    { name = "pokeprice-cardrush" },
-    { name = "pokeprice-catalog" },
-    { name = "pokeprice-core" },
-    { name = "pokeprice-dispatcher" },
-    { name = "pokeprice-scheduler" },
-    { name = "pokeprice-snkrdunk" },
-]
-
-[package.dev-dependencies]
-dev = [
-    { name = "httpx" },
-    { name = "mypy" },
-    { name = "pre-commit" },
-    { name = "pytest" },
-    { name = "pytest-asyncio" },
-    { name = "pytest-cov" },
-    { name = "ruff" },
-    { name = "types-pyyaml" },
-    { name = "vulture" },
-]
-
-[package.metadata]
-requires-dist = [
-    { name = "pokeprice-api", editable = "packages/api" },
-    { name = "pokeprice-cardrush", editable = "packages/scraper_cardrush" },
-    { name = "pokeprice-catalog", editable = "packages/catalog" },
-    { name = "pokeprice-core", editable = "packages/core" },
-    { name = "pokeprice-dispatcher", editable = "packages/dispatcher" },
-    { name = "pokeprice-scheduler", editable = "packages/scheduler" },
-    { name = "pokeprice-snkrdunk", editable = "packages/scraper_snkrdunk" },
-]
-
-[package.metadata.requires-dev]
-dev = [
-    { name = "httpx", specifier = ">=0.27" },
-    { name = "mypy", specifier = ">=1.13" },
-    { name = "pre-commit", specifier = ">=4.0" },
-    { name = "pytest", specifier = ">=8.0" },
-    { name = "pytest-asyncio", specifier = ">=0.24" },
-    { name = "pytest-cov", specifier = ">=6.0" },
-    { name = "ruff", specifier = ">=0.8" },
-    { name = "types-pyyaml", specifier = ">=6.0.12.20260408" },
-    { name = "vulture", specifier = ">=2.16" },
-]
-
-[[package]]
-name = "pokeprice-api"
-version = "0.1.0"
-source = { editable = "packages/api" }
-dependencies = [
-    { name = "fastapi" },
-    { name = "pokeprice-core" },
-    { name = "redis" },
-    { name = "uvicorn", extra = ["standard"] },
-]
-
-[package.metadata]
-requires-dist = [
-    { name = "fastapi", specifier = ">=0.115" },
-    { name = "pokeprice-core", editable = "packages/core" },
-    { name = "redis", specifier = ">=5.0" },
-    { name = "uvicorn", extras = ["standard"], specifier = ">=0.32" },
-]
-
-[[package]]
-name = "pokeprice-cardrush"
-version = "0.2.0"
-source = { editable = "packages/scraper_cardrush" }
-dependencies = [
-    { name = "beautifulsoup4" },
-    { name = "curl-cffi" },
-    { name = "lxml" },
-    { name = "pokeprice-catalog" },
-    { name = "pokeprice-core" },
-]
-
-[package.metadata]
-requires-dist = [
-    { name = "beautifulsoup4", specifier = ">=4.12" },
-    { name = "curl-cffi", specifier = ">=0.7" },
-    { name = "lxml", specifier = ">=5.0" },
-    { name = "pokeprice-catalog", editable = "packages/catalog" },
-    { name = "pokeprice-core", editable = "packages/core" },
-]
-
-[[package]]
-name = "pokeprice-catalog"
-version = "0.1.0"
-source = { editable = "packages/catalog" }
-dependencies = [
-    { name = "beautifulsoup4" },
-    { name = "curl-cffi" },
-    { name = "httpx" },
-    { name = "lxml" },
-    { name = "pokeprice-core" },
-    { name = "pyyaml" },
-    { name = "ruamel-yaml" },
-]
-
-[package.metadata]
-requires-dist = [
-    { name = "beautifulsoup4", specifier = ">=4.12" },
-    { name = "curl-cffi", specifier = ">=0.7" },
-    { name = "httpx", specifier = ">=0.27" },
-    { name = "lxml", specifier = ">=5.0" },
-    { name = "pokeprice-core", editable = "packages/core" },
-    { name = "pyyaml", specifier = ">=6.0" },
-    { name = "ruamel-yaml", specifier = ">=0.18" },
-]
-
-[[package]]
-name = "pokeprice-core"
-version = "0.1.0"
-source = { editable = "packages/core" }
-dependencies = [
-    { name = "alembic" },
-    { name = "argon2-cffi" },
-    { name = "asyncpg" },
-    { name = "boto3" },
-    { name = "psycopg2-binary" },
-    { name = "pydantic" },
-    { name = "pydantic-settings" },
-    { name = "sqlalchemy", extra = ["asyncio"] },
-]
-
-[package.metadata]
-requires-dist = [
-    { name = "alembic", specifier = ">=1.14" },
-    { name = "argon2-cffi", specifier = ">=23.1" },
-    { name = "asyncpg", specifier = ">=0.30" },
-    { name = "boto3", specifier = ">=1.35" },
-    { name = "psycopg2-binary", specifier = ">=2.9" },
-    { name = "pydantic", specifier = ">=2.0" },
-    { name = "pydantic-settings", specifier = ">=2.0" },
-    { name = "sqlalchemy", extras = ["asyncio"], specifier = ">=2.0" },
-]
-
-[[package]]
-name = "pokeprice-dispatcher"
-version = "0.1.0"
-source = { editable = "packages/dispatcher" }
-dependencies = [
-    { name = "pokeprice-core" },
-]
-
-[package.metadata]
-requires-dist = [{ name = "pokeprice-core", editable = "packages/core" }]
-
-[[package]]
-name = "pokeprice-scheduler"
-version = "0.1.0"
-source = { editable = "packages/scheduler" }
-dependencies = [
-    { name = "pokeprice-core" },
-]
-
-[package.metadata]
-requires-dist = [{ name = "pokeprice-core", editable = "packages/core" }]
-
-[[package]]
-name = "pokeprice-snkrdunk"
-version = "0.1.0"
-source = { editable = "packages/scraper_snkrdunk" }
-dependencies = [
-    { name = "httpx" },
-    { name = "pokeprice-core" },
-]
-
-[package.metadata]
-requires-dist = [
-    { name = "httpx", specifier = ">=0.27" },
-    { name = "pokeprice-core", editable = "packages/core" },
-]
-
-[[package]]
 name = "pre-commit"
 version = "4.5.1"
 source = { registry = "https://pypi.org/simple" }
@@ -1665,6 +1485,186 @@ source = { registry = "https://pypi.org/simple" }
 sdist = { url = "https://files.pythonhosted.org/packages/66/3e/4d08c5903b2c0c70cad583c170cc4a663fc6a61e2ad00b711fcda61358cd/vulture-2.16.tar.gz", hash = "sha256:f8d9f6e2af03011664a3c6c240c9765b3f392917d3135fddca6d6a68d359f717", size = 52680, upload-time = "2026-03-25T14:41:27.141Z" }
 wheels = [
     { url = "https://files.pythonhosted.org/packages/f5/be/f935130312330614811dae2ea9df3f395f6d63889eb6c2e68c14507152ee/vulture-2.16-py3-none-any.whl", hash = "sha256:6e0f1c312cef1c87856957e5c2ca9608834a7c794c2180477f30bf0e4cc58eee", size = 26993, upload-time = "2026-03-25T14:41:26.21Z" },
+]
+
+[[package]]
+name = "watari"
+version = "0.1.0"
+source = { virtual = "." }
+dependencies = [
+    { name = "watari-api" },
+    { name = "watari-cardrush" },
+    { name = "watari-catalog" },
+    { name = "watari-core" },
+    { name = "watari-dispatcher" },
+    { name = "watari-scheduler" },
+    { name = "watari-snkrdunk" },
+]
+
+[package.dev-dependencies]
+dev = [
+    { name = "httpx" },
+    { name = "mypy" },
+    { name = "pre-commit" },
+    { name = "pytest" },
+    { name = "pytest-asyncio" },
+    { name = "pytest-cov" },
+    { name = "ruff" },
+    { name = "types-pyyaml" },
+    { name = "vulture" },
+]
+
+[package.metadata]
+requires-dist = [
+    { name = "watari-api", editable = "packages/api" },
+    { name = "watari-cardrush", editable = "packages/scraper_cardrush" },
+    { name = "watari-catalog", editable = "packages/catalog" },
+    { name = "watari-core", editable = "packages/core" },
+    { name = "watari-dispatcher", editable = "packages/dispatcher" },
+    { name = "watari-scheduler", editable = "packages/scheduler" },
+    { name = "watari-snkrdunk", editable = "packages/scraper_snkrdunk" },
+]
+
+[package.metadata.requires-dev]
+dev = [
+    { name = "httpx", specifier = ">=0.27" },
+    { name = "mypy", specifier = ">=1.13" },
+    { name = "pre-commit", specifier = ">=4.0" },
+    { name = "pytest", specifier = ">=8.0" },
+    { name = "pytest-asyncio", specifier = ">=0.24" },
+    { name = "pytest-cov", specifier = ">=6.0" },
+    { name = "ruff", specifier = ">=0.8" },
+    { name = "types-pyyaml", specifier = ">=6.0.12.20260408" },
+    { name = "vulture", specifier = ">=2.16" },
+]
+
+[[package]]
+name = "watari-api"
+version = "0.1.0"
+source = { editable = "packages/api" }
+dependencies = [
+    { name = "fastapi" },
+    { name = "redis" },
+    { name = "uvicorn", extra = ["standard"] },
+    { name = "watari-core" },
+]
+
+[package.metadata]
+requires-dist = [
+    { name = "fastapi", specifier = ">=0.115" },
+    { name = "redis", specifier = ">=5.0" },
+    { name = "uvicorn", extras = ["standard"], specifier = ">=0.32" },
+    { name = "watari-core", editable = "packages/core" },
+]
+
+[[package]]
+name = "watari-cardrush"
+version = "0.2.0"
+source = { editable = "packages/scraper_cardrush" }
+dependencies = [
+    { name = "beautifulsoup4" },
+    { name = "curl-cffi" },
+    { name = "lxml" },
+    { name = "watari-catalog" },
+    { name = "watari-core" },
+]
+
+[package.metadata]
+requires-dist = [
+    { name = "beautifulsoup4", specifier = ">=4.12" },
+    { name = "curl-cffi", specifier = ">=0.7" },
+    { name = "lxml", specifier = ">=5.0" },
+    { name = "watari-catalog", editable = "packages/catalog" },
+    { name = "watari-core", editable = "packages/core" },
+]
+
+[[package]]
+name = "watari-catalog"
+version = "0.1.0"
+source = { editable = "packages/catalog" }
+dependencies = [
+    { name = "beautifulsoup4" },
+    { name = "curl-cffi" },
+    { name = "httpx" },
+    { name = "lxml" },
+    { name = "pyyaml" },
+    { name = "ruamel-yaml" },
+    { name = "watari-core" },
+]
+
+[package.metadata]
+requires-dist = [
+    { name = "beautifulsoup4", specifier = ">=4.12" },
+    { name = "curl-cffi", specifier = ">=0.7" },
+    { name = "httpx", specifier = ">=0.27" },
+    { name = "lxml", specifier = ">=5.0" },
+    { name = "pyyaml", specifier = ">=6.0" },
+    { name = "ruamel-yaml", specifier = ">=0.18" },
+    { name = "watari-core", editable = "packages/core" },
+]
+
+[[package]]
+name = "watari-core"
+version = "0.1.0"
+source = { editable = "packages/core" }
+dependencies = [
+    { name = "alembic" },
+    { name = "argon2-cffi" },
+    { name = "asyncpg" },
+    { name = "boto3" },
+    { name = "psycopg2-binary" },
+    { name = "pydantic" },
+    { name = "pydantic-settings" },
+    { name = "sqlalchemy", extra = ["asyncio"] },
+]
+
+[package.metadata]
+requires-dist = [
+    { name = "alembic", specifier = ">=1.14" },
+    { name = "argon2-cffi", specifier = ">=23.1" },
+    { name = "asyncpg", specifier = ">=0.30" },
+    { name = "boto3", specifier = ">=1.35" },
+    { name = "psycopg2-binary", specifier = ">=2.9" },
+    { name = "pydantic", specifier = ">=2.0" },
+    { name = "pydantic-settings", specifier = ">=2.0" },
+    { name = "sqlalchemy", extras = ["asyncio"], specifier = ">=2.0" },
+]
+
+[[package]]
+name = "watari-dispatcher"
+version = "0.1.0"
+source = { editable = "packages/dispatcher" }
+dependencies = [
+    { name = "watari-core" },
+]
+
+[package.metadata]
+requires-dist = [{ name = "watari-core", editable = "packages/core" }]
+
+[[package]]
+name = "watari-scheduler"
+version = "0.1.0"
+source = { editable = "packages/scheduler" }
+dependencies = [
+    { name = "watari-core" },
+]
+
+[package.metadata]
+requires-dist = [{ name = "watari-core", editable = "packages/core" }]
+
+[[package]]
+name = "watari-snkrdunk"
+version = "0.1.0"
+source = { editable = "packages/scraper_snkrdunk" }
+dependencies = [
+    { name = "httpx" },
+    { name = "watari-core" },
+]
+
+[package.metadata]
+requires-dist = [
+    { name = "httpx", specifier = ">=0.27" },
+    { name = "watari-core", editable = "packages/core" },
 ]
 
 [[package]]

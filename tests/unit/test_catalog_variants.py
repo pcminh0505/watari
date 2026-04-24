@@ -1,6 +1,6 @@
 """Unit tests for variant slug detection."""
 
-from pokeprice_catalog.variants import detect_variant_from_cardrush_name
+from watari_catalog.variants import detect_variant_from_cardrush_name
 
 
 class TestDetectVariant:

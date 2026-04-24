@@ -3,7 +3,7 @@
 from __future__ import annotations
 
 import pytest
-from pokeprice_cardrush.retry import TransientError, with_retry
+from watari_cardrush.retry import TransientError, with_retry
 
 
 class TestWithRetry:

@@ -16,7 +16,7 @@ from __future__ import annotations
 from typing import Any
 
 import pytest
-from pokeprice_api import cli
+from watari_api import cli
 
 
 def test_parser_accepts_legacy_top_level_flags() -> None:
@@ -107,7 +107,7 @@ def test_main_defaults_to_serve_and_calls_uvicorn(monkeypatch) -> None:  # type:
 
     cli.main(["--host", "127.0.0.1", "--port", "9100"])
 
-    assert captured["app"] == "pokeprice_api.main:app"
+    assert captured["app"] == "watari_api.main:app"
     assert captured["host"] == "127.0.0.1"
     assert captured["port"] == 9100
     assert captured["reload"] is False

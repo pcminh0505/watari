@@ -1,4 +1,4 @@
-"""Unit tests for small pure helpers in ``pokeprice_catalog.bootstrap``.
+"""Unit tests for small pure helpers in ``watari_catalog.bootstrap``.
 
 Keeps the live pipeline untested (needs network), but anchors the
 behaviour we care about for YML quality: variant-suffix stripping and
@@ -7,7 +7,7 @@ category inference.
 
 from __future__ import annotations
 
-from pokeprice_catalog.bootstrap import (
+from watari_catalog.bootstrap import (
     TcgdexCardMeta,
     _infer_category,
     _strip_variant_suffix_ja,

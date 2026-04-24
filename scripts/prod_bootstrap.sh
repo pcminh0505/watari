@@ -3,7 +3,7 @@ set -euo pipefail
 
 if [[ "${CONFIRM:-}" != "yes" ]]; then
   echo "Refusing to run without CONFIRM=yes (destructive bootstrap flow)."
-  echo "Usage: CONFIRM=yes DUMP_FILE=/abs/path/to/pokeprice-data-<UTC>.sql[.gz] ./scripts/prod_bootstrap.sh"
+  echo "Usage: CONFIRM=yes DUMP_FILE=/abs/path/to/watari-data-<UTC>.sql[.gz] ./scripts/prod_bootstrap.sh"
   exit 1
 fi
 
@@ -29,7 +29,7 @@ cleanup() {
 trap cleanup EXIT
 
 if [[ "${DUMP_FILE}" == *.gz ]]; then
-  TMP_SQL="$(mktemp -t pokeprice-restore-XXXXXX.sql)"
+  TMP_SQL="$(mktemp -t watari-restore-XXXXXX.sql)"
   echo "[bootstrap] Decompressing ${DUMP_FILE} -> ${TMP_SQL}"
   gzip -dc "${DUMP_FILE}" > "${TMP_SQL}"
   RESTORE_FILE="${TMP_SQL}"
@@ -53,6 +53,6 @@ echo "[bootstrap] Restoring data dump into configured DATABASE_URL"
 psql "${DATABASE_URL}" -f "${RESTORE_FILE}"
 
 echo "[bootstrap] Refreshing materialized views"
-uv run pokeprice-api refresh-mvs
+uv run watari-api refresh-mvs
 
 echo "[bootstrap] Done."

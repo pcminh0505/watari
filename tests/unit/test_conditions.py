@@ -1,6 +1,6 @@
 """Unit tests for condition parsing — ≥15 cases covering all edge cases from §D."""
 
-from pokeprice_core.conditions import (
+from watari_core.conditions import (
     Condition,
     parse_cardrush_condition,
     parse_snkrdunk_condition,

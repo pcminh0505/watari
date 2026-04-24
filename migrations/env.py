@@ -17,8 +17,8 @@ if config.config_file_name is not None:
     fileConfig(config.config_file_name)
 
 # Import Base and all models so autogenerate can detect them
-from pokeprice_core.db import Base
-from pokeprice_core.models import (  # noqa: F401
+from watari_core.db import Base
+from watari_core.models import (  # noqa: F401
     ApiKey,
     Artwork,
     Card,

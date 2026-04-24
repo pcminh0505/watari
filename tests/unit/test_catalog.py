@@ -1,7 +1,7 @@
 """Unit tests for card_id / artwork_id generation and parsing."""
 
 import pytest
-from pokeprice_core.catalog import (
+from watari_core.catalog import (
     artwork_id_for_card,
     make_artwork_id,
     make_card_id,

@@ -95,7 +95,7 @@ The product name also carries `【{tag}】`. Keep rows where the tag matches the
 
 ## Parser responsibilities
 
-Reuses `packages/catalog/pokeprice_catalog/parser.py` grammar (authoritative). The scraper-side parser additionally extracts:
+Reuses `packages/catalog/watari_catalog/parser.py` grammar (authoritative). The scraper-side parser additionally extracts:
 
 | Input                                       | Field            | Mapping |
 |---------------------------------------------|------------------|---------|
@@ -123,7 +123,7 @@ async def find_card_id(
 
 Misses are bucketed and reported at end-of-run. Expected miss rate: < 1 % (mostly typos, promo oddities, or genuinely new cards the catalog hasn't discovered yet).
 
-When we notice repeated misses for a given `(set_code, local_id, variant)`, the ops response is to run `python -m pokeprice_catalog discover-cardrush --set {set_code}` (idempotent) and re-run the scraper; there is no in-line catalog write from the price scraper.
+When we notice repeated misses for a given `(set_code, local_id, variant)`, the ops response is to run `python -m watari_catalog discover-cardrush --set {set_code}` (idempotent) and re-run the scraper; there is no in-line catalog write from the price scraper.
 
 ---
 
@@ -131,8 +131,8 @@ When we notice repeated misses for a given `(set_code, local_id, variant)`, the 
 
 ```
 packages/scraper_cardrush/
-├── pyproject.toml                   # curl_cffi, beautifulsoup4, sqlalchemy[asyncio], pokeprice_core
-└── pokeprice_cardrush/
+├── pyproject.toml                   # curl_cffi, beautifulsoup4, sqlalchemy[asyncio], watari_core
+└── watari_cardrush/
     ├── __init__.py
     ├── __main__.py                  # CLI: --set SV2A | --set M2A | --all
     ├── client.py                    # curl_cffi Session + paginate(set_code, rarity)
@@ -161,17 +161,17 @@ Files to delete from the current package: everything tied to Playwright (browser
 
 ```bash
 # Single set
-uv run python -m pokeprice_cardrush --set SV2A
+uv run python -m watari_cardrush --set SV2A
 
 # Every tracked set in a block
-uv run python -m pokeprice_cardrush --era SV
-uv run python -m pokeprice_cardrush --era M
+uv run python -m watari_cardrush --era SV
+uv run python -m watari_cardrush --era M
 
 # Everything
-uv run python -m pokeprice_cardrush --all
+uv run python -m watari_cardrush --all
 
 # Diagnostics
-uv run python -m pokeprice_cardrush --set SV2A --rarity AR --dry-run --limit-pages 2
+uv run python -m watari_cardrush --set SV2A --rarity AR --dry-run --limit-pages 2
 ```
 
 ---

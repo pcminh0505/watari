@@ -1,6 +1,6 @@
 """Unit tests for the API-key auth dependency.
 
-These tests exercise :mod:`pokeprice_api.auth` in isolation — they don't
+These tests exercise :mod:`watari_api.auth` in isolation — they don't
 boot the FastAPI app and don't talk to Redis. The DB is stubbed with a
 minimal async session that queues canned rows.
 """
@@ -13,7 +13,7 @@ from typing import Any
 
 import pytest
 from fastapi import HTTPException
-from pokeprice_api.auth import (
+from watari_api.auth import (
     API_KEY_PLAINTEXT_PREFIX,
     LAST_USED_THROTTLE,
     AuthContext,

@@ -1,4 +1,4 @@
-"""Unit tests for ``pokeprice_core.mvs``.
+"""Unit tests for ``watari_core.mvs``.
 
 These cover the SQL shape emitted by :func:`refresh_price_mvs` and the
 short-circuit logic in :func:`refresh_price_mvs_if_needed`. We deliberately
@@ -12,7 +12,7 @@ from __future__ import annotations
 from typing import Any
 
 import pytest
-from pokeprice_core import mvs
+from watari_core import mvs
 
 
 class _FakeSession:
@@ -103,7 +103,7 @@ async def test_if_needed_swallows_errors(monkeypatch: pytest.MonkeyPatch) -> Non
             return None
 
     monkeypatch.setattr(
-        "pokeprice_core.db.async_session_factory",
+        "watari_core.db.async_session_factory",
         _FakeFactory(),
     )
 

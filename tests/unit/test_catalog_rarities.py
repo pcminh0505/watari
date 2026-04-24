@@ -1,6 +1,6 @@
 """Unit tests for canonical rarity mapping."""
 
-from pokeprice_catalog.rarities import canonicalize_cardrush, canonicalize_tcgdex
+from watari_catalog.rarities import canonicalize_cardrush, canonicalize_tcgdex
 
 
 class TestCardrush:

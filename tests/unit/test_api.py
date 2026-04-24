@@ -8,10 +8,10 @@ from typing import Any
 
 import pytest
 from fastapi.testclient import TestClient
-from pokeprice_api.auth import AuthContext
-from pokeprice_api.deps import get_session
-from pokeprice_api.main import create_app
-from pokeprice_api.ratelimit import rate_limit_dep
+from watari_api.auth import AuthContext
+from watari_api.deps import get_session
+from watari_api.main import create_app
+from watari_api.ratelimit import rate_limit_dep
 from sqlalchemy import Select
 
 # --- Fakes ---------------------------------------------------------------

@@ -1,8 +1,8 @@
 """Unit tests for rate limiting: config parsing + end-to-end dep wiring.
 
-The Redis-backed :class:`~pokeprice_api.ratelimit.RateLimiter` itself is
+The Redis-backed :class:`~watari_api.ratelimit.RateLimiter` itself is
 exercised via a fake limiter that records calls and returns canned
-:class:`~pokeprice_api.ratelimit.Decision` objects — we don't need the
+:class:`~watari_api.ratelimit.Decision` objects — we don't need the
 token-bucket Lua correctness in the unit suite (it's tiny and covered by
 the config-parse + integration-style tests).
 """
@@ -14,10 +14,10 @@ from typing import Any
 
 import pytest
 from fastapi.testclient import TestClient
-from pokeprice_api.auth import AuthContext, get_auth_context
-from pokeprice_api.deps import get_session
-from pokeprice_api.main import create_app
-from pokeprice_api.ratelimit import (
+from watari_api.auth import AuthContext, get_auth_context
+from watari_api.deps import get_session
+from watari_api.main import create_app
+from watari_api.ratelimit import (
     Bucket,
     Decision,
     RateLimiter,

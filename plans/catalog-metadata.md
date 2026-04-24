@@ -110,7 +110,7 @@ Notes:
 
 ## Rarity codes (canonical list)
 
-Source of truth: `packages/catalog/pokeprice_catalog/rarities.py`.
+Source of truth: `packages/catalog/watari_catalog/rarities.py`.
 
 ```python
 RARITY_ORDER: tuple[str, ...] = (
@@ -147,7 +147,7 @@ Unknown inputs → log a WARNING and store `NULL`. We extend the map as new code
 
 ## Variant slugs
 
-Source of truth: `packages/catalog/pokeprice_catalog/variants.py`.
+Source of truth: `packages/catalog/watari_catalog/variants.py`.
 
 ```python
 DEFAULT_VARIANT = "normal"
@@ -188,7 +188,7 @@ Slugs are sticky (they live in `card_id`). **Treat them as API.**
 ```
 packages/catalog/
 ├── pyproject.toml           # curl_cffi, httpx, beautifulsoup4, pyyaml, sqlalchemy[asyncio]
-└── pokeprice_catalog/
+└── watari_catalog/
     ├── __init__.py
     ├── __main__.py          # CLI: seed-sets | enrich-tcgdex | discover-cardrush | verify
     ├── rarities.py
@@ -290,17 +290,17 @@ Exits non-zero if any critical invariant fails.
 
 ```bash
 # First-time build
-uv run python -m pokeprice_catalog seed-sets
-uv run python -m pokeprice_catalog enrich-tcgdex                   # all eligible sets
-uv run python -m pokeprice_catalog discover-cardrush --all         # fills JP gaps
-uv run python -m pokeprice_catalog verify
+uv run python -m watari_catalog seed-sets
+uv run python -m watari_catalog enrich-tcgdex                   # all eligible sets
+uv run python -m watari_catalog discover-cardrush --all         # fills JP gaps
+uv run python -m watari_catalog verify
 
 # Per-set targeted runs
-uv run python -m pokeprice_catalog enrich-tcgdex --set SV2A
-uv run python -m pokeprice_catalog discover-cardrush --set M2A
+uv run python -m watari_catalog enrich-tcgdex --set SV2A
+uv run python -m watari_catalog discover-cardrush --set M2A
 
 # Dry run
-uv run python -m pokeprice_catalog discover-cardrush --set SV2A --dry-run
+uv run python -m watari_catalog discover-cardrush --set SV2A --dry-run
 ```
 
 ---
