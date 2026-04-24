@@ -1,5 +1,7 @@
 """Application settings via pydantic-settings, reads .env."""
 
+from urllib.parse import parse_qs, urlencode, urlparse, urlunparse
+
 from pydantic import field_validator
 from pydantic_settings import BaseSettings, SettingsConfigDict
 
@@ -8,7 +10,7 @@ class Settings(BaseSettings):
     model_config = SettingsConfigDict(env_file=".env", env_file_encoding="utf-8", extra="ignore")
 
     # Infrastructure
-    database_url: str = "postgresql+asyncpg://watari:watari@localhost:5433/watari"
+    database_url: str = "postgresql+asyncpg://watari:watari@localhost:5432/watari"
 
     @field_validator("database_url", mode="before")
     @classmethod
@@ -19,9 +21,18 @@ class Settings(BaseSettings):
             v = v.replace("postgres://", "postgresql+asyncpg://", 1)
         elif v.startswith("postgresql://"):
             v = v.replace("postgresql://", "postgresql+asyncpg://", 1)
-        # asyncpg uses ?ssl=require; psycopg2-style ?sslmode=require is not understood.
-        v = v.replace("sslmode=", "ssl=")
-        return v
+        # Strip ssl/sslmode from the URL query string.
+        # Passing ssl= in the URL causes SQLAlchemy 2.0 to inject a
+        # `channel_binding` kwarg that asyncpg's connect() does not accept.
+        # SSL is handled in db.py via connect_args instead.
+        parsed = urlparse(v)
+        clean_params = {
+            k: vals
+            for k, vals in parse_qs(parsed.query, keep_blank_values=True).items()
+            if k not in ("ssl", "sslmode")
+        }
+        new_query = urlencode({k: vals[0] for k, vals in clean_params.items()})
+        return urlunparse(parsed._replace(query=new_query))
 
     redis_url: str = "redis://localhost:6379/0"
     s3_endpoint_url: str = "http://localhost:9000"
