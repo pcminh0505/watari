@@ -13,13 +13,16 @@ class Settings(BaseSettings):
     @field_validator("database_url", mode="before")
     @classmethod
     def normalise_database_url(cls, v: str) -> str:
-        # Fly.io pg attach sets DATABASE_URL as postgres:// or postgresql://
-        # SQLAlchemy asyncpg requires postgresql+asyncpg://
+        # Rewrite scheme: postgres:// / postgresql:// → postgresql+asyncpg://
+        # Fly pg attach and external providers (Neon, Supabase) all emit bare URLs.
         if v.startswith("postgres://"):
-            return v.replace("postgres://", "postgresql+asyncpg://", 1)
-        if v.startswith("postgresql://"):
-            return v.replace("postgresql://", "postgresql+asyncpg://", 1)
+            v = v.replace("postgres://", "postgresql+asyncpg://", 1)
+        elif v.startswith("postgresql://"):
+            v = v.replace("postgresql://", "postgresql+asyncpg://", 1)
+        # asyncpg uses ?ssl=require; psycopg2-style ?sslmode=require is not understood.
+        v = v.replace("sslmode=", "ssl=")
         return v
+
     redis_url: str = "redis://localhost:6379/0"
     s3_endpoint_url: str = "http://localhost:9000"
     s3_bucket_bronze: str = "watari-bronze"
