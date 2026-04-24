@@ -25,10 +25,10 @@ jobs:
           flyctl machine run "$IMAGE" \
             --app watari-api \
             --name scraper-cardrush-sv \
-            --command "uv run python -m watari_cardrush --era SV" \
             --rm \
             --vm-size shared-cpu-2x \
-            --region sin
+            --region sin \
+            -- uv run python -m watari_cardrush --era SV
         env:
           FLY_API_TOKEN: ${{ secrets.FLY_API_TOKEN }}
 
@@ -45,10 +45,10 @@ jobs:
           flyctl machine run "$IMAGE" \
             --app watari-api \
             --name scraper-cardrush-me \
-            --command "uv run python -m watari_cardrush --era ME" \
             --rm \
             --vm-size shared-cpu-2x \
-            --region sin
+            --region sin \
+            -- uv run python -m watari_cardrush --era ME
         env:
           FLY_API_TOKEN: ${{ secrets.FLY_API_TOKEN }}
 
@@ -95,9 +95,9 @@ jobs:
           flyctl machine run "$IMAGE" \
             --app watari-api \
             --name scraper-snkrdunk-${{ matrix.era }} \
-            --command "uv run python -m watari_snkrdunk --era ${{ matrix.era }}" \
             --rm \
             --vm-size shared-cpu-1x \
-            --region sin
+            --region sin \
+            -- uv run python -m watari_snkrdunk --era ${{ matrix.era }}
         env:
           FLY_API_TOKEN: ${{ secrets.FLY_API_TOKEN }}
