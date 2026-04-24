@@ -25,8 +25,7 @@ jobs:
             --command "uv run python -m watari_cardrush --era SV" \
             --rm \
             --vm-size shared-cpu-2x \
-            --region sin \
-            --wait-timeout 1800
+            --region sin
         env:
           FLY_API_TOKEN: ${{ secrets.FLY_API_TOKEN }}
 
@@ -43,8 +42,7 @@ jobs:
             --command "uv run python -m watari_cardrush --era ME" \
             --rm \
             --vm-size shared-cpu-2x \
-            --region sin \
-            --wait-timeout 1800
+            --region sin
         env:
           FLY_API_TOKEN: ${{ secrets.FLY_API_TOKEN }}
 
@@ -91,7 +89,6 @@ jobs:
             --command "uv run python -m watari_snkrdunk --era ${{ matrix.era }}" \
             --rm \
             --vm-size shared-cpu-1x \
-            --region sin \
-            --wait-timeout 600
+            --region sin
         env:
           FLY_API_TOKEN: ${{ secrets.FLY_API_TOKEN }}

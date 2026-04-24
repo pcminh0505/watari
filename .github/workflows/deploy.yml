@@ -33,7 +33,6 @@ jobs:
             --app watari-api \
             --command "uv run alembic upgrade head" \
             --rm \
-            --region sin \
-            --wait-timeout 120
+            --region sin
         env:
           FLY_API_TOKEN: ${{ secrets.FLY_API_TOKEN }}
