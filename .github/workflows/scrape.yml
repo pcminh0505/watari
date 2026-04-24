@@ -20,7 +20,7 @@ jobs:
     steps:
       - uses: superfly/flyctl-actions/setup-flyctl@master
       - run: |
-          fly machine run registry.fly.io/watari-api:latest \
+          flyctl machine run registry.fly.io/watari-api:latest \
             --app watari-api \
             --command "uv run python -m watari_cardrush --era SV" \
             --auto-destroy \
@@ -38,7 +38,7 @@ jobs:
     steps:
       - uses: superfly/flyctl-actions/setup-flyctl@master
       - run: |
-          fly machine run registry.fly.io/watari-api:latest \
+          flyctl machine run registry.fly.io/watari-api:latest \
             --app watari-api \
             --command "uv run python -m watari_cardrush --era ME" \
             --auto-destroy \
@@ -86,7 +86,7 @@ jobs:
     steps:
       - uses: superfly/flyctl-actions/setup-flyctl@master
       - run: |
-          fly machine run registry.fly.io/watari-api:latest \
+          flyctl machine run registry.fly.io/watari-api:latest \
             --app watari-api \
             --command "uv run python -m watari_snkrdunk --era ${{ matrix.era }}" \
             --auto-destroy \
