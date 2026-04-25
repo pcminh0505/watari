@@ -8,15 +8,23 @@ from botocore.exceptions import ClientError
 
 from watari_core.config import settings
 
+# Reuse a single client for the process lifetime. boto3 clients hold circular
+# references (event system, credential chain, connection pools) that prevent
+# immediate GC — creating one per write call leaks memory across a long scrape run.
+_s3_client: Any = None
+
 
 def _get_s3_client() -> Any:
-    return boto3.client(
-        "s3",
-        endpoint_url=settings.s3_endpoint_url,
-        aws_access_key_id=settings.aws_access_key_id,
-        aws_secret_access_key=settings.aws_secret_access_key,
-        region_name=settings.aws_region,
-    )
+    global _s3_client
+    if _s3_client is None:
+        _s3_client = boto3.client(
+            "s3",
+            endpoint_url=settings.s3_endpoint_url,
+            aws_access_key_id=settings.aws_access_key_id,
+            aws_secret_access_key=settings.aws_secret_access_key,
+            region_name=settings.aws_region,
+        )
+    return _s3_client
 
 
 def ensure_bucket(bucket: str | None = None) -> None:
