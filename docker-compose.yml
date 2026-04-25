@@ -6,7 +6,7 @@ services:
       POSTGRES_PASSWORD: watari
       POSTGRES_DB: watari
     ports:
-      - "5432:5432"
+      - "5434:5432"
     volumes:
       - pg-data:/var/lib/postgresql/data
     healthcheck:
@@ -19,8 +19,8 @@ services:
     image: minio/minio
     command: server /data --console-address ":9001"
     ports:
-      - "9000:9000"
-      - "9001:9001"
+      - "9002:9000"
+      - "9003:9001"
     environment:
       MINIO_ROOT_USER: watari
       MINIO_ROOT_PASSWORD: watari123
