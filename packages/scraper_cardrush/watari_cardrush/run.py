@@ -345,16 +345,24 @@ async def scrape_sets(
     dry_run: bool = False,
     impersonate: str = "chrome124",
 ) -> list[dict[str, object]]:
-    """Scrape many sets sequentially."""
+    """Scrape many sets sequentially.
+
+    Each set is isolated: an unhandled exception in one set is logged and
+    counted but does not abort the remaining sets.
+    """
     summaries: list[dict[str, object]] = []
     for code in set_codes:
-        summary = await scrape_set(
-            code,
-            rarities_filter=rarities_filter,
-            max_pages=max_pages,
-            dry_run=dry_run,
-            impersonate=impersonate,
-        )
+        try:
+            summary = await scrape_set(
+                code,
+                rarities_filter=rarities_filter,
+                max_pages=max_pages,
+                dry_run=dry_run,
+                impersonate=impersonate,
+            )
+        except Exception as exc:  # noqa: BLE001
+            logger.exception("scrape_set failed for %s, continuing: %s", code, exc)
+            summary = {"set_code": code.upper(), "error": f"{type(exc).__name__}: {exc}"}
         summaries.append(summary)
     return summaries
 
