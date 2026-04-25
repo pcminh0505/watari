@@ -87,20 +87,23 @@ async def scrape_era(
                             print(f"  [{attempted:3}/{len(cards)}] {card_id}: not found")
                             continue
 
-                        entries, raw_pages = await client.fetch_sales_history(
-                            apparel["apparel_id"],
-                            limit=history_limit,
-                        )
                         observed_at = datetime.now(UTC)
-                        for i, raw in enumerate(raw_pages, start=1):
+                        entries: list = []
+                        page_num = 0
+                        async for page_entries, raw in client._iter_sales_pages(
+                            apparel["apparel_id"],
+                            target=float("inf") if history_limit is None else history_limit,
+                        ):
+                            page_num += 1
                             write_bronze(
                                 source=SOURCE,
                                 card_id=card_id,
                                 run_id=run_id,
                                 observed_at=observed_at,
                                 payload=raw,
-                                key_suffix=f"sales-p{i}.json",
+                                key_suffix=f"sales-p{page_num}.json",
                             )
+                            entries.extend(page_entries)
 
                         rows = parse_sales_history(
                             entries,

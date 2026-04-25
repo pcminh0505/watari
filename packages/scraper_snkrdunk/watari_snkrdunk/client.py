@@ -75,28 +75,47 @@ class SnkrdunkClient:
         """
         entries: list[dict[str, Any]] = []
         raw_pages: list[bytes] = []
-        page = 1
         target = float("inf") if limit is None else limit
 
-        while len(entries) < target:
+        async for page_entries, raw in self._iter_sales_pages(apparel_id, target=target):
+            entries.extend(page_entries)
+            raw_pages.append(raw)
+
+        return entries, raw_pages
+
+    async def _iter_sales_pages(
+        self,
+        apparel_id: int,
+        target: float,
+    ):
+        """Yield (entries, raw_bytes) one page at a time so callers can stream
+        bronze writes without accumulating all pages in memory at once."""
+        collected = 0
+        page = 1
+
+        while collected < target:
             resp = await self._client.get(
                 f"/v1/apparels/{apparel_id}/sales-history",
                 params={"size_id": 0, "page": page, "per_page": SALES_PER_PAGE},
             )
             resp.raise_for_status()
-            raw_pages.append(resp.content)
+            raw = resp.content
             data = resp.json()
             history = data.get("history") or []
             if not history:
                 break
+
+            page_entries: list[dict[str, Any]] = []
             for entry in history:
-                entries.append(entry)
-                if len(entries) >= target:
+                page_entries.append(entry)
+                collected += 1
+                if collected >= target:
                     break
+
+            yield page_entries, raw
+
             if len(history) < SALES_PER_PAGE:
                 break
             page += 1
             if self._polite_delay_sec:
                 await asyncio.sleep(self._polite_delay_sec)
-
-        return entries, raw_pages
