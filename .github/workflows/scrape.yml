@@ -87,6 +87,8 @@ jobs:
           - m1s
           - m2
           - m2a
+          - m3
+          - m4
     steps:
       - uses: superfly/flyctl-actions/setup-flyctl@master
       - run: |
