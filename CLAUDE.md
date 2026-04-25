@@ -6,7 +6,7 @@
 > Update it whenever the architecture changes — especially after a
 > destructive migration, a new source, or a schema split.
 >
-> Last updated: 2026-04-24 (Full SV + ME seed + M1 → M1L rename: all 28 sets bootstrapped, card YML tree complete, 117k `price_points` across Cardrush + SNKRDUNK, MVs populated).
+> Last updated: 2026-04-25 (Added M3 ムニキスゼロ / Munikis Zero and M4 ニンジャスピナー / Ninja Spinner to the ME catalog — 30 sets total. Bootstrap + seed + scrape pipeline pending for M3/M4).
 
 ---
 
@@ -35,7 +35,7 @@ packages/
   core/                ← SQLAlchemy models, Pydantic DTOs, catalog.py helpers, bronze writer
   catalog/             ← YML data tree + bootstrap/seed pipeline + CLI
     data/
-      sets/*.yml       ← 28 set files (source of truth for set metadata)
+      sets/*.yml       ← 30 set files (source of truth for set metadata)
       cards/{SET}/*.yml← one file per (set, local_id); source of truth for artworks
     watari_catalog/ ← Python package (bootstrap.py, seed_cards.py, clients, …)
   scraper_cardrush/    ← curl_cffi-based scraper, rarity-bucket crawling
@@ -161,7 +161,7 @@ Helpers live in `packages/core/watari_core/catalog.py`
 
 **Watch out:** `parse_artwork_id` / `parse_card_id` split on `"-"` and assume
 exactly 3 / 4 segments. If a set_code ever contains a hyphen (e.g. `"sv-p"`)
-they will misparse. None of the current 28 set codes contain hyphens.
+they will misparse. None of the current 30 set codes contain hyphens.
 
 ### 3.5 API layer (`packages/api/`, read-only)
 
@@ -281,7 +281,7 @@ a fourth MV, **create its unique index in the same migration** or
 | Step                                               | Result                                                                                         |
 | -------------------------------------------------- | ---------------------------------------------------------------------------------------------- |
 | `alembic upgrade head`                             | clean (head = `006_mv_spread_unique_index`)                                                    |
-| `make catalog-seed-sets`                           | 28 sets upserted (all 23 SV + 5 ME)                                                            |
+| `make catalog-seed-sets`                           | 28 sets upserted (all 23 SV + 5 ME); M3/M4 pending seed                                        |
 | `make catalog-bootstrap SET=<code>` × 28           | all 28 sets bootstrapped; 3992 card YMLs written (SV2A 210 + M2A 250 previously, +26 new sets) |
 | `make catalog-seed-cards`                          | 3788 artworks / 4505 prints across 28 sets                                                     |
 | `make catalog-verify`                              | 0 orphans · 0 artworks missing img · 299 missing rarity · 243 missing JA (mostly early SV/M2A Commons) |
