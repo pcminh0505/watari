@@ -74,22 +74,27 @@ async def finish_scrape_run(
 async def insert_price_points(
     session: AsyncSession,
     rows: list[dict[str, Any]],
+    chunk_size: int = 1000,
 ) -> int:
     """Append-only insert of price points with ON CONFLICT DO NOTHING.
 
     Returns the number of rows that actually landed (duplicates suppressed by
     the `uq_price_points_idem` unique index are counted as 0).
+
+    Rows are inserted in chunks of `chunk_size` to stay under asyncpg's 32767
+    query-parameter limit. At 9 columns per row, 1000 rows = 9000 params —
+    safely below the limit even for the most popular cards.
     """
     if not rows:
         return 0
-    # No target specified: DO NOTHING on *any* unique-constraint violation.
-    # `price_points` has exactly one unique index (uq_price_points_idem), so this
-    # is equivalent to targeting it but avoids SQLAlchemy's weaker handling of
-    # expression-indexed targets (coalesce(external_url, '')).
-    stmt = pg_insert(PricePoint).values(rows).on_conflict_do_nothing()
-    result = await session.execute(stmt)
-    await session.commit()
-    return int(result.rowcount or 0)  # type: ignore[attr-defined]
+    inserted = 0
+    for i in range(0, len(rows), chunk_size):
+        chunk = rows[i : i + chunk_size]
+        stmt = pg_insert(PricePoint).values(chunk).on_conflict_do_nothing()
+        result = await session.execute(stmt)
+        await session.commit()
+        inserted += int(result.rowcount or 0)  # type: ignore[attr-defined]
+    return inserted
 
 
 async def upsert_card_state(
