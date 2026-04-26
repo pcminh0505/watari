@@ -98,7 +98,7 @@ jobs:
             --app watari-api \
             --name scraper-snkrdunk-${{ matrix.era }} \
             --rm \
-            --vm-size shared-cpu-1x \
+            --vm-size shared-cpu-2x \
             --region sin \
             -- uv run python -m watari_snkrdunk --era ${{ matrix.era }}
         env:
