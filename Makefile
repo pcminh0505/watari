@@ -2,6 +2,7 @@
         catalog-seed-sets catalog-bootstrap catalog-seed-cards catalog-verify \
         scrape-cardrush scrape-snkrdunk \
         api api-dev \
+        web-install web-dev web-build web-preview \
         db-dump-data db-prod-bootstrap \
         deploy deploy-dry migrate-prod refresh-mvs-prod logs ssh scale-up scale-down
 
@@ -58,6 +59,19 @@ api:
 
 api-dev:
 	uv run watari-api --host 127.0.0.1 --port 8000 --reload
+
+# --- Web frontend (Vite + React) ---
+web-install:
+	cd apps/web && bun install
+
+web-dev:
+	cd apps/web && bun run dev
+
+web-build:
+	cd apps/web && bun run build
+
+web-preview:
+	cd apps/web && bun run preview
 
 # --- Ops / deployment helpers ---
 db-dump-data:

@@ -50,4 +50,10 @@ coverage.xml
 pg-data/
 minio-data/
 
+# Frontend (apps/web)
+apps/web/node_modules/
+apps/web/dist/
+apps/web/.env.local
+apps/web/.env.*.local
+
 # Note: uv.lock is NOT ignored — keep in git for reproducibility

@@ -48,7 +48,7 @@ class Settings(BaseSettings):
     scraper_batch_size: int = 20
 
     # API
-    api_cors_origins: str = "http://localhost:3000"
+    api_cors_origins: str = "http://localhost:5173"
     log_level: str = "INFO"
     sentry_dsn: str = ""
 

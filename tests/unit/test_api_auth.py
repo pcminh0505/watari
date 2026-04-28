@@ -118,13 +118,12 @@ async def test_no_header_returns_anonymous_free_by_ip() -> None:
     assert session.commits == 0
 
 
-async def test_unknown_key_raises_401() -> None:
+async def test_unknown_key_falls_back_to_anonymous() -> None:
     session = FakeSession(rows=[None])  # no match in api_keys
     req = FakeRequest(headers={"X-API-Key": "pk_nope_xxx"})
-    with pytest.raises(HTTPException) as excinfo:
-        await get_auth_context(req, session)  # type: ignore[arg-type]
-    assert excinfo.value.status_code == 401
-    assert "invalid" in excinfo.value.detail.lower()
+    ctx = await get_auth_context(req, session)  # type: ignore[arg-type]
+    assert ctx.authed is False
+    assert ctx.tier == "free"
     assert session.commits == 0
 
 

@@ -108,9 +108,12 @@ async def get_auth_context(
         await session.execute(select(ApiKey).where(ApiKey.key_hash == key_hash))
     ).scalar_one_or_none()
     if row is None:
-        raise HTTPException(
-            status_code=status.HTTP_401_UNAUTHORIZED,
-            detail="invalid api key",
+        return AuthContext(
+            authed=False,
+            tier="free",
+            api_key_id=None,
+            key_prefix=None,
+            identifier=f"ip:{_client_ip(request)}",
         )
     if row.revoked_at is not None:
         raise HTTPException(
