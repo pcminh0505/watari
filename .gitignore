@@ -57,3 +57,4 @@ apps/web/.env.local
 apps/web/.env.*.local
 
 # Note: uv.lock is NOT ignored — keep in git for reproducibility
+.vercel
