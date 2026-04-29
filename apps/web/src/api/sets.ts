@@ -2,10 +2,21 @@ import { useQuery } from "@tanstack/react-query";
 import type { SetOut } from "../types/api";
 import { apiFetch } from "./client";
 
-export function useAllSets() {
+interface SetsParams {
+  era?: string;
+  sort?: "release_date" | "value" | "set_code";
+  order?: "asc" | "desc";
+}
+
+export function useAllSets(params: SetsParams = {}) {
+  const qs = new URLSearchParams({ limit: "500" });
+  if (params.era) qs.set("era", params.era);
+  if (params.sort) qs.set("sort", params.sort);
+  if (params.order) qs.set("order", params.order);
+
   return useQuery<SetOut[]>({
-    queryKey: ["sets"],
-    queryFn: () => apiFetch<SetOut[]>("/jp/sets?limit=500"),
+    queryKey: ["sets", params],
+    queryFn: () => apiFetch<SetOut[]>(`/jp/sets?${qs.toString()}`),
     staleTime: 60 * 60 * 1000,
   });
 }

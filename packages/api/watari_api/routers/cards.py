@@ -5,14 +5,14 @@ from __future__ import annotations
 from collections import defaultdict
 from typing import Annotated, Any
 
-from fastapi import APIRouter, Depends, HTTPException, Query, Response
+from fastapi import APIRouter, Depends, HTTPException, Query, Response, status
 from watari_core.catalog import pad_local_id
 from watari_core.models import Artwork, Card, Set
-from sqlalchemy import func, select
+from sqlalchemy import Integer, String, column, func, or_, select, table
 from sqlalchemy.ext.asyncio import AsyncSession
 
 from watari_api.deps import get_session
-from watari_api.schemas import ArtworkDetail, VariantRef
+from watari_api.schemas import ArtworkDetail, ArtworkSearchResult, VariantRef
 
 router = APIRouter(tags=["cards"])
 
@@ -20,6 +20,14 @@ SessionDep = Annotated[AsyncSession, Depends(get_session)]
 
 # Catalog data changes only on explicit operator reseed.
 _CATALOG_CACHE = "public, max-age=3600, stale-while-revalidate=300"
+mv_latest_price = table(
+    "mv_latest_price",
+    column("card_id"),
+    column("source"),
+    column("condition"),
+    column("price_jpy", Integer),
+    column("stock_qty", Integer),
+)
 
 
 def _artwork_columns() -> tuple[Any, ...]:
@@ -44,6 +52,117 @@ def _variant_sort_key(variant: str) -> tuple[int, str]:
 
 def _row_to_artwork_detail(row: Any, variants: list[VariantRef]) -> ArtworkDetail:
     return ArtworkDetail.model_validate({**dict(row._mapping), "variants": variants})
+
+
+@router.get("/cards/search", response_model=list[ArtworkSearchResult])
+async def search_cards(
+    lang: str,
+    session: SessionDep,
+    response: Response,
+    q: str | None = Query(None, min_length=1, max_length=80),
+    set_code: str | None = Query(None, description="Filter by set code"),
+    rarity: str | None = Query(None, description="Filter by rarity code"),
+    limit: int = Query(60, ge=1, le=200),
+    offset: int = Query(0, ge=0),
+) -> list[ArtworkSearchResult]:
+    q_clean = q.strip() if q is not None else None
+    if q is not None and not q_clean:
+        raise HTTPException(
+            status_code=status.HTTP_422_UNPROCESSABLE_CONTENT,
+            detail="q must include at least one non-space character",
+        )
+    q_padded = pad_local_id(q_clean) if q_clean and q_clean.isdigit() else q_clean
+
+    def _apply_filters(stmt: Any) -> Any:
+        stmt = stmt.where(Set.language == lang)
+        if set_code is not None:
+            stmt = stmt.where(func.upper(Artwork.set_code) == set_code.upper())
+        if rarity is not None:
+            stmt = stmt.where(Artwork.rarity_code == rarity)
+        if q_clean:
+            stmt = stmt.where(
+                or_(
+                    Artwork.name_ja.ilike(f"%{q_clean}%"),
+                    Artwork.name_en.ilike(f"%{q_clean}%"),
+                    Artwork.local_id == q_padded,
+                    func.upper(Artwork.set_code) == q_clean.upper(),
+                )
+            )
+        return stmt
+
+    count_stmt = _apply_filters(
+        select(func.count(func.distinct(Artwork.artwork_id))).join(
+            Set, Set.set_code == Artwork.set_code
+        )
+    )
+    total: int = (await session.execute(count_stmt)).scalar_one()
+    response.headers["X-Total-Count"] = str(total)
+    response.headers["Cache-Control"] = _CATALOG_CACHE
+
+    stmt = _apply_filters(
+        select(
+            *_artwork_columns(),
+            Set.name_ja.label("set_name_ja"),
+            Set.name_en.label("set_name_en"),
+            Set.release_date.label("set_release_date"),
+        )
+        .join(Set, Set.set_code == Artwork.set_code)
+        .order_by(Set.release_date.desc().nulls_last(), Artwork.set_code, Artwork.local_id)
+    )
+    stmt = stmt.limit(limit).offset(offset)
+    artwork_rows = (await session.execute(stmt)).all()
+    if not artwork_rows:
+        return []
+
+    artwork_ids = [row.artwork_id for row in artwork_rows]
+    variant_stmt = (
+        select(Card.artwork_id, Card.variant, Card.card_id, Card.is_tracked)
+        .where(Card.artwork_id.in_(artwork_ids), Card.is_tracked.is_(True))
+        .order_by(Card.artwork_id, Card.variant)
+    )
+    variant_rows = (await session.execute(variant_stmt)).all()
+    variants_by_artwork: dict[str, list[VariantRef]] = defaultdict(list)
+    for row in variant_rows:
+        variants_by_artwork[row.artwork_id].append(
+            VariantRef.model_validate(
+                {
+                    "variant": row.variant,
+                    "card_id": row.card_id,
+                    "is_tracked": row.is_tracked,
+                }
+            )
+        )
+
+    floor_stmt = (
+        select(Card.artwork_id, mv_latest_price.c.price_jpy)
+        .join(mv_latest_price, mv_latest_price.c.card_id == Card.card_id)
+        .where(
+            Card.artwork_id.in_(artwork_ids),
+            Card.variant == "normal",
+            Card.is_tracked.is_(True),
+            mv_latest_price.c.source.cast(String) == "cardrush",
+            mv_latest_price.c.condition.cast(String) == "A",
+            mv_latest_price.c.stock_qty > 0,
+        )
+    )
+    floor_rows = (await session.execute(floor_stmt)).all()
+    floor_by_artwork = {row.artwork_id: int(row.price_jpy) for row in floor_rows}
+
+    results: list[ArtworkSearchResult] = []
+    for row in artwork_rows:
+        variants = sorted(
+            variants_by_artwork[row.artwork_id], key=lambda v: _variant_sort_key(v.variant)
+        )
+        results.append(
+            ArtworkSearchResult.model_validate(
+                {
+                    **dict(row._mapping),
+                    "variants": variants,
+                    "cardrush_a_floor_jpy": floor_by_artwork.get(row.artwork_id),
+                }
+            )
+        )
+    return results
 
 
 @router.get("/sets/{set_code}/cards", response_model=list[ArtworkDetail])

@@ -7,6 +7,7 @@ export interface SetOut {
   name_en: string | null;
   release_date: string | null;
   total: number | null;
+  total_value_jpy: number | null;
   parent_set_code: string | null;
   tcgdex_id: string | null;
   source_refs: Record<string, unknown>;
@@ -34,6 +35,14 @@ export interface ArtworkDetail {
   illustrator: string | null;
   category: string;
   variants: VariantRef[];
+}
+
+/** Mirrors packages/api/watari_api/schemas.py: ArtworkSearchResult */
+export interface ArtworkSearchResult extends ArtworkDetail {
+  set_name_ja: string | null;
+  set_name_en: string | null;
+  set_release_date: string | null;
+  cardrush_a_floor_jpy: number | null;
 }
 
 /** Mirrors packages/api/watari_api/schemas.py: LatestPrice */

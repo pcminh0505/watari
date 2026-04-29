@@ -1,5 +1,5 @@
 import { keepPreviousData, useQuery } from "@tanstack/react-query";
-import type { ArtworkDetail } from "../types/api";
+import type { ArtworkDetail, ArtworkSearchResult } from "../types/api";
 import { apiFetch, apiFetchPaged } from "./client";
 
 interface CardsParams {
@@ -36,5 +36,32 @@ export function useCard(setCode: string, localId: string) {
     queryFn: () => apiFetch<ArtworkDetail>(`/jp/cards/${setCode}/${localId}`),
     staleTime: 60 * 60 * 1000,
     enabled: setCode.length > 0 && localId.length > 0,
+  });
+}
+
+interface CardSearchParams {
+  q?: string;
+  set_code?: string;
+  rarity?: string;
+  page?: number;
+  limit?: number;
+}
+
+export function useCardSearch(params: CardSearchParams) {
+  const { q = "", set_code = "", rarity = "", page = 0, limit = 60 } = params;
+  const qs = new URLSearchParams({
+    limit: String(limit),
+    offset: String(page * limit),
+  });
+  if (q.trim()) qs.set("q", q.trim());
+  if (set_code) qs.set("set_code", set_code);
+  if (rarity) qs.set("rarity", rarity);
+
+  return useQuery<{ data: ArtworkSearchResult[]; total: number }>({
+    queryKey: ["cards-search", params],
+    queryFn: () => apiFetchPaged<ArtworkSearchResult>(`/jp/cards/search?${qs}`),
+    placeholderData: keepPreviousData,
+    staleTime: 60 * 1000,
+    enabled: true,
   });
 }

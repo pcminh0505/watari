@@ -14,6 +14,7 @@ class SetBase(BaseModel):
     name_en: str | None = None
     release_date: date | None = None
     total: int | None = None
+    total_value_jpy: int | None = None
     parent_set_code: str | None = None
     tcgdex_id: str | None = None
     source_refs: dict[str, Any] = {}

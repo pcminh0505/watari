@@ -164,7 +164,13 @@ def _fake_set_row(set_code: str = "SV2A", era: str = "sv") -> Any:
 def test_list_sets_returns_all(client_factory) -> None:  # type: ignore[no-untyped-def]
     rows = [_fake_set_row("SV2A"), _fake_set_row("M2A", era="me")]
     # list_sets now issues a count query first, then the data query.
-    client, _ = client_factory([FakeResult(scalar=2), FakeResult(scalars=rows)])
+    client, _ = client_factory(
+        [
+            FakeResult(scalar=2),
+            FakeResult(scalars=rows),
+            FakeResult(rows=[{"set_code": "SV2A", "sum": 12345}]),
+        ]
+    )
     resp = client.get("/jp/sets")
     assert resp.status_code == 200
     data = resp.json()
@@ -174,20 +180,26 @@ def test_list_sets_returns_all(client_factory) -> None:  # type: ignore[no-untyp
 
 def test_list_sets_returns_total_count_header(client_factory) -> None:  # type: ignore[no-untyped-def]
     rows = [_fake_set_row("SV2A")]
-    client, _ = client_factory([FakeResult(scalar=1), FakeResult(scalars=rows)])
+    client, _ = client_factory(
+        [FakeResult(scalar=1), FakeResult(scalars=rows), FakeResult(rows=[])]
+    )
     resp = client.get("/jp/sets")
     assert resp.headers["X-Total-Count"] == "1"
 
 
 def test_list_sets_returns_cache_header(client_factory) -> None:  # type: ignore[no-untyped-def]
-    client, _ = client_factory([FakeResult(scalar=0), FakeResult(scalars=[])])
+    client, _ = client_factory(
+        [FakeResult(scalar=0), FakeResult(scalars=[]), FakeResult(rows=[])]
+    )
     resp = client.get("/jp/sets")
     assert "max-age=3600" in resp.headers["Cache-Control"]
 
 
 def test_list_sets_filters_by_era(client_factory) -> None:  # type: ignore[no-untyped-def]
     rows = [_fake_set_row("M2A", era="me")]
-    client, session = client_factory([FakeResult(scalar=1), FakeResult(scalars=rows)])
+    client, session = client_factory(
+        [FakeResult(scalar=1), FakeResult(scalars=rows), FakeResult(rows=[])]
+    )
     resp = client.get("/jp/sets?era=me")
     assert resp.status_code == 200
     assert [d["set_code"] for d in resp.json()] == ["M2A"]
@@ -203,7 +215,7 @@ def test_get_set_404_when_missing(client_factory) -> None:  # type: ignore[no-un
 
 def test_get_set_returns_row(client_factory) -> None:  # type: ignore[no-untyped-def]
     row = _fake_set_row("SV2A")
-    client, _ = client_factory([FakeResult(scalar=row)])
+    client, _ = client_factory([FakeResult(scalar=row), FakeResult(rows=[])])
     resp = client.get("/jp/sets/SV2A")
     assert resp.status_code == 200
     assert resp.json()["set_code"] == "SV2A"
@@ -211,9 +223,73 @@ def test_get_set_returns_row(client_factory) -> None:  # type: ignore[no-untyped
 
 def test_get_set_returns_cache_header(client_factory) -> None:  # type: ignore[no-untyped-def]
     row = _fake_set_row("SV2A")
-    client, _ = client_factory([FakeResult(scalar=row)])
+    client, _ = client_factory([FakeResult(scalar=row), FakeResult(rows=[])])
     resp = client.get("/jp/sets/SV2A")
     assert "max-age=3600" in resp.headers["Cache-Control"]
+
+
+def test_list_sets_includes_total_value_jpy(client_factory) -> None:  # type: ignore[no-untyped-def]
+    row = _fake_set_row("SV2A")
+    client, _ = client_factory(
+        [
+            FakeResult(scalar=1),
+            FakeResult(scalars=[row]),
+            FakeResult(rows=[{"set_code": "SV2A", "sum": 7777}]),
+        ]
+    )
+    resp = client.get("/jp/sets")
+    assert resp.status_code == 200
+    assert resp.json()[0]["total_value_jpy"] == 7777
+
+
+def test_list_sets_sort_by_value_desc(client_factory) -> None:  # type: ignore[no-untyped-def]
+    rows = [_fake_set_row("A1"), _fake_set_row("A2")]
+    client, _ = client_factory(
+        [
+            FakeResult(scalar=2),
+            FakeResult(scalars=rows),
+            FakeResult(rows=[{"set_code": "A1", "sum": 1000}, {"set_code": "A2", "sum": 2000}]),
+        ]
+    )
+    resp = client.get("/jp/sets?sort=value&order=desc")
+    assert [d["set_code"] for d in resp.json()] == ["A2", "A1"]
+
+
+def test_list_sets_sort_by_release_date_asc(client_factory) -> None:  # type: ignore[no-untyped-def]
+    old = _fake_set_row("OLD")
+    new = _fake_set_row("NEW")
+    old.release_date = datetime(2023, 1, 1, tzinfo=UTC).date()
+    new.release_date = datetime(2024, 1, 1, tzinfo=UTC).date()
+    client, _ = client_factory(
+        [FakeResult(scalar=2), FakeResult(scalars=[new, old]), FakeResult(rows=[])]
+    )
+    resp = client.get("/jp/sets?sort=release_date&order=asc")
+    assert [d["set_code"] for d in resp.json()] == ["OLD", "NEW"]
+
+
+def test_list_sets_sort_by_release_date_desc_nulls_last(client_factory) -> None:  # type: ignore[no-untyped-def]
+    dated = _fake_set_row("DATED")
+    undated = _fake_set_row("UNDATED")
+    dated.release_date = datetime(2024, 1, 1, tzinfo=UTC).date()
+    undated.release_date = None
+    client, _ = client_factory(
+        [FakeResult(scalar=2), FakeResult(scalars=[dated, undated]), FakeResult(rows=[])]
+    )
+    resp = client.get("/jp/sets?sort=release_date&order=desc")
+    assert [d["set_code"] for d in resp.json()] == ["DATED", "UNDATED"]
+
+
+def test_list_sets_sort_by_value_desc_nulls_last(client_factory) -> None:  # type: ignore[no-untyped-def]
+    rows = [_fake_set_row("A1"), _fake_set_row("A2")]
+    client, _ = client_factory(
+        [
+            FakeResult(scalar=2),
+            FakeResult(scalars=rows),
+            FakeResult(rows=[{"set_code": "A1", "sum": 1000}]),
+        ]
+    )
+    resp = client.get("/jp/sets?sort=value&order=desc")
+    assert [d["set_code"] for d in resp.json()] == ["A1", "A2"]
 
 
 # --- Cards ---------------------------------------------------------------
@@ -321,6 +397,93 @@ def test_get_card_404(client_factory) -> None:  # type: ignore[no-untyped-def]
     client, _ = client_factory([FakeResult(rows=[])])
     resp = client.get("/jp/cards/SV2A/999")
     assert resp.status_code == 404
+
+
+def test_search_cards_matches_name_ja(client_factory) -> None:  # type: ignore[no-untyped-def]
+    count = FakeResult(scalar=1)
+    artworks = FakeResult(
+        rows=[
+            {
+                **_fake_artwork_row("089"),
+                "set_name_ja": "ポケモンカード151",
+                "set_name_en": "Pokemon Card 151",
+                "set_release_date": None,
+            }
+        ]
+    )
+    variants = FakeResult(rows=[_fake_variant_row("jp-sv2a-089", "normal")])
+    floors = FakeResult(rows=[{"artwork_id": "jp-sv2a-089", "price_jpy": 1200}])
+    client, _ = client_factory([count, artworks, variants, floors])
+    resp = client.get("/jp/cards/search?q=ベト")
+    assert resp.status_code == 200
+    body = resp.json()
+    assert body[0]["artwork_id"] == "jp-sv2a-089"
+    assert body[0]["cardrush_a_floor_jpy"] == 1200
+
+
+def test_search_cards_matches_local_id(client_factory) -> None:  # type: ignore[no-untyped-def]
+    count = FakeResult(scalar=1)
+    artworks = FakeResult(
+        rows=[
+            {
+                **_fake_artwork_row("089"),
+                "set_name_ja": "ポケモンカード151",
+                "set_name_en": "Pokemon Card 151",
+                "set_release_date": None,
+            }
+        ]
+    )
+    variants = FakeResult(rows=[_fake_variant_row("jp-sv2a-089", "normal")])
+    floors = FakeResult(rows=[])
+    client, _ = client_factory([count, artworks, variants, floors])
+    resp = client.get("/jp/cards/search?q=089")
+    assert resp.status_code == 200
+    assert resp.json()[0]["local_id"] == "089"
+
+
+def test_search_cards_matches_set_code(client_factory) -> None:  # type: ignore[no-untyped-def]
+    count = FakeResult(scalar=1)
+    artworks = FakeResult(
+        rows=[
+            {
+                **_fake_artwork_row("001"),
+                "set_name_ja": "ポケモンカード151",
+                "set_name_en": "Pokemon Card 151",
+                "set_release_date": None,
+            }
+        ]
+    )
+    variants = FakeResult(rows=[_fake_variant_row("jp-sv2a-001", "normal")])
+    floors = FakeResult(rows=[])
+    client, _ = client_factory([count, artworks, variants, floors])
+    resp = client.get("/jp/cards/search?q=sv2a")
+    assert resp.status_code == 200
+    assert resp.json()[0]["set_code"] == "SV2A"
+
+
+def test_search_cards_filters_by_set_and_rarity(client_factory) -> None:  # type: ignore[no-untyped-def]
+    count = FakeResult(scalar=0)
+    artworks = FakeResult(rows=[])
+    client, _ = client_factory([count, artworks])
+    resp = client.get("/jp/cards/search?q=muk&set_code=SV2A&rarity=U")
+    assert resp.status_code == 200
+    assert resp.headers["X-Total-Count"] == "0"
+
+
+def test_search_cards_returns_total_count_header(client_factory) -> None:  # type: ignore[no-untyped-def]
+    count = FakeResult(scalar=42)
+    artworks = FakeResult(rows=[])
+    client, _ = client_factory([count, artworks])
+    resp = client.get("/jp/cards/search?q=sv")
+    assert resp.status_code == 200
+    assert resp.headers["X-Total-Count"] == "42"
+
+
+def test_search_cards_rejects_blank_query(client_factory) -> None:  # type: ignore[no-untyped-def]
+    client, session = client_factory([])
+    resp = client.get("/jp/cards/search?q=%20%20%20")
+    assert resp.status_code == 422
+    assert session.calls == []
 
 
 # --- Prices / spread -----------------------------------------------------

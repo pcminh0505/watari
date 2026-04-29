@@ -7,7 +7,7 @@ already fit for purpose; adds thin wrappers for the materialized-view shapes
 
 from __future__ import annotations
 
-from datetime import datetime
+from datetime import date, datetime
 
 from pydantic import BaseModel
 
@@ -34,6 +34,15 @@ class ArtworkDetail(BaseModel):
     illustrator: str | None = None
     category: str = "card"
     variants: list[VariantRef]
+
+
+class ArtworkSearchResult(ArtworkDetail):
+    """Artwork search result with set + floor price enrichment."""
+
+    set_name_ja: str | None = None
+    set_name_en: str | None = None
+    set_release_date: date | None = None
+    cardrush_a_floor_jpy: int | None = None
 
 
 class LatestPrice(BaseModel):
