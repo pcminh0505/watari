@@ -1,6 +1,7 @@
 const PK = "https://den-media.pokellector.com/logos";
 
 export const SET_LOGO_URLS: Record<string, string> = {
+  SV1A:  `${PK}/Triple-Beat.logo.366.png`,
   SV1S:  `${PK}/Scarlet-ex.logo.361.png`,
   SV1V:  `${PK}/Violet-ex.logo.362.png`,
   SV2P:  `${PK}/Snow-Hazard.logo.369.png`,
