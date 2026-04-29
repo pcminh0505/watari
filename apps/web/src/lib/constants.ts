@@ -1,5 +1,25 @@
 const PK = "https://den-media.pokellector.com/logos";
 
+// JP release order — lower number = newer. Sets without an entry sort last.
+export const SET_RELEASE_ORDER: Record<string, number> = {
+  // SV era (newest → oldest)
+  SV11W: 0, SV11B: 1,
+  SV10: 2,
+  SV9A: 3, SV9: 4,
+  SV8A: 5, SV8: 6,
+  SV7A: 7, SV7: 8,
+  SV6A: 9, SV6: 10,
+  SV5A: 11, SV5M: 12, SV5K: 13,
+  SV4A: 14, SV4M: 15, SV4K: 16,
+  SV3A: 17, SV3: 18,
+  SV2A: 19, SV2D: 20, SV2P: 21,
+  SV1A: 22, SV1V: 23, SV1S: 24,
+  // ME era (newest → oldest)
+  M4: 0, M3: 1,
+  M2A: 2, M2: 3,
+  M1S: 4, M1L: 5,
+};
+
 export const SET_LOGO_URLS: Record<string, string> = {
   SV1A:  `${PK}/Triple-Beat.logo.366.png`,
   SV1S:  `${PK}/Scarlet-ex.logo.361.png`,
@@ -50,15 +70,20 @@ export const CONDITION_LABELS: Record<string, string> = {
   used: "Used",
 };
 
+// Rarity sort order — higher = rarer. Unknown rarities default to 99 in the
+// sort helper so they always sort to the top when sorting rarest-first.
+// MA is the ME-era equivalent of SAR/UR; MUR sits above UR in the newest sets.
 export const RARITY_SORT_ORDER: Record<string, number> = {
   C: 0,
   U: 1,
   R: 2,
   RR: 3,
-  RRR: 4,
-  UR: 5,
+  PR: 4,   // promo — at least as rare as RR in practice
+  RRR: 5,
   SR: 6,
-  SAR: 7,
-  AR: 8,
-  PR: 9,
+  AR: 7,
+  SAR: 8,
+  MA: 8,   // ME-era top-tier art rare (equivalent to SAR)
+  UR: 9,
+  MUR: 10,
 };

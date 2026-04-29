@@ -40,7 +40,7 @@ export function SetCard({ set }: SetCardProps) {
       {/* Footer */}
       <div className="flex items-center justify-between gap-1 px-3 py-2">
         <div className="flex items-center gap-1.5 min-w-0">
-          <Badge label={set.set_code} className="shrink-0" />
+          <Badge label={set.set_code.toLowerCase()} className="shrink-0" />
           {set.name_ja && (
             <span className="truncate text-xs text-gray-500">{set.name_ja}</span>
           )}
