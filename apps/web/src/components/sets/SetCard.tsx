@@ -23,10 +23,18 @@ export function SetCard({ set }: SetCardProps) {
             src={logoUrl}
             alt={displayName}
             className="max-h-12 w-full object-contain"
+            onError={(e) => {
+              e.currentTarget.style.display = "none";
+              e.currentTarget.nextElementSibling?.removeAttribute("hidden");
+            }}
           />
-        ) : (
-          <span className="text-sm font-semibold text-white">{displayName}</span>
-        )}
+        ) : null}
+        <span
+          hidden={!!logoUrl}
+          className="text-sm font-semibold text-white"
+        >
+          {displayName}
+        </span>
       </div>
 
       {/* Footer */}
