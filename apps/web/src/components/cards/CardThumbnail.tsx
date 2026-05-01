@@ -48,12 +48,17 @@ export function CardThumbnail({ card }: CardThumbnailProps) {
       </div>
 
       {/* Card number + rarity */}
-      <div className="flex items-center justify-between px-2 py-1.5 text-xs">
+      <div className="flex items-center justify-between px-2 pt-1.5 pb-0.5 text-xs">
         <span className="text-gray-500">{card.local_id}</span>
         {card.rarity_code && (
           <Badge label={card.rarity_code} variant="rarity" />
         )}
       </div>
+
+      {/* English name */}
+      {card.name_en && (
+        <p className="truncate px-2 pb-1 text-xs text-gray-500">{card.name_en}</p>
+      )}
 
       {/* Price */}
       {displayPrice != null && (

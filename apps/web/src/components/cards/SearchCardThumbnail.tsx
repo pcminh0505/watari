@@ -40,7 +40,10 @@ export function SearchCardThumbnail({ card }: SearchCardThumbnailProps) {
           <span className="text-gray-500">{card.set_code.toLowerCase()}-{card.local_id}</span>
           {card.rarity_code && <Badge label={card.rarity_code} variant="rarity" />}
         </div>
-        <p className="truncate text-gray-500">{setName}</p>
+        {card.name_en && (
+          <p className="truncate text-gray-500">{card.name_en}</p>
+        )}
+        <p className="truncate text-gray-400">{setName}</p>
         <p className="text-sm font-semibold text-blue-600">
           {card.cardrush_a_floor_jpy != null ? formatJPY(card.cardrush_a_floor_jpy) : "—"}
         </p>

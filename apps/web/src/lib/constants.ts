@@ -84,6 +84,7 @@ export const RARITY_SORT_ORDER: Record<string, number> = {
   AR: 7,
   SAR: 8,
   MA: 8,   // ME-era top-tier art rare (equivalent to SAR)
+  BWR: 8,  // SV11B/W Black & White Rare (equivalent tier to SAR/MA)
   UR: 9,
   MUR: 10,
 };
