@@ -10,7 +10,7 @@ interface CardThumbnailProps {
 }
 
 export function CardThumbnail({ card }: CardThumbnailProps) {
-  const displayName = card.name_ja ?? card.name_en ?? card.local_id;
+  const displayName = card.name_en ?? card.name_ja ?? card.local_id;
   const variant = card.variants[0]?.variant ?? "normal";
   const { data: prices } = useLatestPrices(card.set_code, card.local_id, variant);
 
@@ -28,7 +28,7 @@ export function CardThumbnail({ card }: CardThumbnailProps) {
       to={`/sets/${card.set_code}/${card.local_id}`}
       className="group flex flex-col overflow-hidden rounded-lg border bg-white shadow-sm transition hover:shadow-md"
     >
-      {/* Card image with name gradient overlay */}
+      {/* Card image */}
       <div className="relative">
         {card.image_url ? (
           <img
@@ -40,34 +40,31 @@ export function CardThumbnail({ card }: CardThumbnailProps) {
         ) : (
           <CardPlaceholder />
         )}
-        <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/80 to-transparent px-2 pb-2 pt-8">
-          <p className="line-clamp-2 text-xs font-medium leading-tight text-white">
-            {displayName}
-          </p>
+        {/* Bottom-left overlay: set code · number · rarity */}
+        <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/70 to-transparent px-2 pb-2 pt-8">
+          <div className="flex items-center gap-1">
+            <span className="rounded bg-white/20 px-1 py-0.5 text-[10px] font-bold uppercase text-white">
+              {card.set_code.toLowerCase()}
+            </span>
+            <span className="text-[10px] text-white/90">{card.local_id}</span>
+            {card.rarity_code && (
+              <Badge label={card.rarity_code} variant="rarity" />
+            )}
+          </div>
         </div>
       </div>
 
-      {/* Card number + rarity */}
-      <div className="flex items-center justify-between px-2 pt-1.5 pb-0.5 text-xs">
-        <span className="text-gray-500">{card.local_id}</span>
-        {card.rarity_code && (
-          <Badge label={card.rarity_code} variant="rarity" />
+      {/* English name + price */}
+      <div className="px-2 py-2">
+        <p className="truncate text-xs font-medium text-gray-800">
+          {card.name_en ?? card.local_id}
+        </p>
+        {displayPrice != null && (
+          <p className="mt-0.5 text-sm font-semibold text-blue-600">
+            {formatJPY(displayPrice)}
+          </p>
         )}
       </div>
-
-      {/* English name */}
-      {card.name_en && (
-        <p className="truncate px-2 pb-1 text-xs text-gray-500">{card.name_en}</p>
-      )}
-
-      {/* Price */}
-      {displayPrice != null && (
-        <div className="border-t px-2 pb-2 pt-1">
-          <span className="text-sm font-semibold text-blue-600">
-            {formatJPY(displayPrice)}
-          </span>
-        </div>
-      )}
     </Link>
   );
 }
