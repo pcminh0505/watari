@@ -23,16 +23,17 @@ export function usePriceHistory(
   localId: string,
   variant: string,
   days = 30,
-  condition = "A"
+  condition = "A",
+  enabled = true
 ) {
   return useQuery<PricePointOut[]>({
     queryKey: ["history", setCode, localId, variant, days, condition],
     queryFn: () =>
       apiFetch<PricePointOut[]>(
-        `/jp/cards/${setCode}/${localId}/history?variant=${variant}&days=${days}&condition=${encodeURIComponent(condition)}&limit=500`
+        `/jp/cards/${setCode}/${localId}/history?variant=${variant}&days=${days}&condition=${encodeURIComponent(condition)}&limit=2000`
       ),
     staleTime: 0,
-    enabled: setCode.length > 0 && localId.length > 0,
+    enabled: enabled && setCode.length > 0 && localId.length > 0,
   });
 }
 

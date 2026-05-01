@@ -18,16 +18,18 @@ export function CardDetailPage() {
 
   const { data: card, isPending, error } = useCard(setCode, localId);
   const [selectedVariant, setSelectedVariant] = useState<string | null>(null);
+  const [historyDays, setHistoryDays] = useState(30);
   const variant = selectedVariant ?? card?.variants[0]?.variant ?? "normal";
 
   const { data: prices } = useLatestPrices(setCode, localId, variant);
   const { data: spread } = useSpread(setCode, localId, variant);
 
   // Derive available conditions from the latest prices data.
+  // "A-" (Cardrush) is normalized to "B" (SNKRDUNK equivalent).
   const availableConditions = useMemo(() => {
     if (!prices) return ["A"];
     const seen = new Set(prices.map((p) => p.condition));
-    const order = ["A", "A-", "B", "C", "D"];
+    const order = ["A", "A-", "B"];
     return order.filter((c) => seen.has(c));
   }, [prices]);
 
@@ -42,8 +44,25 @@ export function CardDetailPage() {
     setCode,
     localId,
     variant,
-    30,
+    historyDays,
     activeCondition
+  );
+  // When viewing condition "B", also fetch Cardrush "A-" history (they represent
+  // the same grade) so the chart merges both sources onto a single line.
+  const { data: historyAlt } = usePriceHistory(
+    setCode,
+    localId,
+    variant,
+    historyDays,
+    "A-",
+    activeCondition === "B"
+  );
+  const chartHistory = useMemo(
+    () =>
+      activeCondition === "B"
+        ? [...(history ?? []), ...(historyAlt ?? [])]
+        : (history ?? []),
+    [history, historyAlt, activeCondition]
   );
 
   if (isPending) return <Spinner />;
@@ -100,11 +119,10 @@ export function CardDetailPage() {
                 <button
                   key={v.variant}
                   onClick={() => setSelectedVariant(v.variant)}
-                  className={`rounded border px-3 py-1 text-sm transition ${
-                    v.variant === variant
-                      ? "border-blue-500 bg-blue-50 text-blue-700"
-                      : "text-gray-600 hover:border-gray-400"
-                  }`}
+                  className={`rounded border px-3 py-1 text-sm transition ${v.variant === variant
+                    ? "border-blue-500 bg-blue-50 text-blue-700"
+                    : "text-gray-600 hover:border-gray-400"
+                    }`}
                 >
                   {v.variant.replace(/_/g, " ")}
                 </button>
@@ -128,29 +146,45 @@ export function CardDetailPage() {
           <section>
             <div className="mb-2 flex items-center justify-between gap-3">
               <h3 className="text-sm font-semibold text-gray-700">
-                Price History (30 days)
+                Price History
               </h3>
-              {/* Condition selector */}
-              {availableConditions.length > 1 && (
+              <div className="flex items-center gap-2">
+                {/* Period selector */}
                 <div className="flex gap-1">
-                  {availableConditions.map((c) => (
+                  {([{ days: 30, label: "30d" }, { days: 60, label: "60d" }, { days: 90, label: "90d" }, { days: 365, label: "1y" }] as const).map(({ days, label }) => (
                     <button
-                      key={c}
-                      onClick={() => setHistoryCondition(c)}
-                      className={`rounded border px-2 py-0.5 text-xs transition ${
-                        c === activeCondition
-                          ? "border-blue-500 bg-blue-50 text-blue-700"
-                          : "text-gray-500 hover:border-gray-400"
-                      }`}
+                      key={days}
+                      onClick={() => setHistoryDays(days)}
+                      className={`rounded border px-2 py-0.5 text-xs transition ${days === historyDays
+                        ? "border-blue-500 bg-blue-50 text-blue-700"
+                        : "text-gray-500 hover:border-gray-400"
+                        }`}
                     >
-                      {c}
+                      {label}
                     </button>
                   ))}
                 </div>
-              )}
+                {/* Condition selector */}
+                {availableConditions.length > 1 && (
+                  <div className="flex gap-1">
+                    {availableConditions.map((c) => (
+                      <button
+                        key={c}
+                        onClick={() => setHistoryCondition(c)}
+                        className={`rounded border px-2 py-0.5 text-xs transition ${c === activeCondition
+                          ? "border-blue-500 bg-blue-50 text-blue-700"
+                          : "text-gray-500 hover:border-gray-400"
+                          }`}
+                      >
+                        {c}
+                      </button>
+                    ))}
+                  </div>
+                )}
+              </div>
             </div>
             <PriceHistoryChart
-              history={history ?? []}
+              history={chartHistory}
               condition={activeCondition}
             />
           </section>

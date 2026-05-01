@@ -62,9 +62,7 @@ export const ERA_LABELS: Record<string, string> = {
 export const CONDITION_LABELS: Record<string, string> = {
   S: "S",
   A: "A",
-  "A-": "A-",
   B: "B",
-  C: "C",
   D: "D",
   new: "New",
   used: "Used",

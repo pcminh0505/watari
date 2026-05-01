@@ -1,6 +1,5 @@
 import {
   CartesianGrid,
-  Legend,
   Line,
   LineChart,
   ResponsiveContainer,
@@ -17,15 +16,14 @@ interface PriceHistoryChartProps {
 
 interface DayPoint {
   date: string;
-  cardrush?: number;
-  snkrdunk?: number;
+  price?: number;
 }
 
-// Single condition fetched — take the most recent point per source per day.
+// Single condition fetched — prefer SNKRDUNK sold (actual transaction), fall back to Cardrush listing.
+// Points are newest-first from the API; first write per source per day wins.
 function aggregateByDay(points: PricePointOut[]): DayPoint[] {
   const dayMap = new Map<string, { cardrush?: number; snkrdunk?: number }>();
 
-  // Points are newest-first from the API; process in order so first write wins.
   for (const p of points) {
     const date = p.observed_at.slice(0, 10);
     const existing = dayMap.get(date) ?? {};
@@ -39,7 +37,7 @@ function aggregateByDay(points: PricePointOut[]): DayPoint[] {
 
   return Array.from(dayMap.entries())
     .sort(([a], [b]) => a.localeCompare(b))
-    .map(([date, vals]) => ({ date, ...vals }));
+    .map(([date, vals]) => ({ date, price: vals.snkrdunk ?? vals.cardrush }));
 }
 
 export function PriceHistoryChart({ history, condition }: PriceHistoryChartProps) {
@@ -67,23 +65,7 @@ export function PriceHistoryChart({ history, condition }: PriceHistoryChartProps
           <Tooltip
             formatter={(value: number) => `¥${value.toLocaleString("ja-JP")}`}
           />
-          <Legend />
-          <Line
-            type="monotone"
-            dataKey="cardrush"
-            stroke="#2563eb"
-            dot={false}
-            name="Cardrush"
-            connectNulls
-          />
-          <Line
-            type="monotone"
-            dataKey="snkrdunk"
-            stroke="#ea580c"
-            dot={false}
-            name="SNKRDUNK"
-            connectNulls
-          />
+          <Line type="monotone" dataKey="price" stroke="#2563eb" dot={false} connectNulls />
         </LineChart>
       </ResponsiveContainer>
     </div>

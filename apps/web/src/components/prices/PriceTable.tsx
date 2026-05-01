@@ -31,7 +31,6 @@ export function PriceTable({ prices }: PriceTableProps) {
   return (
     <div className="space-y-4">
       {Object.entries(bySource).map(([source, rows]) => {
-        const hasStock = rows.some((r) => r.stock_qty != null);
         return (
           <div key={source}>
             <h4 className="mb-2 text-sm font-semibold text-gray-700">
@@ -42,7 +41,6 @@ export function PriceTable({ prices }: PriceTableProps) {
                 <tr className="border-b text-xs text-gray-500">
                   <th className="pb-1 text-left">Condition</th>
                   <th className="pb-1 text-right">Price</th>
-                  {hasStock && <th className="pb-1 text-right">Stock</th>}
                   <th className="pb-1 text-right">Updated</th>
                 </tr>
               </thead>
@@ -58,11 +56,6 @@ export function PriceTable({ prices }: PriceTableProps) {
                       <td className="py-1.5 text-right">
                         {formatJPY(row.price_jpy)}
                       </td>
-                      {hasStock && (
-                        <td className="py-1.5 text-right text-gray-500">
-                          {row.stock_qty ?? "—"}
-                        </td>
-                      )}
                       <td className="py-1.5 text-right text-xs">
                         <span className={stale ? "text-amber-500" : "text-gray-400"}>
                           {formatDate(row.observed_at)}
