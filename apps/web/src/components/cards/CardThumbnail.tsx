@@ -2,6 +2,7 @@ import { Link } from "react-router";
 import { useLatestPrices } from "../../api/prices";
 import { formatJPY } from "../../lib/formatters";
 import type { ArtworkDetail } from "../../types/api";
+import { Badge } from "../ui/Badge";
 import { CardPlaceholder } from "./CardPlaceholder";
 
 interface CardThumbnailProps {
@@ -50,7 +51,7 @@ export function CardThumbnail({ card }: CardThumbnailProps) {
       <div className="flex items-center justify-between px-2 py-1.5 text-xs">
         <span className="text-gray-500">{card.local_id}</span>
         {card.rarity_code && (
-          <span className="font-bold text-gray-700">{card.rarity_code}</span>
+          <Badge label={card.rarity_code} variant="rarity" />
         )}
       </div>
 
