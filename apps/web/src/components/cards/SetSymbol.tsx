@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { SET_SYMBOL_URLS } from "../../lib/constants";
+import { SET_LOGO_URLS } from "../../lib/constants";
 
 interface SetSymbolProps {
   /** Set code as returned by the API (any casing). */
@@ -13,7 +13,8 @@ interface SetSymbolProps {
  */
 export function SetSymbol({ setCode, className }: SetSymbolProps) {
   const code = setCode.toUpperCase();
-  const url = SET_SYMBOL_URLS[code];
+  const pokellectorSymbolUrl = SET_LOGO_URLS[code]?.replace(".logo.", ".symbol.");
+  const url = pokellectorSymbolUrl;
   const [imageFailed, setImageFailed] = useState(false);
   const imageClassName =
     className ??
