@@ -2,19 +2,20 @@ import { Link } from "react-router";
 import { formatDate, formatJPY } from "../../lib/formatters";
 import { SET_LOGO_URLS } from "../../lib/constants";
 import type { SetOut } from "../../types/api";
-import { Badge } from "../ui/Badge";
+import { SetSymbol } from "../cards/SetSymbol";
 
 interface SetCardProps {
   set: SetOut;
 }
 
 export function SetCard({ set }: SetCardProps) {
-  const logoUrl = SET_LOGO_URLS[set.set_code];
+  const codeKey = set.set_code.toUpperCase();
+  const logoUrl = SET_LOGO_URLS[codeKey];
   const displayName = set.name_ja ?? set.name_en ?? set.set_code;
 
   return (
     <Link
-      to={`/sets/${set.set_code}`}
+      to={`/sets/${codeKey}`}
       className="flex flex-col rounded-lg border bg-white shadow-sm transition hover:shadow-md overflow-hidden"
     >
       {/* Logo banner */}
@@ -24,6 +25,8 @@ export function SetCard({ set }: SetCardProps) {
             src={logoUrl}
             alt={displayName}
             className="max-h-12 w-full object-contain"
+            referrerPolicy="no-referrer"
+            loading="lazy"
             onError={(e) => {
               e.currentTarget.style.display = "none";
               e.currentTarget.nextElementSibling?.removeAttribute("hidden");
@@ -42,7 +45,10 @@ export function SetCard({ set }: SetCardProps) {
       <div className="space-y-1.5 px-3 py-2">
         <div className="flex items-center justify-between gap-2">
           <p className="truncate text-sm font-semibold text-gray-900">{displayName}</p>
-          <Badge label={set.set_code.toLowerCase()} className="shrink-0" />
+          <SetSymbol
+            setCode={set.set_code}
+            className="h-4 w-auto max-w-10 shrink-0 object-contain"
+          />
         </div>
         <div className="flex items-center justify-between text-xs text-gray-500">
           <span>{set.release_date ? formatDate(set.release_date) : "—"}</span>

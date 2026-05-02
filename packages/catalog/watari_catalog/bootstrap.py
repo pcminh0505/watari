@@ -20,12 +20,12 @@ from dataclasses import dataclass
 from datetime import UTC, datetime
 from typing import Any
 
+from sqlalchemy import select
+from sqlalchemy.ext.asyncio import AsyncSession
 from watari_core.catalog import pad_local_id
 from watari_core.db import async_session_factory
 from watari_core.ingestion import finish_scrape_run, start_scrape_run
 from watari_core.models import Set
-from sqlalchemy import select
-from sqlalchemy.ext.asyncio import AsyncSession
 
 from watari_catalog.cardrush_client import CardrushClient, parse_listings_from_html
 from watari_catalog.emit_yml import CardYamlPayload, EmitResult, write_card_yaml
@@ -38,6 +38,7 @@ from watari_catalog.pokellector_client import (
     fetch_full_set,
 )
 from watari_catalog.rarities import (
+    canonicalize_cardrush,
     canonicalize_pokellector,
     canonicalize_tcgdex,
 )
@@ -45,6 +46,77 @@ from watari_catalog.tcgdex_client import TcgdexClient
 from watari_catalog.variants import DEFAULT_VARIANT
 
 logger = logging.getLogger(__name__)
+
+# Cardrush merges multiple rarity-bucket crawls onto the same local_id; pick the
+# most specific canonical tag instead of retaining the earliest hit only.
+_CARDRUSH_HINT_RANK: dict[str, int] = {
+    "SSR": 98,
+    "SAR": 100,
+    "AR": 97,
+    "SR": 95,
+    "RRR": 92,
+    "RR": 90,
+    "MUR": 89,
+    "UR": 88,
+    "HR": 86,
+    "CSR": 85,
+    "CHR": 84,
+    "TR": 83,
+    "MA": 82,
+    "K": 80,
+    "R": 50,
+    "U": 35,
+    "C": 20,
+}
+
+
+def _cardrush_hint_rank(code: str) -> int:
+    return _CARDRUSH_HINT_RANK.get(code.upper(), -1)
+
+
+def _prefer_cardrush_rarity(current: str | None, incoming: str | None) -> str | None:
+    """When the same listing appears across Cardrush rarity searches, prefer
+    higher-specificity canon codes (RR over R over mistaken UR prefixes)."""
+    if not incoming:
+        return current
+    if not current:
+        return incoming
+    ri = _cardrush_hint_rank(incoming)
+    rc = _cardrush_hint_rank(current)
+    if ri != rc:
+        return incoming if ri > rc else current
+    # Same specificity (e.g. two RR hits); normalized listing suffix wins stale.
+    return incoming
+
+
+_COLLECTORS_NUM_RE = re.compile(r"^(\d+)/(\d+)$")
+
+
+def _is_secret_collectors_print(detail: PokellectorCardDetail | None) -> bool:
+    """``104/098`` Secret-style collector numbers exceed the apparent set size."""
+    if not detail or not detail.set_total_raw:
+        return False
+    m = _COLLECTORS_NUM_RE.match(detail.set_total_raw.strip())
+    if not m:
+        return False
+    a, b = int(m.group(1)), int(m.group(2))
+    return a > b
+
+
+def _likely_legacy_double_rare(name_en: str | None) -> bool:
+    """Heuristic SM/S SwSh-era double-rare GX / TT / Pokémon V prints."""
+    if not name_en:
+        return False
+    if "GX" in name_en:
+        return True
+    # Tag Team
+    if " & " in name_en:
+        return True
+    if re.search(r"\bVMAX\b", name_en):
+        return True
+    if re.search(r"\bV\b$", name_en.rstrip()):
+        return True
+    return False
 
 
 # ---------------------------------------------------------------------------
@@ -55,6 +127,7 @@ logger = logging.getLogger(__name__)
 @dataclass
 class BootstrapSetCtx:
     set_code: str                 # "SV2A"
+    era_block: str | None          # sm | sv | sw | me
     name_ja: str | None           # "ポケモンカード151"
     tcgdex_id: str | None         # "sv2a" or None for ME sets
     pokellector_slug: str | None  # "Pokemon-151-Expansion"
@@ -62,7 +135,7 @@ class BootstrapSetCtx:
 
 async def _load_set_ctx(session: AsyncSession, set_code: str) -> BootstrapSetCtx:
     result = await session.execute(
-        select(Set.set_code, Set.name_ja, Set.tcgdex_id, Set.source_refs).where(
+        select(Set.set_code, Set.era_block, Set.name_ja, Set.tcgdex_id, Set.source_refs).where(
             Set.set_code == set_code.upper()
         )
     )
@@ -71,10 +144,11 @@ async def _load_set_ctx(session: AsyncSession, set_code: str) -> BootstrapSetCtx
         raise RuntimeError(
             f"Set {set_code} not found — run `seed-sets` first."
         )
-    set_code_db, name_ja, tcgdex_id, source_refs = row
+    set_code_db, era_block, name_ja, tcgdex_id, source_refs = row
     pokellector_slug = (source_refs or {}).get("pokellector_slug")
     return BootstrapSetCtx(
         set_code=set_code_db,
+        era_block=era_block,
         name_ja=name_ja,
         tcgdex_id=tcgdex_id,
         pokellector_slug=pokellector_slug,
@@ -150,6 +224,7 @@ async def _fetch_tcgdex_set(
 class CardrushCardHints:
     name_ja: str | None
     variants: set[str]
+    rarity_code: str | None
 
 
 async def _fetch_cardrush_variants(
@@ -164,7 +239,11 @@ async def _fetch_cardrush_variants(
     are logged; the merge still succeeds with whatever we got.
     """
     hints: dict[str, CardrushCardHints] = defaultdict(
-        lambda: CardrushCardHints(name_ja=None, variants={DEFAULT_VARIANT})
+        lambda: CardrushCardHints(
+            name_ja=None,
+            variants={DEFAULT_VARIANT},
+            rarity_code=None,
+        )
     )
     # Keep per-card the best name we've seen (ranked: normal variant wins over
     # a variant-suffixed name like ``ミュウツー(モンスターボールミラー)``).
@@ -174,6 +253,7 @@ async def _fetch_cardrush_variants(
         async with CardrushClient() as client:
             for rarity in rarities:
                 keyword = f"{set_code} {rarity}"
+                query_rarity = canonicalize_cardrush(rarity)
                 try:
                     pages = await client.search_all_pages(keyword, max_pages=max_pages)
                 except Exception as exc:  # pragma: no cover - network-ish
@@ -190,6 +270,12 @@ async def _fetch_cardrush_variants(
                         h = hints[padded]
                         if parsed.variant:
                             h.variants.add(parsed.variant)
+                        parsed_or_query_rarity = parsed.rarity_code or query_rarity
+                        if parsed_or_query_rarity:
+                            h.rarity_code = _prefer_cardrush_rarity(
+                                h.rarity_code,
+                                parsed_or_query_rarity,
+                            )
                         if parsed.name_ja:
                             # Prefer names from the "normal" variant listing
                             # over variant-suffixed ones.
@@ -248,28 +334,54 @@ def _infer_category(
 
 def _choose_rarity(
     *,
+    era_block: str | None,
+    name_en: str | None,
     pokellector: PokellectorCardDetail | None,
     tcgdex: TcgdexCardMeta | None,
+    cardrush: CardrushCardHints | None,
 ) -> str | None:
     """Pokellector wins when mappable; TCGdex fallback; else None.
 
-    Cardrush variants don't carry the rarity label reliably across pagination,
-    so we don't consult them here.
+    Cardrush is used only as a fallback when upstream labels are absent or
+    unmappable (e.g. Pokellector "Secret Rare" in some SwSh sets).
     """
     if pokellector and pokellector.rarity_raw:
         mapped = canonicalize_pokellector(pokellector.rarity_raw)
         if mapped:
+            raw_label = pokellector.rarity_raw.strip()
+            legacy_ultra_miscast = (
+                mapped == "UR"
+                and raw_label == "Ultra Rare"
+                and (era_block in ("sm", "sw"))
+            )
+            if legacy_ultra_miscast:
+                cr = cardrush.rarity_code if cardrush else None
+                if cr and cr != "UR":
+                    return cr
+                if tcgdex and tcgdex.rarity_raw:
+                    tcg_mapped = canonicalize_tcgdex(tcgdex.rarity_raw)
+                    if tcg_mapped == "RR":
+                        return "RR"
+                if not _is_secret_collectors_print(pokellector):
+                    if _likely_legacy_double_rare(name_en):
+                        return "RR"
+            # Any era: trust Cardrush RR against Pokéllector UR.
+            if mapped == "UR" and cardrush and cardrush.rarity_code == "RR":
+                return "RR"
             return mapped
     if tcgdex and tcgdex.rarity_raw:
         mapped = canonicalize_tcgdex(tcgdex.rarity_raw)
         if mapped:
             return mapped
+    if cardrush and cardrush.rarity_code:
+        return cardrush.rarity_code
     return None
 
 
 def _merge_one(
     *,
     set_code: str,
+    era_block: str | None,
     stub: PokellectorCardStub,
     pokel_detail: PokellectorCardDetail | None,
     tcgdex: TcgdexCardMeta | None,
@@ -283,8 +395,11 @@ def _merge_one(
     name_en = stub.name_en
 
     rarity_code = _choose_rarity(
+        era_block=era_block,
+        name_en=name_en,
         pokellector=pokel_detail,
         tcgdex=tcgdex,
+        cardrush=cardrush,
     )
 
     category = _infer_category(tcgdex=tcgdex, name_ja=name_ja, name_en=name_en)
@@ -307,10 +422,15 @@ def _merge_one(
             "id": f"{stub.local_id}",
             "rarity_raw": tcgdex.rarity_raw,
         }
-    if cardrush and (cardrush.name_ja or cardrush.variants - {DEFAULT_VARIANT}):
+    if cardrush and (
+        cardrush.name_ja
+        or cardrush.variants - {DEFAULT_VARIANT}
+        or cardrush.rarity_code is not None
+    ):
         sources["cardrush"] = {
             "name_ja": cardrush.name_ja,
             "variants_seen": sorted(cardrush.variants),
+            "rarity_code": cardrush.rarity_code,
         }
 
     return CardYamlPayload(
@@ -424,6 +544,7 @@ async def bootstrap_set(
         cardrush = cardrush_hints.get(padded)
         payload = _merge_one(
             set_code=ctx.set_code,
+            era_block=ctx.era_block,
             stub=stub,
             pokel_detail=detail,
             tcgdex=tcgdex,

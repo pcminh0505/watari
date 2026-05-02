@@ -6,6 +6,7 @@ import { CardPlaceholder } from "../components/cards/CardPlaceholder";
 import { PriceHistoryChart } from "../components/prices/PriceHistoryChart";
 import { PriceTable } from "../components/prices/PriceTable";
 import { SpreadTable } from "../components/prices/SpreadTable";
+import { SetSymbol } from "../components/cards/SetSymbol";
 import { Badge } from "../components/ui/Badge";
 import { ErrorMessage } from "../components/ui/ErrorMessage";
 import { Spinner } from "../components/ui/Spinner";
@@ -87,6 +88,7 @@ export function CardDetailPage() {
               src={card.image_url}
               alt={displayName}
               className="w-full rounded-lg shadow-md"
+              referrerPolicy="no-referrer"
             />
           ) : (
             <CardPlaceholder />
@@ -105,7 +107,11 @@ export function CardDetailPage() {
               <span className="mt-1 text-base text-gray-500">{card.name_en}</span>
             )}
           </div>
-          <div className="mb-4 flex flex-wrap gap-2">
+          <div className="mb-4 flex flex-wrap items-center gap-2">
+            <SetSymbol
+              setCode={card.set_code}
+              className="h-5 max-h-5 w-auto max-w-16 object-contain filter-[drop-shadow(0_1px_1px_rgb(0_0_0/0.25))]"
+            />
             <Badge label={card.set_code} />
             <Badge label={`#${card.local_id}`} />
             {card.rarity_code && (

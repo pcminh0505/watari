@@ -19,6 +19,7 @@ import logging
 import re
 from collections.abc import Iterable
 from datetime import UTC, datetime
+from html import unescape
 
 import httpx
 from watari_core.bronze import write_bronze_set
@@ -106,7 +107,7 @@ _CARD_BLOCK_RE = re.compile(
 def parse_set_index(html: str, set_slug: str) -> PokellectorSetIndex:
     """Extract every card stub from a jp.pokellector.com set page."""
     name_match = _SET_TITLE_RE.search(html)
-    name_en = name_match.group(1).strip() if name_match else set_slug
+    name_en = unescape(name_match.group(1).strip()) if name_match else set_slug
 
     cards: list[PokellectorCardStub] = []
     series_id: str | None = None
@@ -120,7 +121,7 @@ def parse_set_index(html: str, set_slug: str) -> PokellectorSetIndex:
             continue
         pokellector_id = parts[1]
         local_id = m.group("local_id")
-        title = m.group("title")
+        title = unescape(m.group("title"))
         # Title comes as "Ethan's Pinsir - MEGA Dream ex #1". Strip everything
         # from the last " - " onwards.
         name_en_card = title.rsplit(" - ", 1)[0].strip()

@@ -1,5 +1,15 @@
-const BASE = import.meta.env.VITE_API_BASE_URL ?? "https://watari-api.fly.dev";
+const BASE =
+  import.meta.env.VITE_API_BASE_URL ??
+  (import.meta.env.DEV ? "http://127.0.0.1:8000" : "https://watari-api.fly.dev");
 const KEY = import.meta.env.VITE_API_KEY ?? "";
+
+if (import.meta.env.DEV && BASE.includes("watari-api.fly.dev")) {
+  console.warn(
+    "[watari web] Using production API (%s). Locally seeded SM/SwSH/SV/etc. won't appear unless " +
+      "Fly has the same catalog or you set VITE_API_BASE_URL=http://127.0.0.1:8000 in .env.local.",
+    BASE
+  );
+}
 
 function getHeaders(): HeadersInit {
   return KEY ? { "X-API-Key": KEY } : {};

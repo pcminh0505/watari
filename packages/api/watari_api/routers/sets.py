@@ -97,7 +97,7 @@ async def list_sets(
     lang: str,
     session: SessionDep,
     response: Response,
-    era: str | None = Query(None, description="Filter by era_block (e.g. 'sv', 'me')"),
+    era: str | None = Query(None, description="Filter by era_block (e.g. 'sv', 'me', 'sm', 'sw')"),
     sort: Literal["release_date", "value", "set_code"] = Query(
         "release_date", description="Sort key: release_date, value, set_code"
     ),

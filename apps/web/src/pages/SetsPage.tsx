@@ -8,7 +8,7 @@ import { SET_RELEASE_ORDER } from "../lib/constants";
 import type { SetOut } from "../types/api";
 
 export function SetsPage() {
-  const [era, setEra] = useState<"all" | "sv" | "me">("all");
+  const [era, setEra] = useState<"all" | "sv" | "me" | "sm" | "sw">("all");
   const [sort, setSort] = useState<
     "release_desc" | "release_asc" | "value_desc" | "value_asc"
   >("release_desc");

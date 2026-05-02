@@ -11,7 +11,7 @@ interface CardsParams {
 }
 
 export function useCards(setCode: string, params: CardsParams = {}) {
-  const { rarity, variant, tracked_only = true, page = 0, limit = 100 } = params;
+  const { rarity, variant, tracked_only = false, page = 0, limit = 100 } = params;
   const qs = new URLSearchParams({
     limit: String(limit),
     offset: String(page * limit),

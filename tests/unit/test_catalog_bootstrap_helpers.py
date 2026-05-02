@@ -8,10 +8,14 @@ category inference.
 from __future__ import annotations
 
 from watari_catalog.bootstrap import (
+    CardrushCardHints,
     TcgdexCardMeta,
+    _choose_rarity,
     _infer_category,
+    _prefer_cardrush_rarity,
     _strip_variant_suffix_ja,
 )
+from watari_catalog.pokellector_client import PokellectorCardDetail
 
 
 class TestStripVariantSuffixJa:
@@ -71,3 +75,73 @@ class TestInferCategory:
 
     def test_default_is_card(self):
         assert _infer_category(tcgdex=None, name_ja="ピカチュウ", name_en="Pikachu") == "card"
+
+
+class TestPreferCardrushRarity:
+    def test_rr_beats_r(self):
+        assert _prefer_cardrush_rarity("R", "RR") == "RR"
+        assert _prefer_cardrush_rarity("RR", "R") == "RR"
+
+    def test_rr_beats_first_hit_ur(self):
+        assert _prefer_cardrush_rarity("UR", "RR") == "RR"
+
+    def test_sr_beats_rr_when_incoming_higher(self):
+        assert _prefer_cardrush_rarity("RR", "SR") == "SR"
+
+
+class TestChooseRarityLegacyUltraMiscast:
+    def test_sm_prefers_rr_from_cardrush(self):
+        p = PokellectorCardDetail("1", "Ultra Rare", "10/098")
+        h = CardrushCardHints(None, frozenset({"normal"}), "RR")
+        assert (
+            _choose_rarity(
+                era_block="sm",
+                name_en="Buzzwole GX",
+                pokellector=p,
+                tcgdex=None,
+                cardrush=h,
+            )
+            == "RR"
+        )
+
+    def test_sw_respects_cardrush_sr_over_ultra_miscast(self):
+        p = PokellectorCardDetail("1", "Ultra Rare", None)
+        h = CardrushCardHints(None, frozenset({"normal"}), "SR")
+        assert (
+            _choose_rarity(
+                era_block="sw",
+                name_en="Trainer full art",
+                pokellector=p,
+                tcgdex=None,
+                cardrush=h,
+            )
+            == "SR"
+        )
+
+    def test_heuristic_rr_pokemon_v_when_no_cardrush_hint(self):
+        p = PokellectorCardDetail("25", "Ultra Rare", "25/098")
+        h = CardrushCardHints(None, frozenset({"normal"}), None)
+        assert (
+            _choose_rarity(
+                era_block="sw",
+                name_en="Pikachu V",
+                pokellector=p,
+                tcgdex=None,
+                cardrush=h,
+            )
+            == "RR"
+        )
+
+    def test_secret_collector_keeps_mapped_ultra(self):
+        p = PokellectorCardDetail("104", "Ultra Rare", "104/069")
+        h = CardrushCardHints(None, frozenset({"normal"}), None)
+        assert (
+            _choose_rarity(
+                era_block="sw",
+                name_en="Charizard VMAX",
+                pokellector=p,
+                tcgdex=None,
+                cardrush=h,
+            )
+            == "UR"
+        )

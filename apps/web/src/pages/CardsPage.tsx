@@ -42,7 +42,8 @@ function sortCards(cards: ArtworkDetail[], sort: SortKey): ArtworkDetail[] {
 export function CardsPage() {
   const { setCode = "" } = useParams<{ setCode: string }>();
   const [rarity, setRarity] = useState("");
-  const [trackedOnly, setTrackedOnly] = useState(true);
+  // Default off: catalog artworks exist before scrapers mark prints tracked.
+  const [trackedOnly, setTrackedOnly] = useState(false);
   const [sort, setSort] = useState<SortKey>("number");
   const [page, setPage] = useState(0);
 

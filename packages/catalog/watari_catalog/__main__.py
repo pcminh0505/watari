@@ -16,6 +16,10 @@ Commands (v3 pipeline):
 
     verify
         Print a catalog health snapshot.
+
+    verify-pokellector [--set SV2A ...]
+        Compare ``data/cards/{SET}/*.yml`` local_ids to the live set index on
+        https://jp.pokellector.com/ (requires network).
 """
 
 from __future__ import annotations
@@ -60,6 +64,18 @@ def _build_parser() -> argparse.ArgumentParser:
 
     sub.add_parser("verify", help="Print catalog health snapshot")
 
+    vp = sub.add_parser(
+        "verify-pokellector",
+        help="Cross-check card YML numbering vs jp.pokellector.com set indexes",
+    )
+    vp.add_argument("--set", dest="sets", action="append", default=None)
+    vp.add_argument(
+        "--timeout",
+        type=float,
+        default=60.0,
+        help="HTTP timeout seconds per request (default: 60)",
+    )
+
     return p
 
 
@@ -84,6 +100,13 @@ async def _dispatch(args: argparse.Namespace) -> int:
 
         await verify.run()
         return 0
+    if args.command == "verify-pokellector":
+        from watari_catalog import verify_pokellector
+
+        return await verify_pokellector.run(
+            sets=args.sets,
+            timeout=args.timeout,
+        )
     return 1
 
 

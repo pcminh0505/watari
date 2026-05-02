@@ -1,6 +1,6 @@
 import clsx from "clsx";
 
-type EraFilter = "all" | "sv" | "me";
+type EraFilter = "all" | "sv" | "me" | "sm" | "sw";
 type SetSort = "release_desc" | "release_asc" | "value_desc" | "value_asc";
 
 interface SetsFilterBarProps {
@@ -23,7 +23,7 @@ export function SetsFilterBar({
       {/* Era pills */}
       <div className="flex flex-wrap items-center gap-1.5">
         <span className="mr-1 text-xs font-medium text-gray-500 uppercase tracking-wide">Era</span>
-        {(["all", "sv", "me"] as EraFilter[]).map((e) => (
+        {(["all", "me", "sv", "sw", "sm"] as EraFilter[]).map((e) => (
           <button
             key={e}
             onClick={() => onEraChange(e)}
@@ -34,7 +34,15 @@ export function SetsFilterBar({
                 : "bg-gray-100 text-gray-600 hover:bg-gray-200"
             )}
           >
-            {e === "all" ? "All" : e === "sv" ? "Scarlet & Violet" : "Mega Evolution"}
+            {e === "all"
+              ? "All"
+              : e === "sv"
+                ? "Scarlet & Violet"
+                : e === "me"
+                  ? "Mega Evolution"
+                  : e === "sm"
+                    ? "Sun & Moon"
+                    : "Sword & Shield"}
           </button>
         ))}
       </div>

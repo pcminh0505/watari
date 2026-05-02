@@ -1,0 +1,10 @@
+# Japanese Pokémon TCG set entry. Edit with care: used by seed-sets.
+
+set_code: SM4P
+era_block: sm
+language: jp
+name_ja: GXバトルブースト
+name_en: GXバトルブースト
+release_date: 2017-10-20
+tcgdex_id: SM4+
+pokellector_slug: GX-Battle-Boost-Expansion

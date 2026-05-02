@@ -1,5 +1,6 @@
 .PHONY: up down test lint format migrate \
-        catalog-seed-sets catalog-bootstrap catalog-seed-cards catalog-verify \
+        catalog-seed-sets catalog-bootstrap catalog-seed-cards catalog-verify catalog-verify-pokellector \
+        sync-set-symbols \
         scrape-cardrush scrape-snkrdunk \
         api api-dev \
         web-install web-dev web-build web-preview \
@@ -13,7 +14,7 @@ down:
 	docker compose down
 
 test:
-	uv run pytest
+	uv run python -m pytest
 
 lint:
 	uv run ruff check .
@@ -22,7 +23,7 @@ format:
 	uv run ruff format .
 
 migrate:
-	uv run alembic upgrade head
+	uv run python -m alembic upgrade head
 
 # --- Catalog pipeline (metadata: sets + cards + artwork splits) ---
 # 1. Load/refresh the `sets` table from data/sets/*.yml
@@ -43,6 +44,15 @@ catalog-seed-cards:
 
 catalog-verify:
 	uv run python -m watari_catalog verify
+
+# Compare data/cards local_ids to live jp.pokellector.com set indexes (network).
+catalog-verify-pokellector:
+	uv run python -m watari_catalog verify-pokellector
+
+# Rebuild apps/web SET_SYMBOL_URLS from Bulbapedia markdown export.
+# Usage: make sync-set-symbols [SYMBOLS_MD=/abs/path/to/List_of_...md]
+sync-set-symbols:
+	uv run python scripts/update_set_symbols.py $(if $(SYMBOLS_MD),--source "$(SYMBOLS_MD)",)
 
 # --- Price scrapers ---
 # Usage: make scrape-cardrush SET=SV2A
