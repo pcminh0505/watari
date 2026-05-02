@@ -34,15 +34,17 @@ _CREATE_MV = f"""
 CREATE MATERIALIZED VIEW {_MV_NAME} AS
 SELECT
     COALESCE(sd.card_id, cr.card_id)   AS card_id,
-    COALESCE(sd.median_7d, cr.price)   AS market_price_jpy,
+    COALESCE(sd.median_jpy, cr.price)  AS market_price_jpy,
     CASE
         WHEN sd.card_id IS NOT NULL THEN 'snkrdunk'
         ELSE 'cardrush'
     END                                AS source_used
 FROM (
-    SELECT card_id, price_jpy AS median_7d
+    -- mv_median_7d is already snkrdunk+sold-only; it has no source column.
+    -- Columns: card_id, condition, median_jpy, sample_size.
+    SELECT card_id, median_jpy
     FROM mv_median_7d
-    WHERE source = 'snkrdunk' AND condition = 'A'
+    WHERE condition = 'A'
 ) sd
 FULL OUTER JOIN (
     SELECT card_id, price_jpy AS price
