@@ -5,10 +5,12 @@ on:
     - cron: "0 0,8 * * *"
     # SNKRDUNK: 03:00 JST (= 18:00 UTC previous day)
     - cron: "0 18 * * *"
+    # Legacy SM/SW weekly backfill window: Sunday 06:00 JST (= Sat 21:00 UTC)
+    - cron: "0 21 * * 6"
   workflow_dispatch:
     inputs:
       job:
-        description: "cardrush-sv | cardrush-me | snkrdunk"
+        description: "cardrush-sv | cardrush-me | cardrush-sw | cardrush-sm | snkrdunk | snkrdunk-legacy"
         required: true
 
 jobs:
@@ -49,6 +51,46 @@ jobs:
             --vm-size shared-cpu-2x \
             --region sin \
             -- uv run python -m watari_cardrush --era ME
+        env:
+          FLY_API_TOKEN: ${{ secrets.FLY_API_TOKEN }}
+
+  cardrush-sw:
+    if: >
+      (github.event_name == 'schedule' && contains(github.event.schedule, '0 21 * * 6')) ||
+      (github.event_name == 'workflow_dispatch' && inputs.job == 'cardrush-sw')
+    runs-on: ubuntu-latest
+    steps:
+      - uses: superfly/flyctl-actions/setup-flyctl@master
+      - run: |
+          IMAGE=$(flyctl image show --app watari-api --json | python3 -c \
+            "import sys,json; d=json.load(sys.stdin)[0]; print(d['Registry']+'/'+d['Repository']+':'+d['Tag'])")
+          flyctl machine run "$IMAGE" \
+            --app watari-api \
+            --name scraper-cardrush-sw \
+            --rm \
+            --vm-size shared-cpu-2x \
+            --region sin \
+            -- uv run python -m watari_cardrush --era SW
+        env:
+          FLY_API_TOKEN: ${{ secrets.FLY_API_TOKEN }}
+
+  cardrush-sm:
+    if: >
+      (github.event_name == 'schedule' && contains(github.event.schedule, '0 21 * * 6')) ||
+      (github.event_name == 'workflow_dispatch' && inputs.job == 'cardrush-sm')
+    runs-on: ubuntu-latest
+    steps:
+      - uses: superfly/flyctl-actions/setup-flyctl@master
+      - run: |
+          IMAGE=$(flyctl image show --app watari-api --json | python3 -c \
+            "import sys,json; d=json.load(sys.stdin)[0]; print(d['Registry']+'/'+d['Repository']+':'+d['Tag'])")
+          flyctl machine run "$IMAGE" \
+            --app watari-api \
+            --name scraper-cardrush-sm \
+            --rm \
+            --vm-size shared-cpu-2x \
+            --region sin \
+            -- uv run python -m watari_cardrush --era SM
         env:
           FLY_API_TOKEN: ${{ secrets.FLY_API_TOKEN }}
 
@@ -97,6 +139,98 @@ jobs:
           flyctl machine run "$IMAGE" \
             --app watari-api \
             --name scraper-snkrdunk-${{ matrix.era }} \
+            --rm \
+            --vm-size shared-cpu-2x \
+            --region sin \
+            -- uv run python -m watari_snkrdunk --era ${{ matrix.era }}
+        env:
+          FLY_API_TOKEN: ${{ secrets.FLY_API_TOKEN }}
+
+  snkrdunk-legacy:
+    if: >
+      (github.event_name == 'schedule' && contains(github.event.schedule, '0 21 * * 6')) ||
+      (github.event_name == 'workflow_dispatch' && inputs.job == 'snkrdunk-legacy')
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      max-parallel: 5
+      matrix:
+        era:
+          - s1w
+          - s1h
+          - s1a
+          - s2
+          - s2a
+          - s3
+          - s3a
+          - s4
+          - s4a
+          - s5i
+          - s5r
+          - s5a
+          - s6h
+          - s6k
+          - s6a
+          - s7d
+          - s7r
+          - s8
+          - s8a
+          - s8b
+          - s9
+          - s9a
+          - s10a
+          - s10b
+          - s10d
+          - s10p
+          - s11
+          - s11a
+          - s12
+          - s12a
+          - sm0
+          - sm1s
+          - sm1m
+          - sm1p
+          - sm2k
+          - sm2l
+          - sm2p
+          - sm3h
+          - sm3n
+          - sm3p
+          - sm4s
+          - sm4a
+          - sm4p
+          - sm5s
+          - sm5m
+          - sm5p
+          - sm6
+          - sm6a
+          - sm6b
+          - sm7
+          - sm7a
+          - sm7b
+          - sm8
+          - sm8a
+          - sm8b
+          - sm9
+          - sm9a
+          - sm9b
+          - sm10
+          - sm10a
+          - sm10b
+          - sm11
+          - sm11a
+          - sm11b
+          - sm12
+          - sm12a
+          - smp2
+    steps:
+      - uses: superfly/flyctl-actions/setup-flyctl@master
+      - run: |
+          IMAGE=$(flyctl image show --app watari-api --json | python3 -c \
+            "import sys,json; d=json.load(sys.stdin)[0]; print(d['Registry']+'/'+d['Repository']+':'+d['Tag'])")
+          flyctl machine run "$IMAGE" \
+            --app watari-api \
+            --name scraper-snkrdunk-legacy-${{ matrix.era }} \
             --rm \
             --vm-size shared-cpu-2x \
             --region sin \
