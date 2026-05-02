@@ -1,5 +1,6 @@
 import { BrowserRouter, Route, Routes } from "react-router";
 import { Layout } from "./components/layout/Layout";
+import { AdminPage } from "./pages/AdminPage";
 import { CardDetailPage } from "./pages/CardDetailPage";
 import { CardsPage } from "./pages/CardsPage";
 import { CardsSearchPage } from "./pages/CardsSearchPage";
@@ -15,6 +16,7 @@ export function App() {
           <Route path="/cards" element={<CardsSearchPage />} />
           <Route path="/sets/:setCode" element={<CardsPage />} />
           <Route path="/sets/:setCode/:localId" element={<CardDetailPage />} />
+          <Route path="/admin" element={<AdminPage />} />
           <Route path="*" element={<NotFoundPage />} />
         </Routes>
       </Layout>

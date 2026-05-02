@@ -8,11 +8,15 @@ Canonical codes (upper-case, short, stable):
     RR   - Double Rare (ex / two-star)
     AR   - Art Rare
     SR   - Super Rare (full-art trainer, non-ex pokémon full art legacy)
+    SSR  - Shiny Double Rare (SWSH Shiny Star V / VMAX Climax shiny tier)
     SAR  - Special Art Rare
     UR   - Ultra Rare (gold / rainbow / trophy)
-    CSR  - Character Super Rare (legacy, classic-era)
-    HR   - Hyper Rare (legacy)
-    RRR  - Triple Rare (legacy Sword & Shield)
+    CSR  - Character Super Rare (legacy, SWSH-era)
+    CHR  - Character Rare (legacy, SWSH-era)
+    HR   - Hyper Rare (SM-era gold full-art)
+    TR   - Trainer Gallery Rare Holo (SWSH Trainer Gallery)
+    K    - Radiant Rare (SWSH era)
+    RRR  - Triple Rare / Amazing Rare (legacy Sword & Shield)
     MA   - Masterball Mirror (ME-era parallel)
     MUR  - Masterball Ultra Rare (proposed ME-era)
 
@@ -114,6 +118,11 @@ POKELLECTOR_RARITY_MAP: dict[str, str] = {
     # Mega Evolution era additions (Masterball Mirror parallel)
     "Master Ball Rare": "MA",
     "Masterball Rare": "MA",
+    # SM-era additions
+    "Secret Rare": "UR",    # SM/SW gold/rainbow + secret alt-arts
+    "Prism Star": "SR",     # SM-era ◇ prism cards (similar tier to Super Rare)
+    # SWSH-era additions
+    "Shiny": "SR",          # SWSH Shiny Star V / VMAX Climax base shiny tier
 }
 
 

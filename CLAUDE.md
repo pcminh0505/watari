@@ -6,7 +6,7 @@
 > Update it whenever the architecture changes — especially after a
 > destructive migration, a new source, or a schema split.
 >
-> Last updated: 2026-04-25 (Added M3 ムニキスゼロ / Munikis Zero and M4 ニンジャスピナー / Ninja Spinner to the ME catalog — 30 sets total. Bootstrap + seed + scrape pipeline pending for M3/M4).
+> Last updated: 2026-05-02 (Expanded catalog to 98 sets — SM and SWSH eras bootstrapped, CI weekly legacy scraper jobs added, Vite+React frontend shipped in `apps/web/`).
 
 ---
 
@@ -25,27 +25,31 @@ Three concerns, cleanly separated:
 Stack: Python 3.13, `uv` workspaces, PostgreSQL, SQLAlchemy async, Alembic,
 MinIO (S3-compatible) for the **bronze layer** of raw scrape payloads,
 `curl_cffi` for Cloudflare-fronted sites, `httpx` for everything else.
+Frontend: Vite + React + TypeScript, `bun` package manager (`apps/web/`).
 
 ---
 
 ## 2. Repo layout
 
 ```
+apps/
+  web/                 ← Vite + React frontend (bun; VITE_API_BASE_URL → FastAPI)
 packages/
   core/                ← SQLAlchemy models, Pydantic DTOs, catalog.py helpers, bronze writer
   catalog/             ← YML data tree + bootstrap/seed pipeline + CLI
     data/
-      sets/*.yml       ← 30 set files (source of truth for set metadata)
-      cards/{SET}/*.yml← one file per (set, local_id); source of truth for artworks
-    watari_catalog/ ← Python package (bootstrap.py, seed_cards.py, clients, …)
+      sets/*.yml       ← 98 set files (source of truth for set metadata, 4 eras)
+      cards/{SET}/*.yml← one file per (set, local_id); 10 787 files total
+    watari_catalog/    ← Python package (bootstrap.py, seed_cards.py, clients, verify_pokellector.py, …)
   scraper_cardrush/    ← curl_cffi-based scraper, rarity-bucket crawling
   scraper_snkrdunk/    ← cookie-auth snkrdunk sold-price scraper
-  dispatcher/          ← job dispatch (placeholder-ish for now)
-  scheduler/           ← cron/apscheduler shell (placeholder-ish for now)
+  dispatcher/          ← job dispatch (placeholder)
+  scheduler/           ← cron/apscheduler shell (placeholder; live schedule is in CI)
   api/                 ← FastAPI read layer
-migrations/            ← Alembic (current head: 005_artworks_split)
+migrations/            ← Alembic (current head: 006_mv_spread_unique_index)
+scripts/               ← gen_sm/sw_set_metadata.py, update_set_symbols.py, dump/bootstrap scripts
 plans/                 ← design docs, one per major change
-tests/unit/            ← 120 tests, all passing
+tests/unit/            ← 196 tests, all passing
 ```
 
 Config knobs: `.env` (DB URL, MinIO creds, SNKRDUNK cookies). `docker-compose.yml`
@@ -161,7 +165,7 @@ Helpers live in `packages/core/watari_core/catalog.py`
 
 **Watch out:** `parse_artwork_id` / `parse_card_id` split on `"-"` and assume
 exactly 3 / 4 segments. If a set_code ever contains a hyphen (e.g. `"sv-p"`)
-they will misparse. None of the current 30 set codes contain hyphens.
+they will misparse. None of the current 98 set codes contain hyphens.
 
 ### 3.5 API layer (`packages/api/`, read-only)
 
@@ -229,12 +233,13 @@ Routers (all under `packages/api/watari_api/routers/`):
   three price MVs. Handy after a catalog reseed, after importing a
   historical dump, or when a scrape hook failure left the MVs stale.
 
-**Tests:** `tests/unit/test_api.py` (15) uses `dependency_overrides` to
+**Tests:** `tests/unit/test_api.py` (36) uses `dependency_overrides` to
 swap `get_session` and `rate_limit_dep` for a FakeSession + anonymous
 no-op, keeping endpoint-shape tests infra-free. Auth / rate-limit /
 CLI / MV helpers have their own files (`test_api_auth.py` 9,
 `test_api_ratelimit.py` 8, `test_api_cli.py` 9, `test_mvs.py` 5).
-None of the API or MV tests require Postgres or Redis.
+Catalog bootstrap helpers: `test_catalog_bootstrap_helpers.py` 18,
+`test_verify_pokellector.py` 2. None of the API or MV tests require Postgres or Redis.
 
 ### 3.6 Post-scrape MV refresh hook (`packages/core/watari_core/mvs.py`)
 
@@ -276,50 +281,44 @@ a fourth MV, **create its unique index in the same migration** or
 
 ## 4. What works right now
 
-### 4.1 End-to-end smoke (last run 2026-04-24, full SV + ME seed; M1 → M1L rename)
+### 4.1 End-to-end smoke (last run 2026-05-02, SV + ME + SM + SWSH)
 
 | Step                                               | Result                                                                                         |
 | -------------------------------------------------- | ---------------------------------------------------------------------------------------------- |
 | `alembic upgrade head`                             | clean (head = `006_mv_spread_unique_index`)                                                    |
-| `make catalog-seed-sets`                           | 28 sets upserted (all 23 SV + 5 ME); M3/M4 pending seed                                        |
-| `make catalog-bootstrap SET=<code>` × 28           | all 28 sets bootstrapped; 3992 card YMLs written (SV2A 210 + M2A 250 previously, +26 new sets) |
-| `make catalog-seed-cards`                          | 3788 artworks / 4505 prints across 28 sets                                                     |
-| `make catalog-verify`                              | 0 orphans · 0 artworks missing img · 299 missing rarity · 243 missing JA (mostly early SV/M2A Commons) |
-| `make scrape-cardrush ERA=sv` + `ERA=me` + M1L retry | ~12.7k Cardrush rows across 28 sets (SV3 needed one retry for 5 rarities that hit DNS flake; M1 re-scraped as M1L)     |
-| `make scrape-snkrdunk ERA=<code>` × 28             | ~104k SNKRDUNK rows across 27 sets. **SV1 still returns 0 rows** (merged into `sv1v` on SNKRDUNK). **M1L now works** — the prior 0-row run was because we were asking for the wrong code (`pkmn-tcg-m1-*` is empty; the real product namespace is `pkmn-tcg-M1L-*`). |
-| `watari-api refresh-mvs` (CONCURRENTLY)         | mv_latest_price 11 219 · mv_median_7d 417 · mv_cross_source_spread 198                          |
-| `uv run pytest`                                    | **163 passed**                                                                                 |
+| `make catalog-seed-sets`                           | 98 sets upserted (25 SV + 6 ME + 30 SWSH/S + 37 SM)                                           |
+| `make catalog-bootstrap SET=<code>` × 98           | all 98 sets bootstrapped; 10 787 card YMLs on disk                                             |
+| `make catalog-seed-cards`                          | artworks + prints seeded across all 98 sets                                                    |
+| `make catalog-verify`                              | 0 orphans · 0 artworks missing img (some missing rarity/JA for older SM commons — expected)    |
+| `make scrape-cardrush ERA=sv` + `ERA=me`           | ~12.7k Cardrush rows across SV+ME sets. SM/SW: scheduled weekly via CI.                       |
+| `make scrape-snkrdunk ERA=<code>` × SV+ME          | ~104k SNKRDUNK rows. **SV1 still 0 rows** (upstream uses `sv1v` namespace). SM/SW: scheduled weekly via CI. |
+| `watari-api refresh-mvs` (CONCURRENTLY)            | mv_latest_price, mv_median_7d, mv_cross_source_spread — refreshed                              |
+| `uv run pytest`                                    | **196 passed**                                                                                 |
 
 ### 4.2 Data that's already committed
 
-- `data/sets/*.yml` — all 28 SV + ME sets with `pokellector_slug` filled.
-  Three sets renamed to match reality: **M2** `メガディメンション/Mega Dimension` →
-  `インフェルノX/Inferno X`, **SV7A** `パラダイムトリガー (Paradigm Trigger, which
-  is actually S12a SWSH)` → `楽園ドラゴーナ/Paradise Dragona`, and **M1 → M1L**
-  (official Pokémon abbreviation for `メガブレイブ / Mega Brave`; all JP sources —
-  pokecahack, tcg-portal.jp, bee-honpo, ポケモンWiki — call it `M1L`).
-- `data/cards/{SET}/*.yml` — 3992 files covering all 28 sets. The biggest
-  individual sets are SV4A (360), SV2A (210), M2A (250), SV8A (237),
-  SV11B/SV11W (174 each), SV3 (141), SV8 (138), SV7 (135), SV6 (133),
-  SV9/SV10 (132), M2 (116), SV1/SV1V (108), M1L (92), M1S (90).
+- `data/sets/*.yml` — **98 sets** across 4 eras with `pokellector_slug` filled.
+  Historical renames: **M1 → M1L** (official JP abbreviation), **M2** name corrected
+  to `インフェルノX/Inferno X`, **SV7A** corrected to `楽園ドラゴーナ/Paradise Dragona`.
+- `data/cards/{SET}/*.yml` — **10 787 files** covering all 98 sets.
+  Largest sets: SV4A (360), S4A (330), S8B (285), S12A (261), SM8B/M2A (250), SV8A (237),
+  SM12A (226), SV2A (210), SV11W/SV11B (174 each).
 
-### 4.3 Price data in the DB (post-smoke snapshot)
+### 4.3 Price data in the DB (snapshot: SV + ME fully scraped; SM/SW pending first CI run)
 
-| Aggregate                | Value                                         |
-| ------------------------ | --------------------------------------------- |
-| `price_points` total     | 117 080 rows                                  |
-| Cardrush rows            | ~12 700 (all 28 sets covered)                 |
-| SNKRDUNK rows            | ~104 400 (27 sets; only SV1 empty — merged into `sv1v` upstream) |
-| Sets with both sources   | 27 / 28                                       |
+| Aggregate                | Value                                                       |
+| ------------------------ | ----------------------------------------------------------- |
+| `price_points` total     | ~117k rows (SV+ME only; SM/SW legacy scrapers not yet run) |
+| Cardrush rows            | ~12 700 (all SV+ME sets)                                    |
+| SNKRDUNK rows            | ~104 400 (27 SV+ME sets; SV1 empty — upstream uses `sv1v`) |
+| SM/SW price data         | Pending — CI weekly legacy jobs will populate on first run  |
 
-Per-set breakdown (sample highlights): SV2A 2606 CR + 13529 SD; M2A 528 + 18198;
-SV8A 381 + 15051; M1L 211 + 5839; M2 401 + 6465; SV4A 250 + 5109; SV9 493 + 5213;
-SV1V 228 + 4923.
+Per-set highlights (SV+ME): SV2A 2606 CR + 13529 SD; M2A 528 + 18198;
+SV8A 381 + 15051; M1L 211 + 5839; M2 401 + 6465; SV4A 250 + 5109.
 
-MVs populated across all sets, so `/cards/{id}/prices`, `/cards/{id}/history`,
-and `/cards/{id}/spread` now return real data for the entire SV + ME universe
-(except **SV1** which is Cardrush-only — no spread rows for that one set, since
-spread requires ≥2 sources).
+SM/SW sets are cataloged (YMLs + DB rows) but have no price data yet —
+`/prices` and `/spread` will return empty arrays until the weekly CI scrape runs.
+SV1 remains Cardrush-only (SNKRDUNK lists it under `sv1v`).
 
 ---
 
@@ -372,15 +371,12 @@ spread requires ≥2 sources).
 - Don't "fix" this by lowering Cardrush's set-disambiguation filter
   (`listings_dropped_wrong_set`); that filter is doing its job.
 
-5. **Known gotcha (unchanged from prior session):** SNKRDUNK for mega-popular
-  cards can trip the asyncpg 32767-query-arg limit when writing a card's
-  full history in one insert. SV8A and M2A each hit this on 1 card during
-  this seeding pass (`attempted=291 succeeded=290` and `attempted=250
-  succeeded=249` respectively). Low-priority fix: batch
-  `insert_price_points` in chunks of, say, 1000 rows.
-
 ### 5.2 Medium-term
 
+- **First SM/SW price scrape.** The weekly CI jobs (Sunday 06:00 JST) will
+  run automatically. After the first pass, check coverage with
+  `make catalog-verify` and confirm SNKRDUNK product namespaces are correct
+  for each legacy era (apply the M1L lesson: probe manually on `not_found=N`).
 - **API polish.** Add pagination (`limit`/`offset`) to `/sets/{code}/cards`,
   E-Tag / `Cache-Control` headers on `/cards/{card_id}/prices` and
   `/spread`, and OpenAPI examples. Consider a `/cards/search?name=...`
@@ -389,8 +385,6 @@ spread requires ≥2 sources).
   fake limiter. We don't yet have a smoke test that drives the real Lua
   token-bucket against the `docker-compose` Redis. Worth adding once CI
   has service containers.
-- **Scheduler + dispatcher.** Currently placeholder packages. Wire up a
-  nightly schedule: SNKRDUNK nightly, Cardrush a few times a day per era.
 
 ### 5.3 Nice-to-haves
 
@@ -482,12 +476,15 @@ make catalog-seed-sets                       # load data/sets/*.yml → sets
 make catalog-bootstrap SET=SV2A              # Pokellector+TCGdex+Cardrush → data/cards/
 make catalog-seed-cards                      # YML tree → artworks + cards
 make catalog-seed-cards SET=SV2A             # single set
-make catalog-verify                          # health snapshot
+make catalog-verify                          # health snapshot (orphans, missing img/rarity/ja)
+make catalog-verify-pokellector              # cross-check local IDs vs live jp.pokellector.com (network)
+make sync-set-symbols                        # rebuild SET_SYMBOL_URLS in apps/web from Bulbapedia export
+make sync-set-symbols SYMBOLS_MD=/path/to/List_of_...md
 
 # Prices (scrapers auto-refresh the price MVs on completion)
 make scrape-cardrush SET=SV2A                # one set
-make scrape-cardrush ERA=SV                  # all sets in era
-make scrape-snkrdunk ERA=SV
+make scrape-cardrush ERA=SV                  # all sets in era (SV | ME | SM | SW)
+make scrape-snkrdunk ERA=sv2a                # one era slug
 
 # API (read layer)
 make api                                     # prod: 0.0.0.0:8000
@@ -504,12 +501,25 @@ uv run watari-api list-keys [--include-revoked]
 uv run watari-api refresh-mvs             # CONCURRENTLY (default)
 uv run watari-api refresh-mvs --no-concurrently  # fallback
 
-# Deployment helpers
+# Frontend (Vite + React)
+make web-install                             # bun install
+make web-dev                                 # dev server (VITE_API_BASE_URL=http://127.0.0.1:8000)
+make web-build                               # production build
+# Copy apps/web/.env.example → apps/web/.env.local and set VITE_API_BASE_URL
+
+# Fly.io production ops
+make deploy                                  # fly deploy --remote-only
+make migrate-prod                            # fly ssh console → alembic upgrade head
+make refresh-mvs-prod                        # fly ssh console → watari-api refresh-mvs
+make logs                                    # fly logs -a watari-api
+make ssh                                     # fly ssh console -a watari-api
+
+# Deployment helpers (data dump / prod bootstrap)
 make db-dump-data                            # data-only dump for prod rollout
 CONFIRM=yes DUMP_FILE=/tmp/watari-data-<UTC>.sql.gz make db-prod-bootstrap
 
 # Dev loop
-make test                                    # 163 tests
+make test                                    # 196 tests
 make lint
 make format
 

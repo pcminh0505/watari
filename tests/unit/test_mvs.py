@@ -30,7 +30,7 @@ class _FakeSession:
 
 
 @pytest.mark.asyncio
-async def test_refresh_price_mvs_concurrent_emits_three_statements_in_order() -> None:
+async def test_refresh_price_mvs_concurrent_emits_four_statements_in_order() -> None:
     session = _FakeSession()
     refreshed = await mvs.refresh_price_mvs(session)  # type: ignore[arg-type]
 
@@ -39,9 +39,10 @@ async def test_refresh_price_mvs_concurrent_emits_three_statements_in_order() ->
         "mv_latest_price",
         "mv_median_7d",
         "mv_cross_source_spread",
+        "mv_market_price",
     ]
-    assert len(session.statements) == 3
-    assert session.commits == 3  # one commit per MV so locks release between views
+    assert len(session.statements) == 4
+    assert session.commits == 4  # one commit per MV so locks release between views
     for stmt, mv in zip(session.statements, mvs.PRICE_MVS, strict=True):
         assert stmt == f"REFRESH MATERIALIZED VIEW CONCURRENTLY {mv}"
 

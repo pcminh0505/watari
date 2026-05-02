@@ -79,3 +79,27 @@ export interface PricePointOut {
   scrape_run_id: number | null;
   created_at: string;
 }
+
+/** Mirrors packages/api/watari_api/schemas.py: MarketPriceOut */
+export interface MarketPriceOut {
+  card_id: string;
+  market_price_jpy: number;
+  source_used: "snkrdunk" | "cardrush";
+}
+
+/** Mirrors packages/api/watari_api/schemas.py: ScrapeRunSummary */
+export interface ScrapeRunSummary {
+  started_at: string | null;
+  status: string | null;
+  rows_written: number;
+  cards_failed: number;
+}
+
+/** Mirrors packages/api/watari_api/schemas.py: ScrapeHealthRow */
+export interface ScrapeHealthRow {
+  set_code: string;
+  era_block: string;
+  cardrush: ScrapeRunSummary;
+  snkrdunk: ScrapeRunSummary;
+  warning: "zero_rows" | "consecutive_failures" | "stale_7d" | null;
+}

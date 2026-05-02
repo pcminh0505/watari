@@ -1,5 +1,5 @@
 import { Link } from "react-router";
-import { useLatestPrices } from "../../api/prices";
+import { useMarketPrice } from "../../api/prices";
 import { formatJPY } from "../../lib/formatters";
 import type { ArtworkDetail } from "../../types/api";
 import { Badge } from "../ui/Badge";
@@ -10,19 +10,16 @@ interface CardThumbnailProps {
   card: ArtworkDetail;
 }
 
+// Small indicator: sold comp vs. listed price
+const SOURCE_LABEL: Record<string, string> = {
+  snkrdunk: "sold",
+  cardrush: "listed",
+};
+
 export function CardThumbnail({ card }: CardThumbnailProps) {
   const displayName = card.name_en ?? card.name_ja ?? card.local_id;
   const variant = card.variants[0]?.variant ?? "normal";
-  const { data: prices } = useLatestPrices(card.set_code, card.local_id, variant);
-
-  const displayPrice = (() => {
-    if (!prices || prices.length === 0) return null;
-    const crA = prices.find((p) => p.source === "cardrush" && p.condition === "A");
-    if (crA) return crA.price_jpy;
-    const anyA = prices.find((p) => p.condition === "A");
-    if (anyA) return anyA.price_jpy;
-    return Math.min(...prices.map((p) => p.price_jpy));
-  })();
+  const { data: market } = useMarketPrice(card.set_code, card.local_id, variant);
 
   return (
     <Link
@@ -59,10 +56,15 @@ export function CardThumbnail({ card }: CardThumbnailProps) {
         <p className="truncate text-xs font-medium text-gray-800">
           {card.name_en ?? card.local_id}
         </p>
-        {displayPrice != null && (
-          <p className="mt-0.5 text-sm font-semibold text-blue-600">
-            {formatJPY(displayPrice)}
-          </p>
+        {market != null && (
+          <div className="mt-0.5 flex items-baseline gap-1">
+            <p className="text-sm font-semibold text-blue-600">
+              {formatJPY(market.market_price_jpy)}
+            </p>
+            <span className="text-[9px] text-gray-400">
+              {SOURCE_LABEL[market.source_used] ?? market.source_used}
+            </span>
+          </div>
         )}
       </div>
     </Link>

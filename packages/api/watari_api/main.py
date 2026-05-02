@@ -18,7 +18,7 @@ from watari_core.config import settings
 
 from watari_api.deps import validate_lang
 from watari_api.ratelimit import RateLimiter, parse_rate_limits, rate_limit_dep
-from watari_api.routers import cards, prices, sets
+from watari_api.routers import admin, cards, prices, sets
 
 
 @asynccontextmanager
@@ -70,6 +70,9 @@ def create_app() -> FastAPI:
     lang_router.include_router(cards.router)
     lang_router.include_router(prices.router)
     app.include_router(lang_router)
+
+    # Admin endpoints — outside locale routing and rate limiting
+    app.include_router(admin.router)
 
     return app
 

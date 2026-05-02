@@ -24,7 +24,7 @@ from sqlalchemy import bindparam, func, select, text
 from sqlalchemy.ext.asyncio import AsyncSession
 
 from watari_api.deps import get_session
-from watari_api.schemas import LatestPrice, SpreadRow
+from watari_api.schemas import LatestPrice, MarketPriceOut, SpreadRow
 
 router = APIRouter(
     prefix="/cards/{set_code}/{local_id}",
@@ -168,6 +168,47 @@ async def price_history(
     # Raw time-windowed data: never cache.
     response.headers["Cache-Control"] = "no-store"
     return list(result.scalars().all())
+
+
+@router.get("/market-price", response_model=MarketPriceOut)
+async def market_price(
+    lang: str,
+    set_code: str,
+    local_id: str,
+    session: SessionDep,
+    request: Request,
+    response: Response,
+    variant: str = Query("normal", description="Variant slug (default: normal)"),
+) -> Any:
+    """Unified best-price for a card from ``mv_market_price`` (condition='A').
+
+    Prefers the SNKRDUNK 7-day median; falls back to Cardrush floor.
+    Returns 404 when neither source has data for the card.
+
+    Supports conditional GET via ``If-None-Match`` / ``ETag``.
+    """
+    card = await _resolve_card(
+        session,
+        lang=lang,
+        set_code=set_code,
+        local_id=local_id,
+        variant=variant,
+    )
+    stmt = text(
+        "SELECT card_id, market_price_jpy, source_used "
+        "FROM mv_market_price WHERE card_id = :card_id"
+    ).bindparams(bindparam("card_id", type_=None))
+    row = (await session.execute(stmt, {"card_id": card.card_id})).mappings().first()
+    if row is None:
+        raise HTTPException(status_code=404, detail="no market price data for this card")
+    data = MarketPriceOut.model_validate(dict(row))
+
+    etag = _compute_etag([data])
+    if request.headers.get("if-none-match") == etag:
+        return Response(status_code=304, headers={"ETag": etag})
+    response.headers["Cache-Control"] = _PRICE_CACHE
+    response.headers["ETag"] = etag
+    return data
 
 
 @router.get("/spread", response_model=list[SpreadRow])

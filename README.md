@@ -1,6 +1,6 @@
 # Watari
 
-Japanese Pokémon TCG price API. Scrapes live listings from [Cardrush](https://www.cardrush-pokemon.jp/) and sold history from [SNKRDUNK](https://snkrdunk.com/), normalises them into a unified schema, and exposes a read-only REST API — covering all **28 SV + ME era sets** (~4,500 prints, 117k+ price points).
+Japanese Pokémon TCG price API and web UI. Scrapes live listings from [Cardrush](https://www.cardrush-pokemon.jp/) and sold history from [SNKRDUNK](https://snkrdunk.com/), normalises them into a unified schema, and exposes a read-only REST API — covering **98 sets across SV, ME, SWSH, and SM eras** (~10 800 card prints).
 
 **Live API:** `https://watari-api.fly.dev`
 
@@ -53,14 +53,14 @@ X-API-Key: your_key_here
 
 ## Coverage
 
-| Era | Sets | Sources |
-|-----|------|---------|
-| Scarlet & Violet (SV1–SV12) | 23 sets | Cardrush + SNKRDUNK |
-| Mask Expansion (M1L–M2A) | 5 sets | Cardrush + SNKRDUNK |
+| Era | Sets | Scrape schedule |
+|-----|------|-----------------|
+| Scarlet & Violet (SV1S–SV11) | 25 sets | Cardrush 2×/day · SNKRDUNK nightly |
+| Mask Expansion (M1L–M4) | 6 sets | Cardrush 2×/day · SNKRDUNK nightly |
+| Sword & Shield (S1W–S12A) | 30 sets | Cardrush + SNKRDUNK weekly (Sun 06:00 JST) |
+| Sun & Moon (SM0–SM12A, SMP2) | 37 sets | Cardrush + SNKRDUNK weekly (Sun 06:00 JST) |
 
-Scrapers run on a schedule via Fly.io ephemeral machines:
-- **Cardrush** — twice daily (00:00 + 08:00 UTC)
-- **SNKRDUNK** — nightly (18:00 UTC)
+Scrapers run via Fly.io ephemeral machines triggered by GitHub Actions.
 
 ---
 
@@ -70,6 +70,7 @@ Scrapers run on a schedule via Fly.io ephemeral machines:
 |-------|------|
 | Language | Python 3.13, uv workspaces |
 | API | FastAPI + uvicorn |
+| Frontend | Vite + React + TypeScript, Bun |
 | Database | PostgreSQL 17 (Neon serverless) |
 | Cache / rate-limit | Redis (Upstash) |
 | Object storage | Cloudflare R2 (bronze layer) |
@@ -105,7 +106,7 @@ Pokellector + TCGdex + Cardrush
 
 ## Local development
 
-**Prerequisites:** Docker, [uv](https://docs.astral.sh/uv/)
+**Prerequisites:** Docker, [uv](https://docs.astral.sh/uv/), [Bun](https://bun.sh/) (frontend only)
 
 ```bash
 # Start Postgres + MinIO
@@ -127,6 +128,15 @@ make test
 
 Copy `.env.example` to `.env` and adjust credentials as needed.
 
+### Frontend
+
+```bash
+make web-install          # bun install
+make web-dev              # http://localhost:5173 (proxies to http://127.0.0.1:8000)
+```
+
+Copy `apps/web/.env.example` to `apps/web/.env.local` and set `VITE_API_BASE_URL`.
+
 ### Scraping locally
 
 ```bash
@@ -134,7 +144,7 @@ Copy `.env.example` to `.env` and adjust credentials as needed.
 make scrape-cardrush SET=SV2A
 make scrape-snkrdunk ERA=sv2a
 
-# Full era
+# Full era (SV | ME | SM | SW)
 make scrape-cardrush ERA=SV
 make scrape-snkrdunk ERA=ME
 ```
@@ -167,14 +177,17 @@ uv run watari-api create-key --owner you@example.com --tier free
 ## Project structure
 
 ```
+apps/
+  web/               ← Vite + React frontend (Bun)
 packages/
   core/              ← models, config, DB session, catalog helpers
   catalog/           ← YML data tree + bootstrap/seed pipeline
-    data/sets/       ← 28 set definitions
-    data/cards/      ← ~4,000 card YML files (source of truth)
+    data/sets/       ← 98 set definitions (SV, ME, SWSH, SM)
+    data/cards/      ← ~10 800 card YML files (source of truth)
   scraper_cardrush/  ← curl_cffi scraper (Cloudflare-bypass)
   scraper_snkrdunk/  ← sold-price scraper
   api/               ← FastAPI read layer
 migrations/          ← Alembic (head: 006)
-.github/workflows/   ← deploy + scheduled scraper CI
+scripts/             ← set metadata generators, symbol sync, prod dump/bootstrap
+.github/workflows/   ← deploy + scheduled scraper CI (daily SV/ME, weekly SM/SW)
 ```

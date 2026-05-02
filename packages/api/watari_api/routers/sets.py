@@ -8,7 +8,7 @@ from typing import Annotated, Literal
 from fastapi import APIRouter, Depends, HTTPException, Query, Response
 from watari_core.models import Card, Set
 from watari_core.schemas import SetOut
-from sqlalchemy import Integer, String, column, desc, func, select, table
+from sqlalchemy import Integer, column, desc, func, select, table
 from sqlalchemy.ext.asyncio import AsyncSession
 
 from watari_api.deps import get_session
@@ -20,13 +20,11 @@ SessionDep = Annotated[AsyncSession, Depends(get_session)]
 # Catalog data changes only on explicit operator reseed.
 _CATALOG_CACHE = "public, max-age=3600, stale-while-revalidate=300"
 
-mv_latest_price = table(
-    "mv_latest_price",
+mv_market_price = table(
+    "mv_market_price",
     column("card_id"),
-    column("source"),
-    column("condition"),
-    column("price_jpy", Integer),
-    column("stock_qty", Integer),
+    column("market_price_jpy", Integer),
+    column("source_used"),
 )
 
 
@@ -38,17 +36,14 @@ async def _set_values_map(
     set_code: str | None = None,
 ) -> dict[str, int]:
     stmt = (
-        select(Card.set_code, func.sum(mv_latest_price.c.price_jpy))
+        select(Card.set_code, func.sum(mv_market_price.c.market_price_jpy))
         .select_from(Card)
         .join(Set, Set.set_code == Card.set_code)
-        .join(mv_latest_price, mv_latest_price.c.card_id == Card.card_id)
+        .join(mv_market_price, mv_market_price.c.card_id == Card.card_id)
         .where(
             Set.language == lang,
             Card.variant == "normal",
             Card.is_tracked.is_(True),
-            mv_latest_price.c.source.cast(String) == "cardrush",
-            mv_latest_price.c.condition.cast(String) == "A",
-            mv_latest_price.c.stock_qty > 0,
         )
         .group_by(Card.set_code)
     )

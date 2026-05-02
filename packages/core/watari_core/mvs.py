@@ -1,16 +1,18 @@
 """Materialized-view refresh helpers.
 
-The read API's ``/prices`` and ``/spread`` endpoints serve from three
-materialized views over ``price_points``:
+The read API's ``/prices``, ``/spread``, and ``/market-price`` endpoints
+serve from four materialized views over ``price_points``:
 
 - ``mv_latest_price``          — latest obs per ``(card_id, source, condition)``
 - ``mv_median_7d``             — 7-day median per ``(card_id, condition)``
 - ``mv_cross_source_spread``   — cardrush floor vs SNKRDUNK 7-day median
+- ``mv_market_price``          — unified best price per card (condition='A')
 
 Each has a unique index, so ``REFRESH MATERIALIZED VIEW CONCURRENTLY`` is
 safe and preferable — it takes a ``SHARE UPDATE EXCLUSIVE`` lock only
 (readers stay online). Migration 005 added the indexes on the first two;
-migration 006 added it for ``mv_cross_source_spread``.
+migration 006 added it for ``mv_cross_source_spread``; migration 007 added
+it for ``mv_market_price``.
 
 Scrape orchestrators (cardrush/snkrdunk) call :func:`refresh_price_mvs`
 after ``finish_scrape_run`` commits. ``mv_cross_source_spread`` depends on
@@ -35,6 +37,7 @@ PRICE_MVS: tuple[str, ...] = (
     "mv_latest_price",
     "mv_median_7d",
     "mv_cross_source_spread",
+    "mv_market_price",
 )
 
 
@@ -43,12 +46,12 @@ async def refresh_price_mvs(
     *,
     concurrently: bool = True,
 ) -> list[str]:
-    """Refresh the three price MVs and return the list of names refreshed.
+    """Refresh the four price MVs and return the list of names refreshed.
 
     Uses ``CONCURRENTLY`` by default so ongoing reads aren't blocked
-    (each MV has a unique index per migrations 005 and 006). We issue one
-    ``REFRESH`` + ``COMMIT`` per view so locks are released between MVs and
-    ``mv_cross_source_spread`` reads the already-refreshed upstream views.
+    (each MV has a unique index per migrations 005, 006, and 007). We issue
+    one ``REFRESH`` + ``COMMIT`` per view so locks are released between MVs
+    and each downstream view reads the already-refreshed upstream views.
 
     Callers pass any open :class:`AsyncSession`; if the session has
     pending writes, they MUST be committed first — this helper does not

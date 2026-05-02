@@ -2,7 +2,8 @@
 
 Re-exports catalog/price DTOs from ``watari_core.schemas`` where they're
 already fit for purpose; adds thin wrappers for the materialized-view shapes
-(``mv_latest_price``, ``mv_cross_source_spread``) which have no ORM model.
+(``mv_latest_price``, ``mv_cross_source_spread``, ``mv_market_price``) and
+the admin scrape-health endpoint, which have no ORM model.
 """
 
 from __future__ import annotations
@@ -65,3 +66,38 @@ class SpreadRow(BaseModel):
     snkrdunk_median_7d: float
     spread_jpy: float
     spread_pct: float | None = None
+
+
+class MarketPriceOut(BaseModel):
+    """One row of ``mv_market_price``: unified best-price per card (condition='A').
+
+    Prefers the SNKRDUNK 7-day median; falls back to the Cardrush floor.
+    ``source_used`` is ``'snkrdunk'`` or ``'cardrush'`` so callers know
+    which signal was used.
+    """
+
+    card_id: str
+    market_price_jpy: int
+    source_used: str
+
+
+# --- Admin / scrape-health shapes ----------------------------------------
+
+
+class ScrapeRunSummary(BaseModel):
+    """Summary of the latest scrape run for one (set, source) pair."""
+
+    started_at: datetime | None = None
+    status: str | None = None
+    rows_written: int = 0
+    cards_failed: int = 0
+
+
+class ScrapeHealthRow(BaseModel):
+    """Per-set scrape health row returned by ``GET /admin/scrape-health``."""
+
+    set_code: str
+    era_block: str
+    cardrush: ScrapeRunSummary
+    snkrdunk: ScrapeRunSummary
+    warning: str | None = None  # 'zero_rows' | 'consecutive_failures' | 'stale_7d'
