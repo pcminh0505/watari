@@ -2,7 +2,7 @@
 # To freeze a manually-edited value, add `# manual: true` on line 1.
 set_code: sm5s
 local_id: '078'
-name_ja:
+name_ja: エネルギー原単位GFW
 name_en: Unit Energy GFW
 rarity_code:
 category: energy

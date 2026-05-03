@@ -2,7 +2,7 @@
 # To freeze a manually-edited value, add `# manual: true` on line 1.
 set_code: s8b
 local_id: '168'
-name_ja:
+name_ja: いにしえの墓地
 name_en: Old Cemetery
 rarity_code: C
 category: card

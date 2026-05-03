@@ -2,7 +2,7 @@
 # To freeze a manually-edited value, add `# manual: true` on line 1.
 set_code: sm1s
 local_id: '060'
-name_ja:
+name_ja: ダブル無色透明のエネルギー
 name_en: Double Colorless Energy
 rarity_code: U
 category: energy

@@ -2,7 +2,7 @@
 # To freeze a manually-edited value, add `# manual: true` on line 1.
 set_code: sm6a
 local_id: '046'
-name_ja:
+name_ja: 竜の鉤爪
 name_en: Dragon's Talon
 rarity_code: C
 category: card

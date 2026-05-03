@@ -2,7 +2,7 @@
 # To freeze a manually-edited value, add `# manual: true` on line 1.
 set_code: sm6b
 local_id: '066'
-name_ja:
+name_ja: レインボーエネルギー
 name_en: Rainbow Energy
 rarity_code: U
 category: energy

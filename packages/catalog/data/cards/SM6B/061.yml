@@ -2,7 +2,7 @@
 # To freeze a manually-edited value, add `# manual: true` on line 1.
 set_code: sm6b
 local_id: '061'
-name_ja:
+name_ja: 地底探険隊
 name_en: Underground Expedition
 rarity_code: U
 category: card

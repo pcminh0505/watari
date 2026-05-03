@@ -2,7 +2,7 @@
 # To freeze a manually-edited value, add `# manual: true` on line 1.
 set_code: s8b
 local_id: '148'
-name_ja:
+name_ja: アセロラの予感
 name_en: Acerola's Intuition
 rarity_code: C
 category: card

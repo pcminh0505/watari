@@ -2,7 +2,7 @@
 # To freeze a manually-edited value, add `# manual: true` on line 1.
 set_code: sm12a
 local_id: '129'
-name_ja:
+name_ja: ポケギア3.0
 name_en: Pokégear 3.0
 rarity_code: C
 category: card

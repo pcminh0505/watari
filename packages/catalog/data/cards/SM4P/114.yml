@@ -2,7 +2,7 @@
 # To freeze a manually-edited value, add `# manual: true` on line 1.
 set_code: sm4p
 local_id: '114'
-name_ja:
+name_ja: ダブル無色エネルギー
 name_en: Double Colorless Energy
 rarity_code: C
 category: energy

@@ -2,7 +2,7 @@
 # To freeze a manually-edited value, add `# manual: true` on line 1.
 set_code: sm5m
 local_id: '039'
-name_ja:
+name_ja: カバルドン
 name_en: Hippowdon
 rarity_code: U
 category: card

@@ -2,7 +2,7 @@
 # To freeze a manually-edited value, add `# manual: true` on line 1.
 set_code: sm4p
 local_id: '045'
-name_ja:
+name_ja: カプ・テテフGX
 name_en: Tapu Lele GX
 rarity_code: RR
 category: card

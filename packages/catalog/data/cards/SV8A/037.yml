@@ -2,7 +2,7 @@
 # To freeze a manually-edited value, add `# manual: true` on line 1.
 set_code: SV8A
 local_id: '037'
-name_ja:
+name_ja: ユキワラシ
 name_en: Snorunt
 rarity_code: C
 category: card

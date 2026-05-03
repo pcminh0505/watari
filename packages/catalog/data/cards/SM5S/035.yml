@@ -2,7 +2,7 @@
 # To freeze a manually-edited value, add `# manual: true` on line 1.
 set_code: sm5s
 local_id: '035'
-name_ja:
+name_ja: コイル
 name_en: Magnemite
 rarity_code: C
 category: card

@@ -2,7 +2,7 @@
 # To freeze a manually-edited value, add `# manual: true` on line 1.
 set_code: sm4a
 local_id: '050'
-name_ja:
+name_ja: カウンターエネルギー
 name_en: Counter Energy
 rarity_code: C
 category: energy

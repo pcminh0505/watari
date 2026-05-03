@@ -2,7 +2,7 @@
 # To freeze a manually-edited value, add `# manual: true` on line 1.
 set_code: sm7b
 local_id: '045'
-name_ja:
+name_ja: 妖精の魅力[サイキックアタック]
 name_en: Fairy Charm [Psychic]
 rarity_code: U
 category: card

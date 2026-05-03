@@ -2,7 +2,7 @@
 # To freeze a manually-edited value, add `# manual: true` on line 1.
 set_code: sm8b
 local_id: '141'
-name_ja:
+name_ja: 戒めの祠
 name_en: Shrine of Punishment
 rarity_code: C
 category: card

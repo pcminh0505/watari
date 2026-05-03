@@ -2,7 +2,7 @@
 # To freeze a manually-edited value, add `# manual: true` on line 1.
 set_code: sm4s
 local_id: '003'
-name_ja:
+name_ja: カブルモ
 name_en: Karrablast
 rarity_code: C
 category: card

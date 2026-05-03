@@ -2,7 +2,7 @@
 # To freeze a manually-edited value, add `# manual: true` on line 1.
 set_code: M2A
 local_id: '116'
-name_ja:
+name_ja: コマタナ
 name_en: Pawniard
 rarity_code: C
 category: card

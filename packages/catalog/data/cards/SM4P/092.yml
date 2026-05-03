@@ -2,7 +2,7 @@
 # To freeze a manually-edited value, add `# manual: true` on line 1.
 set_code: sm4p
 local_id: '092'
-name_ja:
+name_ja: ネストボール
 name_en: Nest Ball
 rarity_code: C
 category: card

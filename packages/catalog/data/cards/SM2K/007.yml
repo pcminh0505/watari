@@ -2,7 +2,7 @@
 # To freeze a manually-edited value, add `# manual: true` on line 1.
 set_code: sm2k
 local_id: '007'
-name_ja:
+name_ja: グソクムシャ
 name_en: Golisopod
 rarity_code: R
 category: card

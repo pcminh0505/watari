@@ -2,7 +2,7 @@
 # To freeze a manually-edited value, add `# manual: true` on line 1.
 set_code: sm4a
 local_id: '011'
-name_ja:
+name_ja: マンムー
 name_en: Mamoswine
 rarity_code: U
 category: card

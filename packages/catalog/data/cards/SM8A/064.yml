@@ -2,7 +2,7 @@
 # To freeze a manually-edited value, add `# manual: true` on line 1.
 set_code: sm8a
 local_id: '064'
-name_ja:
+name_ja: 危険ドリル
 name_en: Dangerous Drill
 rarity_code:
 category: card

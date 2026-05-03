@@ -2,7 +2,7 @@
 # To freeze a manually-edited value, add `# manual: true` on line 1.
 set_code: sm5p
 local_id: '035'
-name_ja:
+name_ja: ディアルガGX
 name_en: Dialga GX
 rarity_code: RR
 category: card

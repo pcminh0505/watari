@@ -2,7 +2,7 @@
 # To freeze a manually-edited value, add `# manual: true` on line 1.
 set_code: sm6a
 local_id: '048'
-name_ja:
+name_ja: カツラの一発勝負
 name_en: Blaine's Explosive Battle
 rarity_code: R
 category: card

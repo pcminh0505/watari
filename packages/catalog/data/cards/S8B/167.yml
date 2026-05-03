@@ -2,7 +2,7 @@
 # To freeze a manually-edited value, add `# manual: true` on line 1.
 set_code: s8b
 local_id: '167'
-name_ja:
+name_ja: 頂への雪道
 name_en: Path to the Peak
 rarity_code: C
 category: card

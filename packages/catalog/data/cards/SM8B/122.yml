@@ -2,7 +2,7 @@
 # To freeze a manually-edited value, add `# manual: true` on line 1.
 set_code: sm8b
 local_id: '122'
-name_ja:
+name_ja: エスケープボード
 name_en: Escape Board
 rarity_code: C
 category: card

@@ -2,7 +2,7 @@
 # To freeze a manually-edited value, add `# manual: true` on line 1.
 set_code: sm7a
 local_id: '022'
-name_ja:
+name_ja: アシマリ
 name_en: Popplio
 rarity_code: C
 category: card

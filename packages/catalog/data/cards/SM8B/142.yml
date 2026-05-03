@@ -2,7 +2,7 @@
 # To freeze a manually-edited value, add `# manual: true` on line 1.
 set_code: sm8b
 local_id: '142'
-name_ja:
+name_ja: ヴェラ火山公園
 name_en: Wela Volcano Park
 rarity_code: C
 category: card

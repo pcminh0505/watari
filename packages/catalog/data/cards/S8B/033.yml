@@ -2,7 +2,7 @@
 # To freeze a manually-edited value, add `# manual: true` on line 1.
 set_code: s8b
 local_id: '033'
-name_ja:
+name_ja: ポワルン ゆきぐものすがた
 name_en: Castform Snowy Form
 rarity_code: C
 category: card

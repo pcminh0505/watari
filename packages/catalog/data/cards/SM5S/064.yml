@@ -2,7 +2,7 @@
 # To freeze a manually-edited value, add `# manual: true` on line 1.
 set_code: sm5s
 local_id: '064'
-name_ja:
+name_ja: テンガン山
 name_en: Mt Coronet
 rarity_code: U
 category: card

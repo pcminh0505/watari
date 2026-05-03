@@ -2,7 +2,7 @@
 # To freeze a manually-edited value, add `# manual: true` on line 1.
 set_code: sm4p
 local_id: '112'
-name_ja:
+name_ja: せせらぎの丘
 name_en: Brooklet Hill
 rarity_code: C
 category: card

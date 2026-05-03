@@ -2,7 +2,7 @@
 # To freeze a manually-edited value, add `# manual: true` on line 1.
 set_code: sm7a
 local_id: '006'
-name_ja:
+name_ja: ビリジオンGX
 name_en: Virizion GX
 rarity_code: RR
 category: card

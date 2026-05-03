@@ -2,7 +2,7 @@
 # To freeze a manually-edited value, add `# manual: true` on line 1.
 set_code: s4a
 local_id: '126'
-name_ja:
+name_ja: ガラル ニャース
 name_en: Galarian Meowth
 rarity_code: C
 category: card

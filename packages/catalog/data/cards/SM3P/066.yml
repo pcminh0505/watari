@@ -2,7 +2,7 @@
 # To freeze a manually-edited value, add `# manual: true` on line 1.
 set_code: sm3p
 local_id: '066'
-name_ja:
+name_ja: ポケモンキャッチャー
 name_en: Pokemon Catcher
 rarity_code: U
 category: card

@@ -2,7 +2,7 @@
 # To freeze a manually-edited value, add `# manual: true` on line 1.
 set_code: sm2p
 local_id: '052'
-name_ja:
+name_ja: 基本雷エネルギー
 name_en: Tapu Fini GX
 rarity_code:
 category: card

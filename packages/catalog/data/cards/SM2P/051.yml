@@ -2,7 +2,7 @@
 # To freeze a manually-edited value, add `# manual: true` on line 1.
 set_code: sm2p
 local_id: '051'
-name_ja:
+name_ja: 基本闘エネルギー
 name_en: Salazzle GX
 rarity_code:
 category: card

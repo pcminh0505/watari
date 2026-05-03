@@ -2,7 +2,7 @@
 # To freeze a manually-edited value, add `# manual: true` on line 1.
 set_code: SV4A
 local_id: '133'
-name_ja:
+name_ja: サーフゴー
 name_en: Gholdengo
 rarity_code: C
 category: card

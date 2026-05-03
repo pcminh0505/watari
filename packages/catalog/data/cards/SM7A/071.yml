@@ -2,7 +2,7 @@
 # To freeze a manually-edited value, add `# manual: true` on line 1.
 set_code: sm7a
 local_id: '071'
-name_ja:
+name_ja: 電力
 name_en: Electric Power
 rarity_code:
 category: card
