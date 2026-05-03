@@ -86,14 +86,14 @@ export function CardsPage() {
 
   return (
     <div>
-      <div className="mb-4 flex items-center gap-2 text-sm text-gray-500">
-        <Link to="/" className="hover:text-gray-700">Sets</Link>
+      <div className="mb-4 flex items-center gap-2 text-sm text-neutral-400">
+        <Link to="/" className="hover:text-white transition-colors">Sets</Link>
         <span>/</span>
-        <span className="text-gray-900">{setName}</span>
+        <span className="text-neutral-50">{setName}</span>
       </div>
-      <h1 className="mb-4 text-2xl font-bold text-gray-900">
+      <h1 className="mb-6 text-3xl font-bold text-neutral-50 text-glow">
         {setName}
-        <span className="ml-2 text-base font-normal text-gray-400">{setCode}</span>
+        <span className="ml-3 text-lg font-normal text-primary-400">{setCode}</span>
       </h1>
 
       <CardFilterBar

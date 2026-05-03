@@ -56,7 +56,7 @@ export function SetsPage() {
 
   return (
     <div>
-      <h1 className="mb-6 text-2xl font-bold text-gray-900">
+      <h1 className="mb-8 text-3xl font-bold text-neutral-50 text-glow">
         JP Pokemon TCG Sets
       </h1>
       <SetsFilterBar

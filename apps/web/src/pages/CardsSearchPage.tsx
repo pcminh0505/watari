@@ -42,14 +42,14 @@ export function CardsSearchPage() {
 
   return (
     <div>
-      <h1 className="mb-4 text-2xl font-bold text-gray-900">Cards</h1>
+      <h1 className="mb-6 text-3xl font-bold text-neutral-50 text-glow">Cards</h1>
 
       {/* Search bar */}
-      <div className="mb-5 overflow-hidden rounded-xl border border-gray-200 bg-white shadow-sm">
+      <div className="mb-6 overflow-hidden glass-panel">
         {/* Input row */}
-        <div className="relative flex items-center border-b border-gray-100">
+        <div className="relative flex items-center border-b border-white/10">
           <svg
-            className="absolute left-4 h-4 w-4 shrink-0 text-gray-400"
+            className="absolute left-4 h-4 w-4 shrink-0 text-neutral-400"
             viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="2"
           >
             <circle cx="8.5" cy="8.5" r="5.5" strokeLinecap="round" />
@@ -59,7 +59,7 @@ export function CardsSearchPage() {
             value={input}
             onChange={(e) => setInput(e.target.value)}
             placeholder="Search by name, card #, or set code…"
-            className="w-full bg-transparent py-3 pl-11 pr-10 text-sm text-gray-900 placeholder-gray-400 focus:outline-none"
+            className="w-full bg-transparent py-4 pl-11 pr-10 text-sm text-neutral-50 placeholder-neutral-500 focus:outline-none"
           />
           {input && (
             <button

@@ -24,7 +24,7 @@ export function CardThumbnail({ card }: CardThumbnailProps) {
   return (
     <Link
       to={`/sets/${card.set_code}/${card.local_id}`}
-      className="group flex flex-col overflow-hidden rounded-lg border bg-white shadow-sm transition hover:shadow-md"
+      className="group flex flex-col overflow-hidden glass-panel holo-hover"
     >
       {/* Card image */}
       <div className="relative">
@@ -40,9 +40,9 @@ export function CardThumbnail({ card }: CardThumbnailProps) {
           <CardPlaceholder />
         )}
         {/* Bottom-left overlay: set code · number · rarity */}
-        <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/70 to-transparent px-2 pb-2 pt-8">
+        <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/80 to-transparent px-2 pb-2 pt-8">
           <div className="flex items-center gap-1">
-            <SetSymbol setCode={card.set_code} />
+            <SetSymbol setCode={card.set_code} className="filter invert opacity-90" />
             <span className="text-[10px] text-white/90">{card.local_id}</span>
             {card.rarity_code && (
               <Badge label={card.rarity_code} variant="rarity" />
@@ -52,16 +52,16 @@ export function CardThumbnail({ card }: CardThumbnailProps) {
       </div>
 
       {/* English name + price */}
-      <div className="px-2 py-2">
-        <p className="truncate text-xs font-medium text-gray-800">
+      <div className="px-3 py-3">
+        <p className="truncate text-xs font-medium text-neutral-200">
           {card.name_en ?? card.local_id}
         </p>
         {market != null && (
-          <div className="mt-0.5 flex items-baseline gap-1">
-            <p className="text-sm font-semibold text-blue-600">
+          <div className="mt-1 flex items-baseline gap-1.5">
+            <p className="text-sm font-semibold text-primary-400 text-glow">
               {formatJPY(market.market_price_jpy)}
             </p>
-            <span className="text-[9px] text-gray-400">
+            <span className="text-[9px] text-neutral-500 uppercase tracking-wide">
               {SOURCE_LABEL[market.source_used] ?? market.source_used}
             </span>
           </div>

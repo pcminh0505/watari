@@ -73,12 +73,12 @@ export function CardDetailPage() {
 
   return (
     <div>
-      <div className="mb-4 flex items-center gap-2 text-sm text-gray-500">
-        <Link to="/" className="hover:text-gray-700">Sets</Link>
+      <div className="mb-4 flex items-center gap-2 text-sm text-neutral-400">
+        <Link to="/" className="hover:text-white transition-colors">Sets</Link>
         <span>/</span>
-        <Link to={`/sets/${setCode}`} className="hover:text-gray-700">{setCode}</Link>
+        <Link to={`/sets/${setCode}`} className="hover:text-white transition-colors">{setCode}</Link>
         <span>/</span>
-        <span className="text-gray-900">{displayName}</span>
+        <span className="text-neutral-50">{displayName}</span>
       </div>
 
       <div className="grid gap-8 lg:grid-cols-[280px_1fr]">
@@ -87,14 +87,14 @@ export function CardDetailPage() {
             <img
               src={card.image_url}
               alt={displayName}
-              className="w-full rounded-lg shadow-md"
+              className="w-full rounded-lg shadow-[0_0_15px_rgba(255,255,255,0.1)] border border-white/10"
               referrerPolicy="no-referrer"
             />
           ) : (
             <CardPlaceholder />
           )}
           {card.illustrator && (
-            <p className="mt-2 text-center text-xs text-gray-400">
+            <p className="mt-3 text-center text-xs text-neutral-500">
               Illus. {card.illustrator}
             </p>
           )}
@@ -102,15 +102,15 @@ export function CardDetailPage() {
 
         <div>
           <div className="mb-3 flex flex-wrap items-start gap-2">
-            <h1 className="text-2xl font-bold text-gray-900">{displayName}</h1>
+            <h1 className="text-3xl font-bold text-neutral-50 text-glow">{displayName}</h1>
             {card.name_ja && card.name_en && (
-              <span className="mt-1 text-base text-gray-500">{card.name_en}</span>
+              <span className="mt-2 text-base text-neutral-400">{card.name_en}</span>
             )}
           </div>
-          <div className="mb-4 flex flex-wrap items-center gap-2">
+          <div className="mb-5 flex flex-wrap items-center gap-2">
             <SetSymbol
               setCode={card.set_code}
-              className="h-5 max-h-5 w-auto max-w-16 object-contain filter-[drop-shadow(0_1px_1px_rgb(0_0_0/0.25))]"
+              className="h-5 max-h-5 w-auto max-w-16 object-contain filter invert opacity-80"
             />
             <Badge label={card.set_code} />
             <Badge label={`#${card.local_id}`} />
@@ -120,14 +120,14 @@ export function CardDetailPage() {
           </div>
 
           {card.variants.length > 1 && (
-            <div className="mb-4 flex flex-wrap gap-2">
+            <div className="mb-6 flex flex-wrap gap-2">
               {card.variants.map((v) => (
                 <button
                   key={v.variant}
                   onClick={() => setSelectedVariant(v.variant)}
-                  className={`rounded border px-3 py-1 text-sm transition ${v.variant === variant
-                    ? "border-blue-500 bg-blue-50 text-blue-700"
-                    : "text-gray-600 hover:border-gray-400"
+                  className={`rounded-full border px-4 py-1.5 text-sm font-medium transition-all ${v.variant === variant
+                    ? "bg-primary-600/20 text-primary-400 border-primary-500/50 shadow-[0_0_10px_rgba(168,85,247,0.3)]"
+                    : "bg-white/5 text-neutral-400 border-white/5 hover:bg-white/10 hover:text-white"
                     }`}
                 >
                   {v.variant.replace(/_/g, " ")}
@@ -136,34 +136,34 @@ export function CardDetailPage() {
             </div>
           )}
 
-          <section className="mb-6">
-            <h3 className="mb-2 text-sm font-semibold text-gray-700">
+          <section className="mb-8 glass-panel p-5">
+            <h3 className="mb-3 text-sm font-semibold text-neutral-300">
               Latest Prices
             </h3>
             <PriceTable prices={prices ?? []} />
           </section>
 
           {spread && spread.length > 0 && (
-            <section className="mb-6">
+            <section className="mb-8 glass-panel p-5">
               <SpreadTable rows={spread} />
             </section>
           )}
 
-          <section>
-            <div className="mb-2 flex items-center justify-between gap-3">
-              <h3 className="text-sm font-semibold text-gray-700">
+          <section className="glass-panel p-5">
+            <div className="mb-4 flex items-center justify-between gap-3">
+              <h3 className="text-sm font-semibold text-neutral-300">
                 Price History
               </h3>
               <div className="flex items-center gap-2">
                 {/* Period selector */}
-                <div className="flex gap-1">
+                <div className="flex gap-1 bg-black/20 p-1 rounded-lg border border-white/5">
                   {([{ days: 30, label: "30d" }, { days: 60, label: "60d" }, { days: 90, label: "90d" }, { days: 365, label: "1y" }] as const).map(({ days, label }) => (
                     <button
                       key={days}
                       onClick={() => setHistoryDays(days)}
-                      className={`rounded border px-2 py-0.5 text-xs transition ${days === historyDays
-                        ? "border-blue-500 bg-blue-50 text-blue-700"
-                        : "text-gray-500 hover:border-gray-400"
+                      className={`rounded-md border px-3 py-1 text-xs font-medium transition-all ${days === historyDays
+                        ? "bg-primary-600/20 text-primary-400 border-primary-500/50"
+                        : "bg-transparent text-neutral-400 border-transparent hover:text-white"
                         }`}
                     >
                       {label}
@@ -172,14 +172,14 @@ export function CardDetailPage() {
                 </div>
                 {/* Condition selector */}
                 {availableConditions.length > 1 && (
-                  <div className="flex gap-1">
+                  <div className="flex gap-1 bg-black/20 p-1 rounded-lg border border-white/5">
                     {availableConditions.map((c) => (
                       <button
                         key={c}
                         onClick={() => setHistoryCondition(c)}
-                        className={`rounded border px-2 py-0.5 text-xs transition ${c === activeCondition
-                          ? "border-blue-500 bg-blue-50 text-blue-700"
-                          : "text-gray-500 hover:border-gray-400"
+                        className={`rounded-md border px-3 py-1 text-xs font-medium transition-all ${c === activeCondition
+                          ? "bg-primary-600/20 text-primary-400 border-primary-500/50"
+                          : "bg-transparent text-neutral-400 border-transparent hover:text-white"
                           }`}
                       >
                         {c}

@@ -16,15 +16,15 @@ export function SetCard({ set }: SetCardProps) {
   return (
     <Link
       to={`/sets/${codeKey}`}
-      className="flex flex-col rounded-lg border bg-white shadow-sm transition hover:shadow-md overflow-hidden"
+      className="flex flex-col glass-panel holo-hover overflow-hidden"
     >
       {/* Logo banner */}
-      <div className="flex items-center justify-center bg-gray-900 px-4 py-3 min-h-[72px]">
+      <div className="flex items-center justify-center bg-neutral-950/40 border-b border-white/5 px-4 py-3 min-h-[72px] relative">
         {logoUrl ? (
           <img
             src={logoUrl}
             alt={displayName}
-            className="max-h-12 w-full object-contain"
+            className="max-h-12 w-full object-contain filter drop-shadow-[0_0_8px_rgba(255,255,255,0.3)]"
             referrerPolicy="no-referrer"
             loading="lazy"
             onError={(e) => {
@@ -35,28 +35,28 @@ export function SetCard({ set }: SetCardProps) {
         ) : null}
         <span
           hidden={!!logoUrl}
-          className="text-sm font-semibold text-white"
+          className="text-sm font-semibold text-white text-glow"
         >
           {displayName}
         </span>
       </div>
 
       {/* Footer */}
-      <div className="space-y-1.5 px-3 py-2">
+      <div className="space-y-1.5 px-3 py-3">
         <div className="flex items-center justify-between gap-2">
-          <p className="truncate text-sm font-semibold text-gray-900">{displayName}</p>
+          <p className="truncate text-sm font-semibold text-neutral-100">{displayName}</p>
           <SetSymbol
             setCode={set.set_code}
-            className="h-4 w-auto max-w-10 shrink-0 object-contain"
+            className="h-4 w-auto max-w-10 shrink-0 object-contain filter invert opacity-80"
           />
         </div>
-        <div className="flex items-center justify-between text-xs text-gray-500">
+        <div className="flex items-center justify-between text-xs text-neutral-400">
           <span>{set.release_date ? formatDate(set.release_date) : "—"}</span>
-          <span className="font-semibold text-blue-600">
+          <span className="font-semibold text-primary-400 text-glow">
             {set.total_value_jpy != null ? formatJPY(set.total_value_jpy) : "—"}
           </span>
         </div>
-        <p className="text-xs text-gray-400">{set.total != null ? `${set.total} cards` : ""}</p>
+        <p className="text-xs text-neutral-500">{set.total != null ? `${set.total} cards` : ""}</p>
       </div>
     </Link>
   );

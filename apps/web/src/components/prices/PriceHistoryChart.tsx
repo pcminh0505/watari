@@ -45,7 +45,7 @@ export function PriceHistoryChart({ history, condition }: PriceHistoryChartProps
 
   if (data.length === 0) {
     return (
-      <p className="text-sm text-gray-500">
+      <p className="text-sm text-neutral-500">
         No condition {condition} history available.
       </p>
     );
@@ -55,17 +55,19 @@ export function PriceHistoryChart({ history, condition }: PriceHistoryChartProps
     <div className="h-64">
       <ResponsiveContainer width="100%" height="100%">
         <LineChart data={data} margin={{ top: 4, right: 16, bottom: 4, left: 8 }}>
-          <CartesianGrid strokeDasharray="3 3" stroke="#e5e7eb" />
-          <XAxis dataKey="date" tick={{ fontSize: 11 }} />
+          <CartesianGrid strokeDasharray="3 3" stroke="rgba(255,255,255,0.1)" />
+          <XAxis dataKey="date" tick={{ fontSize: 11, fill: "#a3a3a3" }} />
           <YAxis
             tickFormatter={(v: number) => `¥${v.toLocaleString("ja-JP")}`}
-            tick={{ fontSize: 11 }}
+            tick={{ fontSize: 11, fill: "#a3a3a3" }}
             width={80}
           />
           <Tooltip
+            contentStyle={{ backgroundColor: "#0a0a0a", borderColor: "rgba(255,255,255,0.1)", color: "#f5f5f5" }}
+            itemStyle={{ color: "#22d3ee" }}
             formatter={(value: number) => `¥${value.toLocaleString("ja-JP")}`}
           />
-          <Line type="monotone" dataKey="price" stroke="#2563eb" dot={false} connectNulls />
+          <Line type="monotone" dataKey="price" stroke="#22d3ee" strokeWidth={2} dot={false} connectNulls />
         </LineChart>
       </ResponsiveContainer>
     </div>
