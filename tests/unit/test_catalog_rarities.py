@@ -67,6 +67,10 @@ class TestPokellector:
             # ME-era
             ("Master Ball Rare", "MA"),
             ("Masterball Rare", "MA"),
+            # SV-era jp.pokellector.com labels
+            ("Ace Spec", "R"),
+            ("Super Secret Rare", "SAR"),
+            ("B Double Rare", "RR"),
         ],
     )
     def test_known_labels(self, raw: str, expected: str) -> None:

@@ -4,7 +4,7 @@ set_code: sm5s
 local_id: '078'
 name_ja: エネルギー原単位GFW
 name_en: Unit Energy GFW
-rarity_code:
+rarity_code: UR
 category: energy
 image: https://den-cards.pokellector.com/232/Unit-Energy-GFW.SM5S.78.20017.png
 illustrator:

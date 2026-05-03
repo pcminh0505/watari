@@ -4,7 +4,7 @@ set_code: SV5M
 local_id: '064'
 name_ja: ヒーローマント
 name_en: Hero's Cape
-rarity_code:
+rarity_code: R
 category: card
 image: https://den-cards.pokellector.com/387/Heros-Cape.SV5M.64.51725.png
 illustrator:

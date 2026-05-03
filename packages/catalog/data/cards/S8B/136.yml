@@ -4,7 +4,7 @@ set_code: s8b
 local_id: '136'
 name_ja: ターボパッチ
 name_en: Turbo Patch
-rarity_code:
+rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/338/Turbo-Patch.S8B.136.41381.png
 illustrator:

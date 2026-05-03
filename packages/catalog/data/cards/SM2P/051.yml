@@ -4,7 +4,7 @@ set_code: sm2p
 local_id: '051'
 name_ja: 基本闘エネルギー
 name_en: Salazzle GX
-rarity_code:
+rarity_code: UR
 category: card
 image: https://den-cards.pokellector.com/212/Salazzle-GX.SM2+.51.17508.png
 illustrator:

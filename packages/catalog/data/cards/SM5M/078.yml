@@ -4,7 +4,7 @@ set_code: sm5m
 local_id: '078'
 name_ja: エネルギー原単位LPM
 name_en: Unit Energy LPM
-rarity_code:
+rarity_code: UR
 category: energy
 image: https://den-cards.pokellector.com/233/Unit-Energy-LPM.SM5M.78.20026.png
 illustrator:

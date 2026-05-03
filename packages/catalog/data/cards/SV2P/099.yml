@@ -4,7 +4,7 @@ set_code: SV2P
 local_id: '099'
 name_ja: 基本水エネルギー(SVデザイン)
 name_en: Basic Water Energy
-rarity_code:
+rarity_code: UR
 category: energy
 image: https://den-cards.pokellector.com/369/Basic-Water-Energy.SV2P.99.47671.png
 illustrator:

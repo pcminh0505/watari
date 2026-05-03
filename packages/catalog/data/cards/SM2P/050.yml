@@ -4,7 +4,7 @@ set_code: sm2p
 local_id: '050'
 name_ja: 基本悪エネルギー
 name_en: Tapu Bulu GX
-rarity_code:
+rarity_code: UR
 category: card
 image: https://den-cards.pokellector.com/212/Tapu-Bulu-GX.SM2+.50.17507.png
 illustrator:

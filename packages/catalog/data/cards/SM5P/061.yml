@@ -4,7 +4,7 @@ set_code: sm5p
 local_id: '061'
 name_ja: エネルギーのリサイクル
 name_en: Energy Recycle
-rarity_code:
+rarity_code: UR
 category: energy
 image: https://den-cards.pokellector.com/238/Energy-Recycle.SM5+.61.20103.png
 illustrator:

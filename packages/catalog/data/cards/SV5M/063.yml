@@ -4,7 +4,7 @@ set_code: SV5M
 local_id: '063'
 name_ja: リブートポッド
 name_en: Reboot Pod
-rarity_code:
+rarity_code: R
 category: card
 image: https://den-cards.pokellector.com/387/Reboot-Pod.SV5M.63.51800.png
 illustrator:

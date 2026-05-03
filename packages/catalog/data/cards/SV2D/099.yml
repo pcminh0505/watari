@@ -4,7 +4,7 @@ set_code: SV2D
 local_id: '099'
 name_ja: 基本草エネルギー(SVデザイン)
 name_en: Basic Grass Energy
-rarity_code:
+rarity_code: UR
 category: energy
 image: https://den-cards.pokellector.com/370/Basic-Grass-Energy.SV2D.99.47668.png
 illustrator:

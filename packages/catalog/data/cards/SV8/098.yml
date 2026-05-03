@@ -4,7 +4,7 @@ set_code: SV8
 local_id: '098'
 name_ja: 希望のアミュレット
 name_en: Amulet of Hope
-rarity_code:
+rarity_code: R
 category: card
 image: https://den-cards.pokellector.com/405/Amulet-of-Hope.SV8.98.54510.png
 illustrator:

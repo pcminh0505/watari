@@ -4,7 +4,7 @@ set_code: SV2D
 local_id: '098'
 name_ja: スーパーエネルギー回収
 name_en: Superior Energy Retrieval
-rarity_code:
+rarity_code: UR
 category: energy
 image: https://den-cards.pokellector.com/370/Superior-Energy-Retrieval.SV2D.98.47666.png
 illustrator:

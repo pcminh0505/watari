@@ -123,6 +123,10 @@ POKELLECTOR_RARITY_MAP: dict[str, str] = {
     "Prism Star": "SR",     # SM-era ◇ prism cards (similar tier to Super Rare)
     # SWSH-era additions
     "Shiny": "SR",          # SWSH Shiny Star V / VMAX Climax base shiny tier
+    # SV-era labels (jp.pokellector.com uses shorter forms than EN Pokellector)
+    "Ace Spec": "R",                # ACE SPEC cards (same tier as ACE SPEC Rare)
+    "Super Secret Rare": "SAR",     # SV4A high-number secret ex (Special Art Rare tier)
+    "B Double Rare": "RR",          # SV11 box-topper ex (Double Rare tier)
 }
 
 

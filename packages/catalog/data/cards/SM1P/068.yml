@@ -4,7 +4,7 @@ set_code: sm1p
 local_id: '068'
 name_ja: 芝エネルギー
 name_en: Grass Energy
-rarity_code:
+rarity_code: UR
 category: energy
 image: https://den-cards.pokellector.com/200/Grass-Energy.SM1+.68.23186.png
 illustrator:

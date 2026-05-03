@@ -4,7 +4,7 @@ set_code: sm1s
 local_id: '073'
 name_ja: 金属エネルギー
 name_en: Metal Energy
-rarity_code:
+rarity_code: UR
 category: energy
 image: https://den-cards.pokellector.com/201/Metal-Energy.SM1S.73.13778.png
 illustrator:

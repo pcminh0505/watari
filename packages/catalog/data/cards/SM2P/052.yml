@@ -4,7 +4,7 @@ set_code: sm2p
 local_id: '052'
 name_ja: 基本雷エネルギー
 name_en: Tapu Fini GX
-rarity_code:
+rarity_code: UR
 category: card
 image: https://den-cards.pokellector.com/212/Tapu-Fini-GX.SM2+.52.17509.png
 illustrator:
