@@ -32,6 +32,7 @@ class ListingRow:
     local_id_padded: str | None
     variant: str
     rarity_code: str | None
+    name_ja: str | None
     condition: Condition
     price_jpy: int
     stock_qty: int
@@ -107,6 +108,7 @@ def parse_listing_rows(html: str) -> list[ListingRow]:
                 local_id_padded=pad_local_id(parsed.local_id),
                 variant=parsed.variant,
                 rarity_code=parsed.rarity_code,
+                name_ja=parsed.name_ja,
                 condition=condition,
                 price_jpy=price,
                 stock_qty=stock_qty,

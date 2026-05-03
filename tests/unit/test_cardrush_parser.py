@@ -111,6 +111,7 @@ class TestListingRowToPricePoint:
             local_id_padded="183",
             variant="normal",
             rarity_code="SAR",
+            name_ja=None,
             condition=Condition.A,
             price_jpy=12800,
             stock_qty=3,
@@ -129,3 +130,156 @@ class TestListingRowToPricePoint:
         assert out["observed_at"] == ts
         assert out["external_url"] == "https://example.test/x"
         assert out["scrape_run_id"] == 42
+
+
+# -- Disambiguation tests ----------------------------------------------------
+
+from watari_cardrush.run import (
+    ScrapeSetResult,
+    _CARDRUSH_BASE_ALIAS,
+    _match_listing_to_card,
+    _name_matches,
+    _normalize_name,
+)
+
+
+class TestNameMatching:
+    """Test the name normalization and matching helpers."""
+
+    def test_exact_match(self):
+        assert _name_matches("ロゼリア", "ロゼリア")
+
+    def test_substring_listing_longer(self):
+        assert _name_matches("フシギダネ(ミラー/ハイクラスパック仕様)", "フシギダネ")
+
+    def test_substring_catalog_longer(self):
+        assert _name_matches("ロゼリア", "ロゼリアGX")
+
+    def test_fullwidth_normalization(self):
+        assert _name_matches("ザシアンＶ", "ザシアンV")
+
+    def test_no_match(self):
+        assert not _name_matches("ロゼリア", "ウッウ")
+
+    def test_none_listing(self):
+        assert not _name_matches(None, "ロゼリア")
+
+    def test_none_catalog(self):
+        assert not _name_matches("ロゼリア", None)
+
+    def test_normalize_strips_parens(self):
+        assert _normalize_name("フシギダネ(ミラー)") == "フシギダネ"
+        assert _normalize_name("ピカチュウ（特別仕様）") == "ピカチュウ"
+
+
+class TestMatchListingAlias:
+    """Test _match_listing_to_card with alias disambiguation."""
+
+    def _listing(self, *, set_code="s1", local_id="001", name_ja="ロゼリア"):
+        return ListingRow(
+            raw_name=f"s1 001/060 C {name_ja or ''}",
+            set_code=set_code,
+            local_id_padded=local_id,
+            variant="normal",
+            rarity_code="C",
+            name_ja=name_ja,
+            condition=Condition.A,
+            price_jpy=100,
+            stock_qty=1,
+            external_url=None,
+        )
+
+    def _card_index(self):
+        return {("001", "normal"): "jp-s1w-001-normal"}
+
+    def _name_index(self):
+        return {"001": "ロゼリア"}
+
+    def test_exact_match_no_alias(self):
+        """Listing set_code matches expected exactly → accept."""
+        listing = self._listing(set_code="s1w")
+        result = ScrapeSetResult(set_code="S1W")
+        card_id = _match_listing_to_card(
+            listing,
+            expected_set_code="S1W",
+            card_index=self._card_index(),
+            name_index={},
+            result=result,
+        )
+        assert card_id == "jp-s1w-001-normal"
+
+    def test_alias_match_name_matches(self):
+        """Listing has base code 's1', name matches S1W card → accept."""
+        listing = self._listing(set_code="s1", name_ja="ロゼリア")
+        result = ScrapeSetResult(set_code="S1W")
+        card_id = _match_listing_to_card(
+            listing,
+            expected_set_code="S1W",
+            card_index=self._card_index(),
+            name_index=self._name_index(),
+            result=result,
+        )
+        assert card_id == "jp-s1w-001-normal"
+        assert result.listings_dropped_wrong_set == 0
+
+    def test_alias_match_name_mismatch_drops(self):
+        """Listing has base code 's1', name doesn't match → drop (wrong sibling set)."""
+        listing = self._listing(set_code="s1", name_ja="ウッウ")
+        result = ScrapeSetResult(set_code="S1W")
+        card_id = _match_listing_to_card(
+            listing,
+            expected_set_code="S1W",
+            card_index=self._card_index(),
+            name_index=self._name_index(),
+            result=result,
+        )
+        assert card_id is None
+        assert result.listings_dropped_wrong_set == 1
+
+    def test_alias_match_no_name_accepts(self):
+        """Listing has base code but no name_ja → accept (fallback)."""
+        listing = self._listing(set_code="s1", name_ja=None)
+        result = ScrapeSetResult(set_code="S1W")
+        card_id = _match_listing_to_card(
+            listing,
+            expected_set_code="S1W",
+            card_index=self._card_index(),
+            name_index=self._name_index(),
+            result=result,
+        )
+        assert card_id == "jp-s1w-001-normal"
+
+    def test_unrelated_set_drops(self):
+        """Listing from a totally different set → drop."""
+        listing = self._listing(set_code="sv2a")
+        result = ScrapeSetResult(set_code="S1W")
+        card_id = _match_listing_to_card(
+            listing,
+            expected_set_code="S1W",
+            card_index=self._card_index(),
+            name_index=self._name_index(),
+            result=result,
+        )
+        assert card_id is None
+        assert result.listings_dropped_wrong_set == 1
+
+    def test_no_alias_for_sv_set(self):
+        """SV-era sets have no alias entries → different set code drops."""
+        listing = self._listing(set_code="sv2")
+        result = ScrapeSetResult(set_code="SV2A")
+        card_id = _match_listing_to_card(
+            listing,
+            expected_set_code="SV2A",
+            card_index={("001", "normal"): "jp-sv2a-001-normal"},
+            name_index={},
+            result=result,
+        )
+        assert card_id is None
+
+    def test_alias_map_has_expected_entries(self):
+        """Verify the alias map covers the known problematic sets."""
+        assert _CARDRUSH_BASE_ALIAS["S1W"] == "S1"
+        assert _CARDRUSH_BASE_ALIAS["S1H"] == "S1"
+        assert _CARDRUSH_BASE_ALIAS["SM1S"] == "SM1"
+        assert _CARDRUSH_BASE_ALIAS["SM1M"] == "SM1"
+        assert _CARDRUSH_BASE_ALIAS["SM3P"] == "SM3"

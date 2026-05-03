@@ -7,6 +7,9 @@ from collections import Counter
 from dataclasses import dataclass, field
 from datetime import UTC, datetime
 
+import re
+import unicodedata
+
 from watari_core.bronze import ensure_bucket, write_bronze_set
 from watari_core.db import async_session_factory
 from watari_core.ingestion import (
@@ -30,6 +33,81 @@ from watari_cardrush.parser import (
 logger = logging.getLogger(__name__)
 
 SOURCE = SourceEnum.cardrush.value
+
+# -- Cardrush base-code aliases -----------------------------------------------
+#
+# Cardrush product names use a shorter "base" set code for some SM/SW era sets.
+# E.g., both S1W (Sword) and S1H (Shield) cards have "s1 NNN/060" in their
+# product name, not "s1w" or "s1h". This causes the set-disambiguation filter
+# to drop every listing because "s1" != "s1w".
+#
+# This map records which base code Cardrush uses for each affected set code.
+# When a listing's parsed set_code matches the alias (not the exact set code),
+# we fall through to name-based disambiguation instead of dropping.
+
+_CARDRUSH_BASE_ALIAS: dict[str, str] = {
+    # SWSH era — paired sets share a base code
+    "S1W": "S1",
+    "S1H": "S1",
+    # SM era — paired main expansions
+    "SM1S": "SM1",
+    "SM1M": "SM1",
+    "SM2K": "SM2",
+    "SM2L": "SM2",
+    "SM3H": "SM3",
+    "SM3N": "SM3",
+    "SM4A": "SM4",
+    "SM4S": "SM4",
+    "SM5S": "SM5",
+    "SM5M": "SM5",
+    # SM era — "P" strengthening packs share the base number
+    "SM1P": "SM1",
+    "SM2P": "SM2",
+    "SM3P": "SM3",
+    "SM4P": "SM4",
+    "SM5P": "SM5",
+    # SM sub-expansions that may share the main set's base code
+    "SM6A": "SM6",
+    "SM6B": "SM6",
+    "SM7A": "SM7",
+    "SM7B": "SM7",
+    "SM8A": "SM8",
+}
+
+# Precompute reverse: base_code → [set_code, ...] for logging
+_BASE_TO_SETS: dict[str, list[str]] = {}
+for _sc, _base in _CARDRUSH_BASE_ALIAS.items():
+    _BASE_TO_SETS.setdefault(_base, []).append(_sc)
+
+# Parenthetical suffix pattern: "(ミラー/ハイクラスパック仕様)" etc.
+_PAREN_SUFFIX_RE = re.compile(r"\s*[（(][^)）]*[)）]\s*$")
+
+
+def _normalize_name(name: str) -> str:
+    """Normalize a Japanese card name for fuzzy comparison."""
+    # NFKC: full-width → half-width, ＧＸ → GX, etc.
+    s = unicodedata.normalize("NFKC", name)
+    # Strip parenthetical variant suffixes
+    s = _PAREN_SUFFIX_RE.sub("", s)
+    # Collapse whitespace
+    s = re.sub(r"\s+", "", s).strip()
+    return s.lower()
+
+
+def _name_matches(listing_name: str | None, catalog_name: str | None) -> bool:
+    """Check if a listing's card name matches the catalog's name_ja.
+
+    Uses substring matching after normalization, since listing names are
+    sometimes a superset of the catalog name (with variant suffixes) or
+    vice versa.
+    """
+    if not listing_name or not catalog_name:
+        return False
+    a = _normalize_name(listing_name)
+    b = _normalize_name(catalog_name)
+    if not a or not b:
+        return False
+    return a in b or b in a
 
 
 @dataclass
@@ -86,6 +164,23 @@ async def _load_card_index(session: AsyncSession, set_code: str) -> dict[tuple[s
     return {(row.local_id, row.variant): row.card_id for row in result.all()}
 
 
+async def _load_name_index(session: AsyncSession, set_code: str) -> dict[str, str]:
+    """Return ``{local_id_padded: name_ja}`` for cards in a set.
+
+    Used for name-based disambiguation when Cardrush uses a base set code
+    that maps to multiple sub-sets (e.g. "s1" for both S1W and S1H).
+    """
+    from watari_core.catalog import pad_local_id as _pad
+    from watari_core.models import Artwork
+
+    stmt = (
+        select(Artwork.local_id, Artwork.name_ja)
+        .where(Artwork.set_code == set_code.upper(), Artwork.name_ja.is_not(None))
+    )
+    result = await session.execute(stmt)
+    return {_pad(row.local_id): row.name_ja for row in result.all()}
+
+
 async def _load_rarities(session: AsyncSession, set_code: str) -> list[str]:
     """Distinct non-null rarity codes present in the catalog for a set.
 
@@ -117,6 +212,7 @@ async def _crawl_rarity(
     rarity_code: str,
     client: CardrushClient,
     card_index: dict[tuple[str, str], str],
+    name_index: dict[str, str],
     run_id: int,
     observed_at: datetime,
     max_pages: int,
@@ -149,6 +245,7 @@ async def _crawl_rarity(
                 listing,
                 expected_set_code=set_code,
                 card_index=card_index,
+                name_index=name_index,
                 result=result,
             )
             if card_id is None:
@@ -180,16 +277,34 @@ def _match_listing_to_card(
     *,
     expected_set_code: str,
     card_index: dict[tuple[str, str], str],
+    name_index: dict[str, str],
     result: ScrapeSetResult,
 ) -> str | None:
-    # Set disambiguation: drop listings whose name encodes a different set.
-    if listing.set_code and listing.set_code.upper() != expected_set_code.upper():
-        result.listings_dropped_wrong_set += 1
-        return None
     if listing.local_id_padded is None:
         result.listings_dropped_unknown_card += 1
         return None
 
+    # -- Set disambiguation --------------------------------------------------
+    listing_sc = (listing.set_code or "").upper()
+    expected_sc = expected_set_code.upper()
+
+    if listing_sc and listing_sc != expected_sc:
+        # Check if this is a known base-code alias (e.g. "S1" for "S1W").
+        alias = _CARDRUSH_BASE_ALIAS.get(expected_sc)
+        if alias and listing_sc == alias.upper():
+            # Alias match — verify via name_ja to exclude sibling-set cards.
+            catalog_name = name_index.get(listing.local_id_padded)
+            if catalog_name and listing.name_ja:
+                if not _name_matches(listing.name_ja, catalog_name):
+                    result.listings_dropped_wrong_set += 1
+                    return None
+            # If either name is missing, accept on local_id alone — better
+            # to have occasional false positives than miss all listings.
+        else:
+            result.listings_dropped_wrong_set += 1
+            return None
+
+    # -- Card lookup ---------------------------------------------------------
     key = (listing.local_id_padded, listing.variant)
     card_id = card_index.get(key)
     if card_id is None:
@@ -239,6 +354,17 @@ async def scrape_set(
             )
             return result.summary()
 
+        # Name index for alias disambiguation (only needed for ambiguous sets).
+        name_index: dict[str, str] = {}
+        if set_code in _CARDRUSH_BASE_ALIAS:
+            name_index = await _load_name_index(session, set_code)
+            logger.info(
+                "set=%s uses base alias %s; loaded %d names for disambiguation",
+                set_code,
+                _CARDRUSH_BASE_ALIAS[set_code],
+                len(name_index),
+            )
+
         rarities = await _load_rarities(session, set_code)
         if rarities_filter:
             wanted = {r.upper() for r in rarities_filter}
@@ -277,6 +403,7 @@ async def scrape_set(
                             rarity_code=rarity,
                             client=client,
                             card_index=card_index,
+                            name_index=name_index,
                             run_id=run_id or 0,
                             observed_at=observed_at,
                             max_pages=max_pages,
