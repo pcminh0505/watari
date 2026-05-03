@@ -219,7 +219,10 @@ async def _crawl_rarity(
     dry_run: bool,
     result: ScrapeSetResult,
 ) -> list[dict[str, object]]:
-    keyword = f"{set_code} {rarity_code}"
+    # Use base code for search if this set has an alias (Cardrush doesn't
+    # recognize sub-set codes like "S1W" — only the base "S1").
+    search_code = _CARDRUSH_BASE_ALIAS.get(set_code.upper(), set_code)
+    keyword = f"{search_code} {rarity_code}"
     pages = await client.paginate(keyword, max_pages=max_pages)
     result.per_rarity_pages[rarity_code] = len(pages)
     result.pages_fetched += len(pages)
