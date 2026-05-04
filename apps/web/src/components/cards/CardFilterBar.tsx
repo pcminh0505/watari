@@ -5,7 +5,9 @@ export type SortKey =
   | "name_asc"
   | "name_desc"
   | "rarity_desc"
-  | "rarity_asc";
+  | "rarity_asc"
+  | "price_desc"
+  | "price_asc";
 
 interface CardFilterBarProps {
   rarity: string;
@@ -72,10 +74,12 @@ export function CardFilterBar({
               className="appearance-none rounded-md border border-gray-200 bg-white py-1.5 pl-3 pr-8 text-sm text-gray-700 shadow-sm focus:border-blue-500 focus:outline-none focus:ring-1 focus:ring-blue-500"
             >
               <option value="number">Card number</option>
-              <option value="name_asc">Name A → Z</option>
-              <option value="name_desc">Name Z → A</option>
-              <option value="rarity_desc">Rarest first</option>
-              <option value="rarity_asc">Common first</option>
+              <option value="name_asc">Card name (A-Z)</option>
+              <option value="name_desc">Card name (Z-A)</option>
+              <option value="rarity_desc">Rarity (desc)</option>
+              <option value="rarity_asc">Rarity (asc)</option>
+              <option value="price_desc">Market price (desc)</option>
+              <option value="price_asc">Market price (asc)</option>
             </select>
             <svg
               className="pointer-events-none absolute right-2.5 top-1/2 -translate-y-1/2 h-3.5 w-3.5 text-gray-400"

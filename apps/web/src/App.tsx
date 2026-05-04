@@ -1,4 +1,4 @@
-import { BrowserRouter, Route, Routes } from "react-router";
+import { RouterProvider, createBrowserRouter, Outlet, ScrollRestoration } from "react-router";
 import { Layout } from "./components/layout/Layout";
 import { AdminPage } from "./pages/AdminPage";
 import { CardDetailPage } from "./pages/CardDetailPage";
@@ -7,19 +7,26 @@ import { CardsSearchPage } from "./pages/CardsSearchPage";
 import { NotFoundPage } from "./pages/NotFoundPage";
 import { SetsPage } from "./pages/SetsPage";
 
-export function App() {
-  return (
-    <BrowserRouter>
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: (
       <Layout>
-        <Routes>
-          <Route path="/" element={<SetsPage />} />
-          <Route path="/cards" element={<CardsSearchPage />} />
-          <Route path="/sets/:setCode" element={<CardsPage />} />
-          <Route path="/sets/:setCode/:localId" element={<CardDetailPage />} />
-          <Route path="/admin" element={<AdminPage />} />
-          <Route path="*" element={<NotFoundPage />} />
-        </Routes>
+        <ScrollRestoration />
+        <Outlet />
       </Layout>
-    </BrowserRouter>
-  );
+    ),
+    children: [
+      { index: true, element: <SetsPage /> },
+      { path: "cards", element: <CardsSearchPage /> },
+      { path: "sets/:setCode", element: <CardsPage /> },
+      { path: "sets/:setCode/:localId", element: <CardDetailPage /> },
+      { path: "admin", element: <AdminPage /> },
+      { path: "*", element: <NotFoundPage /> },
+    ],
+  },
+]);
+
+export function App() {
+  return <RouterProvider router={router} />;
 }

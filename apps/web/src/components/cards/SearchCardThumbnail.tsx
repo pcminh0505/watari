@@ -34,8 +34,8 @@ export function SearchCardThumbnail({ card }: SearchCardThumbnailProps) {
         {/* Bottom-left overlay: set code · number · rarity */}
         <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/80 to-transparent px-2 pb-2 pt-8">
           <div className="flex items-center gap-1">
-            <SetSymbol setCode={card.set_code} className="filter invert opacity-90" />
-            <span className="text-[10px] text-white/90">{card.local_id}</span>
+            <SetSymbol setCode={card.set_code} className="dark:filter dark:invert opacity-90 drop-shadow-md" />
+            <span className="text-[10px] text-white/90 drop-shadow-md">{card.local_id}</span>
             {card.rarity_code && <Badge label={card.rarity_code} variant="rarity" />}
           </div>
         </div>
@@ -43,9 +43,9 @@ export function SearchCardThumbnail({ card }: SearchCardThumbnailProps) {
 
       {/* English name + set + price */}
       <div className="px-3 py-3">
-        <p className="truncate text-xs font-medium text-neutral-200">{displayName}</p>
-        <p className="truncate text-[10px] text-neutral-500">{setName}</p>
-        <p className="mt-1 text-sm font-semibold text-primary-400 text-glow">
+        <p className="truncate text-xs font-medium text-slate-800 dark:text-slate-200">{displayName}</p>
+        <p className="truncate text-[10px] text-slate-500 dark:text-slate-500">{setName}</p>
+        <p className="mt-1 text-sm font-semibold text-primary-600 dark:text-primary-400 text-glow">
           {card.cardrush_a_floor_jpy != null ? formatJPY(card.cardrush_a_floor_jpy) : "—"}
         </p>
       </div>

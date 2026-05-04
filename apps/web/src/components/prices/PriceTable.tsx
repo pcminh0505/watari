@@ -33,12 +33,12 @@ export function PriceTable({ prices }: PriceTableProps) {
       {Object.entries(bySource).map(([source, rows]) => {
         return (
           <div key={source}>
-            <h4 className="mb-3 text-sm font-semibold text-neutral-300">
+            <h4 className="mb-3 text-sm font-semibold text-slate-800 dark:text-slate-200">
               {SOURCE_LABELS[source] ?? source}
             </h4>
             <table className="w-full text-sm">
               <thead>
-                <tr className="border-b border-white/10 text-xs text-neutral-500">
+                <tr className="border-b border-slate-200 dark:border-white/10 text-xs text-slate-500 dark:text-slate-400">
                   <th className="pb-2 text-left">Condition</th>
                   <th className="pb-2 text-right">Price</th>
                   <th className="pb-2 text-right">Updated</th>
@@ -50,14 +50,14 @@ export function PriceTable({ prices }: PriceTableProps) {
                   return (
                     <tr
                       key={`${row.source}-${row.condition}`}
-                      className={`border-b border-white/5 last:border-0 hover:bg-white/5 transition-colors ${stale ? "opacity-50" : ""}`}
+                      className={`border-b border-slate-100 dark:border-white/5 last:border-0 hover:bg-slate-50 dark:hover:bg-white/5 transition-colors ${stale ? "opacity-50" : ""}`}
                     >
-                      <td className="py-2.5 font-medium text-neutral-200">{row.condition}</td>
-                      <td className="py-2.5 text-right font-medium text-primary-400">
+                      <td className="py-2.5 font-medium text-slate-800 dark:text-slate-200">{row.condition}</td>
+                      <td className="py-2.5 text-right font-medium text-primary-600 dark:text-primary-400">
                         {formatJPY(row.price_jpy)}
                       </td>
                       <td className="py-2.5 text-right text-xs">
-                        <span className={stale ? "text-amber-400" : "text-neutral-500"}>
+                        <span className={stale ? "text-amber-600 dark:text-amber-400" : "text-slate-500"}>
                           {formatDate(row.observed_at)}
                           {stale && " ⚠"}
                         </span>

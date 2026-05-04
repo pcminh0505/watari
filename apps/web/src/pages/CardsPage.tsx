@@ -1,19 +1,20 @@
-import { useMemo, useState } from "react";
+import { useMemo } from "react";
 import { Link, useParams } from "react-router";
-import { useCards } from "../api/cards";
+import { useSearchParams } from "react-router";
+import { useCardSearch } from "../api/cards";
 import { useSet } from "../api/sets";
 import type { SortKey } from "../components/cards/CardFilterBar";
 import { CardFilterBar } from "../components/cards/CardFilterBar";
 import { CardGrid } from "../components/cards/CardGrid";
+import { CardSkeleton } from "../components/cards/CardSkeleton";
 import { ErrorMessage } from "../components/ui/ErrorMessage";
 import { Pagination } from "../components/ui/Pagination";
-import { Spinner } from "../components/ui/Spinner";
 import { RARITY_SORT_ORDER } from "../lib/constants";
-import type { ArtworkDetail } from "../types/api";
+import type { ArtworkSearchResult } from "../types/api";
 
 const PAGE_SIZE = 60;
 
-function sortCards(cards: ArtworkDetail[], sort: SortKey): ArtworkDetail[] {
+function sortCards(cards: ArtworkSearchResult[], sort: SortKey): ArtworkSearchResult[] {
   const rarityOrder = (code: string | null) =>
     RARITY_SORT_ORDER[code ?? ""] ?? 99;
 
@@ -22,37 +23,58 @@ function sortCards(cards: ArtworkDetail[], sort: SortKey): ArtworkDetail[] {
       case "number":
         return a.local_id.localeCompare(b.local_id);
       case "name_asc": {
-        const na = a.name_ja ?? a.name_en ?? a.local_id;
-        const nb = b.name_ja ?? b.name_en ?? b.local_id;
-        return na.localeCompare(nb, "ja");
+        const na = a.name_en ?? a.name_ja ?? a.local_id;
+        const nb = b.name_en ?? b.name_ja ?? b.local_id;
+        return na.localeCompare(nb, "en");
       }
       case "name_desc": {
-        const na = a.name_ja ?? a.name_en ?? a.local_id;
-        const nb = b.name_ja ?? b.name_en ?? b.local_id;
-        return nb.localeCompare(na, "ja");
+        const na = a.name_en ?? a.name_ja ?? a.local_id;
+        const nb = b.name_en ?? b.name_ja ?? b.local_id;
+        return nb.localeCompare(na, "en");
       }
       case "rarity_desc":
         return rarityOrder(b.rarity_code) - rarityOrder(a.rarity_code);
       case "rarity_asc":
         return rarityOrder(a.rarity_code) - rarityOrder(b.rarity_code);
+      case "price_desc":
+        return (b.cardrush_a_floor_jpy ?? -1) - (a.cardrush_a_floor_jpy ?? -1);
+      case "price_asc":
+        return (a.cardrush_a_floor_jpy ?? Infinity) - (b.cardrush_a_floor_jpy ?? Infinity);
     }
   });
 }
 
 export function CardsPage() {
   const { setCode = "" } = useParams<{ setCode: string }>();
-  const [rarity, setRarity] = useState("");
-  // Default off: catalog artworks exist before scrapers mark prints tracked.
-  const [trackedOnly, setTrackedOnly] = useState(false);
-  const [sort, setSort] = useState<SortKey>("number");
-  const [page, setPage] = useState(0);
+
+  const [searchParams, setSearchParams] = useSearchParams();
+  const rarity = searchParams.get("rarity") || "";
+  const trackedOnly = searchParams.get("tracked") === "true";
+  const sort = (searchParams.get("sort") || "number") as SortKey;
+  const page = parseInt(searchParams.get("page") || "0", 10);
+
+  function updateParams(updates: Record<string, string | undefined>) {
+    setSearchParams(prev => {
+      const next = new URLSearchParams(prev);
+      Object.entries(updates).forEach(([key, value]) => {
+        if (value === undefined || value === "") {
+          next.delete(key);
+        } else {
+          next.set(key, value);
+        }
+      });
+      if (!updates.hasOwnProperty("page")) {
+        next.delete("page");
+      }
+      return next;
+    }, { replace: true });
+  }
 
   const { data: set } = useSet(setCode);
-  // Fetch all cards without rarity filter so rarity is derived dynamically
-  // and filtering/sorting compose correctly client-side.
-  const { data, isPending, error, refetch } = useCards(setCode, {
-    tracked_only: trackedOnly,
-    limit: 500,
+  // Fetch all cards for the set using the search endpoint to get price data
+  const { data, isPending, error, refetch } = useCardSearch({
+    set_code: setCode,
+    limit: 200,
   });
 
   const allCards = data?.data ?? [];
@@ -70,30 +92,32 @@ export function CardsPage() {
     });
   }, [allCards]);
 
-  const filtered = useMemo(
-    () => (rarity ? allCards.filter((c) => c.rarity_code === rarity) : allCards),
-    [allCards, rarity]
-  );
+  const filtered = useMemo(() => {
+    let result = allCards;
+    if (rarity) result = result.filter((c) => c.rarity_code === rarity);
+    if (trackedOnly) result = result.filter((c) => c.variants.some((v) => v.is_tracked));
+    return result;
+  }, [allCards, rarity, trackedOnly]);
 
   const sorted = useMemo(() => sortCards(filtered, sort), [filtered, sort]);
   const pageCards = sorted.slice(page * PAGE_SIZE, (page + 1) * PAGE_SIZE);
 
-  const setName = set ? (set.name_ja ?? set.name_en ?? setCode) : setCode;
+  const setName = set ? (set.name_en ?? set.name_ja ?? setCode.toLowerCase()) : setCode.toLowerCase();
 
-  function handleRarityChange(v: string) { setRarity(v); setPage(0); }
-  function handleTrackedOnlyChange(v: boolean) { setTrackedOnly(v); setPage(0); }
-  function handleSortChange(v: SortKey) { setSort(v); setPage(0); }
+  function handleRarityChange(v: string) { updateParams({ rarity: v }); }
+  function handleTrackedOnlyChange(v: boolean) { updateParams({ tracked: v ? "true" : undefined }); }
+  function handleSortChange(v: SortKey) { updateParams({ sort: v === "number" ? undefined : v }); }
 
   return (
     <div>
-      <div className="mb-4 flex items-center gap-2 text-sm text-neutral-400">
-        <Link to="/" className="hover:text-white transition-colors">Sets</Link>
+      <div className="mb-4 flex items-center gap-2 text-sm text-slate-500 dark:text-slate-400">
+        <Link to="/" className="hover:text-slate-900 dark:hover:text-white transition-colors">Sets</Link>
         <span>/</span>
-        <span className="text-neutral-50">{setName}</span>
+        <span className="text-slate-900 dark:text-slate-50">{setName}</span>
       </div>
-      <h1 className="mb-6 text-3xl font-bold text-neutral-50 text-glow">
+      <h1 className="mb-6 text-3xl font-bold text-slate-900 dark:text-slate-50 text-glow">
         {setName}
-        <span className="ml-3 text-lg font-normal text-primary-400">{setCode}</span>
+        <span className="ml-3 text-lg font-normal text-primary-600 dark:text-primary-400">{setCode.toLowerCase()}</span>
       </h1>
 
       <CardFilterBar
@@ -108,7 +132,11 @@ export function CardsPage() {
       />
 
       {isPending ? (
-        <Spinner />
+        <div className="grid grid-cols-2 gap-4 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6">
+          {Array.from({ length: 24 }).map((_, i) => (
+            <CardSkeleton key={i} />
+          ))}
+        </div>
       ) : error ? (
         <ErrorMessage error={error} onRetry={refetch} />
       ) : (
@@ -118,7 +146,7 @@ export function CardsPage() {
             page={page}
             total={sorted.length}
             limit={PAGE_SIZE}
-            onPageChange={setPage}
+            onPageChange={(p) => updateParams({ page: p === 0 ? undefined : p.toString() })}
           />
         </>
       )}

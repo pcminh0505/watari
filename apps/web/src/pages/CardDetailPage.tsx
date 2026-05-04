@@ -1,15 +1,17 @@
 import { useMemo, useState } from "react";
 import { Link, useParams } from "react-router";
 import { useCard } from "../api/cards";
+import { useSet } from "../api/sets";
 import { useLatestPrices, usePriceHistory, useSpread } from "../api/prices";
 import { CardPlaceholder } from "../components/cards/CardPlaceholder";
+import { CardDetailSkeleton } from "../components/cards/CardDetailSkeleton";
 import { PriceHistoryChart } from "../components/prices/PriceHistoryChart";
 import { PriceTable } from "../components/prices/PriceTable";
 import { SpreadTable } from "../components/prices/SpreadTable";
 import { SetSymbol } from "../components/cards/SetSymbol";
 import { Badge } from "../components/ui/Badge";
 import { ErrorMessage } from "../components/ui/ErrorMessage";
-import { Spinner } from "../components/ui/Spinner";
+import { ChartSkeleton, TableSkeleton } from "../components/ui/Skeletons";
 
 export function CardDetailPage() {
   const { setCode = "", localId = "" } = useParams<{
@@ -18,12 +20,13 @@ export function CardDetailPage() {
   }>();
 
   const { data: card, isPending, error } = useCard(setCode, localId);
+  const { data: set } = useSet(setCode);
   const [selectedVariant, setSelectedVariant] = useState<string | null>(null);
   const [historyDays, setHistoryDays] = useState(30);
   const variant = selectedVariant ?? card?.variants[0]?.variant ?? "normal";
 
-  const { data: prices } = useLatestPrices(setCode, localId, variant);
-  const { data: spread } = useSpread(setCode, localId, variant);
+  const { data: prices, isPending: isPricesPending } = useLatestPrices(setCode, localId, variant);
+  const { data: spread, isPending: isSpreadPending } = useSpread(setCode, localId, variant);
 
   // Derive available conditions from the latest prices data.
   // "A-" (Cardrush) is normalized to "B" (SNKRDUNK equivalent).
@@ -41,7 +44,7 @@ export function CardDetailPage() {
       ? historyCondition
       : (availableConditions[0] ?? "A");
 
-  const { data: history } = usePriceHistory(
+  const { data: history, isPending: isHistoryPending } = usePriceHistory(
     setCode,
     localId,
     variant,
@@ -50,7 +53,7 @@ export function CardDetailPage() {
   );
   // When viewing condition "B", also fetch Cardrush "A-" history (they represent
   // the same grade) so the chart merges both sources onto a single line.
-  const { data: historyAlt } = usePriceHistory(
+  const { data: historyAlt, isPending: isHistoryAltPending } = usePriceHistory(
     setCode,
     localId,
     variant,
@@ -66,19 +69,20 @@ export function CardDetailPage() {
     [history, historyAlt, activeCondition]
   );
 
-  if (isPending) return <Spinner />;
+  if (isPending) return <CardDetailSkeleton />;
   if (error || !card) return <ErrorMessage error={error} />;
 
-  const displayName = card.name_ja ?? card.name_en ?? card.local_id;
+  const displayName = card.name_en ?? card.name_ja ?? card.local_id;
+  const setName = set ? (set.name_en ?? set.name_ja ?? setCode.toLowerCase()) : setCode.toLowerCase();
 
   return (
     <div>
-      <div className="mb-4 flex items-center gap-2 text-sm text-neutral-400">
-        <Link to="/" className="hover:text-white transition-colors">Sets</Link>
+      <div className="mb-4 flex items-center gap-2 text-sm text-slate-500 dark:text-slate-400">
+        <Link to="/" className="hover:text-slate-900 dark:hover:text-white transition-colors">Sets</Link>
         <span>/</span>
-        <Link to={`/sets/${setCode}`} className="hover:text-white transition-colors">{setCode}</Link>
+        <Link to={`/sets/${setCode}`} className="hover:text-slate-900 dark:hover:text-white transition-colors">{setName}</Link>
         <span>/</span>
-        <span className="text-neutral-50">{displayName}</span>
+        <span className="text-slate-900 dark:text-slate-50">{displayName}</span>
       </div>
 
       <div className="grid gap-8 lg:grid-cols-[280px_1fr]">
@@ -87,14 +91,14 @@ export function CardDetailPage() {
             <img
               src={card.image_url}
               alt={displayName}
-              className="w-full rounded-lg shadow-[0_0_15px_rgba(255,255,255,0.1)] border border-white/10"
+              className="w-full rounded-lg shadow-sm dark:shadow-[0_0_15px_rgba(255,255,255,0.1)] border border-slate-200 dark:border-white/10"
               referrerPolicy="no-referrer"
             />
           ) : (
             <CardPlaceholder />
           )}
           {card.illustrator && (
-            <p className="mt-3 text-center text-xs text-neutral-500">
+            <p className="mt-3 text-center text-xs text-slate-500">
               Illus. {card.illustrator}
             </p>
           )}
@@ -102,17 +106,17 @@ export function CardDetailPage() {
 
         <div>
           <div className="mb-3 flex flex-wrap items-start gap-2">
-            <h1 className="text-3xl font-bold text-neutral-50 text-glow">{displayName}</h1>
+            <h1 className="text-3xl font-bold text-slate-900 dark:text-slate-50 text-glow">{displayName}</h1>
             {card.name_ja && card.name_en && (
-              <span className="mt-2 text-base text-neutral-400">{card.name_en}</span>
+              <span className="mt-2 text-base text-slate-500 dark:text-slate-400">{card.name_en}</span>
             )}
           </div>
           <div className="mb-5 flex flex-wrap items-center gap-2">
             <SetSymbol
               setCode={card.set_code}
-              className="h-5 max-h-5 w-auto max-w-16 object-contain filter invert opacity-80"
+              className="h-5 max-h-5 w-auto max-w-16 object-contain dark:filter dark:invert dark:opacity-80 drop-shadow-sm"
             />
-            <Badge label={card.set_code} />
+            <Badge label={card.set_code.toLowerCase()} />
             <Badge label={`#${card.local_id}`} />
             {card.rarity_code && (
               <Badge label={card.rarity_code} variant="rarity" />
@@ -126,8 +130,8 @@ export function CardDetailPage() {
                   key={v.variant}
                   onClick={() => setSelectedVariant(v.variant)}
                   className={`rounded-full border px-4 py-1.5 text-sm font-medium transition-all ${v.variant === variant
-                    ? "bg-primary-600/20 text-primary-400 border-primary-500/50 shadow-[0_0_10px_rgba(168,85,247,0.3)]"
-                    : "bg-white/5 text-neutral-400 border-white/5 hover:bg-white/10 hover:text-white"
+                    ? "bg-primary-50 text-primary-700 border-primary-500 dark:bg-primary-900/40 dark:text-primary-300 dark:border-primary-500/50 shadow-sm dark:shadow-[0_0_10px_rgba(14,165,233,0.3)]"
+                    : "bg-white text-slate-600 border-slate-200 hover:bg-slate-50 hover:text-slate-900 dark:bg-white/5 dark:text-slate-400 dark:border-white/5 dark:hover:bg-white/10 dark:hover:text-white"
                     }`}
                 >
                   {v.variant.replace(/_/g, " ")}
@@ -137,33 +141,37 @@ export function CardDetailPage() {
           )}
 
           <section className="mb-8 glass-panel p-5">
-            <h3 className="mb-3 text-sm font-semibold text-neutral-300">
+            <h3 className="mb-3 text-sm font-semibold text-slate-800 dark:text-slate-200">
               Latest Prices
             </h3>
-            <PriceTable prices={prices ?? []} />
+            {isPricesPending ? <TableSkeleton columns={5} rows={3} /> : <PriceTable prices={prices ?? []} />}
           </section>
 
-          {spread && spread.length > 0 && (
+          {isSpreadPending ? (
+            <section className="mb-8 glass-panel p-5">
+               <TableSkeleton columns={6} rows={1} />
+            </section>
+          ) : spread && spread.length > 0 ? (
             <section className="mb-8 glass-panel p-5">
               <SpreadTable rows={spread} />
             </section>
-          )}
+          ) : null}
 
           <section className="glass-panel p-5">
             <div className="mb-4 flex items-center justify-between gap-3">
-              <h3 className="text-sm font-semibold text-neutral-300">
+              <h3 className="text-sm font-semibold text-slate-800 dark:text-slate-200">
                 Price History
               </h3>
               <div className="flex items-center gap-2">
                 {/* Period selector */}
-                <div className="flex gap-1 bg-black/20 p-1 rounded-lg border border-white/5">
+                <div className="flex gap-1 bg-slate-100 dark:bg-black/20 p-1 rounded-lg border border-slate-200 dark:border-white/5">
                   {([{ days: 30, label: "30d" }, { days: 60, label: "60d" }, { days: 90, label: "90d" }, { days: 365, label: "1y" }] as const).map(({ days, label }) => (
                     <button
                       key={days}
                       onClick={() => setHistoryDays(days)}
                       className={`rounded-md border px-3 py-1 text-xs font-medium transition-all ${days === historyDays
-                        ? "bg-primary-600/20 text-primary-400 border-primary-500/50"
-                        : "bg-transparent text-neutral-400 border-transparent hover:text-white"
+                        ? "bg-white text-primary-600 border-slate-200 shadow-sm dark:bg-primary-900/40 dark:text-primary-300 dark:border-primary-500/50"
+                        : "bg-transparent text-slate-500 border-transparent hover:text-slate-900 dark:text-slate-400 dark:hover:text-white"
                         }`}
                     >
                       {label}
@@ -172,14 +180,14 @@ export function CardDetailPage() {
                 </div>
                 {/* Condition selector */}
                 {availableConditions.length > 1 && (
-                  <div className="flex gap-1 bg-black/20 p-1 rounded-lg border border-white/5">
+                  <div className="flex gap-1 bg-slate-100 dark:bg-black/20 p-1 rounded-lg border border-slate-200 dark:border-white/5">
                     {availableConditions.map((c) => (
                       <button
                         key={c}
                         onClick={() => setHistoryCondition(c)}
                         className={`rounded-md border px-3 py-1 text-xs font-medium transition-all ${c === activeCondition
-                          ? "bg-primary-600/20 text-primary-400 border-primary-500/50"
-                          : "bg-transparent text-neutral-400 border-transparent hover:text-white"
+                          ? "bg-white text-primary-600 border-slate-200 shadow-sm dark:bg-primary-900/40 dark:text-primary-300 dark:border-primary-500/50"
+                          : "bg-transparent text-slate-500 border-transparent hover:text-slate-900 dark:text-slate-400 dark:hover:text-white"
                           }`}
                       >
                         {c}
@@ -189,10 +197,14 @@ export function CardDetailPage() {
                 )}
               </div>
             </div>
-            <PriceHistoryChart
-              history={chartHistory}
-              condition={activeCondition}
-            />
+            {isHistoryPending || (activeCondition === "B" && isHistoryAltPending) ? (
+              <ChartSkeleton />
+            ) : (
+              <PriceHistoryChart
+                history={chartHistory}
+                condition={activeCondition}
+              />
+            )}
           </section>
         </div>
       </div>
