@@ -7,9 +7,9 @@ name_en: Drapion
 rarity_code: AR
 category: card
 image: https://den-cards.pokellector.com/428/Drapion.M3.90.60259.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '60259'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: ドラピオン
     variants_seen:
-      - normal
+    - normal

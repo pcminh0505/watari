@@ -7,9 +7,9 @@ name_en: Arceus & Dialga & Palkia GX
 rarity_code: HR
 category: card
 image: https://den-cards.pokellector.com/281/Arceus-Dialga-Palkia-GX.SM12.112.30161.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '30161'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: アルセウス＆ディアルガ＆パルキアGX
     variants_seen:
-      - normal
+    - normal
     rarity_code: HR

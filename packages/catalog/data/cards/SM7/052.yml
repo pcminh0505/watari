@@ -7,9 +7,9 @@ name_en: Beldum
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/242/Beldum.SM7.52.21013.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '21013'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ミックスハーブ
     variants_seen:
-      - normal
+    - normal
     rarity_code: SR

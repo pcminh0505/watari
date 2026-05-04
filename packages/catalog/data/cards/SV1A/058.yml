@@ -7,9 +7,9 @@ name_en: Zweilous
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/366/Zweilous.SV1A.58.46893.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '46893'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: ジヘッド
     variants_seen:
-      - normal
+    - normal

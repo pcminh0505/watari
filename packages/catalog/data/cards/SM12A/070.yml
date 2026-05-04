@@ -7,9 +7,9 @@ name_en: Diancie Prism Star
 rarity_code: R
 category: card
 image: https://den-cards.pokellector.com/288/Diancie-Prism-Star.SM12A.70.30422.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '30422'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ディアンシー◇
     variants_seen:
-      - normal
+    - normal
     rarity_code: R

@@ -7,9 +7,9 @@ name_en: Team Rocket's Petrel
 rarity_code: SR
 category: card
 image: https://den-cards.pokellector.com/413/Team-Rockets-Petrel.SV10.122.57153.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '57153'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: ロケット団のラムダ
     variants_seen:
-      - normal
+    - normal

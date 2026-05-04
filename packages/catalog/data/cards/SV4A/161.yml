@@ -2,14 +2,14 @@
 # To freeze a manually-edited value, add `# manual: true` on line 1.
 set_code: SV4A
 local_id: '161'
-name_ja:
+name_ja: Ultra Ball
 name_en: Ultra Ball
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/375/Ultra-Ball.SV4A.161.50950.png
-illustrator:
+illustrator: Ayaka Yoshida
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '50950'

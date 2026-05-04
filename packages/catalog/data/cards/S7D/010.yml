@@ -7,9 +7,9 @@ name_en: Jigglypuff
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/318/Jigglypuff.S7D.10.39214.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '39214'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: プリン
     variants_seen:
-      - normal
+    - normal
     rarity_code: C

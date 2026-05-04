@@ -7,9 +7,9 @@ name_en: N's Klang
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/408/Ns-Klang.SV9.65.55755.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '55755'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: Nのギギアル
     variants_seen:
-      - normal
+    - normal

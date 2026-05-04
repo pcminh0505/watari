@@ -57,6 +57,15 @@ def _normalize(entry: dict[str, Any], *, source_path: pathlib.Path) -> dict[str,
     source_refs: dict[str, Any] = {"sets_yml": True}
     if entry.get("pokellector_slug"):
         source_refs["pokellector_slug"] = entry["pokellector_slug"]
+    # TCGCollector audit fields (added in the data-quality audit, Phase 2).
+    # Either may be ``null`` if the operator hasn't filled them in yet.
+    tcgc_id = entry.get("tcgcollector_id")
+    tcgc_slug = entry.get("tcgcollector_slug")
+    if tcgc_id or tcgc_slug:
+        source_refs["tcgcollector"] = {
+            "id": str(tcgc_id) if tcgc_id is not None else None,
+            "slug": tcgc_slug,
+        }
     return {
         "set_code": set_code,
         "era_block": str(entry.get("era_block") or "unknown").lower(),

@@ -7,9 +7,9 @@ name_en: Galarian Zapdos
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/357/Galarian-Zapdos.S12A.73.45878.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '45878'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ガラルサンダー(R仕様)
     variants_seen:
-      - normal
+    - normal
     rarity_code: R

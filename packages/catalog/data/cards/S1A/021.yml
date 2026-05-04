@@ -7,9 +7,9 @@ name_en: Gyarados
 rarity_code: R
 category: card
 image: https://den-cards.pokellector.com/285/Gyarados.S1A.21.31812.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '31812'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ギャラドス
     variants_seen:
-      - normal
+    - normal
     rarity_code: R

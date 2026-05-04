@@ -2,14 +2,14 @@
 # To freeze a manually-edited value, add `# manual: true` on line 1.
 set_code: sm2k
 local_id: '052'
-name_ja:
+name_ja: Alolan Ninetales GX
 name_en: Alolan Ninetales GX
 rarity_code: UR
 category: card
 image: https://den-cards.pokellector.com/211/Alolan-Ninetales-GX.SM2K.52.17357.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '17357'

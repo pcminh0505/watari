@@ -7,9 +7,9 @@ name_en: Zygarde
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/241/Zygarde.SM8B.57.24853.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '24853'

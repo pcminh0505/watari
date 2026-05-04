@@ -7,9 +7,9 @@ name_en: Rellor
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/369/Rellor.SV2P.13.47026.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '47026'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: シガロコ
     variants_seen:
-      - normal
+    - normal

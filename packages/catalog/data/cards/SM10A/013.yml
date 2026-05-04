@@ -7,9 +7,9 @@ name_en: Alolan Marowak
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/267/Alolan-Marowak.SM10A.13.27347.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '27347'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: アローラガラガラ
     variants_seen:
-      - normal
+    - normal
     rarity_code: U

@@ -7,9 +7,9 @@ name_en: Mew VMAX
 rarity_code: RR
 category: card
 image: https://den-cards.pokellector.com/326/Mew-VMAX.S8.119.40499.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '40499'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ミュウVMAX(SA)
     variants_seen:
-      - normal
+    - normal
     rarity_code: RR

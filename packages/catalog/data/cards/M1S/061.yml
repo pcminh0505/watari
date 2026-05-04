@@ -7,9 +7,9 @@ name_en: Vitality Forest
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/417/Vitality-Forest.M1S.61.58940.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '58940'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: 活力の森
     variants_seen:
-      - normal
+    - normal
     rarity_code: U

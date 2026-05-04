@@ -7,9 +7,9 @@ name_en: Magcargo
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/297/Magcargo.S4.15.35593.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '35593'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: マグカルゴ
     variants_seen:
-      - normal
+    - normal
     rarity_code: C

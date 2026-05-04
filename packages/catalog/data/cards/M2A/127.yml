@@ -7,9 +7,9 @@ name_en: Rayquaza
 rarity_code: C
 category: energy
 image: https://den-cards.pokellector.com/427/Rayquaza.M2A.127.60012.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '60012'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: レックウザ(竜エネルギーミラー)
     variants_seen:
-      - normal
+    - normal

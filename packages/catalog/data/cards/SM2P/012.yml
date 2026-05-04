@@ -7,9 +7,9 @@ name_en: Alolan Sandslash
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/212/Alolan-Sandslash.SM2+.12.17477.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '17477'

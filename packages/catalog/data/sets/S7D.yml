@@ -4,7 +4,9 @@ set_code: S7D
 era_block: sw
 language: jp
 name_ja: 摩天パーフェクト
-name_en: 摩天パーフェクト
+name_en: Skyscraping Perfection
 release_date: 2021-07-09
 tcgdex_id: S7D
 pokellector_slug: Towering-Perfection-Expansion
+tcgcollector_id: '11429'
+tcgcollector_slug: skyscraping-perfection

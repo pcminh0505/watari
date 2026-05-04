@@ -7,9 +7,9 @@ name_en: Noctowl
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/268/Noctowl.SM10B.39.27682.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '27682'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ヨルノズク
     variants_seen:
-      - normal
+    - normal
     rarity_code: C

@@ -7,9 +7,9 @@ name_en: Metagross V
 rarity_code: RR
 category: card
 image: https://den-cards.pokellector.com/310/Metagross-V.S6K.49.38675.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '38675'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: メタグロスV
     variants_seen:
-      - normal
+    - normal
     rarity_code: RR

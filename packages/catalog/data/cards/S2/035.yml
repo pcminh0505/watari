@@ -7,9 +7,9 @@ name_en: Luxray
 rarity_code: R
 category: card
 image: https://den-cards.pokellector.com/291/Luxray.S2.35.31924.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '31924'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: マシェード
     variants_seen:
-      - normal
+    - normal
     rarity_code: R

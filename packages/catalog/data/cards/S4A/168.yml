@@ -7,9 +7,9 @@ name_en: Rusted Sword
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/301/Rusted-Sword.S4A.168.36454.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '36454'

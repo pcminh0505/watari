@@ -7,9 +7,9 @@ name_en: Arboliva ex
 rarity_code: SR
 category: card
 image: https://den-cards.pokellector.com/413/Arboliva-ex.SV10.111.57144.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '57144'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: オリーヴァex
     variants_seen:
-      - normal
+    - normal

@@ -7,9 +7,9 @@ name_en: Emma
 rarity_code: SR
 category: card
 image: https://den-cards.pokellector.com/430/Emma.M4.111.61029.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '61029'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: マチエール
     variants_seen:
-      - normal
+    - normal

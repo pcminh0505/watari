@@ -7,9 +7,9 @@ name_en: Black Market Prism Star
 rarity_code: R
 category: card
 image: https://den-cards.pokellector.com/288/Black-Market-Prism-Star.SM12A.167.30510.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '30510'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ブラックマーケット◇
     variants_seen:
-      - normal
+    - normal
     rarity_code: R

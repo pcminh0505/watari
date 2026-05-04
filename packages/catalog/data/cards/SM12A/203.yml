@@ -7,9 +7,9 @@ name_en: Fire Energy
 rarity_code: SR
 category: energy
 image: https://den-cards.pokellector.com/288/Fire-Energy.SM12A.203.30364.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '30364'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: 基本炎エネルギー
     variants_seen:
-      - normal
+    - normal
     rarity_code: SR

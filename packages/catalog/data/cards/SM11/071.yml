@@ -7,9 +7,9 @@ name_en: Noivern
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/277/Noivern.SM11.71.28834.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '28834'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: アローラペルシアンGX
     variants_seen:
-      - normal
+    - normal
     rarity_code: SR

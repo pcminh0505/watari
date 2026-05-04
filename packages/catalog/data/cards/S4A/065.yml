@@ -7,9 +7,9 @@ name_en: Clefairy
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/301/Clefairy.S4A.65.36373.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '36373'

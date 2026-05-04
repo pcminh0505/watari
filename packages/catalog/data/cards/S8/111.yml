@@ -7,9 +7,9 @@ name_en: Greedent V
 rarity_code: SR
 category: card
 image: https://den-cards.pokellector.com/326/Greedent-V.S8.111.40491.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '40491'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ヨクバリスV(SA)
     variants_seen:
-      - normal
+    - normal
     rarity_code: SR

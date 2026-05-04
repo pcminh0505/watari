@@ -7,9 +7,9 @@ name_en: Cetitan ex
 rarity_code: RR
 category: card
 image: https://den-cards.pokellector.com/413/Cetitan-ex.SV10.32.56880.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '56880'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: ハルクジラex
     variants_seen:
-      - normal
+    - normal

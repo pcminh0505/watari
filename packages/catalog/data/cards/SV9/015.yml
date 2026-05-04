@@ -7,9 +7,9 @@ name_en: N's Darumaka
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/408/Ns-Darumaka.SV9.15.55460.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '55460'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: Nのダルマッカ
     variants_seen:
-      - normal
+    - normal

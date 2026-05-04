@@ -7,9 +7,9 @@ name_en: Morpeko
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/391/Morpeko.SV5A.30.52376.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '52376'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: モルペコ
     variants_seen:
-      - normal
+    - normal

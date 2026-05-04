@@ -7,9 +7,9 @@ name_en: Cramorant
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/285/Cramorant.S1A.24.31830.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '31830'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ウッウ
     variants_seen:
-      - normal
+    - normal
     rarity_code: U

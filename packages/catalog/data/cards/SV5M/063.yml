@@ -7,9 +7,9 @@ name_en: Reboot Pod
 rarity_code: R
 category: card
 image: https://den-cards.pokellector.com/387/Reboot-Pod.SV5M.63.51800.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '51800'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: リブートポッド
     variants_seen:
-      - normal
+    - normal

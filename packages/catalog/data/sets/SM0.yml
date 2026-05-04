@@ -4,7 +4,9 @@ set_code: SM0
 era_block: sm
 language: jp
 name_ja: ピカチュウと新しい仲間たち
-name_en: ピカチュウと新しい仲間たち
+name_en: Pikachu's New Friends
 release_date: 2016-11-18
 tcgdex_id: SM0
 pokellector_slug: Pikachu-New-Friends-Expansion
+tcgcollector_id: '11308'
+tcgcollector_slug: pikachus-new-friends

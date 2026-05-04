@@ -7,9 +7,9 @@ name_en: Slowpoke
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/211/Slowpoke.SM2K.23.17336.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '17336'

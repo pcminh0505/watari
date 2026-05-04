@@ -7,9 +7,9 @@ name_en: Team Yell Grunt
 rarity_code: UR
 category: card
 image: https://den-cards.pokellector.com/284/Team-Yell-Grunt.S1H.67.31359.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '31359'

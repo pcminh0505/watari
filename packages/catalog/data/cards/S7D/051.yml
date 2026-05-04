@@ -7,9 +7,9 @@ name_en: Vigoroth
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/318/Vigoroth.S7D.51.39427.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '39427'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ヤルキモノ
     variants_seen:
-      - normal
+    - normal
     rarity_code: C

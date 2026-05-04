@@ -7,9 +7,9 @@ name_en: Onix
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/382/Onix.SV4K.39.50866.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '50866'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: イワーク
     variants_seen:
-      - normal
+    - normal

@@ -7,10 +7,10 @@ name_en: Tangrowth
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/391/Tangrowth.SV5A.2.52769.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
-  - jumbo
+- normal
+- jumbo
 sources:
   pokellector:
     id: '52769'
@@ -20,5 +20,5 @@ sources:
   cardrush:
     name_ja: モジャンボ
     variants_seen:
-      - jumbo
-      - normal
+    - jumbo
+    - normal

@@ -4,7 +4,9 @@ set_code: S2
 era_block: sw
 language: jp
 name_ja: 反逆クラッシュ
-name_en: 反逆クラッシュ
+name_en: Rebellion Crash
 release_date: 2020-03-06
 tcgdex_id: S2
 pokellector_slug: Rebellion-Crash-Expansion
+tcgcollector_id: '11374'
+tcgcollector_slug: rebellion-crash

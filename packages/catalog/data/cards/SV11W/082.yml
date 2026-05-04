@@ -7,10 +7,10 @@ name_en: Brave Bangle
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/415/Brave-Bangle.SV11W.82.57798.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
-  - poke_ball_mirror
+- normal
+- poke_ball_mirror
 sources:
   pokellector:
     id: '57798'
@@ -20,5 +20,5 @@ sources:
   cardrush:
     name_ja: ブレイブバングル
     variants_seen:
-      - normal
-      - poke_ball_mirror
+    - normal
+    - poke_ball_mirror

@@ -7,9 +7,9 @@ name_en: Glimmet
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/368/Glimmet.SV3.64.48683.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '48683'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: キラーメ
     variants_seen:
-      - normal
+    - normal

@@ -7,9 +7,9 @@ name_en: Enhanced Hammer
 rarity_code: R
 category: card
 image: https://den-cards.pokellector.com/262/Enhanced-Hammer.SM9A.53.25630.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '25630'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: 改造ハンマー
     variants_seen:
-      - normal
+    - normal
     rarity_code: TR

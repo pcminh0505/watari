@@ -7,9 +7,9 @@ name_en: Komala
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/211/Komala.SM2K.46.16511.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '16511'

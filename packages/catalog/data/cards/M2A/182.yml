@@ -2,14 +2,14 @@
 # To freeze a manually-edited value, add `# manual: true` on line 1.
 set_code: M2A
 local_id: '182'
-name_ja:
+name_ja: Forest of Vitality
 name_en: Forest of Vitality
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/427/Forest-of-Vitality.M2A.182.60057.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '60057'

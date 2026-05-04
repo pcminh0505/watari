@@ -7,9 +7,9 @@ name_en: Crushing Hammer
 rarity_code: UR
 category: card
 image: https://den-cards.pokellector.com/233/Crushing-Hammer.SM5M.76.20024.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '20024'

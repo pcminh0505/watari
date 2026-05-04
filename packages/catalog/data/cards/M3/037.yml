@@ -7,9 +7,9 @@ name_en: Probopass
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/428/Probopass.M3.37.60227.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '60227'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: ダイノーズ
     variants_seen:
-      - normal
+    - normal

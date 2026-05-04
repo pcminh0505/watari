@@ -7,9 +7,9 @@ name_en: Jasmine
 rarity_code: UR
 category: card
 image: https://den-cards.pokellector.com/245/Jasmine.SM8A.58.24272.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '24272'

@@ -7,9 +7,9 @@ name_en: Crabominable V
 rarity_code: RR
 category: card
 image: https://den-cards.pokellector.com/326/Crabominable-V.S8.26.40434.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '40434'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: キングドラ(R仕様)
     variants_seen:
-      - normal
+    - normal
     rarity_code: RR

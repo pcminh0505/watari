@@ -7,9 +7,9 @@ name_en: Metapod
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/218/Metapod.SM3N.2.18200.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '18200'

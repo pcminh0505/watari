@@ -7,9 +7,9 @@ name_en: Trumbeak
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/258/Trumbeak.SM8.75.23298.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '23298'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ケララッパ
     variants_seen:
-      - normal
+    - normal
     rarity_code: C

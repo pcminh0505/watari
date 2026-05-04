@@ -7,9 +7,9 @@ name_en: Pokégear 3.0
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/277/Pokgear-30.SM11.92.28849.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '28849'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ポケギア3.0
     variants_seen:
-      - normal
+    - normal
     rarity_code: TR

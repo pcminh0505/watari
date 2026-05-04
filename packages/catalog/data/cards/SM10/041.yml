@@ -7,9 +7,9 @@ name_en: Meowstic
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/266/Meowstic.SM10.41.26901.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '26901'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: マメパト
     variants_seen:
-      - normal
+    - normal
     rarity_code: U

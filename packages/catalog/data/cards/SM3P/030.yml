@@ -7,9 +7,9 @@ name_en: Raichu GX
 rarity_code: RR
 category: card
 image: https://den-cards.pokellector.com/224/Raichu-GX.SM3+.30.18270.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '18270'

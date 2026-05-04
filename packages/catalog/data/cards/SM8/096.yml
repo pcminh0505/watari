@@ -7,9 +7,9 @@ name_en: Shuckle GX
 rarity_code: SR
 category: card
 image: https://den-cards.pokellector.com/258/Shuckle-GX.SM8.96.23318.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '23318'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ツボツボGX
     variants_seen:
-      - normal
+    - normal
     rarity_code: SR

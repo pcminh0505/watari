@@ -7,9 +7,9 @@ name_en: Salandit
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/266/Salandit.SM10.17.26881.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '26881'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ヤトウモリ
     variants_seen:
-      - normal
+    - normal
     rarity_code: U

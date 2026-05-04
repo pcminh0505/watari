@@ -7,9 +7,9 @@ name_en: Hapu
 rarity_code: SR
 category: card
 image: https://den-cards.pokellector.com/288/Hapu.SM12A.195.30534.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '30534'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ハプウ
     variants_seen:
-      - normal
+    - normal
     rarity_code: SR

@@ -7,9 +7,9 @@ name_en: Jessie & James
 rarity_code: SR
 category: card
 image: https://den-cards.pokellector.com/268/Jessie-James.SM10B.62.27990.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '27990'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ムサシとコジロウ
     variants_seen:
-      - normal
+    - normal
     rarity_code: SR

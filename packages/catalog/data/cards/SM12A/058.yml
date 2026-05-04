@@ -7,9 +7,9 @@ name_en: Giratina Prism Star
 rarity_code: R
 category: card
 image: https://den-cards.pokellector.com/288/Giratina-Prism-Star.SM12A.58.30411.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '30411'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ギラティナ◇
     variants_seen:
-      - normal
+    - normal
     rarity_code: R

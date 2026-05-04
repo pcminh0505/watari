@@ -7,9 +7,9 @@ name_en: Gastly
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/428/Gastly.M3.47.60232.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '60232'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: ゴース
     variants_seen:
-      - normal
+    - normal

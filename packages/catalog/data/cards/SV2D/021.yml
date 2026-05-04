@@ -7,9 +7,9 @@ name_en: Luxray
 rarity_code: R
 category: card
 image: https://den-cards.pokellector.com/370/Luxray.SV2D.21.47306.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '47306'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: レントラー
     variants_seen:
-      - normal
+    - normal

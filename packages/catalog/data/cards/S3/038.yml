@@ -7,9 +7,9 @@ name_en: Gothorita
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/293/Gothorita.S3.38.34888.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '34888'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: リオル
     variants_seen:
-      - normal
+    - normal
     rarity_code: C

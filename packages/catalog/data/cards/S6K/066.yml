@@ -7,9 +7,9 @@ name_en: Peonia
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/310/Peonia.S6K.66.38760.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '38760'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: シャクヤ
     variants_seen:
-      - normal
+    - normal
     rarity_code: U

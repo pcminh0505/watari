@@ -7,9 +7,9 @@ name_en: Galvantula
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/398/Galvantula.SV6A.2.53542.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '53542'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: デンチュラ
     variants_seen:
-      - normal
+    - normal

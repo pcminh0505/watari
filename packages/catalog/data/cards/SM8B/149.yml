@@ -7,9 +7,9 @@ name_en: Unit Energy LPM
 rarity_code: C
 category: energy
 image: https://den-cards.pokellector.com/241/Unit-Energy-LPM.SM8B.149.24927.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '24927'

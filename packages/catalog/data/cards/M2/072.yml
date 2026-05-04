@@ -7,9 +7,9 @@ name_en: Mega Lopunny ex
 rarity_code: RR
 category: card
 image: https://den-cards.pokellector.com/425/Mega-Lopunny-ex.M2.72.59247.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '59247'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: メガミミロップex
     variants_seen:
-      - normal
+    - normal

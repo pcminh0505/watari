@@ -7,9 +7,9 @@ name_en: Klang
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/293/Klang.S3.70.34841.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '34841'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ギギアル(S3)
     variants_seen:
-      - normal
+    - normal
     rarity_code: U

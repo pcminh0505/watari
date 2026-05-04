@@ -7,9 +7,9 @@ name_en: Swap Cups
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/318/Swap-Cups.S7D.58.39192.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '39192'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: すりかえカップ
     variants_seen:
-      - normal
+    - normal
     rarity_code: U

@@ -7,9 +7,9 @@ name_en: Golduck
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/310/Golduck.S6K.10.38731.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '38731'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ゴルダック
     variants_seen:
-      - normal
+    - normal
     rarity_code: U

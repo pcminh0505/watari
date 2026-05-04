@@ -4,7 +4,9 @@ set_code: S5A
 era_block: sw
 language: jp
 name_ja: 双璧のファイター
-name_en: 双璧のファイター
+name_en: Matchless Fighters
 release_date: 2021-03-19
 tcgdex_id: S5a
 pokellector_slug: Matchless-Fighter-Expansion
+tcgcollector_id: '11412'
+tcgcollector_slug: matchless-fighters

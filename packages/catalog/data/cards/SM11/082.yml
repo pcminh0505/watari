@@ -7,9 +7,9 @@ name_en: Stadium Nav
 rarity_code: U
 category: trainer
 image: https://den-cards.pokellector.com/277/Stadium-Nav.SM11.82.28843.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '28843'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: スタジアムナビ
     variants_seen:
-      - normal
+    - normal
     rarity_code: U

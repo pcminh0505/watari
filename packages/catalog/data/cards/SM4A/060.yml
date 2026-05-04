@@ -2,14 +2,14 @@
 # To freeze a manually-edited value, add `# manual: true` on line 1.
 set_code: sm4a
 local_id: '060'
-name_ja:
+name_ja: Wishful Baton
 name_en: Wishful Baton
 rarity_code: UR
 category: card
 image: https://den-cards.pokellector.com/227/Wishful-Baton.SM4A.60.19442.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '19442'

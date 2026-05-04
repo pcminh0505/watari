@@ -4,7 +4,9 @@ set_code: S8
 era_block: sw
 language: jp
 name_ja: フュージョンアーツ
-name_en: フュージョンアーツ
+name_en: Fusion Arts
 release_date: 2021-09-24
 tcgdex_id: S8
 pokellector_slug: Fusion-ARTS-Expansion
+tcgcollector_id: '11437'
+tcgcollector_slug: fusion-arts

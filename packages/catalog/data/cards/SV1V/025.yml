@@ -7,9 +7,9 @@ name_en: Cetitan
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/362/Cetitan.SV1V.25.46307.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '46307'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: ハルクジラ
     variants_seen:
-      - normal
+    - normal

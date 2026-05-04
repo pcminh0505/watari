@@ -7,9 +7,9 @@ name_en: Cresselia
 rarity_code: R
 category: card
 image: https://den-cards.pokellector.com/310/Cresselia.S6K.29.38640.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '38640'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: クレセリア
     variants_seen:
-      - normal
+    - normal
     rarity_code: R

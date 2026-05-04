@@ -4,7 +4,9 @@ set_code: SM11B
 era_block: sm
 language: jp
 name_ja: ドリームリーグ
-name_en: ドリームリーグ
+name_en: Dream League
 release_date: 2019-08-02
 tcgdex_id: SM11b
 pokellector_slug: Dream-League-Expansion
+tcgcollector_id: '11176'
+tcgcollector_slug: dream-league

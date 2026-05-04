@@ -7,9 +7,9 @@ name_en: Vivillon
 rarity_code: AR
 category: card
 image: https://den-cards.pokellector.com/405/Vivillon.SV8.107.54500.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '54500'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: ビビヨン
     variants_seen:
-      - normal
+    - normal

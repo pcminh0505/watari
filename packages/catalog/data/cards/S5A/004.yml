@@ -7,9 +7,9 @@ name_en: Heracross
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/308/Heracross.S5A.4.37863.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '37863'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ヘラクロス
     variants_seen:
-      - normal
+    - normal
     rarity_code: C

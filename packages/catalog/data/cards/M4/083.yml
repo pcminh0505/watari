@@ -7,9 +7,9 @@ name_en: Magnet Metal Energy
 rarity_code: R
 category: energy
 image: https://den-cards.pokellector.com/430/Magnet-Energy.M4.83.60933.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '60933'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: マグネット鋼エネルギー
     variants_seen:
-      - normal
+    - normal

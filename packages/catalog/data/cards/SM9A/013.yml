@@ -7,9 +7,9 @@ name_en: Frogadier
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/262/Frogadier.SM9A.13.25596.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '25596'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ゲコガシラ
     variants_seen:
-      - normal
+    - normal
     rarity_code: C

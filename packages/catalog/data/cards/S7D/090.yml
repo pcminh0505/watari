@@ -7,9 +7,9 @@ name_en: Steel Energy
 rarity_code: UR
 category: energy
 image: https://den-cards.pokellector.com/318/Steel-Energy.S7D.90.39552.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '39552'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: 基本鋼エネルギー
     variants_seen:
-      - normal
+    - normal
     rarity_code: UR

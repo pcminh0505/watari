@@ -7,9 +7,9 @@ name_en: Toy Catcher
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/319/Toy-Catcher.S7R.58.39501.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '39501'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: トイキャッチャー
     variants_seen:
-      - normal
+    - normal
     rarity_code: U

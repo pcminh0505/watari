@@ -7,9 +7,9 @@ name_en: Alolan Raticate
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/218/Alolan-Raticate.SM3N.35.18219.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '18219'

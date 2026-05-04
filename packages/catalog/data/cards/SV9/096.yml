@@ -7,9 +7,9 @@ name_en: Brock's Scout
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/408/Brocks-Scout.SV9.96.55494.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '55494'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: タケシのスカウト
     variants_seen:
-      - normal
+    - normal

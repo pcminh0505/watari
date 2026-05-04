@@ -7,9 +7,9 @@ name_en: Kartana
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/242/Kartana.SM7.59.20949.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '20949'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: アローラキュウコンGX
     variants_seen:
-      - normal
+    - normal
     rarity_code: HR

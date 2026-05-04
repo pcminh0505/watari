@@ -7,9 +7,9 @@ name_en: Unit Energy GFW
 rarity_code: UR
 category: energy
 image: https://den-cards.pokellector.com/232/Unit-Energy-GFW.SM5S.78.20017.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '20017'

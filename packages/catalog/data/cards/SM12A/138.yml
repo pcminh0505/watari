@@ -7,9 +7,9 @@ name_en: Lost Blender
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/288/Lost-Blender.SM12A.138.30483.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '30483'

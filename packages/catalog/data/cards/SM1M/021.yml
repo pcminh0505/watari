@@ -2,14 +2,14 @@
 # To freeze a manually-edited value, add `# manual: true` on line 1.
 set_code: sm1m
 local_id: '021'
-name_ja:
+name_ja: Togedemaru
 name_en: Togedemaru
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/202/Togedemaru.SM1M.21.13795.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '13795'

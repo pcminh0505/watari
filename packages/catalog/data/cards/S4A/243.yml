@@ -7,9 +7,9 @@ name_en: Morpeko
 rarity_code: S
 category: card
 image: https://den-cards.pokellector.com/301/Morpeko.S4A.243.36544.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '36544'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: モルペコ
     variants_seen:
-      - normal
+    - normal
     rarity_code: SR

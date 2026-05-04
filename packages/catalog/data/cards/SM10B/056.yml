@@ -7,9 +7,9 @@ name_en: Rowlet & Alolan Exeggutor GX
 rarity_code: SR
 category: card
 image: https://den-cards.pokellector.com/268/Rowlet-Alolan-Exeggutor-GX.SM10B.56.27992.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '27992'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: モクロー＆アローラナッシーGX(SA)
     variants_seen:
-      - normal
+    - normal
     rarity_code: SR

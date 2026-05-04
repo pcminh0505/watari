@@ -7,9 +7,9 @@ name_en: Yanmega ex
 rarity_code: RR
 category: card
 image: https://den-cards.pokellector.com/411/Yanmega-ex.SV9A.3.56632.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '56632'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: メガヤンマex
     variants_seen:
-      - normal
+    - normal

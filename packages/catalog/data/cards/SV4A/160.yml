@@ -2,14 +2,14 @@
 # To freeze a manually-edited value, add `# manual: true` on line 1.
 set_code: SV4A
 local_id: '160'
-name_ja:
+name_ja: Nemona's Rucksack
 name_en: Nemona's Rucksack
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/375/Nemonas-Rucksack.SV4A.160.51110.png
-illustrator:
+illustrator: AYUMI ODASHIMA
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '51110'

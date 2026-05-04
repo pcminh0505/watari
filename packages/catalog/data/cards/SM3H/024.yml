@@ -7,9 +7,9 @@ name_en: Scolipede
 rarity_code: R
 category: card
 image: https://den-cards.pokellector.com/219/Darkrai.SM3H.24.18031.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '18031'

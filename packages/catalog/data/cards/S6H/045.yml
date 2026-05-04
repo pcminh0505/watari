@@ -7,9 +7,9 @@ name_en: Galarian Slowking
 rarity_code: R
 category: card
 image: https://den-cards.pokellector.com/309/Galarian-Slowking.S6H.45.38665.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '38665'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ガラルヤドキング
     variants_seen:
-      - normal
+    - normal
     rarity_code: R

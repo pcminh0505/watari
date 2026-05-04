@@ -7,9 +7,9 @@ name_en: Darumaka
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/266/Darumaka.SM10.10.26875.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '26875'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ダルマッカ
     variants_seen:
-      - normal
+    - normal
     rarity_code: R

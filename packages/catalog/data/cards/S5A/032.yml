@@ -7,9 +7,9 @@ name_en: Hatterene
 rarity_code: R
 category: card
 image: https://den-cards.pokellector.com/308/Hatterene.S5A.32.37884.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '37884'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ブリムオン
     variants_seen:
-      - normal
+    - normal
     rarity_code: R

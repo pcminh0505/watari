@@ -7,9 +7,9 @@ name_en: Viridian Forest
 rarity_code: UR
 category: card
 image: https://den-cards.pokellector.com/268/Viridian-Forest.SM10B.68.28003.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '28003'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: トキワの森
     variants_seen:
-      - normal
+    - normal
     rarity_code: UR

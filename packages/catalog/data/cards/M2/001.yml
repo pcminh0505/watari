@@ -7,9 +7,9 @@ name_en: Oddish
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/425/Oddish.M2.1.59186.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '59186'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: ナゾノクサ
     variants_seen:
-      - normal
+    - normal

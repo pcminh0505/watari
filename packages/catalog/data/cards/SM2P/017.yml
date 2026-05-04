@@ -7,9 +7,9 @@ name_en: Wishiwashi
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/212/Wishiwashi.SM2+.17.17481.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '17481'

@@ -7,9 +7,9 @@ name_en: Shrine of Caution
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/242/Shrine-of-Caution.SM7.94.21044.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '21044'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: 戒めの祠
     variants_seen:
-      - normal
+    - normal
     rarity_code: U

@@ -7,9 +7,9 @@ name_en: Forest of Vitality
 rarity_code: SR
 category: card
 image: https://den-cards.pokellector.com/428/Forest-of-Vitality.M3.109.60278.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '60278'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: 活力の森
     variants_seen:
-      - normal
+    - normal

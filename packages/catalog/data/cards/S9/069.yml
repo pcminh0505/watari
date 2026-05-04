@@ -7,9 +7,9 @@ name_en: Klink
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/336/Klink.S9.69.42606.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '42606'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ギアル(S9)
     variants_seen:
-      - normal
+    - normal
     rarity_code: HR

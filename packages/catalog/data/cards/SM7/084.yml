@@ -7,9 +7,9 @@ name_en: Pok&eacute;mon Catcher
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/242/Pokeacutemon-Catcher.SM7.84.21036.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '21036'

@@ -4,7 +4,9 @@ set_code: S10P
 era_block: sw
 language: jp
 name_ja: スペースジャグラー
-name_en: スペースジャグラー
+name_en: Space Juggler
 release_date: 2022-04-08
 tcgdex_id: S10P
 pokellector_slug: Space-Juggler-Expansion
+tcgcollector_id: '11463'
+tcgcollector_slug: space-juggler

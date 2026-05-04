@@ -6,7 +6,7 @@
 > Update it whenever the architecture changes — especially after a
 > destructive migration, a new source, or a schema split.
 >
-> Last updated: 2026-05-04 (Legacy-era hardening complete: 0 null rarity_codes, CI matrices aligned, Cardrush SM/SW disambiguation, mv_market_price MV, admin scrape-health dashboard).
+> Last updated: 2026-05-04 (Catalog data-quality audit pipeline shipped — TCGCollector sidecar oracle in `data/audit/`, `audit-current`/`audit-fetch`/`audit-diff`/`audit-fallback`/`audit-apply` CLI, Phase-7 bootstrap regression-proofing for Pokellector "Secret Rare" coarse labels, `verify --strict` mode).
 
 ---
 
@@ -475,7 +475,35 @@ SV1 remains Cardrush-only (SNKRDUNK lists it under `sv1v`).
     Rare" (unlike SV1A+ which have granular labels). The rarity was
     corrected using local_id tier boundaries (e.g. 079-090→AR,
     091-100→SR, etc.). If re-bootstrapping these sets, verify the
-    pipeline doesn't regress them back to UR.
+    pipeline doesn't regress them back to UR. **Phase 7 of the audit
+    pipeline now generalizes this fix:** when Pokellector raw rarity is
+    `"Secret Rare"` or `"Super Secret Rare"` and `data/audit/<SET>.yml`
+    has a more specific TCGCollector `rarity_canon`, the audit value
+    wins automatically (`_audit_overrides_pokellector` in
+    `bootstrap.py`).
+20. **TCGCollector audit data lives in `data/audit/<SET>.yml`.** Treat
+    it as bronze-tier truth. The schema is owned by
+    `audit_fetch.fetch_one`; **never edit by hand — re-run
+    `make catalog-audit-fetch SET=<code>`** (curl_cffi + bronze
+    mirroring) instead. Phase-4 fallbacks (`pokellector_jpn`,
+    `bulbapedia`) append into the same file under their own top-level
+    keys; bootstrap (§Phase 7) reads only the keys it knows about.
+21. **`# manual: true` is binding for `audit-apply` too.** Both `--auto`
+    and `--review` skip files whose first line is `# manual: true`.
+    `--review` *prepends* the marker on every file it writes so
+    operator-chosen values can never be silently undone by a subsequent
+    `--auto` run or by re-bootstrapping.
+22. **TCGCollector has no `name_ja`.** It publishes only the
+    international/EN name on JP cards. `audit-diff` therefore always
+    emits `NO_ORACLE` for `name_ja` rows — Phase 4 (`audit-fallback
+    --field name_ja`, Pokellector JPN field) is the only oracle for
+    this column. Don't try to extend `tcgcollector_client.py` to
+    recover JA names; it's not on the page.
+23. **When adding a new audit oracle, register its slug in
+    `data/sets/<SET>.yml`** under a top-level field (e.g.
+    `bulbapedia_slug`) and update `seed_sets._normalize` to surface it
+    inside `source_refs`. Add canonicalization to `rarities.py` if the
+    new oracle reports rarities in a new shape.
 
 ---
 
@@ -492,7 +520,31 @@ make catalog-bootstrap SET=SV2A              # Pokellector+TCGdex+Cardrush → d
 make catalog-seed-cards                      # YML tree → artworks + cards
 make catalog-seed-cards SET=SV2A             # single set
 make catalog-verify                          # health snapshot (orphans, missing img/rarity/ja)
+make catalog-verify STRICT=1                 # exit non-zero on null name_ja / rarity in non-promo sets
 make catalog-verify-pokellector              # cross-check local IDs vs live jp.pokellector.com (network)
+
+# --- Catalog data-quality audit (TCGCollector-anchored) ---
+# Phase 1: per-set markdown gap report (no data changes).
+make catalog-audit                           # all sets, writes reports/catalog-audit-*.md
+make catalog-audit SET=SV4A                  # single set
+
+# Phase 2: scrape TCGCollector → data/audit/<SET>.yml (curl_cffi, bronze mirror).
+make catalog-audit-fetch SET=SV4A
+
+# Phase 3: diff data/audit vs data/cards → reports/audit-diff-*.md|.tsv.
+make catalog-audit-diff                      # all sets with audit data
+make catalog-audit-diff SET=SV4A             # single set
+
+# Phase 4: fallback oracles (Pokellector JPN for name_ja, TODO TSV for others).
+uv run python -m watari_catalog audit-fallback --set SV4A --field name_ja
+uv run python -m watari_catalog audit-fallback --set SV4A --field illustrator
+
+# Phase 5: apply oracle values to data/cards/<SET>/<NNN>.yml.
+make catalog-audit-apply TSV=reports/audit-diff-SV4A-*.tsv MODE=auto      # AUTO_FILL only
+make catalog-audit-apply TSV=reports/audit-diff-SV4A-*.tsv MODE=review    # operator-edited
+
+# Phase 6: one-shot rollout per set (fetch → diff → auto-apply → re-seed DB).
+make catalog-audit-rollout SET=SV4A
 make sync-set-symbols                        # rebuild SET_SYMBOL_URLS in apps/web from Bulbapedia export
 make sync-set-symbols SYMBOLS_MD=/path/to/List_of_...md
 

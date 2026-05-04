@@ -7,9 +7,9 @@ name_en: Altaria
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/227/Altaria.SM4A.43.19432.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '19432'

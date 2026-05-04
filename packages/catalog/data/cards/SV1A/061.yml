@@ -7,9 +7,9 @@ name_en: Salazzle
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/366/Salazzle.SV1A.61.46974.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '46974'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: エンニュート
     variants_seen:
-      - normal
+    - normal

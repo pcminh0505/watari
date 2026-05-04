@@ -7,9 +7,9 @@ name_en: Deino
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/227/Deino.SM4A.30.19422.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '19422'

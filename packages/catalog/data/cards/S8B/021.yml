@@ -7,9 +7,9 @@ name_en: Castform Sunny Form
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/338/Castform-Sunny-Form.S8B.21.41298.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '41298'

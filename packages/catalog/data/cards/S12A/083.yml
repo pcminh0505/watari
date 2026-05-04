@@ -7,9 +7,9 @@ name_en: Absol
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/357/Absol.S12A.83.45885.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '45885'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: アブソル(R仕様)
     variants_seen:
-      - normal
+    - normal
     rarity_code: R

@@ -7,9 +7,9 @@ name_en: Honedge
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/277/Honedge.SM11.38.28809.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '28809'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ハーデリア
     variants_seen:
-      - normal
+    - normal
     rarity_code: C

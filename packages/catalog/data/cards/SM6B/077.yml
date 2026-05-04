@@ -7,9 +7,9 @@ name_en: Copycat
 rarity_code: UR
 category: card
 image: https://den-cards.pokellector.com/237/Copycat.SM6B.77.20938.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '20938'

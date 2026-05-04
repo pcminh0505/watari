@@ -7,9 +7,9 @@ name_en: Armarouge
 rarity_code: AR
 category: card
 image: https://den-cards.pokellector.com/361/Armarouge.SV1S.80.46285.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '46285'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: グレンアルマ
     variants_seen:
-      - normal
+    - normal

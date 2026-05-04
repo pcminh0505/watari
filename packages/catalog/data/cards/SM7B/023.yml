@@ -7,9 +7,9 @@ name_en: Chandelure
 rarity_code: R
 category: card
 image: https://den-cards.pokellector.com/240/Chandelure.SM7B.23.23126.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '23126'

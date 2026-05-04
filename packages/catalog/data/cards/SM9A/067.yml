@@ -7,9 +7,9 @@ name_en: Gardevoir & Sylveon GX
 rarity_code: HR
 category: card
 image: https://den-cards.pokellector.com/262/Gardevoir-Sylveon-GX.SM9A.67.25650.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '25650'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: サーナイト＆ニンフィアGX
     variants_seen:
-      - normal
+    - normal
     rarity_code: HR

@@ -7,9 +7,9 @@ name_en: Kabu
 rarity_code: SR
 category: card
 image: https://den-cards.pokellector.com/295/Kabu.S2A.77.34600.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '34600'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: カブ
     variants_seen:
-      - normal
+    - normal
     rarity_code: SR

@@ -7,9 +7,9 @@ name_en: Red's Challenge
 rarity_code: SR
 category: card
 image: https://den-cards.pokellector.com/288/Reds-Challenge.SM12A.201.30540.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '30540'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: レッドの挑戦
     variants_seen:
-      - normal
+    - normal
     rarity_code: SR

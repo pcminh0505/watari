@@ -7,9 +7,9 @@ name_en: Iono's Bellibolt ex
 rarity_code: RR
 category: card
 image: https://den-cards.pokellector.com/408/Ionos-Bellibolt-ex.SV9.30.55487.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '55487'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: ブイゼル
     variants_seen:
-      - normal
+    - normal

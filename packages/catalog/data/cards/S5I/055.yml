@@ -7,9 +7,9 @@ name_en: Spearow
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/306/Spearow.S5I.55.36807.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '36807'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: オニスズメ
     variants_seen:
-      - normal
+    - normal
     rarity_code: C

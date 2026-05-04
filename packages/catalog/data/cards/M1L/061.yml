@@ -7,9 +7,9 @@ name_en: Lt. Surge's Deal
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/416/Lt-Surges-Deal.M1L.61.58864.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '58864'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: マチスの取引
     variants_seen:
-      - normal
+    - normal
     rarity_code: U

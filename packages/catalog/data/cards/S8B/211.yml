@@ -7,9 +7,9 @@ name_en: Castform
 rarity_code: CHR
 category: card
 image: https://den-cards.pokellector.com/338/Castform.S8B.211.41509.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '41509'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ポワルン
     variants_seen:
-      - normal
+    - normal
     rarity_code: CHR

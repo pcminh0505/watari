@@ -7,9 +7,9 @@ name_en: Espurr
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/266/Espurr.SM10.40.26900.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '26900'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ニャスパー
     variants_seen:
-      - normal
+    - normal
     rarity_code: U

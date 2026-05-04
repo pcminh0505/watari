@@ -4,7 +4,9 @@ set_code: SV10
 era_block: sv
 language: jp
 name_ja: ロケット団の栄光
-name_en: Glory of Team Rocket
+name_en: The Glory of Team Rocket
 release_date: 2025-04-18
 tcgdex_id: sv10
 pokellector_slug: Glory-of-Team-Rocket-Expansion
+tcgcollector_id: '11649'
+tcgcollector_slug: the-glory-of-team-rocket

@@ -7,9 +7,9 @@ name_en: Cinderace VMAX
 rarity_code: RRR
 category: card
 image: https://den-cards.pokellector.com/285/Cinderace-VMAX.S1A.17.31411.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '31411'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: エースバーンVMAX
     variants_seen:
-      - normal
+    - normal
     rarity_code: RRR

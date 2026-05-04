@@ -7,9 +7,9 @@ name_en: Tranquill
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/267/Tranquill.SM10A.42.27522.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '27522'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ハトーボー
     variants_seen:
-      - normal
+    - normal
     rarity_code: C

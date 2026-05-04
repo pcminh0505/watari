@@ -2,14 +2,14 @@
 # To freeze a manually-edited value, add `# manual: true` on line 1.
 set_code: sm1s
 local_id: '028'
-name_ja:
+name_ja: Cosmoem
 name_en: Cosmoem
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/201/Cosmoem.SM1S.28.13497.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '13497'

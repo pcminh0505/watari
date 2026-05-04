@@ -7,9 +7,9 @@ name_en: Welcoming Lantern
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/308/Welcoming-Lantern.S5A.63.37231.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '37231'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: おむかえちょうちん
     variants_seen:
-      - normal
+    - normal
     rarity_code: U

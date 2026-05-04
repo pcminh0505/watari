@@ -7,9 +7,9 @@ name_en: Aqua Patch
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/228/Aqua-Patch.SM4+.88.19648.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '19648'

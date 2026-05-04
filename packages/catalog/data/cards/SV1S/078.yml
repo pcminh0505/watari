@@ -7,9 +7,9 @@ name_en: Beach Court
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/361/Beach-Court.SV1S.78.46120.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '46120'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: ホゲータ
     variants_seen:
-      - normal
+    - normal

@@ -7,9 +7,9 @@ name_en: Orbeetle VMAX
 rarity_code: RRR
 category: card
 image: https://den-cards.pokellector.com/297/Orbeetle-VMAX.S4.9.35338.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '35338'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: イオルブVMAX
     variants_seen:
-      - normal
+    - normal
     rarity_code: RRR

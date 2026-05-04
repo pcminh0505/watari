@@ -7,9 +7,9 @@ name_en: Explorer's Foray
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/386/Explorers-Foray.SV5K.67.51670.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '51670'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: 探検家の先導
     variants_seen:
-      - normal
+    - normal

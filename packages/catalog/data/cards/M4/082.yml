@@ -7,9 +7,9 @@ name_en: Bubble Energy
 rarity_code: R
 category: energy
 image: https://den-cards.pokellector.com/430/Bubble-Energy.M4.82.60932.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '60932'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: バブル水エネルギー
     variants_seen:
-      - normal
+    - normal

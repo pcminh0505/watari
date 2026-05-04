@@ -7,9 +7,9 @@ name_en: Origin Forme Palkia VSTAR
 rarity_code: RRR
 category: card
 image: https://den-cards.pokellector.com/357/Origin-Forme-Palkia-VSTAR.S12A.28.45309.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '45309'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: オリジンパルキアVSTAR
     variants_seen:
-      - normal
+    - normal
     rarity_code: RRR

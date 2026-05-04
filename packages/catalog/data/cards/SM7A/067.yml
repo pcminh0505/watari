@@ -7,9 +7,9 @@ name_en: Virizion GX
 rarity_code: UR
 category: card
 image: https://den-cards.pokellector.com/243/Virizion-GX.SM7A.67.22530.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '22530'

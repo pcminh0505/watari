@@ -7,9 +7,9 @@ name_en: Affection Poffin
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/386/Affection-Poffin.SV5K.63.51733.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '51733'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: なかよしポフィン
     variants_seen:
-      - normal
+    - normal

@@ -7,9 +7,9 @@ name_en: Simipour
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/382/Simipour.SV4K.16.50843.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '50843'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: ヒヤッキー
     variants_seen:
-      - normal
+    - normal

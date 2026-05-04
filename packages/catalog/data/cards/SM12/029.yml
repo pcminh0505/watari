@@ -7,9 +7,9 @@ name_en: Woobat
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/281/Woobat.SM12.29.30074.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '30074'

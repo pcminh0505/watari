@@ -7,9 +7,9 @@ name_en: Furfrou
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/235/Furfrou.SM6.73.20530.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '20530'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: 地底探険隊
     variants_seen:
-      - normal
+    - normal
     rarity_code: SR

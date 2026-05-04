@@ -7,9 +7,9 @@ name_en: Galarian Slowpoke
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/306/Galarian-Slowpoke.S5I.21.36780.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '36780'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ガラルヤドン
     variants_seen:
-      - normal
+    - normal
     rarity_code: C

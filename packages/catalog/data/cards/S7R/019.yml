@@ -7,9 +7,9 @@ name_en: Cloyster
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/319/Cloyster.S7R.19.39411.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '39411'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: パルシェン
     variants_seen:
-      - normal
+    - normal
     rarity_code: U

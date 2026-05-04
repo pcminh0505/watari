@@ -7,9 +7,9 @@ name_en: Erika's Hospitality
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/288/Erikas-Hospitality.SM12A.146.30215.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '30215'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: エリカのおもてなし(ミラー)
     variants_seen:
-      - normal
+    - normal
     rarity_code: C

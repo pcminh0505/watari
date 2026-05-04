@@ -7,9 +7,9 @@ name_en: Walrein
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/309/Walrein.S6H.24.38697.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '38697'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: トドゼルガ
     variants_seen:
-      - normal
+    - normal
     rarity_code: U

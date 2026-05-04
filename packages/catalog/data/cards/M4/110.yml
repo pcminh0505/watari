@@ -7,9 +7,9 @@ name_en: Roxy's Performance
 rarity_code: SR
 category: card
 image: https://den-cards.pokellector.com/430/Roxys-Performance.M4.110.61028.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '61028'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: ホミカの演奏
     variants_seen:
-      - normal
+    - normal

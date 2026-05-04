@@ -7,9 +7,9 @@ name_en: Psyduck
 rarity_code: AR
 category: card
 image: https://den-cards.pokellector.com/427/Psyduck.M2A.199.59811.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '59811'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: コダック
     variants_seen:
-      - normal
+    - normal

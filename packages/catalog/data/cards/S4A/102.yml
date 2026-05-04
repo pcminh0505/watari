@@ -7,9 +7,9 @@ name_en: Falinks V
 rarity_code: RR
 category: card
 image: https://den-cards.pokellector.com/301/Falinks-V.S4A.102.36408.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '36408'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: タイレーツV
     variants_seen:
-      - normal
+    - normal
     rarity_code: RR

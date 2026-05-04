@@ -7,9 +7,9 @@ name_en: Vespiquen ex
 rarity_code: RR
 category: card
 image: https://den-cards.pokellector.com/368/Vespiquen-ex.SV3.51.48795.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '48795'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: ビークインex
     variants_seen:
-      - normal
+    - normal

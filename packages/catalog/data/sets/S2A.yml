@@ -4,7 +4,9 @@ set_code: S2A
 era_block: sw
 language: jp
 name_ja: 爆炎ウォーカー
-name_en: 爆炎ウォーカー
+name_en: Explosive Walker
 release_date: 2020-04-24
 tcgdex_id: S2a
 pokellector_slug: Explosive-Flame-Walker-Expansion
+tcgcollector_id: '11375'
+tcgcollector_slug: explosive-walker

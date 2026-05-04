@@ -7,9 +7,9 @@ name_en: Emergency Board
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/386/Emergency-Board.SV5K.64.51867.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '51867'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: 緊急ボード
     variants_seen:
-      - normal
+    - normal

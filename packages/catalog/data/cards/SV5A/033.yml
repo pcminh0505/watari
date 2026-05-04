@@ -7,9 +7,9 @@ name_en: Iron Thorns ex
 rarity_code: RR
 category: card
 image: https://den-cards.pokellector.com/391/Iron-Thorns-ex.SV5A.33.52389.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '52389'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: テツノイバラex
     variants_seen:
-      - normal
+    - normal

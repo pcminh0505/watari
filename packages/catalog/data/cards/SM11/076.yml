@@ -7,9 +7,9 @@ name_en: Slaking
 rarity_code: R
 category: card
 image: https://den-cards.pokellector.com/277/Slaking.SM11.76.28767.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '28767'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: カメックス＆ポッチャマGX
     variants_seen:
-      - normal
+    - normal
     rarity_code: HR

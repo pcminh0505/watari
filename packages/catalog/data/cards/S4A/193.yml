@@ -7,9 +7,9 @@ name_en: Bird Keeper
 rarity_code: SR
 category: card
 image: https://den-cards.pokellector.com/301/Bird-Keeper.S4A.193.36504.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '36504'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: とりつかい
     variants_seen:
-      - normal
+    - normal
     rarity_code: SR

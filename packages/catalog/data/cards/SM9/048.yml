@@ -7,9 +7,9 @@ name_en: Muk
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/260/Muk.SM9.48.25482.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '25482'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ブルーの探索
     variants_seen:
-      - normal
+    - normal
     rarity_code: U

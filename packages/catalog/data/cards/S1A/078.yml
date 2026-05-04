@@ -7,9 +7,9 @@ name_en: Milo
 rarity_code: SR
 category: card
 image: https://den-cards.pokellector.com/285/Milo.S1A.78.31991.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '31991'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ヤロー
     variants_seen:
-      - normal
+    - normal
     rarity_code: SR

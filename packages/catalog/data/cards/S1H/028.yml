@@ -7,9 +7,9 @@ name_en: Rhyhorn
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/284/Rhyhorn.S1H.28.31303.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '31303'

@@ -7,9 +7,9 @@ name_en: Raboot
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/301/Raboot.S4A.23.36335.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '36335'

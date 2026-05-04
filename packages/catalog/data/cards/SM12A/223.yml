@@ -7,9 +7,9 @@ name_en: Greninja & Zoroark GX
 rarity_code: UR
 category: card
 image: https://den-cards.pokellector.com/288/Greninja-Zoroark-GX.SM12A.223.30561.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '30561'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ゲッコウガ＆ゾロアークGX
     variants_seen:
-      - normal
+    - normal
     rarity_code: UR

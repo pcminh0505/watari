@@ -7,9 +7,9 @@ name_en: Mismagius
 rarity_code: AR
 category: card
 image: https://den-cards.pokellector.com/366/Mismagius.SV1A.83.46926.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '46926'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: ムウマージ
     variants_seen:
-      - normal
+    - normal

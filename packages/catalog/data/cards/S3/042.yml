@@ -7,9 +7,9 @@ name_en: Mimikyu
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/293/Mimikyu.S3.42.34892.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '34892'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ミミッキュ
     variants_seen:
-      - normal
+    - normal
     rarity_code: RR

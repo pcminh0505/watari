@@ -7,9 +7,9 @@ name_en: Hitmontop
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/297/Hitmontop.S4.58.35543.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '35543'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: カポエラー
     variants_seen:
-      - normal
+    - normal
     rarity_code: R

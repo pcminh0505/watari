@@ -7,9 +7,9 @@ name_en: Iron Leaves ex
 rarity_code: RR
 category: card
 image: https://den-cards.pokellector.com/387/Iron-Leaves-ex.SV5M.16.51665.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '51665'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: テツノイサハex
     variants_seen:
-      - normal
+    - normal

@@ -7,9 +7,9 @@ name_en: Galarian Rapidash V
 rarity_code: RR
 category: card
 image: https://den-cards.pokellector.com/309/Galarian-Rapidash-V.S6H.29.38700.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '38700'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ガラルギャロップV
     variants_seen:
-      - normal
+    - normal
     rarity_code: RR

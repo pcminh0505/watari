@@ -7,9 +7,9 @@ name_en: Glalie
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/281/Glalie.SM12.18.30064.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '30064'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: オニゴーリ
     variants_seen:
-      - normal
+    - normal
     rarity_code: U

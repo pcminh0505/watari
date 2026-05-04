@@ -7,9 +7,9 @@ name_en: Lycanroc GX
 rarity_code: RR
 category: card
 image: https://den-cards.pokellector.com/228/Lycanroc-GX.SM4+.56.19625.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '19625'

@@ -2,14 +2,14 @@
 # To freeze a manually-edited value, add `# manual: true` on line 1.
 set_code: sm7b
 local_id: '035'
-name_ja:
+name_ja: Ribombee
 name_en: Ribombee
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/240/Ribombee.SM7B.35.23104.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '23104'

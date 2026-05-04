@@ -2,14 +2,14 @@
 # To freeze a manually-edited value, add `# manual: true` on line 1.
 set_code: sm8a
 local_id: '053'
-name_ja:
+name_ja: Ampharos GX
 name_en: Ampharos GX
 rarity_code: UR
 category: card
 image: https://den-cards.pokellector.com/245/Ampharos-GX.SM8A.53.24152.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '24152'

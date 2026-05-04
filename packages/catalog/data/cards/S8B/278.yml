@@ -7,9 +7,9 @@ name_en: Ice Rider Calyrex VMAX
 rarity_code: UR
 category: card
 image: https://den-cards.pokellector.com/338/Ice-Rider-Calyrex-VMAX.S8B.278.41567.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '41567'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: はくばバドレックスVMAX
     variants_seen:
-      - normal
+    - normal
     rarity_code: UR

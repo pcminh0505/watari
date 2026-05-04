@@ -7,9 +7,9 @@ name_en: Giant Charm
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/283/Giant-Charm.S1W.56.31269.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '31269'

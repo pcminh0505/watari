@@ -7,9 +7,9 @@ name_en: Dizzying Valley
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/425/Dizzying-Valley.M2.80.59252.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '59252'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: めまいの谷
     variants_seen:
-      - normal
+    - normal

@@ -7,9 +7,9 @@ name_en: Paldean Tauros
 rarity_code: AR
 category: card
 image: https://den-cards.pokellector.com/366/Paldean-Tauros.SV1A.84.46931.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '46931'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: パルデアケンタロス
     variants_seen:
-      - normal
+    - normal

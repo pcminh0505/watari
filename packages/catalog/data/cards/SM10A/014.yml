@@ -7,9 +7,9 @@ name_en: Drifloon
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/267/Drifloon.SM10A.14.27506.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '27506'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: フワンテ
     variants_seen:
-      - normal
+    - normal
     rarity_code: C

@@ -7,9 +7,9 @@ name_en: Deduction Set
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/405/Deduction-Set.SV8.94.54580.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '54580'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: 推理セット
     variants_seen:
-      - normal
+    - normal

@@ -7,9 +7,9 @@ name_en: Empoleon
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/238/Empoleon.SM5+.34.20041.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '20041'

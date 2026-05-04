@@ -7,9 +7,9 @@ name_en: Electrode
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/322/Electrode.S6A.29.38837.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '38837'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: マルマイン
     variants_seen:
-      - normal
+    - normal
     rarity_code: U

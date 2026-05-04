@@ -7,9 +7,9 @@ name_en: Judge's Whistle
 rarity_code: UR
 category: card
 image: https://den-cards.pokellector.com/260/Judges-Whistle.SM9.117.25552.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '25552'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ジャッジマンホイッスル
     variants_seen:
-      - normal
+    - normal
     rarity_code: UR

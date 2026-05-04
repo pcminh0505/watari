@@ -7,9 +7,9 @@ name_en: Kirlia
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/338/Kirlia.S8B.62.41327.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '41327'

@@ -7,9 +7,9 @@ name_en: Vullaby
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/291/Vullaby.S2.68.31953.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '31953'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: バルチャイ
     variants_seen:
-      - normal
+    - normal
     rarity_code: U

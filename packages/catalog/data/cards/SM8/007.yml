@@ -7,9 +7,9 @@ name_en: Ariados
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/258/Ariados.SM8.7.23235.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '23235'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: シママ
     variants_seen:
-      - normal
+    - normal
     rarity_code: C

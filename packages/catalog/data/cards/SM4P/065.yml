@@ -7,9 +7,9 @@ name_en: Guzzlord GX
 rarity_code: RR
 category: card
 image: https://den-cards.pokellector.com/228/Guzzlord-GX.SM4+.65.19633.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '19633'

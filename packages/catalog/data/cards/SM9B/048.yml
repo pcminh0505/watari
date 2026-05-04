@@ -7,9 +7,9 @@ name_en: Green's Search
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/263/Greens-Search.SM9B.48.26458.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '26458'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ブルーの探索
     variants_seen:
-      - normal
+    - normal
     rarity_code: U

@@ -7,9 +7,9 @@ name_en: Squawkabilly ex
 rarity_code: SAR
 category: card
 image: https://den-cards.pokellector.com/369/Squawkabilly-ex.SV2P.94.47525.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '47525'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: イキリンコex
     variants_seen:
-      - normal
+    - normal

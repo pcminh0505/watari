@@ -7,9 +7,9 @@ name_en: Black Belt
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/267/Black-Belt.SM10A.47.27348.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '27348'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: くろおび
     variants_seen:
-      - normal
+    - normal
     rarity_code: U

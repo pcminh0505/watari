@@ -2,14 +2,14 @@
 # To freeze a manually-edited value, add `# manual: true` on line 1.
 set_code: sm5s
 local_id: '072'
-name_ja:
+name_ja: Mars
 name_en: Mars
 rarity_code: UR
 category: card
 image: https://den-cards.pokellector.com/232/Mars.SM5S.72.19887.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '19887'

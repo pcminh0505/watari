@@ -2,14 +2,14 @@
 # To freeze a manually-edited value, add `# manual: true` on line 1.
 set_code: s4a
 local_id: '210'
-name_ja:
+name_ja: Eldegoss
 name_en: Eldegoss
 rarity_code: S
 category: card
 image: https://den-cards.pokellector.com/301/Eldegoss.S4A.210.36481.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '36481'

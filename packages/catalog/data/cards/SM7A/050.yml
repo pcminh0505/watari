@@ -7,9 +7,9 @@ name_en: Switch
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/243/Switch.SM7A.50.22418.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '22418'

@@ -4,7 +4,9 @@ set_code: SM1S
 era_block: sm
 language: jp
 name_ja: コレクションサン
-name_en: コレクションサン
+name_en: Collection Sun
 release_date: 2016-12-09
 tcgdex_id: SM1S
 pokellector_slug: Collection-Sun-Expansion
+tcgcollector_id: '11229'
+tcgcollector_slug: collection-sun

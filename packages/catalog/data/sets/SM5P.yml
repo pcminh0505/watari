@@ -4,7 +4,9 @@ set_code: SM5P
 era_block: sm
 language: jp
 name_ja: ウルトラフォース
-name_en: ウルトラフォース
+name_en: Ultra Force
 release_date: 2018-01-19
 tcgdex_id: SM5+
 pokellector_slug: Ultra-Force-Expansion
+tcgcollector_id: '11212'
+tcgcollector_slug: ultra-force

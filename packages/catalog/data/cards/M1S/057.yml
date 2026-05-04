@@ -7,9 +7,9 @@ name_en: Suspicious Watch
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/417/Suspicious-Watch.M1S.57.58938.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '58938'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: あやしい時計
     variants_seen:
-      - normal
+    - normal
     rarity_code: U

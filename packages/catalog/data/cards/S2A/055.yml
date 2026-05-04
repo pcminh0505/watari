@@ -7,9 +7,9 @@ name_en: Galarian Stunfisk V
 rarity_code: RR
 category: card
 image: https://den-cards.pokellector.com/295/Galarian-Stunfisk-V.S2A.55.34412.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '34412'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ガラルマッギョV
     variants_seen:
-      - normal
+    - normal
     rarity_code: RR

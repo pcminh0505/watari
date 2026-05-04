@@ -2,14 +2,14 @@
 # To freeze a manually-edited value, add `# manual: true` on line 1.
 set_code: s1h
 local_id: '065'
-name_ja:
+name_ja: Zamazenta V
 name_en: Zamazenta V
 rarity_code: UR
 category: card
 image: https://den-cards.pokellector.com/284/Zamazenta-V.S1H.65.31358.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '31358'

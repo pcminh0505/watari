@@ -7,9 +7,9 @@ name_en: Zygarde
 rarity_code: R
 category: card
 image: https://den-cards.pokellector.com/294/Zygarde.S3A.39.35045.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '35045'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ジガルデ
     variants_seen:
-      - normal
+    - normal
     rarity_code: R

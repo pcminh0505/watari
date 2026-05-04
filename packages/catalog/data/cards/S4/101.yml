@@ -7,9 +7,9 @@ name_en: Orbeetle V
 rarity_code: SR
 category: card
 image: https://den-cards.pokellector.com/297/Orbeetle-V.S4.101.35667.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '35667'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: イオルブV
     variants_seen:
-      - normal
+    - normal
     rarity_code: SR

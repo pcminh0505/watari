@@ -7,9 +7,9 @@ name_en: Starly
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/361/Starly.SV1S.63.46275.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '46275'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: ムックル
     variants_seen:
-      - normal
+    - normal

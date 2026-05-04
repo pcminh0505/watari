@@ -7,9 +7,9 @@ name_en: Reset Stamp
 rarity_code: UR
 category: card
 image: https://den-cards.pokellector.com/267/Reset-Stamp.SM10A.68.27532.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '27532'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: リセットスタンプ
     variants_seen:
-      - normal
+    - normal
     rarity_code: UR

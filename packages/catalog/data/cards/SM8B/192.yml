@@ -2,14 +2,14 @@
 # To freeze a manually-edited value, add `# manual: true` on line 1.
 set_code: sm8b
 local_id: '192'
-name_ja:
+name_ja: Celesteela
 name_en: Celesteela
 rarity_code: UR
 category: card
 image: https://den-cards.pokellector.com/241/Celesteela.SM8B.192.25308.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '25308'

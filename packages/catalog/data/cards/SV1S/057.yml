@@ -7,9 +7,9 @@ name_en: Bisharp
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/361/Bisharp.SV1S.57.46269.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '46269'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: モノズ
     variants_seen:
-      - normal
+    - normal

@@ -7,9 +7,9 @@ name_en: Rare Candy
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/237/Rare-Candy.SM6B.55.20912.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '20912'

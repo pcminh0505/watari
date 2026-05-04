@@ -7,9 +7,9 @@ name_en: Mt Coronet
 rarity_code: UR
 category: card
 image: https://den-cards.pokellector.com/263/Mt-Coronet.SM9B.69.26499.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '26499'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: テンガン山
     variants_seen:
-      - normal
+    - normal
     rarity_code: UR

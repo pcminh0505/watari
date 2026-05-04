@@ -7,9 +7,9 @@ name_en: Krokorok
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/266/Krokorok.SM10.60.26917.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '26917'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ワルビル
     variants_seen:
-      - normal
+    - normal
     rarity_code: SR

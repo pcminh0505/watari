@@ -7,9 +7,9 @@ name_en: Team Rocket Energy
 rarity_code: U
 category: energy
 image: https://den-cards.pokellector.com/413/Team-Rocket-Energy.SV10.98.56891.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '56891'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: ロケット団エネルギー
     variants_seen:
-      - normal
+    - normal

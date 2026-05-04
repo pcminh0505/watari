@@ -2,14 +2,14 @@
 # To freeze a manually-edited value, add `# manual: true` on line 1.
 set_code: SV4A
 local_id: '156'
-name_ja:
+name_ja: Electric Generator
 name_en: Electric Generator
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/375/Electric-Generator.SV4A.156.51108.png
-illustrator:
+illustrator: Toyste Beach
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '51108'

@@ -7,9 +7,9 @@ name_en: Ampharos
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/319/Ampharos.S7R.28.38986.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '38986'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: デンリュウ
     variants_seen:
-      - normal
+    - normal
     rarity_code: U

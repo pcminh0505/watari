@@ -7,9 +7,9 @@ name_en: Snover
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/417/Snover.M1S.17.58907.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '58907'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ユキカブリ
     variants_seen:
-      - normal
+    - normal
     rarity_code: C

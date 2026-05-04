@@ -7,9 +7,9 @@ name_en: Falinks
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/307/Falinks.S5R.49.36857.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '36857'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: タイレーツ
     variants_seen:
-      - normal
+    - normal
     rarity_code: U

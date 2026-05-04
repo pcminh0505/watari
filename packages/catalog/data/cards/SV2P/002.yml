@@ -7,9 +7,9 @@ name_en: Masquerain
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/369/Masquerain.SV2P.2.47555.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '47555'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: アメモース
     variants_seen:
-      - normal
+    - normal

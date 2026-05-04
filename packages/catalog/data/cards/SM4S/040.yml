@@ -7,9 +7,9 @@ name_en: Staraptor
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/226/Staraptor.SM4S.40.19388.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '19388'

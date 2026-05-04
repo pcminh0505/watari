@@ -7,9 +7,9 @@ name_en: Minccino ex
 rarity_code: SAR
 category: card
 image: https://den-cards.pokellector.com/430/Minccino-ex.M4.117.61035.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '61035'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: チラチーノex
     variants_seen:
-      - normal
+    - normal

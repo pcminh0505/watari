@@ -7,9 +7,9 @@ name_en: Falkner
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/366/Falkner.SV1A.68.46947.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '46947'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: ハヤト
     variants_seen:
-      - normal
+    - normal

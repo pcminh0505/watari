@@ -7,9 +7,9 @@ name_en: Sandshrew
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/319/Sandshrew.S7R.34.39217.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '39217'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: サンド
     variants_seen:
-      - normal
+    - normal
     rarity_code: C

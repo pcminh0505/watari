@@ -7,9 +7,9 @@ name_en: Sealeo
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/309/Sealeo.S6H.23.38696.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '38696'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: トドグラー
     variants_seen:
-      - normal
+    - normal
     rarity_code: C

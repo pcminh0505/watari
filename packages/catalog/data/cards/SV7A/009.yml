@@ -7,9 +7,9 @@ name_en: Gouging Fire
 rarity_code: R
 category: card
 image: https://den-cards.pokellector.com/403/Gouging-Fire.SV7A.9.53995.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '53995'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: ウガツホムラ
     variants_seen:
-      - normal
+    - normal

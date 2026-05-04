@@ -7,9 +7,9 @@ name_en: Venusaur & Celebi GX
 rarity_code: SR
 category: card
 image: https://den-cards.pokellector.com/260/Venusaur-Celebi-GX.SM9.97.25438.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '25438'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: セレビィ＆フシギバナGX(SA)
     variants_seen:
-      - normal
+    - normal
     rarity_code: SR

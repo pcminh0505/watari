@@ -7,10 +7,10 @@ name_en: Budew
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/406/Budew.SV8A.1.54936.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
-  - poke_ball_mirror
+- normal
+- poke_ball_mirror
 sources:
   pokellector:
     id: '54936'
@@ -20,5 +20,5 @@ sources:
   cardrush:
     name_ja: スボミー(モンスターボールミラー)
     variants_seen:
-      - normal
-      - poke_ball_mirror
+    - normal
+    - poke_ball_mirror

@@ -7,9 +7,9 @@ name_en: Scorbunny
 rarity_code: S
 category: card
 image: https://den-cards.pokellector.com/301/Scorbunny.S4A.214.36521.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '36521'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ヒバニー
     variants_seen:
-      - normal
+    - normal
     rarity_code: SR

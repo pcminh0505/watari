@@ -7,9 +7,9 @@ name_en: Arbok ex
 rarity_code: RR
 category: card
 image: https://den-cards.pokellector.com/371/Arbok-ex.SV2A.24.48253.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '48253'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: アーボックex
     variants_seen:
-      - normal
+    - normal

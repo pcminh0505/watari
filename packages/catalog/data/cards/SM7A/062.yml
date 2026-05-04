@@ -2,14 +2,14 @@
 # To freeze a manually-edited value, add `# manual: true` on line 1.
 set_code: sm7a
 local_id: '062'
-name_ja:
+name_ja: Magcargo GX
 name_en: Magcargo GX
 rarity_code: UR
 category: card
 image: https://den-cards.pokellector.com/243/Magcargo-GX.SM7A.62.22425.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '22425'

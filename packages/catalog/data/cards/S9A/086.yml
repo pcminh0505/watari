@@ -7,9 +7,9 @@ name_en: Hisuian Decidueye VSTAR
 rarity_code: HR
 category: card
 image: https://den-cards.pokellector.com/339/Hisuian-Decidueye-VSTAR.S9A.86.43217.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '43217'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ヒスイジュナイパーVSTAR
     variants_seen:
-      - normal
+    - normal
     rarity_code: HR

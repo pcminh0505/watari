@@ -7,9 +7,9 @@ name_en: Adventure Bag
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/288/Adventure-Bag.SM12A.128.30473.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '30473'

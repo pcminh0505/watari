@@ -7,9 +7,9 @@ name_en: Double Turbo Energy
 rarity_code: UR
 category: energy
 image: https://den-cards.pokellector.com/342/Double-Turbo-Energy.S10P.88.43443.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '43443'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ダブルターボエネルギー
     variants_seen:
-      - normal
+    - normal
     rarity_code: UR

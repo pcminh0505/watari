@@ -7,9 +7,9 @@ name_en: Chinchou
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/258/Chinchou.SM8.31.23256.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '23256'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: フーパGX
     variants_seen:
-      - normal
+    - normal
     rarity_code: RR

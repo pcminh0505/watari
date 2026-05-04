@@ -7,9 +7,9 @@ name_en: Team Rocket's Rattata
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/413/Team-Rockets-Rattata.SV10.76.57118.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '57118'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: ロケット団のコラッタ
     variants_seen:
-      - normal
+    - normal

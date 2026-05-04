@@ -7,9 +7,9 @@ name_en: Cacturne
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/306/Cacturne.S5I.2.36764.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '36764'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ノクタス
     variants_seen:
-      - normal
+    - normal
     rarity_code: C

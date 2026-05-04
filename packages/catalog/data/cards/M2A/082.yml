@@ -7,9 +7,9 @@ name_en: Team Rocket's Diglett
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/427/Team-Rockets-Diglett.M2A.82.59789.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '59789'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: ロケット団のディグダ(R団ミラー)
     variants_seen:
-      - normal
+    - normal

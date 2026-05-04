@@ -7,9 +7,9 @@ name_en: Binacle
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/285/Binacle.S1A.44.31847.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '31847'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: カメテテ
     variants_seen:
-      - normal
+    - normal
     rarity_code: C

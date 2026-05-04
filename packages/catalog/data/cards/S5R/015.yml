@@ -7,9 +7,9 @@ name_en: Sizzlipede
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/307/Sizzlipede.S5R.15.36826.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '36826'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ヤクデ
     variants_seen:
-      - normal
+    - normal
     rarity_code: C

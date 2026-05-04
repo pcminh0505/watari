@@ -7,9 +7,9 @@ name_en: Purugly
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/263/Purugly.SM9B.42.26453.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '26453'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ブニャット
     variants_seen:
-      - normal
+    - normal
     rarity_code: U

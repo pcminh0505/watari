@@ -7,9 +7,9 @@ name_en: Horsea
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/398/Horsea.SV6A.10.53527.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '53527'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: タッツー
     variants_seen:
-      - normal
+    - normal

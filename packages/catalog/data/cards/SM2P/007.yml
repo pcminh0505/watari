@@ -7,9 +7,9 @@ name_en: Tapu Bulu GX
 rarity_code: RR
 category: card
 image: https://den-cards.pokellector.com/212/Tapu-Bulu-GX.SM2+.7.17472.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '17472'

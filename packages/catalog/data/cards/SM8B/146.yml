@@ -7,9 +7,9 @@ name_en: Counter Energy
 rarity_code: C
 category: energy
 image: https://den-cards.pokellector.com/241/Counter-Energy.SM8B.146.24924.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '24924'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: カウンターエネルギー(ミラー/ハイクラスパック仕様)
     variants_seen:
-      - normal
+    - normal
     rarity_code: C

@@ -7,9 +7,9 @@ name_en: Galarian Slowbro
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/306/Galarian-Slowbro.S5I.41.36796.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '36796'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ガラルヤドラン
     variants_seen:
-      - normal
+    - normal
     rarity_code: U

@@ -7,9 +7,9 @@ name_en: Metal Frying Pan
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/241/Metal-Frying-Pan.SM8B.124.24907.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '24907'

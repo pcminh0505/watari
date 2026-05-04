@@ -7,9 +7,9 @@ name_en: Primarina GX
 rarity_code: UR
 category: card
 image: https://den-cards.pokellector.com/200/Primarina-GX.SM1+.54.14604.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '14604'

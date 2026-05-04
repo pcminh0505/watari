@@ -2,14 +2,14 @@
 # To freeze a manually-edited value, add `# manual: true` on line 1.
 set_code: s4a
 local_id: '206'
-name_ja:
+name_ja: Blipbug
 name_en: Blipbug
 rarity_code: S
 category: card
 image: https://den-cards.pokellector.com/301/Blipbug.S4A.206.36514.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '36514'

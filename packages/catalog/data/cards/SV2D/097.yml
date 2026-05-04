@@ -7,9 +7,9 @@ name_en: Ting-Lu ex
 rarity_code: UR
 category: card
 image: https://den-cards.pokellector.com/370/Ting-Lu-ex.SV2D.97.47667.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '47667'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: ディンルーex
     variants_seen:
-      - normal
+    - normal

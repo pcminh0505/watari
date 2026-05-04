@@ -7,9 +7,9 @@ name_en: Muk & Alolan Muk GX
 rarity_code: SR
 category: card
 image: https://den-cards.pokellector.com/266/Muk-Alolan-Muk-GX.SM10.99.26961.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '26961'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ベトベトン＆アローラベトベトンGX(SA)
     variants_seen:
-      - normal
+    - normal
     rarity_code: SR

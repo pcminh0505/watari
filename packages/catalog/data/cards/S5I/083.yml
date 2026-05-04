@@ -7,9 +7,9 @@ name_en: Tapu Koko VMAX
 rarity_code: HR
 category: card
 image: https://den-cards.pokellector.com/306/Tapu-Koko-VMAX.S5I.83.36903.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '36903'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: カプ・コケコVMAX
     variants_seen:
-      - normal
+    - normal
     rarity_code: HR

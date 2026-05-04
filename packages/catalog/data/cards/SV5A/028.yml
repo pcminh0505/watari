@@ -7,9 +7,9 @@ name_en: Helioptile
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/391/Helioptile.SV5A.28.52782.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '52782'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: エリキテル
     variants_seen:
-      - normal
+    - normal

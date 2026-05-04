@@ -2,14 +2,14 @@
 # To freeze a manually-edited value, add `# manual: true` on line 1.
 set_code: sm1p
 local_id: '062'
-name_ja:
+name_ja: Vikavolt GX
 name_en: Vikavolt GX
 rarity_code: UR
 category: card
 image: https://den-cards.pokellector.com/200/Vikavolt-GX.SM1+.62.14611.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '14611'

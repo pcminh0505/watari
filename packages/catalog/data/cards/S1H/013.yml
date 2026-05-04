@@ -7,9 +7,9 @@ name_en: Chewtle
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/284/Chewtle.S1H.13.31289.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '31289'

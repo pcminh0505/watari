@@ -7,9 +7,9 @@ name_en: Bellibolt
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/391/Bellibolt.SV5A.32.52785.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '52785'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: ハラバリー
     variants_seen:
-      - normal
+    - normal

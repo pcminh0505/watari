@@ -7,9 +7,9 @@ name_en: Marowak
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/401/Marowak.SV7.49.53743.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '53743'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: ワシボン
     variants_seen:
-      - normal
+    - normal

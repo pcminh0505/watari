@@ -7,9 +7,9 @@ name_en: Rotom Dex
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/201/Rotom-Pokedex.SM1S.56.13720.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '13720'

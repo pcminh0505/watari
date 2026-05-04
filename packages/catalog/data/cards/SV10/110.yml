@@ -7,9 +7,9 @@ name_en: Kangaskhan
 rarity_code: AR
 category: card
 image: https://den-cards.pokellector.com/413/Kangaskhan.SV10.110.57129.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '57129'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: ガルーラ
     variants_seen:
-      - normal
+    - normal

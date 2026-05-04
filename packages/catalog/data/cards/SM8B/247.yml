@@ -7,9 +7,9 @@ name_en: Tapu Lele GX
 rarity_code: UR
 category: card
 image: https://den-cards.pokellector.com/241/Tapu-Lele-GX.SM8B.247.25267.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '25267'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: カプ・テテフGX
     variants_seen:
-      - normal
+    - normal
     rarity_code: UR

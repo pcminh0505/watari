@@ -7,9 +7,9 @@ name_en: Feraligatr
 rarity_code: R
 category: card
 image: https://den-cards.pokellector.com/386/Feraligatr.SV5K.15.51829.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '51829'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: オーダイル
     variants_seen:
-      - normal
+    - normal

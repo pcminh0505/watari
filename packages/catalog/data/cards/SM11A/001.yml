@@ -7,9 +7,9 @@ name_en: Venusaur & Snivy GX
 rarity_code: RR
 category: card
 image: https://den-cards.pokellector.com/272/Venusaur-Snivy-GX.SM11A.1.28934.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '28934'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: フシギバナ＆ツタージャGX
     variants_seen:
-      - normal
+    - normal
     rarity_code: RR

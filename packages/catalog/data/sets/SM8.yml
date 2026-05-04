@@ -4,7 +4,9 @@ set_code: SM8
 era_block: sm
 language: jp
 name_ja: 超爆インパクト
-name_en: Lost Thunder
+name_en: Super-Burst Impact
 release_date: 2018-09-07
 tcgdex_id: SM8
 pokellector_slug: Explosive-Impact-Expansion
+tcgcollector_id: '11253'
+tcgcollector_slug: super-burst-impact

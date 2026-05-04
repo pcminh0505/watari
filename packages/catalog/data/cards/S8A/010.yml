@@ -7,9 +7,9 @@ name_en: Reshiram
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/327/Reshiram.S8A.10.40612.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '40612'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: レシラム(25thミラー)
     variants_seen:
-      - normal
+    - normal
     rarity_code: C

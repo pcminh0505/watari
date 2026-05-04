@@ -7,9 +7,9 @@ name_en: Electivire ex
 rarity_code: SR
 category: card
 image: https://den-cards.pokellector.com/411/Electivire-ex.SV9A.79.56664.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '56664'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: エレキブルex
     variants_seen:
-      - normal
+    - normal

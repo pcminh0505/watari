@@ -7,9 +7,9 @@ name_en: Bastiodon
 rarity_code: R
 category: card
 image: https://den-cards.pokellector.com/232/Bastiodon.SM5S.39.19885.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '19885'

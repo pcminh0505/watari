@@ -7,9 +7,9 @@ name_en: Slowking
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/401/Slowking.SV7.39.53684.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '53684'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: ヤドキング
     variants_seen:
-      - normal
+    - normal

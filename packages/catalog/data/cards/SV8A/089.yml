@@ -7,9 +7,9 @@ name_en: Ting-Lu
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/406/Ting-Lu.SV8A.89.55198.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '55198'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: ディンルー(R仕様)
     variants_seen:
-      - normal
+    - normal

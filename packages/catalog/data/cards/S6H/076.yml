@@ -7,9 +7,9 @@ name_en: Sandaconda V
 rarity_code: SR
 category: card
 image: https://den-cards.pokellector.com/309/Sandaconda-V.S6H.76.38775.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '38775'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: サダイジャV
     variants_seen:
-      - normal
+    - normal
     rarity_code: SR

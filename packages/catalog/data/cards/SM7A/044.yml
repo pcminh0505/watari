@@ -7,9 +7,9 @@ name_en: Kecleon
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/243/Kecleon.SM7A.44.22414.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '22414'

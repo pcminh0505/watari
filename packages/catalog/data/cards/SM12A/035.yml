@@ -7,9 +7,9 @@ name_en: White Kyurem
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/288/White-Kyurem.SM12A.35.30396.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '30396'

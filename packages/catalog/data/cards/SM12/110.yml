@@ -7,9 +7,9 @@ name_en: Oricorio GX
 rarity_code: HR
 category: card
 image: https://den-cards.pokellector.com/281/Oricorio-GX.SM12.110.30159.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '30159'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: オドリドリGX
     variants_seen:
-      - normal
+    - normal
     rarity_code: HR

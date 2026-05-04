@@ -6,9 +6,9 @@ name_en: Mega Dragonite ex
 rarity_code: MUR
 category: card
 image: https://den-cards.pokellector.com/427/Mega-Dragonite-ex.M2A.250.60116.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '60116'
@@ -18,4 +18,4 @@ sources:
   cardrush:
     name_ja: メガカイリューex
     variants_seen:
-      - normal
+    - normal

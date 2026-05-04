@@ -7,9 +7,9 @@ name_en: Duraludon
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/403/Duraludon.SV7A.36.54011.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '54011'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: ジュラルドン
     variants_seen:
-      - normal
+    - normal

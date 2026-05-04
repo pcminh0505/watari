@@ -7,9 +7,9 @@ name_en: Smoochum
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/403/Smoochum.SV7A.18.54000.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '54000'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: ムチュール
     variants_seen:
-      - normal
+    - normal

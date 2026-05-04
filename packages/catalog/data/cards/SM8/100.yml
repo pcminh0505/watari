@@ -7,9 +7,9 @@ name_en: Lugia GX
 rarity_code: SR
 category: card
 image: https://den-cards.pokellector.com/258/Lugia-GX.SM8.100.23204.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '23204'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ルギアGX
     variants_seen:
-      - normal
+    - normal
     rarity_code: SR

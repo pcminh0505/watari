@@ -7,9 +7,9 @@ name_en: Persian
 rarity_code: AR
 category: card
 image: https://den-cards.pokellector.com/398/Persian.SV6A.75.53580.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '53580'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: ペルシアン
     variants_seen:
-      - normal
+    - normal

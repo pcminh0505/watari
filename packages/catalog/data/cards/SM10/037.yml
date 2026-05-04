@@ -7,9 +7,9 @@ name_en: Mew
 rarity_code: R
 category: card
 image: https://den-cards.pokellector.com/266/Mew.SM10.37.26855.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '26855'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ミュウ
     variants_seen:
-      - normal
+    - normal
     rarity_code: R

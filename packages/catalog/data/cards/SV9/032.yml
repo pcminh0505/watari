@@ -7,9 +7,9 @@ name_en: Iono's Killowattrel
 rarity_code: R
 category: card
 image: https://den-cards.pokellector.com/408/Ionos-Killowattrel.SV9.32.55489.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '55489'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: ナンジャモのタイカイデン
     variants_seen:
-      - normal
+    - normal

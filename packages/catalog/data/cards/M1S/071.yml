@@ -7,9 +7,9 @@ name_en: Alakazam
 rarity_code: AR
 category: card
 image: https://den-cards.pokellector.com/417/Alakazam.M1S.71.58948.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '58948'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: フーディン
     variants_seen:
-      - normal
+    - normal
     rarity_code: AR

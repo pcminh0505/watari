@@ -2,14 +2,14 @@
 # To freeze a manually-edited value, add `# manual: true` on line 1.
 set_code: sm4p
 local_id: '118'
-name_ja:
+name_ja: Lana
 name_en: Lana
 rarity_code: UR
 category: card
 image: https://den-cards.pokellector.com/228/Lana.SM4+.118.19568.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '19568'

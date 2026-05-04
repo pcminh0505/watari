@@ -7,9 +7,9 @@ name_en: Wobbuffet V
 rarity_code: UR
 category: card
 image: https://den-cards.pokellector.com/283/Wobbuffet-V.S1W.63.31355.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '31355'

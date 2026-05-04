@@ -7,9 +7,9 @@ name_en: Mareanie
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/258/Mareanie.SM8.29.23254.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '23254'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ゴロンダ
     variants_seen:
-      - normal
+    - normal
     rarity_code: U

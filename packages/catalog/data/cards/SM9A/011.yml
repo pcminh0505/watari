@@ -7,9 +7,9 @@ name_en: Kyurem
 rarity_code: R
 category: card
 image: https://den-cards.pokellector.com/262/Kyurem.SM9A.11.25594.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '25594'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: キュレム
     variants_seen:
-      - normal
+    - normal
     rarity_code: R

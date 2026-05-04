@@ -7,9 +7,9 @@ name_en: Hoothoot
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/219/Hoothoot.SM3H.43.18184.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '18184'

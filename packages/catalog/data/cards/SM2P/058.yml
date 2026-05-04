@@ -2,14 +2,14 @@
 # To freeze a manually-edited value, add `# manual: true` on line 1.
 set_code: sm2p
 local_id: '058'
-name_ja:
+name_ja: Tapu Bulu GX
 name_en: Tapu Bulu GX
 rarity_code: UR
 category: card
 image: https://den-cards.pokellector.com/212/Tapu-Bulu-GX.SM2+.58.17513.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '17513'

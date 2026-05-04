@@ -7,9 +7,9 @@ name_en: Torkoal V
 rarity_code: RR
 category: card
 image: https://den-cards.pokellector.com/284/Torkoal-V.S1H.6.31283.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '31283'

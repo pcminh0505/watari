@@ -7,9 +7,9 @@ name_en: Life Forest Prism Star
 rarity_code: R
 category: card
 image: https://den-cards.pokellector.com/288/Life-Forest-Prism-Star.SM12A.168.30511.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '30511'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ライフフォレスト◇
     variants_seen:
-      - normal
+    - normal
     rarity_code: R

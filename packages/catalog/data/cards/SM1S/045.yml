@@ -7,9 +7,9 @@ name_en: Spinda
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/201/Spinda.SM1S.45.13757.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '13757'

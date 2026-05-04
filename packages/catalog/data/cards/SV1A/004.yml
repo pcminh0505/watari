@@ -7,9 +7,9 @@ name_en: Sprigatito
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/366/Sprigatito.SV1A.4.46844.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '46844'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: ニャオハ
     variants_seen:
-      - normal
+    - normal

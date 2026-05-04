@@ -7,9 +7,9 @@ name_en: Marowak
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/266/Marowak.SM10.46.26905.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '26905'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: リセットスタンプ
     variants_seen:
-      - normal
+    - normal
     rarity_code: U

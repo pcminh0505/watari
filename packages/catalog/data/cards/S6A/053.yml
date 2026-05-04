@@ -7,9 +7,9 @@ name_en: Morgrem
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/322/Morgrem.S6A.53.38840.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '38840'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ギモー
     variants_seen:
-      - normal
+    - normal
     rarity_code: U

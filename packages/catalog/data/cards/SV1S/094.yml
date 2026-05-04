@@ -7,9 +7,9 @@ name_en: Koraidon ex
 rarity_code: SR
 category: card
 image: https://den-cards.pokellector.com/361/Koraidon-ex.SV1S.94.46799.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '46799'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: ハヤト
     variants_seen:
-      - normal
+    - normal

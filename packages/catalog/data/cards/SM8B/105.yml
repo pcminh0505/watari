@@ -7,9 +7,9 @@ name_en: Eevee
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/241/Eevee.SM8B.105.24891.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '24891'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: イーブイ(ミラー/ハイクラスパック仕様)
     variants_seen:
-      - normal
+    - normal
     rarity_code: C

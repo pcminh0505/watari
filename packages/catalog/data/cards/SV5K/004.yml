@@ -7,9 +7,9 @@ name_en: Grotle
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/386/Grotle.SV5K.4.51819.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '51819'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: ハヤシガメ
     variants_seen:
-      - normal
+    - normal

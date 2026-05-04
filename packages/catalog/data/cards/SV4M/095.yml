@@ -7,9 +7,9 @@ name_en: Basic Metal Energy
 rarity_code: UR
 category: energy
 image: https://den-cards.pokellector.com/382/Basic-Metal-Energy.SV4K.95.50922.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '50922'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: 基本鋼エネルギー(SVデザイン)
     variants_seen:
-      - normal
+    - normal

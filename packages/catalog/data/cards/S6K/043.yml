@@ -7,9 +7,9 @@ name_en: Grapploct
 rarity_code: R
 category: card
 image: https://den-cards.pokellector.com/310/Grapploct.S6K.43.38703.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '38703'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: オトスパス
     variants_seen:
-      - normal
+    - normal
     rarity_code: R

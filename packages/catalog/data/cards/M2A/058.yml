@@ -2,14 +2,14 @@
 # To freeze a manually-edited value, add `# manual: true` on line 1.
 set_code: M2A
 local_id: '058'
-name_ja:
+name_ja: Iono's Wattrel
 name_en: Iono's Wattrel
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/427/Ionos-Wattrel.M2A.58.59956.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '59956'

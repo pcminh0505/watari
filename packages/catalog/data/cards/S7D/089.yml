@@ -7,9 +7,9 @@ name_en: Crystal Cave
 rarity_code: UR
 category: card
 image: https://den-cards.pokellector.com/318/Crystal-Cave.S7D.89.39551.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '39551'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: 結晶の洞窟
     variants_seen:
-      - normal
+    - normal
     rarity_code: UR

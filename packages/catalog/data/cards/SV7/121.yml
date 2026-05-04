@@ -7,9 +7,9 @@ name_en: Orthworm ex
 rarity_code: SR
 category: card
 image: https://den-cards.pokellector.com/401/Orthworm-ex.SV7.121.53780.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '53780'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: ミミズズex
     variants_seen:
-      - normal
+    - normal

@@ -7,9 +7,9 @@ name_en: Escape Board
 rarity_code: R
 category: card
 image: https://den-cards.pokellector.com/272/Escape-Board.SM11A.62.29000.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '29000'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: エスケープボード
     variants_seen:
-      - normal
+    - normal
     rarity_code: TR

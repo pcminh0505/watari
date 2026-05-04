@@ -7,9 +7,9 @@ name_en: Wash Rotom
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/413/Wash-Rotom.SV10.28.57096.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '57096'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: ウォッシュロトム
     variants_seen:
-      - normal
+    - normal

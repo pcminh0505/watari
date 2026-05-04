@@ -7,9 +7,9 @@ name_en: Aerodactyl
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/260/Aerodactyl.SM9.76.25503.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '25503'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: プテラ
     variants_seen:
-      - normal
+    - normal
     rarity_code: U

@@ -7,9 +7,9 @@ name_en: Lugia
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/327/Lugia.S8A.5.40075.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '40075'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ルギア(25thミラー)
     variants_seen:
-      - normal
+    - normal
     rarity_code: C

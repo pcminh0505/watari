@@ -7,9 +7,9 @@ name_en: Power Tablet
 rarity_code: UR
 category: card
 image: https://den-cards.pokellector.com/326/Power-Tablet.S8.126.40506.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '40506'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: パワータブレット
     variants_seen:
-      - normal
+    - normal
     rarity_code: UR

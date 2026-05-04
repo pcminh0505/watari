@@ -7,9 +7,9 @@ name_en: Mega Absol ex
 rarity_code: RR
 category: card
 image: https://den-cards.pokellector.com/416/Mega-Absol-ex.M1L.38.58842.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '58842'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: メガアブソルex
     variants_seen:
-      - normal
+    - normal
     rarity_code: RR

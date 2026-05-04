@@ -7,9 +7,9 @@ name_en: Froslass ex
 rarity_code: RR
 category: card
 image: https://den-cards.pokellector.com/376/Froslass-ex.SV3A.1.49239.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '49239'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: ユキメノコex
     variants_seen:
-      - normal
+    - normal

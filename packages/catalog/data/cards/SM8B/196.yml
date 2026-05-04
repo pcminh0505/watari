@@ -2,14 +2,14 @@
 # To freeze a manually-edited value, add `# manual: true` on line 1.
 set_code: sm8b
 local_id: '196'
-name_ja:
+name_ja: Diancie
 name_en: Diancie
 rarity_code: UR
 category: card
 image: https://den-cards.pokellector.com/241/Diancie.SM8B.196.25311.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '25311'

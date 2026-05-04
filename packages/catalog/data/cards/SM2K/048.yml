@@ -7,9 +7,9 @@ name_en: Field Blower
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/211/Field-Blower.SM2K.48.17355.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '17355'

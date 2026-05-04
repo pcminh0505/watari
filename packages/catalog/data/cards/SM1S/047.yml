@@ -7,9 +7,9 @@ name_en: Herdier
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/201/Herdier.SM1S.47.13759.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '13759'

@@ -7,9 +7,9 @@ name_en: Melmetal
 rarity_code: R
 category: card
 image: https://den-cards.pokellector.com/263/Melmetal.SM9B.38.26449.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '26449'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: メルメタル
     variants_seen:
-      - normal
+    - normal
     rarity_code: R

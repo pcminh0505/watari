@@ -2,14 +2,14 @@
 # To freeze a manually-edited value, add `# manual: true` on line 1.
 set_code: M2A
 local_id: '157'
-name_ja:
+name_ja: Bug Catching Set
 name_en: Bug Catching Set
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/427/Bug-Catching-Set.M2A.157.60037.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '60037'

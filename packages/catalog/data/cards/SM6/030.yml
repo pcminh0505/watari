@@ -7,9 +7,9 @@ name_en: Espurr
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/235/Espurr.SM6.30.20473.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '20473'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: カゲボウズ
     variants_seen:
-      - normal
+    - normal
     rarity_code: C

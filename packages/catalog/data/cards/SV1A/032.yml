@@ -7,9 +7,9 @@ name_en: Wattrel
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/366/Wattrel.SV1A.32.46957.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '46957'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: カイデン
     variants_seen:
-      - normal
+    - normal

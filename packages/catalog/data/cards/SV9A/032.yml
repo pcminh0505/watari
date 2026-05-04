@@ -7,9 +7,9 @@ name_en: Dondozo ex
 rarity_code: RR
 category: card
 image: https://den-cards.pokellector.com/411/Dondozo-ex.SV9A.32.56636.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '56636'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: ヘイラッシャex
     variants_seen:
-      - normal
+    - normal

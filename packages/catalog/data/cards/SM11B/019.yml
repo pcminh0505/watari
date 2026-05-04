@@ -7,9 +7,9 @@ name_en: Magneton
 rarity_code: R
 category: card
 image: https://den-cards.pokellector.com/278/Magneton.SM11B.19.29273.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '29273'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: レアコイル
     variants_seen:
-      - normal
+    - normal
     rarity_code: R

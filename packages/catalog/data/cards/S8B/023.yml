@@ -7,9 +7,9 @@ name_en: Centiskorch VMAX
 rarity_code: RRR
 category: card
 image: https://den-cards.pokellector.com/338/Centiskorch-VMAX.S8B.23.41300.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '41300'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: マルヤクデVMAX
     variants_seen:
-      - normal
+    - normal
     rarity_code: RRR

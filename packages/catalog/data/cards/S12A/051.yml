@@ -7,9 +7,9 @@ name_en: Mewtwo VSTAR
 rarity_code: RRR
 category: card
 image: https://den-cards.pokellector.com/357/Mewtwo-VSTAR.S12A.51.45316.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '45316'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ミュウツーVSTAR
     variants_seen:
-      - normal
+    - normal
     rarity_code: RRR

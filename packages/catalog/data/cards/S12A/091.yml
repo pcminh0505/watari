@@ -7,9 +7,9 @@ name_en: Zoroark
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/357/Zoroark.S12A.91.45889.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '45889'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ゾロアーク(R仕様)
     variants_seen:
-      - normal
+    - normal
     rarity_code: R

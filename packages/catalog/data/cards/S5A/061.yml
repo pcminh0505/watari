@@ -7,9 +7,9 @@ name_en: Rufflet
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/308/Rufflet.S5A.61.37907.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '37907'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ワシボン
     variants_seen:
-      - normal
+    - normal
     rarity_code: C

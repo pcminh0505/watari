@@ -7,9 +7,9 @@ name_en: Sharpedo
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/262/Sharpedo.SM9A.27.25564.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '25564'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: サメハダー
     variants_seen:
-      - normal
+    - normal
     rarity_code: U

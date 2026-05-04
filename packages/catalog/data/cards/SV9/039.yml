@@ -7,9 +7,9 @@ name_en: Metagross
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/408/Metagross.SV9.39.55506.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '55506'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: ロトム
     variants_seen:
-      - normal
+    - normal

@@ -7,9 +7,9 @@ name_en: Professor's Research
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/283/Professors-Research.S1W.59.31208.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '31208'

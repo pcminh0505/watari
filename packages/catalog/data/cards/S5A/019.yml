@@ -7,9 +7,9 @@ name_en: Rapid Strike Urshifu
 rarity_code: R
 category: card
 image: https://den-cards.pokellector.com/308/Rapid-Strike-Urshifu.S5A.19.37234.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '37234'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: れんげきウーラオス
     variants_seen:
-      - normal
+    - normal
     rarity_code: R

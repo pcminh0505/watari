@@ -7,9 +7,9 @@ name_en: Heatmor
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/386/Heatmor.SV5K.9.51824.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '51824'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: クイタラン
     variants_seen:
-      - normal
+    - normal

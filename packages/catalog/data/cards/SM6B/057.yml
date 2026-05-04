@@ -7,9 +7,9 @@ name_en: Friend Ball
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/237/Friend-Ball.SM6B.57.20914.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '20914'

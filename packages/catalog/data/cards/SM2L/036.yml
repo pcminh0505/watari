@@ -7,9 +7,9 @@ name_en: Cottonee
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/210/Cottonee.SM2L.36.17296.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '17296'

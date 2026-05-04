@@ -7,9 +7,9 @@ name_en: Slowbro
 rarity_code: R
 category: card
 image: https://den-cards.pokellector.com/263/Slowbro.SM9B.12.25675.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '25675'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ヤドラン
     variants_seen:
-      - normal
+    - normal
     rarity_code: R

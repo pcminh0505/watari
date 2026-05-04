@@ -7,9 +7,9 @@ name_en: Boldore
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/308/Boldore.S5A.39.37890.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '37890'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ガントル
     variants_seen:
-      - normal
+    - normal
     rarity_code: C

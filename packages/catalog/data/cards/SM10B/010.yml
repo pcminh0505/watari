@@ -7,9 +7,9 @@ name_en: Camerupt
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/268/Camerupt.SM10B.10.27656.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '27656'

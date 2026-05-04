@@ -7,9 +7,9 @@ name_en: Blissey ex
 rarity_code: RR
 category: card
 image: https://den-cards.pokellector.com/393/Blissey-ex.SV6.85.52955.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '52955'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: カシオペア
     variants_seen:
-      - normal
+    - normal

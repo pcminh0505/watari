@@ -7,9 +7,9 @@ name_en: Full Metal Lab
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/387/Full-Metal-Lab.SV5M.70.51804.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '51804'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: フルメタルラボ
     variants_seen:
-      - normal
+    - normal

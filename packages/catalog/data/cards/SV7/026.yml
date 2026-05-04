@@ -7,9 +7,9 @@ name_en: Dreadnaw
 rarity_code: R
 category: card
 image: https://den-cards.pokellector.com/401/Dreadnaw.SV7.26.53694.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '53694'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: ビブラーバ
     variants_seen:
-      - normal
+    - normal

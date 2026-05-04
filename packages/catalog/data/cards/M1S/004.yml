@@ -7,9 +7,9 @@ name_en: Bayleef
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/417/Bayleef.M1S.4.58894.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '58894'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ベイリーフ
     variants_seen:
-      - normal
+    - normal
     rarity_code: C

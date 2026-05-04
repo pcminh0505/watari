@@ -7,9 +7,9 @@ name_en: Cynthia's Spiritomb
 rarity_code: AR
 category: card
 image: https://den-cards.pokellector.com/427/Cynthias-Spiritomb.M2A.208.60082.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '60082'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: シロナのミカルゲ
     variants_seen:
-      - normal
+    - normal

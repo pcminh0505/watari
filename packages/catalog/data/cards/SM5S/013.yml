@@ -7,9 +7,9 @@ name_en: Rotom
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/232/Rotom.SM5S.13.19861.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '19861'

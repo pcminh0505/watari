@@ -7,9 +7,9 @@ name_en: Lanturn
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/281/Lanturn.SM12.27.30072.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '30072'

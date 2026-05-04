@@ -7,9 +7,9 @@ name_en: Entei V
 rarity_code: RR
 category: card
 image: https://den-cards.pokellector.com/357/Entei-V.S12A.19.45842.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '45842'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: エンテイV
     variants_seen:
-      - normal
+    - normal
     rarity_code: RR

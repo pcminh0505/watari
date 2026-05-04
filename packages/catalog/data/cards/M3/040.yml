@@ -7,9 +7,9 @@ name_en: Landorus
 rarity_code: R
 category: card
 image: https://den-cards.pokellector.com/428/Landorus.M3.40.60230.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '60230'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: ランドロス
     variants_seen:
-      - normal
+    - normal

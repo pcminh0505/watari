@@ -4,7 +4,9 @@ set_code: M2A
 era_block: me
 language: jp
 name_ja: メガドリーム
-name_en: Mega Dream
+name_en: MEGA Dream ex
 release_date: 2025-11-28
-tcgdex_id: null
+tcgdex_id:
 pokellector_slug: MEGA-Dream-ex-Expansion
+tcgcollector_id: '11678'
+tcgcollector_slug: mega-dream-ex

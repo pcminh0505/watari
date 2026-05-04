@@ -7,9 +7,9 @@ name_en: V Guard Energy
 rarity_code: UR
 category: energy
 image: https://den-cards.pokellector.com/352/V-Guard-Energy.S11A.94.44606.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '44606'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: Vガードエネルギー
     variants_seen:
-      - normal
+    - normal
     rarity_code: UR

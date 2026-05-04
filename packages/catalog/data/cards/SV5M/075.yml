@@ -7,9 +7,9 @@ name_en: Litten
 rarity_code: AR
 category: card
 image: https://den-cards.pokellector.com/387/Litten.SV5M.75.52217.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '52217'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: ニャビー
     variants_seen:
-      - normal
+    - normal

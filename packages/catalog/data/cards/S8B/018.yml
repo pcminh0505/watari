@@ -7,9 +7,9 @@ name_en: Flareon
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/338/Flareon.S8B.18.41296.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '41296'

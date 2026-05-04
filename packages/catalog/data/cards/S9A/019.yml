@@ -7,10 +7,10 @@ name_en: Piloswine
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/339/Piloswine.S9A.19.43104.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
-  - poke_ball_mirror
+- normal
+- poke_ball_mirror
 sources:
   pokellector:
     id: '43104'
@@ -20,6 +20,6 @@ sources:
   cardrush:
     name_ja: イノムー
     variants_seen:
-      - normal
-      - poke_ball_mirror
+    - normal
+    - poke_ball_mirror
     rarity_code: C

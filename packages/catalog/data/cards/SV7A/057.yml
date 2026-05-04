@@ -7,9 +7,9 @@ name_en: Dragon Potion
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/403/Dragon-Potion.SV7A.57.54023.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '54023'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: 竜の秘薬
     variants_seen:
-      - normal
+    - normal

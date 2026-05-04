@@ -7,9 +7,9 @@ name_en: Weedle
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/338/Weedle.S8B.1.41281.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '41281'

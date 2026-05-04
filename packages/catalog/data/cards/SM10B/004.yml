@@ -7,9 +7,9 @@ name_en: Fomantis
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/268/Fomantis.SM10B.4.27651.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '27651'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: カリキリ
     variants_seen:
-      - normal
+    - normal
     rarity_code: C

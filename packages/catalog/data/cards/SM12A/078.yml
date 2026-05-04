@@ -7,9 +7,9 @@ name_en: Zorua
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/288/Zorua.SM12A.78.30430.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '30430'

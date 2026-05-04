@@ -7,9 +7,9 @@ name_en: Floragato
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/408/Floragato.SV9.11.55470.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '55470'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: ニャローテ
     variants_seen:
-      - normal
+    - normal

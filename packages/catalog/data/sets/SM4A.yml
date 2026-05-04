@@ -4,7 +4,9 @@ set_code: SM4A
 era_block: sm
 language: jp
 name_ja: 超次元の暴獣
-name_en: 超次元の暴獣
+name_en: Ultradimensional Beasts
 release_date: 2017-09-15
 tcgdex_id: SM4A
 pokellector_slug: The-Transdimensional-Beast-Expansion
+tcgcollector_id: '11250'
+tcgcollector_slug: ultradimensional-beasts

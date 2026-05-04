@@ -7,9 +7,9 @@ name_en: Heat Burner
 rarity_code: SR
 category: card
 image: https://den-cards.pokellector.com/425/Heat-Burner.M2.101.59586.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '59586'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: ヒートバーナー
     variants_seen:
-      - normal
+    - normal

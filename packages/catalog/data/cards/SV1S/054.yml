@@ -7,9 +7,9 @@ name_en: Croagunk
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/361/Croagunk.SV1S.54.46266.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '46266'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: オラチフ
     variants_seen:
-      - normal
+    - normal

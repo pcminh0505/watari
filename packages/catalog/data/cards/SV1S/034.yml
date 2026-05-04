@@ -7,9 +7,9 @@ name_en: Dachsbun
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/361/Dachsbun.SV1S.34.46249.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '46249'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: ムウマ
     variants_seen:
-      - normal
+    - normal

@@ -7,9 +7,9 @@ name_en: Melmetal GX
 rarity_code: SR
 category: card
 image: https://den-cards.pokellector.com/288/Melmetal-GX.SM12A.184.30524.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '30524'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: メルメタルGX
     variants_seen:
-      - normal
+    - normal
     rarity_code: SR

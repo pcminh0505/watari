@@ -7,9 +7,9 @@ name_en: Cinderace
 rarity_code: R
 category: card
 image: https://den-cards.pokellector.com/284/Cinderace.S1H.9.31198.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '31198'

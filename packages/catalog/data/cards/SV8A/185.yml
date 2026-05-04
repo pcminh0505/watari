@@ -7,9 +7,9 @@ name_en: Jet Energy
 rarity_code: C
 category: energy
 image: https://den-cards.pokellector.com/406/Jet-Energy.SV8A.185.55258.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '55258'

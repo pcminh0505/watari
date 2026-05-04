@@ -1,5 +1,6 @@
 .PHONY: up down test lint format migrate \
         catalog-seed-sets catalog-bootstrap catalog-seed-cards catalog-verify catalog-verify-pokellector \
+        catalog-audit catalog-audit-fetch catalog-audit-diff catalog-audit-apply catalog-audit-rollout \
         sync-set-symbols \
         scrape-cardrush scrape-snkrdunk \
         api api-dev \
@@ -43,11 +44,48 @@ catalog-seed-cards:
 	uv run python -m watari_catalog seed-cards $(if $(SET),--set $(SET))
 
 catalog-verify:
-	uv run python -m watari_catalog verify
+	uv run python -m watari_catalog verify $(if $(STRICT),--strict,)
 
 # Compare data/cards local_ids to live jp.pokellector.com set indexes (network).
 catalog-verify-pokellector:
 	uv run python -m watari_catalog verify-pokellector
+
+# --- Catalog data-quality audit (TCGCollector-anchored sidecar) ---
+# Phase 1: walk YMLs and write reports/catalog-audit-*.md (no data changes).
+#         Usage: make catalog-audit [SET=SV4A]
+catalog-audit:
+	uv run python -m watari_catalog audit-current $(if $(SET),--set $(SET))
+
+# Phase 2: scrape TCGCollector for one set (requires tcgcollector_id +
+#         tcgcollector_slug in data/sets/<SET>.yml). Writes data/audit/<SET>.yml.
+#         Usage: make catalog-audit-fetch SET=SV2A
+catalog-audit-fetch:
+	@test -n "$(SET)" || (echo "Usage: make catalog-audit-fetch SET=SV2A"; exit 1)
+	uv run python -m watari_catalog audit-fetch --set $(SET)
+
+# Phase 3: diff data/audit vs data/cards. Writes reports/audit-diff-*.md|.tsv.
+#         Usage: make catalog-audit-diff [SET=SV2A]
+catalog-audit-diff:
+	uv run python -m watari_catalog audit-diff $(if $(SET),--set $(SET))
+
+# Phase 5: apply audit values from a TSV. Pass MODE=auto|review.
+#         Usage: make catalog-audit-apply TSV=reports/audit-diff-...tsv MODE=auto
+#                make catalog-audit-apply TSV=reports/audit-diff-...tsv MODE=review
+catalog-audit-apply:
+	@test -n "$(TSV)" || (echo "Usage: make catalog-audit-apply TSV=reports/...tsv MODE=auto|review"; exit 1)
+	@test -n "$(MODE)" || (echo "Usage: pass MODE=auto or MODE=review"; exit 1)
+	uv run python -m watari_catalog audit-apply --tsv "$(TSV)" --$(MODE)
+
+# Phase 6: per-set rollout — fetch, diff, apply AUTO_FILL, re-seed DB.
+#         Usage: make catalog-audit-rollout SET=SV4A
+catalog-audit-rollout:
+	@test -n "$(SET)" || (echo "Usage: make catalog-audit-rollout SET=SV4A"; exit 1)
+	uv run python -m watari_catalog audit-fetch --set $(SET)
+	uv run python -m watari_catalog audit-diff --set $(SET)
+	@TSV=$$(ls -t reports/audit-diff-$(SET)-*.tsv | head -1); \
+	echo "Applying AUTO_FILL from $$TSV"; \
+	uv run python -m watari_catalog audit-apply --tsv "$$TSV" --auto
+	uv run python -m watari_catalog seed-cards --set $(SET)
 
 # Rebuild apps/web SET_SYMBOL_URLS from Bulbapedia markdown export.
 # Usage: make sync-set-symbols [SYMBOLS_MD=/abs/path/to/List_of_...md]

@@ -7,10 +7,10 @@ name_en: Purrugly
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/339/Purrugly.S9A.60.43138.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
-  - poke_ball_mirror
+- normal
+- poke_ball_mirror
 sources:
   pokellector:
     id: '43138'
@@ -20,6 +20,6 @@ sources:
   cardrush:
     name_ja: ブニャット
     variants_seen:
-      - normal
-      - poke_ball_mirror
+    - normal
+    - poke_ball_mirror
     rarity_code: U

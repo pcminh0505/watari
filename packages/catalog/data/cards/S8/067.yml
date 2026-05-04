@@ -7,9 +7,9 @@ name_en: Excadrill
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/326/Excadrill.S8.67.40461.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '40461'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ドリュウズ
     variants_seen:
-      - normal
+    - normal
     rarity_code: C

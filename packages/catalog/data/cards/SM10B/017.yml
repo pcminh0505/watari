@@ -7,9 +7,9 @@ name_en: Abomasnow
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/268/Abomasnow.SM10B.17.27662.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '27662'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ユキノオー
     variants_seen:
-      - normal
+    - normal
     rarity_code: U

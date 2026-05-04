@@ -7,10 +7,10 @@ name_en: Sneasel
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/336/Sneasel.S9.62.42599.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
-  - poke_ball_mirror
+- normal
+- poke_ball_mirror
 sources:
   pokellector:
     id: '42599'
@@ -20,6 +20,6 @@ sources:
   cardrush:
     name_ja: ニューラ
     variants_seen:
-      - normal
-      - poke_ball_mirror
+    - normal
+    - poke_ball_mirror
     rarity_code: U

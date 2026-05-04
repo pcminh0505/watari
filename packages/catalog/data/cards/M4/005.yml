@@ -7,9 +7,9 @@ name_en: Chespin
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/430/Chespin.M4.5.60922.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '60922'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: ハリマロン
     variants_seen:
-      - normal
+    - normal

@@ -7,9 +7,9 @@ name_en: Tepig
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/272/Tepig.SM11A.13.28964.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '28964'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ポカブ
     variants_seen:
-      - normal
+    - normal
     rarity_code: C

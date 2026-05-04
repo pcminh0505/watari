@@ -7,9 +7,9 @@ name_en: Grotle
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/357/Grotle.S12A.7.45833.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '45833'

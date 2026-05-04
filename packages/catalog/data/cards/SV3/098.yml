@@ -7,9 +7,9 @@ name_en: Oinkologne
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/368/Oinkologne.SV3.98.48693.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '48693'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: パフュートン
     variants_seen:
-      - normal
+    - normal

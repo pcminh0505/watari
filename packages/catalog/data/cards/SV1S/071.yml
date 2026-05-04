@@ -7,9 +7,9 @@ name_en: Boulder Breastplate
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/361/Boulder-Breastplate.SV1S.71.46151.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '46151'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: レッスンスタジオ
     variants_seen:
-      - normal
+    - normal

@@ -7,9 +7,9 @@ name_en: Regirock
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/242/Regirock.SM7.49.21010.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '21010'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: マツリカ
     variants_seen:
-      - normal
+    - normal
     rarity_code: U

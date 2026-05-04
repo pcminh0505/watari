@@ -7,9 +7,9 @@ name_en: Rookidee
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/369/Rookidee.SV2P.63.47594.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '47594'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: ココガラ
     variants_seen:
-      - normal
+    - normal

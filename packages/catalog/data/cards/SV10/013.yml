@@ -7,9 +7,9 @@ name_en: Growlithe
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/413/Growlithe.SV10.13.57089.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '57089'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: ガーディ
     variants_seen:
-      - normal
+    - normal

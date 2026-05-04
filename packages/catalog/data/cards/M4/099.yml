@@ -7,9 +7,9 @@ name_en: Mega Floette ex
 rarity_code: SR
 category: card
 image: https://den-cards.pokellector.com/430/Floette-ex.M4.99.61018.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '61018'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: メガフラエッテex
     variants_seen:
-      - normal
+    - normal

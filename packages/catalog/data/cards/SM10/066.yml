@@ -7,9 +7,9 @@ name_en: Whimsicott GX
 rarity_code: RR
 category: card
 image: https://den-cards.pokellector.com/266/Whimsicott-GX.SM10.66.26845.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '26845'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ガブリアス＆ギラティナGX
     variants_seen:
-      - normal
+    - normal
     rarity_code: RR

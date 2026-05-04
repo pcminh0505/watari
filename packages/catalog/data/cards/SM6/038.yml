@@ -7,9 +7,9 @@ name_en: Skrelp
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/235/Skrelp.SM6.38.20510.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '20510'

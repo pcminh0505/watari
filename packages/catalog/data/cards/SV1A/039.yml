@@ -7,9 +7,9 @@ name_en: Oranguru
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/366/Oranguru.SV1A.39.46963.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '46963'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: ヤレユータン
     variants_seen:
-      - normal
+    - normal

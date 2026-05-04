@@ -7,9 +7,9 @@ name_en: Galar Friends
 rarity_code: SR
 category: card
 image: https://den-cards.pokellector.com/338/Galar-Friends.S8B.258.41547.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '41547'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ガラルの仲間たち
     variants_seen:
-      - normal
+    - normal
     rarity_code: SR

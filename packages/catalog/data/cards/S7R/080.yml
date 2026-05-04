@@ -7,9 +7,9 @@ name_en: Trevenant VMAX
 rarity_code: HR
 category: card
 image: https://den-cards.pokellector.com/319/Trevenant-VMAX.S7R.80.39565.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '39565'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: オーロットVMAX
     variants_seen:
-      - normal
+    - normal
     rarity_code: HR

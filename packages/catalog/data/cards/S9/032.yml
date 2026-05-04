@@ -7,10 +7,10 @@ name_en: Cubchoo
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/336/Cubchoo.S9.32.42571.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
-  - poke_ball_mirror
+- normal
+- poke_ball_mirror
 sources:
   pokellector:
     id: '42571'
@@ -20,6 +20,6 @@ sources:
   cardrush:
     name_ja: クマシュン
     variants_seen:
-      - normal
-      - poke_ball_mirror
+    - normal
+    - poke_ball_mirror
     rarity_code: C

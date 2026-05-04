@@ -7,9 +7,9 @@ name_en: Hide Darkness Energy
 rarity_code: U
 category: energy
 image: https://den-cards.pokellector.com/293/Hide-Darkness-Energy.S3.99.34795.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '34795'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ハイド悪エネルギー
     variants_seen:
-      - normal
+    - normal
     rarity_code: U

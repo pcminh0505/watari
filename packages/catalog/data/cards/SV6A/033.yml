@@ -7,9 +7,9 @@ name_en: Inkay
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/398/Inkay.SV6A.33.53151.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '53151'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: マーイーカ
     variants_seen:
-      - normal
+    - normal

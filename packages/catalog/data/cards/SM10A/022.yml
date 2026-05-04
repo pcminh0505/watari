@@ -7,9 +7,9 @@ name_en: Gible
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/267/Gible.SM10A.22.27512.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '27512'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: フカマル
     variants_seen:
-      - normal
+    - normal
     rarity_code: C

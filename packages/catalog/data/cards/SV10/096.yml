@@ -7,9 +7,9 @@ name_en: Team Rocket's Watchtower
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/413/Team-Rockets-Watchtower.SV10.96.57126.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '57126'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: ロケット団の監視塔
     variants_seen:
-      - normal
+    - normal

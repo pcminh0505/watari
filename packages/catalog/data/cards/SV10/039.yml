@@ -7,9 +7,9 @@ name_en: Team Rocket's Mewtwo ex
 rarity_code: RR
 category: card
 image: https://den-cards.pokellector.com/413/Team-Rockets-Mewtwo-ex.SV10.39.56866.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '56866'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: ロケット団のミュウツーex
     variants_seen:
-      - normal
+    - normal

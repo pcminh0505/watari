@@ -7,9 +7,9 @@ name_en: Steel Saucer
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/284/Steel-Saucer.S1H.54.31203.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '31203'

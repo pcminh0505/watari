@@ -7,9 +7,9 @@ name_en: Alolan Exeggutor ex
 rarity_code: UR
 category: card
 image: https://den-cards.pokellector.com/403/Alolan-Exeggutor-ex.SV7A.92.54426.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '54426'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: アローラナッシーex
     variants_seen:
-      - normal
+    - normal

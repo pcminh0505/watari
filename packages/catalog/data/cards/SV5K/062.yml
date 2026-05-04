@@ -7,9 +7,9 @@ name_en: Awakening Drum
 rarity_code: R
 category: card
 image: https://den-cards.pokellector.com/386/Awakening-Drum.SV5K.62.51866.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '51866'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: 覚醒のドラム
     variants_seen:
-      - normal
+    - normal

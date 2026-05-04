@@ -7,9 +7,9 @@ name_en: Heat Factory Prism Star
 rarity_code: R
 category: card
 image: https://den-cards.pokellector.com/288/Heat-Factory-Prism-Star.SM12A.166.30509.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '30509'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ヒートファクトリー◇
     variants_seen:
-      - normal
+    - normal
     rarity_code: R

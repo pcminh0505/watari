@@ -4,7 +4,9 @@ set_code: S6K
 era_block: sw
 language: jp
 name_ja: 漆黒のガイスト
-name_en: 漆黒のガイスト
+name_en: Jet-Black Spirit
 release_date: 2021-04-23
 tcgdex_id: S6K
 pokellector_slug: Jet-Black-Spirit-Expansion
+tcgcollector_id: '11422'
+tcgcollector_slug: jet-black-spirit

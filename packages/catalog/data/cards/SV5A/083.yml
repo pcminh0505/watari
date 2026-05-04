@@ -7,9 +7,9 @@ name_en: Greninja ex
 rarity_code: SR
 category: card
 image: https://den-cards.pokellector.com/391/Greninja-ex.SV5A.83.52831.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '52831'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: ゲッコウガex
     variants_seen:
-      - normal
+    - normal

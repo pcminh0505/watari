@@ -7,9 +7,9 @@ name_en: Magnezone
 rarity_code: R
 category: card
 image: https://den-cards.pokellector.com/232/Magnezone.SM5S.37.19874.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '19874'

@@ -7,9 +7,9 @@ name_en: Sandy Shocks ex
 rarity_code: SR
 category: card
 image: https://den-cards.pokellector.com/381/Sandy-Shocks-ex.SV4K.83.50815.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '50815'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: スナノケガワex
     variants_seen:
-      - normal
+    - normal

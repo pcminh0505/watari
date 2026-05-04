@@ -7,9 +7,9 @@ name_en: Camping Gear
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/306/Camping-Gear.S5I.63.36813.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '36813'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: キャンプセット
     variants_seen:
-      - normal
+    - normal
     rarity_code: U

@@ -7,9 +7,9 @@ name_en: Pidgeotto
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/260/Pidgeotto.SM9.69.25427.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '25427'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ピジョン
     variants_seen:
-      - normal
+    - normal
     rarity_code: UR

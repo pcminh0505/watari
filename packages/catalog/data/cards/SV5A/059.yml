@@ -7,9 +7,9 @@ name_en: Survival Cast
 rarity_code: R
 category: card
 image: https://den-cards.pokellector.com/391/Survival-Cast.SV5A.59.52411.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '52411'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: サバイブギプス
     variants_seen:
-      - normal
+    - normal

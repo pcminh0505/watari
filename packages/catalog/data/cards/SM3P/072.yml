@@ -7,9 +7,9 @@ name_en: Warp Energy
 rarity_code: U
 category: energy
 image: https://den-cards.pokellector.com/224/Warp-Energy.SM3+.72.18333.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '18333'

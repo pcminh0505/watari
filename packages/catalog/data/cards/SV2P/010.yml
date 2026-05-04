@@ -7,9 +7,9 @@ name_en: Bramblin
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/369/Bramblin.SV2P.10.47563.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '47563'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: アノクサ
     variants_seen:
-      - normal
+    - normal

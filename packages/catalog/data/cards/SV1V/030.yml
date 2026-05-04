@@ -7,9 +7,9 @@ name_en: Rotom
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/362/Rotom.SV1V.30.46308.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '46308'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: ロトム
     variants_seen:
-      - normal
+    - normal

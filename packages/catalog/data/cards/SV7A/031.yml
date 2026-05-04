@@ -7,9 +7,9 @@ name_en: Passimian
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/403/Passimian.SV7A.31.54009.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '54009'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: ナゲツケサル
     variants_seen:
-      - normal
+    - normal

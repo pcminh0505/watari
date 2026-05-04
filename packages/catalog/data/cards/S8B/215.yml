@@ -7,9 +7,9 @@ name_en: Orbeetle VMAX
 rarity_code: CSR
 category: card
 image: https://den-cards.pokellector.com/338/Orbeetle-VMAX.S8B.215.41512.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '41512'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: イオルブVMAX
     variants_seen:
-      - normal
+    - normal
     rarity_code: CSR

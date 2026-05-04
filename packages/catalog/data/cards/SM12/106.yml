@@ -7,9 +7,9 @@ name_en: Cynthia & Caitlin
 rarity_code: SR
 category: card
 image: https://den-cards.pokellector.com/281/Cynthia-Caitlin.SM12.106.30156.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '30156'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: シロナ＆カトレア
     variants_seen:
-      - normal
+    - normal
     rarity_code: SR

@@ -7,9 +7,9 @@ name_en: Lairon
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/226/Lairon.SM4S.33.19384.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '19384'

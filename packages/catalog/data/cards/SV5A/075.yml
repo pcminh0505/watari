@@ -7,9 +7,9 @@ name_en: Hisuian Growlithe
 rarity_code: AR
 category: card
 image: https://den-cards.pokellector.com/391/Hisuian-Growlithe.SV5A.75.52764.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '52764'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: ヒスイガーディ
     variants_seen:
-      - normal
+    - normal

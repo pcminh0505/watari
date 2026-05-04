@@ -7,9 +7,9 @@ name_en: Dedenne
 rarity_code: CHR
 category: card
 image: https://den-cards.pokellector.com/338/Dedenne.S8B.200.41504.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '41504'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: デデンネ
     variants_seen:
-      - normal
+    - normal
     rarity_code: CHR

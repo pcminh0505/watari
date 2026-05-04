@@ -7,9 +7,9 @@ name_en: Sylveon ex
 rarity_code: RR
 category: card
 image: https://den-cards.pokellector.com/406/Sylveon-ex.SV8A.69.54670.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '54670'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: ニンフィアex
     variants_seen:
-      - normal
+    - normal

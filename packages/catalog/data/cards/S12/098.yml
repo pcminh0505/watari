@@ -7,9 +7,9 @@ name_en: Regain Energy
 rarity_code: U
 category: energy
 image: https://den-cards.pokellector.com/351/Regain-Energy.S12.98.45163.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '45163'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: リゲインエネルギー
     variants_seen:
-      - normal
+    - normal
     rarity_code: U

@@ -7,9 +7,9 @@ name_en: Heatran
 rarity_code: R
 category: card
 image: https://den-cards.pokellector.com/393/Heatran.SV6.76.52948.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '52948'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: キテルグマ
     variants_seen:
-      - normal
+    - normal

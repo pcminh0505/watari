@@ -7,9 +7,9 @@ name_en: Necrozma GX
 rarity_code: RR
 category: card
 image: https://den-cards.pokellector.com/228/Necrozma-GX.SM4+.50.19572.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '19572'

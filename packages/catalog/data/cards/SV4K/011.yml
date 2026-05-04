@@ -7,9 +7,9 @@ name_en: Numel
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/381/Numel.SV4K.11.50743.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '50743'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: ドンメル
     variants_seen:
-      - normal
+    - normal

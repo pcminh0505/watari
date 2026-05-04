@@ -7,9 +7,9 @@ name_en: Pinsir
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/243/Pinsir.SM7A.1.22385.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '22385'

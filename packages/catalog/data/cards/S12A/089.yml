@@ -7,9 +7,9 @@ name_en: Liepard
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/357/Liepard.S12A.89.45634.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '45634'

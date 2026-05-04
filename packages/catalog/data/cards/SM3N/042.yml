@@ -7,9 +7,9 @@ name_en: Porygon
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/218/Porygon.SM3N.42.18150.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '18150'

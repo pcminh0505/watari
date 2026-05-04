@@ -4,7 +4,9 @@ set_code: SM10B
 era_block: sm
 language: jp
 name_ja: スカイレジェンド
-name_en: スカイレジェンド
+name_en: Sky Legend
 release_date: 2019-04-26
 tcgdex_id: SM10b
 pokellector_slug: Sky-Legend-Expansion
+tcgcollector_id: '11298'
+tcgcollector_slug: sky-legend

@@ -4,7 +4,9 @@ set_code: SM7A
 era_block: sm
 language: jp
 name_ja: 迅雷スパーク
-name_en: 迅雷スパーク
+name_en: Thunderclap Spark
 release_date: 2018-08-03
 tcgdex_id: SM7a
 pokellector_slug: Thunderclap-Spark-Expansion
+tcgcollector_id: '11285'
+tcgcollector_slug: thunderclap-spark

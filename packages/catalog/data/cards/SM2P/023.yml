@@ -7,9 +7,9 @@ name_en: Slowking
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/212/Slowking.SM2+.23.17485.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '17485'

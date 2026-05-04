@@ -7,9 +7,9 @@ name_en: Galarian Darmanitan VMAX
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/297/Galarian-Darmanitan-VMAX.S4.24.35598.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '35598'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: エースバーン(R仕様)
     variants_seen:
-      - normal
+    - normal
     rarity_code: RRR

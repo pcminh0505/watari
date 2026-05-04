@@ -2,14 +2,14 @@
 # To freeze a manually-edited value, add `# manual: true` on line 1.
 set_code: M2A
 local_id: '130'
-name_ja:
+name_ja: Noibat
 name_en: Noibat
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/427/Noibat.M2A.130.60014.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '60014'

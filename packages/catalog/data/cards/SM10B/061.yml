@@ -7,9 +7,9 @@ name_en: Poké Maniac
 rarity_code: SR
 category: card
 image: https://den-cards.pokellector.com/268/Pok-Maniac.SM10B.61.27997.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '27997'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: かいじゅうマニア
     variants_seen:
-      - normal
+    - normal
     rarity_code: SR

@@ -7,9 +7,9 @@ name_en: Electrode
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/224/Electrode.SM3+.32.18307.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '18307'

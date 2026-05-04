@@ -7,9 +7,9 @@ name_en: Janine
 rarity_code: SR
 category: card
 image: https://den-cards.pokellector.com/262/Janine.SM9A.62.25634.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '25634'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: アンズ
     variants_seen:
-      - normal
+    - normal
     rarity_code: SR

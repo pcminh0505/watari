@@ -7,9 +7,9 @@ name_en: Psychic Energy
 rarity_code: UR
 category: energy
 image: https://den-cards.pokellector.com/371/Psychic-Energy.SV2A.210.48598.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '48598'
@@ -22,4 +22,4 @@ sources:
   cardrush:
     name_ja: 基本超エネルギー(SVデザイン)
     variants_seen:
-      - normal
+    - normal

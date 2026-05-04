@@ -7,10 +7,10 @@ name_en: Wormadam
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/336/Wormadam.S9.66.42603.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
-  - poke_ball_mirror
+- normal
+- poke_ball_mirror
 sources:
   pokellector:
     id: '42603'
@@ -20,6 +20,6 @@ sources:
   cardrush:
     name_ja: ミノマダム
     variants_seen:
-      - normal
-      - poke_ball_mirror
+    - normal
+    - poke_ball_mirror
     rarity_code: SR

@@ -7,9 +7,9 @@ name_en: Zag Zag Pickel
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/266/Zag-Zag-Pickel.SM10.80.26935.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '26935'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ザクザクピッケル
     variants_seen:
-      - normal
+    - normal
     rarity_code: U

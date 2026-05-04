@@ -7,9 +7,9 @@ name_en: Floatzel
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/366/Floatzel.SV1A.25.46902.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '46902'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: ブイゼル
     variants_seen:
-      - normal
+    - normal

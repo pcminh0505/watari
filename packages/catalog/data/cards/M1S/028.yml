@@ -7,9 +7,9 @@ name_en: Magneton
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/417/Magneton.M1S.28.58915.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '58915'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: レアコイル
     variants_seen:
-      - normal
+    - normal
     rarity_code: C

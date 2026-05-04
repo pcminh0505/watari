@@ -7,9 +7,9 @@ name_en: Baltoy
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/242/Baltoy.SM7.47.21008.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '21008'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: フェアリーチャームドラゴン
     variants_seen:
-      - normal
+    - normal
     rarity_code: C

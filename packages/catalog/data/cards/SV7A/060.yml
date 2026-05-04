@@ -7,9 +7,9 @@ name_en: Drayton
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/403/Drayton.SV7A.60.54025.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '54025'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: カキツバタ
     variants_seen:
-      - normal
+    - normal

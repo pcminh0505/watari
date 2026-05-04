@@ -7,9 +7,9 @@ name_en: Vibrava
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/293/Vibrava.S3.45.34894.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '34894'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ビブラーバ
     variants_seen:
-      - normal
+    - normal
     rarity_code: U

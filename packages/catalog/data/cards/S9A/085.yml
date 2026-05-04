@@ -7,9 +7,9 @@ name_en: Hisuian Typhlosion VSTAR
 rarity_code: HR
 category: card
 image: https://den-cards.pokellector.com/339/Hisuian-Typhlosion-VSTAR.S9A.85.43216.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '43216'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ヒスイバクフーンVSTAR
     variants_seen:
-      - normal
+    - normal
     rarity_code: HR

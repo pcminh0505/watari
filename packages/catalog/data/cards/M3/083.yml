@@ -7,9 +7,9 @@ name_en: Talonflame
 rarity_code: AR
 category: card
 image: https://den-cards.pokellector.com/428/Talonflame.M3.83.60191.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '60191'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: ファイアロー
     variants_seen:
-      - normal
+    - normal

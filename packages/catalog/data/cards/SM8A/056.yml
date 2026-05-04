@@ -2,14 +2,14 @@
 # To freeze a manually-edited value, add `# manual: true` on line 1.
 set_code: sm8a
 local_id: '056'
-name_ja:
+name_ja: Cobalion GX
 name_en: Cobalion GX
 rarity_code: UR
 category: card
 image: https://den-cards.pokellector.com/245/Cobalion-GX.SM8A.56.24154.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '24154'

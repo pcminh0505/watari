@@ -2,14 +2,14 @@
 # To freeze a manually-edited value, add `# manual: true` on line 1.
 set_code: sm4s
 local_id: '052'
-name_ja:
+name_ja: Buzzwole GX
 name_en: Buzzwole GX
 rarity_code: UR
 category: card
 image: https://den-cards.pokellector.com/226/Buzzwole-GX.SM4S.52.19393.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '19393'

@@ -4,7 +4,9 @@ set_code: SM10
 era_block: sm
 language: jp
 name_ja: ダブルブレイズ
-name_en: Unbroken Bonds
+name_en: Double Blaze
 release_date: 2019-03-01
 tcgdex_id: SM10
 pokellector_slug: Double-Blaze-Expansion
+tcgcollector_id: '11180'
+tcgcollector_slug: double-blaze

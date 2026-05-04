@@ -7,9 +7,9 @@ name_en: Dunsparce
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/408/Dunsparce.SV9.78.55507.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '55507'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: ノコッチ
     variants_seen:
-      - normal
+    - normal

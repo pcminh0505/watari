@@ -7,9 +7,9 @@ name_en: Miraculous Intercom
 rarity_code: R
 category: card
 image: https://den-cards.pokellector.com/405/Miraculous-Intercom.SV8.97.54475.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '54475'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: ミラクルインカム
     variants_seen:
-      - normal
+    - normal

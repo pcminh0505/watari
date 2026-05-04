@@ -7,9 +7,9 @@ name_en: Koga's Trap
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/262/Kogas-Trap.SM9A.50.25627.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '25627'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: キョウの罠
     variants_seen:
-      - normal
+    - normal
     rarity_code: U

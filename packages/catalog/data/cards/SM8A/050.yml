@@ -7,9 +7,9 @@ name_en: Nanu
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/245/Nanu.SM8A.50.24150.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '24150'

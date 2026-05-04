@@ -7,9 +7,9 @@ name_en: Zygarde GX
 rarity_code: RR
 category: card
 image: https://den-cards.pokellector.com/235/Zygarde-GX.SM6.50.20421.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '20421'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ワタル◇
     variants_seen:
-      - normal
+    - normal
     rarity_code: RR

@@ -7,9 +7,9 @@ name_en: Kilowattrel
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/405/Kilowattrel.SV8.43.54555.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '54555'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: タイカイデン
     variants_seen:
-      - normal
+    - normal

@@ -7,9 +7,9 @@ name_en: Bloodmoon Ursaluna
 rarity_code: R
 category: card
 image: https://den-cards.pokellector.com/398/Bloodmoon-Ursaluna.SV6A.25.53519.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '53519'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: ガチグマアカツキ
     variants_seen:
-      - normal
+    - normal

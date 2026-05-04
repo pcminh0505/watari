@@ -4,7 +4,9 @@ set_code: SM2L
 era_block: sm
 language: jp
 name_ja: アローラの月光
-name_en: アローラの月光
+name_en: Alolan Moonlight
 release_date: 2017-03-17
 tcgdex_id: SM2L
 pokellector_slug: Alola-Moonlight-Expansion
+tcgcollector_id: '11277'
+tcgcollector_slug: alolan-moonlight

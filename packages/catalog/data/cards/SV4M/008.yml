@@ -7,9 +7,9 @@ name_en: Toedscruel
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/382/Toedscruel.SV4K.8.50835.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '50835'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: リククラゲ
     variants_seen:
-      - normal
+    - normal

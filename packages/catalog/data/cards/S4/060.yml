@@ -7,9 +7,9 @@ name_en: Terrakion
 rarity_code: R
 category: card
 image: https://den-cards.pokellector.com/297/Terrakion.S4.60.35621.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '35621'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: テラキオン
     variants_seen:
-      - normal
+    - normal
     rarity_code: RRR

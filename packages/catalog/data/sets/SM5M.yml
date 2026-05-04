@@ -4,7 +4,9 @@ set_code: SM5M
 era_block: sm
 language: jp
 name_ja: ウルトラムーン
-name_en: ウルトラムーン
+name_en: Ultra Moon
 release_date: 2017-12-08
 tcgdex_id: SM5M
 pokellector_slug: Ultra-Moon-Expansion
+tcgcollector_id: '11164'
+tcgcollector_slug: ultra-moon

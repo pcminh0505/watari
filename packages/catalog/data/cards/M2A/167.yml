@@ -2,14 +2,14 @@
 # To freeze a manually-edited value, add `# manual: true` on line 1.
 set_code: M2A
 local_id: '167'
-name_ja:
+name_ja: Hop's Choice Band
 name_en: Hop's Choice Band
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/427/Hops-Choice-Band.M2A.167.60045.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '60045'

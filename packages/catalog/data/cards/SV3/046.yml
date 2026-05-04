@@ -7,9 +7,9 @@ name_en: Espeon
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/368/Espeon.SV3.46.48677.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '48677'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: ニダンギル
     variants_seen:
-      - normal
+    - normal

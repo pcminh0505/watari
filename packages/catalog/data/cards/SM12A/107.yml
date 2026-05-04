@@ -7,9 +7,9 @@ name_en: Kangaskhan
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/288/Kangaskhan.SM12A.107.30454.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '30454'

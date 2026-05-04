@@ -7,9 +7,9 @@ name_en: Granbull
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/295/Granbull.S2A.29.34392.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '34392'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: グランブル
     variants_seen:
-      - normal
+    - normal
     rarity_code: C

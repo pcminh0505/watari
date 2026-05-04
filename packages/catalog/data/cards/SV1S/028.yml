@@ -7,9 +7,9 @@ name_en: Gardevoir ex
 rarity_code: RR
 category: card
 image: https://den-cards.pokellector.com/361/Gardevoir-ex.SV1S.28.46166.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '46166'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: クワッス
     variants_seen:
-      - normal
+    - normal

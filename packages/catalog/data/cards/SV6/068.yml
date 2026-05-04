@@ -7,9 +7,9 @@ name_en: Venipede
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/393/Venipede.SV6.68.52940.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '52940'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: フシデ
     variants_seen:
-      - normal
+    - normal

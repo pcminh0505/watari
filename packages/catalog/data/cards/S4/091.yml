@@ -7,9 +7,9 @@ name_en: Telephoto Scope
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/297/Telephoto-Scope.S4.91.35645.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '35645'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: 望遠スコープ
     variants_seen:
-      - normal
+    - normal
     rarity_code: R

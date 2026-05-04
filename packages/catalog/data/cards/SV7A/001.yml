@@ -7,9 +7,9 @@ name_en: Exeggcute
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/403/Exeggcute.SV7A.1.53992.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '53992'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: タマタマ
     variants_seen:
-      - normal
+    - normal

@@ -7,9 +7,9 @@ name_en: Amoonguss
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/277/Amoonguss.SM11.10.28789.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '28789'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ギャロップ
     variants_seen:
-      - normal
+    - normal
     rarity_code: U

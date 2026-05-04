@@ -7,9 +7,9 @@ name_en: Cufant
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/293/Cufant.S3.72.34909.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '34909'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ゾウドウ
     variants_seen:
-      - normal
+    - normal
     rarity_code: U

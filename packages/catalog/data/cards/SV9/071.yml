@@ -7,9 +7,9 @@ name_en: Shelgon
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/408/Shelgon.SV9.71.55760.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '55760'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: コモルー
     variants_seen:
-      - normal
+    - normal

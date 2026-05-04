@@ -7,9 +7,9 @@ name_en: Flutter Mane
 rarity_code: AR
 category: card
 image: https://den-cards.pokellector.com/386/Flutter-Mane.SV5K.76.51716.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '51716'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: ハバタクカミ
     variants_seen:
-      - normal
+    - normal

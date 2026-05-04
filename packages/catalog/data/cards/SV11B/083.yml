@@ -7,10 +7,10 @@ name_en: N's Plot
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/414/Ns-Plot.SV11B.83.57730.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
-  - poke_ball_mirror
+- normal
+- poke_ball_mirror
 sources:
   pokellector:
     id: '57730'
@@ -20,5 +20,5 @@ sources:
   cardrush:
     name_ja: Nの筋書き
     variants_seen:
-      - normal
-      - poke_ball_mirror
+    - normal
+    - poke_ball_mirror

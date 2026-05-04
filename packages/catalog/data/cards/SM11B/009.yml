@@ -7,9 +7,9 @@ name_en: Piplup
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/278/Piplup.SM11B.9.29274.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '29274'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ポッチャマ
     variants_seen:
-      - normal
+    - normal
     rarity_code: C

@@ -7,9 +7,9 @@ name_en: Zoroark
 rarity_code: R
 category: card
 image: https://den-cards.pokellector.com/245/Zoroark.SM8A.26.23836.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '23836'

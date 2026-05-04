@@ -7,9 +7,9 @@ name_en: Fidough
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/361/Fidough.SV1S.33.46248.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '46248'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: パモ
     variants_seen:
-      - normal
+    - normal

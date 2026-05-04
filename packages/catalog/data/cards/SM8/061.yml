@@ -7,9 +7,9 @@ name_en: Scizor
 rarity_code: R
 category: card
 image: https://den-cards.pokellector.com/258/Scizor.SM8.61.23285.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '23285'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ガオガエンGX
     variants_seen:
-      - normal
+    - normal
     rarity_code: RR

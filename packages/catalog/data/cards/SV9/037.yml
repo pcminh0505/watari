@@ -7,9 +7,9 @@ name_en: Beldum
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/408/Beldum.SV9.37.55504.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '55504'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: ダンバル
     variants_seen:
-      - normal
+    - normal

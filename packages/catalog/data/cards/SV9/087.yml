@@ -7,9 +7,9 @@ name_en: Hop's Cramorant
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/408/Hops-Cramorant.SV9.87.55484.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '55484'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: シロナのガブリアスex
     variants_seen:
-      - normal
+    - normal

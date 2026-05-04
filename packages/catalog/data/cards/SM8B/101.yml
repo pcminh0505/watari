@@ -7,9 +7,9 @@ name_en: Garchomp
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/241/Garchomp.SM8B.101.24888.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '24888'

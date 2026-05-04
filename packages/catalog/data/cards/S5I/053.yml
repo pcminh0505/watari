@@ -7,9 +7,9 @@ name_en: Aegislash
 rarity_code: R
 category: card
 image: https://den-cards.pokellector.com/306/Aegislash.S5I.53.36805.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '36805'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ギルガルド
     variants_seen:
-      - normal
+    - normal
     rarity_code: R

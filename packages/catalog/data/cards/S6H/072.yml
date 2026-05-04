@@ -7,9 +7,9 @@ name_en: Ice Rider Calyrex V
 rarity_code: SR
 category: card
 image: https://den-cards.pokellector.com/309/Ice-Rider-Calyrex-V.S6H.72.38771.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '38771'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: はくばバドレックスV
     variants_seen:
-      - normal
+    - normal
     rarity_code: SR

@@ -7,9 +7,9 @@ name_en: Gimmighoul
 rarity_code: AR
 category: card
 image: https://den-cards.pokellector.com/376/Gimmighoul.SV3A.68.49391.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '49391'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: コレクレー
     variants_seen:
-      - normal
+    - normal

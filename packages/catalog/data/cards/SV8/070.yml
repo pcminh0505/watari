@@ -7,9 +7,9 @@ name_en: Deino
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/405/Deino.SV8.70.54481.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '54481'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: モノズ
     variants_seen:
-      - normal
+    - normal

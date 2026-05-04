@@ -7,9 +7,9 @@ name_en: Grovyle
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/240/Grovyle.SM7B.4.23110.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '23110'

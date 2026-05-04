@@ -7,9 +7,9 @@ name_en: Barraskewda
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/297/Barraskewda.S4.29.35339.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '35339'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: カマスジョー
     variants_seen:
-      - normal
+    - normal
     rarity_code: U

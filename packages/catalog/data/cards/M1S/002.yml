@@ -7,10 +7,10 @@ name_en: Tangrowth
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/417/Tangrowth.M1S.2.58892.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
-  - jumbo
+- normal
+- jumbo
 sources:
   pokellector:
     id: '58892'
@@ -20,6 +20,6 @@ sources:
   cardrush:
     name_ja: モジャンボ
     variants_seen:
-      - jumbo
-      - normal
+    - jumbo
+    - normal
     rarity_code: U

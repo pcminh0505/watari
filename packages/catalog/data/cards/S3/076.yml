@@ -7,9 +7,9 @@ name_en: Teddiursa
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/293/Teddiursa.S3.76.34912.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '34912'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ヒメグマ
     variants_seen:
-      - normal
+    - normal
     rarity_code: U

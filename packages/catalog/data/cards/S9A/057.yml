@@ -7,10 +7,10 @@ name_en: Stantler
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/339/Stantler.S9A.57.42889.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
-  - poke_ball_mirror
+- normal
+- poke_ball_mirror
 sources:
   pokellector:
     id: '42889'
@@ -20,6 +20,6 @@ sources:
   cardrush:
     name_ja: オドシシ
     variants_seen:
-      - normal
-      - poke_ball_mirror
+    - normal
+    - poke_ball_mirror
     rarity_code: C

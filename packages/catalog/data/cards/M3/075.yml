@@ -7,9 +7,9 @@ name_en: Rosa's Encouragement
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/428/Rosas-Encouragement.M3.75.60249.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '60249'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: メイのはげまし
     variants_seen:
-      - normal
+    - normal

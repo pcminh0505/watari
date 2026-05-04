@@ -6,9 +6,9 @@ name_en: Mega Charizard X ex
 rarity_code: MUR
 category: card
 image: https://den-cards.pokellector.com/425/Mega-Charizard-X-ex.M2.116.59601.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '59601'
@@ -18,4 +18,4 @@ sources:
   cardrush:
     name_ja: メガリザードンXex
     variants_seen:
-      - normal
+    - normal

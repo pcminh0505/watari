@@ -7,9 +7,9 @@ name_en: Zorua
 rarity_code: AR
 category: card
 image: https://den-cards.pokellector.com/398/Zorua.SV6A.72.53577.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '53577'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: ゾロア
     variants_seen:
-      - normal
+    - normal

@@ -7,9 +7,9 @@ name_en: Cinderace
 rarity_code: R
 category: card
 image: https://den-cards.pokellector.com/309/Cinderace.S6H.17.38623.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '38623'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: エースバーン
     variants_seen:
-      - normal
+    - normal
     rarity_code: R

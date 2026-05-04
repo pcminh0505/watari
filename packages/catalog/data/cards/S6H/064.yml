@@ -7,9 +7,9 @@ name_en: Crushing Gloves
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/309/Crushing-Gloves.S6H.64.38724.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '38724'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ブレイクグローブ
     variants_seen:
-      - normal
+    - normal
     rarity_code: U

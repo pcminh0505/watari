@@ -7,9 +7,9 @@ name_en: Crabrawler
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/370/Crabrawler.SV2D.42.47638.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '47638'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: マケンカニ
     variants_seen:
-      - normal
+    - normal

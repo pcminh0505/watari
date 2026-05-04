@@ -7,9 +7,9 @@ name_en: Simisear
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/293/Simisear.S3.14.34844.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '34844'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: バオッキー
     variants_seen:
-      - normal
+    - normal
     rarity_code: RR

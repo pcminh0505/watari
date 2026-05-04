@@ -2,14 +2,14 @@
 # To freeze a manually-edited value, add `# manual: true` on line 1.
 set_code: sm2l
 local_id: '054'
-name_ja:
+name_ja: Metagross GX
 name_en: Metagross GX
 rarity_code: UR
 category: card
 image: https://den-cards.pokellector.com/210/Metagross-GX.SM2L.54.17313.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '17313'

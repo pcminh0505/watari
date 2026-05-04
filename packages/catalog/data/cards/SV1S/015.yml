@@ -7,9 +7,9 @@ name_en: Buizel
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/361/Buizel.SV1S.15.46233.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '46233'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: ガーディ
     variants_seen:
-      - normal
+    - normal

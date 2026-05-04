@@ -7,9 +7,9 @@ name_en: Great Ball
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/366/Great-Ball.SV1A.65.46944.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '46944'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: スーパーボール
     variants_seen:
-      - normal
+    - normal

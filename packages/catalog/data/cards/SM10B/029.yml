@@ -7,9 +7,9 @@ name_en: Uxie
 rarity_code: R
 category: card
 image: https://den-cards.pokellector.com/268/Uxie.SM10B.29.27673.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '27673'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ユクシー
     variants_seen:
-      - normal
+    - normal
     rarity_code: R

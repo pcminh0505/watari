@@ -4,7 +4,9 @@ set_code: SM12
 era_block: sm
 language: jp
 name_ja: オルタージェネシス
-name_en: Cosmic Eclipse
+name_en: Alter Genesis
 release_date: 2019-09-06
 tcgdex_id: SM12
 pokellector_slug: Alter-Genesis-Expansion
+tcgcollector_id: '11185'
+tcgcollector_slug: alter-genesis

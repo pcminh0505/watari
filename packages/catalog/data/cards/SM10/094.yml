@@ -7,9 +7,9 @@ name_en: Kiawe
 rarity_code: R
 category: card
 image: https://den-cards.pokellector.com/266/Kiawe.SM10.94.26945.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '26945'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: カキ
     variants_seen:
-      - normal
+    - normal
     rarity_code: TR

@@ -7,9 +7,9 @@ name_en: Professor's Research [Professor Turo]
 rarity_code: SR
 category: card
 image: https://den-cards.pokellector.com/362/Professors-Research-Professor-Turo.SV1V.98.46830.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '46830'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: 博士の研究/フトゥー博士
     variants_seen:
-      - normal
+    - normal

@@ -7,9 +7,9 @@ name_en: Hyperrogue Ange Floette
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/430/Ange-Floette.M4.79.60935.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '60935'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: アンジュフラエッテ
     variants_seen:
-      - normal
+    - normal

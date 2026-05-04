@@ -7,9 +7,9 @@ name_en: Tapu Bulu GX
 rarity_code: UR
 category: card
 image: https://den-cards.pokellector.com/241/Tapu-Bulu-GX.SM8B.244.25250.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '25250'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: カプ・ブルルGX
     variants_seen:
-      - normal
+    - normal
     rarity_code: UR

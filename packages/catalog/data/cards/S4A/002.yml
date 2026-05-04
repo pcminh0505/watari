@@ -7,9 +7,9 @@ name_en: Dartrix
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/301/Dartrix.S4A.2.36318.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '36318'

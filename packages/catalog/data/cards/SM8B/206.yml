@@ -7,9 +7,9 @@ name_en: Leafeon GX
 rarity_code: SR
 category: card
 image: https://den-cards.pokellector.com/241/Leafeon-GX.SM8B.206.25316.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '25316'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: リーフィアGX
     variants_seen:
-      - normal
+    - normal
     rarity_code: SR

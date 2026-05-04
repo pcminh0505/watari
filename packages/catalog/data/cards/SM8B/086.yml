@@ -7,9 +7,9 @@ name_en: Dusk Mane Necrozma
 rarity_code: RR
 category: card
 image: https://den-cards.pokellector.com/241/Dusk-Mane-Necrozma.SM8B.86.24400.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '24400'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ネクロズマたそがれのたてがみGX
     variants_seen:
-      - normal
+    - normal
     rarity_code: RR

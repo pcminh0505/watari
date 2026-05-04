@@ -7,9 +7,9 @@ name_en: Shining Mew
 rarity_code: UR
 category: card
 image: https://den-cards.pokellector.com/224/Shining-Mew.SM3+.41.18147.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '18147'

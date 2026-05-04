@@ -7,9 +7,9 @@ name_en: Flygon
 rarity_code: R
 category: card
 image: https://den-cards.pokellector.com/425/Flygon.M2.47.59226.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '59226'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: フライゴン
     variants_seen:
-      - normal
+    - normal

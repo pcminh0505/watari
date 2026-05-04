@@ -7,9 +7,9 @@ name_en: Bird Keeper
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/293/Bird-Keeper.S3.94.34927.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '34927'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: とりつかい
     variants_seen:
-      - normal
+    - normal
     rarity_code: UR

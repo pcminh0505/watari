@@ -7,9 +7,9 @@ name_en: Evelyn
 rarity_code: SR
 category: card
 image: https://den-cards.pokellector.com/241/Evelyn.SM8B.159.25284.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '25284'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ルスワール
     variants_seen:
-      - normal
+    - normal
     rarity_code: SR

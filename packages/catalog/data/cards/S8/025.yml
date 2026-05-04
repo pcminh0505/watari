@@ -7,9 +7,9 @@ name_en: Gorebyss
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/326/Gorebyss.S8.25.39847.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '39847'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: カプ・テテフGX(25th)
     variants_seen:
-      - normal
+    - normal
     rarity_code: U

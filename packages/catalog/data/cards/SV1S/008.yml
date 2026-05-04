@@ -7,9 +7,9 @@ name_en: Arboliva
 rarity_code: R
 category: card
 image: https://den-cards.pokellector.com/361/Arboliva.SV1S.8.46226.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '46226'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: マメバッタ
     variants_seen:
-      - normal
+    - normal

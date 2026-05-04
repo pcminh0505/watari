@@ -7,9 +7,9 @@ name_en: Luminous Energy
 rarity_code: UR
 category: energy
 image: https://den-cards.pokellector.com/391/Luminous-Energy.SV5A.96.52839.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '52839'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: ルミナスエネルギー
     variants_seen:
-      - normal
+    - normal

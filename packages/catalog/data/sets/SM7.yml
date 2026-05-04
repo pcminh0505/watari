@@ -4,7 +4,9 @@ set_code: SM7
 era_block: sm
 language: jp
 name_ja: 裂空のカリスマ
-name_en: Celestial Storm
+name_en: Sky-Splitting Charisma
 release_date: 2018-06-01
 tcgdex_id: SM7
 pokellector_slug: Charisma-of-the-Cracked-Sky-Expansion
+tcgcollector_id: '11224'
+tcgcollector_slug: sky-splitting-charisma

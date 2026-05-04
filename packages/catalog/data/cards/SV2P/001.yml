@@ -7,9 +7,9 @@ name_en: Surskit
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/369/Surskit.SV2P.1.47554.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '47554'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: アメタマ
     variants_seen:
-      - normal
+    - normal

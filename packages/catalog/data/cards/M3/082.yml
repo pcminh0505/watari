@@ -7,9 +7,9 @@ name_en: Rowlet
 rarity_code: AR
 category: card
 image: https://den-cards.pokellector.com/428/Rowlet.M3.82.60254.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '60254'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: モクロー
     variants_seen:
-      - normal
+    - normal

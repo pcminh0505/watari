@@ -7,9 +7,9 @@ name_en: Seaking
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/406/Seaking.SV8A.29.54941.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '54941'

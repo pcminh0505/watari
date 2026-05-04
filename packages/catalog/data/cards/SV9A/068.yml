@@ -7,9 +7,9 @@ name_en: Hydrapple
 rarity_code: AR
 category: card
 image: https://den-cards.pokellector.com/411/Hydrapple.SV9A.68.56602.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '56602'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: カミツオロチ
     variants_seen:
-      - normal
+    - normal

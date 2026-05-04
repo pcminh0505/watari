@@ -7,9 +7,9 @@ name_en: Rare Fossil
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/293/Rare-Fossil.S3.91.34839.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '34839'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: めずらしい化石
     variants_seen:
-      - normal
+    - normal
     rarity_code: HR

@@ -7,9 +7,9 @@ name_en: Salamence ex
 rarity_code: RR
 category: card
 image: https://den-cards.pokellector.com/408/Salamence-ex.SV9.72.55761.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '55761'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: カスミのラプラス
     variants_seen:
-      - normal
+    - normal

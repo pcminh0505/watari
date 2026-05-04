@@ -7,9 +7,9 @@ name_en: Magneton
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/268/Magneton.SM10B.22.27666.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '27666'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: レアコイル
     variants_seen:
-      - normal
+    - normal
     rarity_code: C

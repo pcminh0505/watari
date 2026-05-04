@@ -7,9 +7,9 @@ name_en: Farigiraf ex
 rarity_code: SR
 category: card
 image: https://den-cards.pokellector.com/387/Farigiraf-ex.SV5M.88.52226.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '52226'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: リキキリンex
     variants_seen:
-      - normal
+    - normal

@@ -7,9 +7,9 @@ name_en: Slaking
 rarity_code: R
 category: card
 image: https://den-cards.pokellector.com/318/Slaking.S7D.52.39428.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '39428'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ケッキング
     variants_seen:
-      - normal
+    - normal
     rarity_code: R

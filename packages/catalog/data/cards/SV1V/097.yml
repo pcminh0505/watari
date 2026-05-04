@@ -7,9 +7,9 @@ name_en: Katy
 rarity_code: SR
 category: card
 image: https://den-cards.pokellector.com/362/Katy.SV1V.97.46829.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '46829'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: カエデ
     variants_seen:
-      - normal
+    - normal

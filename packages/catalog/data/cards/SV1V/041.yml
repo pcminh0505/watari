@@ -7,9 +7,9 @@ name_en: Banette ex
 rarity_code: RR
 category: card
 image: https://den-cards.pokellector.com/362/Banette-ex.SV1V.41.46317.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '46317'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: ジュペッタex
     variants_seen:
-      - normal
+    - normal

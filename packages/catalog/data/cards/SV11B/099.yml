@@ -7,9 +7,9 @@ name_en: Darmanitan
 rarity_code: AR
 category: card
 image: https://den-cards.pokellector.com/414/Darmanitan.SV11B.99.57821.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '57821'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: ヒヒダルマ
     variants_seen:
-      - normal
+    - normal

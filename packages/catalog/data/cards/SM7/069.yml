@@ -7,9 +7,9 @@ name_en: Wingull
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/242/Wingull.SM7.69.21023.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '21023'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ゼラオラGX
     variants_seen:
-      - normal
+    - normal
     rarity_code: HR

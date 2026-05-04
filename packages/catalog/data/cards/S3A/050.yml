@@ -7,9 +7,9 @@ name_en: Jirachi
 rarity_code: RRR
 category: card
 image: https://den-cards.pokellector.com/294/Jirachi.S3A.50.34971.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '34971'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ジラーチ
     variants_seen:
-      - normal
+    - normal
     rarity_code: C

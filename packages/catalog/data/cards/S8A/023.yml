@@ -7,9 +7,9 @@ name_en: Flying Pikachu V
 rarity_code: RR
 category: card
 image: https://den-cards.pokellector.com/327/Flying-Pikachu-V.S8A.23.39587.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '39587'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: そらをとぶピカチュウV(25th)
     variants_seen:
-      - normal
+    - normal
     rarity_code: RR

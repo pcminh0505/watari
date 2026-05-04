@@ -7,9 +7,9 @@ name_en: Spearow
 rarity_code: AR
 category: card
 image: https://den-cards.pokellector.com/416/Spearow.M1L.74.58873.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '58873'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: オニスズメ
     variants_seen:
-      - normal
+    - normal
     rarity_code: AR

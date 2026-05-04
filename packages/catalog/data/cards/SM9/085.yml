@@ -7,9 +7,9 @@ name_en: Judge
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/260/Judge.SM9.85.25510.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '25510'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ジャッジマン
     variants_seen:
-      - normal
+    - normal
     rarity_code: U

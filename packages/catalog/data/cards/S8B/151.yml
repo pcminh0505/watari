@@ -7,9 +7,9 @@ name_en: Klara
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/338/Klara.S8B.151.41391.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '41391'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: クララ(ミラー/ハイクラスパック仕様)
     variants_seen:
-      - normal
+    - normal
     rarity_code: C

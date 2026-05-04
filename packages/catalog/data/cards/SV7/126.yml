@@ -7,9 +7,9 @@ name_en: Briar
 rarity_code: SR
 category: card
 image: https://den-cards.pokellector.com/401/Briar.SV7.126.53713.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '53713'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: ブライア
     variants_seen:
-      - normal
+    - normal

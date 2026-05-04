@@ -2,14 +2,14 @@
 # To freeze a manually-edited value, add `# manual: true` on line 1.
 set_code: sm1m
 local_id: '052'
-name_ja:
+name_ja: Oranguru
 name_en: Oranguru
 rarity_code: R
 category: card
 image: https://den-cards.pokellector.com/202/Oranguru.SM1M.52.13821.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '13821'

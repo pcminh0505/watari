@@ -7,9 +7,9 @@ name_en: Umbreon V
 rarity_code: RR
 category: card
 image: https://den-cards.pokellector.com/322/Umbreon-V.S6A.47.38831.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '38831'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ブラッキーV
     variants_seen:
-      - normal
+    - normal
     rarity_code: RR

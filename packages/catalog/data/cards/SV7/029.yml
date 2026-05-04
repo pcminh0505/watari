@@ -7,9 +7,9 @@ name_en: Electivire
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/401/Electivire.SV7.29.53736.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '53736'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: ドリュウズ
     variants_seen:
-      - normal
+    - normal

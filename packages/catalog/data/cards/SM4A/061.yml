@@ -2,14 +2,14 @@
 # To freeze a manually-edited value, add `# manual: true` on line 1.
 set_code: sm4a
 local_id: '061'
-name_ja:
+name_ja: Counter Energy
 name_en: Counter Energy
 rarity_code: UR
 category: energy
 image: https://den-cards.pokellector.com/227/Counter-Energy.SM4A.61.19443.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '19443'

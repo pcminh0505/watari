@@ -7,9 +7,9 @@ name_en: Monferno
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/391/Monferno.SV5A.16.52383.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '52383'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: モウカザル
     variants_seen:
-      - normal
+    - normal

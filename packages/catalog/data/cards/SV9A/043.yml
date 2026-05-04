@@ -7,9 +7,9 @@ name_en: Cynthia's Gabite
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/411/Cynthias-Gabite.SV9A.43.56586.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '56586'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: シロナのガバイト
     variants_seen:
-      - normal
+    - normal

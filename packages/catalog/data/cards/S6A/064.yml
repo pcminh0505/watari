@@ -7,9 +7,9 @@ name_en: Moon and Sun Badge
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/322/Moon-and-Sun-Badge.S6A.64.38854.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '38854'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: 月と太陽のバッジ
     variants_seen:
-      - normal
+    - normal
     rarity_code: U

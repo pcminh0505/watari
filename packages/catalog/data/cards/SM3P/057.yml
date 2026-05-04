@@ -7,9 +7,9 @@ name_en: Shining Rayquaza
 rarity_code: UR
 category: card
 image: https://den-cards.pokellector.com/224/Shining-Rayquaza.SM3+.57.18241.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '18241'

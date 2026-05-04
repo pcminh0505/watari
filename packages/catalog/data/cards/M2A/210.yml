@@ -7,9 +7,9 @@ name_en: N's Zekrom
 rarity_code: AR
 category: card
 image: https://den-cards.pokellector.com/427/Ns-Zekrom.M2A.210.59812.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '59812'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: Nのゼクロム
     variants_seen:
-      - normal
+    - normal

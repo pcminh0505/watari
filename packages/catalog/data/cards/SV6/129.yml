@@ -7,9 +7,9 @@ name_en: Kieran
 rarity_code: SR
 category: card
 image: https://den-cards.pokellector.com/393/Kieran.SV6.129.53111.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '53111'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: スグリ
     variants_seen:
-      - normal
+    - normal

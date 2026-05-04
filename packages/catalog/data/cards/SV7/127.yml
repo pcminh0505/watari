@@ -7,9 +7,9 @@ name_en: Hydrapple ex
 rarity_code: SAR
 category: card
 image: https://den-cards.pokellector.com/401/Hydrapple-ex.SV7.127.53703.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '53703'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: カミツオロチex
     variants_seen:
-      - normal
+    - normal

@@ -7,9 +7,9 @@ name_en: Buzzwole
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/241/Buzzwole.SM8B.62.24856.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '24856'

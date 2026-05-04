@@ -2,14 +2,14 @@
 # To freeze a manually-edited value, add `# manual: true` on line 1.
 set_code: sm7b
 local_id: '036'
-name_ja:
+name_ja: Morelull
 name_en: Morelull
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/240/Morelull.SM7B.36.23137.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '23137'

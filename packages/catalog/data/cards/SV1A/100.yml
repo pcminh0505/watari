@@ -7,9 +7,9 @@ name_en: Boss's Orders (Ghetsis)
 rarity_code: SAR
 category: card
 image: https://den-cards.pokellector.com/366/Bosss-Orders-Ghetsis.SV1A.100.47006.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '47006'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: ボスの指令/ゲーチス
     variants_seen:
-      - normal
+    - normal

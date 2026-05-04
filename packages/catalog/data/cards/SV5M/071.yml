@@ -7,9 +7,9 @@ name_en: Mist Energy
 rarity_code: U
 category: energy
 image: https://den-cards.pokellector.com/387/Mist-Energy.SV5M.71.51732.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '51732'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: ミストエネルギー
     variants_seen:
-      - normal
+    - normal

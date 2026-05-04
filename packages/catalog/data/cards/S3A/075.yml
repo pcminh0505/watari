@@ -7,9 +7,9 @@ name_en: Stone Energy
 rarity_code: U
 category: energy
 image: https://den-cards.pokellector.com/294/Stone-Energy.S3A.75.35072.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '35072'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ストーン闘エネルギー
     variants_seen:
-      - normal
+    - normal
     rarity_code: U

@@ -7,9 +7,9 @@ name_en: Paldean Clodsire
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/368/Paldean-Clodsire.SV3.69.48807.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '48807'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: グラードン
     variants_seen:
-      - normal
+    - normal

@@ -7,9 +7,9 @@ name_en: Pawniard
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/427/Pawniard.M2A.116.59795.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '59795'

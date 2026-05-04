@@ -7,9 +7,9 @@ name_en: Komala
 rarity_code: U
 category: energy
 image: https://den-cards.pokellector.com/277/Komala.SM11.80.28842.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '28842'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ドローエネルギー
     variants_seen:
-      - normal
+    - normal
     rarity_code: UR

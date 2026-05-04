@@ -7,9 +7,9 @@ name_en: Wurmple
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/243/Wurmple.SM7A.3.22387.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '22387'

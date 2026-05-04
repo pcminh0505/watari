@@ -7,9 +7,9 @@ name_en: Slaking
 rarity_code: RR
 category: card
 image: https://den-cards.pokellector.com/405/Slaking.SV8.84.54467.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '54467'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: ルチャブル(R仕様)
     variants_seen:
-      - normal
+    - normal

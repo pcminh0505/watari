@@ -7,9 +7,9 @@ name_en: Old Computer
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/295/Old-Computer.S2A.65.34420.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '34420'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ボロのパソコン
     variants_seen:
-      - normal
+    - normal
     rarity_code: U

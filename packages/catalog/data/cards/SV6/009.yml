@@ -7,9 +7,9 @@ name_en: Thwackey
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/393/Thwackey.SV6.9.52875.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '52875'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: バチンキー
     variants_seen:
-      - normal
+    - normal

@@ -4,7 +4,9 @@ set_code: SM8B
 era_block: sm
 language: jp
 name_ja: GXウルトラシャイニ
-name_en: GXウルトラシャイニ
+name_en: GX Ultra Shiny
 release_date: 2018-10-05
 tcgdex_id: SM8b
 pokellector_slug: Ultra-Shiny-GX-Expansion
+tcgcollector_id: '11217'
+tcgcollector_slug: gx-ultra-shiny

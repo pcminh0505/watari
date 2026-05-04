@@ -7,9 +7,9 @@ name_en: Pikachu VMAX
 rarity_code: RRR
 category: card
 image: https://den-cards.pokellector.com/297/Pikachu-VMAX.S4.31.35334.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '35334'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ピカチュウVMAX(s4)
     variants_seen:
-      - normal
+    - normal
     rarity_code: RRR

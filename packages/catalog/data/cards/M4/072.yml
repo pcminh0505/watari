@@ -7,9 +7,9 @@ name_en: Special Red Card
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/430/Special-Red-Card.M4.72.60999.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '60999'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: スペシャルレッドカード
     variants_seen:
-      - normal
+    - normal

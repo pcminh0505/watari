@@ -7,9 +7,9 @@ name_en: Iono's Bellibolt ex
 rarity_code: SR
 category: card
 image: https://den-cards.pokellector.com/427/Ionos-Bellibolt-ex.M2A.236.60104.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '60104'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: ナンジャモのハラバリーex
     variants_seen:
-      - normal
+    - normal

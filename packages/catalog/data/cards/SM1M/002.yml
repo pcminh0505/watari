@@ -7,9 +7,9 @@ name_en: Surskit
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/202/Surskit.SM1M.2.13779.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '13779'

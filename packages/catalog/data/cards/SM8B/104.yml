@@ -7,9 +7,9 @@ name_en: Ultra Necrozma GX
 rarity_code: RR
 category: card
 image: https://den-cards.pokellector.com/241/Ultra-Necrozma-GX.SM8B.104.24407.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '24407'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ウルトラネクロズマGX
     variants_seen:
-      - normal
+    - normal
     rarity_code: RR

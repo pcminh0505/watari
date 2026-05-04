@@ -7,9 +7,9 @@ name_en: Clemont's Quick Wit
 rarity_code: SAR
 category: card
 image: https://den-cards.pokellector.com/405/Clemonts-Quick-Wit.SV8.134.54621.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '54621'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: シトロンの機転
     variants_seen:
-      - normal
+    - normal

@@ -7,9 +7,9 @@ name_en: Mamoswine ex
 rarity_code: RR
 category: card
 image: https://den-cards.pokellector.com/408/Mamoswine-ex.SV9.46.55466.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '55466'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: バンバドロ
     variants_seen:
-      - normal
+    - normal

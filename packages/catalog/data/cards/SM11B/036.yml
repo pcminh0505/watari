@@ -7,9 +7,9 @@ name_en: Reshiram & Zekrom GX
 rarity_code: RR
 category: card
 image: https://den-cards.pokellector.com/278/Reshiram-Zekrom-GX.SM11B.36.29263.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '29263'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: レシラム＆ゼクロムGX
     variants_seen:
-      - normal
+    - normal
     rarity_code: RR

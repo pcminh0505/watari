@@ -7,9 +7,9 @@ name_en: Mysterious Treasure
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/277/Mysterious-Treasure.SM11.93.28850.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '28850'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ミステリートレジャー
     variants_seen:
-      - normal
+    - normal
     rarity_code: TR

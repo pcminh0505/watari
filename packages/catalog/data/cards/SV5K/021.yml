@@ -7,9 +7,9 @@ name_en: Wiglett
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/386/Wiglett.SV5K.21.51835.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '51835'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: ウミディグダ
     variants_seen:
-      - normal
+    - normal

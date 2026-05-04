@@ -4,7 +4,9 @@ set_code: SM5S
 era_block: sm
 language: jp
 name_ja: ウルトラサン
-name_en: ウルトラサン
+name_en: Ultra Sun
 release_date: 2017-12-08
 tcgdex_id: SM5S
 pokellector_slug: Ultra-Sun-Expansion
+tcgcollector_id: '11306'
+tcgcollector_slug: ultra-sun

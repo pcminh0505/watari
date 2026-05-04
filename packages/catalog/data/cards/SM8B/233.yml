@@ -7,9 +7,9 @@ name_en: Scizor GX
 rarity_code: SR
 category: card
 image: https://den-cards.pokellector.com/241/Scizor-GX.SM8B.233.25334.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '25334'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ハッサムGX
     variants_seen:
-      - normal
+    - normal
     rarity_code: SR

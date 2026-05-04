@@ -7,9 +7,9 @@ name_en: Team Rocket's Proton
 rarity_code: SR
 category: card
 image: https://den-cards.pokellector.com/413/Team-Rockets-Proton.SV10.123.57154.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '57154'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: ロケット団のランス
     variants_seen:
-      - normal
+    - normal

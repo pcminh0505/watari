@@ -7,9 +7,9 @@ name_en: Gothita
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/369/Gothita.SV2P.31.47575.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '47575'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: ゴチム
     variants_seen:
-      - normal
+    - normal

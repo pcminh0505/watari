@@ -7,9 +7,9 @@ name_en: Leavanny
 rarity_code: AR
 category: card
 image: https://den-cards.pokellector.com/415/Leavanny.SV11W.89.57800.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '57800'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: ハハコモリ
     variants_seen:
-      - normal
+    - normal

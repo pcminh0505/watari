@@ -7,9 +7,9 @@ name_en: Florges
 rarity_code: R
 category: card
 image: https://den-cards.pokellector.com/322/Florges.S6A.39.38843.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '38843'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: フラージェス
     variants_seen:
-      - normal
+    - normal
     rarity_code: R

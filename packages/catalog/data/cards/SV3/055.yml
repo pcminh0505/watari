@@ -7,9 +7,9 @@ name_en: Larvitar
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/368/Larvitar.SV3.55.48363.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '48363'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: ヨーギラス
     variants_seen:
-      - normal
+    - normal

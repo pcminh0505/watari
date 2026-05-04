@@ -7,9 +7,9 @@ name_en: Team Rocket's Grimer
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/413/Team-Rockets-Grimer.SV10.67.57113.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '57113'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: ロケット団のベトベター
     variants_seen:
-      - normal
+    - normal

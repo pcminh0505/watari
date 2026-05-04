@@ -7,9 +7,9 @@ name_en: Rhyperior
 rarity_code: R
 category: energy
 image: https://den-cards.pokellector.com/401/Rhyperior.SV7.52.53746.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '53746'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: エネルギー転送PRO
     variants_seen:
-      - normal
+    - normal

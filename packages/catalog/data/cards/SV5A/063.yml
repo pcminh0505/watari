@@ -7,9 +7,9 @@ name_en: Perrin
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/391/Perrin.SV5A.63.52391.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '52391'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: サザレ
     variants_seen:
-      - normal
+    - normal

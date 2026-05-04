@@ -7,9 +7,9 @@ name_en: Stakataka GX
 rarity_code: RR
 category: card
 image: https://den-cards.pokellector.com/242/Stakataka.SM7.60.20951.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '20951'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ミミッキュGX
     variants_seen:
-      - normal
+    - normal
     rarity_code: RR

@@ -2,14 +2,14 @@
 # To freeze a manually-edited value, add `# manual: true` on line 1.
 set_code: M2A
 local_id: '038'
-name_ja:
+name_ja: N's Vanillish
 name_en: N's Vanillish
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/427/Ns-Vanillish.M2A.38.59781.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '59781'

@@ -7,9 +7,9 @@ name_en: Cyllene
 rarity_code: HR
 category: card
 image: https://den-cards.pokellector.com/339/Cyllene.S9A.88.43219.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '43219'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: シマボシ
     variants_seen:
-      - normal
+    - normal
     rarity_code: HR

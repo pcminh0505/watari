@@ -7,9 +7,9 @@ name_en: Welcoming Lantern
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/338/Welcoming-Lantern.S8B.132.41378.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '41378'

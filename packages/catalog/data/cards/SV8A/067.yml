@@ -7,9 +7,9 @@ name_en: Swirlix
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/406/Swirlix.SV8A.67.54946.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '54946'

@@ -7,9 +7,9 @@ name_en: Bewear
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/417/Bewear.M1S.56.58937.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '58937'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: キテルグマ
     variants_seen:
-      - normal
+    - normal
     rarity_code: C

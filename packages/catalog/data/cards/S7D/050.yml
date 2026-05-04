@@ -7,9 +7,9 @@ name_en: Slakoth
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/318/Slakoth.S7D.50.39426.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '39426'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ナマケロ
     variants_seen:
-      - normal
+    - normal
     rarity_code: C

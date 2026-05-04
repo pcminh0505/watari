@@ -7,9 +7,9 @@ name_en: Green's Exploration
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/288/Greens-Exploration.SM12A.154.30497.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '30497'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ブルーの探索(ミラー)
     variants_seen:
-      - normal
+    - normal
     rarity_code: C

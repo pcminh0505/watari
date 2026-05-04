@@ -7,9 +7,9 @@ name_en: Dragapult ex
 rarity_code: RR
 category: card
 image: https://den-cards.pokellector.com/393/Dragapult-ex.SV6.81.52868.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '52868'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: キチキギスex
     variants_seen:
-      - normal
+    - normal

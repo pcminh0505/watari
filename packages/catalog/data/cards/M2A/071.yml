@@ -7,9 +7,9 @@ name_en: Mega Gardevoir ex
 rarity_code: RR
 category: card
 image: https://den-cards.pokellector.com/427/Mega-Gardevoir-ex.M2A.71.59969.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '59969'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: メガサーナイトex
     variants_seen:
-      - normal
+    - normal

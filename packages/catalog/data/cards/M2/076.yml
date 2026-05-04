@@ -7,9 +7,9 @@ name_en: Grimsley's Gambit
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/425/Grimsleys-Gambit.M2.76.59182.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '59182'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: ギーマの一手
     variants_seen:
-      - normal
+    - normal

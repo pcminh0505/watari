@@ -7,9 +7,9 @@ name_en: Dhelmise V
 rarity_code: RR
 category: card
 image: https://den-cards.pokellector.com/283/Dhelmise-V.S1W.4.31224.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '31224'

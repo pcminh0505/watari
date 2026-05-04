@@ -7,9 +7,9 @@ name_en: Hop's Choice Band
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/408/Hops-Choice-Band.SV9.92.55485.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '55485'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: ハッコウシティ
     variants_seen:
-      - normal
+    - normal

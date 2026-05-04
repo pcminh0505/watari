@@ -7,9 +7,9 @@ name_en: Team Rocket's Sneasel
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/427/Team-Rockets-Sneasel.M2A.104.59997.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '59997'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: ロケット団のニューラ(R仕様)
     variants_seen:
-      - normal
+    - normal

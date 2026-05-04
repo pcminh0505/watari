@@ -7,9 +7,9 @@ name_en: Ducklett
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/393/Ducklett.SV6.88.52958.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '52958'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: コアルヒー
     variants_seen:
-      - normal
+    - normal

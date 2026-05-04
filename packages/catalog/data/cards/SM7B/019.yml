@@ -7,9 +7,9 @@ name_en: Yamask
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/240/Yamask.SM7B.19.23122.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '23122'

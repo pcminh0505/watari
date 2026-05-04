@@ -7,9 +7,9 @@ name_en: Carnivine
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/232/Carnivine.SM5S.11.19970.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '19970'

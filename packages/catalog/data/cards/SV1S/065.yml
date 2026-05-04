@@ -7,9 +7,9 @@ name_en: Staraptor
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/361/Staraptor.SV1S.65.46277.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '46277'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: ワッカネズミ
     variants_seen:
-      - normal
+    - normal

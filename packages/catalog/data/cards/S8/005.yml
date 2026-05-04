@@ -7,9 +7,9 @@ name_en: Breloom
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/326/Breloom.S8.5.40424.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '40424'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: キノガッサ
     variants_seen:
-      - normal
+    - normal
     rarity_code: C

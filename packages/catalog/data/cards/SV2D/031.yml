@@ -7,9 +7,9 @@ name_en: Ceruledge
 rarity_code: R
 category: card
 image: https://den-cards.pokellector.com/370/Ceruledge.SV2D.31.47065.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '47065'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: ソウブレイズ
     variants_seen:
-      - normal
+    - normal

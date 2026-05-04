@@ -7,9 +7,9 @@ name_en: Team Rocket's Persian ex
 rarity_code: RR
 category: card
 image: https://den-cards.pokellector.com/413/Team-Rockets-Persian-ex.SV10.79.56868.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '56868'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: ロケット団のペルシアンex
     variants_seen:
-      - normal
+    - normal

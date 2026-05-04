@@ -7,9 +7,9 @@ name_en: Heat Rotom
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/241/Heat-Rotom.SM8B.15.24818.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '24818'

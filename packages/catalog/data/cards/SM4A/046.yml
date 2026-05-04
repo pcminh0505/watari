@@ -7,9 +7,9 @@ name_en: Dash Pouch
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/227/Dash-Pouch.SM4A.46.18599.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '18599'

@@ -7,9 +7,9 @@ name_en: Turbo Patch
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/293/Turbo-Patch.S3.90.34835.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '34835'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: オニオン
     variants_seen:
-      - normal
+    - normal
     rarity_code: HR

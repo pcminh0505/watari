@@ -7,9 +7,9 @@ name_en: Rotom Bike
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/283/Rotom-Bike.S1W.55.31268.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '31268'

@@ -7,9 +7,9 @@ name_en: Nacli
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/416/Nacli.M1L.34.58838.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '58838'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: コジオ
     variants_seen:
-      - normal
+    - normal
     rarity_code: C

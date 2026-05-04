@@ -7,9 +7,9 @@ name_en: Moomoo Cheese
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/294/Moomoo-Cheese.S3A.67.35065.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '35065'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: モーモーチーズ
     variants_seen:
-      - normal
+    - normal
     rarity_code: U

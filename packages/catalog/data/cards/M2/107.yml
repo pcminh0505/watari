@@ -7,9 +7,9 @@ name_en: Firebreather
 rarity_code: SR
 category: card
 image: https://den-cards.pokellector.com/425/Firebreather.M2.107.59592.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '59592'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: ひふきやろう
     variants_seen:
-      - normal
+    - normal

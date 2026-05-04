@@ -7,9 +7,9 @@ name_en: Prinplup
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/336/Prinplup.S9.26.41614.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '41614'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ポッタイシ
     variants_seen:
-      - normal
+    - normal
     rarity_code: K

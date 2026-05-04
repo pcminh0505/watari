@@ -4,7 +4,9 @@ set_code: S10A
 era_block: sw
 language: jp
 name_ja: ダークファンタズマ
-name_en: ダークファンタズマ
+name_en: Dark Phantasma
 release_date: 2022-05-13
 tcgdex_id: S10a
 pokellector_slug: Dark-Phantasma-Expansion
+tcgcollector_id: '11469'
+tcgcollector_slug: dark-phantasma

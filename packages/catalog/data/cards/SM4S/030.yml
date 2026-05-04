@@ -7,9 +7,9 @@ name_en: Buzzwole GX
 rarity_code: RR
 category: card
 image: https://den-cards.pokellector.com/226/Buzzwole-GX.SM4S.30.18614.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '18614'

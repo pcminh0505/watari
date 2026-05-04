@@ -7,9 +7,9 @@ name_en: Amaura
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/235/Amaura.SM6.23.20500.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '20500'

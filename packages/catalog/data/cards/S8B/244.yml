@@ -7,9 +7,9 @@ name_en: Umbreon V
 rarity_code: CSR
 category: card
 image: https://den-cards.pokellector.com/338/Umbreon-V.S8B.244.41536.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '41536'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ブラッキーV
     variants_seen:
-      - normal
+    - normal
     rarity_code: CSR

@@ -7,9 +7,9 @@ name_en: Pelipper
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/369/Pelipper.SV2P.59.47073.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '47073'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: ペリッパー
     variants_seen:
-      - normal
+    - normal

@@ -4,7 +4,9 @@ set_code: SM7B
 era_block: sm
 language: jp
 name_ja: フェアリーライズ
-name_en: フェアリーライズ
+name_en: Fairy Rise
 release_date: 2018-08-03
 tcgdex_id: SM7b
 pokellector_slug: Fairy-Rise-Expansion
+tcgcollector_id: '11204'
+tcgcollector_slug: fairy-rise

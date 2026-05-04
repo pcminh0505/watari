@@ -7,9 +7,9 @@ name_en: Gible
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/241/Gible.SM8B.99.24886.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '24886'

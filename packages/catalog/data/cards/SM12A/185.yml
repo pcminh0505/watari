@@ -7,9 +7,9 @@ name_en: Togepi & Cleffa & Igglybuff GX
 rarity_code: SR
 category: card
 image: https://den-cards.pokellector.com/288/Togepi-Cleffa-Igglybuff-GX.SM12A.185.30525.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '30525'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: トゲピー＆ピィ＆ププリンGX
     variants_seen:
-      - normal
+    - normal
     rarity_code: SR

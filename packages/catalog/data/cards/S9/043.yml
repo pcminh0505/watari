@@ -7,9 +7,9 @@ name_en: Baltoy
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/336/Baltoy.S9.43.42582.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '42582'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ヤジロン
     variants_seen:
-      - normal
+    - normal
     rarity_code: K

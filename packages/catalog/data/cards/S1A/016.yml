@@ -7,9 +7,9 @@ name_en: Cinderace V
 rarity_code: RR
 category: card
 image: https://den-cards.pokellector.com/285/Cinderace-V.S1A.16.31410.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '31410'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: エースバーンV
     variants_seen:
-      - normal
+    - normal
     rarity_code: RR

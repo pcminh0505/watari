@@ -7,9 +7,9 @@ name_en: Beast Energy Prism Star
 rarity_code: R
 category: energy
 image: https://den-cards.pokellector.com/241/Beast-Energy.SM8B.147.24925.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '24925'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ビーストエネルギー◇
     variants_seen:
-      - normal
+    - normal
     rarity_code: R

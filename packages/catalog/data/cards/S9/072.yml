@@ -7,9 +7,9 @@ name_en: Flygon V
 rarity_code: RR
 category: card
 image: https://den-cards.pokellector.com/336/Flygon-V.S9.72.42609.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '42609'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: グラエナ
     variants_seen:
-      - normal
+    - normal
     rarity_code: RR

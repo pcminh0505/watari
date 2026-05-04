@@ -7,9 +7,9 @@ name_en: Yungoos
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/416/Yungoos.M1L.55.58859.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '58859'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ヤングース
     variants_seen:
-      - normal
+    - normal
     rarity_code: C

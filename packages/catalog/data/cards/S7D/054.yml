@@ -7,9 +7,9 @@ name_en: Wooloo
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/318/Wooloo.S7D.54.39213.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '39213'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ウールー
     variants_seen:
-      - normal
+    - normal
     rarity_code: C

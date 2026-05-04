@@ -7,9 +7,9 @@ name_en: Timburr
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/307/Timburr.S5R.42.36851.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '36851'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ドッコラー
     variants_seen:
-      - normal
+    - normal
     rarity_code: C

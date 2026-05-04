@@ -7,9 +7,9 @@ name_en: Field Blower
 rarity_code: R
 category: card
 image: https://den-cards.pokellector.com/260/Field-Blower.SM9.93.25442.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '25442'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: フィールドブロアー
     variants_seen:
-      - normal
+    - normal
     rarity_code: TR

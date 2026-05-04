@@ -7,9 +7,9 @@ name_en: Pokémon Fan Club
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/266/Pokeacutemon-Fan-Club.SM10.86.26939.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '26939'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ポケモンだいすきクラブ
     variants_seen:
-      - normal
+    - normal
     rarity_code: U

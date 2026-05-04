@@ -7,9 +7,9 @@ name_en: Bidoof
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/336/Bidoof.S9.81.42618.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '42618'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ビッパ
     variants_seen:
-      - normal
+    - normal
     rarity_code: SR

@@ -7,9 +7,9 @@ name_en: Wailord
 rarity_code: R
 category: card
 image: https://den-cards.pokellector.com/297/Wailord.S4.19.35559.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '35559'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: タルップル(R仕様)
     variants_seen:
-      - normal
+    - normal
     rarity_code: R

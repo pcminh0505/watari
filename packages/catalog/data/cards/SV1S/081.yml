@@ -7,9 +7,9 @@ name_en: Wiglett
 rarity_code: AR
 category: card
 image: https://den-cards.pokellector.com/361/Wiglett.SV1S.81.46790.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '46790'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: ウミディグダ
     variants_seen:
-      - normal
+    - normal

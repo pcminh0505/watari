@@ -7,9 +7,9 @@ name_en: Misdreavus
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/425/Misdreavus.M2.35.59216.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '59216'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: ムウマ
     variants_seen:
-      - normal
+    - normal

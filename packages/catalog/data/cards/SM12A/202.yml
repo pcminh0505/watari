@@ -7,9 +7,9 @@ name_en: Grass Energy
 rarity_code: SR
 category: energy
 image: https://den-cards.pokellector.com/288/Grass-Energy.SM12A.202.30541.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '30541'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: 基本草エネルギー
     variants_seen:
-      - normal
+    - normal
     rarity_code: SR

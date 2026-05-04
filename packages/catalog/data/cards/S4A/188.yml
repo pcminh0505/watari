@@ -7,9 +7,9 @@ name_en: Capture Energy
 rarity_code: C
 category: energy
 image: https://den-cards.pokellector.com/301/Capture-Energy.S4A.188.36470.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '36470'

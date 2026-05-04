@@ -7,9 +7,9 @@ name_en: Double Colorless Energy
 rarity_code: U
 category: energy
 image: https://den-cards.pokellector.com/232/Double-Colorless-Energy.SM5S.65.20002.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '20002'

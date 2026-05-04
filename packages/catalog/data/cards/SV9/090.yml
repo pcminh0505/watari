@@ -7,9 +7,9 @@ name_en: Exchange Ticket
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/408/Exchange-Ticket.SV9.90.55493.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '55493'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: とりかえチケット
     variants_seen:
-      - normal
+    - normal

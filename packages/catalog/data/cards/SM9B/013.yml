@@ -7,9 +7,9 @@ name_en: Pyukumuku
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/263/Pyukumuku.SM9B.13.26428.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '26428'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ナマコブシ
     variants_seen:
-      - normal
+    - normal
     rarity_code: C

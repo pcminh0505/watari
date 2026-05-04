@@ -7,9 +7,9 @@ name_en: Archen
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/277/Archen.SM11.51.28820.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '28820'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: アーケン
     variants_seen:
-      - normal
+    - normal
     rarity_code: CHR

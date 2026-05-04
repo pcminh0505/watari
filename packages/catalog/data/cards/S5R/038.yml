@@ -7,9 +7,9 @@ name_en: Orbeetle
 rarity_code: R
 category: card
 image: https://den-cards.pokellector.com/307/Orbeetle.S5R.38.36847.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '36847'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: イオルブ
     variants_seen:
-      - normal
+    - normal
     rarity_code: R

@@ -7,9 +7,9 @@ name_en: Clefairy
 rarity_code: AR
 category: card
 image: https://den-cards.pokellector.com/428/Clefairy.M3.86.60193.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '60193'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: ピッピ
     variants_seen:
-      - normal
+    - normal

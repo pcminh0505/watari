@@ -7,9 +7,9 @@ name_en: Trubbish
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/228/Trubbish.SM4+.39.19613.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '19613'

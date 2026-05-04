@@ -7,9 +7,9 @@ name_en: Nickit
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/376/Nickit.SV3A.40.49380.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '49380'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: クスネ
     variants_seen:
-      - normal
+    - normal

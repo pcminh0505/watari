@@ -7,9 +7,9 @@ name_en: Charizard & Reshiram GX
 rarity_code: SR
 category: card
 image: https://den-cards.pokellector.com/266/Charizard-Reshiram-GX.SM10.97.26947.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '26947'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: レシラム＆リザードンGX(SA)
     variants_seen:
-      - normal
+    - normal
     rarity_code: SR

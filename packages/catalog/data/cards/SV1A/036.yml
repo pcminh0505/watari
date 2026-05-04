@@ -7,9 +7,9 @@ name_en: Spoink
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/366/Spoink.SV1A.36.46961.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '46961'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: バネブー
     variants_seen:
-      - normal
+    - normal

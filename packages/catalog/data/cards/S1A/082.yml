@@ -7,9 +7,9 @@ name_en: Sonia
 rarity_code: HR
 category: card
 image: https://den-cards.pokellector.com/285/Sonia.S1A.82.31995.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '31995'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ソニア
     variants_seen:
-      - normal
+    - normal
     rarity_code: HR

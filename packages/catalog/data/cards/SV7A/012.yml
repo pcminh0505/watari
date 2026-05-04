@@ -7,9 +7,9 @@ name_en: Bruxish
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/403/Bruxish.SV7A.12.54389.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '54389'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: ハギギシリ
     variants_seen:
-      - normal
+    - normal

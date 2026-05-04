@@ -4,7 +4,9 @@ set_code: SM1M
 era_block: sm
 language: jp
 name_ja: コレクションムーン
-name_en: コレクションムーン
+name_en: Collection Moon
 release_date: 2016-12-09
 tcgdex_id: SM1M
 pokellector_slug: Collection-Moon-Expansion
+tcgcollector_id: '11216'
+tcgcollector_slug: collection-moon

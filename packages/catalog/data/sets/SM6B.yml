@@ -4,7 +4,9 @@ set_code: SM6B
 era_block: sm
 language: jp
 name_ja: チャンピオンロード
-name_en: チャンピオンロード
+name_en: Champion Road
 release_date: 2018-05-30
 tcgdex_id: SM6b
 pokellector_slug: Champion-Road-Expansion
+tcgcollector_id: '11260'
+tcgcollector_slug: champion-road

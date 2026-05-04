@@ -7,9 +7,9 @@ name_en: Gastly
 rarity_code: AR
 category: card
 image: https://den-cards.pokellector.com/386/Gastly.SV5K.80.52237.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '52237'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: ゴース
     variants_seen:
-      - normal
+    - normal

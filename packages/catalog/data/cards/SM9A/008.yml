@@ -7,9 +7,9 @@ name_en: Tentacruel
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/262/Tentacruel.SM9A.8.25591.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '25591'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ドククラゲ
     variants_seen:
-      - normal
+    - normal
     rarity_code: C

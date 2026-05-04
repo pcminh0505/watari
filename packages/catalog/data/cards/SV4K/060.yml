@@ -7,9 +7,9 @@ name_en: Earthen Vessel
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/381/Earthen-Vessel.SV4K.60.50792.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '50792'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: 大地の器
     variants_seen:
-      - normal
+    - normal

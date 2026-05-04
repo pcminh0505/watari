@@ -7,9 +7,9 @@ name_en: Sunkern
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/393/Sunkern.SV6.1.52903.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '52903'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: ヒマナッツ
     variants_seen:
-      - normal
+    - normal

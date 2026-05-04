@@ -7,9 +7,9 @@ name_en: Calamitous Wasteland
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/370/Calamitous-Wasteland.SV2D.70.47291.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '47291'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: 災いの荒野
     variants_seen:
-      - normal
+    - normal

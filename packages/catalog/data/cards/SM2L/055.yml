@@ -2,14 +2,14 @@
 # To freeze a manually-edited value, add `# manual: true` on line 1.
 set_code: sm2l
 local_id: '055'
-name_ja:
+name_ja: Mallow
 name_en: Mallow
 rarity_code: UR
 category: card
 image: https://den-cards.pokellector.com/210/Mallow.SM2L.55.17314.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '17314'

@@ -7,9 +7,9 @@ name_en: Liepard V
 rarity_code: SR
 category: card
 image: https://den-cards.pokellector.com/309/Liepard-V.S6H.77.38776.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '38776'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: レパルダスV
     variants_seen:
-      - normal
+    - normal
     rarity_code: SR

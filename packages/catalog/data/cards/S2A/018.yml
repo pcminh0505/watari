@@ -7,9 +7,9 @@ name_en: Galarian Mr. Mime
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/295/Galarian-Mr-Mime.S2A.18.34382.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '34382'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ガラルバリヤード(リフレクター)
     variants_seen:
-      - normal
+    - normal
     rarity_code: C

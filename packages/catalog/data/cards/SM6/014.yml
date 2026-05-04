@@ -7,9 +7,9 @@ name_en: Delphox
 rarity_code: R
 category: card
 image: https://den-cards.pokellector.com/235/Delphox.SM6.14.20458.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '20458'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: キングドラGX
     variants_seen:
-      - normal
+    - normal
     rarity_code: RR

@@ -7,9 +7,9 @@ name_en: Galarian Stunfisk
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/301/Galarian-Stunfisk.S4A.128.36427.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '36427'

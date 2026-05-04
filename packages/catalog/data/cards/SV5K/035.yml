@@ -7,9 +7,9 @@ name_en: Golett
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/386/Golett.SV5K.35.51844.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '51844'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: ゴビット
     variants_seen:
-      - normal
+    - normal

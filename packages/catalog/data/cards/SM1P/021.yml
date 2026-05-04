@@ -7,9 +7,9 @@ name_en: Vikavolt GX
 rarity_code: RR
 category: card
 image: https://den-cards.pokellector.com/200/Vikavolt-GX.SM1+.21.13939.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '13939'

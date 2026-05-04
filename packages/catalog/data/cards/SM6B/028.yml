@@ -7,9 +7,9 @@ name_en: Lunatone
 rarity_code: R
 category: card
 image: https://den-cards.pokellector.com/237/Lunatone.SM6B.28.20890.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '20890'

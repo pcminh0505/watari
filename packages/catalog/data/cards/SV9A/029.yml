@@ -7,9 +7,9 @@ name_en: Cynthia's Milotic
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/411/Cynthias-Milotic.SV9A.29.56624.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '56624'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: シロナのミロカロス
     variants_seen:
-      - normal
+    - normal

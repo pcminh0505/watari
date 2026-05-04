@@ -7,9 +7,9 @@ name_en: Tempest Range
 rarity_code: UR
 category: card
 image: https://den-cards.pokellector.com/319/Tempest-Range.S7R.89.39574.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '39574'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: 嵐の山脈
     variants_seen:
-      - normal
+    - normal
     rarity_code: UR

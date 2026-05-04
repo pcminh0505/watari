@@ -7,9 +7,9 @@ name_en: Sableye V
 rarity_code: UR
 category: card
 image: https://den-cards.pokellector.com/284/Sableye-V.S1H.64.31357.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '31357'

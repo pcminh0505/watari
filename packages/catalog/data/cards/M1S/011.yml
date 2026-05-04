@@ -7,9 +7,9 @@ name_en: Pyroar
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/417/Pyroar.M1S.11.58901.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '58901'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: カエンジシ
     variants_seen:
-      - normal
+    - normal
     rarity_code: U

@@ -7,9 +7,9 @@ name_en: Wishiwashi GX
 rarity_code: SR
 category: card
 image: https://den-cards.pokellector.com/288/Wishiwashi-GX.SM12A.174.30516.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '30516'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ヨワシGX
     variants_seen:
-      - normal
+    - normal
     rarity_code: SR

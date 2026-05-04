@@ -7,9 +7,9 @@ name_en: Appletun
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/403/Appletun.SV7A.47.54044.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '54044'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: タルップル
     variants_seen:
-      - normal
+    - normal

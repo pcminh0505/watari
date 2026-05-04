@@ -7,9 +7,9 @@ name_en: Golett
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/310/Golett.S6K.30.38746.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '38746'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ゴビット
     variants_seen:
-      - normal
+    - normal
     rarity_code: C

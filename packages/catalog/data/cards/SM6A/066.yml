@@ -7,9 +7,9 @@ name_en: Dragon's Talon
 rarity_code: UR
 category: card
 image: https://den-cards.pokellector.com/236/Dragons-Talon.SM6A.66.20691.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '20691'

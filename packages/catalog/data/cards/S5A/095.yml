@@ -7,9 +7,9 @@ name_en: Urn of Vitality
 rarity_code: UR
 category: card
 image: https://den-cards.pokellector.com/308/Pot-of-Vitality.S5A.95.37942.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '37942'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: 活力の壺
     variants_seen:
-      - normal
+    - normal
     rarity_code: UR

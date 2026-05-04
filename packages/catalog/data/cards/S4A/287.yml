@@ -2,14 +2,14 @@
 # To freeze a manually-edited value, add `# manual: true` on line 1.
 set_code: s4a
 local_id: '287'
-name_ja:
+name_ja: Galarian Stunfisk
 name_en: Galarian Stunfisk
 rarity_code: S
 category: card
 image: https://den-cards.pokellector.com/301/Galarian-Stunfisk.S4A.287.36583.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '36583'

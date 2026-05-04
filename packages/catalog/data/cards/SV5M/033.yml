@@ -7,9 +7,9 @@ name_en: Flutter Mane
 rarity_code: R
 category: card
 image: https://den-cards.pokellector.com/387/Flutter-Mane.SV5M.33.51668.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '51668'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: アブリー
     variants_seen:
-      - normal
+    - normal

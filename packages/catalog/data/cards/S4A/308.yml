@@ -7,9 +7,9 @@ name_en: Charizard VMAX
 rarity_code: SSR
 category: card
 image: https://den-cards.pokellector.com/301/Charizard-VMAX.S4A.308.35859.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '35859'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: リザードンVMAX
     variants_seen:
-      - normal
+    - normal
     rarity_code: SR

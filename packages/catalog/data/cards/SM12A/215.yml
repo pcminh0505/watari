@@ -7,9 +7,9 @@ name_en: Umbreon & Darkrai GX
 rarity_code: HR
 category: card
 image: https://den-cards.pokellector.com/288/Umbreon-Darkrai-GX.SM12A.215.30553.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '30553'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ブラッキー＆ダークライGX
     variants_seen:
-      - normal
+    - normal
     rarity_code: HR

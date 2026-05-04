@@ -7,9 +7,9 @@ name_en: Glaceon VMAX
 rarity_code: RRR
 category: card
 image: https://den-cards.pokellector.com/322/Glaceon-VMAX.S6A.25.38852.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '38852'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: グレイシアVMAX
     variants_seen:
-      - normal
+    - normal
     rarity_code: RRR

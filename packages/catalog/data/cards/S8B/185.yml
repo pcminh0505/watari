@@ -7,9 +7,9 @@ name_en: Abomasnow
 rarity_code: CHR
 category: card
 image: https://den-cards.pokellector.com/338/Abomasnow.S8B.185.41498.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '41498'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ユキノオー
     variants_seen:
-      - normal
+    - normal
     rarity_code: CHR

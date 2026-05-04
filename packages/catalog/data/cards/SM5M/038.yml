@@ -7,9 +7,9 @@ name_en: Hippopotas
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/233/Hippopotas.SM5M.38.19942.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '19942'

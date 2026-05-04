@@ -7,9 +7,9 @@ name_en: Rescue Stretcher
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/241/Rescue-Stretcher.SM8B.120.24903.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '24903'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: レスキュータンカ(ミラー/ハイクラスパック仕様)
     variants_seen:
-      - normal
+    - normal
     rarity_code: C

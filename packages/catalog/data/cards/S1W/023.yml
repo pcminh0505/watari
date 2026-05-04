@@ -7,9 +7,9 @@ name_en: Gastly
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/283/Gastly.S1W.23.31239.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '31239'

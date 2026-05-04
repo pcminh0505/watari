@@ -4,7 +4,9 @@ set_code: S5I
 era_block: sw
 language: jp
 name_ja: 一撃マスター
-name_en: 一撃マスター
+name_en: Single Strike Master
 release_date: 2021-01-22
 tcgdex_id: S5I
 pokellector_slug: Single-Strike-Master-Expansion
+tcgcollector_id: '11387'
+tcgcollector_slug: single-strike-master

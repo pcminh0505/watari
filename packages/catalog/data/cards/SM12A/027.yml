@@ -7,9 +7,9 @@ name_en: Salazzle
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/288/Salazzle.SM12A.27.30388.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '30388'

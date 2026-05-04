@@ -7,9 +7,9 @@ name_en: Repel
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/416/Repel.M1L.60.58863.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '58863'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: むしよけスプレー
     variants_seen:
-      - normal
+    - normal
     rarity_code: U

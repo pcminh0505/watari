@@ -7,9 +7,9 @@ name_en: Sandile
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/425/Sandile.M2.53.59230.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '59230'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: メグロコ
     variants_seen:
-      - normal
+    - normal

@@ -7,9 +7,9 @@ name_en: Milcery
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/401/Milcery.SV7.43.53740.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '53740'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: マホミル
     variants_seen:
-      - normal
+    - normal

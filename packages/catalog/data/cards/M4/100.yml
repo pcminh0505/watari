@@ -7,9 +7,9 @@ name_en: Gourgeist ex
 rarity_code: SR
 category: card
 image: https://den-cards.pokellector.com/430/Gourgeist.M4.100.61003.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '61003'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: パンプジンex
     variants_seen:
-      - normal
+    - normal

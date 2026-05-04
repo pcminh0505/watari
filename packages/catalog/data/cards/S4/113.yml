@@ -7,9 +7,9 @@ name_en: Galarian Darmanitan VMAX
 rarity_code: HR
 category: card
 image: https://den-cards.pokellector.com/297/Galarian-Darmanitan-VMAX.S4.113.35679.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '35679'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ガラルヒヒダルマVMAX
     variants_seen:
-      - normal
+    - normal
     rarity_code: HR

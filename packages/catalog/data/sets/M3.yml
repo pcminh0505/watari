@@ -4,7 +4,9 @@ set_code: M3
 era_block: me
 language: jp
 name_ja: ムニキスゼロ
-name_en: Munikis Zero
+name_en: Nullifying Zero
 release_date: 2026-01-23
-tcgdex_id: null
+tcgdex_id:
 pokellector_slug: Munikis-Zero-Expansion
+tcgcollector_id: '11684'
+tcgcollector_slug: nullifying-zero

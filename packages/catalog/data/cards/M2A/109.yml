@@ -2,14 +2,14 @@
 # To freeze a manually-edited value, add `# manual: true` on line 1.
 set_code: M2A
 local_id: '109'
-name_ja:
+name_ja: Scraggy
 name_en: Scraggy
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/427/Scraggy.M2A.109.60002.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '60002'

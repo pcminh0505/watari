@@ -7,9 +7,9 @@ name_en: Riolu
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/233/Riolu.SM5M.36.19941.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '19941'

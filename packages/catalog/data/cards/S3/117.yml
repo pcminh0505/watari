@@ -7,9 +7,9 @@ name_en: Coalossal
 rarity_code: UR
 category: card
 image: https://den-cards.pokellector.com/293/Coalossal.S3.117.34965.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '34965'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: セキタンザン
     variants_seen:
-      - normal
+    - normal
     rarity_code: UR

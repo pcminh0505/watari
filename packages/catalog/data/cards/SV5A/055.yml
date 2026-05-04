@@ -7,9 +7,9 @@ name_en: Hyper Aroma
 rarity_code: R
 category: card
 image: https://den-cards.pokellector.com/391/Hyper-Aroma.SV5A.55.52767.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '52767'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: ハイパーアロマ
     variants_seen:
-      - normal
+    - normal

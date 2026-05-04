@@ -7,9 +7,9 @@ name_en: Cassiopeia
 rarity_code: SR
 category: card
 image: https://den-cards.pokellector.com/398/Cassiopeia.SV6A.85.53590.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '53590'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: カシオペア
     variants_seen:
-      - normal
+    - normal

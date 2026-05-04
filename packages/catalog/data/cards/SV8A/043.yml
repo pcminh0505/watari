@@ -2,14 +2,14 @@
 # To freeze a manually-edited value, add `# manual: true` on line 1.
 set_code: SV8A
 local_id: '043'
-name_ja:
+name_ja: Wugtrio
 name_en: Wugtrio
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/406/Wugtrio.SV8A.43.55172.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '55172'

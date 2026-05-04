@@ -7,9 +7,9 @@ name_en: Salamence
 rarity_code: R
 category: card
 image: https://den-cards.pokellector.com/319/Salamence.S7R.45.39495.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '39495'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ボーマンダ
     variants_seen:
-      - normal
+    - normal
     rarity_code: R

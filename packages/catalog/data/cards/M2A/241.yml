@@ -7,9 +7,9 @@ name_en: Mega Scrafty ex
 rarity_code: SAR
 category: card
 image: https://den-cards.pokellector.com/427/Mega-Scrafty-ex.M2A.241.60108.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '60108'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: メガズルズキンex
     variants_seen:
-      - normal
+    - normal

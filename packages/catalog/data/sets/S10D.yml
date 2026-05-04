@@ -4,7 +4,9 @@ set_code: S10D
 era_block: sw
 language: jp
 name_ja: タイムゲイザー
-name_en: タイムゲイザー
+name_en: Time Gazer
 release_date: 2022-04-08
 tcgdex_id: S10D
 pokellector_slug: Time-Gazer-Expansion
+tcgcollector_id: '11462'
+tcgcollector_slug: time-gazer

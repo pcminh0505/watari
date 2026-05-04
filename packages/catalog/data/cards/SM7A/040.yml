@@ -7,9 +7,9 @@ name_en: Cobalion
 rarity_code: R
 category: card
 image: https://den-cards.pokellector.com/243/Cobalion.SM7A.40.21717.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '21717'

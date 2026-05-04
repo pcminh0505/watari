@@ -7,9 +7,9 @@ name_en: Scovillain
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/362/Scovillain.SV1V.14.46299.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '46299'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: スコヴィラン
     variants_seen:
-      - normal
+    - normal

@@ -7,9 +7,9 @@ name_en: Plusle
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/319/Plusle.S7R.29.39482.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '39482'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: プラスル
     variants_seen:
-      - normal
+    - normal
     rarity_code: C

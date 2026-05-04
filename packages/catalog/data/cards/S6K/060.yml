@@ -7,9 +7,9 @@ name_en: Fog Crystal
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/310/Fog-Crystal.S6K.60.38643.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '38643'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: 霧の水晶
     variants_seen:
-      - normal
+    - normal
     rarity_code: U

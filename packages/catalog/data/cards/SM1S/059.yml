@@ -7,9 +7,9 @@ name_en: Professor Kukui
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/201/Professor-Kukui.SM1S.59.13559.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '13559'

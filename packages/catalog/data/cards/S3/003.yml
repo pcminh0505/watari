@@ -7,9 +7,9 @@ name_en: Carnivine
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/293/Carnivine.S3.3.34861.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '34861'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: マスキッパ
     variants_seen:
-      - normal
+    - normal
     rarity_code: U

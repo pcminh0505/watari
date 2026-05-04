@@ -7,9 +7,9 @@ name_en: Code Maniac's Decoding
 rarity_code: SR
 category: card
 image: https://den-cards.pokellector.com/387/Code-Maniacs-Decoding.SV5M.90.52228.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '52228'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: 暗号マニアの解読
     variants_seen:
-      - normal
+    - normal

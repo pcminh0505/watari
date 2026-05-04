@@ -7,9 +7,9 @@ name_en: Quilladin
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/430/Quilladin.M4.6.60923.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '60923'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: ハリボーグ
     variants_seen:
-      - normal
+    - normal

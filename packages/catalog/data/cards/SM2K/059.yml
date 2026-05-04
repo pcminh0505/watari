@@ -2,14 +2,14 @@
 # To freeze a manually-edited value, add `# manual: true` on line 1.
 set_code: sm2k
 local_id: '059'
-name_ja:
+name_ja: Kommo-o GX
 name_en: Kommo-o GX
 rarity_code: UR
 category: card
 image: https://den-cards.pokellector.com/211/Kommo-o-GX.SM2K.59.17364.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '17364'

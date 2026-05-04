@@ -7,9 +7,9 @@ name_en: Skwovet
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/310/Skwovet.S6K.58.38758.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '38758'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ホシガリス
     variants_seen:
-      - normal
+    - normal
     rarity_code: C

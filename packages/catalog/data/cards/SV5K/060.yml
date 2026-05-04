@@ -7,9 +7,9 @@ name_en: Cinccino
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/386/Cinccino.SV5K.60.51864.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '51864'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: チラチーノ
     variants_seen:
-      - normal
+    - normal

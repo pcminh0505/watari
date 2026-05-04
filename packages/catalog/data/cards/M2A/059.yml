@@ -7,9 +7,9 @@ name_en: Iono's Kilowattrel
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/427/Ionos-Kilowattrel.M2A.59.59957.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '59957'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: ナンジャモのタイカイデン(R仕様)
     variants_seen:
-      - normal
+    - normal

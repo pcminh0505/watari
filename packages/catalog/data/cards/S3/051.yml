@@ -7,9 +7,9 @@ name_en: Spinarak
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/293/Spinarak.S3.51.34899.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '34899'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: イトマル
     variants_seen:
-      - normal
+    - normal
     rarity_code: U

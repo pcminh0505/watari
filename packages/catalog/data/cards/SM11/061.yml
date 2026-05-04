@@ -7,9 +7,9 @@ name_en: Yveltal
 rarity_code: R
 category: card
 image: https://den-cards.pokellector.com/277/Yveltal.SM11.61.28755.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '28755'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ムーランド
     variants_seen:
-      - normal
+    - normal
     rarity_code: CHR

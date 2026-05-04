@@ -7,9 +7,9 @@ name_en: Rayquaza VMAX
 rarity_code: RRR
 category: card
 image: https://den-cards.pokellector.com/338/Rayquaza-VMAX.S8B.120.40534.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '40534'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: レックウザVMAX
     variants_seen:
-      - normal
+    - normal
     rarity_code: RRR

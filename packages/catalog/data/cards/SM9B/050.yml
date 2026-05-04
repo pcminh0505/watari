@@ -7,9 +7,9 @@ name_en: Abandoned Power Plant
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/263/Abandoned-Power-Plant.SM9B.50.26460.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '26460'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: 無人発電所
     variants_seen:
-      - normal
+    - normal
     rarity_code: U

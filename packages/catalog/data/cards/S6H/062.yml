@@ -7,9 +7,9 @@ name_en: Single Strike Scroll - Scroll of Stab
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/309/Single-Strike-Scroll-Scroll-of-Stab.S6H.62.38626.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '38626'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: いちげきの巻物貫通の巻
     variants_seen:
-      - normal
+    - normal
     rarity_code: U

@@ -2,14 +2,14 @@
 # To freeze a manually-edited value, add `# manual: true` on line 1.
 set_code: sm4p
 local_id: '121'
-name_ja:
+name_ja: Pheromosa GX
 name_en: Pheromosa GX
 rarity_code: UR
 category: card
 image: https://den-cards.pokellector.com/228/Pheromosa-GX.SM4+.121.19672.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '19672'

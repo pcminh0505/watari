@@ -7,9 +7,9 @@ name_en: Palkia
 rarity_code: R
 category: card
 image: https://den-cards.pokellector.com/224/Palkia.SM3+.25.18302.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '18302'

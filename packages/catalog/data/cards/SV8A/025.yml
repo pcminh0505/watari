@@ -7,9 +7,9 @@ name_en: Chi-Yu
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/406/Chi-Yu.SV8A.25.55166.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '55166'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: イーユイ(R仕様)
     variants_seen:
-      - normal
+    - normal

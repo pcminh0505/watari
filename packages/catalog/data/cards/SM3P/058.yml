@@ -7,9 +7,9 @@ name_en: Shining Lugia
 rarity_code: UR
 category: card
 image: https://den-cards.pokellector.com/224/Shining-Lugia.SM3+.58.18242.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '18242'

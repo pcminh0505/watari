@@ -7,9 +7,9 @@ name_en: Origin Forme Palkia V
 rarity_code: RR
 category: card
 image: https://den-cards.pokellector.com/357/Origin-Forme-Palkia-V.S12A.27.45308.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '45308'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: オリジンパルキアV
     variants_seen:
-      - normal
+    - normal
     rarity_code: RR

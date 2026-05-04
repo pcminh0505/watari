@@ -7,9 +7,9 @@ name_en: Siebold
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/310/Siebold.S6K.67.38630.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '38630'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ズミ
     variants_seen:
-      - normal
+    - normal
     rarity_code: U

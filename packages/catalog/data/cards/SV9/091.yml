@@ -7,9 +7,9 @@ name_en: Hop's Bag
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/408/Hops-Bag.SV9.91.55769.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '55769'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: シロナのガブリアスex
     variants_seen:
-      - normal
+    - normal

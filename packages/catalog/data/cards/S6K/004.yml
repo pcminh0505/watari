@@ -7,9 +7,9 @@ name_en: Celebi VMAX
 rarity_code: RRR
 category: card
 image: https://den-cards.pokellector.com/310/Celebi-VMAX.S6K.4.38673.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '38673'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: セレビィVMAX
     variants_seen:
-      - normal
+    - normal
     rarity_code: RRR

@@ -2,14 +2,14 @@
 # To freeze a manually-edited value, add `# manual: true` on line 1.
 set_code: sm6b
 local_id: '068'
-name_ja:
+name_ja: Electrode GX
 name_en: Electrode GX
 rarity_code: UR
 category: card
 image: https://den-cards.pokellector.com/237/Electrode-GX.SM6B.68.20924.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '20924'

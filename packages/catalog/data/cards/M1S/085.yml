@@ -7,9 +7,9 @@ name_en: Wally's Compassion
 rarity_code: SR
 category: card
 image: https://den-cards.pokellector.com/417/Wallys-Compassion.M1S.85.58961.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '58961'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ミツルの思いやり
     variants_seen:
-      - normal
+    - normal
     rarity_code: SR

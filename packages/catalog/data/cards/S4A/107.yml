@@ -7,9 +7,9 @@ name_en: Ariados
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/301/Ariados.S4A.107.36413.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '36413'

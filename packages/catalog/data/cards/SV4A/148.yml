@@ -2,14 +2,14 @@
 # To freeze a manually-edited value, add `# manual: true` on line 1.
 set_code: SV4A
 local_id: '148'
-name_ja:
+name_ja: Skwovet
 name_en: Skwovet
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/375/Skwovet.SV4A.148.51100.png
-illustrator:
+illustrator: HYOGONOSUKE
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '51100'

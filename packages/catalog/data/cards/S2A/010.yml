@@ -7,9 +7,9 @@ name_en: Golisopod
 rarity_code: R
 category: card
 image: https://den-cards.pokellector.com/295/Golisopod.S2A.10.34376.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '34376'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: グソクムシャ
     variants_seen:
-      - normal
+    - normal
     rarity_code: R

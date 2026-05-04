@@ -2,14 +2,14 @@
 # To freeze a manually-edited value, add `# manual: true` on line 1.
 set_code: sm5p
 local_id: '058'
-name_ja:
+name_ja: Naganadel GX
 name_en: Naganadel GX
 rarity_code: UR
 category: card
 image: https://den-cards.pokellector.com/238/Naganadel-GX.SM5+.58.20107.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '20107'

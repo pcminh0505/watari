@@ -7,9 +7,9 @@ name_en: Zeraora
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/427/Zeraora.M2A.55.59953.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '59953'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: ゼラオラ(R仕様)
     variants_seen:
-      - normal
+    - normal

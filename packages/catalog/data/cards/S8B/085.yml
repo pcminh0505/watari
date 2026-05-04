@@ -7,9 +7,9 @@ name_en: Gallade
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/338/Gallade.S8B.85.41344.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '41344'

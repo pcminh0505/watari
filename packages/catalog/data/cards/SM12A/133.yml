@@ -7,9 +7,9 @@ name_en: Fire Crystal
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/288/Fire-Crystal.SM12A.133.30478.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '30478'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: 炎の結晶
     variants_seen:
-      - normal
+    - normal
     rarity_code: C

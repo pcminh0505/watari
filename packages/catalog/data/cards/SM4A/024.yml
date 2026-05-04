@@ -7,9 +7,9 @@ name_en: Primeape
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/227/Primeape.SM4A.24.18594.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '18594'

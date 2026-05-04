@@ -7,9 +7,9 @@ name_en: Pangoro
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/210/Pangoro.SM2L.32.17292.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '17292'

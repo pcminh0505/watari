@@ -7,9 +7,9 @@ name_en: Espurr
 rarity_code: AR
 category: card
 image: https://den-cards.pokellector.com/428/Espurr.M3.87.60192.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '60192'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: ニャスパー
     variants_seen:
-      - normal
+    - normal

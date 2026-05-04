@@ -7,9 +7,9 @@ name_en: Mustard (Single Strike)
 rarity_code: SR
 category: card
 image: https://den-cards.pokellector.com/338/Mustard-Single-Strike.S8B.272.41561.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '41561'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: マスタードいちげきのかた
     variants_seen:
-      - normal
+    - normal
     rarity_code: SR

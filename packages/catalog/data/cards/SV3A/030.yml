@@ -7,9 +7,9 @@ name_en: Minior
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/376/Minior.SV3A.30.49311.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '49311'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: メテノ
     variants_seen:
-      - normal
+    - normal

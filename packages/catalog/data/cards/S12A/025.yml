@@ -7,9 +7,9 @@ name_en: Regice
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/357/Regice.S12A.25.45846.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '45846'

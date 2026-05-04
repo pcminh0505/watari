@@ -7,9 +7,9 @@ name_en: Ursaring
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/281/Ursaring.SM12.78.30108.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '30108'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: リングマ
     variants_seen:
-      - normal
+    - normal
     rarity_code: U

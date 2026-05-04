@@ -7,9 +7,9 @@ name_en: Surfing Beach
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/417/Surfing-Beach.M1S.62.58941.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '58941'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: なみのりビーチ
     variants_seen:
-      - normal
+    - normal
     rarity_code: U

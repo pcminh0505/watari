@@ -7,9 +7,9 @@ name_en: Assistance Bell
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/403/Assistance-Bell.SV7A.53.54020.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '54020'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: おたすけベル
     variants_seen:
-      - normal
+    - normal

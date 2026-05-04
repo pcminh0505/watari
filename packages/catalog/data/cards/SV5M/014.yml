@@ -7,9 +7,9 @@ name_en: Rellor
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/387/Rellor.SV5M.14.51730.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '51730'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: シガロコ(SV5M)
     variants_seen:
-      - normal
+    - normal

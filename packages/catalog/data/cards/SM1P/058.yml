@@ -2,14 +2,14 @@
 # To freeze a manually-edited value, add `# manual: true` on line 1.
 set_code: sm1p
 local_id: '058'
-name_ja:
+name_ja: Drampa GX
 name_en: Drampa GX
 rarity_code: UR
 category: card
 image: https://den-cards.pokellector.com/200/Drampa-GX.SM1+.58.14608.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '14608'

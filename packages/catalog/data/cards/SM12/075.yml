@@ -7,9 +7,9 @@ name_en: Aipom
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/281/Aipom.SM12.75.30105.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '30105'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: エイパム
     variants_seen:
-      - normal
+    - normal
     rarity_code: C

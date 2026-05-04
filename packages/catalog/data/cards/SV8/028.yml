@@ -7,10 +7,10 @@ name_en: Sealeo
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/405/Sealeo.SV8.28.54547.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
-  - master_ball_mirror
+- normal
+- master_ball_mirror
 sources:
   pokellector:
     id: '54547'
@@ -20,5 +20,5 @@ sources:
   cardrush:
     name_ja: トドグラー
     variants_seen:
-      - master_ball_mirror
-      - normal
+    - master_ball_mirror
+    - normal

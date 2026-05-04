@@ -7,9 +7,9 @@ name_en: Reset Stamp
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/288/Reset-Stamp.SM12A.137.30482.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '30482'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: リセットスタンプ
     variants_seen:
-      - normal
+    - normal
     rarity_code: C

@@ -7,9 +7,9 @@ name_en: Mawile
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/368/Mawile.SV3.78.48366.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '48366'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: フーパex
     variants_seen:
-      - normal
+    - normal

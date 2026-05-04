@@ -7,9 +7,9 @@ name_en: Unfair Stamp
 rarity_code: R
 category: card
 image: https://den-cards.pokellector.com/391/Unfair-Stamp.SV5A.53.52390.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '52390'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: アンフェアスタンプ
     variants_seen:
-      - normal
+    - normal

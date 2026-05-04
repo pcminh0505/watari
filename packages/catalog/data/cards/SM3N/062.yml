@@ -2,14 +2,14 @@
 # To freeze a manually-edited value, add `# manual: true` on line 1.
 set_code: sm3n
 local_id: '062'
-name_ja:
+name_ja: Super Scoop Up
 name_en: Super Scoop Up
 rarity_code: UR
 category: card
 image: https://den-cards.pokellector.com/218/Super-Scoop-Up.SM3N.62.18229.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '18229'

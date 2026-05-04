@@ -7,9 +7,9 @@ name_en: Dottler
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/382/Dottler.SV4K.4.50831.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '50831'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: レドームシ
     variants_seen:
-      - normal
+    - normal

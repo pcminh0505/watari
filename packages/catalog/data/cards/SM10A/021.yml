@@ -7,9 +7,9 @@ name_en: Medicham
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/267/Medicham.SM10A.21.27511.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '27511'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: チャーレム
     variants_seen:
-      - normal
+    - normal
     rarity_code: U

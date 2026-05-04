@@ -7,9 +7,9 @@ name_en: Slowking ex
 rarity_code: SR
 category: card
 image: https://den-cards.pokellector.com/369/Slowking-ex.SV2P.86.47605.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '47605'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: ヤドキングex
     variants_seen:
-      - normal
+    - normal

@@ -7,9 +7,9 @@ name_en: Gumshoos
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/366/Gumshoos.SV1A.63.46976.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '46976'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: デカグース
     variants_seen:
-      - normal
+    - normal

@@ -7,9 +7,9 @@ name_en: Sudowoodo
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/369/Sudowoodo.SV2P.41.47582.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '47582'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: ウソッキー
     variants_seen:
-      - normal
+    - normal

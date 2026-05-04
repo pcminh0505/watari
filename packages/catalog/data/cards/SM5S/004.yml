@@ -7,9 +7,9 @@ name_en: Roserade
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/232/Roserade.SM5S.4.19964.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '19964'

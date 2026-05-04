@@ -2,14 +2,14 @@
 # To freeze a manually-edited value, add `# manual: true` on line 1.
 set_code: sm4p
 local_id: '122'
-name_ja:
+name_ja: Xurkitree GX
 name_en: Xurkitree GX
 rarity_code: UR
 category: card
 image: https://den-cards.pokellector.com/228/Xurkitree-GX.SM4+.122.19673.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '19673'

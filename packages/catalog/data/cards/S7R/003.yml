@@ -7,9 +7,9 @@ name_en: Jumpluff
 rarity_code: R
 category: card
 image: https://den-cards.pokellector.com/319/Jumpluff.S7R.3.39408.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '39408'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ワタッコ
     variants_seen:
-      - normal
+    - normal
     rarity_code: R

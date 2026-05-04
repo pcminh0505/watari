@@ -7,9 +7,9 @@ name_en: Armarouge ex
 rarity_code: RR
 category: card
 image: https://den-cards.pokellector.com/381/Armarouge-ex.SV4K.15.50747.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '50747'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: グレンアルマex
     variants_seen:
-      - normal
+    - normal

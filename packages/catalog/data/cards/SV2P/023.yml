@@ -7,9 +7,9 @@ name_en: Veluza
 rarity_code: R
 category: card
 image: https://den-cards.pokellector.com/369/Veluza.SV2P.23.47573.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '47573'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: ミガルーサ
     variants_seen:
-      - normal
+    - normal

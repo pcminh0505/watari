@@ -7,9 +7,9 @@ name_en: Meowscarada
 rarity_code: SAR
 category: card
 image: https://den-cards.pokellector.com/366/Meowscarada.SV1A.96.46985.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '46985'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: マスカーニャex
     variants_seen:
-      - normal
+    - normal

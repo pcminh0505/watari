@@ -7,9 +7,9 @@ name_en: Mars
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/232/Mars.SM5S.62.20000.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '20000'

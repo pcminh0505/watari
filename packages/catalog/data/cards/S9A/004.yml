@@ -7,10 +7,10 @@ name_en: Scyther
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/339/Scyther.S9A.4.42886.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
-  - poke_ball_mirror
+- normal
+- poke_ball_mirror
 sources:
   pokellector:
     id: '42886'
@@ -20,6 +20,6 @@ sources:
   cardrush:
     name_ja: ストライク
     variants_seen:
-      - normal
-      - poke_ball_mirror
+    - normal
+    - poke_ball_mirror
     rarity_code: C

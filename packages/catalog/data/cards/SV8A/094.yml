@@ -2,14 +2,14 @@
 # To freeze a manually-edited value, add `# manual: true` on line 1.
 set_code: SV8A
 local_id: '094'
-name_ja:
+name_ja: Trubbish
 name_en: Trubbish
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/406/Trubbish.SV8A.94.55201.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '55201'

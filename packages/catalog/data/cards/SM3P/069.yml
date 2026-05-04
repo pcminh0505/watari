@@ -7,9 +7,9 @@ name_en: Sophocles
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/224/Sophocles.SM3+.69.18330.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '18330'

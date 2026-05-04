@@ -7,9 +7,9 @@ name_en: Raichu & Alolan Raichu GX
 rarity_code: RR
 category: card
 image: https://den-cards.pokellector.com/267/Raichu-Alolan-Raichu-GX.SM10A.8.27344.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '27344'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ライチュウ＆アローラライチュウGX
     variants_seen:
-      - normal
+    - normal
     rarity_code: RR

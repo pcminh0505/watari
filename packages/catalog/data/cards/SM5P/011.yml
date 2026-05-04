@@ -7,9 +7,9 @@ name_en: Dewpider
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/238/Dewpider.SM5+.11.20079.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '20079'

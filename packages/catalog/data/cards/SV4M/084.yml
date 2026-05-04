@@ -7,9 +7,9 @@ name_en: Maushold ex
 rarity_code: SR
 category: card
 image: https://den-cards.pokellector.com/382/Maushold-ex.SV4K.84.50911.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '50911'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: イッカネズミex
     variants_seen:
-      - normal
+    - normal

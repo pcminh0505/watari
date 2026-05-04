@@ -2,14 +2,14 @@
 # To freeze a manually-edited value, add `# manual: true` on line 1.
 set_code: s1h
 local_id: '069'
-name_ja:
+name_ja: Morpeko VMAX
 name_en: Morpeko VMAX
 rarity_code: UR
 category: card
 image: https://den-cards.pokellector.com/284/Morpeko-VMAX.S1H.69.31369.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '31369'

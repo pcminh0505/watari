@@ -7,9 +7,9 @@ name_en: Nessa
 rarity_code: HR
 category: card
 image: https://den-cards.pokellector.com/297/Nessa.S4.118.35684.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '35684'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ルリナ
     variants_seen:
-      - normal
+    - normal
     rarity_code: HR

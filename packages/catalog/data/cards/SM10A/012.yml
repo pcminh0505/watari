@@ -7,9 +7,9 @@ name_en: Thundurus
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/267/Thundurus.SM10A.12.27505.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '27505'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ボルトロス
     variants_seen:
-      - normal
+    - normal
     rarity_code: C

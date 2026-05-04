@@ -7,9 +7,9 @@ name_en: Celesteela
 rarity_code: R
 category: card
 image: https://den-cards.pokellector.com/242/Celesteela.SM7.58.20950.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '20950'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: サンダーマウンテン◇
     variants_seen:
-      - normal
+    - normal
     rarity_code: HR

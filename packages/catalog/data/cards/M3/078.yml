@@ -7,9 +7,9 @@ name_en: Grow Energy
 rarity_code: R
 category: energy
 image: https://den-cards.pokellector.com/428/Grow-Energy.M3.78.60251.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '60251'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: グロウ草エネルギー
     variants_seen:
-      - normal
+    - normal

@@ -4,7 +4,9 @@ set_code: SM12A
 era_block: sm
 language: jp
 name_ja: TAG TEAM GX タッグオールスターズ
-name_en: TAG TEAM GX タッグオールスターズ
+name_en: Tag All Stars
 release_date: 2019-10-04
 tcgdex_id: SM12a
 pokellector_slug: Tag-Team-GX-All-Stars-Expansion
+tcgcollector_id: '11211'
+tcgcollector_slug: tag-all-stars

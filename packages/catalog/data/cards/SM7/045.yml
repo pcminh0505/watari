@@ -7,9 +7,9 @@ name_en: Meditite
 rarity_code: C
 category: energy
 image: https://den-cards.pokellector.com/242/Meditite.SM7.45.21007.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '21007'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: エネルギーつけかえ
     variants_seen:
-      - normal
+    - normal
     rarity_code: U

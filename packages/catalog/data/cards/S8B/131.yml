@@ -7,9 +7,9 @@ name_en: Fan of Waves
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/338/Fan-of-Waves.S8B.131.41377.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '41377'

@@ -7,9 +7,9 @@ name_en: Speed Lightning Energy
 rarity_code: C
 category: energy
 image: https://den-cards.pokellector.com/301/Speed-Lightning-Energy.S4A.184.35886.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '35886'

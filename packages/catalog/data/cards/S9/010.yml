@@ -7,9 +7,9 @@ name_en: Wormadam
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/336/Wormadam.S9.10.42561.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '42561'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ビリジオンV
     variants_seen:
-      - normal
+    - normal
     rarity_code: RR

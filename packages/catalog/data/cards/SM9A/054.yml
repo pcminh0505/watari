@@ -7,9 +7,9 @@ name_en: Max Potion
 rarity_code: R
 category: card
 image: https://den-cards.pokellector.com/262/Max-Potion.SM9A.54.25631.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '25631'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: まんたんのくすり
     variants_seen:
-      - normal
+    - normal
     rarity_code: TR

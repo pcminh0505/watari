@@ -7,9 +7,9 @@ name_en: Armaldo
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/281/Armaldo.SM12.46.29644.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '29644'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: アーマルド
     variants_seen:
-      - normal
+    - normal
     rarity_code: U

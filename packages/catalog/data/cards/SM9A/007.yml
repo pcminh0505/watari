@@ -7,9 +7,9 @@ name_en: Tentacool
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/262/Tentacool.SM9A.7.25590.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '25590'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: メノクラゲ
     variants_seen:
-      - normal
+    - normal
     rarity_code: C

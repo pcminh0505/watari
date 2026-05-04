@@ -7,9 +7,9 @@ name_en: Mega Eelektross ex
 rarity_code: SR
 category: card
 image: https://den-cards.pokellector.com/427/Mega-Eelektross-ex.M2A.225.60095.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '60095'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: メガシビルドンex
     variants_seen:
-      - normal
+    - normal

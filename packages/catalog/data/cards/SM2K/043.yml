@@ -7,9 +7,9 @@ name_en: Blissey
 rarity_code: R
 category: card
 image: https://den-cards.pokellector.com/211/Blissey.SM2K.43.17352.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '17352'

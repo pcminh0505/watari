@@ -2,14 +2,14 @@
 # To freeze a manually-edited value, add `# manual: true` on line 1.
 set_code: s12a
 local_id: '081'
-name_ja:
+name_ja: Poochyena
 name_en: Poochyena
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/357/Poochyena.S12A.81.45883.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '45883'

@@ -7,9 +7,9 @@ name_en: Greninja
 rarity_code: R
 category: card
 image: https://den-cards.pokellector.com/262/Greninja.SM9A.28.25608.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '25608'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ゲッコウガ
     variants_seen:
-      - normal
+    - normal
     rarity_code: R

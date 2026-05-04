@@ -7,9 +7,9 @@ name_en: Karen's Conviction
 rarity_code: HR
 category: card
 image: https://den-cards.pokellector.com/308/Karens-Conviction.S5A.89.37936.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '37936'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: カリンの信念
     variants_seen:
-      - normal
+    - normal
     rarity_code: HR

@@ -7,9 +7,9 @@ name_en: Popplio
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/200/Popplio.SM1+.14.14586.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '14586'

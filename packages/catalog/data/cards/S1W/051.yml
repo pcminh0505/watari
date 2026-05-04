@@ -7,9 +7,9 @@ name_en: Cramorant V
 rarity_code: RR
 category: card
 image: https://den-cards.pokellector.com/283/Cramorant-V.S1W.51.31265.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '31265'

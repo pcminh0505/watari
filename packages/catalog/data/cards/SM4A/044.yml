@@ -7,9 +7,9 @@ name_en: Bunnelby
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/227/Bunnelby.SM4A.44.19433.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '19433'

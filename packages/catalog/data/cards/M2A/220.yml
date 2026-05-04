@@ -7,9 +7,9 @@ name_en: Black Belt's Training
 rarity_code: SR
 category: card
 image: https://den-cards.pokellector.com/427/Black-Belts-Training.M2A.220.60091.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '60091'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: からておうの稽古
     variants_seen:
-      - normal
+    - normal

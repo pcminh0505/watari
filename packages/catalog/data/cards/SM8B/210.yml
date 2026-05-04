@@ -7,9 +7,9 @@ name_en: Ho-Oh GX
 rarity_code: SR
 category: card
 image: https://den-cards.pokellector.com/241/Ho-Oh-GX.SM8B.210.25318.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '25318'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ホウオウGX
     variants_seen:
-      - normal
+    - normal
     rarity_code: SR

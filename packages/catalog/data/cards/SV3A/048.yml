@@ -7,9 +7,9 @@ name_en: Zacian
 rarity_code: R
 category: card
 image: https://den-cards.pokellector.com/376/Zacian.SV3A.48.49352.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '49352'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: ザシアン
     variants_seen:
-      - normal
+    - normal

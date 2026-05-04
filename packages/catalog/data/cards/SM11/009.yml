@@ -7,9 +7,9 @@ name_en: Foongus
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/277/Foongus.SM11.9.28788.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '28788'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ポニータ
     variants_seen:
-      - normal
+    - normal
     rarity_code: C

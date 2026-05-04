@@ -7,9 +7,9 @@ name_en: Minccino
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/430/Minccino.M4.70.60997.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '60997'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: チラーミィ
     variants_seen:
-      - normal
+    - normal

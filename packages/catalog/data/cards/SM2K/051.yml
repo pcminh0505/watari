@@ -2,14 +2,14 @@
 # To freeze a manually-edited value, add `# manual: true` on line 1.
 set_code: sm2k
 local_id: '051'
-name_ja:
+name_ja: Turtonator GX
 name_en: Turtonator GX
 rarity_code: UR
 category: card
 image: https://den-cards.pokellector.com/211/Turtonator-GX.SM2K.51.17356.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '17356'

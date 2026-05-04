@@ -7,9 +7,9 @@ name_en: Boltund V
 rarity_code: SR
 category: card
 image: https://den-cards.pokellector.com/285/Boltund-V.S1A.74.31988.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '31988'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: パルスワンV
     variants_seen:
-      - normal
+    - normal
     rarity_code: SR

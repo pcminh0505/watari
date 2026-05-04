@@ -7,9 +7,9 @@ name_en: Butterfree V
 rarity_code: RR
 category: card
 image: https://den-cards.pokellector.com/295/Butterfree-V.S2A.1.34363.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '34363'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: バタフリーV
     variants_seen:
-      - normal
+    - normal
     rarity_code: RR

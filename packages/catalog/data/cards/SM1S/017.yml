@@ -2,14 +2,14 @@
 # To freeze a manually-edited value, add `# manual: true` on line 1.
 set_code: sm1s
 local_id: '017'
-name_ja:
+name_ja: Wishiwashi
 name_en: Wishiwashi
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/201/Wishiwashi.SM1S.17.13736.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '13736'

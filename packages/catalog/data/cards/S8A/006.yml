@@ -7,9 +7,9 @@ name_en: Groudon
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/327/Groudon.S8A.6.40351.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '40351'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ピカチュウVMAX
     variants_seen:
-      - normal
+    - normal
     rarity_code: MA

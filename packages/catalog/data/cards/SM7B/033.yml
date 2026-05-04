@@ -7,9 +7,9 @@ name_en: Xerneas Prism Star
 rarity_code: SR
 category: card
 image: https://den-cards.pokellector.com/240/Xerneas-Prism-Star.SM7B.33.23101.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '23101'

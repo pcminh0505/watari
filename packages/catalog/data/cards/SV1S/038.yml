@@ -7,9 +7,9 @@ name_en: Meditite
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/361/Meditite.SV1S.38.46253.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '46253'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: スリープ
     variants_seen:
-      - normal
+    - normal

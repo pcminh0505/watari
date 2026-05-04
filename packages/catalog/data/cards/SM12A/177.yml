@@ -7,9 +7,9 @@ name_en: Espeon & Deoxys GX
 rarity_code: SR
 category: card
 image: https://den-cards.pokellector.com/288/Espeon-Deoxys-GX.SM12A.177.30519.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '30519'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: エーフィ＆デオキシスGX(SA)
     variants_seen:
-      - normal
+    - normal
     rarity_code: SR

@@ -7,9 +7,9 @@ name_en: Single Strike Energy
 rarity_code: UR
 category: energy
 image: https://den-cards.pokellector.com/306/Single-Strike-Energy.S5I.91.36910.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '36910'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: いちげきエネルギー
     variants_seen:
-      - normal
+    - normal
     rarity_code: UR

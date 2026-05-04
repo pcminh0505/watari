@@ -7,10 +7,10 @@ name_en: Dusknoir
 rarity_code: R
 category: card
 image: https://den-cards.pokellector.com/336/Dusknoir.S9.47.42539.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
-  - poke_ball_mirror
+- normal
+- poke_ball_mirror
 sources:
   pokellector:
     id: '42539'
@@ -20,6 +20,6 @@ sources:
   cardrush:
     name_ja: ヒスイハリーセン
     variants_seen:
-      - normal
-      - poke_ball_mirror
+    - normal
+    - poke_ball_mirror
     rarity_code: R

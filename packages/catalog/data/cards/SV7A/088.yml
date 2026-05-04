@@ -7,9 +7,9 @@ name_en: Archaludon ex
 rarity_code: SAR
 category: card
 image: https://den-cards.pokellector.com/403/Archaludon-ex.SV7A.88.54423.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '54423'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: ブリジュラスex
     variants_seen:
-      - normal
+    - normal

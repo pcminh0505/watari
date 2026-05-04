@@ -7,9 +7,9 @@ name_en: Togekiss
 rarity_code: R
 category: card
 image: https://den-cards.pokellector.com/368/Togekiss.SV3.45.48694.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '48694'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: ヒトツキ
     variants_seen:
-      - normal
+    - normal

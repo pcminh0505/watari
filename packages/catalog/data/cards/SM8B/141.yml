@@ -7,9 +7,9 @@ name_en: Shrine of Punishment
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/241/Shrine-of-Punishment.SM8B.141.24920.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '24920'

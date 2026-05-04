@@ -7,9 +7,9 @@ name_en: Unidentified Fossil
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/277/Unidentified-Fossil.SM11.83.28844.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '28844'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: なぞの化石
     variants_seen:
-      - normal
+    - normal
     rarity_code: C

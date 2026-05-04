@@ -7,9 +7,9 @@ name_en: Clawitzer
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/235/Clawitzer.SM6.22.20499.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '20499'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: マルマインGX
     variants_seen:
-      - normal
+    - normal
     rarity_code: RR

@@ -7,9 +7,9 @@ name_en: Parasect
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/201/Parasect.SM1S.5.13727.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '13727'

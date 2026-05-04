@@ -7,9 +7,9 @@ name_en: Galarian Sirfetch'd
 rarity_code: R
 category: card
 image: https://den-cards.pokellector.com/285/Galarian-Sirfetchd.S1A.43.31421.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '31421'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ガラルネギガナイト
     variants_seen:
-      - normal
+    - normal
     rarity_code: R

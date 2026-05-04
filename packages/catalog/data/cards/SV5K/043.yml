@@ -7,9 +7,9 @@ name_en: Ekans
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/386/Ekans.SV5K.43.51852.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '51852'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: アーボ
     variants_seen:
-      - normal
+    - normal

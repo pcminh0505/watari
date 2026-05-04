@@ -7,9 +7,9 @@ name_en: Tool Scrapper
 rarity_code: SR
 category: card
 image: https://den-cards.pokellector.com/430/Tool-Scrapper.M4.107.61025.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '61025'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: ツールスクラッパー
     variants_seen:
-      - normal
+    - normal

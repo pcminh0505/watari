@@ -7,9 +7,9 @@ name_en: School Boy
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/319/School-Boy.S7R.64.39506.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '39506'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: スクールボーイ
     variants_seen:
-      - normal
+    - normal
     rarity_code: C

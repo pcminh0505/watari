@@ -7,9 +7,9 @@ name_en: Escape Rope
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/228/Escape-Rope.SM4+.89.19649.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '19649'

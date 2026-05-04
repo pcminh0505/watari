@@ -7,9 +7,9 @@ name_en: Magby
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/381/Magby.SV4K.10.50742.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '50742'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: ブビィ
     variants_seen:
-      - normal
+    - normal

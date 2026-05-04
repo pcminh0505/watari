@@ -7,9 +7,9 @@ name_en: Dragapult
 rarity_code: S
 category: card
 image: https://den-cards.pokellector.com/301/Dragapult.S4A.261.36559.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '36559'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ドラパルト
     variants_seen:
-      - normal
+    - normal
     rarity_code: SR

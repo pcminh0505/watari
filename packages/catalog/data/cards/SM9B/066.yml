@@ -7,9 +7,9 @@ name_en: Celesteela GX
 rarity_code: HR
 category: card
 image: https://den-cards.pokellector.com/263/Celesteela-GX.SM9B.66.26496.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '26496'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: テッカグヤGX
     variants_seen:
-      - normal
+    - normal
     rarity_code: HR

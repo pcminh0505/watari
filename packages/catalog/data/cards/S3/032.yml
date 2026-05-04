@@ -7,9 +7,9 @@ name_en: Tapu Koko
 rarity_code: R
 category: card
 image: https://den-cards.pokellector.com/293/Tapu-Koko.S3.32.34883.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '34883'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: マホイップVMAX
     variants_seen:
-      - normal
+    - normal
     rarity_code: RRR

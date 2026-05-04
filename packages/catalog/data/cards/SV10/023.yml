@@ -7,9 +7,9 @@ name_en: Clampearl
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/413/Clampearl.SV10.23.57055.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '57055'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: パールル
     variants_seen:
-      - normal
+    - normal

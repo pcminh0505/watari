@@ -2,14 +2,14 @@
 # To freeze a manually-edited value, add `# manual: true` on line 1.
 set_code: M2A
 local_id: '143'
-name_ja:
+name_ja: Hop's Cramorant
 name_en: Hop's Cramorant
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/427/Hops-Cramorant.M2A.143.60024.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '60024'

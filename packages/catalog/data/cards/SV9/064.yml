@@ -7,9 +7,9 @@ name_en: N's Klink
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/408/Ns-Klink.SV9.64.55754.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '55754'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: Nのギアル
     variants_seen:
-      - normal
+    - normal

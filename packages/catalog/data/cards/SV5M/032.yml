@@ -7,9 +7,9 @@ name_en: Girafarig
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/387/Girafarig.SV5M.32.51775.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '51775'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: キリンリキ
     variants_seen:
-      - normal
+    - normal

@@ -7,9 +7,9 @@ name_en: Sinistcha ex
 rarity_code: RR
 category: card
 image: https://den-cards.pokellector.com/406/Sinistcha-ex.SV8A.19.55163.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '55163'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: ヤバソチャex
     variants_seen:
-      - normal
+    - normal

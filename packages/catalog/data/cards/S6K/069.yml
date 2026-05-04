@@ -7,9 +7,9 @@ name_en: Spiral Energy
 rarity_code: U
 category: energy
 image: https://den-cards.pokellector.com/310/Spiral-Energy.S6K.69.38628.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '38628'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: スパイラルエネルギー
     variants_seen:
-      - normal
+    - normal
     rarity_code: U

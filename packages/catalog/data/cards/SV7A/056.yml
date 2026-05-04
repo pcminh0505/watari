@@ -7,9 +7,9 @@ name_en: Megaton Blower
 rarity_code: R
 category: card
 image: https://den-cards.pokellector.com/403/Megaton-Blower.SV7A.56.54022.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '54022'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: メガトンブロアー
     variants_seen:
-      - normal
+    - normal

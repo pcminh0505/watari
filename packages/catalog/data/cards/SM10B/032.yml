@@ -7,9 +7,9 @@ name_en: Poipole
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/268/Poipole.SM10B.32.27676.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '27676'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ベベノム
     variants_seen:
-      - normal
+    - normal
     rarity_code: C

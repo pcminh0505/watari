@@ -7,9 +7,9 @@ name_en: Toxtricity
 rarity_code: S
 category: card
 image: https://den-cards.pokellector.com/301/Toxtricity.S4A.241.36542.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '36542'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ストリンダー
     variants_seen:
-      - normal
+    - normal
     rarity_code: SR

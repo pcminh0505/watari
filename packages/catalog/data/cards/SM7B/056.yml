@@ -2,14 +2,14 @@
 # To freeze a manually-edited value, add `# manual: true` on line 1.
 set_code: sm7b
 local_id: '056'
-name_ja:
+name_ja: Mina
 name_en: Mina
 rarity_code: UR
 category: card
 image: https://den-cards.pokellector.com/240/Mina.SM7B.56.23147.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '23147'

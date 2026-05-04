@@ -7,9 +7,9 @@ name_en: Bronzong
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/232/Bronzong.SM5S.41.19991.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '19991'

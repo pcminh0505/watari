@@ -7,9 +7,9 @@ name_en: Pheromosa & Buzzwole GX
 rarity_code: RR
 category: card
 image: https://den-cards.pokellector.com/288/Pheromosa-Buzzwole-GX.SM12A.1.30195.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '30195'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: フェローチェ＆マッシブーンGX
     variants_seen:
-      - normal
+    - normal
     rarity_code: RR

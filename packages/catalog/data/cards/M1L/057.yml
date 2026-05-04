@@ -7,9 +7,9 @@ name_en: Iron X Defense
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/416/Iron-X-Defense.M1L.57.58861.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '58861'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: アイアンディフェンダー
     variants_seen:
-      - normal
+    - normal
     rarity_code: U

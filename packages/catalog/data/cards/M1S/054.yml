@@ -7,9 +7,9 @@ name_en: Lopunny
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/417/Lopunny.M1S.54.58935.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '58935'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ミミロップ
     variants_seen:
-      - normal
+    - normal
     rarity_code: C

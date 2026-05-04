@@ -7,9 +7,9 @@ name_en: Primeape
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/306/Primeape.S5I.29.36721.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '36721'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: オコリザル
     variants_seen:
-      - normal
+    - normal
     rarity_code: U

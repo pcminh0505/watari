@@ -7,9 +7,9 @@ name_en: Clauncher
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/417/Clauncher.M1S.19.58909.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '58909'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ウデッポウ
     variants_seen:
-      - normal
+    - normal
     rarity_code: C

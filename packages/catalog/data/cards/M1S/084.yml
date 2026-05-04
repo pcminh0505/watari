@@ -7,9 +7,9 @@ name_en: Acerola's Mischief
 rarity_code: SR
 category: card
 image: https://den-cards.pokellector.com/417/Acerolas-Mischief.M1S.84.58960.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '58960'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: アセロラのいたずら
     variants_seen:
-      - normal
+    - normal
     rarity_code: SR

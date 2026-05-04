@@ -7,9 +7,9 @@ name_en: Techno Radar
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/382/Techno-Radar.SV4K.60.50887.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '50887'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: テクノレーダー
     variants_seen:
-      - normal
+    - normal

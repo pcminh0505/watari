@@ -7,9 +7,9 @@ name_en: Fusion Strike Energy
 rarity_code: C
 category: energy
 image: https://den-cards.pokellector.com/357/Fusion-Strike-Energy.S12A.172.45937.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '45937'

@@ -7,9 +7,9 @@ name_en: Iron Jugulis
 rarity_code: R
 category: card
 image: https://den-cards.pokellector.com/382/Iron-Jugulis.SV4K.58.50885.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '50885'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: テツノコウベ
     variants_seen:
-      - normal
+    - normal

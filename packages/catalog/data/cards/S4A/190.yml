@@ -7,9 +7,9 @@ name_en: Powerful Energy
 rarity_code: C
 category: energy
 image: https://den-cards.pokellector.com/301/Powerful-Energy.S4A.190.36472.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '36472'

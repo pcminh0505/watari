@@ -7,9 +7,9 @@ name_en: Night Academy
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/398/Night-Academy.SV6A.64.53570.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '53570'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: 夜のアカデミー
     variants_seen:
-      - normal
+    - normal

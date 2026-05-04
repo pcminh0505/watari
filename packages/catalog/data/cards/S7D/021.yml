@@ -7,9 +7,9 @@ name_en: Gliscor
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/318/Gliscor.S7D.21.39452.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '39452'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: グライオン
     variants_seen:
-      - normal
+    - normal
     rarity_code: C

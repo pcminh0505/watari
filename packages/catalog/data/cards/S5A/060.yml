@@ -7,9 +7,9 @@ name_en: Stoutland
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/308/Stoutland.S5A.60.37906.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '37906'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ムーランド
     variants_seen:
-      - normal
+    - normal
     rarity_code: U

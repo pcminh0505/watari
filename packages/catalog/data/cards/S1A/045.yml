@@ -7,9 +7,9 @@ name_en: Barbaracle
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/285/Barbaracle.S1A.45.31813.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '31813'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ガメノデス
     variants_seen:
-      - normal
+    - normal
     rarity_code: U

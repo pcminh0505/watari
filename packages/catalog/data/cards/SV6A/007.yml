@@ -7,9 +7,9 @@ name_en: Houndour
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/398/Houndour.SV6A.7.53544.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '53544'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: デルビル
     variants_seen:
-      - normal
+    - normal

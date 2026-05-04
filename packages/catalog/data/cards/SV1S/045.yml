@@ -7,9 +7,9 @@ name_en: Hawlucha
 rarity_code: R
 category: card
 image: https://den-cards.pokellector.com/361/Hawlucha.SV1S.45.46259.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '46259'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: ダグトリオ
     variants_seen:
-      - normal
+    - normal

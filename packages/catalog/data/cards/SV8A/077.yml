@@ -7,9 +7,9 @@ name_en: Iron Boulder
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/406/Iron-Boulder.SV8A.77.55188.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '55188'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: テツノイワオ(R仕様)
     variants_seen:
-      - normal
+    - normal

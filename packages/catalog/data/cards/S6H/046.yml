@@ -7,9 +7,9 @@ name_en: Qwilfish
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/309/Qwilfish.S6H.46.38713.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '38713'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ハリーセン
     variants_seen:
-      - normal
+    - normal
     rarity_code: C

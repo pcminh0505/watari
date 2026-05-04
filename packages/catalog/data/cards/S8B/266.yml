@@ -7,9 +7,9 @@ name_en: Professor's Research (Professor Juniper)
 rarity_code: SR
 category: card
 image: https://den-cards.pokellector.com/338/Professors-Research-Professor-Juniper.S8B.266.41555.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '41555'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: 博士の研究/アララギ博士
     variants_seen:
-      - normal
+    - normal
     rarity_code: SR

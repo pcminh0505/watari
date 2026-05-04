@@ -7,9 +7,9 @@ name_en: Prinplup
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/238/Prinplup.SM5+.9.20078.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '20078'

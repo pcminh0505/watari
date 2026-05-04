@@ -7,9 +7,9 @@ name_en: Super Rod
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/369/Super-Rod.SV2P.66.47035.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '47035'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: すごいつりざお
     variants_seen:
-      - normal
+    - normal

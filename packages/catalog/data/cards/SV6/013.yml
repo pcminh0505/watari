@@ -7,9 +7,9 @@ name_en: Poltchageist
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/393/Poltchageist.SV6.13.52908.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '52908'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: チャデス
     variants_seen:
-      - normal
+    - normal

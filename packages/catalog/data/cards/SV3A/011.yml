@@ -7,9 +7,9 @@ name_en: Dondozo
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/376/Dondozo.SV3A.11.49361.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '49361'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: ヘイラッシャ
     variants_seen:
-      - normal
+    - normal

@@ -7,9 +7,9 @@ name_en: Lugia
 rarity_code: R
 category: card
 image: https://den-cards.pokellector.com/294/Lugia.S3A.55.35056.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '35056'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ルギア
     variants_seen:
-      - normal
+    - normal
     rarity_code: R

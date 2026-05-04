@@ -7,9 +7,9 @@ name_en: Lacey
 rarity_code: SR
 category: card
 image: https://den-cards.pokellector.com/401/Lacey.SV7.124.53783.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '53783'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: タロ
     variants_seen:
-      - normal
+    - normal

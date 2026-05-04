@@ -7,9 +7,9 @@ name_en: Togekiss
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/427/Togekiss.M2A.66.59964.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '59964'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: トゲキッス(R仕様)
     variants_seen:
-      - normal
+    - normal

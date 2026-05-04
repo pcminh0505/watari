@@ -2,14 +2,14 @@
 # To freeze a manually-edited value, add `# manual: true` on line 1.
 set_code: s4a
 local_id: '235'
-name_ja:
+name_ja: Dracovish
 name_en: Dracovish
 rarity_code: S
 category: card
 image: https://den-cards.pokellector.com/301/Dracovish.S4A.235.36537.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '36537'

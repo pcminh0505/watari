@@ -2,14 +2,14 @@
 # To freeze a manually-edited value, add `# manual: true` on line 1.
 set_code: M2A
 local_id: '164'
-name_ja:
+name_ja: Thick Scales
 name_en: Thick Scales
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/427/Thick-Scales.M2A.164.59806.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '59806'

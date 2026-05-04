@@ -2,14 +2,14 @@
 # To freeze a manually-edited value, add `# manual: true` on line 1.
 set_code: sm2p
 local_id: '057'
-name_ja:
+name_ja: Sophocles
 name_en: Sophocles
 rarity_code: UR
 category: card
 image: https://den-cards.pokellector.com/212/Sophocles.SM2+.57.17463.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '17463'

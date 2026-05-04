@@ -7,9 +7,9 @@ name_en: Riolu
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/263/Riolu.SM9B.27.26441.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '26441'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: リオル
     variants_seen:
-      - normal
+    - normal
     rarity_code: C

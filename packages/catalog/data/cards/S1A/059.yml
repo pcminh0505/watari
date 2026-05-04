@@ -7,9 +7,9 @@ name_en: Bunnelby
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/285/Bunnelby.S1A.59.31859.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '31859'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ホルビー(s1a)
     variants_seen:
-      - normal
+    - normal
     rarity_code: C

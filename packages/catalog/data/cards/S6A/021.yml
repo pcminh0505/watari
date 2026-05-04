@@ -7,9 +7,9 @@ name_en: Swampert
 rarity_code: R
 category: card
 image: https://den-cards.pokellector.com/322/Swampert.S6A.21.38860.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '38860'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ラグラージ
     variants_seen:
-      - normal
+    - normal
     rarity_code: R

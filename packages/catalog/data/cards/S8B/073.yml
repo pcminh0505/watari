@@ -7,9 +7,9 @@ name_en: Dedenne
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/338/Dedenne.S8B.73.41247.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '41247'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: デデンネ(ミラー/ハイクラスパック仕様)
     variants_seen:
-      - normal
+    - normal
     rarity_code: C

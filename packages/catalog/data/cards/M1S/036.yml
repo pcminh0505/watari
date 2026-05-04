@@ -7,9 +7,9 @@ name_en: Abra
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/417/Abra.M1S.36.58922.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '58922'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ケーシィ
     variants_seen:
-      - normal
+    - normal
     rarity_code: C

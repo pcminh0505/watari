@@ -7,9 +7,9 @@ name_en: Fighting Dojo
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/266/Fighting-Dojo.SM10.89.26942.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '26942'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: 格闘道場
     variants_seen:
-      - normal
+    - normal
     rarity_code: U

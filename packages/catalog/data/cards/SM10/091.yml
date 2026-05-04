@@ -7,9 +7,9 @@ name_en: Triple Boost Energy
 rarity_code: U
 category: energy
 image: https://den-cards.pokellector.com/266/Triple-Boost-Energy.SM10.91.26846.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '26846'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: トリプル加速エネルギー
     variants_seen:
-      - normal
+    - normal
     rarity_code: U

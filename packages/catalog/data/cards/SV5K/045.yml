@@ -7,9 +7,9 @@ name_en: Gastly
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/386/Gastly.SV5K.45.51854.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '51854'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: ゴース
     variants_seen:
-      - normal
+    - normal

@@ -7,9 +7,9 @@ name_en: Evolution Incense
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/318/Evolution-Incense.S7D.57.39464.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '39464'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: しんかのおこう
     variants_seen:
-      - normal
+    - normal
     rarity_code: U

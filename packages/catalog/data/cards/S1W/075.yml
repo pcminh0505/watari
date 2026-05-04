@@ -7,9 +7,9 @@ name_en: Paper Balloon
 rarity_code: UR
 category: card
 image: https://den-cards.pokellector.com/283/Paper-Balloon.S1W.75.31367.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '31367'

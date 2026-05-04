@@ -7,9 +7,9 @@ name_en: Neutral Center
 rarity_code: R
 category: card
 image: https://den-cards.pokellector.com/398/Neutral-Center.SV6A.63.53116.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '53116'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: ニュートラルセンター
     variants_seen:
-      - normal
+    - normal

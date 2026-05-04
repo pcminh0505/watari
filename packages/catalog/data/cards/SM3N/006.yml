@@ -7,9 +7,9 @@ name_en: Wimpod
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/218/Wimpod.SM3N.6.18203.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '18203'

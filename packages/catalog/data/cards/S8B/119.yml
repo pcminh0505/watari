@@ -7,9 +7,9 @@ name_en: Rayquaza V
 rarity_code: RR
 category: card
 image: https://den-cards.pokellector.com/338/Rayquaza-V.S8B.119.41372.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '41372'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: レックウザV
     variants_seen:
-      - normal
+    - normal
     rarity_code: RR

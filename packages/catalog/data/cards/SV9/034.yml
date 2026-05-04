@@ -7,9 +7,9 @@ name_en: Mr. Mime
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/408/Mr-Mime.SV9.34.55742.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '55742'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: バリヤード
     variants_seen:
-      - normal
+    - normal

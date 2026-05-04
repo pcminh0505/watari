@@ -7,9 +7,9 @@ name_en: Sobble
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/308/Sobble.S5A.16.37235.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '37235'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: メッソン
     variants_seen:
-      - normal
+    - normal
     rarity_code: C

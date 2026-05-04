@@ -7,9 +7,9 @@ name_en: AZ's Relaxation
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/430/AZs-Relaxation.M4.75.60925.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '60925'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: AZの安らぎ
     variants_seen:
-      - normal
+    - normal

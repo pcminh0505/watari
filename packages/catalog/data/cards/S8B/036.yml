@@ -7,9 +7,9 @@ name_en: Sobble
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/338/Sobble.S8B.36.41311.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '41311'

@@ -2,14 +2,14 @@
 # To freeze a manually-edited value, add `# manual: true` on line 1.
 set_code: sm3h
 local_id: '054'
-name_ja:
+name_ja: Alolan Muk GX
 name_en: Alolan Muk GX
 rarity_code: UR
 category: card
 image: https://den-cards.pokellector.com/219/Alolan-Muk-GX.SM3H.54.18190.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '18190'

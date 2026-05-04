@@ -7,9 +7,9 @@ name_en: Latias ex
 rarity_code: SAR
 category: card
 image: https://den-cards.pokellector.com/403/Latias-ex.SV7A.87.54032.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '54032'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: ラティアスex
     variants_seen:
-      - normal
+    - normal

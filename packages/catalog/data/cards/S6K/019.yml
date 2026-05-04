@@ -7,9 +7,9 @@ name_en: Flaafy
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/310/Flaafy.S6K.19.38738.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '38738'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: モココ
     variants_seen:
-      - normal
+    - normal
     rarity_code: C

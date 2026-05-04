@@ -7,9 +7,9 @@ name_en: Switch
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/202/Switch.SM1M.56.13823.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '13823'

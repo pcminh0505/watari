@@ -7,9 +7,9 @@ name_en: Tyrantrum
 rarity_code: R
 category: card
 image: https://den-cards.pokellector.com/235/Tyrantrum.SM6.46.20515.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '20515'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: 竜の鉤爪
     variants_seen:
-      - normal
+    - normal
     rarity_code: U

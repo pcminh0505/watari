@@ -7,9 +7,9 @@ name_en: Dragapult ex
 rarity_code: SR
 category: card
 image: https://den-cards.pokellector.com/393/Dragapult-ex.SV6.120.53108.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '53108'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: ドラパルトex
     variants_seen:
-      - normal
+    - normal

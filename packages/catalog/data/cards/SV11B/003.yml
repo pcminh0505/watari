@@ -7,9 +7,9 @@ name_en: Serperior ex
 rarity_code: RR
 category: card
 image: https://den-cards.pokellector.com/414/Serperior-ex.SV11B.3.57181.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '57181'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: ジャローダex
     variants_seen:
-      - normal
+    - normal

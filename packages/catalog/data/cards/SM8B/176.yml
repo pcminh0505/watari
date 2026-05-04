@@ -7,9 +7,9 @@ name_en: Shuppet
 rarity_code: UR
 category: card
 image: https://den-cards.pokellector.com/241/Shuppet.SM8B.176.25296.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '25296'

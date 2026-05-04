@@ -7,9 +7,9 @@ name_en: Houndoom
 rarity_code: AR
 category: card
 image: https://den-cards.pokellector.com/398/Houndoom.SV6A.66.53572.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '53572'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: ヘルガー
     variants_seen:
-      - normal
+    - normal

@@ -7,9 +7,9 @@ name_en: Elekid
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/382/Elekid.SV4K.22.50849.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '50849'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: エレキッド
     variants_seen:
-      - normal
+    - normal

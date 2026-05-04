@@ -7,9 +7,9 @@ name_en: Passho Berry
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/403/Passho-Berry.SV7A.58.54404.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '54404'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: イトケのみ
     variants_seen:
-      - normal
+    - normal

@@ -7,9 +7,9 @@ name_en: Cornerstone Mask Ogerpon ex
 rarity_code: SR
 category: card
 image: https://den-cards.pokellector.com/393/Cornerstone-Mask-Ogerpon-ex.SV6.119.53106.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '53106'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: オーガポンいしずえのめんex
     variants_seen:
-      - normal
+    - normal

@@ -7,9 +7,9 @@ name_en: Buzzwole
 rarity_code: R
 category: card
 image: https://den-cards.pokellector.com/281/Buzzwole.SM12.11.30058.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '30058'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: シェイミ◇
     variants_seen:
-      - normal
+    - normal
     rarity_code: R

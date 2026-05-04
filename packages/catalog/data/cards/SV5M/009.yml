@@ -7,9 +7,9 @@ name_en: Sawsbuck
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/387/Sawsbuck.SV5M.9.51760.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '51760'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: メブキジカ
     variants_seen:
-      - normal
+    - normal

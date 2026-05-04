@@ -7,9 +7,9 @@ name_en: Korrina's Willpower
 rarity_code: HR
 category: card
 image: https://den-cards.pokellector.com/307/Korrinas-Willpower.S5R.86.36886.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '36886'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: コルニの気合い
     variants_seen:
-      - normal
+    - normal
     rarity_code: HR

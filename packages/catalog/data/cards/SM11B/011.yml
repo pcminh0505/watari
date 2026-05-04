@@ -7,9 +7,9 @@ name_en: Empoleon
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/278/Empoleon.SM11B.11.29271.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '29271'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: エンペルト
     variants_seen:
-      - normal
+    - normal
     rarity_code: U

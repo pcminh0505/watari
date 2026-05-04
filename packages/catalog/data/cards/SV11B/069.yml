@@ -7,9 +7,9 @@ name_en: Genesect ex
 rarity_code: RR
 category: card
 image: https://den-cards.pokellector.com/414/Genesect-ex.SV11B.69.57718.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '57718'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: ゲノセクトex
     variants_seen:
-      - normal
+    - normal

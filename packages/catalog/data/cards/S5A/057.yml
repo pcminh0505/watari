@@ -7,9 +7,9 @@ name_en: Shaymin
 rarity_code: R
 category: card
 image: https://den-cards.pokellector.com/308/Shaymin.S5A.57.37903.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '37903'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: シェイミ
     variants_seen:
-      - normal
+    - normal
     rarity_code: R

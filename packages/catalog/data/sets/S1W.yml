@@ -4,7 +4,9 @@ set_code: S1W
 era_block: sw
 language: jp
 name_ja: ソード
-name_en: ソード
+name_en: Sword
 release_date: 2019-12-06
 tcgdex_id: S1W
 pokellector_slug: Sword-Expansion
+tcgcollector_id: '11339'
+tcgcollector_slug: sword

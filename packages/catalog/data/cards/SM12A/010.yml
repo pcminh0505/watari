@@ -7,9 +7,9 @@ name_en: Sceptile GX
 rarity_code: RR
 category: card
 image: https://den-cards.pokellector.com/288/Sceptile-GX.SM12A.10.30373.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '30373'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ジュカインGX
     variants_seen:
-      - normal
+    - normal
     rarity_code: RR

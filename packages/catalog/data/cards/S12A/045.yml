@@ -7,9 +7,9 @@ name_en: Regieleki
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/357/Regieleki.S12A.45.45862.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '45862'

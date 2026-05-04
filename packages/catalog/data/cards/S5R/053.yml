@@ -7,9 +7,9 @@ name_en: Pawniard
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/307/Pawniard.S5R.53.36859.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '36859'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: コマタナ
     variants_seen:
-      - normal
+    - normal
     rarity_code: C

@@ -7,10 +7,10 @@ name_en: Oddish
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/339/Oddish.S9A.1.43094.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
-  - poke_ball_mirror
+- normal
+- poke_ball_mirror
 sources:
   pokellector:
     id: '43094'
@@ -20,6 +20,6 @@ sources:
   cardrush:
     name_ja: ナゾノクサ
     variants_seen:
-      - normal
-      - poke_ball_mirror
+    - normal
+    - poke_ball_mirror
     rarity_code: C

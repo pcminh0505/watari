@@ -7,9 +7,9 @@ name_en: Vanillish
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/382/Vanillish.SV4K.18.50845.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '50845'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: バニリッチ
     variants_seen:
-      - normal
+    - normal

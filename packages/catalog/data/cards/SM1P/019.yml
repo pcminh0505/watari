@@ -7,9 +7,9 @@ name_en: Pyukumuku
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/200/Pyukumuku.SM1+.19.14591.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '14591'

@@ -7,9 +7,9 @@ name_en: Mesprit
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/238/Mesprit.SM5+.19.20085.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '20085'

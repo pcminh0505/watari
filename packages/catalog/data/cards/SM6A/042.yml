@@ -7,9 +7,9 @@ name_en: Swablu
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/236/Swablu.SM6A.42.20670.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '20670'

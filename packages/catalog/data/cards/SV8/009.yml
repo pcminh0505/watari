@@ -7,10 +7,10 @@ name_en: Rabsca
 rarity_code: R
 category: card
 image: https://den-cards.pokellector.com/405/Rabsca.SV8.9.54532.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
-  - master_ball_mirror
+- normal
+- master_ball_mirror
 sources:
   pokellector:
     id: '54532'
@@ -20,5 +20,5 @@ sources:
   cardrush:
     name_ja: ベラカス
     variants_seen:
-      - master_ball_mirror
-      - normal
+    - master_ball_mirror
+    - normal

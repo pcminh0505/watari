@@ -7,9 +7,9 @@ name_en: Elgyem
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/277/Elgyem.SM11.36.28807.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '28807'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: リグレー
     variants_seen:
-      - normal
+    - normal
     rarity_code: RR

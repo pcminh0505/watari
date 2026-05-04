@@ -7,9 +7,9 @@ name_en: Reshiram & Charizard GX
 rarity_code: RR
 category: card
 image: https://den-cards.pokellector.com/288/Reshiram-Charizard-GX.SM12A.16.30190.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '30190'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: レシラム＆リザードンGX
     variants_seen:
-      - normal
+    - normal
     rarity_code: RR

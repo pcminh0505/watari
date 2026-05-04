@@ -7,9 +7,9 @@ name_en: Steel Frying Pan
 rarity_code: UR
 category: card
 image: https://den-cards.pokellector.com/238/Steel-Frying-Pan.SM5+.63.20104.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '20104'

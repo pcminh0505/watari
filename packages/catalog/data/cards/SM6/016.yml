@@ -7,9 +7,9 @@ name_en: Pyroar
 rarity_code: R
 category: card
 image: https://den-cards.pokellector.com/235/Pyroar.SM6.16.20448.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '20448'

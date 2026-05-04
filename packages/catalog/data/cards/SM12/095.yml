@@ -7,9 +7,9 @@ name_en: Professor Elm's Lecture
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/281/Professor-Elms-Lecture.SM12.95.30119.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '30119'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: アローラキュウコンGX
     variants_seen:
-      - normal
+    - normal
     rarity_code: RR

@@ -7,9 +7,9 @@ name_en: Volcanion
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/416/Volcanion.M1L.14.58825.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '58825'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ボルケニオン
     variants_seen:
-      - normal
+    - normal
     rarity_code: U

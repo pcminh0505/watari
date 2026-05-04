@@ -7,9 +7,9 @@ name_en: Chien-Pao ex
 rarity_code: RR
 category: card
 image: https://den-cards.pokellector.com/369/Chien-Pao-ex.SV2P.28.47028.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '47028'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: パオジアンex
     variants_seen:
-      - normal
+    - normal

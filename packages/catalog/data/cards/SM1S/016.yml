@@ -7,9 +7,9 @@ name_en: Lapras GX
 rarity_code: RR
 category: card
 image: https://den-cards.pokellector.com/201/Lapras-GX.SM1S.16.13304.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '13304'

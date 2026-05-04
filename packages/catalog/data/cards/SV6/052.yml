@@ -7,9 +7,9 @@ name_en: Slurpuff
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/393/Slurpuff.SV6.52.52864.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '52864'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: ヌイコグマ
     variants_seen:
-      - normal
+    - normal

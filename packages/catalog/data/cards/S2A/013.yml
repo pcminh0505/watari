@@ -7,9 +7,9 @@ name_en: Volcarona
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/295/Volcarona.S2A.13.34379.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '34379'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ウルガモス
     variants_seen:
-      - normal
+    - normal
     rarity_code: U

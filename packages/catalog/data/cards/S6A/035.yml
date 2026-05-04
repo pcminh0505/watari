@@ -7,9 +7,9 @@ name_en: Espeon V
 rarity_code: RR
 category: card
 image: https://den-cards.pokellector.com/322/Espeon-V.S6A.35.38830.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '38830'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: エーフィV
     variants_seen:
-      - normal
+    - normal
     rarity_code: RR

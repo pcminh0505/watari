@@ -7,9 +7,9 @@ name_en: Nuzleaf
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/242/Nuzleaf.SM7.7.20974.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '20974'

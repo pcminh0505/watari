@@ -7,9 +7,9 @@ name_en: Team Rocket's Giovanni
 rarity_code: SAR
 category: card
 image: https://den-cards.pokellector.com/413/Team-Rockets-Giovanni.SV10.129.57160.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '57160'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: ロケット団のサカキ
     variants_seen:
-      - normal
+    - normal

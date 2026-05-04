@@ -7,9 +7,9 @@ name_en: Flapple
 rarity_code: AR
 category: card
 image: https://den-cards.pokellector.com/403/Flapple.SV7A.74.54040.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '54040'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: アップリュー
     variants_seen:
-      - normal
+    - normal

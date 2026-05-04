@@ -2,14 +2,14 @@
 # To freeze a manually-edited value, add `# manual: true` on line 1.
 set_code: M2A
 local_id: '004'
-name_ja:
+name_ja: Wurmple
 name_en: Wurmple
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/427/Wurmple.M2A.4.59917.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '59917'

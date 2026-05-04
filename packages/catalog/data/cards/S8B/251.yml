@@ -7,9 +7,9 @@ name_en: Zamazenta V
 rarity_code: CSR
 category: card
 image: https://den-cards.pokellector.com/338/Zamazenta-V.S8B.251.40972.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '40972'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ザマゼンタV
     variants_seen:
-      - normal
+    - normal
     rarity_code: CSR

@@ -7,11 +7,11 @@ name_en: Zorua
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/415/Zorua.SV11W.58.57246.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
-  - master_ball_mirror
-  - poke_ball_mirror
+- normal
+- master_ball_mirror
+- poke_ball_mirror
 sources:
   pokellector:
     id: '57246'
@@ -21,6 +21,6 @@ sources:
   cardrush:
     name_ja: ゾロア
     variants_seen:
-      - master_ball_mirror
-      - normal
-      - poke_ball_mirror
+    - master_ball_mirror
+    - normal
+    - poke_ball_mirror

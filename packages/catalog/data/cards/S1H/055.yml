@@ -7,9 +7,9 @@ name_en: Sitrus Berry
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/284/Sitrus-Berry.S1H.55.31325.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '31325'

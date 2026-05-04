@@ -7,9 +7,9 @@ name_en: Gift Energy
 rarity_code: U
 category: energy
 image: https://den-cards.pokellector.com/344/Gift-Energy.S12.100.44416.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '44416'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ギフトエネルギー
     variants_seen:
-      - normal
+    - normal
     rarity_code: U

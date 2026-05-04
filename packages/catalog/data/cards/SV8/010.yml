@@ -7,9 +7,9 @@ name_en: Wo-Chien
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/405/Wo-Chien.SV8.10.54533.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '54533'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: チオンジェン
     variants_seen:
-      - normal
+    - normal

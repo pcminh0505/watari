@@ -7,9 +7,9 @@ name_en: Metagross VMAX
 rarity_code: RRR
 category: card
 image: https://den-cards.pokellector.com/310/Metagross-VMAX.S6K.50.38676.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '38676'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: メタグロスVMAX
     variants_seen:
-      - normal
+    - normal
     rarity_code: RRR

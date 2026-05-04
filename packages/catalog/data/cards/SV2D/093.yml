@@ -7,9 +7,9 @@ name_en: Tinkaton ex
 rarity_code: SAR
 category: card
 image: https://den-cards.pokellector.com/370/Tinkaton-ex.SV2D.93.47530.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '47530'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: デカヌチャンex
     variants_seen:
-      - normal
+    - normal

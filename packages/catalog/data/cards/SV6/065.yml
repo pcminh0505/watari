@@ -7,9 +7,9 @@ name_en: Cornerstone Mask Ogerpon ex
 rarity_code: RR
 category: card
 image: https://den-cards.pokellector.com/393/Cornerstone-Mask-Ogerpon.SV6.65.52804.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '52804'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: カプ・ブルル
     variants_seen:
-      - normal
+    - normal

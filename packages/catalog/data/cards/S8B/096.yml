@@ -7,9 +7,9 @@ name_en: Galarian Moltres V
 rarity_code: RR
 category: card
 image: https://den-cards.pokellector.com/338/Galarian-Moltres-V.S8B.96.41352.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '41352'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ガラルファイヤーV
     variants_seen:
-      - normal
+    - normal
     rarity_code: RR

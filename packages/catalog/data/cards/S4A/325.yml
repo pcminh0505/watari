@@ -7,9 +7,9 @@ name_en: Dubwool V
 rarity_code: SSR
 category: card
 image: https://den-cards.pokellector.com/301/Dubwool-V.S4A.325.36615.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '36615'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: バイウールーV
     variants_seen:
-      - normal
+    - normal
     rarity_code: SR

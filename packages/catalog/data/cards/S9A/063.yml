@@ -7,10 +7,10 @@ name_en: Cancelling Cologne
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/339/Cancelling-Cologne.S9A.63.43140.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
-  - poke_ball_mirror
+- normal
+- poke_ball_mirror
 sources:
   pokellector:
     id: '43140'
@@ -20,6 +20,6 @@ sources:
   cardrush:
     name_ja: キャンセルコロン
     variants_seen:
-      - normal
-      - poke_ball_mirror
+    - normal
+    - poke_ball_mirror
     rarity_code: U

@@ -7,9 +7,9 @@ name_en: Amoonguss
 rarity_code: AR
 category: card
 image: https://den-cards.pokellector.com/414/Amoonguss.SV11B.96.57819.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '57819'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: モロバレル
     variants_seen:
-      - normal
+    - normal

@@ -7,9 +7,9 @@ name_en: Eevee
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/322/Eevee.S6A.58.38835.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '38835'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: イーブイ
     variants_seen:
-      - normal
+    - normal
     rarity_code: C

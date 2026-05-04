@@ -7,9 +7,9 @@ name_en: Totodile
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/224/Totodile.SM3+.19.18297.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '18297'

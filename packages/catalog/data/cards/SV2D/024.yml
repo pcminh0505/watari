@@ -7,9 +7,9 @@ name_en: Tadbulb
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/370/Tadbulb.SV2D.24.47534.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '47534'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: ズピカ
     variants_seen:
-      - normal
+    - normal

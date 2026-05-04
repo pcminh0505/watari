@@ -7,9 +7,9 @@ name_en: Skiddo
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/235/Skiddo.SM6.7.20494.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '20494'

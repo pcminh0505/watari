@@ -2,14 +2,14 @@
 # To freeze a manually-edited value, add `# manual: true` on line 1.
 set_code: M2A
 local_id: '159'
-name_ja:
+name_ja: Night Stretcher
 name_en: Night Stretcher
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/427/Night-Stretcher.M2A.159.60039.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '60039'

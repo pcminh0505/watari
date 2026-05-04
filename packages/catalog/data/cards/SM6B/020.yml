@@ -7,9 +7,9 @@ name_en: Ludicolo
 rarity_code: R
 category: card
 image: https://den-cards.pokellector.com/237/Ludicolo.SM6B.20.20884.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '20884'

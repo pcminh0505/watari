@@ -7,9 +7,9 @@ name_en: Pikachu & Zekrom GX
 rarity_code: RR
 category: card
 image: https://den-cards.pokellector.com/260/Pikachu-Zekrom-GX.SM9.31.23323.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '23323'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ピカチュウ＆ゼクロムGX
     variants_seen:
-      - normal
+    - normal
     rarity_code: RR

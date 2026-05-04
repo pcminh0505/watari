@@ -7,9 +7,9 @@ name_en: Drednaw
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/284/Drednaw.S1H.14.31290.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '31290'

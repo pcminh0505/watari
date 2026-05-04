@@ -7,9 +7,9 @@ name_en: Giacomo
 rarity_code: SR
 category: card
 image: https://den-cards.pokellector.com/369/Giacomo.SV2P.91.47609.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '47609'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: ピーニャ
     variants_seen:
-      - normal
+    - normal

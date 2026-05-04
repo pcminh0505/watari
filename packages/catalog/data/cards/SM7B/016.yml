@@ -7,9 +7,9 @@ name_en: Sableye
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/240/Sableye.SM7B.16.23121.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '23121'

@@ -7,9 +7,9 @@ name_en: Detective Pikachu
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/271/Detective-Pikachu.SMP2.14.27340.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '27340'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: 名探偵ピカチュウ
     variants_seen:
-      - normal
+    - normal
     rarity_code: U

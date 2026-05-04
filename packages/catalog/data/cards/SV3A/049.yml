@@ -7,9 +7,9 @@ name_en: Orthworm
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/376/Orthworm.SV3A.49.49385.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '49385'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: ミミズズ
     variants_seen:
-      - normal
+    - normal

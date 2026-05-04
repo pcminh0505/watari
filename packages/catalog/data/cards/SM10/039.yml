@@ -7,9 +7,9 @@ name_en: Mismagius
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/266/Mismagius.SM10.39.26899.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '26899'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ヨルノズク
     variants_seen:
-      - normal
+    - normal
     rarity_code: U

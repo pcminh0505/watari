@@ -7,9 +7,9 @@ name_en: Azumarill
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/322/Azumarill.S6A.17.38928.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '38928'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: マリルリ
     variants_seen:
-      - normal
+    - normal
     rarity_code: C

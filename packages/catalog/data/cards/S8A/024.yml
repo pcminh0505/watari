@@ -7,9 +7,9 @@ name_en: Flying Pikachu VMAX
 rarity_code: RRR
 category: card
 image: https://den-cards.pokellector.com/327/Flying-Pikachu-VMAX.S8A.24.39589.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '39589'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: そらをとぶピカチュウVMAX(25th)
     variants_seen:
-      - normal
+    - normal
     rarity_code: RRR

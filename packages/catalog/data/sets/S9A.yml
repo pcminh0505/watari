@@ -4,7 +4,9 @@ set_code: S9A
 era_block: sw
 language: jp
 name_ja: バトルリージョン
-name_en: バトルリージョン
+name_en: Battle Region
 release_date: 2022-02-25
 tcgdex_id: S9a
 pokellector_slug: Battle-Region-Expansion
+tcgcollector_id: '11456'
+tcgcollector_slug: battle-region

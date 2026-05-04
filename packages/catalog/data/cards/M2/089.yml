@@ -7,9 +7,9 @@ name_en: Toxtricity
 rarity_code: AR
 category: card
 image: https://den-cards.pokellector.com/425/Toxtricity.M2.89.59576.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '59576'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: ストリンダー
     variants_seen:
-      - normal
+    - normal

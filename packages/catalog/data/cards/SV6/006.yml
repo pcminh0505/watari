@@ -7,9 +7,9 @@ name_en: Phantump
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/393/Phantump.SV6.6.52906.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '52906'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: ボクレー
     variants_seen:
-      - normal
+    - normal

@@ -7,9 +7,9 @@ name_en: Grass Energy
 rarity_code: UR
 category: energy
 image: https://den-cards.pokellector.com/200/Grass-Energy.SM1+.68.23186.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '23186'

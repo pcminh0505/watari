@@ -7,9 +7,9 @@ name_en: Poison Barb
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/202/Poison-Barb.SM1M.57.13721.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '13721'

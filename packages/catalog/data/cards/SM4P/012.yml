@@ -7,9 +7,9 @@ name_en: Pheromosa GX
 rarity_code: RR
 category: card
 image: https://den-cards.pokellector.com/228/Pheromosa-GX.SM4+.12.19456.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '19456'

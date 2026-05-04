@@ -7,9 +7,9 @@ name_en: Core Memory
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/428/Core-Memory.M3.72.60162.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '60162'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: コアメモリ
     variants_seen:
-      - normal
+    - normal

@@ -7,9 +7,9 @@ name_en: Gurdurr
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/307/Gurdurr.S5R.43.36852.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '36852'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ドテッコツ
     variants_seen:
-      - normal
+    - normal
     rarity_code: C

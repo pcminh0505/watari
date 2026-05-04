@@ -2,14 +2,14 @@
 # To freeze a manually-edited value, add `# manual: true` on line 1.
 set_code: sm6b
 local_id: '070'
-name_ja:
+name_ja: Banette GX
 name_en: Banette GX
 rarity_code: UR
 category: card
 image: https://den-cards.pokellector.com/237/Banette-GX.SM6B.70.20926.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '20926'

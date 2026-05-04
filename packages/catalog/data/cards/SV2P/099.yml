@@ -7,9 +7,9 @@ name_en: Basic Water Energy
 rarity_code: UR
 category: energy
 image: https://den-cards.pokellector.com/369/Basic-Water-Energy.SV2P.99.47671.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '47671'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: 基本水エネルギー(SVデザイン)
     variants_seen:
-      - normal
+    - normal

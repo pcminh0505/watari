@@ -7,9 +7,9 @@ name_en: Team Yell's Cheering Towel
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/301/Team-Yells-Cheering-Towel.S4A.156.36447.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '36447'

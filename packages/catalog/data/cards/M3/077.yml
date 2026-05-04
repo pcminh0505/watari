@@ -7,9 +7,9 @@ name_en: Lumiose City
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/428/Lumiose-City.M3.77.60160.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '60160'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: ミアレシティ
     variants_seen:
-      - normal
+    - normal

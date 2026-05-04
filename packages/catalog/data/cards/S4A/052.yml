@@ -7,9 +7,9 @@ name_en: Rotom
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/301/Rotom.S4A.52.36363.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '36363'

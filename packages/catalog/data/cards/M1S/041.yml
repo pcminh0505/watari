@@ -7,9 +7,9 @@ name_en: Kirlia
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/417/Kirlia.M1S.41.57983.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '57983'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: キルリア
     variants_seen:
-      - normal
+    - normal
     rarity_code: C

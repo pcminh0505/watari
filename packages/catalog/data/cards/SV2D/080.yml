@@ -7,9 +7,9 @@ name_en: Grafaiai
 rarity_code: AR
 category: card
 image: https://den-cards.pokellector.com/370/Grafaiai.SV2D.80.47523.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '47523'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: タギングル
     variants_seen:
-      - normal
+    - normal

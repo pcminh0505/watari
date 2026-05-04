@@ -7,9 +7,9 @@ name_en: Single Strike Urshifu
 rarity_code: R
 category: card
 image: https://den-cards.pokellector.com/308/Single-Strike-Urshifu.S5A.55.37225.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '37225'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: いちげきウーラオス
     variants_seen:
-      - normal
+    - normal
     rarity_code: R

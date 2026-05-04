@@ -7,9 +7,9 @@ name_en: Tinkaton
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/416/Tinkaton.M1L.50.58854.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '58854'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: デカヌチャン
     variants_seen:
-      - normal
+    - normal
     rarity_code: U

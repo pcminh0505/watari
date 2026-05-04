@@ -7,9 +7,9 @@ name_en: Ferrothorn
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/283/Ferrothorn.S1W.43.31258.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '31258'

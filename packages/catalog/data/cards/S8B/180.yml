@@ -7,9 +7,9 @@ name_en: Single Strike Energy
 rarity_code: C
 category: energy
 image: https://den-cards.pokellector.com/338/Single-Strike-Energy.S8B.180.41416.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '41416'

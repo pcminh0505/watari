@@ -7,9 +7,9 @@ name_en: Pansage
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/319/Pansage.S7R.5.39471.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '39471'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ヤナップ
     variants_seen:
-      - normal
+    - normal
     rarity_code: C

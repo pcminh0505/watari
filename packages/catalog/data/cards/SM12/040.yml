@@ -7,9 +7,9 @@ name_en: Nosepass
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/281/Nosepass.SM12.40.30082.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '30082'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ノズパス
     variants_seen:
-      - normal
+    - normal
     rarity_code: C

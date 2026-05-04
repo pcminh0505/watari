@@ -7,9 +7,9 @@ name_en: Lurantis
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/268/Lurantis.SM10B.5.27652.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '27652'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ラランテス
     variants_seen:
-      - normal
+    - normal
     rarity_code: C

@@ -7,9 +7,9 @@ name_en: Galarian Darumaka
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/293/Galarian-Darumaka.S3.20.34873.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '34873'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ガラルダルマッカ
     variants_seen:
-      - normal
+    - normal
     rarity_code: R

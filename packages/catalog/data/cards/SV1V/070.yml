@@ -7,9 +7,9 @@ name_en: Ultra Ball
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/362/Ultra-Ball.SV1V.70.46129.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '46129'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: ハイパーボール
     variants_seen:
-      - normal
+    - normal

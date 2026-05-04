@@ -7,9 +7,9 @@ name_en: Lunatone
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/212/Lunatone.SM2+.30.17490.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '17490'

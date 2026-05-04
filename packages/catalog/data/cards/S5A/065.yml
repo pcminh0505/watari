@@ -7,9 +7,9 @@ name_en: Galarian Breastplate
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/308/Galarian-Breastplate.S5A.65.37909.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '37909'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ガラルのむねあて
     variants_seen:
-      - normal
+    - normal
     rarity_code: U

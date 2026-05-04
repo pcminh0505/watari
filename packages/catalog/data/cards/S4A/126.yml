@@ -7,9 +7,9 @@ name_en: Galarian Meowth
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/301/Galarian-Meowth.S4A.126.36426.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '36426'

@@ -7,9 +7,9 @@ name_en: Hippopotas
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/309/Hippopotas.S6H.38.38709.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '38709'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ヒポポタス
     variants_seen:
-      - normal
+    - normal
     rarity_code: C

@@ -7,9 +7,9 @@ name_en: N's Castle
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/408/Ns-Castle.SV9.97.55771.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '55771'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: Nの城
     variants_seen:
-      - normal
+    - normal

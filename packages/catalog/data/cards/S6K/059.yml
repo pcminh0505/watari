@@ -7,9 +7,9 @@ name_en: Greedent
 rarity_code: R
 category: card
 image: https://den-cards.pokellector.com/310/Greedent.S6K.59.38759.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '38759'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ヨクバリス
     variants_seen:
-      - normal
+    - normal
     rarity_code: R

@@ -7,9 +7,9 @@ name_en: Nest Ball
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/228/Nest-Ball.SM4+.92.19652.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '19652'

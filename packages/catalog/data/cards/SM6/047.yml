@@ -7,9 +7,9 @@ name_en: Hawlucha
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/235/Hawlucha.SM6.47.20516.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '20516'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: カキ
     variants_seen:
-      - normal
+    - normal
     rarity_code: U

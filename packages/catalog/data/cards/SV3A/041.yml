@@ -7,9 +7,9 @@ name_en: Thievul
 rarity_code: R
 category: card
 image: https://den-cards.pokellector.com/376/Thievul.SV3A.41.49381.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '49381'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: フォクスライ
     variants_seen:
-      - normal
+    - normal

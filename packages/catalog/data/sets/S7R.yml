@@ -4,7 +4,9 @@ set_code: S7R
 era_block: sw
 language: jp
 name_ja: 蒼空ストリーム
-name_en: 蒼空ストリーム
+name_en: Blue Sky Stream
 release_date: 2021-07-09
 tcgdex_id: S7R
 pokellector_slug: Blue-Sky-Stream-Expansion
+tcgcollector_id: '11430'
+tcgcollector_slug: blue-sky-stream

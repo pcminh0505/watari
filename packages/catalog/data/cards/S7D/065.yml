@@ -7,9 +7,9 @@ name_en: Copycat
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/318/Copycat.S7D.65.39469.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '39469'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: モノマネむすめ
     variants_seen:
-      - normal
+    - normal
     rarity_code: C

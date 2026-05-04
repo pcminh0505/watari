@@ -7,9 +7,9 @@ name_en: Emolga
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/245/Emolga.SM8A.9.24119.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '24119'

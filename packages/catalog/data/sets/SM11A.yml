@@ -4,7 +4,9 @@ set_code: SM11A
 era_block: sm
 language: jp
 name_ja: リミックスバウト
-name_en: リミックスバウト
+name_en: Remix Bout
 release_date: 2019-07-05
 tcgdex_id: SM11a
 pokellector_slug: Remix-Bout-Expansion
+tcgcollector_id: '11268'
+tcgcollector_slug: remix-bout

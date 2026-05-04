@@ -7,9 +7,9 @@ name_en: Trevenant
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/272/Trevenant.SM11A.28.28976.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '28976'

@@ -7,9 +7,9 @@ name_en: U-Turn Board
 rarity_code: UR
 category: card
 image: https://den-cards.pokellector.com/268/U-Turn-Board.SM10B.67.28002.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '28002'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: Uターンボード
     variants_seen:
-      - normal
+    - normal
     rarity_code: UR

@@ -7,9 +7,9 @@ name_en: Professor Turo's Scenario
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/382/Professor-Turos-Scenario.SV4K.65.50892.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '50892'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: フトゥー博士のシナリオ
     variants_seen:
-      - normal
+    - normal

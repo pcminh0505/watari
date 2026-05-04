@@ -7,9 +7,9 @@ name_en: Pheromosa
 rarity_code: SR
 category: card
 image: https://den-cards.pokellector.com/241/Pheromosa.SM8B.165.25287.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '25287'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: フェローチェ
     variants_seen:
-      - normal
+    - normal
     rarity_code: SR

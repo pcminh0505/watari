@@ -7,9 +7,9 @@ name_en: Alolan Dugtrio
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/263/Alolan-Dugtrio.SM9B.31.25654.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '25654'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: アローラダグトリオ
     variants_seen:
-      - normal
+    - normal
     rarity_code: U

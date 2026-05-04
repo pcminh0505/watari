@@ -4,7 +4,9 @@ set_code: S4
 era_block: sw
 language: jp
 name_ja: 仰天のボルテッカー
-name_en: 仰天のボルテッカー
+name_en: Amazing Volt Tackle
 release_date: 2020-09-18
 tcgdex_id: S4
 pokellector_slug: Electrifying-Tackle-Expansion
+tcgcollector_id: '11379'
+tcgcollector_slug: amazing-volt-tackle

@@ -7,9 +7,9 @@ name_en: Heatmor
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/236/Heatmor.SM6A.7.20644.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '20644'

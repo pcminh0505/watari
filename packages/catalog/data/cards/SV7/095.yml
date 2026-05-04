@@ -7,9 +7,9 @@ name_en: Gravity Stone
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/401/Gravity-Stone.SV7.95.53677.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '53677'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: 重力玉
     variants_seen:
-      - normal
+    - normal

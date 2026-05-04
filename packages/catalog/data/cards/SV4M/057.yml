@@ -7,9 +7,9 @@ name_en: Maushold ex
 rarity_code: RR
 category: card
 image: https://den-cards.pokellector.com/382/Maushold-ex.SV4K.57.50884.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '50884'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: イッカネズミex
     variants_seen:
-      - normal
+    - normal

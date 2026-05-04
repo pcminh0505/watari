@@ -7,9 +7,9 @@ name_en: Mow Rotom
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/413/Mow-Rotom.SV10.4.57083.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '57083'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: カットロトム
     variants_seen:
-      - normal
+    - normal

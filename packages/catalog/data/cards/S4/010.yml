@@ -7,9 +7,9 @@ name_en: Charmander
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/297/Charmander.S4.10.35590.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '35590'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ヒトカゲ
     variants_seen:
-      - normal
+    - normal
     rarity_code: RRR

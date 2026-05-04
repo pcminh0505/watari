@@ -7,9 +7,9 @@ name_en: Octillery
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/430/Octillery.M4.17.60961.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '60961'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: オクタン
     variants_seen:
-      - normal
+    - normal

@@ -7,9 +7,9 @@ name_en: Articuno
 rarity_code: R
 category: card
 image: https://den-cards.pokellector.com/260/Articuno.SM9.30.25467.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '25467'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: アローラディグダ
     variants_seen:
-      - normal
+    - normal
     rarity_code: R

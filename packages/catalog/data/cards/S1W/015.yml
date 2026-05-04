@@ -7,9 +7,9 @@ name_en: Lapras V MAX
 rarity_code: UR
 category: card
 image: https://den-cards.pokellector.com/283/Lapras-V-MAX.S1W.15.31192.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '31192'

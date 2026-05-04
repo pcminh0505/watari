@@ -2,14 +2,14 @@
 # To freeze a manually-edited value, add `# manual: true` on line 1.
 set_code: sm1m
 local_id: '005'
-name_ja:
+name_ja: Fomantis
 name_en: Fomantis
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/202/Fomantis.SM1M.5.13781.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '13781'

@@ -7,9 +7,9 @@ name_en: Fairy Charm L
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/262/Fairy-Charm-L.SM9A.47.25624.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '25624'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: フェアリーチャーム雷
     variants_seen:
-      - normal
+    - normal
     rarity_code: U

@@ -7,9 +7,9 @@ name_en: Absol
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/398/Absol.SV6A.30.53554.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '53554'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: アブソル
     variants_seen:
-      - normal
+    - normal

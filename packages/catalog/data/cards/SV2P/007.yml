@@ -7,9 +7,9 @@ name_en: Bounsweet
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/369/Bounsweet.SV2P.7.47560.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '47560'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: アマカジ
     variants_seen:
-      - normal
+    - normal

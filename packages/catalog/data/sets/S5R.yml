@@ -4,7 +4,9 @@ set_code: S5R
 era_block: sw
 language: jp
 name_ja: 連撃マスター
-name_en: 連撃マスター
+name_en: Rapid Strike Master
 release_date: 2021-01-22
 tcgdex_id: S5R
 pokellector_slug: Rapid-Strike-Master-Expansion
+tcgcollector_id: '11388'
+tcgcollector_slug: rapid-strike-master

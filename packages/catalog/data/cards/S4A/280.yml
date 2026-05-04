@@ -2,14 +2,14 @@
 # To freeze a manually-edited value, add `# manual: true` on line 1.
 set_code: s4a
 local_id: '280'
-name_ja:
+name_ja: Nickit
 name_en: Nickit
 rarity_code: S
 category: card
 image: https://den-cards.pokellector.com/301/Nickit.S4A.280.36577.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '36577'

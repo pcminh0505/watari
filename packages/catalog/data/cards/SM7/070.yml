@@ -7,9 +7,9 @@ name_en: Pelipper
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/242/Pelipper.SM7.70.21024.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '21024'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ゲノセクトGX
     variants_seen:
-      - normal
+    - normal
     rarity_code: HR

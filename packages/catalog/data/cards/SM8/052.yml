@@ -7,9 +7,9 @@ name_en: Hitmontop
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/258/Hitmontop.SM8.52.23276.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '23276'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ブラックマーケット◇
     variants_seen:
-      - normal
+    - normal
     rarity_code: RR

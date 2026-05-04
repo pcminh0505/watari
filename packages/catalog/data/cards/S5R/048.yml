@@ -7,9 +7,9 @@ name_en: Sandaconda
 rarity_code: R
 category: card
 image: https://den-cards.pokellector.com/307/Sandaconda.S5R.48.36856.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '36856'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: サダイジャ
     variants_seen:
-      - normal
+    - normal
     rarity_code: R

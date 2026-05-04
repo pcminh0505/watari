@@ -7,9 +7,9 @@ name_en: Cascoon
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/243/Cascoon.SM7A.4.22388.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '22388'

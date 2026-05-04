@@ -7,9 +7,9 @@ name_en: Kubfu
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/308/Kubfu.S5A.44.37226.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '37226'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ダクマ
     variants_seen:
-      - normal
+    - normal
     rarity_code: C

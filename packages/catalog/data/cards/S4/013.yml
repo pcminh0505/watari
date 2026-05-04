@@ -7,9 +7,9 @@ name_en: Flareon
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/297/Flareon.S4.13.35582.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '35582'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ブースター
     variants_seen:
-      - normal
+    - normal
     rarity_code: U

@@ -2,14 +2,14 @@
 # To freeze a manually-edited value, add `# manual: true` on line 1.
 set_code: sm2p
 local_id: '066'
-name_ja:
+name_ja: Darkness Energy
 name_en: Darkness Energy
 rarity_code: UR
 category: energy
 image: https://den-cards.pokellector.com/212/Darkness-Energy.SM2+.66.17521.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '17521'

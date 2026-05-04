@@ -2,14 +2,14 @@
 # To freeze a manually-edited value, add `# manual: true` on line 1.
 set_code: M2A
 local_id: '087'
-name_ja:
+name_ja: Solrock
 name_en: Solrock
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/427/Solrock.M2A.87.59982.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '59982'

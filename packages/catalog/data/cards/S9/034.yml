@@ -7,9 +7,9 @@ name_en: Raichu V
 rarity_code: RR
 category: card
 image: https://den-cards.pokellector.com/336/Raichu-V.S9.34.42573.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '42573'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ライチュウV
     variants_seen:
-      - normal
+    - normal
     rarity_code: RR

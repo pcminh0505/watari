@@ -7,9 +7,9 @@ name_en: Hand Trimmer
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/387/Hand-Trimmer.SV5M.61.51799.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '51799'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: ハンドトリマー
     variants_seen:
-      - normal
+    - normal

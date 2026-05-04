@@ -7,9 +7,9 @@ name_en: Escape Rope
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/267/Escape-Rope.SM10A.51.27525.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '27525'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: あなぬけのヒモ
     variants_seen:
-      - normal
+    - normal
     rarity_code: TR

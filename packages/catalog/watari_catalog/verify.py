@@ -126,8 +126,21 @@ async def _run_totals(session: AsyncSession) -> dict[str, int]:
     }
 
 
-async def run() -> dict[str, Any]:
-    """CLI entrypoint: print + return a catalog health snapshot."""
+# Sets where missing name_ja/rarity is acceptable (promos, primarily). The
+# strict flag excludes these from its non-zero exit logic. Add an entry only
+# after confirming the gap is real and unrecoverable, not a pipeline bug.
+_STRICT_EXEMPT_SETS: frozenset[str] = frozenset({
+    "SMP2",  # 名探偵ピカチュウ promo set — many cards lack JA names upstream
+    "SM0",   # ピカチュウと新しい仲間たち promo set
+})
+
+
+async def run(*, strict: bool = False) -> int:
+    """CLI entrypoint: print + return a catalog health snapshot.
+
+    Returns the process exit code (0 on success, 1 in ``--strict`` mode if
+    any non-exempt set has nulls in ``name_ja`` or ``rarity_code``).
+    """
     async with async_session_factory() as session:
         totals = await _run_totals(session)
         orphans = await _orphan_counts(session)
@@ -163,4 +176,33 @@ async def run() -> dict[str, Any]:
             f"{row['name_ja'] or ''}"
         )
 
-    return {"totals": totals, **orphans, "per_set": per_set}
+    if not strict:
+        return 0
+
+    # --- strict mode --------------------------------------------------------
+    failures: list[str] = []
+    for row in per_set:
+        if row["set_code"] in _STRICT_EXEMPT_SETS:
+            continue
+        present = row["artworks_present"]
+        if present == 0:
+            continue
+        if row["artworks_with_name_ja"] < present:
+            failures.append(
+                f"{row['set_code']}: name_ja missing for "
+                f"{present - row['artworks_with_name_ja']}/{present} artworks"
+            )
+        if row["artworks_with_rarity"] < present:
+            failures.append(
+                f"{row['set_code']}: rarity_code missing for "
+                f"{present - row['artworks_with_rarity']}/{present} artworks"
+            )
+
+    print()
+    if failures:
+        print(f"verify --strict: FAIL ({len(failures)} issue(s))")
+        for line in failures:
+            print(f"  - {line}")
+        return 1
+    print("verify --strict: OK (all non-exempt sets have full name_ja + rarity_code)")
+    return 0

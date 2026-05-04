@@ -7,9 +7,9 @@ name_en: Twin Energy
 rarity_code: C
 category: energy
 image: https://den-cards.pokellector.com/338/Twin-Energy.S8B.183.41419.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '41419'

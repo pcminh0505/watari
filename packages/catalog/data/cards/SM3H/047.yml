@@ -7,9 +7,9 @@ name_en: Rotom Dex Poke finder Mode
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/219/Rotom-Dex-Pokefinder.SM3H.47.18086.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '18086'

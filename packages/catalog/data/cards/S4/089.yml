@@ -7,9 +7,9 @@ name_en: Exploud
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/297/Exploud.S4.89.35643.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '35643'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: バクオング
     variants_seen:
-      - normal
+    - normal
     rarity_code: RRR

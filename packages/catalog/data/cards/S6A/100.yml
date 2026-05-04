@@ -7,9 +7,9 @@ name_en: Turffield Stadium
 rarity_code: UR
 category: trainer
 image: https://den-cards.pokellector.com/322/Turffield-Stadium.S6A.100.38976.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '38976'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ターフスタジアム
     variants_seen:
-      - normal
+    - normal
     rarity_code: UR

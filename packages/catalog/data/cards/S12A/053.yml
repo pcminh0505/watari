@@ -7,9 +7,9 @@ name_en: Mew V
 rarity_code: RR
 category: card
 image: https://den-cards.pokellector.com/357/Mew-V.S12A.53.45305.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '45305'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ミュウV
     variants_seen:
-      - normal
+    - normal
     rarity_code: RR

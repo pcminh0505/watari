@@ -7,9 +7,9 @@ name_en: Payapa Berry
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/401/Payapa-Berry.SV7.92.53767.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '53767'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: アローラナッシーex
     variants_seen:
-      - normal
+    - normal

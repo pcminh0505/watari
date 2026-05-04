@@ -7,11 +7,11 @@ name_en: Clefairy
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/371/Clefairy.SV2A.35.48256.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
-  - master_ball_mirror
-  - poke_ball_mirror
+- normal
+- master_ball_mirror
+- poke_ball_mirror
 sources:
   pokellector:
     id: '48256'
@@ -21,6 +21,6 @@ sources:
   cardrush:
     name_ja: ピッピ
     variants_seen:
-      - master_ball_mirror
-      - normal
-      - poke_ball_mirror
+    - master_ball_mirror
+    - normal
+    - poke_ball_mirror

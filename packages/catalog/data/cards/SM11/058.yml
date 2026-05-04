@@ -7,9 +7,9 @@ name_en: Liepard
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/277/Liepard.SM11.58.28826.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '28826'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ローラースケーター
     variants_seen:
-      - normal
+    - normal
     rarity_code: CHR

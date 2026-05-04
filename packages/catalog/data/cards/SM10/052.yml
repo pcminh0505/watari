@@ -7,9 +7,9 @@ name_en: Landorus
 rarity_code: R
 category: card
 image: https://den-cards.pokellector.com/266/Landorus.SM10.52.26911.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '26911'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: グラジオ
     variants_seen:
-      - normal
+    - normal
     rarity_code: TR

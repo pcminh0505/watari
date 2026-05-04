@@ -7,9 +7,9 @@ name_en: Litten
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/245/Litten.SM8A.1.24113.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '24113'

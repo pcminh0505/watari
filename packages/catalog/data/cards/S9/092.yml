@@ -7,9 +7,9 @@ name_en: Kindler
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/336/Kindler.S9.92.41007.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '41007'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: こだわりベルト
     variants_seen:
-      - normal
+    - normal
     rarity_code: SR

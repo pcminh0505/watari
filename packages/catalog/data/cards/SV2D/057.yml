@@ -7,9 +7,9 @@ name_en: Noibat
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/370/Noibat.SV2D.57.47645.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '47645'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: オンバット
     variants_seen:
-      - normal
+    - normal

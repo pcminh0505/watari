@@ -7,9 +7,9 @@ name_en: Mega Lopunny & Jigglypuff GX
 rarity_code: RR
 category: card
 image: https://den-cards.pokellector.com/281/Mega-Lopunny-Jigglypuff-GX.SM12.73.29638.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '29638'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: メガミミロップ＆プリンGX
     variants_seen:
-      - normal
+    - normal
     rarity_code: RR

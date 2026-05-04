@@ -7,9 +7,9 @@ name_en: Hala
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/211/Hala.SM2K.49.14658.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '14658'

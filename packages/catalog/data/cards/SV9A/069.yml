@@ -7,9 +7,9 @@ name_en: Rapidash
 rarity_code: AR
 category: card
 image: https://den-cards.pokellector.com/411/Rapidash.SV9A.69.56569.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '56569'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: ギャロップ
     variants_seen:
-      - normal
+    - normal

@@ -4,7 +4,9 @@ set_code: SM8A
 era_block: sm
 language: jp
 name_ja: ダークオーダー
-name_en: ダークオーダー
+name_en: Dark Order
 release_date: 2018-10-05
 tcgdex_id: SM8a
 pokellector_slug: Dark-Order-Expansion
+tcgcollector_id: '11294'
+tcgcollector_slug: dark-order

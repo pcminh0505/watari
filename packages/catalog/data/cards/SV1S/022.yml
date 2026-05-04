@@ -7,9 +7,9 @@ name_en: Tatsugiri
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/361/Tatsugiri.SV1S.22.46240.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '46240'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: ブロスター
     variants_seen:
-      - normal
+    - normal

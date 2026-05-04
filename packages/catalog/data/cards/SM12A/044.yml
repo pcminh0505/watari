@@ -7,9 +7,9 @@ name_en: Raikou
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/288/Raikou.SM12A.44.30402.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '30402'

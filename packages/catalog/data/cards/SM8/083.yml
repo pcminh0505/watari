@@ -7,9 +7,9 @@ name_en: Lost Mixer
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/258/Lost-Mixer.SM8.83.23306.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '23306'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ロストミキサー
     variants_seen:
-      - normal
+    - normal
     rarity_code: U

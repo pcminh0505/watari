@@ -7,9 +7,9 @@ name_en: Twin Energy
 rarity_code: U
 category: energy
 image: https://den-cards.pokellector.com/318/Twin-Energy.S7D.67.39470.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '39470'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ツインエネルギー
     variants_seen:
-      - normal
+    - normal
     rarity_code: U

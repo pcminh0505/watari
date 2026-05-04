@@ -4,7 +4,9 @@ set_code: S6H
 era_block: sw
 language: jp
 name_ja: 白銀のランス
-name_en: 白銀のランス
+name_en: Silver Lance
 release_date: 2021-04-23
 tcgdex_id: S6H
 pokellector_slug: Silver-Lance-Expansion
+tcgcollector_id: '11421'
+tcgcollector_slug: silver-lance

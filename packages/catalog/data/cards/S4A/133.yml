@@ -7,9 +7,9 @@ name_en: Cufant
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/301/Cufant.S4A.133.36432.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '36432'

@@ -7,9 +7,9 @@ name_en: Bellsprout
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/211/Bellsprout.SM2K.1.17322.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '17322'

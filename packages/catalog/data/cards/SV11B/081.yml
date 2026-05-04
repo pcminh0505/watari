@@ -7,10 +7,10 @@ name_en: Pok&eacute;gear 3.0
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/414/Pokgear-30.SV11B.81.57729.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
-  - poke_ball_mirror
+- normal
+- poke_ball_mirror
 sources:
   pokellector:
     id: '57729'
@@ -20,5 +20,5 @@ sources:
   cardrush:
     name_ja: ポケギア3.0
     variants_seen:
-      - normal
-      - poke_ball_mirror
+    - normal
+    - poke_ball_mirror

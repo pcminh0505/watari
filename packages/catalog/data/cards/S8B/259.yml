@@ -7,9 +7,9 @@ name_en: Raihan
 rarity_code: SR
 category: card
 image: https://den-cards.pokellector.com/338/Raihan.S8B.259.41548.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '41548'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: キバナ
     variants_seen:
-      - normal
+    - normal
     rarity_code: SR

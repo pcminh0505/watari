@@ -7,9 +7,9 @@ name_en: Neo Superior Energy
 rarity_code: R
 category: energy
 image: https://den-cards.pokellector.com/386/Neo-Superior-Energy.SV5K.71.51663.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '51663'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: ネオアッパーエネルギー
     variants_seen:
-      - normal
+    - normal

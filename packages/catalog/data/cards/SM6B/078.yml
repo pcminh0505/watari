@@ -7,9 +7,9 @@ name_en: Articuno GX
 rarity_code: UR
 category: card
 image: https://den-cards.pokellector.com/237/Articuno-GX.SM6B.78.20934.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '20934'

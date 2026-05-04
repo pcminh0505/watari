@@ -7,9 +7,9 @@ name_en: Gorgeous Cape
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/376/Gorgeous-Cape.SV3A.55.49388.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '49388'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: ゴージャスマント
     variants_seen:
-      - normal
+    - normal

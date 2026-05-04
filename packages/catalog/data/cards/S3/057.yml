@@ -7,9 +7,9 @@ name_en: Scraggy
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/293/Scraggy.S3.57.34902.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '34902'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ペラップ
     variants_seen:
-      - normal
+    - normal
     rarity_code: C

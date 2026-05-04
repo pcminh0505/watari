@@ -7,9 +7,9 @@ name_en: Weavile
 rarity_code: R
 category: card
 image: https://den-cards.pokellector.com/370/Weavile.SV2D.51.47642.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '47642'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: マニューラ
     variants_seen:
-      - normal
+    - normal

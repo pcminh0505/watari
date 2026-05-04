@@ -7,9 +7,9 @@ name_en: Turtonator GX
 rarity_code: RR
 category: card
 image: https://den-cards.pokellector.com/211/Turtonator-GX.SM2K.9.16509.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '16509'

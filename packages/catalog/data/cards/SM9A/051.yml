@@ -7,9 +7,9 @@ name_en: Lt. Surge's Strategy
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/262/Lt-Surges-Strategy.SM9A.51.25628.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '25628'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: マチスの作戦
     variants_seen:
-      - normal
+    - normal
     rarity_code: U

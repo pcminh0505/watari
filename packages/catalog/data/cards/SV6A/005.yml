@@ -7,9 +7,9 @@ name_en: Decidueye
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/398/Decidueye.SV6A.5.53142.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '53142'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: ジュナイパー
     variants_seen:
-      - normal
+    - normal

@@ -7,9 +7,9 @@ name_en: Super Pokemon Recovery
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/238/Super-Pokemon-Recovery.SM5+.40.20091.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '20091'

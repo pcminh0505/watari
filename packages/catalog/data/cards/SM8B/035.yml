@@ -7,9 +7,9 @@ name_en: Pachirisu
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/241/Pachirisu.SM8B.35.24835.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '24835'

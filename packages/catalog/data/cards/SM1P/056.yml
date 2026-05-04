@@ -7,9 +7,9 @@ name_en: Toxapex GX
 rarity_code: UR
 category: card
 image: https://den-cards.pokellector.com/200/Toxapex-GX.SM1+.56.14606.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '14606'

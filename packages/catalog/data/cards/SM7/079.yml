@@ -7,9 +7,9 @@ name_en: Bare Potion
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/242/Bare-Potion.SM7.79.21032.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '21032'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ギリギリポーション
     variants_seen:
-      - normal
+    - normal
     rarity_code: U

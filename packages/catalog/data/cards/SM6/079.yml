@@ -7,9 +7,9 @@ name_en: Ultra Ball
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/235/Rare-Candy.SM6.79.20535.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '20535'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: マルマインGX
     variants_seen:
-      - normal
+    - normal
     rarity_code: HR

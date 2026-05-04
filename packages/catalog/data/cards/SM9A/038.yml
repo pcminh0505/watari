@@ -7,9 +7,9 @@ name_en: Aromatisse
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/262/Aromatisse.SM9A.38.25616.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '25616'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: フレフワン
     variants_seen:
-      - normal
+    - normal
     rarity_code: U

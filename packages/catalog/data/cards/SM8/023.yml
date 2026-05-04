@@ -7,9 +7,9 @@ name_en: Blacephalon GX
 rarity_code: RR
 category: card
 image: https://den-cards.pokellector.com/258/Blacephelon-GX.SM8.23.23199.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '23199'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: アブソル
     variants_seen:
-      - normal
+    - normal
     rarity_code: RR

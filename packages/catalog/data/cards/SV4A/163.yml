@@ -2,14 +2,14 @@
 # To freeze a manually-edited value, add `# manual: true` on line 1.
 set_code: SV4A
 local_id: '163'
-name_ja:
+name_ja: Rare Candy
 name_en: Rare Candy
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/375/Rare-Candy.SV4A.163.50952.png
-illustrator:
+illustrator: Studio Bora Inc.
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '50952'

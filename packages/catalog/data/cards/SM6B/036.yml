@@ -7,9 +7,9 @@ name_en: Pupitar
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/237/Pupitar.SM6B.36.20897.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '20897'

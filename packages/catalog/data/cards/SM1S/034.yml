@@ -7,9 +7,9 @@ name_en: Sandile
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/201/Sandile.SM1S.34.13748.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '13748'

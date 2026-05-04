@@ -7,9 +7,9 @@ name_en: Galarian Darmanitan
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/319/Galarian-Darmanitan.S7R.23.39195.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '39195'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ガラルヒヒダルマ
     variants_seen:
-      - normal
+    - normal
     rarity_code: C

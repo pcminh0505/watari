@@ -7,9 +7,9 @@ name_en: Iono
 rarity_code: SAR
 category: card
 image: https://den-cards.pokellector.com/370/Iono.SV2D.96.47665.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '47665'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: ナンジャモ
     variants_seen:
-      - normal
+    - normal

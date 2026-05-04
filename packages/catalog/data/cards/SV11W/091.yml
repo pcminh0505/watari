@@ -7,9 +7,9 @@ name_en: Deerling
 rarity_code: AR
 category: card
 image: https://den-cards.pokellector.com/415/Deerling.SV11W.91.57893.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '57893'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: シキジカ
     variants_seen:
-      - normal
+    - normal

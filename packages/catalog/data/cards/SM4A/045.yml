@@ -7,9 +7,9 @@ name_en: Diggersby
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/227/Diggersby.SM4A.45.19434.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '19434'

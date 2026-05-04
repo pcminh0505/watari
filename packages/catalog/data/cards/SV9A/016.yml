@@ -7,9 +7,9 @@ name_en: Ethan's Quilava
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/411/Ethans-Quilava.SV9A.16.56542.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '56542'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: ヒビキのマグマラシ
     variants_seen:
-      - normal
+    - normal

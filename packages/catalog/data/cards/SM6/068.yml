@@ -7,9 +7,9 @@ name_en: Goodra
 rarity_code: R
 category: card
 image: https://den-cards.pokellector.com/235/Goodra.SM6.68.20478.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '20478'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: マルマインGX
     variants_seen:
-      - normal
+    - normal
     rarity_code: SR

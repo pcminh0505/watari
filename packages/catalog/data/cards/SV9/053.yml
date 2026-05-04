@@ -7,9 +7,9 @@ name_en: Hop's Silicobra
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/408/Hops-Silicobra.SV9.53.55542.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '55542'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: ホップのスナヘビ
     variants_seen:
-      - normal
+    - normal

@@ -7,9 +7,9 @@ name_en: Torracat
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/224/Torracat.SM3+.17.18296.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '18296'

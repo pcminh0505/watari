@@ -7,9 +7,9 @@ name_en: Galarian Weezing
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/301/Galarian-Weezing.S4A.105.36411.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '36411'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ガラルマタドガス(R仕様)
     variants_seen:
-      - normal
+    - normal
     rarity_code: R

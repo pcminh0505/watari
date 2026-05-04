@@ -7,9 +7,9 @@ name_en: Ninetales ex
 rarity_code: RR
 category: card
 image: https://den-cards.pokellector.com/371/Ninetales-ex.SV2A.38.48259.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '48259'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: キュウコンex
     variants_seen:
-      - normal
+    - normal

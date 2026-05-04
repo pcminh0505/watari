@@ -7,9 +7,9 @@ name_en: Team Rocket's Weezing
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/413/Team-Rockets-Weezing.SV10.70.57063.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '57063'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: ロケット団のマタドガス
     variants_seen:
-      - normal
+    - normal

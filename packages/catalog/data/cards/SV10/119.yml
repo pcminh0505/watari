@@ -7,9 +7,9 @@ name_en: Team Rocket's Ariana
 rarity_code: SR
 category: card
 image: https://den-cards.pokellector.com/413/Team-Rockets-Ariana.SV10.119.57150.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '57150'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: ロケット団のアテナ
     variants_seen:
-      - normal
+    - normal

@@ -7,9 +7,9 @@ name_en: Rescue Trolley
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/318/Rescue-Trolley.S7D.59.39465.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '39465'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: レスキューキャリー
     variants_seen:
-      - normal
+    - normal
     rarity_code: U

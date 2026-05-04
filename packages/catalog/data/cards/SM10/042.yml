@@ -7,9 +7,9 @@ name_en: Marshadow & Machamp GX
 rarity_code: RR
 category: card
 image: https://den-cards.pokellector.com/266/Marshadow-Machamp-GX.SM10.42.26859.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '26859'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ハトーボー
     variants_seen:
-      - normal
+    - normal
     rarity_code: RR

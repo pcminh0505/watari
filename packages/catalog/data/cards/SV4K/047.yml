@@ -7,9 +7,9 @@ name_en: Purrloin
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/381/Purrloin.SV4K.47.50779.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '50779'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: チョロネコ
     variants_seen:
-      - normal
+    - normal

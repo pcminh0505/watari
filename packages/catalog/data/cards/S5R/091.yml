@@ -7,9 +7,9 @@ name_en: Rapid Strike Energy
 rarity_code: UR
 category: energy
 image: https://den-cards.pokellector.com/307/Rapid-Strike-Energy.S5R.91.36891.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '36891'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: れんげきエネルギー
     variants_seen:
-      - normal
+    - normal
     rarity_code: UR

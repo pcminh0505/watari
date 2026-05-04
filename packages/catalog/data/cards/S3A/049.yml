@@ -7,9 +7,9 @@ name_en: Metagross
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/294/Metagross.S3A.49.35000.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '35000'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: メタグロス
     variants_seen:
-      - normal
+    - normal
     rarity_code: U

@@ -2,14 +2,14 @@
 # To freeze a manually-edited value, add `# manual: true` on line 1.
 set_code: sm3n
 local_id: '063'
-name_ja:
+name_ja: Rescue Stretcher
 name_en: Rescue Stretcher
 rarity_code: UR
 category: card
 image: https://den-cards.pokellector.com/218/Rescue-Stretcher.SM3N.63.18230.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '18230'

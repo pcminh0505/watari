@@ -7,9 +7,9 @@ name_en: Lunatone
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/295/Lunatone.S2A.32.34393.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '34393'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ルナトーン
     variants_seen:
-      - normal
+    - normal
     rarity_code: U

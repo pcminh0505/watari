@@ -7,9 +7,9 @@ name_en: Kommo-O
 rarity_code: R
 category: card
 image: https://den-cards.pokellector.com/281/Kommo-O.SM12.71.29758.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '29758'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ジャラランガ
     variants_seen:
-      - normal
+    - normal
     rarity_code: R

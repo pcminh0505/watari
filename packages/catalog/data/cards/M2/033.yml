@@ -7,9 +7,9 @@ name_en: Pawmo
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/425/Pawmo.M2.33.59214.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '59214'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: パモット
     variants_seen:
-      - normal
+    - normal

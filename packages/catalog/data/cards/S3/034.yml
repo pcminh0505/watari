@@ -7,9 +7,9 @@ name_en: Arctozolt
 rarity_code: R
 category: card
 image: https://den-cards.pokellector.com/293/Arctozolt.S3.34.34837.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '34837'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ウパー
     variants_seen:
-      - normal
+    - normal
     rarity_code: R

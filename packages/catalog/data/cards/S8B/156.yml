@@ -7,9 +7,9 @@ name_en: Peony
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/338/Peony.S8B.156.41396.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '41396'

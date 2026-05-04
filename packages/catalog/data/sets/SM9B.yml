@@ -4,7 +4,9 @@ set_code: SM9B
 era_block: sm
 language: jp
 name_ja: フルメタルウォール
-name_en: フルメタルウォール
+name_en: Full Metal Wall
 release_date: 2019-02-01
 tcgdex_id: SM9b
 pokellector_slug: Full-Metal-Wall-Expansion
+tcgcollector_id: '11203'
+tcgcollector_slug: full-metal-wall

@@ -7,9 +7,9 @@ name_en: Battle Cage
 rarity_code: SR
 category: card
 image: https://den-cards.pokellector.com/425/Battle-Cage.M2.108.59593.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '59593'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: バトルコロシアム
     variants_seen:
-      - normal
+    - normal

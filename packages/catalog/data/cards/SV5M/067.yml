@@ -7,9 +7,9 @@ name_en: Codebreaker's Solution
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/387/Codebreakers-Solution.SV5M.67.51671.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '51671'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: 暗号マニアの解読
     variants_seen:
-      - normal
+    - normal

@@ -4,7 +4,9 @@ set_code: S1H
 era_block: sw
 language: jp
 name_ja: シールド
-name_en: シールド
+name_en: Shield
 release_date: 2019-12-06
 tcgdex_id: S1H
 pokellector_slug: Shield-Expansion
+tcgcollector_id: '11340'
+tcgcollector_slug: shield

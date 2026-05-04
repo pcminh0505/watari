@@ -7,9 +7,9 @@ name_en: Solgaleo GX
 rarity_code: UR
 category: card
 image: https://den-cards.pokellector.com/241/Solgaleo-GX.SM8B.249.25342.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '25342'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ソルガレオGX
     variants_seen:
-      - normal
+    - normal
     rarity_code: UR

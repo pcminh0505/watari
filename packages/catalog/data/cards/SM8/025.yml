@@ -7,9 +7,9 @@ name_en: Slowking
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/258/Slowking.SM8.25.23250.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '23250'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ゾロア
     variants_seen:
-      - normal
+    - normal
     rarity_code: U

@@ -7,9 +7,9 @@ name_en: Pignite
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/427/Pignite.M2A.25.59776.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '59776'

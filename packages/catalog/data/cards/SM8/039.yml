@@ -7,9 +7,9 @@ name_en: Xatu
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/258/Xatu.SM8.39.23264.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '23264'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: コマタナ
     variants_seen:
-      - normal
+    - normal
     rarity_code: RR

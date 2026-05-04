@@ -7,9 +7,9 @@ name_en: Ditto VMAX
 rarity_code: RRR
 category: card
 image: https://den-cards.pokellector.com/301/Ditto-VMAX.S4A.141.36161.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '36161'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: メタモンVMAX
     variants_seen:
-      - normal
+    - normal
     rarity_code: RRR

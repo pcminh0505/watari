@@ -7,9 +7,9 @@ name_en: Energy Recycler
 rarity_code: C
 category: energy
 image: https://den-cards.pokellector.com/241/Energy-Recycler.SM8B.113.24898.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '24898'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: エネルギーリサイクル
     variants_seen:
-      - normal
+    - normal
     rarity_code: C

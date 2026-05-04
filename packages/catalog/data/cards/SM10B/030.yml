@@ -7,9 +7,9 @@ name_en: Mesprit
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/268/Mesprit.SM10B.30.27674.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '27674'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: エムリット
     variants_seen:
-      - normal
+    - normal
     rarity_code: C

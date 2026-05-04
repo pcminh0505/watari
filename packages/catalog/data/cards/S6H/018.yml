@@ -7,9 +7,9 @@ name_en: Lapras
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/309/Lapras.S6H.18.38648.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '38648'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ラプラス
     variants_seen:
-      - normal
+    - normal
     rarity_code: C

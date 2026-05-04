@@ -7,9 +7,9 @@ name_en: Power Hourglass
 rarity_code: UR
 category: card
 image: https://den-cards.pokellector.com/398/Power-Hourglass.SV6A.94.53598.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '53598'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: 力の砂時計
     variants_seen:
-      - normal
+    - normal

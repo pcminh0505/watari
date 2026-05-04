@@ -7,9 +7,9 @@ name_en: Froslass
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/338/Froslass.S8B.35.41310.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '41310'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ユキメノコ(R仕様)
     variants_seen:
-      - normal
+    - normal
     rarity_code: R

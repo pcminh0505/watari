@@ -7,9 +7,9 @@ name_en: Team Rocket's Mimikyu
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/413/Team-Rockets-Mimikyu.SV10.42.57100.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '57100'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: ロケット団のミミッキュ
     variants_seen:
-      - normal
+    - normal

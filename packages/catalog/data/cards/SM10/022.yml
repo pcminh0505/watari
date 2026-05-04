@@ -7,9 +7,9 @@ name_en: Poliwhirl
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/266/Poliwhirl.SM10.22.26886.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '26886'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: レアコイル
     variants_seen:
-      - normal
+    - normal
     rarity_code: C

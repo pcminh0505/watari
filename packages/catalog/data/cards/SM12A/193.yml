@@ -7,9 +7,9 @@ name_en: Blue's Tactics
 rarity_code: SR
 category: card
 image: https://den-cards.pokellector.com/288/Blues-Tactics.SM12A.193.30532.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '30532'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: グリーンの戦略
     variants_seen:
-      - normal
+    - normal
     rarity_code: SR

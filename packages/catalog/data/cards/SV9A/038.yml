@@ -7,9 +7,9 @@ name_en: Manectric
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/411/Manectric.SV9A.38.56640.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '56640'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: ライボルト
     variants_seen:
-      - normal
+    - normal

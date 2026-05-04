@@ -7,9 +7,9 @@ name_en: Shedinja
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/417/Shedinja.M1S.43.58926.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '58926'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ヌケニン
     variants_seen:
-      - normal
+    - normal
     rarity_code: U

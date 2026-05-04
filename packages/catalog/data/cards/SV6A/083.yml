@@ -7,9 +7,9 @@ name_en: Colress's Tenacity
 rarity_code: SR
 category: card
 image: https://den-cards.pokellector.com/398/Colresss-Tenacity.SV6A.83.53588.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '53588'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: アクロマの執念
     variants_seen:
-      - normal
+    - normal

@@ -7,9 +7,9 @@ name_en: Centiscorch
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/319/Centiscorch.S7R.17.39480.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '39480'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: マルヤクデ
     variants_seen:
-      - normal
+    - normal
     rarity_code: U

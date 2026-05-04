@@ -4,7 +4,9 @@ set_code: S6A
 era_block: sw
 language: jp
 name_ja: イーブイヒーローズ
-name_en: イーブイヒーローズ
+name_en: Eevee Heroes
 release_date: 2021-05-28
 tcgdex_id: S6a
 pokellector_slug: Eevee-Heroes-Expansion
+tcgcollector_id: '11424'
+tcgcollector_slug: eevee-heroes

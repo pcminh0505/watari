@@ -7,9 +7,9 @@ name_en: Noctowl
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/427/Noctowl.M2A.138.60019.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '60019'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: ヨルノズク(R仕様)
     variants_seen:
-      - normal
+    - normal

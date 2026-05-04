@@ -7,9 +7,9 @@ name_en: Single Strike Urshifu VMAX
 rarity_code: RRR
 category: card
 image: https://den-cards.pokellector.com/338/Single-Strike-Urshifu-VMAX.S8B.93.40532.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '40532'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: いちげきウーラオスVMAX
     variants_seen:
-      - normal
+    - normal
     rarity_code: RRR

@@ -7,9 +7,9 @@ name_en: Articuno GX
 rarity_code: RR
 category: card
 image: https://den-cards.pokellector.com/237/Articuno-GX.SM6B.14.20635.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '20635'

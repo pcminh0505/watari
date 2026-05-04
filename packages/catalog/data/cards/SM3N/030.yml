@@ -7,9 +7,9 @@ name_en: Sawk
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/218/Sawk.SM3N.30.18215.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '18215'

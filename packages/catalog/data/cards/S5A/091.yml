@@ -7,9 +7,9 @@ name_en: Avery
 rarity_code: HR
 category: card
 image: https://den-cards.pokellector.com/308/Avery.S5A.91.37938.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '37938'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: セイボリー
     variants_seen:
-      - normal
+    - normal
     rarity_code: HR

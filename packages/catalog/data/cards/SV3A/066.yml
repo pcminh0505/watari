@@ -7,9 +7,9 @@ name_en: Minun
 rarity_code: AR
 category: card
 image: https://den-cards.pokellector.com/376/Minun.SV3A.66.49300.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '49300'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: マイナン
     variants_seen:
-      - normal
+    - normal

@@ -7,9 +7,9 @@ name_en: Castform Rainy Form
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/338/Castform-Rainy-Form.S8B.32.41308.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '41308'

@@ -4,7 +4,9 @@ set_code: SM2K
 era_block: sm
 language: jp
 name_ja: キミを待つ島々
-name_en: キミを待つ島々
+name_en: Islands Await You
 release_date: 2017-03-17
 tcgdex_id: SM2K
 pokellector_slug: Islands-Awaiting-You-Expansion
+tcgcollector_id: '11170'
+tcgcollector_slug: islands-await-you

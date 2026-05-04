@@ -7,9 +7,9 @@ name_en: Varoom
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/361/Varoom.SV1S.60.46272.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '46272'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: ブロロン
     variants_seen:
-      - normal
+    - normal

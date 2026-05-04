@@ -7,9 +7,9 @@ name_en: Dragalge
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/281/Dragalge.SM12.34.30078.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '30078'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ドラミドロ
     variants_seen:
-      - normal
+    - normal
     rarity_code: U

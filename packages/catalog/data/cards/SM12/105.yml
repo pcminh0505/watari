@@ -7,9 +7,9 @@ name_en: Guzma & Hala
 rarity_code: SR
 category: card
 image: https://den-cards.pokellector.com/281/Guzma-Hala.SM12.105.30155.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '30155'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: グズマ＆ハラ
     variants_seen:
-      - normal
+    - normal
     rarity_code: SR

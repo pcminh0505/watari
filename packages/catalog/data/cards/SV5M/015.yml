@@ -7,9 +7,9 @@ name_en: Rabsca
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/387/Rabsca.SV5M.15.51731.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '51731'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: ベラカス
     variants_seen:
-      - normal
+    - normal

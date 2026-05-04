@@ -7,9 +7,9 @@ name_en: Trapinch
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/281/Trapinch.SM12.41.30083.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '30083'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ナックラー
     variants_seen:
-      - normal
+    - normal
     rarity_code: RR

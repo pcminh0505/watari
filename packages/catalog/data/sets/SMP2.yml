@@ -4,7 +4,9 @@ set_code: SMP2
 era_block: sm
 language: jp
 name_ja: 名探偵ピカチュウ
-name_en: 名探偵ピカチュウ
+name_en: Great Detective Pikachu
 release_date: 2019-04-26
 tcgdex_id: SMP2
 pokellector_slug: Japanese-Detective-Pikachu-Expansion
+tcgcollector_id: '11279'
+tcgcollector_slug: great-detective-pikachu

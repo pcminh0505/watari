@@ -7,9 +7,9 @@ name_en: Energy Retrieval
 rarity_code: U
 category: energy
 image: https://den-cards.pokellector.com/224/Energy-Retrieval.SM3+.60.18324.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '18324'

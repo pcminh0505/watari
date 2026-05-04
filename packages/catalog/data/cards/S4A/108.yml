@@ -7,9 +7,9 @@ name_en: Crobat V
 rarity_code: RR
 category: card
 image: https://den-cards.pokellector.com/301/Crobat-V.S4A.108.35882.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '35882'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: クロバットV
     variants_seen:
-      - normal
+    - normal
     rarity_code: RR

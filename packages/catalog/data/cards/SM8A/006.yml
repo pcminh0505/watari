@@ -7,9 +7,9 @@ name_en: Ampharos GX
 rarity_code: RR
 category: card
 image: https://den-cards.pokellector.com/245/Ampharos-GX.SM8A.6.24118.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '24118'

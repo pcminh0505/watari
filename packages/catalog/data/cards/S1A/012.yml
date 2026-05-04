@@ -7,9 +7,9 @@ name_en: Vulpix
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/285/Vulpix.S1A.12.31824.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '31824'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ロコン
     variants_seen:
-      - normal
+    - normal
     rarity_code: C

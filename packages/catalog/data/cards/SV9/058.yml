@@ -7,9 +7,9 @@ name_en: Tyranitar
 rarity_code: R
 category: card
 image: https://den-cards.pokellector.com/408/Tyranitar.SV9.58.55502.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '55502'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: ポケモンいれかえ
     variants_seen:
-      - normal
+    - normal

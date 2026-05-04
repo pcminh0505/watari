@@ -7,9 +7,9 @@ name_en: Remoraid
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/307/Remoraid.S5R.22.36833.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '36833'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: テッポウオ
     variants_seen:
-      - normal
+    - normal
     rarity_code: C

@@ -7,9 +7,9 @@ name_en: Sacred Charm
 rarity_code: SR
 category: card
 image: https://den-cards.pokellector.com/425/Sacred-Charm.M2.103.59588.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '59588'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: ロケット団のドンカラス(R仕様)
     variants_seen:
-      - normal
+    - normal

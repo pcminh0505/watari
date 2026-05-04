@@ -2,14 +2,14 @@
 # To freeze a manually-edited value, add `# manual: true` on line 1.
 set_code: sm2p
 local_id: '065'
-name_ja:
+name_ja: Multi Switch
 name_en: Multi Switch
 rarity_code: UR
 category: card
 image: https://den-cards.pokellector.com/212/Multi-Switch.SM2+.65.17520.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '17520'

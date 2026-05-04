@@ -7,9 +7,9 @@ name_en: Sandslash
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/393/Sandslash.SV6.58.52932.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '52932'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: サンドパン
     variants_seen:
-      - normal
+    - normal

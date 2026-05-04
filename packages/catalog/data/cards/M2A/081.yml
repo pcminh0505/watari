@@ -7,9 +7,9 @@ name_en: Munkidori
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/427/Munkidori.M2A.81.59978.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '59978'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: マシマシラ(R仕様)
     variants_seen:
-      - normal
+    - normal

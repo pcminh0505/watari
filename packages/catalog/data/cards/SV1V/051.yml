@@ -7,9 +7,9 @@ name_en: Annihilape
 rarity_code: R
 category: card
 image: https://den-cards.pokellector.com/362/Annihilape.SV1V.51.46326.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '46326'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: コノヨザル
     variants_seen:
-      - normal
+    - normal

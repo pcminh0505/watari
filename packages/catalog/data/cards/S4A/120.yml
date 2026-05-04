@@ -7,9 +7,9 @@ name_en: Thievul
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/301/Thievul.S4A.120.36422.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '36422'

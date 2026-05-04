@@ -7,9 +7,9 @@ name_en: Onix
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/237/Onix.SM6B.32.20893.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '20893'

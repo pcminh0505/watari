@@ -7,9 +7,9 @@ name_en: Glimmora
 rarity_code: R
 category: card
 image: https://den-cards.pokellector.com/369/Glimmora.SV2P.44.47069.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '47069'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: キラフロル
     variants_seen:
-      - normal
+    - normal

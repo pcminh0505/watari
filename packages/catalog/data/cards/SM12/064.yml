@@ -7,9 +7,9 @@ name_en: Sylveon
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/281/Sylveon.SM12.64.29650.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '29650'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ニンフィア
     variants_seen:
-      - normal
+    - normal
     rarity_code: U

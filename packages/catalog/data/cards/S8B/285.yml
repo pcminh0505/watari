@@ -7,9 +7,9 @@ name_en: Duraludon VMAX
 rarity_code: UR
 category: card
 image: https://den-cards.pokellector.com/338/Duraludon-VMAX.S8B.285.41574.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '41574'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ジュラルドンVMAX
     variants_seen:
-      - normal
+    - normal
     rarity_code: UR

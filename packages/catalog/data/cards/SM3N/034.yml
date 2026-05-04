@@ -7,9 +7,9 @@ name_en: Alolan Rattata
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/218/Alolan-Rattata.SM3N.34.18218.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '18218'

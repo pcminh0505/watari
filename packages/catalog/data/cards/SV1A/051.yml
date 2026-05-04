@@ -7,9 +7,9 @@ name_en: Falinks
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/366/Falinks.SV1A.51.46969.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '46969'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: タイレーツ
     variants_seen:
-      - normal
+    - normal

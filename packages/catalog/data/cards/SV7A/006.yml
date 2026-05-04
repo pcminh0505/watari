@@ -7,9 +7,9 @@ name_en: Castform Sunny Form
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/403/Castform-Sunny-Form.SV7A.6.54385.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '54385'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: ポワルンたいようのすがた
     variants_seen:
-      - normal
+    - normal

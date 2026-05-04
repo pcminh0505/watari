@@ -7,9 +7,9 @@ name_en: Luminous Energy
 rarity_code: S
 category: energy
 image: https://den-cards.pokellector.com/375/Luminous-Energy.SV4A.190.51128.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '51128'
@@ -22,4 +22,4 @@ sources:
   cardrush:
     name_ja: ルミナスエネルギー(ミラー/ハイクラスパック仕様)
     variants_seen:
-      - normal
+    - normal

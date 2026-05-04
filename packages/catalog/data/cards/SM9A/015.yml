@@ -7,9 +7,9 @@ name_en: Raichu
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/262/Raichu.SM9A.15.25598.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '25598'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ライチュウ
     variants_seen:
-      - normal
+    - normal
     rarity_code: U

@@ -4,7 +4,9 @@ set_code: S3
 era_block: sw
 language: jp
 name_ja: ムゲンゾーン
-name_en: ムゲンゾーン
+name_en: Infinity Zone
 release_date: 2020-06-05
 tcgdex_id: S3
 pokellector_slug: Infinity-Zone-Expansion
+tcgcollector_id: '11376'
+tcgcollector_slug: infinity-zone

@@ -7,9 +7,9 @@ name_en: Joltik
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/376/Joltik.SV3A.16.49366.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '49366'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: バチュル
     variants_seen:
-      - normal
+    - normal

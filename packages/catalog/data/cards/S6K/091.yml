@@ -7,9 +7,9 @@ name_en: Siebold
 rarity_code: HR
 category: card
 image: https://den-cards.pokellector.com/310/Siebold.S6K.91.38811.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '38811'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ズミ
     variants_seen:
-      - normal
+    - normal
     rarity_code: HR

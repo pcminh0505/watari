@@ -7,9 +7,9 @@ name_en: Toxapex GX
 rarity_code: RR
 category: card
 image: https://den-cards.pokellector.com/200/Toxapex-GX.SM1+.26.14001.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '14001'

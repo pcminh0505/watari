@@ -7,9 +7,9 @@ name_en: Grubbin
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/228/Grubbin.SM4+.3.19579.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '19579'

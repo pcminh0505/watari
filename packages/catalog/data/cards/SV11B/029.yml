@@ -7,11 +7,11 @@ name_en: Beartic
 rarity_code: R
 category: card
 image: https://den-cards.pokellector.com/414/Beartic.SV11B.29.57692.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
-  - master_ball_mirror
-  - poke_ball_mirror
+- normal
+- master_ball_mirror
+- poke_ball_mirror
 sources:
   pokellector:
     id: '57692'
@@ -21,6 +21,6 @@ sources:
   cardrush:
     name_ja: ツンベアー
     variants_seen:
-      - master_ball_mirror
-      - normal
-      - poke_ball_mirror
+    - master_ball_mirror
+    - normal
+    - poke_ball_mirror

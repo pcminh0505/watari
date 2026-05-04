@@ -7,9 +7,9 @@ name_en: Jacinthe
 rarity_code: SR
 category: card
 image: https://den-cards.pokellector.com/428/Jacinthe.M3.108.60277.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '60277'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: ユカリ
     variants_seen:
-      - normal
+    - normal

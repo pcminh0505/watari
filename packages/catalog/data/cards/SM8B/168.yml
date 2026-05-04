@@ -7,9 +7,9 @@ name_en: Alolan Vulpix
 rarity_code: SR
 category: card
 image: https://den-cards.pokellector.com/241/Alolan-Vulpix.SM8B.168.25290.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '25290'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: アローラロコン
     variants_seen:
-      - normal
+    - normal
     rarity_code: SR

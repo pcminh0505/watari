@@ -7,9 +7,9 @@ name_en: Leon
 rarity_code: R
 category: card
 image: https://den-cards.pokellector.com/297/Leon.S4.94.35540.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '35540'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ダンデ
     variants_seen:
-      - normal
+    - normal
     rarity_code: R

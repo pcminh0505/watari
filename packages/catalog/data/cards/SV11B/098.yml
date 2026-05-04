@@ -7,9 +7,9 @@ name_en: Darumaka
 rarity_code: AR
 category: card
 image: https://den-cards.pokellector.com/414/Darumaka.SV11B.98.57820.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '57820'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: ダルマッカ
     variants_seen:
-      - normal
+    - normal

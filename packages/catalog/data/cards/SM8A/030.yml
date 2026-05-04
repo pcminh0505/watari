@@ -7,9 +7,9 @@ name_en: Yveltal
 rarity_code: R
 category: card
 image: https://den-cards.pokellector.com/245/Yveltal.SM8A.30.23936.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '23936'

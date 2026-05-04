@@ -7,9 +7,9 @@ name_en: Bodybuilding Dumbbells
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/241/Bodybuilding-Dumbbells.SM8B.127.24909.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '24909'

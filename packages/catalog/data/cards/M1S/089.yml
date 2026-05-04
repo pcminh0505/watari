@@ -7,9 +7,9 @@ name_en: Mega Kangaskhan ex
 rarity_code: SAR
 category: card
 image: https://den-cards.pokellector.com/417/Mega-Kangaskhan-ex.M1S.89.58965.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '58965'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: メガガルーラex
     variants_seen:
-      - normal
+    - normal
     rarity_code: SAR

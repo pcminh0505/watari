@@ -7,9 +7,9 @@ name_en: Scizor ex
 rarity_code: SR
 category: card
 image: https://den-cards.pokellector.com/387/Scizor-ex.SV5M.89.52227.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '52227'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: ハッサムex
     variants_seen:
-      - normal
+    - normal

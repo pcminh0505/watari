@@ -7,9 +7,9 @@ name_en: Stonjourner V MAX
 rarity_code: UR
 category: card
 image: https://den-cards.pokellector.com/283/Stonjourner-V-MAX.S1W.35.31250.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '31250'

@@ -2,14 +2,14 @@
 # To freeze a manually-edited value, add `# manual: true` on line 1.
 set_code: M2A
 local_id: '160'
-name_ja:
+name_ja: Team Rocket's Transceiver
 name_en: Team Rocket's Transceiver
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/427/Team-Rockets-Transceiver.M2A.160.60040.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '60040'

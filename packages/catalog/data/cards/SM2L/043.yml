@@ -7,9 +7,9 @@ name_en: Watchog
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/210/Watchog.SM2L.43.17302.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '17302'

@@ -7,9 +7,9 @@ name_en: Cofagrigus
 rarity_code: R
 category: card
 image: https://den-cards.pokellector.com/405/Cofagrigus.SV8.52.54516.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '54516'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: デスカーン
     variants_seen:
-      - normal
+    - normal

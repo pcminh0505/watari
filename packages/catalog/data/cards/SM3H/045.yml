@@ -7,9 +7,9 @@ name_en: Bouffalant
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/219/Bouffalant.SM3H.45.18186.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '18186'

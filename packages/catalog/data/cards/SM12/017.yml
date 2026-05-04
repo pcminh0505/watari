@@ -7,9 +7,9 @@ name_en: Snorunt
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/281/Snorunt.SM12.17.30063.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '30063'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ユキワラシ
     variants_seen:
-      - normal
+    - normal
     rarity_code: C

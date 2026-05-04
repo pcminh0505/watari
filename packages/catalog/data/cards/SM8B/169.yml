@@ -7,9 +7,9 @@ name_en: Wooper
 rarity_code: SR
 category: card
 image: https://den-cards.pokellector.com/241/Wooper.SM8B.169.25291.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '25291'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ウパー
     variants_seen:
-      - normal
+    - normal
     rarity_code: SR

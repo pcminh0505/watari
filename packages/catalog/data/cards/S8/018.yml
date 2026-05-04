@@ -7,9 +7,9 @@ name_en: Staryu
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/326/Staryu.S8.18.40348.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '40348'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ガブリアスCLV.X(25th)
     variants_seen:
-      - normal
+    - normal
     rarity_code: RR

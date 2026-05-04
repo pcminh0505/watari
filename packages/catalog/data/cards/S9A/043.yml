@@ -7,9 +7,9 @@ name_en: Sparkling Hawlucha
 rarity_code: R
 category: card
 image: https://den-cards.pokellector.com/339/Sparkling-Hawlucha.S9A.43.42674.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '42674'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: かがやくルチャブル
     variants_seen:
-      - normal
+    - normal
     rarity_code: K

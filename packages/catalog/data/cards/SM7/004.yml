@@ -7,9 +7,9 @@ name_en: Sceptile
 rarity_code: R
 category: card
 image: https://den-cards.pokellector.com/242/Sceptile.SM7.4.20948.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '20948'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ジュプトル
     variants_seen:
-      - normal
+    - normal
     rarity_code: R

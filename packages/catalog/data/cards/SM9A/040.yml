@@ -7,9 +7,9 @@ name_en: Raticate
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/262/Raticate.SM9A.40.25618.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '25618'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ラッタ
     variants_seen:
-      - normal
+    - normal
     rarity_code: C

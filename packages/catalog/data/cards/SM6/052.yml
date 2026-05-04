@@ -7,9 +7,9 @@ name_en: Rockruff
 rarity_code: C
 category: energy
 image: https://den-cards.pokellector.com/235/Rockruff.SM6.52.20479.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '20479'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: エネルギー循環装置
     variants_seen:
-      - normal
+    - normal
     rarity_code: U

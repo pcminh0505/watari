@@ -7,9 +7,9 @@ name_en: Lumineon V
 rarity_code: RR
 category: card
 image: https://den-cards.pokellector.com/357/Lumineon-V.S12A.26.45345.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '45345'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ネオラントV
     variants_seen:
-      - normal
+    - normal
     rarity_code: RR

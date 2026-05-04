@@ -7,9 +7,9 @@ name_en: Dragonair
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/260/Dragonair.SM9.64.25497.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '25497'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ハクリュー
     variants_seen:
-      - normal
+    - normal
     rarity_code: HR

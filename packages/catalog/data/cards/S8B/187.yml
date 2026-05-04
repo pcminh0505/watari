@@ -7,9 +7,9 @@ name_en: Charizard
 rarity_code: CHR
 category: card
 image: https://den-cards.pokellector.com/338/Charizard.S8B.187.41277.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '41277'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: リザードン
     variants_seen:
-      - normal
+    - normal
     rarity_code: CHR

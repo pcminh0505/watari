@@ -7,9 +7,9 @@ name_en: Tapu Bulu
 rarity_code: R
 category: card
 image: https://den-cards.pokellector.com/398/Tapu-Bulu.SV6A.6.53543.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '53543'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: カプ・ブルル
     variants_seen:
-      - normal
+    - normal

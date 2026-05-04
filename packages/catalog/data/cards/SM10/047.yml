@@ -7,9 +7,9 @@ name_en: Rhyhorn
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/266/Rhyhorn.SM10.47.26906.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '26906'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: サイホーン
     variants_seen:
-      - normal
+    - normal
     rarity_code: U

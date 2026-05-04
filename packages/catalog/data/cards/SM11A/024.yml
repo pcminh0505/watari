@@ -7,9 +7,9 @@ name_en: Dusclops
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/272/Dusclops.SM11A.24.28973.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '28973'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: サマヨール
     variants_seen:
-      - normal
+    - normal
     rarity_code: C

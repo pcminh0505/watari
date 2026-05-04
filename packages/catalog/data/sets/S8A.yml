@@ -4,7 +4,9 @@ set_code: S8A
 era_block: sw
 language: jp
 name_ja: 25th アニバーサリーコレクション
-name_en: 25th アニバーサリーコレクション
+name_en: 25th Anniversary Collection
 release_date: 2021-10-22
 tcgdex_id: S8a
 pokellector_slug: 25th-Anniversary-Collection-Expansion
+tcgcollector_id: '11441'
+tcgcollector_slug: 25th-anniversary-collection

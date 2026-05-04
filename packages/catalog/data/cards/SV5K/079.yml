@@ -7,9 +7,9 @@ name_en: Arbok
 rarity_code: AR
 category: card
 image: https://den-cards.pokellector.com/386/Arbok.SV5K.79.52236.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '52236'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: アーボック
     variants_seen:
-      - normal
+    - normal

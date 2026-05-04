@@ -7,9 +7,9 @@ name_en: Marshadow
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/416/Marshadow.M1L.32.58836.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '58836'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: マーシャドー
     variants_seen:
-      - normal
+    - normal
     rarity_code: U

@@ -7,9 +7,9 @@ name_en: Drakloak
 rarity_code: S
 category: card
 image: https://den-cards.pokellector.com/301/Drakloak.S4A.260.36558.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '36558'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ドロンチ
     variants_seen:
-      - normal
+    - normal
     rarity_code: SR

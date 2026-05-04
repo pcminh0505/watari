@@ -2,14 +2,14 @@
 # To freeze a manually-edited value, add `# manual: true` on line 1.
 set_code: sm6b
 local_id: '074'
-name_ja:
+name_ja: TV Reporter
 name_en: TV Reporter
 rarity_code: UR
 category: card
 image: https://den-cards.pokellector.com/237/TV-Reporter.SM6B.74.20702.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '20702'

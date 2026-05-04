@@ -7,9 +7,9 @@ name_en: Wailord
 rarity_code: R
 category: card
 image: https://den-cards.pokellector.com/408/Wailord.SV9.25.55741.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '55741'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: カスミのコイキング
     variants_seen:
-      - normal
+    - normal

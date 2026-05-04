@@ -7,9 +7,9 @@ name_en: Rolycoly
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/306/Rolycoly.S5I.32.36789.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '36789'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: タンドン
     variants_seen:
-      - normal
+    - normal
     rarity_code: C

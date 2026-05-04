@@ -7,9 +7,9 @@ name_en: Alcremie
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/301/Alcremie.S4A.82.36390.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '36390'

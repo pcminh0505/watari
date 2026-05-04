@@ -7,9 +7,9 @@ name_en: Victini
 rarity_code: R
 category: card
 image: https://den-cards.pokellector.com/319/Victini.S7R.12.39203.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '39203'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ビクティニ
     variants_seen:
-      - normal
+    - normal
     rarity_code: R

@@ -7,9 +7,9 @@ name_en: Alolan Exeggutor
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/260/Alolan-Exeggutor.SM9.61.25494.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '25494'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: サーナイト＆ニンフィアGX(SA)
     variants_seen:
-      - normal
+    - normal
     rarity_code: SR

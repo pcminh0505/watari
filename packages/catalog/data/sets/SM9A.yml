@@ -4,7 +4,9 @@ set_code: SM9A
 era_block: sm
 language: jp
 name_ja: ナイトユニゾン
-name_en: ナイトユニゾン
+name_en: Night Unison
 release_date: 2019-01-11
 tcgdex_id: SM9a
 pokellector_slug: Night-Unison-Expansion
+tcgcollector_id: '11178'
+tcgcollector_slug: night-unison

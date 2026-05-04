@@ -7,9 +7,9 @@ name_en: Quaquaval
 rarity_code: SR
 category: card
 image: https://den-cards.pokellector.com/366/Quaquaval.SV1A.88.46986.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '46986'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: ウェーニバルex
     variants_seen:
-      - normal
+    - normal

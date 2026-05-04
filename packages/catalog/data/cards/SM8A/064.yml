@@ -7,9 +7,9 @@ name_en: Dangerous Drill
 rarity_code: UR
 category: card
 image: https://den-cards.pokellector.com/245/Dangerous-Drill.SM8A.64.24278.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '24278'

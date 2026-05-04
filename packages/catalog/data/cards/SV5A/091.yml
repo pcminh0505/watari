@@ -7,9 +7,9 @@ name_en: Bloodmoon Ursaluna ex
 rarity_code: SAR
 category: card
 image: https://den-cards.pokellector.com/391/Bloodmoon-Ursaluna-ex.SV5A.91.52400.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '52400'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: ガチグマアカツキex
     variants_seen:
-      - normal
+    - normal

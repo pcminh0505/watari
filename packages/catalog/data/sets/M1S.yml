@@ -6,5 +6,7 @@ language: jp
 name_ja: メガシンフォニア
 name_en: Mega Symphonia
 release_date: 2025-08-01
-tcgdex_id: null
+tcgdex_id:
 pokellector_slug: Mega-Symphonia-Expansion
+tcgcollector_id: '11661'
+tcgcollector_slug: mega-symphonia

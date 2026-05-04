@@ -7,9 +7,9 @@ name_en: Eevee
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/200/Eevee.SM1+.41.13977.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '13977'

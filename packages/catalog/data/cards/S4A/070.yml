@@ -7,9 +7,9 @@ name_en: Haunter
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/301/Haunter.S4A.70.36378.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '36378'

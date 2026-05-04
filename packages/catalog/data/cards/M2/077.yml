@@ -7,9 +7,9 @@ name_en: Dawn
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/425/Dawn.M2.77.59250.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '59250'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: ヒカリ
     variants_seen:
-      - normal
+    - normal

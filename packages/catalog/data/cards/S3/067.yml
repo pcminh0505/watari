@@ -7,9 +7,9 @@ name_en: Scizor VMAX
 rarity_code: RRR
 category: card
 image: https://den-cards.pokellector.com/293/Scizor-VMAX.S3.67.34907.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '34907'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: モーモーチーズ
     variants_seen:
-      - normal
+    - normal
     rarity_code: RRR

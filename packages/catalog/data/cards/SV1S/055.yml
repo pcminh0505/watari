@@ -7,9 +7,9 @@ name_en: Toxicroak
 rarity_code: RR
 category: card
 image: https://den-cards.pokellector.com/361/Toxicroak.SV1S.55.46267.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '46267'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: マフィティフ
     variants_seen:
-      - normal
+    - normal

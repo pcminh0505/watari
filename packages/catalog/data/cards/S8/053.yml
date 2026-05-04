@@ -7,9 +7,9 @@ name_en: Graveler
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/326/Graveler.S8.53.40449.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '40449'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ゴローン
     variants_seen:
-      - normal
+    - normal
     rarity_code: R

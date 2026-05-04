@@ -2,14 +2,14 @@
 # To freeze a manually-edited value, add `# manual: true` on line 1.
 set_code: M2A
 local_id: '042'
-name_ja:
+name_ja: Glastrier
 name_en: Glastrier
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/427/Glastrier.M2A.42.59943.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '59943'

@@ -2,14 +2,14 @@
 # To freeze a manually-edited value, add `# manual: true` on line 1.
 set_code: M2A
 local_id: '050'
-name_ja:
+name_ja: Stunfisk
 name_en: Stunfisk
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/427/Stunfisk.M2A.50.59948.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '59948'

@@ -7,9 +7,9 @@ name_en: Iron Boulder ex
 rarity_code: UR
 category: card
 image: https://den-cards.pokellector.com/387/Iron-Boulder-ex.SV5M.100.52233.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '52233'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: テツノイワオex
     variants_seen:
-      - normal
+    - normal

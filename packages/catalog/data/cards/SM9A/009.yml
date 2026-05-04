@@ -7,9 +7,9 @@ name_en: Goldeen
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/262/Goldeen.SM9A.9.25592.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '25592'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: トサキント
     variants_seen:
-      - normal
+    - normal
     rarity_code: C

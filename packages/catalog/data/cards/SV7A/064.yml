@@ -7,9 +7,9 @@ name_en: Rich Energy
 rarity_code: R
 category: energy
 image: https://den-cards.pokellector.com/403/Rich-Energy.SV7A.64.54028.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '54028'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: リッチエネルギー
     variants_seen:
-      - normal
+    - normal

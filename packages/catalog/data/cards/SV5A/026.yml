@@ -7,9 +7,9 @@ name_en: Walking Wake
 rarity_code: R
 category: card
 image: https://den-cards.pokellector.com/391/Walking-Wake.SV5A.26.52386.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '52386'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: ウネルミナモ
     variants_seen:
-      - normal
+    - normal

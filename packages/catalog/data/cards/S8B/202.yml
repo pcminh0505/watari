@@ -7,9 +7,9 @@ name_en: Rockruff
 rarity_code: CHR
 category: card
 image: https://den-cards.pokellector.com/338/Rockruff.S8B.202.41272.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '41272'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: イワンコ
     variants_seen:
-      - normal
+    - normal
     rarity_code: CHR

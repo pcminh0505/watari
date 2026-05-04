@@ -7,9 +7,9 @@ name_en: Professor Oak's Setting
 rarity_code: SR
 category: card
 image: https://den-cards.pokellector.com/272/Professor-Oaks-Setting.SM11A.72.29027.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '29027'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: オーキド博士のセッティング
     variants_seen:
-      - normal
+    - normal
     rarity_code: SR

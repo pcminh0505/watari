@@ -7,9 +7,9 @@ name_en: Venipede
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/219/Venipede.SM3H.22.18172.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '18172'

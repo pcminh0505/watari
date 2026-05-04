@@ -7,9 +7,9 @@ name_en: Tangrowth
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/240/Tangrowth.SM7B.2.23113.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '23113'

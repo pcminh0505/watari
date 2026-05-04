@@ -7,9 +7,9 @@ name_en: Clefable
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/301/Clefable.S4A.66.36374.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '36374'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ピクシー(R仕様)
     variants_seen:
-      - normal
+    - normal
     rarity_code: R

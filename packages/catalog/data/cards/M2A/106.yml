@@ -2,14 +2,14 @@
 # To freeze a manually-edited value, add `# manual: true` on line 1.
 set_code: M2A
 local_id: '106'
-name_ja:
+name_ja: Galarian Linoone
 name_en: Galarian Linoone
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/427/Galarian-Linoone.M2A.106.59999.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '59999'

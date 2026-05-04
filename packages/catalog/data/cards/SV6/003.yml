@@ -7,9 +7,9 @@ name_en: Heracross
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/393/Heracross.SV6.3.52905.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '52905'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: モクロー
     variants_seen:
-      - normal
+    - normal

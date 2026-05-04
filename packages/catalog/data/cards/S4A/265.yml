@@ -2,14 +2,14 @@
 # To freeze a manually-edited value, add `# manual: true` on line 1.
 set_code: s4a
 local_id: '265'
-name_ja:
+name_ja: Galarian Runerigus
 name_en: Galarian Runerigus
 rarity_code: S
 category: card
 image: https://den-cards.pokellector.com/301/Galarian-Runerigus.S4A.265.36563.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '36563'

@@ -7,9 +7,9 @@ name_en: Lesson Studio
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/366/Lesson-Studio.SV1A.71.46890.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '46890'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: レッスンスタジオ
     variants_seen:
-      - normal
+    - normal

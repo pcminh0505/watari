@@ -7,9 +7,9 @@ name_en: Naganadel GX
 rarity_code: RR
 category: card
 image: https://den-cards.pokellector.com/268/Naganadel-GX.SM10B.34.27678.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '27678'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: アーゴヨンGX
     variants_seen:
-      - normal
+    - normal
     rarity_code: RR

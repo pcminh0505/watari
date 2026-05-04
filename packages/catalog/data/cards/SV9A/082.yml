@@ -7,9 +7,9 @@ name_en: Emcee's Excitement
 rarity_code: SR
 category: card
 image: https://den-cards.pokellector.com/411/Emcees-Excitement.SV9A.82.56665.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '56665'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: MCの盛り上げ
     variants_seen:
-      - normal
+    - normal

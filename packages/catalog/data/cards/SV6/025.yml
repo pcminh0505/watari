@@ -7,9 +7,9 @@ name_en: Poliwrath
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/393/Poliwrath.SV6.25.52913.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '52913'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: ニョロボン
     variants_seen:
-      - normal
+    - normal

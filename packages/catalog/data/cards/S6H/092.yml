@@ -7,9 +7,9 @@ name_en: Bronzong
 rarity_code: UR
 category: card
 image: https://den-cards.pokellector.com/309/Bronzong.S6H.92.38789.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '38789'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ドータクン
     variants_seen:
-      - normal
+    - normal
     rarity_code: UR

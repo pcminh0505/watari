@@ -4,7 +4,9 @@ set_code: SM3P
 era_block: sm
 language: jp
 name_ja: ひかる伝説
-name_en: ひかる伝説
+name_en: Shining Legends
 release_date: 2017-07-15
 tcgdex_id: SM3+
 pokellector_slug: Strengthening-Expansion-Shining-Legends-Expansion
+tcgcollector_id: '11206'
+tcgcollector_slug: shining-legends

@@ -7,9 +7,9 @@ name_en: Inteleon
 rarity_code: R
 category: card
 image: https://den-cards.pokellector.com/308/Inteleon.S5A.18.37237.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '37237'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: インテレオン
     variants_seen:
-      - normal
+    - normal
     rarity_code: R

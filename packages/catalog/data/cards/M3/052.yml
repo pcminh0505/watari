@@ -7,9 +7,9 @@ name_en: Yveltal ex
 rarity_code: RR
 category: card
 image: https://den-cards.pokellector.com/428/Yveltal-ex.M3.52.60237.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '60237'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: イベルタルex
     variants_seen:
-      - normal
+    - normal

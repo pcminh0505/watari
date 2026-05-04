@@ -2,14 +2,14 @@
 # To freeze a manually-edited value, add `# manual: true` on line 1.
 set_code: sm1s
 local_id: '026'
-name_ja:
+name_ja: Toxapex
 name_en: Toxapex
 rarity_code: R
 category: card
 image: https://den-cards.pokellector.com/201/Toxapex.SM1S.26.13491.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '13491'

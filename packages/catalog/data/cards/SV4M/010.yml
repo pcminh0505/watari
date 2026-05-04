@@ -7,9 +7,9 @@ name_en: Pansear
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/382/Pansear.SV4K.10.50837.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '50837'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: バオップ
     variants_seen:
-      - normal
+    - normal

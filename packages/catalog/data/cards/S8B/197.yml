@@ -7,9 +7,9 @@ name_en: Banette
 rarity_code: CHR
 category: card
 image: https://den-cards.pokellector.com/338/Banette.S8B.197.41502.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '41502'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ジュペッタ
     variants_seen:
-      - normal
+    - normal
     rarity_code: CHR

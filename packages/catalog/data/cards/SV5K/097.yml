@@ -7,9 +7,9 @@ name_en: Morty's Confidence
 rarity_code: R
 category: card
 image: https://den-cards.pokellector.com/386/Mortys-Confidence.SV5K.97.51884.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '51884'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: マツバの確信
     variants_seen:
-      - normal
+    - normal

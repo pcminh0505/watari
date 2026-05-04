@@ -7,9 +7,9 @@ name_en: Relicanth
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/277/Relicanth.SM11.48.28817.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '28817'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ヌイコグマ
     variants_seen:
-      - normal
+    - normal
     rarity_code: U

@@ -7,9 +7,9 @@ name_en: Stone Energy
 rarity_code: C
 category: energy
 image: https://den-cards.pokellector.com/338/Stone-Energy.S8B.176.41412.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '41412'

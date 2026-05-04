@@ -7,9 +7,9 @@ name_en: Carmine
 rarity_code: SR
 category: card
 image: https://den-cards.pokellector.com/393/Kieran.SV6.123.52883.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '52883'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: ゼイユ
     variants_seen:
-      - normal
+    - normal

@@ -26,6 +26,8 @@ Anything not covered is tagged ``UNK`` and logged so we can extend the map.
 
 from __future__ import annotations
 
+import re as _re
+
 TCGDEX_RARITY_MAP: dict[str, str] = {
     # --- TCGdex `rarity` values seen for Japanese sets (as of 2026-04) ---
     "Common": "C",
@@ -139,3 +141,111 @@ def canonicalize_pokellector(raw: str | None) -> str | None:
     if mapped is None:
         return None
     return mapped
+
+
+# ---------------------------------------------------------------------------
+# TCGCollector
+# ---------------------------------------------------------------------------
+#
+# TCGCollector exposes two flavours of rarity strings:
+#
+#   1. English label with a parenthesised canonical code, used on the
+#      English-side per-card detail page (every JP card is duplicated to
+#      this namespace). Examples: ``"Common (C)"``, ``"Special Art Rare
+#      (SAR)"``, ``"Hyper Rare (HR)"``. The code in the parens already
+#      matches our canonical alphabet, so we extract it directly.
+#
+#   2. Native Japanese label, occasionally seen on the Japanese-locale
+#      experimental page. Examples: ``"コモン"``, ``"アートレア"``. The
+#      JA labels are deterministic and live below.
+#
+# Both are funneled through ``canonicalize_tcgcollector(raw)``.
+
+_TCGCOLLECTOR_PARENS_RE = _re.compile(r"\(([A-Z]+)\)\s*$")
+
+
+TCGCOLLECTOR_JA_RARITY_MAP: dict[str, str] = {
+    # Standard tiers
+    "コモン": "C",
+    "アンコモン": "U",
+    "レア": "R",
+    "ダブルレア": "RR",
+    "ウルトラレア": "UR",
+    "アートレア": "AR",
+    "スペシャルアートレア": "SAR",
+    "ハイパーレア": "HR",
+    "シャイニーレア": "S",
+    "シャイニースーパーレア": "SSR",
+    # SwSh-era
+    "アメイジングレア": "RRR",
+    "キャラクターレア": "CHR",
+    "キャラクタースーパーレア": "CSR",
+    "TR (トレーナーズレア)": "TR",
+    "ラディアントレア": "K",
+    # ME-era
+    "マスターボールレア": "MA",
+    "マスターウルトラレア": "MUR",
+}
+
+
+# Map of TCGCollector's English-only rarity labels (when the parenthesised
+# code is missing or non-canonical, fall back to the literal label).
+TCGCOLLECTOR_EN_RARITY_MAP: dict[str, str] = {
+    "Common": "C",
+    "Uncommon": "U",
+    "Rare": "R",
+    "Double Rare": "RR",
+    "Art Rare": "AR",
+    "Super Rare": "SR",
+    "Special Art Rare": "SAR",
+    "Ultra Rare": "UR",
+    "Hyper Rare": "HR",
+    "Shiny Rare": "S",
+    "Shiny Ultra Rare": "SSR",
+    "Shiny Super Rare": "SSR",
+    "Amazing Rare": "RRR",
+    "Radiant Rare": "K",
+    "Character Rare": "CHR",
+    "Character Super Rare": "CSR",
+    "Trainer Gallery Rare Holo": "TR",
+    "ACE SPEC Rare": "R",
+    "Master Ball Rare": "MA",
+    "Masterball Rare": "MA",
+    "Prism Star": "SR",
+    "Black Star Promo": "PR",
+}
+
+
+def canonicalize_tcgcollector(raw: str | None) -> str | None:
+    """Map a TCGCollector rarity label to a canonical code.
+
+    Tries (in order):
+
+    1. Trailing parenthesised code, e.g. ``"Special Art Rare (SAR)"`` →
+       ``"SAR"``. This is the most reliable because TCGCollector emits
+       the canonical code itself.
+    2. English-only label, e.g. ``"Special Art Rare"`` → ``"SAR"``.
+    3. Native JP label, e.g. ``"スペシャルアートレア"`` → ``"SAR"``.
+
+    Returns ``None`` on anything we don't recognize so the caller can
+    surface it for a manual rarity-map extension.
+    """
+    if not raw:
+        return None
+    s = raw.strip()
+    m = _TCGCOLLECTOR_PARENS_RE.search(s)
+    if m:
+        code = m.group(1).upper()
+        # Sanity: codes we accept are at most 4 letters + appear in our
+        # canonical alphabet. Anything else falls through to label match.
+        if 1 <= len(code) <= 4 and code.isalpha():
+            return code
+    label = s
+    # Strip trailing parens if any
+    if "(" in label:
+        label = label.rsplit("(", 1)[0].strip()
+    if label in TCGCOLLECTOR_EN_RARITY_MAP:
+        return TCGCOLLECTOR_EN_RARITY_MAP[label]
+    if label in TCGCOLLECTOR_JA_RARITY_MAP:
+        return TCGCOLLECTOR_JA_RARITY_MAP[label]
+    return None

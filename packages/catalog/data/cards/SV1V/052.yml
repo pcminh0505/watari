@@ -7,9 +7,9 @@ name_en: Spiritomb
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/362/Spiritomb.SV1V.52.46327.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '46327'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: ミカルゲ
     variants_seen:
-      - normal
+    - normal

@@ -7,9 +7,9 @@ name_en: Volcanion
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/288/Volcanion.SM12A.22.30383.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '30383'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ボルケニオン(ミラー)
     variants_seen:
-      - normal
+    - normal
     rarity_code: C

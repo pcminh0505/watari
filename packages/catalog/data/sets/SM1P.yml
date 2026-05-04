@@ -4,7 +4,9 @@ set_code: SM1P
 era_block: sm
 language: jp
 name_ja: サン＆ムーン
-name_en: サン＆ムーン
+name_en: Sun & Moon Enhanced Expansion Pack
 release_date: 2017-01-27
 tcgdex_id: SM1+
 pokellector_slug: Sun-Moon-Strengthening-Expansion-Expansion
+tcgcollector_id: '11272'
+tcgcollector_slug: sun-and-moon-enhanced-expansion-pack

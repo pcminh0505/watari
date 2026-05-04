@@ -7,9 +7,9 @@ name_en: Beartic
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/368/Beartic.SV3.27.48782.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '48782'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: フカマル
     variants_seen:
-      - normal
+    - normal

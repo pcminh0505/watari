@@ -7,9 +7,9 @@ name_en: Zinnia's Resolution
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/319/Zinnias-Resolution.S7R.65.38992.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '38992'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ヒガナの決意
     variants_seen:
-      - normal
+    - normal
     rarity_code: U

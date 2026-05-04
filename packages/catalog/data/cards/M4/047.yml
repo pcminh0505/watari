@@ -7,9 +7,9 @@ name_en: Claydol
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/430/Claydol.M4.47.60978.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '60978'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: ネンドール
     variants_seen:
-      - normal
+    - normal

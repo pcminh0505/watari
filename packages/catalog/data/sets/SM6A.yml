@@ -4,7 +4,9 @@ set_code: SM6A
 era_block: sm
 language: jp
 name_ja: ドラゴンストーム
-name_en: ドラゴンストーム
+name_en: Dragon Storm
 release_date: 2018-04-06
 tcgdex_id: SM6a
 pokellector_slug: Dragon-Storm-Expansion
+tcgcollector_id: '11235'
+tcgcollector_slug: dragon-storm

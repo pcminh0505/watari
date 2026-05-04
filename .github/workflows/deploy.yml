@@ -39,3 +39,19 @@ jobs:
             -- uv run alembic upgrade head
         env:
           FLY_API_TOKEN: ${{ secrets.FLY_API_TOKEN }}
+      - name: Catalog strict verify (post-deploy gate)
+        # Runs `catalog-verify --strict` against the prod database after
+        # migrations succeed. Fails the deploy job (and surfaces a red
+        # check on `main`) if any non-promo set has null `name_ja` or
+        # `rarity_code`. Promo sets in `_STRICT_EXEMPT_SETS` are excluded.
+        run: |
+          IMAGE=$(flyctl image show --app watari-api --json | python3 -c \
+            "import sys,json; d=json.load(sys.stdin)[0]; print(d['Registry']+'/'+d['Repository']+':'+d['Tag'])")
+          flyctl machine run "$IMAGE" \
+            --app watari-api \
+            --name catalog-verify-strict \
+            --rm \
+            --region sin \
+            -- uv run python -m watari_catalog verify --strict
+        env:
+          FLY_API_TOKEN: ${{ secrets.FLY_API_TOKEN }}

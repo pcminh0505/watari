@@ -7,9 +7,9 @@ name_en: Recycle Energy
 rarity_code: UR
 category: energy
 image: https://den-cards.pokellector.com/268/Recycle-Energy.SM10B.69.28004.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '28004'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: リサイクルエネルギー
     variants_seen:
-      - normal
+    - normal
     rarity_code: UR

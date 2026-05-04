@@ -7,9 +7,9 @@ name_en: Wyndon Stadium
 rarity_code: U
 category: trainer
 image: https://den-cards.pokellector.com/297/Wyndon-Stadium.S4.98.35340.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '35340'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: シュートスタジアム
     variants_seen:
-      - normal
+    - normal
     rarity_code: U

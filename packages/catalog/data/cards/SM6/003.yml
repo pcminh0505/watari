@@ -7,9 +7,9 @@ name_en: Scatterbug
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/235/Scatterbug.SM6.3.20490.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '20490'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: リザードン
     variants_seen:
-      - normal
+    - normal
     rarity_code: R

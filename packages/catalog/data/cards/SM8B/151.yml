@@ -7,9 +7,9 @@ name_en: Aether Foundation Employee
 rarity_code: SR
 category: card
 image: https://den-cards.pokellector.com/241/Aether-Foundation-Employee.SM8B.151.25280.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '25280'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: エーテル財団職員
     variants_seen:
-      - normal
+    - normal
     rarity_code: SR

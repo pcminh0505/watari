@@ -7,10 +7,10 @@ name_en: Luxray
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/336/Luxray.S9.39.42578.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
-  - poke_ball_mirror
+- normal
+- poke_ball_mirror
 sources:
   pokellector:
     id: '42578'
@@ -20,6 +20,6 @@ sources:
   cardrush:
     name_ja: レントラー
     variants_seen:
-      - normal
-      - poke_ball_mirror
+    - normal
+    - poke_ball_mirror
     rarity_code: U

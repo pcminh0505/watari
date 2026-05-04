@@ -7,9 +7,9 @@ name_en: Solrock
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/228/Solrock.SM4+.53.19622.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '19622'

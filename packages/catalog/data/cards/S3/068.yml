@@ -7,9 +7,9 @@ name_en: Skarmory
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/293/Skarmory.S3.68.34908.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '34908'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: エアームド
     variants_seen:
-      - normal
+    - normal
     rarity_code: U

@@ -7,9 +7,9 @@ name_en: Munchlax
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/267/Munchlax.SM10A.40.27356.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '27356'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ゴンベ
     variants_seen:
-      - normal
+    - normal
     rarity_code: C

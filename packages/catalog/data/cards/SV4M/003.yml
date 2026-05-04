@@ -7,9 +7,9 @@ name_en: Blipbug
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/382/Blipbug.SV4K.3.50830.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '50830'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: サッチムシ
     variants_seen:
-      - normal
+    - normal

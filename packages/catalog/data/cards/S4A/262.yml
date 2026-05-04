@@ -2,14 +2,14 @@
 # To freeze a manually-edited value, add `# manual: true` on line 1.
 set_code: s4a
 local_id: '262'
-name_ja:
+name_ja: Galarian Farfetch'd
 name_en: Galarian Farfetch'd
 rarity_code: S
 category: card
 image: https://den-cards.pokellector.com/301/Galarian-Farfetchd.S4A.262.36560.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '36560'

@@ -4,7 +4,9 @@ set_code: SM4P
 era_block: sm
 language: jp
 name_ja: GXバトルブースト
-name_en: GXバトルブースト
+name_en: GX Battle Boost
 release_date: 2017-10-20
 tcgdex_id: SM4+
 pokellector_slug: GX-Battle-Boost-Expansion
+tcgcollector_id: '11239'
+tcgcollector_slug: gx-battle-boost

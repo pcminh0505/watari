@@ -7,9 +7,9 @@ name_en: Galarian Mr. Rime
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/285/Galarian-Mr-Rime.S1A.19.31828.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '31828'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ガラルバリコオル(バリアフリー)
     variants_seen:
-      - normal
+    - normal
     rarity_code: U

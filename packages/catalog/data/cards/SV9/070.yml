@@ -7,9 +7,9 @@ name_en: Bagon
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/408/Bagon.SV9.70.55759.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '55759'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: タツベイ
     variants_seen:
-      - normal
+    - normal

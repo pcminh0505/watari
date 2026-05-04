@@ -2,14 +2,14 @@
 # To freeze a manually-edited value, add `# manual: true` on line 1.
 set_code: s4a
 local_id: '270'
-name_ja:
+name_ja: Sandaconda
 name_en: Sandaconda
 rarity_code: S
 category: card
 image: https://den-cards.pokellector.com/301/Sandaconda.S4A.270.36568.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '36568'

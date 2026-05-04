@@ -7,9 +7,9 @@ name_en: Persian GX
 rarity_code: RR
 category: card
 image: https://den-cards.pokellector.com/266/Persian-GX.SM10.69.26925.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '26925'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: くろおび
     variants_seen:
-      - normal
+    - normal
     rarity_code: RR

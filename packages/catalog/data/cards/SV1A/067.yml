@@ -7,9 +7,9 @@ name_en: Clavell
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/366/Clavell.SV1A.67.46862.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '46862'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: クラベル
     variants_seen:
-      - normal
+    - normal

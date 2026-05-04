@@ -7,9 +7,9 @@ name_en: Altaria
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/318/Altaria.S7D.40.38995.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '38995'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: チルタリス
     variants_seen:
-      - normal
+    - normal
     rarity_code: U

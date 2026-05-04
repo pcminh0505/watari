@@ -7,9 +7,9 @@ name_en: Typhlosion
 rarity_code: R
 category: card
 image: https://den-cards.pokellector.com/258/Typhlosion.SM8.19.23245.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '23245'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: アローラベトベトン
     variants_seen:
-      - normal
+    - normal
     rarity_code: R

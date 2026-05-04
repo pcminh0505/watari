@@ -7,9 +7,9 @@ name_en: Coalossal
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/386/Coalossal.SV5K.41.51850.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '51850'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: セキタンザン
     variants_seen:
-      - normal
+    - normal

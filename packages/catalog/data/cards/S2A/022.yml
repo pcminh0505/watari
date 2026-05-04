@@ -7,9 +7,9 @@ name_en: Cubchoo
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/295/Cubchoo.S2A.22.34385.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '34385'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: クマシュン
     variants_seen:
-      - normal
+    - normal
     rarity_code: C

@@ -7,9 +7,9 @@ name_en: Gengar
 rarity_code: R
 category: card
 image: https://den-cards.pokellector.com/283/Gengar.S1W.25.31241.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '31241'

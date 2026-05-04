@@ -2,14 +2,14 @@
 # To freeze a manually-edited value, add `# manual: true` on line 1.
 set_code: M2A
 local_id: '077'
-name_ja:
+name_ja: Hop's Phantump
 name_en: Hop's Phantump
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/427/Hops-Phantump.M2A.77.59975.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '59975'

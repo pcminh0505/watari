@@ -2,14 +2,14 @@
 # To freeze a manually-edited value, add `# manual: true` on line 1.
 set_code: SV4A
 local_id: '149'
-name_ja:
+name_ja: Greedent
 name_en: Greedent
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/375/Greedent.SV4A.149.51101.png
-illustrator:
+illustrator: kantaro
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '51101'

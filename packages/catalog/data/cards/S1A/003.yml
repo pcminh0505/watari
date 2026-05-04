@@ -7,9 +7,9 @@ name_en: Butterfree
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/285/Butterfree.S1A.3.31818.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '31818'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: バタフリー
     variants_seen:
-      - normal
+    - normal
     rarity_code: U

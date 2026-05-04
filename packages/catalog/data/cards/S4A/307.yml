@@ -7,9 +7,9 @@ name_en: Charizard V
 rarity_code: SSR
 category: card
 image: https://den-cards.pokellector.com/301/Charizard-V.S4A.307.36600.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '36600'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: リザードンV
     variants_seen:
-      - normal
+    - normal
     rarity_code: SR

@@ -4,7 +4,9 @@ set_code: S3A
 era_block: sw
 language: jp
 name_ja: 伝説の鼓動
-name_en: 伝説の鼓動
+name_en: Legendary Heartbeat
 release_date: 2020-07-10
 tcgdex_id: S3a
 pokellector_slug: Legendary-Pulse-Expansion
+tcgcollector_id: '11377'
+tcgcollector_slug: legendary-heartbeat

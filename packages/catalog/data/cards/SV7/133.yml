@@ -7,9 +7,9 @@ name_en: Terapagos ex
 rarity_code: UR
 category: card
 image: https://den-cards.pokellector.com/401/Terapagos-ex.SV7.133.53789.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '53789'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: テラパゴスex
     variants_seen:
-      - normal
+    - normal

@@ -7,9 +7,9 @@ name_en: Indeedee
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/405/Indeedee.SV8.58.54560.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '54560'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: イエッサン
     variants_seen:
-      - normal
+    - normal

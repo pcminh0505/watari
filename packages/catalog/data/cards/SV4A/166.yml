@@ -2,14 +2,14 @@
 # To freeze a manually-edited value, add `# manual: true` on line 1.
 set_code: SV4A
 local_id: '166'
-name_ja:
+name_ja: Rigid Band
 name_en: Rigid Band
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/375/Rigid-Band.SV4A.166.51113.png
-illustrator:
+illustrator: Toyste Beach
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '51113'

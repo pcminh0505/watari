@@ -7,9 +7,9 @@ name_en: N's Reshiram
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/427/Ns-Reshiram.M2A.128.60013.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '60013'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: Nのレシラム(R仕様)
     variants_seen:
-      - normal
+    - normal

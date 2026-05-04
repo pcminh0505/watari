@@ -7,9 +7,9 @@ name_en: Aurorus
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/428/Aurorus.M3.23.60168.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '60168'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: アマルルガ
     variants_seen:
-      - normal
+    - normal

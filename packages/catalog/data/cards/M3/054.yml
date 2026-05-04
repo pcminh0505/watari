@@ -7,9 +7,9 @@ name_en: Mega Skarmory ex
 rarity_code: RR
 category: card
 image: https://den-cards.pokellector.com/428/Mega-Skarmory-ex.M3.54.60171.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '60171'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: メガエアームドex
     variants_seen:
-      - normal
+    - normal

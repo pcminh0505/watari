@@ -7,9 +7,9 @@ name_en: Mantine
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/258/Mantine.SM8.27.23252.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '23252'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: グレイシアGX
     variants_seen:
-      - normal
+    - normal
     rarity_code: RR

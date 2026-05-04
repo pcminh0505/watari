@@ -7,9 +7,9 @@ name_en: Ancient Crystal
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/228/Ancient-Crystal.SM4+.100.19659.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '19659'

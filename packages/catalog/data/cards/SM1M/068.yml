@@ -2,14 +2,14 @@
 # To freeze a manually-edited value, add `# manual: true` on line 1.
 set_code: sm1m
 local_id: '068'
-name_ja:
+name_ja: Lunala GX
 name_en: Lunala GX
 rarity_code: UR
 category: card
 image: https://den-cards.pokellector.com/202/Lunala-GX.SM1M.68.13832.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '13832'

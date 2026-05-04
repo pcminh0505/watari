@@ -2,14 +2,14 @@
 # To freeze a manually-edited value, add `# manual: true` on line 1.
 set_code: sm1s
 local_id: '018'
-name_ja:
+name_ja: Dewpider
 name_en: Dewpider
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/201/Dewpider.SM1S.18.13737.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '13737'

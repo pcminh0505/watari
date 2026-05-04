@@ -7,9 +7,9 @@ name_en: Glimmora ex
 rarity_code: RR
 category: card
 image: https://den-cards.pokellector.com/368/Glimmora-ex.SV3.65.48682.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '48682'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: プラスル
     variants_seen:
-      - normal
+    - normal

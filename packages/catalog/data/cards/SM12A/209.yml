@@ -7,9 +7,9 @@ name_en: Metal Energy
 rarity_code: SR
 category: energy
 image: https://den-cards.pokellector.com/288/Metal-Energy.SM12A.209.30547.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '30547'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: 基本鋼エネルギー
     variants_seen:
-      - normal
+    - normal
     rarity_code: SR

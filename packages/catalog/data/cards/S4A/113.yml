@@ -7,9 +7,9 @@ name_en: Croagunk
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/301/Croagunk.S4A.113.36416.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '36416'

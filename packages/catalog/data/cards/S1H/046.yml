@@ -7,9 +7,9 @@ name_en: Snorlax VMAX
 rarity_code: RR
 category: card
 image: https://den-cards.pokellector.com/284/Snorlax-V-MAX.S1H.46.31190.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '31190'

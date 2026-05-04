@@ -7,9 +7,9 @@ name_en: Cubone
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/266/Cubone.SM10.45.26904.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '26904'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: カラカラ
     variants_seen:
-      - normal
+    - normal
     rarity_code: U

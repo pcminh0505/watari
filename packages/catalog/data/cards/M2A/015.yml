@@ -7,9 +7,9 @@ name_en: Team Rocket's Tarountula
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/427/Team-Rockets-Tarountula.M2A.15.59927.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '59927'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: ロケット団のタマンチュラ(R団ミラー)
     variants_seen:
-      - normal
+    - normal

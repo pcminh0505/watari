@@ -7,9 +7,9 @@ name_en: Switch Buoy
 rarity_code: UR
 category: card
 image: https://den-cards.pokellector.com/236/Switch-Buoy.SM6A.64.20689.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '20689'

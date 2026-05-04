@@ -7,9 +7,9 @@ name_en: Solgaleo Prism Star
 rarity_code: R
 category: card
 image: https://den-cards.pokellector.com/241/Solgaleo-Prism-Star.SM8B.82.24873.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '24873'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ソルガレオ◇
     variants_seen:
-      - normal
+    - normal
     rarity_code: R

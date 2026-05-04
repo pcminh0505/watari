@@ -7,9 +7,9 @@ name_en: Brute Bonnet
 rarity_code: R
 category: card
 image: https://den-cards.pokellector.com/381/Brute-Bonnet.SV4K.53.50785.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '50785'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: アラブルタケ
     variants_seen:
-      - normal
+    - normal

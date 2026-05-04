@@ -7,9 +7,9 @@ name_en: Turffield Stadium
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/301/Turffield-Stadium.S4A.179.36462.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '36462'

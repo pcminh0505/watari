@@ -7,9 +7,9 @@ name_en: Hitmonlee
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/260/Hitmonlee.SM9.54.25488.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '25488'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: サワムラー
     variants_seen:
-      - normal
+    - normal
     rarity_code: TR

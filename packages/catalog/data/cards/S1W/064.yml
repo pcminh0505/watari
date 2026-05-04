@@ -2,14 +2,14 @@
 # To freeze a manually-edited value, add `# manual: true` on line 1.
 set_code: s1w
 local_id: '064'
-name_ja:
+name_ja: Stonjourner V
 name_en: Stonjourner V
 rarity_code: UR
 category: card
 image: https://den-cards.pokellector.com/283/Stonjourner-V.S1W.64.31352.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '31352'

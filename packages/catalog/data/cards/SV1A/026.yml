@@ -7,9 +7,9 @@ name_en: Buizel
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/366/Buizel.SV1A.26.46903.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '46903'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: フローゼル
     variants_seen:
-      - normal
+    - normal

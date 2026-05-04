@@ -7,9 +7,9 @@ name_en: Koraidon ex
 rarity_code: UR
 category: card
 image: https://den-cards.pokellector.com/361/Koraidon-ex.SV1S.106.46810.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '46810'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: ミライドンex
     variants_seen:
-      - normal
+    - normal

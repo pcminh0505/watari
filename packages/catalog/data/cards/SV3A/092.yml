@@ -7,9 +7,9 @@ name_en: Reversal Energy
 rarity_code: UR
 category: energy
 image: https://den-cards.pokellector.com/376/Reversal-Energy.SV3A.92.49409.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '49409'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: リバーサルエネルギー
     variants_seen:
-      - normal
+    - normal

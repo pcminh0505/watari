@@ -7,9 +7,9 @@ name_en: Passimian
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/219/Passimian.SM3H.31.18178.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '18178'

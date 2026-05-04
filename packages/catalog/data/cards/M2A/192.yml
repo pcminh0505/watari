@@ -2,14 +2,14 @@
 # To freeze a manually-edited value, add `# manual: true` on line 1.
 set_code: M2A
 local_id: '192'
-name_ja:
+name_ja: Prism Energy
 name_en: Prism Energy
 rarity_code: C
 category: energy
 image: https://den-cards.pokellector.com/427/Prism-Energy.M2A.192.60067.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '60067'

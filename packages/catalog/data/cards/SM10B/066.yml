@@ -7,9 +7,9 @@ name_en: Moltres & Zapdos & Articuno GX
 rarity_code: HR
 category: card
 image: https://den-cards.pokellector.com/268/Moltres-Zapdos-Articuno-GX.SM10B.66.28001.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '28001'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ファイヤー＆サンダー＆フリーザーGX
     variants_seen:
-      - normal
+    - normal
     rarity_code: HR

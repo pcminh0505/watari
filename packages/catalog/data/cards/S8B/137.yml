@@ -7,9 +7,9 @@ name_en: Capacious Bucket
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/338/Capacious-Bucket.S8B.137.41382.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '41382'

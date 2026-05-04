@@ -7,9 +7,9 @@ name_en: Alolan Geodude
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/210/Alolan-Geodude.SM2L.15.14647.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '14647'

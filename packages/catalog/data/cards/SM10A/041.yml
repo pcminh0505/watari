@@ -7,9 +7,9 @@ name_en: Pidove
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/267/Pidove.SM10A.41.27521.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '27521'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: マメパト
     variants_seen:
-      - normal
+    - normal
     rarity_code: C

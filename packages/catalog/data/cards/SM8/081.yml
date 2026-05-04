@@ -7,9 +7,9 @@ name_en: Pokémon Catcher
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/258/Pokeacutemon-Catcher.SM8.81.23304.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '23304'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ポケモンキャッチャー
     variants_seen:
-      - normal
+    - normal
     rarity_code: U

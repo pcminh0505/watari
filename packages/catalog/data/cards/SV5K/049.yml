@@ -7,9 +7,9 @@ name_en: Mightyena
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/386/Mightyena.SV5K.49.51857.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '51857'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: グラエナ
     variants_seen:
-      - normal
+    - normal

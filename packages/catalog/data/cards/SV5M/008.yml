@@ -7,9 +7,9 @@ name_en: Deerling
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/387/Deerling.SV5M.8.51759.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '51759'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: シキジカ
     variants_seen:
-      - normal
+    - normal

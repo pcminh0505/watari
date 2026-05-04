@@ -7,9 +7,9 @@ name_en: Legacy Energy
 rarity_code: R
 category: energy
 image: https://den-cards.pokellector.com/406/Legacy-Energy.SV8A.187.54646.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '54646'
@@ -22,4 +22,4 @@ sources:
   cardrush:
     name_ja: レガシーエネルギー
     variants_seen:
-      - normal
+    - normal

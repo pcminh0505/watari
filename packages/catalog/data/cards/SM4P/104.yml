@@ -7,9 +7,9 @@ name_en: Kiawe
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/228/Kiawe.SM4+.104.19661.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '19661'

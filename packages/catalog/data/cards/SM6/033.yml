@@ -7,9 +7,9 @@ name_en: Honedge
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/235/Honedge.SM6.33.20507.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '20507'

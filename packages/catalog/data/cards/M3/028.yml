@@ -7,9 +7,9 @@ name_en: Dedenne
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/428/Dedenne.M3.28.60218.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '60218'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: デデンネ
     variants_seen:
-      - normal
+    - normal

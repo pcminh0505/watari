@@ -7,9 +7,9 @@ name_en: Lightning Energy
 rarity_code: UR
 category: energy
 image: https://den-cards.pokellector.com/319/Lightning-Energy.S7R.90.39575.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '39575'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: 基本雷エネルギー
     variants_seen:
-      - normal
+    - normal
     rarity_code: UR

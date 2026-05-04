@@ -7,9 +7,9 @@ name_en: Gloom
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/278/Gloom.SM11B.2.29292.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '29292'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: クサイハナ
     variants_seen:
-      - normal
+    - normal
     rarity_code: C

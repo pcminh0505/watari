@@ -7,9 +7,9 @@ name_en: Mienshao
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/381/Mienshao.SV4K.34.50766.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '50766'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: コジョンド
     variants_seen:
-      - normal
+    - normal

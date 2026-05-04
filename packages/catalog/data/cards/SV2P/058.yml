@@ -7,9 +7,9 @@ name_en: Wingull
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/369/Wingull.SV2P.58.47072.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '47072'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: キャモメ
     variants_seen:
-      - normal
+    - normal

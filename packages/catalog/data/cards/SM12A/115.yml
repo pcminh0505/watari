@@ -7,9 +7,9 @@ name_en: Audino
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/288/Audino.SM12A.115.30461.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '30461'

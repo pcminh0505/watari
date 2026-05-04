@@ -7,9 +7,9 @@ name_en: Darkness Energy
 rarity_code: SR
 category: energy
 image: https://den-cards.pokellector.com/357/Darkness-Energy.S12A.257.45990.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '45990'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: 基本悪エネルギー(SS新デザイン)
     variants_seen:
-      - normal
+    - normal
     rarity_code: SR

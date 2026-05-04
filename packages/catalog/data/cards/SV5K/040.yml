@@ -7,9 +7,9 @@ name_en: Carkol
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/386/Carkol.SV5K.40.51849.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '51849'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: トロッゴン
     variants_seen:
-      - normal
+    - normal

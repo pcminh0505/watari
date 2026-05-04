@@ -7,9 +7,9 @@ name_en: Keldeo
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/430/Keldeo.M4.19.60963.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '60963'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: ケルディオ
     variants_seen:
-      - normal
+    - normal

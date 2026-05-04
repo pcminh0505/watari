@@ -7,9 +7,9 @@ name_en: Kecleon
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/310/Kecleon.S6K.54.38647.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '38647'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: カクレオン
     variants_seen:
-      - normal
+    - normal
     rarity_code: C

@@ -7,9 +7,9 @@ name_en: Nidorino
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/260/Nidorino.SM9.43.25477.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '25477'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ニドリーノ
     variants_seen:
-      - normal
+    - normal
     rarity_code: RR

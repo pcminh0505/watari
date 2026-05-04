@@ -2,14 +2,14 @@
 # To freeze a manually-edited value, add `# manual: true` on line 1.
 set_code: s12a
 local_id: '098'
-name_ja:
+name_ja: Bronzor
 name_en: Bronzor
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/357/Bronzor.S12A.98.45896.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '45896'

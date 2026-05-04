@@ -7,9 +7,9 @@ name_en: Parasol Lady
 rarity_code: SAR
 category: card
 image: https://den-cards.pokellector.com/376/Parasol-Lady.SV3A.89.49406.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '49406'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: パラソルおねえさん
     variants_seen:
-      - normal
+    - normal

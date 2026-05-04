@@ -7,11 +7,11 @@ name_en: Eelektrik
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/414/Eelektrik.SV11B.34.57176.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
-  - master_ball_mirror
-  - poke_ball_mirror
+- normal
+- master_ball_mirror
+- poke_ball_mirror
 sources:
   pokellector:
     id: '57176'
@@ -21,6 +21,6 @@ sources:
   cardrush:
     name_ja: シビビール
     variants_seen:
-      - master_ball_mirror
-      - normal
-      - poke_ball_mirror
+    - master_ball_mirror
+    - normal
+    - poke_ball_mirror

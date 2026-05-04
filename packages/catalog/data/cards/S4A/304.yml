@@ -7,9 +7,9 @@ name_en: Rillaboom V
 rarity_code: SSR
 category: card
 image: https://den-cards.pokellector.com/301/Rillaboom-V.S4A.304.36598.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '36598'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ゴリランダーV
     variants_seen:
-      - normal
+    - normal
     rarity_code: SR

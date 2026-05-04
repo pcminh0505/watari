@@ -7,10 +7,10 @@ name_en: Fennel
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/414/Fennel.SV11B.85.57731.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
-  - poke_ball_mirror
+- normal
+- poke_ball_mirror
 sources:
   pokellector:
     id: '57731'
@@ -20,5 +20,5 @@ sources:
   cardrush:
     name_ja: マコモ
     variants_seen:
-      - normal
-      - poke_ball_mirror
+    - normal
+    - poke_ball_mirror

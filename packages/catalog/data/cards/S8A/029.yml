@@ -7,9 +7,9 @@ name_en: Professor's Research
 rarity_code: SR
 category: card
 image: https://den-cards.pokellector.com/327/Professors-Research.S8A.29.40666.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '40666'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: 博士の研究/オーキド博士(25th)
     variants_seen:
-      - normal
+    - normal
     rarity_code: SR

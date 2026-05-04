@@ -7,9 +7,9 @@ name_en: Arven's Toedscool
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/411/Arvens-Toedscool.SV9A.47.56643.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '56643'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: ペパーのノノクラゲ
     variants_seen:
-      - normal
+    - normal

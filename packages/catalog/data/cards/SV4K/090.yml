@@ -7,9 +7,9 @@ name_en: Roaring Moon ex
 rarity_code: SAR
 category: card
 image: https://den-cards.pokellector.com/381/Roaring-Moon-ex.SV4K.90.50822.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '50822'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: トドロクツキex
     variants_seen:
-      - normal
+    - normal

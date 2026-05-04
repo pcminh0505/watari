@@ -7,9 +7,9 @@ name_en: Pokepad
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/428/Pokepad.M3.70.60163.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '60163'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: ポケパッド
     variants_seen:
-      - normal
+    - normal

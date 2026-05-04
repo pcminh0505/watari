@@ -7,9 +7,9 @@ name_en: Weezing
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/268/Weezing.SM10B.28.27672.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '27672'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: マタドガス
     variants_seen:
-      - normal
+    - normal
     rarity_code: U

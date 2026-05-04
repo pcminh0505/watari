@@ -7,9 +7,9 @@ name_en: Ogre's Mask
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/393/Ogres-Mask.SV6.90.52805.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '52805'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: 鬼の仮面
     variants_seen:
-      - normal
+    - normal

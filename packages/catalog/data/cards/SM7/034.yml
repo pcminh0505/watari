@@ -7,9 +7,9 @@ name_en: Manectric
 rarity_code: R
 category: card
 image: https://den-cards.pokellector.com/242/Manetric.SM7.34.20966.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '20966'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: アブリー
     variants_seen:
-      - normal
+    - normal
     rarity_code: U

@@ -7,9 +7,9 @@ name_en: Order Box
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/386/Order-Box.SV5K.61.51865.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '51865'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: おとりよせボックス
     variants_seen:
-      - normal
+    - normal

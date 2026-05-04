@@ -7,9 +7,9 @@ name_en: Naganadel & Guzzlord GX
 rarity_code: SR
 category: card
 image: https://den-cards.pokellector.com/281/Naganadel-Guzzlord-GX.SM12.101.30151.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '30151'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: アーゴヨン＆アクジキングGX
     variants_seen:
-      - normal
+    - normal
     rarity_code: SR

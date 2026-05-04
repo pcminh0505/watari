@@ -7,9 +7,9 @@ name_en: Stonjourner
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/416/Stonjourner.M1L.33.58837.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '58837'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: イシヘンジン
     variants_seen:
-      - normal
+    - normal
     rarity_code: U

@@ -7,9 +7,9 @@ name_en: Wooloo
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/284/Wooloo.S1H.50.31321.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '31321'

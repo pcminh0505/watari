@@ -7,9 +7,9 @@ name_en: Alolan Golem
 rarity_code: R
 category: card
 image: https://den-cards.pokellector.com/210/Alolan-Golem.SM2L.17.17281.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '17281'

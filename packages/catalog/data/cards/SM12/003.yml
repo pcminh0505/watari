@@ -7,9 +7,9 @@ name_en: Lileep
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/281/Lileep.SM12.3.30051.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '30051'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: リリーラ
     variants_seen:
-      - normal
+    - normal
     rarity_code: C

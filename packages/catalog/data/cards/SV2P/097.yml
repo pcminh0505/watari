@@ -7,9 +7,9 @@ name_en: Chien-Pai ex
 rarity_code: UR
 category: card
 image: https://den-cards.pokellector.com/369/Chien-Pai-ex.SV2P.97.47669.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '47669'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: パオジアンex
     variants_seen:
-      - normal
+    - normal

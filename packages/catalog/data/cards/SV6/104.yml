@@ -7,9 +7,9 @@ name_en: Frosslass
 rarity_code: AR
 category: card
 image: https://den-cards.pokellector.com/393/Frosslass.SV6.104.52896.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '52896'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: ユキメノコ
     variants_seen:
-      - normal
+    - normal

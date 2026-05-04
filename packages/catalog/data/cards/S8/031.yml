@@ -7,9 +7,9 @@ name_en: Heliolisk
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/326/Heliolisk.S8.31.40439.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '40439'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: エレザード
     variants_seen:
-      - normal
+    - normal
     rarity_code: R

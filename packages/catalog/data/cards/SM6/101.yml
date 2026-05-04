@@ -7,9 +7,9 @@ name_en: Diantha
 rarity_code: SR
 category: card
 image: https://den-cards.pokellector.com/235/Diantha.SM6.101.20477.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '20477'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: カルネ
     variants_seen:
-      - normal
+    - normal
     rarity_code: SR

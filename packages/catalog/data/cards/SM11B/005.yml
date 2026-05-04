@@ -7,9 +7,9 @@ name_en: Magcargo
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/278/Magcargo.SM11B.5.29294.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '29294'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: マグカルゴ
     variants_seen:
-      - normal
+    - normal
     rarity_code: U

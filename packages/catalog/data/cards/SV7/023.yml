@@ -7,9 +7,9 @@ name_en: Carracosta
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/401/Carracosta.SV7.23.53689.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '53689'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: アバゴーラ
     variants_seen:
-      - normal
+    - normal

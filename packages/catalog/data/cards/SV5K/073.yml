@@ -7,9 +7,9 @@ name_en: Snom
 rarity_code: AR
 category: card
 image: https://den-cards.pokellector.com/386/Snom.SV5K.73.51873.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '51873'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: ユキハミ
     variants_seen:
-      - normal
+    - normal

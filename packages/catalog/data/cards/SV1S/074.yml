@@ -7,9 +7,9 @@ name_en: Jacq
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/361/Jacq.SV1S.74.46150.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '46150'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: ジニア
     variants_seen:
-      - normal
+    - normal

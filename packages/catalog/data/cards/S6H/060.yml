@@ -7,9 +7,9 @@ name_en: Survivial Set
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/309/Survivial-Set.S6H.60.38722.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '38722'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: サバイバルセット
     variants_seen:
-      - normal
+    - normal
     rarity_code: U

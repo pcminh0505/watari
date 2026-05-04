@@ -7,9 +7,9 @@ name_en: Pikachu V-UNION
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/327/Pikachu-V-UNION.S8A.25.40617.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '40617'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: カプ・テテフGX(25th)
     variants_seen:
-      - normal
+    - normal
     rarity_code: C

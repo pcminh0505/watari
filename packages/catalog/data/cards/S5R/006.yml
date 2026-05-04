@@ -7,9 +7,9 @@ name_en: Cherrim
 rarity_code: R
 category: card
 image: https://den-cards.pokellector.com/307/Cherrim.S5R.6.36725.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '36725'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: チェリム
     variants_seen:
-      - normal
+    - normal
     rarity_code: R

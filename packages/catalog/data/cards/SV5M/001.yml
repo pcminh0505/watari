@@ -7,9 +7,9 @@ name_en: Scyther
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/387/Scyther.SV5M.1.51705.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '51705'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: ストライク
     variants_seen:
-      - normal
+    - normal

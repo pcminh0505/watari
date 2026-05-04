@@ -7,9 +7,9 @@ name_en: Alcremie
 rarity_code: CHR
 category: card
 image: https://den-cards.pokellector.com/338/Alcremie.S8B.201.40970.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '40970'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: マホイップ
     variants_seen:
-      - normal
+    - normal
     rarity_code: CHR

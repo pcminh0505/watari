@@ -7,10 +7,10 @@ name_en: Ignition Energy
 rarity_code: U
 category: energy
 image: https://den-cards.pokellector.com/415/Ignition-Energy.SV11W.86.57190.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
-  - poke_ball_mirror
+- normal
+- poke_ball_mirror
 sources:
   pokellector:
     id: '57190'
@@ -20,5 +20,5 @@ sources:
   cardrush:
     name_ja: イグニッションエネルギー
     variants_seen:
-      - normal
-      - poke_ball_mirror
+    - normal
+    - poke_ball_mirror

@@ -7,9 +7,9 @@ name_en: Togetic
 rarity_code: R
 category: card
 image: https://den-cards.pokellector.com/405/Togetic.SV8.47.54469.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '54469'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: トゲキッス
     variants_seen:
-      - normal
+    - normal

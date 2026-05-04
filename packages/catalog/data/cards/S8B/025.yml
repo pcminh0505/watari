@@ -7,9 +7,9 @@ name_en: Seadra
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/338/Seadra.S8B.25.41302.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '41302'

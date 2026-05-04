@@ -7,9 +7,9 @@ name_en: Sealeo
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/281/Sealeo.SM12.21.30067.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '30067'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ビクティニ◇
     variants_seen:
-      - normal
+    - normal
     rarity_code: R

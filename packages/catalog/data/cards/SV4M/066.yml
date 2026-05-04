@@ -7,9 +7,9 @@ name_en: Tulip
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/382/Tulip.SV4K.66.50893.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '50893'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: リップ
     variants_seen:
-      - normal
+    - normal

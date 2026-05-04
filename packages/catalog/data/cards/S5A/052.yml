@@ -7,9 +7,9 @@ name_en: Scolipede
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/308/Scolipede.S5A.52.37899.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '37899'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ペンドラー
     variants_seen:
-      - normal
+    - normal
     rarity_code: U

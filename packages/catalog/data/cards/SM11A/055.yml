@@ -7,9 +7,9 @@ name_en: Janine
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/272/Janine.SM11A.55.28996.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '28996'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: アンズ
     variants_seen:
-      - normal
+    - normal
     rarity_code: U

@@ -7,9 +7,9 @@ name_en: Xerneas GX
 rarity_code: RR
 category: card
 image: https://den-cards.pokellector.com/235/Xerneas-GX.SM6.64.20472.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '20472'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: マサキのメンテナンス
     variants_seen:
-      - normal
+    - normal
     rarity_code: RR

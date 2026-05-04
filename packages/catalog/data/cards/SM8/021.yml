@@ -7,9 +7,9 @@ name_en: Houndoom
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/258/Houndoom.SM8.21.23247.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '23247'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ポチエナ
     variants_seen:
-      - normal
+    - normal
     rarity_code: C

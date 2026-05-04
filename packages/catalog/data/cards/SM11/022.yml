@@ -7,9 +7,9 @@ name_en: Joltik
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/277/Joltik.SM11.22.28798.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '28798'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: フィオネ
     variants_seen:
-      - normal
+    - normal
     rarity_code: U

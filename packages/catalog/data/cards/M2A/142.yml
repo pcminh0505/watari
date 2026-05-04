@@ -7,9 +7,9 @@ name_en: Hop's Dubwool
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/427/Hops-Dubwool.M2A.142.60023.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '60023'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: ホップのバイウールー(R仕様)
     variants_seen:
-      - normal
+    - normal

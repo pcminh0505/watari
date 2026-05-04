@@ -7,9 +7,9 @@ name_en: Chimchar
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/391/Chimchar.SV5A.15.52384.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '52384'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: ヒコザル
     variants_seen:
-      - normal
+    - normal

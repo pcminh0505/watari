@@ -7,9 +7,9 @@ name_en: Gogoat
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/297/Gogoat.S4.7.35589.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '35589'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ゴーゴート
     variants_seen:
-      - normal
+    - normal
     rarity_code: C

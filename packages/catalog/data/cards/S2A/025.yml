@@ -7,9 +7,9 @@ name_en: Vikavolt V
 rarity_code: RR
 category: card
 image: https://den-cards.pokellector.com/295/Vikavolt-V.S2A.25.34388.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '34388'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: クワガノンV
     variants_seen:
-      - normal
+    - normal
     rarity_code: RR

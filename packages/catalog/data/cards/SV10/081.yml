@@ -7,9 +7,9 @@ name_en: Team Rocket's Porygon
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/413/Team-Rockets-Porygon.SV10.81.56869.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '56869'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: ロケット団のポリゴン
     variants_seen:
-      - normal
+    - normal

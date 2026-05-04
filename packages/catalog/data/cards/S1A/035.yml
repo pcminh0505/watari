@@ -7,9 +7,9 @@ name_en: Xatu
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/285/Xatu.S1A.35.31840.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '31840'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ネイティオ
     variants_seen:
-      - normal
+    - normal
     rarity_code: U

@@ -7,9 +7,9 @@ name_en: Palossand
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/228/Palossand.SM4+.60.19629.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '19629'

@@ -7,9 +7,9 @@ name_en: Greninja
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/271/Greninja.SMP2.12.28868.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '28868'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ゲッコウガ
     variants_seen:
-      - normal
+    - normal
     rarity_code: U

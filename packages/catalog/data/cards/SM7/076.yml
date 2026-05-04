@@ -7,9 +7,9 @@ name_en: Delcatty
 rarity_code: R
 category: card
 image: https://den-cards.pokellector.com/242/Delcatty.SM7.76.20968.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '20968'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: エネコロロ
     variants_seen:
-      - normal
+    - normal
     rarity_code: R

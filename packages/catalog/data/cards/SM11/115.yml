@@ -7,9 +7,9 @@ name_en: Weakguard Energy
 rarity_code: UR
 category: energy
 image: https://den-cards.pokellector.com/277/Weakguard-Energy.SM11.115.28891.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '28891'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ウィークガードエネルギー
     variants_seen:
-      - normal
+    - normal
     rarity_code: UR

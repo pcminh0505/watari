@@ -6,9 +6,9 @@ name_en: Mega Greninja ex
 rarity_code: MUR
 category: card
 image: https://den-cards.pokellector.com/430/Mega-Greninja-ex.M4.120.61038.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '61038'
@@ -18,4 +18,4 @@ sources:
   cardrush:
     name_ja: メガゲッコウガex
     variants_seen:
-      - normal
+    - normal

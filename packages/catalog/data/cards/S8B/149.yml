@@ -7,9 +7,9 @@ name_en: Galar Friends
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/338/Galar-Friends.S8B.149.41270.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '41270'

@@ -4,7 +4,9 @@ set_code: S9
 era_block: sw
 language: jp
 name_ja: スターバース
-name_en: スターバース
+name_en: Star Birth
 release_date: 2022-01-14
 tcgdex_id: S9
 pokellector_slug: Star-Birth-Expansion
+tcgcollector_id: '11452'
+tcgcollector_slug: star-birth

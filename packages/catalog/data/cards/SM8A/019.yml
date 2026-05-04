@@ -7,9 +7,9 @@ name_en: Alolan Muk
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/245/Alolan-Muk.SM8A.19.23938.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '23938'

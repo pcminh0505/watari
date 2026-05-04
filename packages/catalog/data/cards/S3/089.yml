@@ -7,9 +7,9 @@ name_en: Cheering Y-Horn
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/293/Cheering-Y-Horn.S3.89.34924.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '34924'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: おとなのおねえさん
     variants_seen:
-      - normal
+    - normal
     rarity_code: HR

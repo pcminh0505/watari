@@ -7,9 +7,9 @@ name_en: Druddigon
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/408/Druddigon.SV9.73.55762.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '55762'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: クリムガン
     variants_seen:
-      - normal
+    - normal

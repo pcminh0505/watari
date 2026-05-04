@@ -7,9 +7,9 @@ name_en: Dreepy
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/393/Dreepy.SV6.79.52951.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '52951'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: ドラメシヤ
     variants_seen:
-      - normal
+    - normal

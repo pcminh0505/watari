@@ -7,9 +7,9 @@ name_en: Weepinbell
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/211/Weepinbell.SM2K.2.17323.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '17323'

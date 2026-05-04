@@ -7,9 +7,9 @@ name_en: Charcadet
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/425/Charcadet.M2.19.59200.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '59200'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: カルボウ
     variants_seen:
-      - normal
+    - normal

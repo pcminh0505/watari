@@ -4,7 +4,9 @@ set_code: SM4S
 era_block: sm
 language: jp
 name_ja: 覚醒の勇者
-name_en: 覚醒の勇者
+name_en: Awakened Heroes
 release_date: 2017-09-15
 tcgdex_id: SM4S
 pokellector_slug: The-Awoken-Hero-Expansion
+tcgcollector_id: '11163'
+tcgcollector_slug: awakened-heroes

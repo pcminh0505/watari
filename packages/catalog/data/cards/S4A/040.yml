@@ -7,9 +7,9 @@ name_en: Drizzile
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/301/Drizzile.S4A.40.36351.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '36351'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ジメレオン
     variants_seen:
-      - normal
+    - normal
     rarity_code: C

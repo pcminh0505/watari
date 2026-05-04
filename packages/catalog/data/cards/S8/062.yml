@@ -7,9 +7,9 @@ name_en: Trubbish
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/326/Trubbish.S8.62.40457.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '40457'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ヤブクロン
     variants_seen:
-      - normal
+    - normal
     rarity_code: C

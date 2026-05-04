@@ -7,9 +7,9 @@ name_en: Vibrava
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/236/Vibrava.SM6A.29.20661.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '20661'

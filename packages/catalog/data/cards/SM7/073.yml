@@ -7,9 +7,9 @@ name_en: Loudred
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/242/Loudred.SM7.73.21027.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '21027'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: カウンターゲイン
     variants_seen:
-      - normal
+    - normal
     rarity_code: UR

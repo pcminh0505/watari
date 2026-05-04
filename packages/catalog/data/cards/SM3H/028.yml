@@ -7,9 +7,9 @@ name_en: Lucario
 rarity_code: R
 category: card
 image: https://den-cards.pokellector.com/219/Lucario.SM3H.28.18134.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '18134'

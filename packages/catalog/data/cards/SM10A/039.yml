@@ -7,9 +7,9 @@ name_en: Bibarel
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/267/Bibarel.SM10A.39.27520.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '27520'

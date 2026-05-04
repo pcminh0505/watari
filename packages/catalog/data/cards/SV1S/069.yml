@@ -7,9 +7,9 @@ name_en: Pal Pad
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/361/Pal-Pad.SV1S.69.46280.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '46280'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: ともだちてちょう
     variants_seen:
-      - normal
+    - normal

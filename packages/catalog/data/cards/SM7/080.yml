@@ -7,9 +7,9 @@ name_en: Acro Bike
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/242/Acro-Bike.SM7.80.20969.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '20969'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ダートじてんしゃ
     variants_seen:
-      - normal
+    - normal
     rarity_code: U

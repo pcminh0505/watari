@@ -7,9 +7,9 @@ name_en: Dangerous Jungle
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/386/Dangerous-Jungle.SV5K.70.51871.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '51871'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: 危険な密林
     variants_seen:
-      - normal
+    - normal

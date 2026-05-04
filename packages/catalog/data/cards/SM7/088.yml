@@ -7,9 +7,9 @@ name_en: Steven's Decision
 rarity_code: R
 category: card
 image: https://den-cards.pokellector.com/242/Stevens-Decision.SM7.88.20956.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '20956'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ダイゴの決断
     variants_seen:
-      - normal
+    - normal
     rarity_code: R

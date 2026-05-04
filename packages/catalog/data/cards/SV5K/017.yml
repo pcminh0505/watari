@@ -7,9 +7,9 @@ name_en: Sharpedo
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/386/Sharpedo.SV5K.17.51831.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '51831'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: サメハダー
     variants_seen:
-      - normal
+    - normal

@@ -7,9 +7,9 @@ name_en: Toxicroak
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/301/Toxicroak.S4A.114.36417.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '36417'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ドクロッグ(R仕様)
     variants_seen:
-      - normal
+    - normal
     rarity_code: R

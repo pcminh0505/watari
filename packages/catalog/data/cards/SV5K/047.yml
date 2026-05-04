@@ -7,9 +7,9 @@ name_en: Gengar ex
 rarity_code: RR
 category: card
 image: https://den-cards.pokellector.com/386/Gengar-ex.SV5K.47.51718.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '51718'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: ゲンガーex
     variants_seen:
-      - normal
+    - normal

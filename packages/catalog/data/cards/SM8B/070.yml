@@ -7,9 +7,9 @@ name_en: Zoroark GX
 rarity_code: RR
 category: card
 image: https://den-cards.pokellector.com/241/Zoroark-GX.SM8B.70.24402.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '24402'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ゾロアークGX
     variants_seen:
-      - normal
+    - normal
     rarity_code: RR

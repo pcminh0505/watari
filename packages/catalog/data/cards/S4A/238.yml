@@ -7,9 +7,9 @@ name_en: Yamper
 rarity_code: S
 category: card
 image: https://den-cards.pokellector.com/301/Yamper.S4A.238.36539.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '36539'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ワンパチ
     variants_seen:
-      - normal
+    - normal
     rarity_code: SR

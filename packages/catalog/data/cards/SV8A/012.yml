@@ -7,9 +7,9 @@ name_en: Brambleghast
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/406/Brambleghast.SV8A.12.55157.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '55157'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: アノホラグサ(R仕様)
     variants_seen:
-      - normal
+    - normal

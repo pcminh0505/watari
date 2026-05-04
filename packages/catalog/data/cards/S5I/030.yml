@@ -7,9 +7,9 @@ name_en: Gligar
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/306/Gligar.S5I.30.36787.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '36787'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: グライガー
     variants_seen:
-      - normal
+    - normal
     rarity_code: C

@@ -7,9 +7,9 @@ name_en: Radiant Gardevoir
 rarity_code: R
 category: card
 image: https://den-cards.pokellector.com/357/Radiant-Gardevoir.S12A.55.45823.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '45823'

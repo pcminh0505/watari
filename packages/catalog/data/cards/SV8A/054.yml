@@ -7,9 +7,9 @@ name_en: Iron Hands ex
 rarity_code: RR
 category: card
 image: https://den-cards.pokellector.com/406/Iron-Hands-ex.SV8A.54.55176.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '55176'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: テツノカイナex
     variants_seen:
-      - normal
+    - normal

@@ -7,9 +7,9 @@ name_en: Pecharunt ex
 rarity_code: UR
 category: card
 image: https://den-cards.pokellector.com/398/Pecharunt-ex.SV6A.92.53596.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '53596'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: モモワロウex
     variants_seen:
-      - normal
+    - normal

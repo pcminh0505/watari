@@ -7,9 +7,9 @@ name_en: Scovillain ex
 rarity_code: RR
 category: card
 image: https://den-cards.pokellector.com/405/Scovillain-ex.SV8.23.54543.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '54543'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: スコヴィランex
     variants_seen:
-      - normal
+    - normal

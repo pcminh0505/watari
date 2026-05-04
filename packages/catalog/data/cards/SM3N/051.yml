@@ -7,9 +7,9 @@ name_en: Port Town
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/218/Po-Town.SM3N.51.18222.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '18222'

@@ -7,9 +7,9 @@ name_en: Karrablast
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/408/Karrablast.SV9.7.55732.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '55732'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: カブルモ
     variants_seen:
-      - normal
+    - normal

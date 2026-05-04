@@ -7,9 +7,9 @@ name_en: Magmortar
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/291/Magmortar.S2.15.31904.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '31904'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ブーバーン
     variants_seen:
-      - normal
+    - normal
     rarity_code: U

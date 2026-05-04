@@ -7,9 +7,9 @@ name_en: Meowth ex
 rarity_code: RR
 category: card
 image: https://den-cards.pokellector.com/428/Meowth-ex.M3.61.60154.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '60154'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: ニャースex
     variants_seen:
-      - normal
+    - normal

@@ -7,9 +7,9 @@ name_en: Latios & Latias GX
 rarity_code: SR
 category: card
 image: https://den-cards.pokellector.com/260/Latios-Latias-GX.SM9.60.25436.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '25436'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ラティアス＆ラティオスGX
     variants_seen:
-      - normal
+    - normal
     rarity_code: SR

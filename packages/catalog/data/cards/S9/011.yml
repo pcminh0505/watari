@@ -7,9 +7,9 @@ name_en: Mothim
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/336/Mothim.S9.11.42562.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '42562'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: かがやくヒードラン
     variants_seen:
-      - normal
+    - normal
     rarity_code: K

@@ -7,9 +7,9 @@ name_en: Eiscue
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/318/Eiscue.S7D.9.39193.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '39193'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: コオリッポ
     variants_seen:
-      - normal
+    - normal
     rarity_code: U

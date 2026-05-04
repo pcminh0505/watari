@@ -7,9 +7,9 @@ name_en: Rescue Stretcher
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/210/Rescue-Stretcher.SM2L.48.17307.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '17307'

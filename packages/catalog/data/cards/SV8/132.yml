@@ -7,9 +7,9 @@ name_en: Pikachu ex
 rarity_code: SAR
 category: card
 image: https://den-cards.pokellector.com/405/Pikachu-ex.SV8.132.54504.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '54504'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: ピカチュウex
     variants_seen:
-      - normal
+    - normal

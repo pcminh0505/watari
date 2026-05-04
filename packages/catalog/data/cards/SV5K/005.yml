@@ -7,9 +7,9 @@ name_en: Torterra ex
 rarity_code: RR
 category: card
 image: https://den-cards.pokellector.com/386/Torterra-ex.SV5K.5.51820.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '51820'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: ドダイトスex
     variants_seen:
-      - normal
+    - normal

@@ -7,9 +7,9 @@ name_en: Grotle
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/238/Grotle.SM5+.2.20072.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '20072'

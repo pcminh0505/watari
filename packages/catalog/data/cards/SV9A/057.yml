@@ -7,9 +7,9 @@ name_en: Arven's Sandwich
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/411/Arvens-Sandwich.SV9A.57.56651.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '56651'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: ペパーのサンドウィッチ
     variants_seen:
-      - normal
+    - normal

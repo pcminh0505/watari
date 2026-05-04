@@ -7,9 +7,9 @@ name_en: Mewtwo & Mew GX
 rarity_code: UR
 category: card
 image: https://den-cards.pokellector.com/288/Mewtwo-Mew-GX.SM12A.222.30560.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '30560'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ミュウツー＆ミュウGX
     variants_seen:
-      - normal
+    - normal
     rarity_code: UR

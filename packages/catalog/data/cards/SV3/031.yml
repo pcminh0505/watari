@@ -7,9 +7,9 @@ name_en: Palafin
 rarity_code: R
 category: card
 image: https://den-cards.pokellector.com/368/Palafin.SV3.31.48369.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '48369'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: ガケガニ
     variants_seen:
-      - normal
+    - normal

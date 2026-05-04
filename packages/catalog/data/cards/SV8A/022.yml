@@ -7,9 +7,9 @@ name_en: Flareon ex
 rarity_code: RR
 category: card
 image: https://den-cards.pokellector.com/406/Flareon-ex.SV8A.22.54625.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '54625'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: ブースターex
     variants_seen:
-      - normal
+    - normal

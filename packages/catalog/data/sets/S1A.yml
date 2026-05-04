@@ -4,7 +4,9 @@ set_code: S1A
 era_block: sw
 language: jp
 name_ja: VMAXライジング
-name_en: VMAXライジング
+name_en: VMAX Rising
 release_date: 2020-02-07
 tcgdex_id: S1a
 pokellector_slug: VMAX-Rising-Expansion
+tcgcollector_id: '11370'
+tcgcollector_slug: vmax-rising

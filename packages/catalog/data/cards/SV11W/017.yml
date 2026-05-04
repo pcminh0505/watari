@@ -7,9 +7,9 @@ name_en: Reshiram ex
 rarity_code: RR
 category: card
 image: https://den-cards.pokellector.com/415/Reshiram-ex.SV11W.17.57172.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '57172'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: レシラムex
     variants_seen:
-      - normal
+    - normal

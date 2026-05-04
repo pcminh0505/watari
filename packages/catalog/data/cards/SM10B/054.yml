@@ -7,9 +7,9 @@ name_en: Lusamine
 rarity_code: R
 category: card
 image: https://den-cards.pokellector.com/268/Lusamine.SM10B.54.27546.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '27546'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ルザミーネ
     variants_seen:
-      - normal
+    - normal
     rarity_code: TR

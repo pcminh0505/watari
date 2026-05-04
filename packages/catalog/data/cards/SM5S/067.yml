@@ -7,9 +7,9 @@ name_en: Leafeon GX
 rarity_code: UR
 category: card
 image: https://den-cards.pokellector.com/232/Leafeon-GX.SM5S.67.20008.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '20008'

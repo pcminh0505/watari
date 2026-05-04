@@ -7,9 +7,9 @@ name_en: Geodude
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/326/Geodude.S8.52.40448.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '40448'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: イシツブテ
     variants_seen:
-      - normal
+    - normal
     rarity_code: C

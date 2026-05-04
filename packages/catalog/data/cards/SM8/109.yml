@@ -7,9 +7,9 @@ name_en: Stall Hammer
 rarity_code: UR
 category: card
 image: https://den-cards.pokellector.com/258/Stall-Hammer.SM8.109.23617.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '23617'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: あとだしハンマー
     variants_seen:
-      - normal
+    - normal
     rarity_code: UR

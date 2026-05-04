@@ -2,14 +2,14 @@
 # To freeze a manually-edited value, add `# manual: true` on line 1.
 set_code: sm3h
 local_id: '056'
-name_ja:
+name_ja: Kiawe
 name_en: Kiawe
 rarity_code: UR
 category: card
 image: https://den-cards.pokellector.com/219/Kiawe.SM3H.56.18137.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '18137'

@@ -7,9 +7,9 @@ name_en: Capture Energy
 rarity_code: UR
 category: energy
 image: https://den-cards.pokellector.com/293/Capture-Energy.S3.119.34967.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '34967'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: キャプチャーエネルギー
     variants_seen:
-      - normal
+    - normal
     rarity_code: UR

@@ -7,9 +7,9 @@ name_en: Spell Tag
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/288/Spell-Tag.SM12A.141.30486.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '30486'

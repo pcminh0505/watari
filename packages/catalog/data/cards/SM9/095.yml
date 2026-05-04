@@ -7,9 +7,9 @@ name_en: Volkner
 rarity_code: R
 category: card
 image: https://den-cards.pokellector.com/260/Volkner.SM9.95.25443.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '25443'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: デンジ
     variants_seen:
-      - normal
+    - normal
     rarity_code: TR

@@ -7,9 +7,9 @@ name_en: Rhyperior
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/266/Rhyperior.SM10.50.26909.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '26909'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: 巨大なカマド
     variants_seen:
-      - normal
+    - normal
     rarity_code: U

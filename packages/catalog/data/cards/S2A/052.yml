@@ -7,9 +7,9 @@ name_en: Lairon
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/295/Lairon.S2A.52.34409.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '34409'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: コドラ
     variants_seen:
-      - normal
+    - normal
     rarity_code: C

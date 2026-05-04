@@ -7,9 +7,9 @@ name_en: Heliolisk
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/211/Heliolisk.SM2K.21.17335.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '17335'

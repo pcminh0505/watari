@@ -7,9 +7,9 @@ name_en: Wugtrio
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/381/Wugtrio.SV4K.25.50757.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '50757'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: ウミトリオ
     variants_seen:
-      - normal
+    - normal

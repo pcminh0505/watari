@@ -7,9 +7,9 @@ name_en: Psyduck
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/271/Psyduck.SMP2.9.28865.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '28865'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: コダック
     variants_seen:
-      - normal
+    - normal
     rarity_code: C

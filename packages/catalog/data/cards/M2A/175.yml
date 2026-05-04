@@ -2,14 +2,14 @@
 # To freeze a manually-edited value, add `# manual: true` on line 1.
 set_code: M2A
 local_id: '175'
-name_ja:
+name_ja: Lillie's Determination
 name_en: Lillie's Determination
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/427/Lillies-Determination.M2A.175.59810.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '59810'

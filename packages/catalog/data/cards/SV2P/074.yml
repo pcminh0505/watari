@@ -7,9 +7,9 @@ name_en: Eiscue
 rarity_code: AR
 category: card
 image: https://den-cards.pokellector.com/369/Eiscue.SV2P.74.47599.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '47599'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: コオリッポ
     variants_seen:
-      - normal
+    - normal

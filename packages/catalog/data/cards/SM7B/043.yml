@@ -7,9 +7,9 @@ name_en: Adventuring Satchel
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/240/Adventuring-Satchel.SM7B.43.23092.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '23092'

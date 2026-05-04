@@ -7,9 +7,9 @@ name_en: Braviary
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/308/Braviary.S5A.62.37908.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '37908'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ウォーグル
     variants_seen:
-      - normal
+    - normal
     rarity_code: C

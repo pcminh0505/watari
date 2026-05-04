@@ -7,9 +7,9 @@ name_en: Shuppet
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/242/Shuppet.SM7.40.21003.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '21003'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: コバルオン
     variants_seen:
-      - normal
+    - normal
     rarity_code: R

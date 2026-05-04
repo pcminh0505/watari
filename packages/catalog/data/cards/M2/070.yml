@@ -7,9 +7,9 @@ name_en: Linoone
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/425/Linoone.M2.70.59245.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '59245'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: マッスグマ
     variants_seen:
-      - normal
+    - normal

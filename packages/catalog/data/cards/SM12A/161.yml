@@ -7,9 +7,9 @@ name_en: Martial Arts Dojo
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/288/Martial-Arts-Dojo.SM12A.161.30504.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '30504'

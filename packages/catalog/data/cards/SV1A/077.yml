@@ -7,9 +7,9 @@ name_en: Pyroar
 rarity_code: AR
 category: card
 image: https://den-cards.pokellector.com/366/Pyroar.SV1A.77.46997.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '46997'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: カエンジシ
     variants_seen:
-      - normal
+    - normal

@@ -7,9 +7,9 @@ name_en: Dedenne
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/235/Dedenne.SM6.62.20444.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '20444'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: TVレポーター
     variants_seen:
-      - normal
+    - normal
     rarity_code: HR

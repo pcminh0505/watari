@@ -2,14 +2,14 @@
 # To freeze a manually-edited value, add `# manual: true` on line 1.
 set_code: sm1m
 local_id: '019'
-name_ja:
+name_ja: Charjabug
 name_en: Charjabug
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/202/Charjabug.SM1M.19.13794.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '13794'

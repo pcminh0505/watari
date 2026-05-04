@@ -7,9 +7,9 @@ name_en: Fight Gong
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/416/Fight-Gong.M1L.59.58862.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '58862'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ファイトゴング
     variants_seen:
-      - normal
+    - normal
     rarity_code: U

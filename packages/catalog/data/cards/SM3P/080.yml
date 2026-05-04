@@ -7,9 +7,9 @@ name_en: Mewtwo GX
 rarity_code: UR
 category: card
 image: https://den-cards.pokellector.com/224/Mewtwo-GX.SM3+.80.18340.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '18340'

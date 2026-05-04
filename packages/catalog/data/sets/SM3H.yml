@@ -4,7 +4,9 @@ set_code: SM3H
 era_block: sm
 language: jp
 name_ja: 闘う虹を見たか
-name_en: 闘う虹を見たか
+name_en: To Have Seen the Battle Rainbow
 release_date: 2017-06-16
 tcgdex_id: SM3H
 pokellector_slug: Seen-the-Rainbow-Battle-Expansion
+tcgcollector_id: '11284'
+tcgcollector_slug: to-have-seen-the-battle-rainbow

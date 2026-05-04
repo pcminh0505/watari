@@ -7,9 +7,9 @@ name_en: Marill
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/386/Marill.SV5K.26.51838.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '51838'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: マリル
     variants_seen:
-      - normal
+    - normal

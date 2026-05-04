@@ -2,14 +2,14 @@
 # To freeze a manually-edited value, add `# manual: true` on line 1.
 set_code: sm3h
 local_id: '064'
-name_ja:
+name_ja: Fire Energy
 name_en: Fire Energy
 rarity_code: UR
 category: energy
 image: https://den-cards.pokellector.com/219/Fire-Energy.SM3H.64.18198.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '18198'

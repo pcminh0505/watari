@@ -7,9 +7,9 @@ name_en: Wimpod
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/376/Wimpod.SV3A.9.49359.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '49359'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: コソクムシ
     variants_seen:
-      - normal
+    - normal

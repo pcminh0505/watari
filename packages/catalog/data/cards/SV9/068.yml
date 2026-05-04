@@ -7,9 +7,9 @@ name_en: Hop's Corviknight
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/408/Hops-Corviknight.SV9.68.55758.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '55758'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: ホップのアーマーガア
     variants_seen:
-      - normal
+    - normal

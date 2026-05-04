@@ -7,9 +7,9 @@ name_en: Doliv
 rarity_code: AR
 category: card
 image: https://den-cards.pokellector.com/361/Doliv.SV1S.79.46789.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '46789'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: アチゲータ
     variants_seen:
-      - normal
+    - normal

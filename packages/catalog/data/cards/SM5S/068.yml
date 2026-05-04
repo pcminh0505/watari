@@ -7,9 +7,9 @@ name_en: Dusk Mane Necrozma GX
 rarity_code: UR
 category: card
 image: https://den-cards.pokellector.com/232/Dusk-Mane-Necrozma-GX.SM5S.68.20009.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '20009'

@@ -7,9 +7,9 @@ name_en: Electivire
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/357/Electivire.S12A.35.45852.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '45852'

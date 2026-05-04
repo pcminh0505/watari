@@ -7,9 +7,9 @@ name_en: Frosmoth
 rarity_code: S
 category: card
 image: https://den-cards.pokellector.com/301/Frosmoth.S4A.233.36535.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '36535'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: モスノウ
     variants_seen:
-      - normal
+    - normal
     rarity_code: SR

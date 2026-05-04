@@ -7,9 +7,9 @@ name_en: Petilil
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/308/Petilil.S5A.5.37864.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '37864'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: チュリネ
     variants_seen:
-      - normal
+    - normal
     rarity_code: C

@@ -2,14 +2,14 @@
 # To freeze a manually-edited value, add `# manual: true` on line 1.
 set_code: sm4a
 local_id: '062'
-name_ja:
+name_ja: Water Energy
 name_en: Water Energy
 rarity_code: UR
 category: energy
 image: https://den-cards.pokellector.com/227/Water-Energy.SM4A.62.19444.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '19444'

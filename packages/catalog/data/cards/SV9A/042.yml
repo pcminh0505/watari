@@ -7,9 +7,9 @@ name_en: Cynthia's Gible
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/411/Cynthias-Gible.SV9A.42.56585.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '56585'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: シロナのフカマル
     variants_seen:
-      - normal
+    - normal

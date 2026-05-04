@@ -7,9 +7,9 @@ name_en: Steelix
 rarity_code: AR
 category: card
 image: https://den-cards.pokellector.com/416/Steelix.M1L.73.58872.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '58872'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ハガネール
     variants_seen:
-      - normal
+    - normal
     rarity_code: AR

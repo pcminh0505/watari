@@ -7,9 +7,9 @@ name_en: Weedle
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/260/Weedle.SM9.2.25447.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '25447'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: キャタピー
     variants_seen:
-      - normal
+    - normal
     rarity_code: RR

@@ -2,14 +2,14 @@
 # To freeze a manually-edited value, add `# manual: true` on line 1.
 set_code: s4a
 local_id: '255'
-name_ja:
+name_ja: Hatterene
 name_en: Hatterene
 rarity_code: S
 category: card
 image: https://den-cards.pokellector.com/301/Hatterene.S4A.255.36553.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '36553'

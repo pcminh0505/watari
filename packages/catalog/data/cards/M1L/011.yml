@@ -7,9 +7,9 @@ name_en: Ninetales
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/416/Ninetales.M1L.11.57978.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '57978'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: キュウコン
     variants_seen:
-      - normal
+    - normal
     rarity_code: U

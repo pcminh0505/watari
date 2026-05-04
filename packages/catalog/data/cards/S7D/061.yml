@@ -7,9 +7,9 @@ name_en: Single Strike Scroll of Fangs
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/318/Single-Strike-Scroll-of-Fangs.S7D.61.39401.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '39401'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: いちげきの巻物牙竜の巻
     variants_seen:
-      - normal
+    - normal
     rarity_code: U

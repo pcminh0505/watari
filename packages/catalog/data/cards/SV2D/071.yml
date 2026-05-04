@@ -7,9 +7,9 @@ name_en: Therapy Energy
 rarity_code: U
 category: energy
 image: https://den-cards.pokellector.com/370/Therapy-Energy.SV2D.71.47540.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '47540'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: セラピーエネルギー
     variants_seen:
-      - normal
+    - normal

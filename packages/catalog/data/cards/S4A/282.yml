@@ -2,14 +2,14 @@
 # To freeze a manually-edited value, add `# manual: true` on line 1.
 set_code: s4a
 local_id: '282'
-name_ja:
+name_ja: Impidimp
 name_en: Impidimp
 rarity_code: S
 category: card
 image: https://den-cards.pokellector.com/301/Impidimp.S4A.282.36579.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '36579'

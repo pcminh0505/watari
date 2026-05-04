@@ -7,9 +7,9 @@ name_en: Maractus
 rarity_code: AR
 category: card
 image: https://den-cards.pokellector.com/414/Maractus.SV11B.93.57816.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '57816'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: マラカッチ
     variants_seen:
-      - normal
+    - normal

@@ -7,9 +7,9 @@ name_en: Silicobra
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/301/Silicobra.S4A.97.36403.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '36403'

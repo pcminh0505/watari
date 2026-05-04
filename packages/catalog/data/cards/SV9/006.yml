@@ -7,9 +7,9 @@ name_en: Maractus
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/408/Maractus.SV9.6.55731.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '55731'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: マラカッチ(SV9)
     variants_seen:
-      - normal
+    - normal

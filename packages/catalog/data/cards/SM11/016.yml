@@ -7,9 +7,9 @@ name_en: Tirtouga
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/277/Tirtouga.SM11.16.28793.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '28793'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: プロトーガ
     variants_seen:
-      - normal
+    - normal
     rarity_code: RR

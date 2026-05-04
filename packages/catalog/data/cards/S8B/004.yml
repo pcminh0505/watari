@@ -7,9 +7,9 @@ name_en: Kricketune V
 rarity_code: RR
 category: card
 image: https://den-cards.pokellector.com/338/Kricketune-V.S8B.4.41284.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '41284'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: コロトックV
     variants_seen:
-      - normal
+    - normal
     rarity_code: RR

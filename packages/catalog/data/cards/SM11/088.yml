@@ -7,9 +7,9 @@ name_en: Slumber Forest
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/277/Slumber-Forest.SM11.88.28846.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '28846'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: まどろみの森
     variants_seen:
-      - normal
+    - normal
     rarity_code: U

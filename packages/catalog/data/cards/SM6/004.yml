@@ -7,9 +7,9 @@ name_en: Scatterbug
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/235/Scatterbug.SM6.4.20491.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '20491'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ビクティニ◇
     variants_seen:
-      - normal
+    - normal
     rarity_code: R

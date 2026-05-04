@@ -7,9 +7,9 @@ name_en: Pidgeotto
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/288/Pidgeotto.SM12A.104.30451.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '30451'

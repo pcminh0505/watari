@@ -7,9 +7,9 @@ name_en: Sableye
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/210/Sableye.SM2L.31.17291.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '17291'

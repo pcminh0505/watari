@@ -7,9 +7,9 @@ name_en: Skyla
 rarity_code: SR
 category: card
 image: https://den-cards.pokellector.com/301/Skyla.S4A.195.36506.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '36506'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: フウロ
     variants_seen:
-      - normal
+    - normal
     rarity_code: SR

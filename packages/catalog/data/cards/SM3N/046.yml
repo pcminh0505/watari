@@ -7,9 +7,9 @@ name_en: Bewear
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/218/Bewear.SM3N.46.18087.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '18087'

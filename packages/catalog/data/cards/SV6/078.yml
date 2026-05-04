@@ -7,9 +7,9 @@ name_en: Revavroom
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/393/Revavroom.SV6.78.52950.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '52950'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: ブロロロームex
     variants_seen:
-      - normal
+    - normal

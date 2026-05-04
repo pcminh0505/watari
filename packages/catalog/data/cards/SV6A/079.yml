@@ -7,9 +7,9 @@ name_en: Okidogi ex
 rarity_code: SR
 category: card
 image: https://den-cards.pokellector.com/398/Okidogi-ex.SV6A.79.53584.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '53584'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: イイネイヌex
     variants_seen:
-      - normal
+    - normal

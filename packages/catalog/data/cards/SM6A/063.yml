@@ -7,9 +7,9 @@ name_en: White Kyurem GX
 rarity_code: UR
 category: card
 image: https://den-cards.pokellector.com/236/White-Kyurem-GX.SM6A.63.20688.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '20688'

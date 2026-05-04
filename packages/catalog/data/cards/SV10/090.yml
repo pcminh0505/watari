@@ -7,9 +7,9 @@ name_en: Team Rocket's Receiver
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/413/Team-Rockets-Receiver.SV10.90.56887.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '56887'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: ロケット団のレシーバー
     variants_seen:
-      - normal
+    - normal

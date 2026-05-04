@@ -7,9 +7,9 @@ name_en: Iono
 rarity_code: SR
 category: card
 image: https://den-cards.pokellector.com/370/Iono.SV2D.91.47533.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '47533'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: ナンジャモ
     variants_seen:
-      - normal
+    - normal

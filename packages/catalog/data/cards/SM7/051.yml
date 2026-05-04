@@ -7,9 +7,9 @@ name_en: Minior
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/242/Minior.SM7.51.21012.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '21012'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ジュカインGX
     variants_seen:
-      - normal
+    - normal
     rarity_code: SR

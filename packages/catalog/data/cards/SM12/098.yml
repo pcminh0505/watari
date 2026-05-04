@@ -7,9 +7,9 @@ name_en: Flygon GX
 rarity_code: SR
 category: card
 image: https://den-cards.pokellector.com/281/Flygon-GX.SM12.98.30149.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '30149'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: フライゴンGX
     variants_seen:
-      - normal
+    - normal
     rarity_code: SR

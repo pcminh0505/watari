@@ -7,9 +7,9 @@ name_en: Choice Belt
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/336/Choice-Belt.S9.90.42625.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '42625'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: こだわりベルト
     variants_seen:
-      - normal
+    - normal
     rarity_code: HR

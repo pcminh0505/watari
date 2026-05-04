@@ -7,9 +7,9 @@ name_en: Charmander
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/271/Charmander.SMP2.5.28862.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '28862'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ヒトカゲ
     variants_seen:
-      - normal
+    - normal
     rarity_code: C

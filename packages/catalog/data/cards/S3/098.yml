@@ -7,9 +7,9 @@ name_en: Rose Tower
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/293/Rose-Tower.S3.98.34794.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '34794'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ローズタワー
     variants_seen:
-      - normal
+    - normal
     rarity_code: U

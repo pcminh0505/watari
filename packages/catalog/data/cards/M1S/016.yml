@@ -7,9 +7,9 @@ name_en: Kyogre
 rarity_code: R
 category: card
 image: https://den-cards.pokellector.com/417/Kyogre.M1S.16.58906.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '58906'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: カイオーガ
     variants_seen:
-      - normal
+    - normal
     rarity_code: R

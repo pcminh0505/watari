@@ -7,9 +7,9 @@ name_en: Gossifleur
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/301/Gossifleur.S4A.14.36328.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '36328'

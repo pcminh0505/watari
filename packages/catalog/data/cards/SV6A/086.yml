@@ -7,9 +7,9 @@ name_en: Xerosic's Scheme
 rarity_code: SR
 category: card
 image: https://den-cards.pokellector.com/398/Xerosics-Scheme.SV6A.86.53591.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '53591'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: クセロシキのたくらみ
     variants_seen:
-      - normal
+    - normal

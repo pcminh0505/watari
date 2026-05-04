@@ -7,9 +7,9 @@ name_en: Altaria
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/241/Altaria.SM8B.97.24885.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '24885'

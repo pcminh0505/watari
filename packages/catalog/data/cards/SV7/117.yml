@@ -7,9 +7,9 @@ name_en: Lapras ex
 rarity_code: SR
 category: card
 image: https://den-cards.pokellector.com/401/Lapras-ex.SV7.117.53776.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '53776'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: ラプラスex
     variants_seen:
-      - normal
+    - normal

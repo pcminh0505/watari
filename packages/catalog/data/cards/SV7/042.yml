@@ -7,9 +7,9 @@ name_en: Comfey
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/401/Comfey.SV7.42.53739.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '53739'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: キュワワー
     variants_seen:
-      - normal
+    - normal

@@ -7,9 +7,9 @@ name_en: Durant
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/382/Durant.SV4K.42.50869.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '50869'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: アイアント
     variants_seen:
-      - normal
+    - normal

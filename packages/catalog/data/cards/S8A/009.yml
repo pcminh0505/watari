@@ -7,9 +7,9 @@ name_en: Palkia
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/327/Palkia.S8A.9.40611.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '40611'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ピィ(25th)
     variants_seen:
-      - normal
+    - normal
     rarity_code: C

@@ -7,9 +7,9 @@ name_en: Honedge
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/382/Honedge.SV4K.43.50870.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '50870'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: ヒトツキ
     variants_seen:
-      - normal
+    - normal

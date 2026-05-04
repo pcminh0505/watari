@@ -7,9 +7,9 @@ name_en: Pancham
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/272/Pancham.SM11A.34.28980.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '28980'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ヤンチャム
     variants_seen:
-      - normal
+    - normal
     rarity_code: C

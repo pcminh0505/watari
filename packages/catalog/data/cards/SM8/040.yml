@@ -7,9 +7,9 @@ name_en: Espeon
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/258/Espeon.SM8.40.23265.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '23265'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: エーフィ
     variants_seen:
-      - normal
+    - normal
     rarity_code: U

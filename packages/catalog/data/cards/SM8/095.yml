@@ -7,9 +7,9 @@ name_en: Memory Energy
 rarity_code: C
 category: energy
 image: https://den-cards.pokellector.com/258/Memory-Energy.SM8.95.23317.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '23317'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: メモリーエネルギー
     variants_seen:
-      - normal
+    - normal
     rarity_code: C

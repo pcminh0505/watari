@@ -7,9 +7,9 @@ name_en: Ambipom
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/281/Ambipom.SM12.76.30106.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '30106'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: エテボース
     variants_seen:
-      - normal
+    - normal
     rarity_code: U

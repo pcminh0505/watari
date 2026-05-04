@@ -7,9 +7,9 @@ name_en: Iron Valiant ex
 rarity_code: RR
 category: card
 image: https://den-cards.pokellector.com/382/Iron-Valiant-ex.SV4K.38.50865.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '50865'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: テツノブジンex
     variants_seen:
-      - normal
+    - normal

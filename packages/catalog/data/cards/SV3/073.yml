@@ -7,9 +7,9 @@ name_en: Absol ex
 rarity_code: RR
 category: card
 image: https://den-cards.pokellector.com/368/Absol-ex.SV3.73.48647.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '48647'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: ギルガルド
     variants_seen:
-      - normal
+    - normal

@@ -7,9 +7,9 @@ name_en: Fraxure
 rarity_code: AR
 category: card
 image: https://den-cards.pokellector.com/398/Fraxure.SV6A.74.53579.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '53579'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: オノンド
     variants_seen:
-      - normal
+    - normal

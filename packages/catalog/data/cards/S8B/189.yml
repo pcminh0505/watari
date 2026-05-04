@@ -7,9 +7,9 @@ name_en: Vaporeon
 rarity_code: CHR
 category: card
 image: https://den-cards.pokellector.com/338/Vaporeon.S8B.189.41500.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '41500'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: シャワーズ
     variants_seen:
-      - normal
+    - normal
     rarity_code: CHR

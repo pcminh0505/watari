@@ -7,9 +7,9 @@ name_en: Cacnea
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/306/Cacnea.S5I.1.36763.png
-illustrator:
+illustrator: Unknown
 prints:
-  - normal
+- normal
 sources:
   pokellector:
     id: '36763'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: サボネア
     variants_seen:
-      - normal
+    - normal
     rarity_code: C
