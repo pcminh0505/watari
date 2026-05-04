@@ -318,12 +318,13 @@ export const RARITY_SORT_ORDER: Record<string, number> = {
   TR: 3,   // Trainer Gallery Rare Holo (SWSH era)
   PR: 4,   // promo — at least as rare as RR in practice
   K: 4,    // Radiant Rare (SWSH era)
+  S: 5,    // Shiny (baby shiny tier — SV4A, S4A)
   RRR: 5,
   CHR: 5,  // Character Rare (SWSH era)
   SR: 6,
   CSR: 6,  // Character Super Rare (SWSH era)
   AR: 7,
-  SSR: 7,  // Shiny Double Rare (SWSH Shiny Star V / VMAX Climax)
+  SSR: 7,  // Shiny Super Rare (shiny V/VMAX full-art — S4A, S8B)
   HR: 7,   // Hyper Rare (SM era gold full-art)
   SAR: 8,
   MA: 8,   // ME-era top-tier art rare (equivalent to SAR)

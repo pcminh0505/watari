@@ -21,6 +21,9 @@ class TestCardrush:
     def test_mur(self):
         assert canonicalize_cardrush("MUR") == "MUR"
 
+    def test_shiny(self):
+        assert canonicalize_cardrush("S") == "S"
+
     def test_lowercase_ok(self):
         assert canonicalize_cardrush("sar") == "SAR"
 
@@ -62,8 +65,9 @@ class TestPokellector:
             # SM-era labels added in Pillar 1
             ("Secret Rare", "UR"),
             ("Prism Star", "SR"),
-            # SWSH-era label added in Pillar 1
-            ("Shiny", "SR"),
+            # Shiny tier (baby shinies — SV4A, S4A)
+            ("Shiny", "S"),
+            ("Shiny Rare", "S"),
             # ME-era
             ("Master Ball Rare", "MA"),
             ("Masterball Rare", "MA"),

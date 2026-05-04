@@ -7,8 +7,9 @@ Canonical codes (upper-case, short, stable):
     R    - Rare
     RR   - Double Rare (ex / two-star)
     AR   - Art Rare
+    S    - Shiny (baby shiny / shiny basic tier — SV4A, S4A)
     SR   - Super Rare (full-art trainer, non-ex pokémon full art legacy)
-    SSR  - Shiny Double Rare (SWSH Shiny Star V / VMAX Climax shiny tier)
+    SSR  - Shiny Super Rare (shiny V/VMAX full-art — S4A, S8B)
     SAR  - Special Art Rare
     UR   - Ultra Rare (gold / rainbow / trophy)
     CSR  - Character Super Rare (legacy, SWSH-era)
@@ -35,7 +36,7 @@ TCGDEX_RARITY_MAP: dict[str, str] = {
     "Illustration rare": "AR",
     "Special illustration rare": "SAR",
     "Hyper rare": "HR",
-    "Shiny rare": "SR",           # S-series legacy (approximate)
+    "Shiny rare": "S",            # baby shiny tier (SV4A, S4A)
     "Shiny Double rare": "SSR",   # keep raw; mapped to SSR below
     "ACE SPEC Rare": "R",         # no distinct slot in v1
     "Amazing Rare": "RRR",
@@ -63,7 +64,7 @@ CARDRUSH_RARITY_MAP: dict[str, str] = {
     "MUR": "MUR",
     "CSR": "CSR",
     "CHR": "CHR",
-    "S": "SR",   # legacy shortcut
+    "S": "S",    # shiny tier (baby shinies in SV4A, S4A)
     "K": "K",    # radiant (S-era) — keep raw
     "TR": "TR",
     "ACE": "R",  # ACE SPEC
@@ -101,7 +102,7 @@ POKELLECTOR_RARITY_MAP: dict[str, str] = {
     "Illustration Rare": "AR",
     "Special Illustration Rare": "SAR",
     "Hyper Rare": "HR",
-    "Shiny Rare": "SR",
+    "Shiny Rare": "S",
     "Shiny Ultra Rare": "SSR",
     "ACE SPEC Rare": "R",
     "Amazing Rare": "RRR",
@@ -122,7 +123,7 @@ POKELLECTOR_RARITY_MAP: dict[str, str] = {
     "Secret Rare": "UR",    # SM/SW gold/rainbow + secret alt-arts
     "Prism Star": "SR",     # SM-era ◇ prism cards (similar tier to Super Rare)
     # SWSH-era additions
-    "Shiny": "SR",          # SWSH Shiny Star V / VMAX Climax base shiny tier
+    "Shiny": "S",           # baby shiny tier (SV4A Shiny Treasure, S4A Shiny Star V)
     # SV-era labels (jp.pokellector.com uses shorter forms than EN Pokellector)
     "Ace Spec": "R",                # ACE SPEC cards (same tier as ACE SPEC Rare)
     "Super Secret Rare": "SAR",     # SV4A high-number secret ex (Special Art Rare tier)

@@ -6,7 +6,7 @@
 > Update it whenever the architecture changes — especially after a
 > destructive migration, a new source, or a schema split.
 >
-> Last updated: 2026-05-02 (Expanded catalog to 98 sets — SM and SWSH eras bootstrapped, CI weekly legacy scraper jobs added, Vite+React frontend shipped in `apps/web/`).
+> Last updated: 2026-05-04 (Legacy-era hardening complete: 0 null rarity_codes, CI matrices aligned, Cardrush SM/SW disambiguation, mv_market_price MV, admin scrape-health dashboard).
 
 ---
 
@@ -46,10 +46,10 @@ packages/
   dispatcher/          ← job dispatch (placeholder)
   scheduler/           ← cron/apscheduler shell (placeholder; live schedule is in CI)
   api/                 ← FastAPI read layer
-migrations/            ← Alembic (current head: 006_mv_spread_unique_index)
+migrations/            ← Alembic (current head: 007_mv_market_price)
 scripts/               ← gen_sm/sw_set_metadata.py, update_set_symbols.py, dump/bootstrap scripts
 plans/                 ← design docs, one per major change
-tests/unit/            ← 196 tests, all passing
+tests/unit/            ← 232 tests, all passing
 ```
 
 Config knobs: `.env` (DB URL, MinIO creds, SNKRDUNK cookies). `docker-compose.yml`
@@ -59,7 +59,7 @@ brings up Postgres + MinIO.
 
 ## 3. Current architecture — Catalog v3 (shipped)
 
-### 3.1 Schema (post-migration `006_mv_spread_unique_index`)
+### 3.1 Schema (post-migration `007_mv_market_price`)
 
 ```
 sets        ── 1 row per set (set_code PK). source_refs.pokellector_slug is required for bootstrap.
@@ -68,9 +68,11 @@ artworks    ── 1 row per (set_code, local_id). Owns name_ja/en, image_url, r
 cards       ── 1 row per print (set_code, local_id, variant). artwork_id FK → artworks.
                card_id = "{artwork_id}-{variant}". price_points.card_id FKs here.
 price_points, card_scrape_state, scrape_runs ← unchanged in shape.
-mv_latest_price, mv_median_7d, mv_cross_source_spread ← rebuilt by the migration.
-             All three have a UNIQUE index so REFRESH MATERIALIZED VIEW
-             CONCURRENTLY works (006 added the one for mv_cross_source_spread).
+mv_latest_price, mv_median_7d, mv_cross_source_spread, mv_market_price
+             ← all four have a UNIQUE index so REFRESH MATERIALIZED VIEW
+             CONCURRENTLY works (005/006/007).
+             mv_market_price: one row per card_id, picks SNKRDUNK 7-day median
+             if available, else Cardrush condition-A floor.
 ```
 
 **Important:** `artworks.name_ja` is **nullable**. New sets (e.g. M2A Commons)
@@ -184,6 +186,8 @@ Routers (all under `packages/api/watari_api/routers/`):
 | `GET /{lang}/cards/{set_code}/{local_id}/prices` (`?variant=normal`) | `list[LatestPrice]` | `**mv_latest_price`\*\* |
 | `GET /{lang}/cards/{set_code}/{local_id}/history` (`?variant=normal&days=&source=&condition=&limit=`) | `list[PricePointOut]` | `price_points` |
 | `GET /{lang}/cards/{set_code}/{local_id}/spread` (`?variant=normal`) | `list[SpreadRow]` | `**mv_cross_source_spread**` |
+| `GET /{lang}/cards/{set_code}/{local_id}/market-price` (`?variant=normal`) | `MarketPriceOut` / 404 | `**mv_market_price**` |
+| `GET /admin/scrape-health` | `list[ScrapeHealthRow]` | `scrape_runs ⋈ card_scrape_state` |
 
 **Rules:**
 
@@ -230,7 +234,7 @@ Routers (all under `packages/api/watari_api/routers/`):
 - `watari-api revoke-key PREFIX` — sets `revoked_at` by key prefix.
 - `watari-api list-keys [--include-revoked]` — metadata-only listing.
 - `watari-api refresh-mvs [--no-concurrently]` — manually refresh the
-  three price MVs. Handy after a catalog reseed, after importing a
+  four price MVs. Handy after a catalog reseed, after importing a
   historical dump, or when a scrape hook failure left the MVs stale.
 
 **Tests:** `tests/unit/test_api.py` (36) uses `dependency_overrides` to
@@ -251,10 +255,10 @@ readers see stale data.
 
 - `refresh_price_mvs(session, *, concurrently=True)` — async; issues
   `REFRESH MATERIALIZED VIEW [CONCURRENTLY] mv_…` + `COMMIT` for each of
-  the three views in dependency order (`mv_latest_price` →
-  `mv_median_7d` → `mv_cross_source_spread`). One commit per view so
-  locks release between views and `mv_cross_source_spread` reads the
-  already-refreshed upstream views. Returns the list of names refreshed.
+  the four views in dependency order (`mv_latest_price` →
+  `mv_median_7d` → `mv_cross_source_spread` → `mv_market_price`). One
+  commit per view so locks release between views and downstream MVs read
+  the already-refreshed upstream views. Returns the list of names refreshed.
 - `refresh_price_mvs_if_needed(*, rows_written, dry_run=False)` — thin
   guard called from scraper orchestrators. Opens its **own** fresh
   session from `async_session_factory` (so it doesn't inherit an open
@@ -272,28 +276,28 @@ readers see stale data.
 - `watari-api refresh-mvs` — manual ops command (§3.5).
 
 **Why `CONCURRENTLY`:** each MV has a `UNIQUE` index (added in 005 for
-the first two, 006 for `mv_cross_source_spread`) so Postgres takes only
-a `SHARE UPDATE EXCLUSIVE` lock — readers stay online. If you ever add
-a fourth MV, **create its unique index in the same migration** or
-`CONCURRENTLY` will fail.
+the first two, 006 for `mv_cross_source_spread`, 007 for
+`mv_market_price`) so Postgres takes only a `SHARE UPDATE EXCLUSIVE`
+lock — readers stay online. If you ever add a fifth MV, **create its
+unique index in the same migration** or `CONCURRENTLY` will fail.
 
 ---
 
 ## 4. What works right now
 
-### 4.1 End-to-end smoke (last run 2026-05-02, SV + ME + SM + SWSH)
+### 4.1 End-to-end smoke (last run 2026-05-04, SV + ME + SM + SWSH)
 
 | Step                                               | Result                                                                                         |
 | -------------------------------------------------- | ---------------------------------------------------------------------------------------------- |
-| `alembic upgrade head`                             | clean (head = `006_mv_spread_unique_index`)                                                    |
+| `alembic upgrade head`                             | clean (head = `007_mv_market_price`)                                                           |
 | `make catalog-seed-sets`                           | 98 sets upserted (25 SV + 6 ME + 30 SWSH/S + 37 SM)                                           |
-| `make catalog-bootstrap SET=<code>` × 98           | all 98 sets bootstrapped; 10 787 card YMLs on disk                                             |
+| `make catalog-bootstrap SET=<code>` × 98           | all 98 sets bootstrapped; 10 787 card YMLs on disk; **0 null rarity_codes**                    |
 | `make catalog-seed-cards`                          | artworks + prints seeded across all 98 sets                                                    |
-| `make catalog-verify`                              | 0 orphans · 0 artworks missing img (some missing rarity/JA for older SM commons — expected)    |
+| `make catalog-verify`                              | 0 orphans · 0 artworks missing img · 471 missing name_ja (M2A/S4A/SM commons — expected)       |
 | `make scrape-cardrush ERA=sv` + `ERA=me`           | ~12.7k Cardrush rows across SV+ME sets. SM/SW: scheduled weekly via CI.                       |
 | `make scrape-snkrdunk ERA=<code>` × SV+ME          | ~104k SNKRDUNK rows. **SV1 still 0 rows** (upstream uses `sv1v` namespace). SM/SW: scheduled weekly via CI. |
-| `watari-api refresh-mvs` (CONCURRENTLY)            | mv_latest_price, mv_median_7d, mv_cross_source_spread — refreshed                              |
-| `uv run pytest`                                    | **196 passed**                                                                                 |
+| `watari-api refresh-mvs` (CONCURRENTLY)            | mv_latest_price, mv_median_7d, mv_cross_source_spread, mv_market_price — refreshed             |
+| `uv run pytest`                                    | **232 passed**                                                                                 |
 
 ### 4.2 Data that's already committed
 
@@ -334,22 +338,18 @@ SV1 remains Cardrush-only (SNKRDUNK lists it under `sv1v`).
   SV1's cards might be addressable via a different product-number prefix
   (or might simply be unlisted). Low priority — Cardrush still gives
   ~700 rows for SV1.
-- (Previously M1 looked empty here too. That turned out to be wrong
-  naming on our side, not a SNKRDUNK gap — the official JP abbreviation
-  is **M1L**, not M1. See §6 gotcha #16 and the 2026-04-24 rename.
-  M1L now returns 93/93 cards with 5839 SNKRDUNK rows.)
 
 2. **Backfill missing `name_ja`.**
 
-- 243 artworks still lack a Japanese name. Most live in SV4A (88),
-  M2A (128) and a handful spread across early SV sets where Cardrush
-  doesn't list Commons.
-- Option A (preferred): wait for Cardrush to list Commons, re-bootstrap.
-- Option B: hand-fill from scans / the official tracker page, with
-  `# manual: true` on line 1.
-- Option C: add SNKRDUNK as a third name_ja source (heavier: needs cookie
-  auth and a separate scraper path since SNKRDUNK doesn't have per-card
-  JA name in the sales-history endpoint).
+- 471 artworks still lack a Japanese name. Biggest gaps: M2A (118),
+  S4A (66), SM1M (30), SM1S (28), SV8A (17), SV4A (17), S12A (16),
+  SM7B (14), SM3N/SM3H (13 each).
+- Pokellector backfill already recovered 2009 cards (commit `1ea7977`).
+  Remaining are mostly V/VMAX/GX/Trainer full-arts where Pokellector
+  has English-only in the JPN field.
+- Option A (preferred): scrape the official Pokemon card DB or Bulbapedia.
+- Option B: wait for Cardrush to list them, re-bootstrap.
+- Option C: hand-fill with `# manual: true`.
 
 3. **Re-run the weakly-covered rarities in SV3.**
 
@@ -357,9 +357,7 @@ SV1 remains Cardrush-only (SNKRDUNK lists it under `sv1v`).
   (5 rarities dropped). A follow-up `make scrape-cardrush SET=SV3`
   backfilled them (493 new rows), so current state is fine, but future
   full-era runs should consider adding an auto-retry on DNS / Cloudflare
-  timeouts at the rarity level before moving on. The
-  `watari_cardrush/retry.py` layer already retries transient errors
-  once; bumping that to 2–3 would make a full era run self-healing.
+  timeouts at the rarity level before moving on.
 
 4. **Tracked-listings coverage is uneven between Cardrush and SNKRDUNK.**
 
@@ -377,6 +375,7 @@ SV1 remains Cardrush-only (SNKRDUNK lists it under `sv1v`).
   run automatically. After the first pass, check coverage with
   `make catalog-verify` and confirm SNKRDUNK product namespaces are correct
   for each legacy era (apply the M1L lesson: probe manually on `not_found=N`).
+  Cardrush SM/SW disambiguation is now live (set alias + name_ja matching).
 - **API polish.** Add pagination (`limit`/`offset`) to `/sets/{code}/cards`,
   E-Tag / `Cache-Control` headers on `/cards/{card_id}/prices` and
   `/spread`, and OpenAPI examples. Consider a `/cards/search?name=...`
@@ -438,14 +437,15 @@ SV1 remains Cardrush-only (SNKRDUNK lists it under `sv1v`).
     call `refresh_price_mvs_if_needed` after `finish_scrape_run` commits
     (§3.6). The helper swallows errors on purpose — **don't** re-raise
     them; a flaky MV refresh must never fail-mask an otherwise successful
-    scrape. If `CONCURRENTLY` is ever rejected (e.g. you added a 4th MV
+    scrape. If `CONCURRENTLY` is ever rejected (e.g. you added a 5th MV
     without a unique index), fix the index or pass `concurrently=False`
     manually via `watari-api refresh-mvs --no-concurrently`. Don't
     stop using the hook.
 15. **Every price MV must have a UNIQUE index.** Required for
     `REFRESH MATERIALIZED VIEW CONCURRENTLY`. Add the index in the same
     Alembic migration that creates the MV. 005 covers
-    `mv_latest_price` + `mv_median_7d`; 006 covers `mv_cross_source_spread`.
+    `mv_latest_price` + `mv_median_7d`; 006 covers `mv_cross_source_spread`;
+    007 covers `mv_market_price`.
 16. **Use the official JP set abbreviation (the one printed on the card
     / used by `jp.pokellector.com` and SNKRDUNK), not a guess.** The ME
     era tripped this twice: Mega Brave is **M1L** (not `M1`) and Mega
@@ -459,8 +459,23 @@ SV1 remains Cardrush-only (SNKRDUNK lists it under `sv1v`).
     See also §4.2 for the M1 → M1L history.
 17. **Every API lookup path is locale-prefixed (`/{lang}/...`).**
     `sets.language` is the source of truth for locale routing. Keep
-    `/healthz` outside locale routing, and keep unsupported locales as
-    **404** (not 400) so unknown locale paths behave like missing routes.
+    `/healthz` and `/admin/*` outside locale routing, and keep unsupported
+    locales as **404** (not 400) so unknown locale paths behave like
+    missing routes.
+18. **Cardrush SM/SW disambiguation uses `_CARDRUSH_BASE_ALIAS` +
+    `name_ja` matching.** Many SM/SW sets share a Cardrush search
+    namespace (e.g. S1W and S1H both return results for "S1"). The
+    alias map in `run.py` maps 22 aliased set codes to their base code
+    for the search keyword, then `_name_matches` cross-references
+    `artworks.name_ja` to filter results to the correct set. Don't
+    remove the name index or the alias map — without them, aliased sets
+    get 0 valid listings.
+19. **SV1S/SV1V/SV2D/SV2P rarity tiers are manually patched.** Pokellector
+    labels all high-rarity cards in these 4 early SV sets as "Secret
+    Rare" (unlike SV1A+ which have granular labels). The rarity was
+    corrected using local_id tier boundaries (e.g. 079-090→AR,
+    091-100→SR, etc.). If re-bootstrapping these sets, verify the
+    pipeline doesn't regress them back to UR.
 
 ---
 
