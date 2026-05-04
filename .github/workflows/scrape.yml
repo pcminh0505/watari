@@ -104,14 +104,20 @@ jobs:
       max-parallel: 5
       matrix:
         era:
+          - sv1a
+          - sv1s
           - sv1v
-          - sv2
           - sv2a
+          - sv2d
+          - sv2p
           - sv3
-          - sv3pt5
-          - sv4
-          - sv4pt5
-          - sv5
+          - sv3a
+          - sv4a
+          - sv4k
+          - sv4m
+          - sv5a
+          - sv5k
+          - sv5m
           - sv6
           - sv6a
           - sv7
@@ -119,12 +125,10 @@ jobs:
           - sv8
           - sv8a
           - sv9
-          - sv9ex
+          - sv9a
           - sv10
-          - sv10a
           - sv11b
           - sv11w
-          - sv12
           - m1l
           - m1s
           - m2
