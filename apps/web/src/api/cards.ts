@@ -39,6 +39,18 @@ export function useCard(setCode: string, localId: string) {
   });
 }
 
+export function useCardRarities(setCode = "") {
+  const qs = new URLSearchParams();
+  if (setCode) qs.set("set_code", setCode);
+  const path = qs.size > 0 ? `/jp/cards/rarities?${qs}` : "/jp/cards/rarities";
+
+  return useQuery<string[]>({
+    queryKey: ["cards-rarities", setCode],
+    queryFn: () => apiFetch<string[]>(path),
+    staleTime: 60 * 60 * 1000,
+  });
+}
+
 interface CardSearchParams {
   q?: string;
   set_code?: string;

@@ -168,6 +168,26 @@ async def search_cards(
     return results
 
 
+@router.get("/cards/rarities", response_model=list[str])
+async def list_rarity_codes(
+    lang: str,
+    session: SessionDep,
+    response: Response,
+    set_code: str | None = Query(None, description="Filter rarity list to one set"),
+) -> list[str]:
+    stmt = (
+        select(Artwork.rarity_code)
+        .join(Set, Set.set_code == Artwork.set_code)
+        .where(Set.language == lang, Artwork.rarity_code.is_not(None))
+    )
+    if set_code is not None:
+        stmt = stmt.where(func.upper(Artwork.set_code) == set_code.upper())
+    stmt = stmt.distinct().order_by(Artwork.rarity_code)
+    rows = (await session.execute(stmt)).scalars().all()
+    response.headers["Cache-Control"] = _CATALOG_CACHE
+    return [code for code in rows if code is not None]
+
+
 @router.get("/sets/{set_code}/cards", response_model=list[ArtworkDetail])
 async def list_cards_for_set(
     lang: str,

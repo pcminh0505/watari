@@ -486,6 +486,23 @@ def test_search_cards_rejects_blank_query(client_factory) -> None:  # type: igno
     assert session.calls == []
 
 
+def test_list_card_rarities_returns_distinct_codes(client_factory) -> None:  # type: ignore[no-untyped-def]
+    rarities = FakeResult(scalars=["AR", "SAR", "UR"])
+    client, _ = client_factory([rarities])
+    resp = client.get("/jp/cards/rarities")
+    assert resp.status_code == 200
+    assert resp.json() == ["AR", "SAR", "UR"]
+    assert "max-age=3600" in resp.headers["Cache-Control"]
+
+
+def test_list_card_rarities_filters_by_set_code(client_factory) -> None:  # type: ignore[no-untyped-def]
+    rarities = FakeResult(scalars=["RR", "SR"])
+    client, _ = client_factory([rarities])
+    resp = client.get("/jp/cards/rarities?set_code=SV1S")
+    assert resp.status_code == 200
+    assert resp.json() == ["RR", "SR"]
+
+
 # --- Prices / spread -----------------------------------------------------
 
 
