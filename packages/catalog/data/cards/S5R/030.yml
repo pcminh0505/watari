@@ -7,9 +7,9 @@ name_en: Shinx
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/307/Shinx.S5R.30.36839.png
-illustrator:
+illustrator: sowsow
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '36839'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: コリンク
     variants_seen:
-    - normal
+      - normal
     rarity_code: C

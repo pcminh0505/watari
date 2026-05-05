@@ -3,13 +3,13 @@
 set_code: s2a
 local_id: '063'
 name_ja: 妖しいカンヅメ
-name_en: Odd Canned Food
+name_en: Suspicious Food Tin
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/295/Odd-Canned-Food.S2A.63.34314.png
-illustrator:
+illustrator: Ryo Ueda
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '34314'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: 妖しいカンヅメ
     variants_seen:
-    - normal
+      - normal
     rarity_code: U

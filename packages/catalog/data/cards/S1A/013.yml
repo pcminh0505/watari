@@ -7,9 +7,9 @@ name_en: Ninetales
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/285/Ninetales.S1A.13.31825.png
-illustrator:
+illustrator: AKIRA EGAWA
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '31825'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: キュウコン(s1a)
     variants_seen:
-    - normal
+      - normal
     rarity_code: U

@@ -7,9 +7,9 @@ name_en: Butterfree V
 rarity_code: SR
 category: card
 image: https://den-cards.pokellector.com/295/Butterfree-V.S2A.71.34611.png
-illustrator:
+illustrator: Saki Hayashiro
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '34611'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: バタフリーV
     variants_seen:
-    - normal
+      - normal
     rarity_code: SR

@@ -7,9 +7,9 @@ name_en: Seviper
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/308/Seviper.S5A.48.37895.png
-illustrator:
+illustrator: Anesaki Dynamic
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '37895'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ハブネーク
     variants_seen:
-    - normal
+      - normal
     rarity_code: C

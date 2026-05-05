@@ -7,9 +7,9 @@ name_en: Ampharos V
 rarity_code: SR
 category: card
 image: https://den-cards.pokellector.com/294/Ampharos-V.S3A.78.35091.png
-illustrator:
+illustrator: PLANETA Mochizuki
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '35091'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: デンリュウV
     variants_seen:
-    - normal
+      - normal
     rarity_code: SR

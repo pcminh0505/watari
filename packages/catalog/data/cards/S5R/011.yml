@@ -7,9 +7,9 @@ name_en: Blipbug
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/307/Blipbug.S5R.11.36824.png
-illustrator:
+illustrator: Masakazu Fukuda
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '36824'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: サッチムシ
     variants_seen:
-    - normal
+      - normal
     rarity_code: C

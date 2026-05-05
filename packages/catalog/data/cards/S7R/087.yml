@@ -7,9 +7,9 @@ name_en: Froslass
 rarity_code: UR
 category: card
 image: https://den-cards.pokellector.com/319/Froslass.S7R.87.39572.png
-illustrator:
+illustrator: Souichirou Gunjima
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '39572'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ユキメノコ
     variants_seen:
-    - normal
+      - normal
     rarity_code: UR

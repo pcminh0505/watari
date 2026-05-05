@@ -7,9 +7,9 @@ name_en: Metagross V
 rarity_code: SR
 category: card
 image: https://den-cards.pokellector.com/310/Metagross-V.S6K.77.38799.png
-illustrator:
+illustrator: PLANETA Mochizuki
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '38799'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: メタグロスV
     variants_seen:
-    - normal
+      - normal
     rarity_code: SR

@@ -7,9 +7,9 @@ name_en: Miltank
 rarity_code: R
 category: card
 image: https://den-cards.pokellector.com/339/Miltank.S9A.58.42890.png
-illustrator:
+illustrator: saino misaki
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '42890'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ミルタンク
     variants_seen:
-    - normal
+      - normal
     rarity_code: R

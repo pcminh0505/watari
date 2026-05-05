@@ -7,9 +7,9 @@ name_en: Galarian Obstagoon
 rarity_code: UR
 category: card
 image: https://den-cards.pokellector.com/297/Galarian-Obstagoon.S4.119.35685.png
-illustrator:
+illustrator: aky CG Works
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '35685'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ガラルタチフサグマ
     variants_seen:
-    - normal
+      - normal
     rarity_code: UR

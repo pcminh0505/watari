@@ -7,9 +7,9 @@ name_en: Zacian V
 rarity_code: RR
 category: card
 image: https://den-cards.pokellector.com/327/Zacian-V.S8A.18.40517.png
-illustrator:
+illustrator: Mitsuhiro Arita
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '40517'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ガブリアスCLV.X(25th)
     variants_seen:
-    - normal
+      - normal
     rarity_code: RR

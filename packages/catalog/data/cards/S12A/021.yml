@@ -7,9 +7,9 @@ name_en: Simisear VSTAR
 rarity_code: RRR
 category: card
 image: https://den-cards.pokellector.com/357/Simisear-VSTAR.S12A.21.45616.png
-illustrator:
+illustrator: 5ban Graphics
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '45616'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: バオッキーVSTAR
     variants_seen:
-    - normal
+      - normal
     rarity_code: RRR

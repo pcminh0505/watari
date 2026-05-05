@@ -7,9 +7,9 @@ name_en: Cobalion
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/338/Cobalion.S8B.114.41369.png
-illustrator:
+illustrator: Kazuma Koda
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '41369'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: コバルオン(R仕様)
     variants_seen:
-    - normal
+      - normal
     rarity_code: R

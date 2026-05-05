@@ -7,9 +7,9 @@ name_en: Tornadus V
 rarity_code: RR
 category: card
 image: https://den-cards.pokellector.com/309/Tornadus-V.S6H.57.37860.png
-illustrator:
+illustrator: PLANETA Mochizuki
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '37860'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: トルネロスV
     variants_seen:
-    - normal
+      - normal
     rarity_code: RR

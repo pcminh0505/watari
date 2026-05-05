@@ -3,13 +3,13 @@
 set_code: s9a
 local_id: '045'
 name_ja: ヒスイジュナイパーVSTAR
-name_en: Hisuian Decidueye VMAX
+name_en: Hisuian Decidueye VSTAR
 rarity_code: RRR
 category: card
 image: https://den-cards.pokellector.com/339/Hisuian-Decidueye-VMAX.S9A.45.43127.png
-illustrator:
+illustrator: 5ban Graphics
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '43127'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ヒスイジュナイパーVSTAR
     variants_seen:
-    - normal
+      - normal
     rarity_code: RRR

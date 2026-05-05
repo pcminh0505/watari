@@ -7,9 +7,9 @@ name_en: Galarian Articuno
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/357/Galarian-Articuno.S12A.49.45865.png
-illustrator:
+illustrator: Shin Nagasawa
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '45865'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ガラルフリーザー(R仕様)
     variants_seen:
-    - normal
+      - normal
     rarity_code: R

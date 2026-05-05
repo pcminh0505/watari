@@ -3,13 +3,13 @@
 set_code: s1w
 local_id: '047'
 name_ja: チラーミィ
-name_en: Mincinno
+name_en: Minccino
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/283/Mincinno.S1W.47.31261.png
-illustrator:
+illustrator: Sekio
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '31261'

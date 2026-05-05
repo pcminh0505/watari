@@ -7,9 +7,9 @@ name_en: Whimsicott
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/297/Whimsicott.S4.50.35572.png
-illustrator:
+illustrator: Naoyo Kimura
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '35572'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: エルフーン
     variants_seen:
-    - normal
+      - normal
     rarity_code: R

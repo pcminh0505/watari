@@ -7,9 +7,9 @@ name_en: Jynx
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/326/Jynx.S8.38.40443.png
-illustrator:
+illustrator: Shigenori Negishi
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '40443'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ルージュラ
     variants_seen:
-    - normal
+      - normal
     rarity_code: R

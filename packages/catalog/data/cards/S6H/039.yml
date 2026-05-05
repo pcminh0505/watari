@@ -7,9 +7,9 @@ name_en: Hippowdon
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/309/Hippowdon.S6H.39.38710.png
-illustrator:
+illustrator: Eri Yamaki
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '38710'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: カバルドン
     variants_seen:
-    - normal
+      - normal
     rarity_code: C

@@ -7,9 +7,9 @@ name_en: Hitmonchan
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/284/Hitmonchan.S1H.27.31302.png
-illustrator:
+illustrator: Shigenori Negishi
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '31302'

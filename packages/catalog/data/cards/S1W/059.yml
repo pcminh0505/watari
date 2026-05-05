@@ -4,12 +4,12 @@ set_code: s1w
 local_id: '059'
 name_ja: 博士の研究（マグノリア博士）
 name_en: Professor's Research
-rarity_code: U
+rarity_code: R
 category: card
 image: https://den-cards.pokellector.com/283/Professors-Research.S1W.59.31208.png
-illustrator:
+illustrator: Yusuke Ohmura
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '31208'

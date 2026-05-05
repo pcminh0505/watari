@@ -3,13 +3,13 @@
 set_code: s3
 local_id: '099'
 name_ja: ハイド悪エネルギー
-name_en: Hide Darkness Energy
+name_en: Hiding Darkness Energy
 rarity_code: U
 category: energy
 image: https://den-cards.pokellector.com/293/Hide-Darkness-Energy.S3.99.34795.png
 illustrator:
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '34795'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ハイド悪エネルギー
     variants_seen:
-    - normal
+      - normal
     rarity_code: U

@@ -7,9 +7,9 @@ name_en: Natu
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/285/Natu.S1A.34.31839.png
-illustrator:
+illustrator: Naoyo Kimura
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '31839'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ネイティ
     variants_seen:
-    - normal
+      - normal
     rarity_code: C

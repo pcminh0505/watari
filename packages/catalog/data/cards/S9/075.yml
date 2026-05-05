@@ -7,9 +7,9 @@ name_en: Garchomp
 rarity_code: R
 category: card
 image: https://den-cards.pokellector.com/336/Garchomp.S9.75.42612.png
-illustrator:
+illustrator: Nurikabe
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '42612'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: スターミーV
     variants_seen:
-    - normal
+      - normal
     rarity_code: SR

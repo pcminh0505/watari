@@ -7,9 +7,9 @@ name_en: Eternatus VMAX
 rarity_code: CSR
 category: card
 image: https://den-cards.pokellector.com/338/Eternatus-VMAX.S8B.247.41539.png
-illustrator:
+illustrator: Mitsuhiro Arita
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '41539'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ムゲンダイナVMAX
     variants_seen:
-    - normal
+      - normal
     rarity_code: CSR

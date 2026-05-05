@@ -7,9 +7,9 @@ name_en: Falinks
 rarity_code: CHR
 category: card
 image: https://den-cards.pokellector.com/338/Falinks.S8B.204.41506.png
-illustrator:
+illustrator: Kinu Nishimura
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '41506'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: タイレーツ
     variants_seen:
-    - normal
+      - normal
     rarity_code: CHR

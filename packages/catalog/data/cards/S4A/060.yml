@@ -7,9 +7,9 @@ name_en: Toxtricity VMAX
 rarity_code: RRR
 category: card
 image: https://den-cards.pokellector.com/301/Toxtricity-VMAX.S4A.60.35871.png
-illustrator:
+illustrator: 5ban Graphics
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '35871'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ストリンダーVMAX
     variants_seen:
-    - normal
+      - normal
     rarity_code: RRR

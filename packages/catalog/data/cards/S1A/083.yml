@@ -7,9 +7,9 @@ name_en: Milo
 rarity_code: HR
 category: card
 image: https://den-cards.pokellector.com/285/Milo.S1A.83.31996.png
-illustrator:
+illustrator: Hitoshi Ariga
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '31996'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ヤロー
     variants_seen:
-    - normal
+      - normal
     rarity_code: HR

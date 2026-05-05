@@ -7,9 +7,9 @@ name_en: Dragonite V
 rarity_code: SR
 category: card
 image: https://den-cards.pokellector.com/319/Dragonite-V.S7R.73.39558.png
-illustrator:
+illustrator: Saki Hayashiro
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '39558'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: カイリューV
     variants_seen:
-    - normal
+      - normal
     rarity_code: SR

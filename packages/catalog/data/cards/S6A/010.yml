@@ -7,9 +7,9 @@ name_en: Eldegoss
 rarity_code: R
 category: card
 image: https://den-cards.pokellector.com/322/Eldegoss.S6A.10.38875.png
-illustrator:
+illustrator: Kouki Saitou
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '38875'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ワタシラガ
     variants_seen:
-    - normal
+      - normal
     rarity_code: R

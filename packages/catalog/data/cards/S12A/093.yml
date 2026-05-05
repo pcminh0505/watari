@@ -7,9 +7,9 @@ name_en: Thievul
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/357/Thievul.S12A.93.45891.png
-illustrator:
+illustrator: KIYOTAKA OSHIYAMA
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '45891'

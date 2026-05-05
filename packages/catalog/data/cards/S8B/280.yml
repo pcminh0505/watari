@@ -7,9 +7,9 @@ name_en: Mew VMAX
 rarity_code: UR
 category: card
 image: https://den-cards.pokellector.com/338/Mew-VMAX.S8B.280.41569.png
-illustrator:
+illustrator: 5ban Graphics
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '41569'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ミュウVMAX
     variants_seen:
-    - normal
+      - normal
     rarity_code: UR

@@ -7,9 +7,9 @@ name_en: Hisuian Samurott V
 rarity_code: RR
 category: card
 image: https://den-cards.pokellector.com/357/Hisuian-Samurott-V.S12A.86.45315.png
-illustrator:
+illustrator: 5ban Graphics
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '45315'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ヒスイダイケンキV
     variants_seen:
-    - normal
+      - normal
     rarity_code: RR

@@ -7,9 +7,9 @@ name_en: Dragapult V
 rarity_code: RR
 category: card
 image: https://den-cards.pokellector.com/301/Dragapult-V.S4A.88.35879.png
-illustrator:
+illustrator: aky CG Works
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '35879'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ドラパルトV
     variants_seen:
-    - normal
+      - normal
     rarity_code: RR

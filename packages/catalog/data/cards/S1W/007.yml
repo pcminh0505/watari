@@ -7,9 +7,9 @@ name_en: Rillaboom
 rarity_code: R
 category: card
 image: https://den-cards.pokellector.com/283/Rillaboom.S1W.7.31196.png
-illustrator:
+illustrator: Anesaki Dynamic
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '31196'

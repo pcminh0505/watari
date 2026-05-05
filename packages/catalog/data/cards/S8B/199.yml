@@ -7,9 +7,9 @@ name_en: Malamar
 rarity_code: CHR
 category: card
 image: https://den-cards.pokellector.com/338/Malamar.S8B.199.41503.png
-illustrator:
+illustrator: Fumie Kittaka
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '41503'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: カラマネロ
     variants_seen:
-    - normal
+      - normal
     rarity_code: CHR

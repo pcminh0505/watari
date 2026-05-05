@@ -7,9 +7,9 @@ name_en: Galarian Moltres V
 rarity_code: CSR
 category: card
 image: https://den-cards.pokellector.com/338/Galarian-Moltres-V.S8B.242.41535.png
-illustrator:
+illustrator: Jiro Sasumo
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '41535'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ガラルファイヤーV
     variants_seen:
-    - normal
+      - normal
     rarity_code: CSR

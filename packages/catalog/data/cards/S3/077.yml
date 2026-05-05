@@ -7,9 +7,9 @@ name_en: Ursaring
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/293/Ursaring.S3.77.34913.png
-illustrator:
+illustrator: Uta
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '34913'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: リングマ
     variants_seen:
-    - normal
+      - normal
     rarity_code: SR

@@ -7,9 +7,9 @@ name_en: Garbodor V
 rarity_code: RR
 category: card
 image: https://den-cards.pokellector.com/318/Garbodor-V.S7D.30.39456.png
-illustrator:
+illustrator: Uta
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '39456'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ダストダスV
     variants_seen:
-    - normal
+      - normal
     rarity_code: RR

@@ -7,9 +7,9 @@ name_en: Tsareena V
 rarity_code: SR
 category: card
 image: https://den-cards.pokellector.com/326/Tsareena-V.S8.101.40481.png
-illustrator:
+illustrator: PLANETA Mochizuki
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '40481'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: アマージョV
     variants_seen:
-    - normal
+      - normal
     rarity_code: SR

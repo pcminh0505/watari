@@ -7,9 +7,9 @@ name_en: Dragapult VMAX
 rarity_code: RRR
 category: card
 image: https://den-cards.pokellector.com/301/Dragapult-VMAX.S4A.89.35880.png
-illustrator:
+illustrator: aky CG Works
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '35880'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ドラパルトVMAX
     variants_seen:
-    - normal
+      - normal
     rarity_code: RRR

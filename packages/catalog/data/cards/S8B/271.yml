@@ -3,13 +3,13 @@
 set_code: s8b
 local_id: '271'
 name_ja: マスター
-name_en: Cafe Master
+name_en: Café Master
 rarity_code: SR
 category: card
 image: https://den-cards.pokellector.com/338/Cafe-Master.S8B.271.41560.png
-illustrator:
+illustrator: Sanosuke Sakuma
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '41560'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: マスター
     variants_seen:
-    - normal
+      - normal
     rarity_code: SR

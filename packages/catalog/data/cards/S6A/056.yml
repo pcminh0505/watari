@@ -7,9 +7,9 @@ name_en: Persian
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/322/Persian.S6A.56.38942.png
-illustrator:
+illustrator: Lee HyunJung
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '38942'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ペルシアン
     variants_seen:
-    - normal
+      - normal
     rarity_code: U

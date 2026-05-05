@@ -7,9 +7,9 @@ name_en: Lombre
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/318/Lombre.S7D.3.39440.png
-illustrator:
+illustrator: miki kudo
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '39440'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ハスブレロ
     variants_seen:
-    - normal
+      - normal
     rarity_code: C

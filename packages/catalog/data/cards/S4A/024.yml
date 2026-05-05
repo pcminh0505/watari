@@ -7,9 +7,9 @@ name_en: Cinderace
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/301/Cinderace.S4A.24.36336.png
-illustrator:
+illustrator: Kouki Saitou
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '36336'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: エースバーン(R仕様)
     variants_seen:
-    - normal
+      - normal
     rarity_code: R

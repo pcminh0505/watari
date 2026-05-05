@@ -3,13 +3,13 @@
 set_code: s5i
 local_id: '064'
 name_ja: いちげきの巻物怒りの巻
-name_en: 'Single Strike Scroll: Raging Scroll'
+name_en: Single Strike Scroll of Scorn
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/306/Single-Strike-Scroll-Raging-Scroll.S5I.64.36669.png
-illustrator:
+illustrator: 5ban Graphics
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '36669'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: いちげきの巻物怒りの巻
     variants_seen:
-    - normal
+      - normal
     rarity_code: U

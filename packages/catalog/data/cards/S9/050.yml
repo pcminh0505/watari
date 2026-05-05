@@ -3,14 +3,14 @@
 set_code: s9
 local_id: '050'
 name_ja: エルフーンVSTAR
-name_en: Whimsicott
-rarity_code: C
+name_en: Whimsicott VSTAR
+rarity_code: RRR
 category: card
 image: https://den-cards.pokellector.com/336/Whimsicott.S9.50.42588.png
-illustrator:
+illustrator: 5ban Graphics
 prints:
-- normal
-- poke_ball_mirror
+  - normal
+  - poke_ball_mirror
 sources:
   pokellector:
     id: '42588'
@@ -20,6 +20,6 @@ sources:
   cardrush:
     name_ja: エルフーンVSTAR
     variants_seen:
-    - normal
-    - poke_ball_mirror
+      - normal
+      - poke_ball_mirror
     rarity_code: RRR

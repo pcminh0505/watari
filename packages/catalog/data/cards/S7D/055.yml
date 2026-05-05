@@ -7,9 +7,9 @@ name_en: Dubwool
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/318/Dubwool.S7D.55.39463.png
-illustrator:
+illustrator: Shibuzoh.
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '39463'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: バイウールー
     variants_seen:
-    - normal
+      - normal
     rarity_code: C

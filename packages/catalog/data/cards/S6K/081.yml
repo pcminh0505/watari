@@ -7,9 +7,9 @@ name_en: Agatha
 rarity_code: SR
 category: card
 image: https://den-cards.pokellector.com/310/Agatha.S6K.81.38802.png
-illustrator:
+illustrator: NC Empire
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '38802'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: キクコ
     variants_seen:
-    - normal
+      - normal
     rarity_code: SR

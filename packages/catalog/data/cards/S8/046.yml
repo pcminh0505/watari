@@ -7,9 +7,9 @@ name_en: Munna
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/326/Munna.S8.46.40446.png
-illustrator:
+illustrator: miki kudo
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '40446'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ムンナ
     variants_seen:
-    - normal
+      - normal
     rarity_code: RRR

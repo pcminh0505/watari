@@ -7,9 +7,9 @@ name_en: Air Balloon
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/338/Air-Balloon.S8B.145.41387.png
-illustrator:
+illustrator: Yoshinobu Saito
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '41387'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ふうせん(ミラー/ハイクラスパック仕様)
     variants_seen:
-    - normal
+      - normal
     rarity_code: C

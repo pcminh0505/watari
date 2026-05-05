@@ -7,9 +7,9 @@ name_en: Blissey V
 rarity_code: RR
 category: card
 image: https://den-cards.pokellector.com/310/Blissey-V.S6K.52.38674.png
-illustrator:
+illustrator: Saki Hayashiro
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '38674'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ハピナスV
     variants_seen:
-    - normal
+      - normal
     rarity_code: RR

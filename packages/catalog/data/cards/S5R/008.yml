@@ -7,9 +7,9 @@ name_en: Fomantis
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/307/Fomantis.S5R.8.36821.png
-illustrator:
+illustrator: Yukiko Baba
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '36821'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: カリキリ
     variants_seen:
-    - normal
+      - normal
     rarity_code: C

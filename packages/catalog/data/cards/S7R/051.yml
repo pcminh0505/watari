@@ -7,9 +7,9 @@ name_en: Appletun
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/319/Appletun.S7R.51.38990.png
-illustrator:
+illustrator: Akira Komayama
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '38990'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: タルップル
     variants_seen:
-    - normal
+      - normal
     rarity_code: U

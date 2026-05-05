@@ -7,9 +7,9 @@ name_en: Skwovet
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/293/Skwovet.S3.87.34922.png
-illustrator:
+illustrator: Akira Komayama
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '34922'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ホシガリス
     variants_seen:
-    - normal
+      - normal
     rarity_code: HR

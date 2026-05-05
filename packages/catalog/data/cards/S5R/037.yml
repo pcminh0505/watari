@@ -7,9 +7,9 @@ name_en: Dottler
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/307/Dottler.S5R.37.36846.png
-illustrator:
+illustrator: Midori Harada
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '36846'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: レドームシ
     variants_seen:
-    - normal
+      - normal
     rarity_code: U

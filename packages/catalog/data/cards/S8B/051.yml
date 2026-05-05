@@ -7,9 +7,9 @@ name_en: Mareep
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/338/Mareep.S8B.51.41322.png
-illustrator:
+illustrator: Miki Tanaka
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '41322'

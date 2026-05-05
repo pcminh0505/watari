@@ -7,9 +7,9 @@ name_en: Surfing Pikachu VMAX
 rarity_code: RRR
 category: card
 image: https://den-cards.pokellector.com/327/Surfing-Pikachu-VMAX.S8A.22.39588.png
-illustrator:
+illustrator: aky CG Works
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '39588'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: なみのりピカチュウVMAX(25th)
     variants_seen:
-    - normal
+      - normal
     rarity_code: RRR

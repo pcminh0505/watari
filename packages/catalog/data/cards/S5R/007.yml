@@ -7,9 +7,9 @@ name_en: Carnivine
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/307/Carnivine.S5R.7.36820.png
-illustrator:
+illustrator: AKIRA EGAWA
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '36820'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: マスキッパ
     variants_seen:
-    - normal
+      - normal
     rarity_code: C

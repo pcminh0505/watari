@@ -7,9 +7,9 @@ name_en: Pikachu VMAX
 rarity_code: UR
 category: card
 image: https://den-cards.pokellector.com/338/Pikachu-VMAX.S8B.279.41568.png
-illustrator:
+illustrator: aky CG Works
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '41568'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ピカチュウVMAX
     variants_seen:
-    - normal
+      - normal
     rarity_code: UR

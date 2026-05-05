@@ -7,9 +7,9 @@ name_en: Houndoom
 rarity_code: UR
 category: card
 image: https://den-cards.pokellector.com/306/Houndoom.S5I.89.36908.png
-illustrator:
+illustrator: PLANETA Mochizuki
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '36908'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ヘルガー
     variants_seen:
-    - normal
+      - normal
     rarity_code: UR

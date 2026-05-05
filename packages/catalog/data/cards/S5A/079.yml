@@ -7,9 +7,9 @@ name_en: Galarian Slowking V
 rarity_code: SR
 category: card
 image: https://den-cards.pokellector.com/308/Galarian-Slowking-V.S5A.79.37926.png
-illustrator:
+illustrator: 5ban Graphics
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '37926'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ガラルヤドキングV
     variants_seen:
-    - normal
+      - normal
     rarity_code: SR

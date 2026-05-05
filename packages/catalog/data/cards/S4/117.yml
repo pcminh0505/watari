@@ -7,9 +7,9 @@ name_en: Leon
 rarity_code: HR
 category: card
 image: https://den-cards.pokellector.com/297/Leon.S4.117.35683.png
-illustrator:
+illustrator: Hideki Ishikawa
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '35683'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ダンデ
     variants_seen:
-    - normal
+      - normal
     rarity_code: HR

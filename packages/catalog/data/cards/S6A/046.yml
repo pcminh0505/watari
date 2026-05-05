@@ -7,9 +7,9 @@ name_en: Pancham
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/322/Pancham.S6A.46.38939.png
-illustrator:
+illustrator: Mina Nakai
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '38939'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ヤンチャム
     variants_seen:
-    - normal
+      - normal
     rarity_code: C

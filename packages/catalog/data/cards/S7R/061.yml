@@ -7,9 +7,9 @@ name_en: Spirit Mask
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/319/Underworld-Mask.S7R.61.39504.png
-illustrator:
+illustrator: AYUMI ODASHIMA
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '39504'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: れいかいのお面
     variants_seen:
-    - normal
+      - normal
     rarity_code: U

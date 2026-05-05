@@ -7,9 +7,9 @@ name_en: Chili & Cilan & Cress
 rarity_code: SR
 category: card
 image: https://den-cards.pokellector.com/326/Chili-Cilan-Cress.S8.115.40495.png
-illustrator:
+illustrator: Sanosuke Sakuma
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '40495'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ポッドとデントとコーン
     variants_seen:
-    - normal
+      - normal
     rarity_code: SR

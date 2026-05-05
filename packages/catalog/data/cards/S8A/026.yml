@@ -4,12 +4,12 @@ set_code: s8a
 local_id: '026'
 name_ja: ピカチュウ
 name_en: Pikachu V-UNION
-rarity_code: UR
+rarity_code: RRR
 category: card
 image: https://den-cards.pokellector.com/327/Pikachu-V-UNION.S8A.26.40618.png
-illustrator:
+illustrator: 5ban Graphics , Kouki Saitou , Masakazu Fukuda , Naoki Saito , Narumi Sato , Taira Akitsu
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '40618'

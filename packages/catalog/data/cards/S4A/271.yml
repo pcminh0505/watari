@@ -7,9 +7,9 @@ name_en: Clobbopus
 rarity_code: S
 category: card
 image: https://den-cards.pokellector.com/301/Clobbopus.S4A.271.36569.png
-illustrator:
+illustrator: Kyoko Umemoto
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '36569'

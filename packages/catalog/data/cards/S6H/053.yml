@@ -7,9 +7,9 @@ name_en: Porygon2
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/309/Porygon2.S6H.53.38718.png
-illustrator:
+illustrator: Nagomi Nijo
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '38718'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ポリゴン2
     variants_seen:
-    - normal
+      - normal
     rarity_code: U

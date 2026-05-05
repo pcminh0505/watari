@@ -7,9 +7,9 @@ name_en: Hisuian Typhlosion V
 rarity_code: RR
 category: card
 image: https://den-cards.pokellector.com/339/Hisuin-Typhlosion-V.S9A.28.43112.png
-illustrator:
+illustrator: Shin Nagasawa
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '43112'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ヒスイバクフーンV
     variants_seen:
-    - normal
+      - normal
     rarity_code: RR

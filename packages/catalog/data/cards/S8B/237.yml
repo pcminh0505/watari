@@ -7,9 +7,9 @@ name_en: Galarian Zapdos V
 rarity_code: CSR
 category: card
 image: https://den-cards.pokellector.com/338/Galarian-Zapdos-V.S8B.237.41530.png
-illustrator:
+illustrator: kirisAki
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '41530'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ガラルサンダーV
     variants_seen:
-    - normal
+      - normal
     rarity_code: CSR

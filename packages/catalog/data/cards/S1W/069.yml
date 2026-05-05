@@ -4,12 +4,12 @@ set_code: s1w
 local_id: '069'
 name_ja: ラプラスVMAX
 name_en: Lapras VMAX
-rarity_code: UR
+rarity_code: HR
 category: card
 image: https://den-cards.pokellector.com/283/Lapras-VMAX.S1W.69.31371.png
-illustrator:
+illustrator: 5ban Graphics
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '31371'

@@ -7,9 +7,9 @@ name_en: Silicobra
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/307/Silicobra.S5R.47.36855.png
-illustrator:
+illustrator: Atsuko Nishida
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '36855'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: スナヘビ
     variants_seen:
-    - normal
+      - normal
     rarity_code: C

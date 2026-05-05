@@ -7,9 +7,9 @@ name_en: Magmortar
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/336/Magmortar.S9.17.42564.png
-illustrator:
+illustrator: AKIRA EGAWA
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '42564'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: スターミーV
     variants_seen:
-    - normal
+      - normal
     rarity_code: RR

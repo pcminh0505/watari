@@ -7,9 +7,9 @@ name_en: Rapid Strike Urshifu V
 rarity_code: CSR
 category: card
 image: https://den-cards.pokellector.com/338/Rapid-Strike-Urshifu-V.S8B.240.41533.png
-illustrator:
+illustrator: takuyoa
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '41533'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: れんげきウーラオスV
     variants_seen:
-    - normal
+      - normal
     rarity_code: CSR

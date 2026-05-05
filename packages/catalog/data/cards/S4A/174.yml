@@ -7,9 +7,9 @@ name_en: Professor's Research
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/301/Professors-Research.S4A.174.35884.png
-illustrator:
+illustrator: Yusuke Ohmura
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '35884'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: 博士の研究/マグノリア博士(R仕様)
     variants_seen:
-    - normal
+      - normal
     rarity_code: R

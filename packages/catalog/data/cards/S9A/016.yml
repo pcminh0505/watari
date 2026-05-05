@@ -7,9 +7,9 @@ name_en: Pyroar
 rarity_code: R
 category: card
 image: https://den-cards.pokellector.com/339/Pyroar.S9A.16.43102.png
-illustrator:
+illustrator: Misa Tsutsui
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '43102'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: カエンジシ
     variants_seen:
-    - normal
+      - normal
     rarity_code: R

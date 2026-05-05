@@ -7,9 +7,9 @@ name_en: Tyranitar V
 rarity_code: RR
 category: card
 image: https://den-cards.pokellector.com/306/Tyranitar-V.S5I.46.36664.png
-illustrator:
+illustrator: Ayaka Yoshida
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '36664'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: バンギラスV
     variants_seen:
-    - normal
+      - normal
     rarity_code: RR

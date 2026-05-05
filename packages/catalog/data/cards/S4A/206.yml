@@ -7,9 +7,9 @@ name_en: Blipbug
 rarity_code: S
 category: card
 image: https://den-cards.pokellector.com/301/Blipbug.S4A.206.36514.png
-illustrator:
+illustrator: Kyoko Umemoto
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '36514'

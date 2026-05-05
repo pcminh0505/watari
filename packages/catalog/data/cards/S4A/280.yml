@@ -7,9 +7,9 @@ name_en: Nickit
 rarity_code: S
 category: card
 image: https://den-cards.pokellector.com/301/Nickit.S4A.280.36577.png
-illustrator:
+illustrator: Saya Tsuruta
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '36577'

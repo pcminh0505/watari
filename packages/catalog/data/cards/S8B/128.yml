@@ -7,9 +7,9 @@ name_en: Castform
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/338/Castform.S8B.128.41375.png
-illustrator:
+illustrator: Asako Ito
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '41375'

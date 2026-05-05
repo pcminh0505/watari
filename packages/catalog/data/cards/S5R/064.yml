@@ -7,9 +7,9 @@ name_en: Tool Jammer
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/307/Tool-Jammer.S5R.64.36727.png
-illustrator:
+illustrator: inose yukie
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '36727'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ツールジャマー
     variants_seen:
-    - normal
+      - normal
     rarity_code: U

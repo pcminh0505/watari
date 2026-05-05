@@ -7,9 +7,9 @@ name_en: Malamar
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/293/Malamar.S3.60.34904.png
-illustrator:
+illustrator: kawayoo
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '34904'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: カラマネロ
     variants_seen:
-    - normal
+      - normal
     rarity_code: R

@@ -7,9 +7,9 @@ name_en: Hattrem
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/301/Hattrem.S4A.79.36387.png
-illustrator:
+illustrator: kirisAki
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '36387'

@@ -7,9 +7,9 @@ name_en: Vileplume
 rarity_code: R
 category: card
 image: https://den-cards.pokellector.com/339/Vileplume.S9A.3.43096.png
-illustrator:
+illustrator: Jiro Sasumo
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '43096'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ラフレシア
     variants_seen:
-    - normal
+      - normal
     rarity_code: R

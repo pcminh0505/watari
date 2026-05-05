@@ -7,9 +7,9 @@ name_en: Tower of Darkness
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/306/Tower-of-Darkness.S5I.69.36668.png
-illustrator:
+illustrator: 5ban Graphics
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '36668'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: あくの塔
     variants_seen:
-    - normal
+      - normal
     rarity_code: U

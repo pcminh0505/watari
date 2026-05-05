@@ -7,9 +7,9 @@ name_en: Umbreon VMAX
 rarity_code: CSR
 category: card
 image: https://den-cards.pokellector.com/338/Umbreon-VMAX.S8B.245.41537.png
-illustrator:
+illustrator: kawayoo
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '41537'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ブラッキーVMAX
     variants_seen:
-    - normal
+      - normal
     rarity_code: CSR

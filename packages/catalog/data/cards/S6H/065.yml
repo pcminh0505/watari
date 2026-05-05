@@ -7,9 +7,9 @@ name_en: Flannery
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/309/Flannery.S6H.65.38625.png
-illustrator:
+illustrator: Megumi Mizutani
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '38625'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: アスナ
     variants_seen:
-    - normal
+      - normal
     rarity_code: U

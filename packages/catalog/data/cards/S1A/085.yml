@@ -7,9 +7,9 @@ name_en: Big Charm
 rarity_code: UR
 category: card
 image: https://den-cards.pokellector.com/285/Big-Charm.S1A.85.31998.png
-illustrator:
+illustrator: inose yukie
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '31998'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: 大きなおまもり
     variants_seen:
-    - normal
+      - normal
     rarity_code: UR

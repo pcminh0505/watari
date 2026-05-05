@@ -7,9 +7,9 @@ name_en: Scorbunny
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/284/Scorbunny.S1H.7.31284.png
-illustrator:
+illustrator: kirisAki
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '31284'

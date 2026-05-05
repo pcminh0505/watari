@@ -7,9 +7,9 @@ name_en: Copperajah
 rarity_code: R
 category: card
 image: https://den-cards.pokellector.com/293/Copperajah.S3.73.34846.png
-illustrator:
+illustrator: Kouki Saitou
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '34846'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: マリィ
     variants_seen:
-    - normal
+      - normal
     rarity_code: R

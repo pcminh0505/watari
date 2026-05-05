@@ -7,9 +7,9 @@ name_en: Tool Scrapper
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/301/Tool-Scrapper.S4A.163.36148.png
-illustrator:
+illustrator: Studio Bora Inc.
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '36148'

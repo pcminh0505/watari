@@ -7,9 +7,9 @@ name_en: Hisuian Growlithe
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/357/Hisuian-Growlithe.S12A.69.45874.png
-illustrator:
+illustrator: Kouki Saitou
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '45874'

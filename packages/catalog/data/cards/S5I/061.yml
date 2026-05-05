@@ -7,9 +7,9 @@ name_en: Escape Rope
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/306/Escape-Rope.S5I.61.36719.png
-illustrator:
+illustrator: sadaji
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '36719'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: あなぬけのヒモ
     variants_seen:
-    - normal
+      - normal
     rarity_code: U

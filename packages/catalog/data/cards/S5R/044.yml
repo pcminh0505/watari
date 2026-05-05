@@ -7,9 +7,9 @@ name_en: Conkeldurr
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/307/Conkeldurr.S5R.44.36853.png
-illustrator:
+illustrator: Miki Tanaka
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '36853'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ローブシン
     variants_seen:
-    - normal
+      - normal
     rarity_code: U

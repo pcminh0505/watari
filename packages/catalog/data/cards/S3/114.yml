@@ -7,9 +7,9 @@ name_en: Salamence VMAX
 rarity_code: HR
 category: card
 image: https://den-cards.pokellector.com/293/Salamence-VMAX.S3.114.34962.png
-illustrator:
+illustrator: 5ban Graphics
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '34962'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ボーマンダVMAX
     variants_seen:
-    - normal
+      - normal
     rarity_code: HR

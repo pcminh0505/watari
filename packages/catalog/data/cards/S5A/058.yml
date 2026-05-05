@@ -7,9 +7,9 @@ name_en: Lillipup
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/308/Lillipup.S5A.58.37904.png
-illustrator:
+illustrator: Naoyo Kimura
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '37904'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ヨーテリー
     variants_seen:
-    - normal
+      - normal
     rarity_code: C

@@ -7,9 +7,9 @@ name_en: Sylveon V
 rarity_code: SR
 category: card
 image: https://den-cards.pokellector.com/322/Sylveon-V.S6A.82.38958.png
-illustrator:
+illustrator: aky CG Works
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '38958'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ニンフィアV
     variants_seen:
-    - normal
+      - normal
     rarity_code: SR

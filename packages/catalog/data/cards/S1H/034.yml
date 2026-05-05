@@ -7,9 +7,9 @@ name_en: Galarian Linoone
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/284/Galarian-Linoone.S1H.34.31308.png
-illustrator:
+illustrator: nagimiso
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '31308'

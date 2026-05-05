@@ -3,13 +3,13 @@
 set_code: s8b
 local_id: '272'
 name_ja: マスタードいちげきのかた
-name_en: Mustard (Single Strike)
+name_en: Single Strike Style Mustard
 rarity_code: SR
 category: card
 image: https://den-cards.pokellector.com/338/Mustard-Single-Strike.S8B.272.41561.png
-illustrator:
+illustrator: Souichirou Gunjima
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '41561'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: マスタードいちげきのかた
     variants_seen:
-    - normal
+      - normal
     rarity_code: SR

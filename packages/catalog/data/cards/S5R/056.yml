@@ -4,12 +4,12 @@ set_code: s5r
 local_id: '056'
 name_ja: アーマーガアVMAX
 name_en: Corviknight VMAX
-rarity_code: C
+rarity_code: RRR
 category: card
 image: https://den-cards.pokellector.com/307/Corviknight-VMAX.S5R.56.36862.png
-illustrator:
+illustrator: PLANETA Mochizuki
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '36862'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: アーマーガアVMAX
     variants_seen:
-    - normal
+      - normal
     rarity_code: RRR

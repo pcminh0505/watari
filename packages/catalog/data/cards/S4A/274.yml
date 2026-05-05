@@ -7,9 +7,9 @@ name_en: Stonjourner
 rarity_code: S
 category: card
 image: https://den-cards.pokellector.com/301/Stonjourner.S4A.274.36572.png
-illustrator:
+illustrator: Hitoshi Ariga
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '36572'

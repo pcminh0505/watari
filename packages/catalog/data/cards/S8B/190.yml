@@ -4,12 +4,12 @@ set_code: s8b
 local_id: '190'
 name_ja: キングドラ
 name_en: Kingdra
-rarity_code: C
+rarity_code: CHR
 category: card
 image: https://den-cards.pokellector.com/338/Kingdra.S8B.190.41273.png
-illustrator:
+illustrator: Taira Akitsu
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '41273'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: キングドラ
     variants_seen:
-    - normal
+      - normal
     rarity_code: CHR

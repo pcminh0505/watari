@@ -7,9 +7,9 @@ name_en: Inteleon V
 rarity_code: SR
 category: card
 image: https://den-cards.pokellector.com/285/Inteleon-V.S1A.73.31987.png
-illustrator:
+illustrator: 5ban Graphics
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '31987'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: インテレオンV
     variants_seen:
-    - normal
+      - normal
     rarity_code: SR

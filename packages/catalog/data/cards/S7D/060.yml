@@ -7,9 +7,9 @@ name_en: Digging Gloves
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/318/Digging-Gloves.S7D.60.39466.png
-illustrator:
+illustrator: Toyste Beach
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '39466'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: 穴掘りグローブ
     variants_seen:
-    - normal
+      - normal
     rarity_code: U

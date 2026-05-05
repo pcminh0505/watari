@@ -7,9 +7,9 @@ name_en: Mienfoo
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/307/Mienfoo.S5R.45.36854.png
-illustrator:
+illustrator: NC Empire
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '36854'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: コジョフー
     variants_seen:
-    - normal
+      - normal
     rarity_code: C

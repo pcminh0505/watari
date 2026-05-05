@@ -7,9 +7,9 @@ name_en: Turtwig
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/357/Turtwig.S12A.6.45832.png
-illustrator:
+illustrator: Narumi Sato
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '45832'

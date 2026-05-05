@@ -7,10 +7,10 @@ name_en: Litwick
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/339/Litwick.S9A.12.42668.png
-illustrator:
+illustrator: Yuka Morii
 prints:
-- normal
-- poke_ball_mirror
+  - normal
+  - poke_ball_mirror
 sources:
   pokellector:
     id: '42668'
@@ -20,6 +20,6 @@ sources:
   cardrush:
     name_ja: ヒトモシ
     variants_seen:
-    - normal
-    - poke_ball_mirror
+      - normal
+      - poke_ball_mirror
     rarity_code: C

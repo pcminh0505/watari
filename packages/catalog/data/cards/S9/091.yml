@@ -7,9 +7,9 @@ name_en: Pot Helmet
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/336/Pot-Helmet.S9.91.42626.png
-illustrator:
+illustrator: Toyste Beach
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '42626'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ヒスイダイケンキVSTAR
     variants_seen:
-    - normal
+      - normal
     rarity_code: SR

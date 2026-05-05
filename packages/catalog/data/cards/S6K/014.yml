@@ -7,9 +7,9 @@ name_en: Luvdisc
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/310/Luvdisc.S6K.14.38733.png
-illustrator:
+illustrator: Mizue
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '38733'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ラブカス
     variants_seen:
-    - normal
+      - normal
     rarity_code: C

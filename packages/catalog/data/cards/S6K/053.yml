@@ -7,9 +7,9 @@ name_en: Castform
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/310/Castform.S6K.53.37856.png
-illustrator:
+illustrator: Asako Ito
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '37856'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ポワルン
     variants_seen:
-    - normal
+      - normal
     rarity_code: C

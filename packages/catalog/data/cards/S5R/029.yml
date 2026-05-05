@@ -7,9 +7,9 @@ name_en: Bruxish
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/307/Bruxish.S5R.29.36838.png
-illustrator:
+illustrator: Misa Tsutsui
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '36838'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ハギギシリ
     variants_seen:
-    - normal
+      - normal
     rarity_code: C

@@ -3,13 +3,13 @@
 set_code: s1h
 local_id: '056'
 name_ja: げんきのハチマキ
-name_en: Fine Band
+name_en: Vitality Band
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/284/Fine-Band.S1H.56.31326.png
-illustrator:
+illustrator: Toyste Beach
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '31326'

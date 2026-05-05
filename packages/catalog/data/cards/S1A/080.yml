@@ -7,9 +7,9 @@ name_en: Cinderace VMAX
 rarity_code: HR
 category: card
 image: https://den-cards.pokellector.com/285/Cinderace-VMAX.S1A.80.31993.png
-illustrator:
+illustrator: 5ban Graphics
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '31993'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: エースバーンVMAX
     variants_seen:
-    - normal
+      - normal
     rarity_code: HR

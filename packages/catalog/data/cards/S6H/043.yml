@@ -7,9 +7,9 @@ name_en: Sandaconda V
 rarity_code: RR
 category: card
 image: https://den-cards.pokellector.com/309/Sandaconda-V.S6H.43.38637.png
-illustrator:
+illustrator: Shin Nagasawa
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '38637'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: サダイジャV
     variants_seen:
-    - normal
+      - normal
     rarity_code: RR

@@ -7,9 +7,9 @@ name_en: Level Ball
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/307/Level-Ball.S5R.63.36868.png
-illustrator:
+illustrator: Ryo Ueda
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '36868'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: レベルボール
     variants_seen:
-    - normal
+      - normal
     rarity_code: U

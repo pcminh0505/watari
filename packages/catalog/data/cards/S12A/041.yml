@@ -7,9 +7,9 @@ name_en: Zeraora VMAX
 rarity_code: RRR
 category: card
 image: https://den-cards.pokellector.com/357/Zeraora-VMAX.S12A.41.45858.png
-illustrator:
+illustrator: Nisota Niso
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '45858'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ゼラオラVMAX
     variants_seen:
-    - normal
+      - normal
     rarity_code: RRR

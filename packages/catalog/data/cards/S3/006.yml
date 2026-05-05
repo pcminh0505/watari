@@ -7,9 +7,9 @@ name_en: Rowlet
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/293/Rowlet.S3.6.34863.png
-illustrator:
+illustrator: HYOGONOSUKE
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '34863'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: モクロー
     variants_seen:
-    - normal
+      - normal
     rarity_code: C

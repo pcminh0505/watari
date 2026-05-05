@@ -7,9 +7,9 @@ name_en: Karen's Conviction
 rarity_code: SR
 category: card
 image: https://den-cards.pokellector.com/308/Karens-Conviction.S5A.81.37928.png
-illustrator:
+illustrator: Hideki Ishikawa
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '37928'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: カリンの信念
     variants_seen:
-    - normal
+      - normal
     rarity_code: SR

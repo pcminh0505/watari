@@ -7,9 +7,9 @@ name_en: Lucky Egg
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/284/Lucky-Egg.S1H.57.31327.png
-illustrator:
+illustrator: Studio Bora Inc.
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '31327'

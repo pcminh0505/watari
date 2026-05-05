@@ -7,9 +7,9 @@ name_en: Polteageist
 rarity_code: S
 category: card
 image: https://den-cards.pokellector.com/301/Polteageist.S4A.252.36493.png
-illustrator:
+illustrator: Sanosuke Sakuma
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '36493'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ポットデス
     variants_seen:
-    - normal
+      - normal
     rarity_code: SR

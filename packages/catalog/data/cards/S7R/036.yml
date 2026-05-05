@@ -7,9 +7,9 @@ name_en: Medicham V
 rarity_code: RR
 category: card
 image: https://den-cards.pokellector.com/319/Medicham-V.S7R.36.39405.png
-illustrator:
+illustrator: Satoshi Shirai
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '39405'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: チャーレムV
     variants_seen:
-    - normal
+      - normal
     rarity_code: RR

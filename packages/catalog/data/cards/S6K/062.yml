@@ -3,13 +3,13 @@
 set_code: s6k
 local_id: '062'
 name_ja: 正義のグローブ
-name_en: Gloves of Justice
+name_en: Justified Gloves
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/310/Gloves-of-Justice.S6K.62.38679.png
-illustrator:
+illustrator: Toyste Beach
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '38679'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: 正義のグローブ
     variants_seen:
-    - normal
+      - normal
     rarity_code: U

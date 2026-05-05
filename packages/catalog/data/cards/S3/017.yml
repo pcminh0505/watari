@@ -7,9 +7,9 @@ name_en: Relicanth
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/293/Relicanth.S3.17.34838.png
-illustrator:
+illustrator: MAHOU
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '34838'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ジーランス
     variants_seen:
-    - normal
+      - normal
     rarity_code: U

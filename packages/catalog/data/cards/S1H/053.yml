@@ -7,9 +7,9 @@ name_en: Rare Candy
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/284/Rare-Candy.S1H.53.31324.png
-illustrator:
+illustrator: Yoshinobu Saito
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '31324'

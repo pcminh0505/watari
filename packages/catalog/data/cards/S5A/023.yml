@@ -7,9 +7,9 @@ name_en: Dracozolt V
 rarity_code: RR
 category: card
 image: https://den-cards.pokellector.com/308/Dracozolt-V.S5A.23.37876.png
-illustrator:
+illustrator: Ryota Murayama
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '37876'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: パッチラゴンV
     variants_seen:
-    - normal
+      - normal
     rarity_code: RR

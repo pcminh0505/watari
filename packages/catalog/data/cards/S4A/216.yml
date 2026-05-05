@@ -7,9 +7,9 @@ name_en: Cinderace
 rarity_code: S
 category: card
 image: https://den-cards.pokellector.com/301/Cinderace.S4A.216.36484.png
-illustrator:
+illustrator: Hitoshi Ariga
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '36484'

@@ -7,9 +7,9 @@ name_en: Deoxys
 rarity_code: R
 category: card
 image: https://den-cards.pokellector.com/326/Deoxys.S8.45.40344.png
-illustrator:
+illustrator: Kouki Saitou
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '40344'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ピカチュウV
     variants_seen:
-    - normal
+      - normal
     rarity_code: RR

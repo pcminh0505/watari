@@ -7,9 +7,9 @@ name_en: Orbeetle V
 rarity_code: RR
 category: card
 image: https://den-cards.pokellector.com/297/Orbeetle-V.S4.8.35337.png
-illustrator:
+illustrator: 5ban Graphics
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '35337'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ゴリランダー(R仕様)
     variants_seen:
-    - normal
+      - normal
     rarity_code: RR

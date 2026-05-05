@@ -7,9 +7,9 @@ name_en: Octillery
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/338/Octillery.S8B.31.40981.png
-illustrator:
+illustrator: Souichirou Gunjima
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '40981'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: オクタン(R仕様)
     variants_seen:
-    - normal
+      - normal
     rarity_code: R

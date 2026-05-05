@@ -7,9 +7,9 @@ name_en: Shiftry
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/310/Shiftry.S6K.48.38653.png
-illustrator:
+illustrator: Masakazu Fukuda
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '38653'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ダーテング
     variants_seen:
-    - normal
+      - normal
     rarity_code: U

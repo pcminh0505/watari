@@ -3,13 +3,13 @@
 set_code: s8b
 local_id: '172'
 name_ja: ヒート炎エネルギー
-name_en: Heat Energy
+name_en: Heat Fire Energy
 rarity_code: C
 category: energy
 image: https://den-cards.pokellector.com/338/Heat-Energy.S8B.172.41408.png
 illustrator:
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '41408'

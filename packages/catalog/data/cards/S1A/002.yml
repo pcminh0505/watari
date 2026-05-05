@@ -7,9 +7,9 @@ name_en: Metapod
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/285/Metapod.S1A.2.31817.png
-illustrator:
+illustrator: Asako Ito
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '31817'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: トランセル
     variants_seen:
-    - normal
+      - normal
     rarity_code: C

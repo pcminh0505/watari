@@ -4,12 +4,12 @@ set_code: s8
 local_id: '116'
 name_ja: シャンデラVMAX(エラ―版)
 name_en: Chandelure VMAX
-rarity_code: RRR
+rarity_code: HR
 category: card
 image: https://den-cards.pokellector.com/326/Chandelure-VMAX.S8.116.40496.png
-illustrator:
+illustrator: AKIRA EGAWA
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '40496'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: シャンデラVMAX(エラ―版)
     variants_seen:
-    - normal
+      - normal
     rarity_code: RRR

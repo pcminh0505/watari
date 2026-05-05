@@ -7,9 +7,9 @@ name_en: Thundurus
 rarity_code: R
 category: card
 image: https://den-cards.pokellector.com/308/Thundurus.S5A.22.37875.png
-illustrator:
+illustrator: Souichirou Gunjima
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '37875'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ボルトロス
     variants_seen:
-    - normal
+      - normal
     rarity_code: R

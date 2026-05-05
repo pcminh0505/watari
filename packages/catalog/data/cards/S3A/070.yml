@@ -7,9 +7,9 @@ name_en: Beauty
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/294/Beauty.S3A.70.35068.png
-illustrator:
+illustrator: kirisAki
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '35068'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: おとなのおねえさん
     variants_seen:
-    - normal
+      - normal
     rarity_code: U

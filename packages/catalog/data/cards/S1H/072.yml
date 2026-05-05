@@ -4,12 +4,12 @@ set_code: s1h
 local_id: '072'
 name_ja: マーニ
 name_en: Marnie
-rarity_code: UR
+rarity_code: HR
 category: card
 image: https://den-cards.pokellector.com/284/Marnie.S1H.72.31368.png
-illustrator:
+illustrator: kirisAki
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '31368'

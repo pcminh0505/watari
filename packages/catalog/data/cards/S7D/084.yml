@@ -7,9 +7,9 @@ name_en: Raihan
 rarity_code: HR
 category: card
 image: https://den-cards.pokellector.com/318/Raihan.S7D.84.39546.png
-illustrator:
+illustrator: kirisAki
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '39546'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: キバナ
     variants_seen:
-    - normal
+      - normal
     rarity_code: HR

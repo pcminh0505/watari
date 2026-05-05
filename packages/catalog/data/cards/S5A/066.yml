@@ -7,9 +7,9 @@ name_en: Karen's Conviction
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/308/Karens-Conviction.S5A.66.37230.png
-illustrator:
+illustrator: Ken Sugimori
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '37230'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: カリンの信念
     variants_seen:
-    - normal
+      - normal
     rarity_code: U

@@ -7,9 +7,9 @@ name_en: Polteageist
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/301/Polteageist.S4A.77.36385.png
-illustrator:
+illustrator: kirisAki
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '36385'

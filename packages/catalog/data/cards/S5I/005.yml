@@ -7,9 +7,9 @@ name_en: Spewpa
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/306/Spewpa.S5I.5.36767.png
-illustrator:
+illustrator: Sumiyoshi Kizuki
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '36767'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: コフーライ
     variants_seen:
-    - normal
+      - normal
     rarity_code: C

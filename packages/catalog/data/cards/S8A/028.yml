@@ -4,12 +4,12 @@ set_code: s8a
 local_id: '028'
 name_ja: ピカチュウ
 name_en: Pikachu V-UNION
-rarity_code: UR
+rarity_code: RRR
 category: card
 image: https://den-cards.pokellector.com/327/Pikachu-V-UNION.S8A.28.40620.png
-illustrator:
+illustrator: AKIRA EGAWA , Atsuko Nishida , kirisAki , Naoyo Kimura , Shibuzoh. , Tomokazu Komiya
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '40620'

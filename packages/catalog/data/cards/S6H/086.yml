@@ -7,9 +7,9 @@ name_en: Sandaconda VMAX
 rarity_code: HR
 category: card
 image: https://den-cards.pokellector.com/309/Sandaconda-VMAX.S6H.86.38783.png
-illustrator:
+illustrator: aky CG Works
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '38783'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: サダイジャVMAX
     variants_seen:
-    - normal
+      - normal
     rarity_code: HR

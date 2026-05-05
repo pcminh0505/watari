@@ -7,9 +7,9 @@ name_en: Echoing Horn
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/308/Echo-Horn.S5A.64.37239.png
-illustrator:
+illustrator: Studio Bora Inc.
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '37239'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: やまびこホーン
     variants_seen:
-    - normal
+      - normal
     rarity_code: U

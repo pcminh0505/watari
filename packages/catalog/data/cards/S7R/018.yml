@@ -7,9 +7,9 @@ name_en: Shellder
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/319/Shellder.S7R.18.39410.png
-illustrator:
+illustrator: kawayoo
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '39410'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: シェルダー
     variants_seen:
-    - normal
+      - normal
     rarity_code: C

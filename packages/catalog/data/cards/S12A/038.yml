@@ -7,9 +7,9 @@ name_en: Raikou V
 rarity_code: RR
 category: card
 image: https://den-cards.pokellector.com/357/Raikou-V.S12A.38.45855.png
-illustrator:
+illustrator: PLANETA Mochizuki
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '45855'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ライコウV
     variants_seen:
-    - normal
+      - normal
     rarity_code: RR

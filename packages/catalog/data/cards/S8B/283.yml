@@ -7,9 +7,9 @@ name_en: Rapid Strike Urshifu VMAX
 rarity_code: UR
 category: card
 image: https://den-cards.pokellector.com/338/Rapid-Strike-Urshifu-VMAX.S8B.283.41572.png
-illustrator:
+illustrator: PLANETA Tsuji
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '41572'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: れんげきウーラオスVMAX
     variants_seen:
-    - normal
+      - normal
     rarity_code: UR

@@ -7,10 +7,10 @@ name_en: Spiritomb
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/336/Spiritomb.S9.65.42602.png
-illustrator:
+illustrator: Uta
 prints:
-- normal
-- poke_ball_mirror
+  - normal
+  - poke_ball_mirror
 sources:
   pokellector:
     id: '42602'
@@ -20,6 +20,6 @@ sources:
   cardrush:
     name_ja: ミカルゲ
     variants_seen:
-    - normal
-    - poke_ball_mirror
+      - normal
+      - poke_ball_mirror
     rarity_code: U

@@ -7,9 +7,9 @@ name_en: Dedenne
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/294/Dedenne.S3A.28.35037.png
-illustrator:
+illustrator: Yuka Morii
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '35037'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: デデンネ
     variants_seen:
-    - normal
+      - normal
     rarity_code: C

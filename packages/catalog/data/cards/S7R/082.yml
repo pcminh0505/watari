@@ -7,9 +7,9 @@ name_en: Rayquaza VMAX
 rarity_code: HR
 category: card
 image: https://den-cards.pokellector.com/319/Rayquaza-VMAX.S7R.82.39567.png
-illustrator:
+illustrator: PLANETA Mochizuki
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '39567'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: レックウザVMAX
     variants_seen:
-    - normal
+      - normal
     rarity_code: HR

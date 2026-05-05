@@ -3,13 +3,13 @@
 set_code: s3a
 local_id: '042'
 name_ja: セキタンザンV
-name_en: Coalossal
+name_en: Coalossal V
 rarity_code: RR
 category: card
 image: https://den-cards.pokellector.com/294/Coalossal.S3A.42.34987.png
-illustrator:
+illustrator: 5ban Graphics
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '34987'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: セキタンザンV
     variants_seen:
-    - normal
+      - normal
     rarity_code: RR

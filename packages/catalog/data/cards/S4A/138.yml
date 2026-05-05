@@ -7,9 +7,9 @@ name_en: Zamazenta
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/301/Zamazenta.S4A.138.35875.png
-illustrator:
+illustrator: Hideki Ishikawa
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '35875'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ザマゼンタ(R仕様)
     variants_seen:
-    - normal
+      - normal
     rarity_code: R

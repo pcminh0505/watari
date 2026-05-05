@@ -7,9 +7,9 @@ name_en: Suicune
 rarity_code: S
 category: card
 image: https://den-cards.pokellector.com/301/Suicune.S4A.221.36526.png
-illustrator:
+illustrator: Kagemaru Himeno
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '36526'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: スイクン
     variants_seen:
-    - normal
+      - normal
     rarity_code: SR

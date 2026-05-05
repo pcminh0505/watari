@@ -7,9 +7,9 @@ name_en: Thwackey
 rarity_code: S
 category: card
 image: https://den-cards.pokellector.com/301/Thwackey.S4A.204.36145.png
-illustrator:
+illustrator: tetsuya koizumi
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '36145'

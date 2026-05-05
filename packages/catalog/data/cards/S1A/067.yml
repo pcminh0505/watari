@@ -7,9 +7,9 @@ name_en: Milo
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/285/Milo.S1A.67.31423.png
-illustrator:
+illustrator: take
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '31423'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ヤロー
     variants_seen:
-    - normal
+      - normal
     rarity_code: U

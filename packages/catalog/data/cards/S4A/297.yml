@@ -7,9 +7,9 @@ name_en: Oranguru
 rarity_code: S
 category: card
 image: https://den-cards.pokellector.com/301/Oranguru.S4A.297.35865.png
-illustrator:
+illustrator: nagimiso
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '35865'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ヤレユータン
     variants_seen:
-    - normal
+      - normal
     rarity_code: SR

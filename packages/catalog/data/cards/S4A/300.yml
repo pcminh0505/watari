@@ -7,9 +7,9 @@ name_en: Rookidee
 rarity_code: S
 category: card
 image: https://den-cards.pokellector.com/301/Rookidee.S4A.300.36594.png
-illustrator:
+illustrator: Lee HyunJung
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '36594'

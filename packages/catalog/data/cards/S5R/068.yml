@@ -7,9 +7,9 @@ name_en: Cheryl
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/307/Cheryl.S5R.68.36726.png
-illustrator:
+illustrator: Ken Sugimori
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '36726'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: モミ
     variants_seen:
-    - normal
+      - normal
     rarity_code: U

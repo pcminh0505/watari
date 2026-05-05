@@ -7,9 +7,9 @@ name_en: Banette
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/309/Banette.S6H.37.38708.png
-illustrator:
+illustrator: Megumi Higuchi
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '38708'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ジュペッタ
     variants_seen:
-    - normal
+      - normal
     rarity_code: U

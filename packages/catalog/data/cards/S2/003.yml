@@ -7,9 +7,9 @@ name_en: Lotad
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/291/Lotad.S2.3.31893.png
-illustrator:
+illustrator: Sumiyoshi Kizuki
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '31893'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: カブルモ
     variants_seen:
-    - normal
+      - normal
     rarity_code: C

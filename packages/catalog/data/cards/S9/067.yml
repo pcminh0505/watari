@@ -7,10 +7,10 @@ name_en: Probopass
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/336/Probopass.S9.67.42604.png
-illustrator:
+illustrator: Pani Kobayashi
 prints:
-- normal
-- poke_ball_mirror
+  - normal
+  - poke_ball_mirror
 sources:
   pokellector:
     id: '42604'
@@ -20,6 +20,6 @@ sources:
   cardrush:
     name_ja: ダイノーズ
     variants_seen:
-    - normal
-    - poke_ball_mirror
+      - normal
+      - poke_ball_mirror
     rarity_code: SR

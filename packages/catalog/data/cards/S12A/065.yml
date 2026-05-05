@@ -7,9 +7,9 @@ name_en: Hatterene V
 rarity_code: RR
 category: card
 image: https://den-cards.pokellector.com/357/Hatterene-V.S12A.65.45623.png
-illustrator:
+illustrator: kawayoo
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '45623'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ブリムオンV
     variants_seen:
-    - normal
+      - normal
     rarity_code: RR

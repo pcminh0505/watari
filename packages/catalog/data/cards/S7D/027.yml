@@ -7,9 +7,9 @@ name_en: Absol
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/318/Absol.S7D.27.39397.png
-illustrator:
+illustrator: Eri Yamaki
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '39397'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: アブソル
     variants_seen:
-    - normal
+      - normal
     rarity_code: U

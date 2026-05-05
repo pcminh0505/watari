@@ -3,13 +3,13 @@
 set_code: s6a
 local_id: '063'
 name_ja: スノーリーフバッジ
-name_en: Frozen Leaf Badge
+name_en: Snow Leaf Badge
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/322/Frozen-Leaf-Badge.S6A.63.38853.png
-illustrator:
+illustrator: Studio Bora Inc.
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '38853'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: スノーリーフバッジ
     variants_seen:
-    - normal
+      - normal
     rarity_code: U

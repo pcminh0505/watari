@@ -7,9 +7,9 @@ name_en: Magma Basin
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/336/Magma-Basin.S9.99.41008.png
-illustrator:
+illustrator: ORBITALLINK Inc.
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '41008'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: マグマの滝壺
     variants_seen:
-    - normal
+      - normal
     rarity_code: SAR

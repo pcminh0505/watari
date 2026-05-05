@@ -3,13 +3,13 @@
 set_code: s8b
 local_id: '123'
 name_ja: ジュラルドンVMAX
-name_en: Daruladon VMAX
+name_en: Duraludon VMAX
 rarity_code: RRR
 category: card
 image: https://den-cards.pokellector.com/338/Daruladon-VMAX.S8B.123.40535.png
-illustrator:
+illustrator: PLANETA Mochizuki
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '40535'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ジュラルドンVMAX
     variants_seen:
-    - normal
+      - normal
     rarity_code: RRR

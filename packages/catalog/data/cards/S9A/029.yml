@@ -7,9 +7,9 @@ name_en: Hisuian Typhlosion VSTAR
 rarity_code: RRR
 category: card
 image: https://den-cards.pokellector.com/339/Hisuin-Typhlosion-VSTAR.S9A.29.43113.png
-illustrator:
+illustrator: 5ban Graphics
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '43113'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ヒスイバクフーンVSTAR
     variants_seen:
-    - normal
+      - normal
     rarity_code: RRR

@@ -4,12 +4,12 @@ set_code: s7d
 local_id: '036'
 name_ja: エアームド
 name_en: Skarmory
-rarity_code: U
+rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/318/Galarian-Perrserker.S7D.36.39423.png
-illustrator:
+illustrator: Megumi Higuchi
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '39423'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: エアームド
     variants_seen:
-    - normal
+      - normal
     rarity_code: C

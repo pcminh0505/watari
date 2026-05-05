@@ -7,9 +7,9 @@ name_en: Rapid Strike Urshifu V
 rarity_code: SR
 category: card
 image: https://den-cards.pokellector.com/307/Rapid-Strike-Urshifu-V.S5R.76.36877.png
-illustrator:
+illustrator: PLANETA Mochizuki
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '36877'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: れんげきウーラオスV
     variants_seen:
-    - normal
+      - normal
     rarity_code: SR

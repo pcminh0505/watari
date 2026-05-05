@@ -7,10 +7,10 @@ name_en: Hoothoot
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/339/Hoothoot.S9A.55.43135.png
-illustrator:
+illustrator: Pani Kobayashi
 prints:
-- normal
-- poke_ball_mirror
+  - normal
+  - poke_ball_mirror
 sources:
   pokellector:
     id: '43135'
@@ -20,6 +20,6 @@ sources:
   cardrush:
     name_ja: ホーホー
     variants_seen:
-    - normal
-    - poke_ball_mirror
+      - normal
+      - poke_ball_mirror
     rarity_code: C

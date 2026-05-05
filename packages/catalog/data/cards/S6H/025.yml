@@ -7,9 +7,9 @@ name_en: Bergmite
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/309/Bergmite.S6H.25.38698.png
-illustrator:
+illustrator: kirisAki
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '38698'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: カチコール
     variants_seen:
-    - normal
+      - normal
     rarity_code: C

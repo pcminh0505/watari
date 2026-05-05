@@ -7,9 +7,9 @@ name_en: Palpitoad
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/310/Palpitoad.S6K.38.38748.png
-illustrator:
+illustrator: tetsuya koizumi
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '38748'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ガマガル
     variants_seen:
-    - normal
+      - normal
     rarity_code: C

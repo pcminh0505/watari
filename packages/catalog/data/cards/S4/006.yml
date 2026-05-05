@@ -7,9 +7,9 @@ name_en: Skiddo
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/297/Skiddo.S4.6.35588.png
-illustrator:
+illustrator: Saya Tsuruta
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '35588'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: メェークル
     variants_seen:
-    - normal
+      - normal
     rarity_code: C

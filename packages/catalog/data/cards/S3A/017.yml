@@ -7,9 +7,9 @@ name_en: Manectric
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/294/Manectric.S3A.17.35027.png
-illustrator:
+illustrator: SATOSHI NAKAI
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '35027'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ライボルト
     variants_seen:
-    - normal
+      - normal
     rarity_code: U

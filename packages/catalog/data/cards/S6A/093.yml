@@ -7,9 +7,9 @@ name_en: Sylveon VMAX
 rarity_code: HR
 category: card
 image: https://den-cards.pokellector.com/322/Sylveon-VMAX.S6A.93.38969.png
-illustrator:
+illustrator: Taira Akitsu
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '38969'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ニンフィアVMAX(SA)
     variants_seen:
-    - normal
+      - normal
     rarity_code: HR

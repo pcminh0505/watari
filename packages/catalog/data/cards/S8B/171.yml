@@ -3,13 +3,13 @@
 set_code: s8b
 local_id: '171'
 name_ja: アロマ草エネルギー
-name_en: Aromatic Energy
+name_en: Aromatic Grass Energy
 rarity_code: C
 category: energy
 image: https://den-cards.pokellector.com/338/Aromatic-Energy.S8B.171.41407.png
 illustrator:
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '41407'

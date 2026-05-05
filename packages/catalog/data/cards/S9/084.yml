@@ -7,9 +7,9 @@ name_en: Arceus VSTAR
 rarity_code: RRR
 category: card
 image: https://den-cards.pokellector.com/336/Arceus-VSTAR.S9.84.40663.png
-illustrator:
+illustrator: 5ban Graphics
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '40663'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ガブリアスV
     variants_seen:
-    - normal
+      - normal
     rarity_code: RRR

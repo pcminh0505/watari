@@ -7,9 +7,9 @@ name_en: Machop
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/297/Machop.S4.53.35617.png
-illustrator:
+illustrator: Shibuzoh.
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '35617'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ワンリキー
     variants_seen:
-    - normal
+      - normal
     rarity_code: R

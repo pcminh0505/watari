@@ -7,9 +7,9 @@ name_en: Single Strike Urshifu
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/338/Single-Strike-Urshifu.S8B.111.41366.png
-illustrator:
+illustrator: Mitsuhiro Arita
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '41366'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: いちげきウーラオス(R仕様)
     variants_seen:
-    - normal
+      - normal
     rarity_code: R

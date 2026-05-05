@@ -7,9 +7,9 @@ name_en: Castform Rainy Form
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/310/Castform-Rainy-Form.S6K.13.37857.png
-illustrator:
+illustrator: sowsow
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '37857'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ポワルンあまみずのすがた
     variants_seen:
-    - normal
+      - normal
     rarity_code: C

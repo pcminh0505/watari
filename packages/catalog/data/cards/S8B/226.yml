@@ -4,12 +4,12 @@ set_code: s8b
 local_id: '226'
 name_ja: Morpeko V-UNION
 name_en: Morpeko V-UNION
-rarity_code: UR
+rarity_code: CSR
 category: card
 image: https://den-cards.pokellector.com/338/Morpeko-V-UNION.S8B.226.41519.png
-illustrator:
+illustrator: Yuu Nishida
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '41519'

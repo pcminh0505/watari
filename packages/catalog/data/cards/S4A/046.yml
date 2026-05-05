@@ -7,9 +7,9 @@ name_en: Barraskewda
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/301/Barraskewda.S4A.46.36357.png
-illustrator:
+illustrator: Kouki Saitou
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '36357'

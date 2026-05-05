@@ -3,13 +3,13 @@
 set_code: s6h
 local_id: '063'
 name_ja: 耐火グローブ
-name_en: Fireproof Gloves
-rarity_code: C
+name_en: Fire-Resistant Gloves
+rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/309/Fireproof-Gloves.S6H.63.38650.png
-illustrator:
+illustrator: Toyste Beach
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '38650'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: 耐火グローブ
     variants_seen:
-    - normal
+      - normal
     rarity_code: U

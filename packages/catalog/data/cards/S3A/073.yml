@@ -7,9 +7,9 @@ name_en: Marnie
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/294/Marnie.S3A.73.35070.png
-illustrator:
+illustrator: kirisAki
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '35070'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: マリィ
     variants_seen:
-    - normal
+      - normal
     rarity_code: U

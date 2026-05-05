@@ -7,9 +7,9 @@ name_en: Old Cemetery
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/310/Old-Cemetery.S6K.68.38642.png
-illustrator:
+illustrator: Oswaldo KATO
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '38642'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: いにしえの墓地
     variants_seen:
-    - normal
+      - normal
     rarity_code: U

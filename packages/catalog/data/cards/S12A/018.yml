@@ -7,9 +7,9 @@ name_en: Moltres
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/357/Moltres.S12A.18.45841.png
-illustrator:
+illustrator: otumami
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '45841'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ファイヤー(R仕様)
     variants_seen:
-    - normal
+      - normal
     rarity_code: R

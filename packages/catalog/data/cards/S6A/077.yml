@@ -7,9 +7,9 @@ name_en: Glaceon V
 rarity_code: SR
 category: card
 image: https://den-cards.pokellector.com/322/Glaceon-V.S6A.77.38953.png
-illustrator:
+illustrator: Narumi Sato
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '38953'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: グレイシアV(SA)
     variants_seen:
-    - normal
+      - normal
     rarity_code: SR

@@ -4,12 +4,12 @@ set_code: s12a
 local_id: '039'
 name_ja: Radiant Charjabug
 name_en: Radiant Charjabug
-rarity_code: R
+rarity_code: K
 category: card
 image: https://den-cards.pokellector.com/357/Radiant-Charjabug.S12A.39.45856.png
-illustrator:
+illustrator: Mizue
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '45856'

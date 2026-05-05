@@ -3,13 +3,13 @@
 set_code: s4a
 local_id: '186'
 name_ja: ハイド悪エネルギー
-name_en: Hiding Energy
+name_en: Hiding Darkness Energy
 rarity_code: C
 category: energy
 image: https://den-cards.pokellector.com/301/Hiding-Energy.S4A.186.36468.png
 illustrator:
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '36468'

@@ -7,9 +7,9 @@ name_en: Cramorant
 rarity_code: S
 category: card
 image: https://den-cards.pokellector.com/301/Cramorant.S4A.229.36533.png
-illustrator:
+illustrator: Akira Komayama
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '36533'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ウッウ
     variants_seen:
-    - normal
+      - normal
     rarity_code: SR

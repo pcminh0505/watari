@@ -7,9 +7,9 @@ name_en: Dragapult
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/301/Dragapult.S4A.87.36395.png
-illustrator:
+illustrator: Shin Nagasawa
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '36395'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ドラパルト(R仕様)
     variants_seen:
-    - normal
+      - normal
     rarity_code: R

@@ -7,9 +7,9 @@ name_en: Galarian Sirfetch'd
 rarity_code: S
 category: card
 image: https://den-cards.pokellector.com/301/Galarian-Sirfetchd.S4A.263.36561.png
-illustrator:
+illustrator: Kouki Saitou
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '36561'

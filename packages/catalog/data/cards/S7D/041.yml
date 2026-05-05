@@ -7,9 +7,9 @@ name_en: Dialga
 rarity_code: R
 category: card
 image: https://den-cards.pokellector.com/318/Dialga.S7D.41.39003.png
-illustrator:
+illustrator: Ryuta Fuse
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '39003'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ディアルガ
     variants_seen:
-    - normal
+      - normal
     rarity_code: R

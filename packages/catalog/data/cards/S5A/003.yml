@@ -7,9 +7,9 @@ name_en: Beedrill
 rarity_code: R
 category: card
 image: https://den-cards.pokellector.com/308/Beedrill.S5A.3.37227.png
-illustrator:
+illustrator: Misa Tsutsui
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '37227'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: スピアー
     variants_seen:
-    - normal
+      - normal
     rarity_code: R

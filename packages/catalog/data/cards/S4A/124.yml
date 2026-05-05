@@ -7,9 +7,9 @@ name_en: Eternatus V
 rarity_code: RR
 category: card
 image: https://den-cards.pokellector.com/301/Eternatus-V.S4A.124.35878.png
-illustrator:
+illustrator: 5ban Graphics
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '35878'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ムゲンダイナV
     variants_seen:
-    - normal
+      - normal
     rarity_code: RR

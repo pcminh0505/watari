@@ -7,9 +7,9 @@ name_en: Gengar
 rarity_code: R
 category: card
 image: https://den-cards.pokellector.com/310/Gengar.S6K.27.38646.png
-illustrator:
+illustrator: Aya Kusube
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '38646'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ゲンガー
     variants_seen:
-    - normal
+      - normal
     rarity_code: R

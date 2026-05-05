@@ -3,13 +3,13 @@
 set_code: s7d
 local_id: '056'
 name_ja: あなぬけのヒモ
-name_en: Lucky Popsicle
+name_en: Escape Rope
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/318/Lucky-Popsicle.S7D.56.39194.png
-illustrator:
+illustrator: sadaji
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '39194'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: あなぬけのヒモ
     variants_seen:
-    - normal
+      - normal
     rarity_code: U

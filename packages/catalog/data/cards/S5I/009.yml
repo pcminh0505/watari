@@ -7,9 +7,9 @@ name_en: Entei
 rarity_code: R
 category: card
 image: https://den-cards.pokellector.com/306/Entei.S5I.9.36771.png
-illustrator:
+illustrator: kodama
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '36771'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: エンテイ
     variants_seen:
-    - normal
+      - normal
     rarity_code: R

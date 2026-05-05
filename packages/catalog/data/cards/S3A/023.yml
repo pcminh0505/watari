@@ -7,9 +7,9 @@ name_en: Clefairy
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/294/Clefairy.S3A.23.35032.png
-illustrator:
+illustrator: HYOGONOSUKE
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '35032'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ピッピ
     variants_seen:
-    - normal
+      - normal
     rarity_code: C

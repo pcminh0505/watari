@@ -7,9 +7,9 @@ name_en: Peony
 rarity_code: HR
 category: card
 image: https://den-cards.pokellector.com/309/Peony.S6H.90.38787.png
-illustrator:
+illustrator: Hitoshi Ariga
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '38787'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ピオニー
     variants_seen:
-    - normal
+      - normal
     rarity_code: HR

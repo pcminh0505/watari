@@ -7,9 +7,9 @@ name_en: Nessa
 rarity_code: SR
 category: card
 image: https://den-cards.pokellector.com/297/Nessa.S4.111.35677.png
-illustrator:
+illustrator: Ryuta Fuse
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '35677'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ルリナ
     variants_seen:
-    - normal
+      - normal
     rarity_code: SR

@@ -7,9 +7,9 @@ name_en: Galarian Moltres
 rarity_code: R
 category: card
 image: https://den-cards.pokellector.com/318/Galarian-Moltres.S7D.26.39453.png
-illustrator:
+illustrator: Kazuma Koda
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '39453'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ガラルファイヤー
     variants_seen:
-    - normal
+      - normal
     rarity_code: R

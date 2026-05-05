@@ -4,12 +4,12 @@ set_code: s9
 local_id: '083'
 name_ja: スターミーV
 name_en: Arceus V
-rarity_code: AR
+rarity_code: RR
 category: card
 image: https://den-cards.pokellector.com/336/Arceus-V.S9.83.40664.png
-illustrator:
+illustrator: N-DESIGN Inc.
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '40664'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: スターミーV
     variants_seen:
-    - normal
+      - normal
     rarity_code: AR

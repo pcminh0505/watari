@@ -7,9 +7,9 @@ name_en: Glimwood Tangle
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/295/Glimwood-Tangle.S2A.69.34424.png
-illustrator:
+illustrator: aky CG Works
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '34424'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ルミナスメイズの森
     variants_seen:
-    - normal
+      - normal
     rarity_code: U

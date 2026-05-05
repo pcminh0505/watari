@@ -7,9 +7,9 @@ name_en: Leafeon VMAX
 rarity_code: HR
 category: card
 image: https://den-cards.pokellector.com/322/Leafeon-VMAX.S6A.88.38964.png
-illustrator:
+illustrator: PLANETA Tsuji
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '38964'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: リーフィアVMAX
     variants_seen:
-    - normal
+      - normal
     rarity_code: HR

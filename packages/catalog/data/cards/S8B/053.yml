@@ -7,9 +7,9 @@ name_en: Zekrom
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/338/Zekrom.S8B.53.40526.png
-illustrator:
+illustrator: hatachu
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '40526'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ゼクロム(R仕様)
     variants_seen:
-    - normal
+      - normal
     rarity_code: R

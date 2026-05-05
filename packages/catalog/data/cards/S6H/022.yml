@@ -7,9 +7,9 @@ name_en: Spheal
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/309/Spheal.S6H.22.38695.png
-illustrator:
+illustrator: kirisAki
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '38695'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: タマザラシ
     variants_seen:
-    - normal
+      - normal
     rarity_code: C

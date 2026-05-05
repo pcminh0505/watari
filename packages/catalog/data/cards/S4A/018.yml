@@ -7,9 +7,9 @@ name_en: Flapple
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/301/Flapple.S4A.18.36331.png
-illustrator:
+illustrator: Hitoshi Ariga
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '36331'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: アップリュー(R仕様)
     variants_seen:
-    - normal
+      - normal
     rarity_code: R

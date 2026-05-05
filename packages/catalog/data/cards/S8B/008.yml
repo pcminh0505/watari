@@ -7,9 +7,9 @@ name_en: Abomasnow
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/338/Abomasnow.S8B.8.41287.png
-illustrator:
+illustrator: Akira Komayama
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '41287'

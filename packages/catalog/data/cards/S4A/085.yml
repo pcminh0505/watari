@@ -7,9 +7,9 @@ name_en: Dreepy
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/301/Dreepy.S4A.85.36393.png
-illustrator:
+illustrator: Akira Komayama
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '36393'

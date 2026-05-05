@@ -7,9 +7,9 @@ name_en: Sigilyph
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/336/Sigilyph.S9.51.42589.png
-illustrator:
+illustrator: Sumiyoshi Kizuki
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '42589'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: シンボラー
     variants_seen:
-    - normal
+      - normal
     rarity_code: R

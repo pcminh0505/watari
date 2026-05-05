@@ -4,12 +4,12 @@ set_code: s5a
 local_id: '024'
 name_ja: パッチラゴンVMAX
 name_en: Dracozolt VMAX
-rarity_code: C
+rarity_code: RRR
 category: card
 image: https://den-cards.pokellector.com/308/Dracozolt-VMAX.S5A.24.37877.png
-illustrator:
+illustrator: 5ban Graphics
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '37877'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: パッチラゴンVMAX
     variants_seen:
-    - normal
+      - normal
     rarity_code: RRR

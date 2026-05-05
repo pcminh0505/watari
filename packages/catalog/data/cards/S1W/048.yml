@@ -7,9 +7,9 @@ name_en: Cinccino
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/283/Cinccino.S1W.48.31262.png
-illustrator:
+illustrator: sui
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '31262'

@@ -7,9 +7,9 @@ name_en: Exp. Share
 rarity_code: UR
 category: card
 image: https://den-cards.pokellector.com/306/Exp-Share.S5I.90.36909.png
-illustrator:
+illustrator: Toyste Beach
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '36909'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: 学習装置
     variants_seen:
-    - normal
+      - normal
     rarity_code: UR

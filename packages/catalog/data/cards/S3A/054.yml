@@ -7,9 +7,9 @@ name_en: Magearna
 rarity_code: R
 category: card
 image: https://den-cards.pokellector.com/294/Magearna.S3A.54.35055.png
-illustrator:
+illustrator: AKIRA EGAWA
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '35055'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: マギアナ
     variants_seen:
-    - normal
+      - normal
     rarity_code: R

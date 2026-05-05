@@ -7,9 +7,9 @@ name_en: Blaziken VMAX
 rarity_code: RRR
 category: card
 image: https://den-cards.pokellector.com/338/Blaziken-VMAX.S8B.20.41297.png
-illustrator:
+illustrator: AKIRA EGAWA
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '41297'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: バシャーモVMAX
     variants_seen:
-    - normal
+      - normal
     rarity_code: RRR

@@ -4,12 +4,12 @@ set_code: s1h
 local_id: '046'
 name_ja: カビゴンVMAX
 name_en: Snorlax VMAX
-rarity_code: RR
+rarity_code: RRR
 category: card
 image: https://den-cards.pokellector.com/284/Snorlax-V-MAX.S1H.46.31190.png
-illustrator:
+illustrator: aky CG Works
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '31190'

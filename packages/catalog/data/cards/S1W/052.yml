@@ -7,9 +7,9 @@ name_en: Evolution Incense
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/283/Evolution-Incense.S1W.52.31266.png
-illustrator:
+illustrator: Ryo Ueda
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '31266'

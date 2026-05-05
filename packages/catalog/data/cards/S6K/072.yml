@@ -7,9 +7,9 @@ name_en: Arctovish V
 rarity_code: SR
 category: card
 image: https://den-cards.pokellector.com/310/Arctovish-V.S6K.72.38794.png
-illustrator:
+illustrator: Eske Yoshinob
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '38794'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ウオチルドンV
     variants_seen:
-    - normal
+      - normal
     rarity_code: SR

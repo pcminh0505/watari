@@ -3,13 +3,13 @@
 set_code: s5i
 local_id: '068'
 name_ja: マスタードいちげきのかた
-name_en: Mustard Single Strike Stance
+name_en: Single Strike Style Mustard
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/306/Mustard-Single-Strike-Stance.S5I.68.36671.png
-illustrator:
+illustrator: Mitsuhiro Arita
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '36671'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: マスタードいちげきのかた
     variants_seen:
-    - normal
+      - normal
     rarity_code: U

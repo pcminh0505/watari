@@ -7,9 +7,9 @@ name_en: Rillaboom
 rarity_code: S
 category: card
 image: https://den-cards.pokellector.com/301/Rillaboom.S4A.205.36483.png
-illustrator:
+illustrator: Ryuta Fuse
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '36483'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ゴリランダー
     variants_seen:
-    - normal
+      - normal
     rarity_code: SR

@@ -3,13 +3,13 @@
 set_code: s8
 local_id: '100'
 name_ja: フュージョンエネルギー
-name_en: Fusion Energy
+name_en: Fusion Strike Energy
 rarity_code: U
 category: energy
 image: https://den-cards.pokellector.com/326/Fusion-Energy.S8.100.39856.png
 illustrator:
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '39856'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: フュージョンエネルギー
     variants_seen:
-    - normal
+      - normal
     rarity_code: RR

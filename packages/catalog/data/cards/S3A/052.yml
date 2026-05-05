@@ -7,9 +7,9 @@ name_en: Dialga
 rarity_code: R
 category: card
 image: https://den-cards.pokellector.com/294/Dialga.S3A.52.35053.png
-illustrator:
+illustrator: Shin Nagasawa
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '35053'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ディアルガ
     variants_seen:
-    - normal
+      - normal
     rarity_code: R

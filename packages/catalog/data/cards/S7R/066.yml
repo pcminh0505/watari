@@ -3,13 +3,13 @@
 set_code: s7r
 local_id: '066'
 name_ja: 嵐の山脈
-name_en: Tempest Range
+name_en: Stormy Mountains
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/319/Tempest-Range.S7R.66.38993.png
-illustrator:
+illustrator: Toyste Beach
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '38993'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: 嵐の山脈
     variants_seen:
-    - normal
+      - normal
     rarity_code: U

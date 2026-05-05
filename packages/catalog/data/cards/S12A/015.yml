@@ -4,12 +4,12 @@ set_code: s12a
 local_id: '015'
 name_ja: かがやくリザードン
 name_en: Radiant Charizard
-rarity_code: R
+rarity_code: K
 category: card
 image: https://den-cards.pokellector.com/357/Radiant-Charizard.S12A.15.45343.png
-illustrator:
+illustrator: Kouki Saitou
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '45343'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: かがやくリザードン
     variants_seen:
-    - normal
+      - normal
     rarity_code: K

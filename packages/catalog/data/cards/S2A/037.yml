@@ -7,9 +7,9 @@ name_en: Polteageist
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/295/Polteageist.S2A.37.34367.png
-illustrator:
+illustrator: kirisAki
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '34367'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ポットデス
     variants_seen:
-    - normal
+      - normal
     rarity_code: U

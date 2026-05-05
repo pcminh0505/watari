@@ -7,9 +7,9 @@ name_en: Swanna
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/293/Swanna.S3.86.34921.png
-illustrator:
+illustrator: Taira Akitsu
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '34921'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: マホイップVMAX
     variants_seen:
-    - normal
+      - normal
     rarity_code: HR

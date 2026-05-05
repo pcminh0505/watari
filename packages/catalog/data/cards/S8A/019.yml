@@ -7,9 +7,9 @@ name_en: Zamazenta V
 rarity_code: RR
 category: card
 image: https://den-cards.pokellector.com/327/Zamazenta-V.S8A.19.40616.png
-illustrator:
+illustrator: Mitsuhiro Arita
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '40616'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ドンファン(25th)
     variants_seen:
-    - normal
+      - normal
     rarity_code: RR

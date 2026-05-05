@@ -7,9 +7,9 @@ name_en: Pyukumuku
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/326/Pyukumuku.S8.27.40435.png
-illustrator:
+illustrator: Tomokazu Komiya
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '40435'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ナマコブシ
     variants_seen:
-    - normal
+      - normal
     rarity_code: C

@@ -3,14 +3,14 @@
 set_code: s9a
 local_id: '023'
 name_ja: ヒスイバスラオ
-name_en: Basculin
+name_en: Hisuian Basculin
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/339/Basculin.S9A.23.43108.png
-illustrator:
+illustrator: Kagemaru Himeno
 prints:
-- normal
-- poke_ball_mirror
+  - normal
+  - poke_ball_mirror
 sources:
   pokellector:
     id: '43108'
@@ -20,6 +20,6 @@ sources:
   cardrush:
     name_ja: ヒスイバスラオ
     variants_seen:
-    - normal
-    - poke_ball_mirror
+      - normal
+      - poke_ball_mirror
     rarity_code: C

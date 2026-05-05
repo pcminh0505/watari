@@ -4,12 +4,12 @@ set_code: s1h
 local_id: '062'
 name_ja: Morpeko V
 name_en: Morpeko V
-rarity_code: UR
+rarity_code: SR
 category: card
 image: https://den-cards.pokellector.com/284/Morpeko-V.S1H.62.31361.png
-illustrator:
+illustrator: 5ban Graphics
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '31361'

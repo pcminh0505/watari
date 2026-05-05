@@ -7,9 +7,9 @@ name_en: Boss's Orders
 rarity_code: R
 category: card
 image: https://den-cards.pokellector.com/336/Bosss-Orders.S9.97.42628.png
-illustrator:
+illustrator: GIDORA
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '42628'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ボスの指令/アカギ
     variants_seen:
-    - normal
+      - normal
     rarity_code: R

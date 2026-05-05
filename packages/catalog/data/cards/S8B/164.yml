@@ -7,9 +7,9 @@ name_en: Nessa
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/338/Nessa.S8B.164.41401.png
-illustrator:
+illustrator: take
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '41401'

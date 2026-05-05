@@ -7,9 +7,9 @@ name_en: Probopass
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/291/Probopass.S2.73.31958.png
-illustrator:
+illustrator: Anesaki Dynamic
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '31958'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: クワガノンV
     variants_seen:
-    - normal
+      - normal
     rarity_code: SR

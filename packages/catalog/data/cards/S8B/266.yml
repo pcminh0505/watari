@@ -3,13 +3,13 @@
 set_code: s8b
 local_id: '266'
 name_ja: 博士の研究/アララギ博士
-name_en: Professor's Research (Professor Juniper)
+name_en: Professor's Research
 rarity_code: SR
 category: card
 image: https://den-cards.pokellector.com/338/Professors-Research-Professor-Juniper.S8B.266.41555.png
-illustrator:
+illustrator: Yuu Nishida
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '41555'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: 博士の研究/アララギ博士
     variants_seen:
-    - normal
+      - normal
     rarity_code: SR

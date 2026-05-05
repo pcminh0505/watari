@@ -7,9 +7,9 @@ name_en: Kingdra
 rarity_code: R
 category: card
 image: https://den-cards.pokellector.com/307/Kingdra.S5R.19.36830.png
-illustrator:
+illustrator: kawayoo
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '36830'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: キングドラ
     variants_seen:
-    - normal
+      - normal
     rarity_code: R

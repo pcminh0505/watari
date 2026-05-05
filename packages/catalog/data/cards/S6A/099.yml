@@ -3,13 +3,13 @@
 set_code: s6a
 local_id: '099'
 name_ja: ぐんぐんシェイク
-name_en: Vigor Shake
+name_en: Boost Shake
 rarity_code: UR
 category: card
 image: https://den-cards.pokellector.com/322/Vigor-Shake.S6A.99.38975.png
-illustrator:
+illustrator: sadaji
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '38975'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ぐんぐんシェイク
     variants_seen:
-    - normal
+      - normal
     rarity_code: UR

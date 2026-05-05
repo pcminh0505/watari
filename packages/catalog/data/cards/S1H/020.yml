@@ -4,12 +4,12 @@ set_code: s1h
 local_id: '020'
 name_ja: モルペコVMAX
 name_en: Morpeko VMAX
-rarity_code: RR
+rarity_code: RRR
 category: card
 image: https://den-cards.pokellector.com/284/Morpeko-VMAX.S1H.20.31296.png
-illustrator:
+illustrator: 5ban Graphics
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '31296'

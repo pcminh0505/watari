@@ -7,9 +7,9 @@ name_en: Korrina's Focus
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/338/Korrinas-Focus.S8B.152.41392.png
-illustrator:
+illustrator: kirisAki
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '41392'

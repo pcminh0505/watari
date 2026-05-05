@@ -7,9 +7,9 @@ name_en: Sableye
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/310/Sableye.S6K.28.38745.png
-illustrator:
+illustrator: Eri Yamaki
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '38745'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ヤミラミ
     variants_seen:
-    - normal
+      - normal
     rarity_code: C

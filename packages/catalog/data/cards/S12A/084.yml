@@ -7,9 +7,9 @@ name_en: Spiritomb
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/357/Spiritomb.S12A.84.45886.png
-illustrator:
+illustrator: sui
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '45886'

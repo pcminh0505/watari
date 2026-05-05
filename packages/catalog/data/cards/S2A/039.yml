@@ -7,9 +7,9 @@ name_en: Dugtrio
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/295/Dugtrio.S2A.39.34398.png
-illustrator:
+illustrator: Yukiko Baba
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '34398'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ダグトリオ
     variants_seen:
-    - normal
+      - normal
     rarity_code: C

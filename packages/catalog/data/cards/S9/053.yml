@@ -7,9 +7,9 @@ name_en: Wormadam
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/336/Wormadam.S9.53.42591.png
-illustrator:
+illustrator: Lee HyunJung
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '42591'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ミノマダム
     variants_seen:
-    - normal
+      - normal
     rarity_code: RRR

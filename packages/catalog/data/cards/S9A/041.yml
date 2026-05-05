@@ -3,14 +3,14 @@
 set_code: s9a
 local_id: '041'
 name_ja: ヒポポタス
-name_en: Hipopotas
+name_en: Hippopotas
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/339/Hipopotas.S9A.41.43124.png
-illustrator:
+illustrator: nagimiso
 prints:
-- normal
-- poke_ball_mirror
+  - normal
+  - poke_ball_mirror
 sources:
   pokellector:
     id: '43124'
@@ -20,6 +20,6 @@ sources:
   cardrush:
     name_ja: ヒポポタス
     variants_seen:
-    - normal
-    - poke_ball_mirror
+      - normal
+      - poke_ball_mirror
     rarity_code: C

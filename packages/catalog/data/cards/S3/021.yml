@@ -7,9 +7,9 @@ name_en: Vanillite
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/293/Vanillite.S3.21.34874.png
-illustrator:
+illustrator: Sanosuke Sakuma
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '34874'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: バニプッチ
     variants_seen:
-    - normal
+      - normal
     rarity_code: R

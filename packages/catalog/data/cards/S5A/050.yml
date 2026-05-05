@@ -7,9 +7,9 @@ name_en: Venipede
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/308/Venipede.S5A.50.37897.png
-illustrator:
+illustrator: Oswaldo KATO
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '37897'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: フシデ
     variants_seen:
-    - normal
+      - normal
     rarity_code: C

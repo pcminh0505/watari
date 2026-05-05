@@ -7,9 +7,9 @@ name_en: Magmortar
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/357/Magmortar.S12A.17.45840.png
-illustrator:
+illustrator: AKIRA EGAWA
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '45840'

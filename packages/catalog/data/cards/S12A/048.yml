@@ -7,9 +7,9 @@ name_en: Gengar
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/357/Gengar.S12A.48.45864.png
-illustrator:
+illustrator: Uta
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '45864'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ゲンガー(R仕様)
     variants_seen:
-    - normal
+      - normal
     rarity_code: R

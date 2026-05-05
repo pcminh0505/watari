@@ -4,12 +4,12 @@ set_code: s1w
 local_id: '061'
 name_ja: Dhelmise V
 name_en: Dhelmise V
-rarity_code: UR
+rarity_code: SR
 category: card
 image: https://den-cards.pokellector.com/283/Dhelmise-V.S1W.61.31350.png
-illustrator:
+illustrator: Eske Yoshinob
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '31350'

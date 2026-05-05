@@ -7,10 +7,10 @@ name_en: Corphish
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/336/Corphish.S9.23.42566.png
-illustrator:
+illustrator: Sekio
 prints:
-- normal
-- poke_ball_mirror
+  - normal
+  - poke_ball_mirror
 sources:
   pokellector:
     id: '42566'
@@ -20,6 +20,6 @@ sources:
   cardrush:
     name_ja: ヘイガニ
     variants_seen:
-    - normal
-    - poke_ball_mirror
+      - normal
+      - poke_ball_mirror
     rarity_code: C

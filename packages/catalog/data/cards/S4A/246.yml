@@ -7,9 +7,9 @@ name_en: Galarian Ponyta
 rarity_code: S
 category: card
 image: https://den-cards.pokellector.com/301/Galarian-Ponyta.S4A.246.36547.png
-illustrator:
+illustrator: Sanosuke Sakuma
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '36547'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ガラルポニータ
     variants_seen:
-    - normal
+      - normal
     rarity_code: SR

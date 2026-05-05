@@ -7,9 +7,9 @@ name_en: Hisuian Samurott V
 rarity_code: RR
 category: card
 image: https://den-cards.pokellector.com/339/Hisuain-Samurott-V.S9A.52.43133.png
-illustrator:
+illustrator: Shin Nagasawa
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '43133'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ヒスイダイケンキV
     variants_seen:
-    - normal
+      - normal
     rarity_code: RR

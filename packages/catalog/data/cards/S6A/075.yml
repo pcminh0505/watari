@@ -7,9 +7,9 @@ name_en: Vaporeon V
 rarity_code: SR
 category: card
 image: https://den-cards.pokellector.com/322/Vaporeon-V.S6A.75.38951.png
-illustrator:
+illustrator: Tika Matsuno
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '38951'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: シャワーズV(SA)
     variants_seen:
-    - normal
+      - normal
     rarity_code: SR

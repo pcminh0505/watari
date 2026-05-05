@@ -3,13 +3,13 @@
 set_code: s8b
 local_id: '273'
 name_ja: マスタードれんげきのかた
-name_en: Mustard (Rapid Strike)
+name_en: Rapid Strike Style Mustard
 rarity_code: SR
 category: card
 image: https://den-cards.pokellector.com/338/Mustard-Rapid-Strike.S8B.273.41562.png
-illustrator:
+illustrator: KIYOTAKA OSHIYAMA
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '41562'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: マスタードれんげきのかた
     variants_seen:
-    - normal
+      - normal
     rarity_code: SR

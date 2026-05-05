@@ -4,12 +4,12 @@ set_code: s6a
 local_id: '041'
 name_ja: ニンフィアVMAX
 name_en: Sylveon VMAX
-rarity_code: C
+rarity_code: RRR
 category: card
 image: https://den-cards.pokellector.com/322/Sylveon-VMAX.S6A.41.38937.png
-illustrator:
+illustrator: Ryota Murayama
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '38937'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ニンフィアVMAX
     variants_seen:
-    - normal
+      - normal
     rarity_code: RRR

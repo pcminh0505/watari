@@ -3,13 +3,13 @@
 set_code: s4a
 local_id: '185'
 name_ja: ホラー超エネルギー
-name_en: Horror Energy
+name_en: Horror Psychic Energy
 rarity_code: C
 category: energy
 image: https://den-cards.pokellector.com/301/Horror-Energy.S4A.185.36467.png
 illustrator:
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '36467'

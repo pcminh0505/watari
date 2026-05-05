@@ -7,9 +7,9 @@ name_en: Espurr
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/306/Espurr.S5I.25.36784.png
-illustrator:
+illustrator: Saya Tsuruta
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '36784'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ニャスパー
     variants_seen:
-    - normal
+      - normal
     rarity_code: C

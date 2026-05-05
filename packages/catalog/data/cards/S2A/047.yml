@@ -7,9 +7,9 @@ name_en: Muk
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/295/Muk.S2A.47.34404.png
-illustrator:
+illustrator: Eri Yamaki
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '34404'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ベトベトン
     variants_seen:
-    - normal
+      - normal
     rarity_code: U

@@ -7,9 +7,9 @@ name_en: Fresh Water Set
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/336/Fresh-Water-Set.S9.88.42623.png
-illustrator:
+illustrator: AYUMI ODASHIMA
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '42623'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: シマボシ
     variants_seen:
-    - normal
+      - normal
     rarity_code: HR

@@ -7,9 +7,9 @@ name_en: Cryogonal
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/319/Cryogonal.S7R.24.39197.png
-illustrator:
+illustrator: Kagemaru Himeno
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '39197'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: フリージオ
     variants_seen:
-    - normal
+      - normal
     rarity_code: C

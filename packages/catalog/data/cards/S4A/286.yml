@@ -7,9 +7,9 @@ name_en: Galarian Perrserker
 rarity_code: S
 category: card
 image: https://den-cards.pokellector.com/301/Galarian-Perrserker.S4A.286.36489.png
-illustrator:
+illustrator: Ryuta Fuse
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '36489'

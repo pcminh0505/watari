@@ -7,9 +7,9 @@ name_en: Klara
 rarity_code: SR
 category: card
 image: https://den-cards.pokellector.com/308/Klara.S5A.82.37929.png
-illustrator:
+illustrator: Naoki Saito
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '37929'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: クララ
     variants_seen:
-    - normal
+      - normal
     rarity_code: SR

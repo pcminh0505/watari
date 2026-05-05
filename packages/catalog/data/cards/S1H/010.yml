@@ -7,9 +7,9 @@ name_en: Goldeen
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/284/Goldeen.S1H.10.31286.png
-illustrator:
+illustrator: Suwama Chiaki
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '31286'

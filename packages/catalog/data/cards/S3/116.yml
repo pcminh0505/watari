@@ -3,13 +3,13 @@
 set_code: s3
 local_id: '116'
 name_ja: ローズ
-name_en: Chairman Rose
+name_en: Rose
 rarity_code: HR
 category: card
 image: https://den-cards.pokellector.com/293/Chairman-Rose.S3.116.34964.png
-illustrator:
+illustrator: Naoki Saito
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '34964'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ローズ
     variants_seen:
-    - normal
+      - normal
     rarity_code: HR

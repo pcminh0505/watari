@@ -7,9 +7,9 @@ name_en: Dwebble
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/309/Dwebble.S6H.3.38683.png
-illustrator:
+illustrator: Shigenori Negishi
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '38683'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: イシズマイ
     variants_seen:
-    - normal
+      - normal
     rarity_code: C

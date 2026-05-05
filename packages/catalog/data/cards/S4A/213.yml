@@ -7,9 +7,9 @@ name_en: Appletun
 rarity_code: S
 category: card
 image: https://den-cards.pokellector.com/301/Appletun.S4A.213.36520.png
-illustrator:
+illustrator: Kouki Saitou
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '36520'

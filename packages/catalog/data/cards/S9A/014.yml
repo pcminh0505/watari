@@ -7,9 +7,9 @@ name_en: Chandelure
 rarity_code: R
 category: card
 image: https://den-cards.pokellector.com/339/Chandelure.S9A.14.42670.png
-illustrator:
+illustrator: sui
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '42670'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: シャンデラ
     variants_seen:
-    - normal
+      - normal
     rarity_code: R

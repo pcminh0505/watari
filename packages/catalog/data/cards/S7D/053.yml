@@ -7,9 +7,9 @@ name_en: Swablu
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/318/Swablu.S7D.53.38998.png
-illustrator:
+illustrator: Lee HyunJung
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '38998'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: チルット
     variants_seen:
-    - normal
+      - normal
     rarity_code: C

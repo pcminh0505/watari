@@ -7,10 +7,10 @@ name_en: Chimchar
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/336/Chimchar.S9.19.41610.png
-illustrator:
+illustrator: Shin Nagasawa
 prints:
-- normal
-- poke_ball_mirror
+  - normal
+  - poke_ball_mirror
 sources:
   pokellector:
     id: '41610'
@@ -20,6 +20,6 @@ sources:
   cardrush:
     name_ja: ヒコザル
     variants_seen:
-    - normal
-    - poke_ball_mirror
+      - normal
+      - poke_ball_mirror
     rarity_code: C

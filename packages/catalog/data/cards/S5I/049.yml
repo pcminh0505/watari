@@ -7,9 +7,9 @@ name_en: Bronzor
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/306/Bronzor.S5I.49.36802.png
-illustrator:
+illustrator: Mizue
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '36802'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ドーミラー
     variants_seen:
-    - normal
+      - normal
     rarity_code: C

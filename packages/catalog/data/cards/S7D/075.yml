@@ -7,9 +7,9 @@ name_en: Duraludon V
 rarity_code: SR
 category: card
 image: https://den-cards.pokellector.com/318/Duraludon-V.S7D.75.39537.png
-illustrator:
+illustrator: PLANETA Mochizuki
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '39537'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ジュラルドンV
     variants_seen:
-    - normal
+      - normal
     rarity_code: SR

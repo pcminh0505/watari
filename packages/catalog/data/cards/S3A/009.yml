@@ -7,9 +7,9 @@ name_en: Celebi
 rarity_code: RRR
 category: card
 image: https://den-cards.pokellector.com/294/Celebi.S3A.9.34978.png
-illustrator:
+illustrator: 5ban Graphics
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '34978'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: セレビィ
     variants_seen:
-    - normal
+      - normal
     rarity_code: C

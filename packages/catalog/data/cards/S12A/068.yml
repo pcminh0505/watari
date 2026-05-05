@@ -7,9 +7,9 @@ name_en: Enamorus V
 rarity_code: RR
 category: card
 image: https://den-cards.pokellector.com/357/Enamorus-V.S12A.68.45873.png
-illustrator:
+illustrator: 5ban Graphics
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '45873'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ラブトロスV
     variants_seen:
-    - normal
+      - normal
     rarity_code: RR

@@ -7,9 +7,9 @@ name_en: Swanna
 rarity_code: S
 category: card
 image: https://den-cards.pokellector.com/301/Swanna.S4A.295.36490.png
-illustrator:
+illustrator: Kagemaru Himeno
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '36490'

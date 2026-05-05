@@ -7,9 +7,9 @@ name_en: Marnie
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/338/Marnie.S8B.160.41398.png
-illustrator:
+illustrator: kirisAki
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '41398'

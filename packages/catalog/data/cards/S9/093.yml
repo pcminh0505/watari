@@ -3,13 +3,13 @@
 set_code: s9
 local_id: '093'
 name_ja: コトブキムラ
-name_en: Cynthia's Aspiration
+name_en: Cynthia's Ambition
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/336/Cynthias-Aspiration.S9.93.41605.png
-illustrator:
+illustrator: Megumi Mizutani
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '41605'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: コトブキムラ
     variants_seen:
-    - normal
+      - normal
     rarity_code: UR

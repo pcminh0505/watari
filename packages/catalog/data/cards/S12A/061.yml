@@ -7,9 +7,9 @@ name_en: Pumpkaboo
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/357/Pumpkaboo.S12A.61.45870.png
-illustrator:
+illustrator: Yuka Morii
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '45870'

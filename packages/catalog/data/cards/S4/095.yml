@@ -7,9 +7,9 @@ name_en: League Staff
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/297/League-Staff.S4.95.35646.png
-illustrator:
+illustrator: Emi Ando
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '35646'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: リーグスタッフ
     variants_seen:
-    - normal
+      - normal
     rarity_code: U

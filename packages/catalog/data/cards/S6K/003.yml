@@ -7,9 +7,9 @@ name_en: Celebi V
 rarity_code: RR
 category: card
 image: https://den-cards.pokellector.com/310/Celebi-V.S6K.3.38641.png
-illustrator:
+illustrator: AKIRA EGAWA
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '38641'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: セレビィV
     variants_seen:
-    - normal
+      - normal
     rarity_code: RR

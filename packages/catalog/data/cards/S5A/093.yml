@@ -7,9 +7,9 @@ name_en: Snorlax
 rarity_code: UR
 category: card
 image: https://den-cards.pokellector.com/308/Snorlax.S5A.93.37940.png
-illustrator:
+illustrator: Saki Hayashiro
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '37940'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: カビゴン
     variants_seen:
-    - normal
+      - normal
     rarity_code: UR

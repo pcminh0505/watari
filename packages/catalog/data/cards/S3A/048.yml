@@ -7,9 +7,9 @@ name_en: Metang
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/294/Metang.S3A.48.35051.png
-illustrator:
+illustrator: Kazuma Koda
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '35051'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: メタング
     variants_seen:
-    - normal
+      - normal
     rarity_code: C

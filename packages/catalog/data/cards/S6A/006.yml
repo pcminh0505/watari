@@ -7,9 +7,9 @@ name_en: Leavanny
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/322/Leavanny.S6A.6.38824.png
-illustrator:
+illustrator: kodama
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '38824'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ハハコモリ
     variants_seen:
-    - normal
+      - normal
     rarity_code: U

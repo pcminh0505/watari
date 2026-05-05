@@ -7,9 +7,9 @@ name_en: Galarian Darumaka
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/301/Galarian-Darumaka.S4A.37.36348.png
-illustrator:
+illustrator: Akira Komayama
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '36348'

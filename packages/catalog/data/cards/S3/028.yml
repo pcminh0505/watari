@@ -7,9 +7,9 @@ name_en: Dracovish
 rarity_code: R
 category: card
 image: https://den-cards.pokellector.com/293/Dracovish.S3.28.34879.png
-illustrator:
+illustrator: Hitoshi Ariga
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '34879'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: デデンネ
     variants_seen:
-    - normal
+      - normal
     rarity_code: R

@@ -7,9 +7,9 @@ name_en: Crabominable
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/310/Crabominable.S6K.41.38751.png
-illustrator:
+illustrator: Shigenori Negishi
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '38751'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ケケンカニ
     variants_seen:
-    - normal
+      - normal
     rarity_code: C

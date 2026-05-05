@@ -7,10 +7,10 @@ name_en: Barboach
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/339/Barboach.S9A.21.43106.png
-illustrator:
+illustrator: Mizue
 prints:
-- normal
-- poke_ball_mirror
+  - normal
+  - poke_ball_mirror
 sources:
   pokellector:
     id: '43106'
@@ -20,6 +20,6 @@ sources:
   cardrush:
     name_ja: ドジョッチ
     variants_seen:
-    - normal
-    - poke_ball_mirror
+      - normal
+      - poke_ball_mirror
     rarity_code: C

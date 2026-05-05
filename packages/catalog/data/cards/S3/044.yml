@@ -7,9 +7,9 @@ name_en: Trapinch
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/293/Trapinch.S3.44.34893.png
-illustrator:
+illustrator: Asako Ito
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '34893'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ナックラー
     variants_seen:
-    - normal
+      - normal
     rarity_code: C

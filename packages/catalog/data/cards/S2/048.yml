@@ -7,9 +7,9 @@ name_en: Alcremie
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/291/Alcremie.S2.48.31935.png
-illustrator:
+illustrator: Mizue
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '31935'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: マホイップ
     variants_seen:
-    - normal
+      - normal
     rarity_code: R

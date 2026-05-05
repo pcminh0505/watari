@@ -3,13 +3,13 @@
 set_code: s9a
 local_id: '026'
 name_ja: かがやくゲッコウガ
-name_en: Sparkling Greninja
-rarity_code: R
+name_en: Radiant Greninja
+rarity_code: K
 category: card
 image: https://den-cards.pokellector.com/339/Sparkling-Greninja.S9A.26.42673.png
-illustrator:
+illustrator: Souichirou Gunjima
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '42673'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: かがやくゲッコウガ
     variants_seen:
-    - normal
+      - normal
     rarity_code: K

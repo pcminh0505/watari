@@ -7,9 +7,9 @@ name_en: Galarian Yamask
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/301/Galarian-Yamask.S4A.92.36398.png
-illustrator:
+illustrator: Akira Komayama
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '36398'

@@ -7,9 +7,9 @@ name_en: Sonia
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/285/Sonia.S1A.65.31383.png
-illustrator:
+illustrator: Yusuke Ohmura
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '31383'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ソニア
     variants_seen:
-    - normal
+      - normal
     rarity_code: U

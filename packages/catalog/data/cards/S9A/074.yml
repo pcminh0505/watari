@@ -7,9 +7,9 @@ name_en: Virizion V
 rarity_code: SR
 category: card
 image: https://den-cards.pokellector.com/339/Virizion-V.S9A.74.43207.png
-illustrator:
+illustrator: Saki Hayashiro
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '43207'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ビリジオンV
     variants_seen:
-    - normal
+      - normal
     rarity_code: SR

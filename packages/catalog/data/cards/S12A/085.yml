@@ -7,9 +7,9 @@ name_en: Drapion V
 rarity_code: RR
 category: card
 image: https://den-cards.pokellector.com/357/Drapion-V.S12A.85.45887.png
-illustrator:
+illustrator: N-DESIGN Inc.
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '45887'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ドラピオンV
     variants_seen:
-    - normal
+      - normal
     rarity_code: RR

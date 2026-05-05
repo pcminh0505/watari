@@ -7,9 +7,9 @@ name_en: Steelix
 rarity_code: R
 category: card
 image: https://den-cards.pokellector.com/307/Steelix.S5R.52.36858.png
-illustrator:
+illustrator: NC Empire
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '36858'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ハガネール
     variants_seen:
-    - normal
+      - normal
     rarity_code: R

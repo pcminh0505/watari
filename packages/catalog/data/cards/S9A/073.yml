@@ -7,9 +7,9 @@ name_en: Hoothoot
 rarity_code: CHR
 category: card
 image: https://den-cards.pokellector.com/339/Hoothoot.S9A.73.43206.png
-illustrator:
+illustrator: HYOGONOSUKE
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '43206'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ホーホー
     variants_seen:
-    - normal
+      - normal
     rarity_code: CHR

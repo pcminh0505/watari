@@ -7,9 +7,9 @@ name_en: Sneasel
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/310/Sneasel.S6K.11.38732.png
-illustrator:
+illustrator: NC Empire
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '38732'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ニューラ
     variants_seen:
-    - normal
+      - normal
     rarity_code: C

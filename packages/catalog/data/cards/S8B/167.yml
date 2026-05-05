@@ -7,9 +7,9 @@ name_en: Path to the Peak
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/338/Path-to-the-Peak.S8B.167.40538.png
-illustrator:
+illustrator: Oswaldo KATO
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '40538'

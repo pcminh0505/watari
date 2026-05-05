@@ -7,9 +7,9 @@ name_en: Salazzle
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/283/Salazzle.S1W.9.31228.png
-illustrator:
+illustrator: Tomokazu Komiya
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '31228'

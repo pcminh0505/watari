@@ -7,9 +7,9 @@ name_en: Machoke
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/297/Machoke.S4.54.35618.png
-illustrator:
+illustrator: AKIRA EGAWA
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '35618'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ゴーリキー
     variants_seen:
-    - normal
+      - normal
     rarity_code: U

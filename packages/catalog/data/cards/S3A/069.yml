@@ -7,9 +7,9 @@ name_en: Rocky Helmet
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/294/Rocky-Helmet.S3A.69.35067.png
-illustrator:
+illustrator: Studio Bora Inc.
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '35067'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ゴツゴツメット
     variants_seen:
-    - normal
+      - normal
     rarity_code: U

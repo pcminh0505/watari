@@ -7,10 +7,10 @@ name_en: Lapras
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/336/Lapras.S9.22.42565.png
-illustrator:
+illustrator: Teeziro
 prints:
-- normal
-- poke_ball_mirror
+  - normal
+  - poke_ball_mirror
 sources:
   pokellector:
     id: '42565'
@@ -20,6 +20,6 @@ sources:
   cardrush:
     name_ja: ラプラス
     variants_seen:
-    - normal
-    - poke_ball_mirror
+      - normal
+      - poke_ball_mirror
     rarity_code: U

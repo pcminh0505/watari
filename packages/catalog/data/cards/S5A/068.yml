@@ -7,9 +7,9 @@ name_en: Avery
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/308/Avery.S5A.68.37911.png
-illustrator:
+illustrator: Ken Sugimori
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '37911'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: セイボリー
     variants_seen:
-    - normal
+      - normal
     rarity_code: U

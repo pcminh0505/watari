@@ -7,9 +7,9 @@ name_en: Level Ball
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/338/Level-Ball.S8B.141.40536.png
-illustrator:
+illustrator: Ryo Ueda
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '40536'

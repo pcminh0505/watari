@@ -7,9 +7,9 @@ name_en: Centiskorch
 rarity_code: S
 category: card
 image: https://den-cards.pokellector.com/301/Centiskorch.S4A.218.36524.png
-illustrator:
+illustrator: SATOSHI NAKAI
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '36524'

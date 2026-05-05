@@ -7,9 +7,9 @@ name_en: Garchomp V
 rarity_code: CSR
 category: card
 image: https://den-cards.pokellector.com/339/Garchomp-V.S9A.84.42878.png
-illustrator:
+illustrator: Taira Akitsu
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '42878'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ガブリアスV
     variants_seen:
-    - normal
+      - normal
     rarity_code: CSR

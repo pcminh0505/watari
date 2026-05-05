@@ -7,9 +7,9 @@ name_en: Swoobat
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/308/Swoobat.S5A.27.37879.png
-illustrator:
+illustrator: nagimiso
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '37879'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ココロモリ
     variants_seen:
-    - normal
+      - normal
     rarity_code: U

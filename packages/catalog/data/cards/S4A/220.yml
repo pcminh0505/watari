@@ -3,13 +3,13 @@
 set_code: s4a
 local_id: '220'
 name_ja: ガラルバリコオル
-name_en: Galarian Mr Rime
+name_en: Galarian Mr. Rime
 rarity_code: S
 category: card
 image: https://den-cards.pokellector.com/301/Galarian-Mr-Rime.S4A.220.36485.png
-illustrator:
+illustrator: Hideki Ishikawa
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '36485'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ガラルバリコオル
     variants_seen:
-    - normal
+      - normal
     rarity_code: SR

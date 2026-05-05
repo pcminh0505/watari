@@ -7,9 +7,9 @@ name_en: Zeraora V
 rarity_code: RR
 category: card
 image: https://den-cards.pokellector.com/357/Zeraora-V.S12A.40.45857.png
-illustrator:
+illustrator: 5ban Graphics
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '45857'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ゼラオラV
     variants_seen:
-    - normal
+      - normal
     rarity_code: RR

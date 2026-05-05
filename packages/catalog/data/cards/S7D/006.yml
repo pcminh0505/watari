@@ -7,9 +7,9 @@ name_en: Simipour
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/318/Simipour.S7D.6.39443.png
-illustrator:
+illustrator: Shin Nagasawa
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '39443'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ヒヤッキー
     variants_seen:
-    - normal
+      - normal
     rarity_code: C

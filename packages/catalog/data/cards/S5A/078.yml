@@ -7,9 +7,9 @@ name_en: Galarian Moltres V
 rarity_code: SR
 category: card
 image: https://den-cards.pokellector.com/308/Galarian-Moltres-V.S5A.78.37915.png
-illustrator:
+illustrator: Shibuzoh.
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '37915'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ガラルファイヤーV(SA)
     variants_seen:
-    - normal
+      - normal
     rarity_code: SR

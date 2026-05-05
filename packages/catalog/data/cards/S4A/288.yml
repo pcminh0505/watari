@@ -7,9 +7,9 @@ name_en: Corviknight
 rarity_code: S
 category: card
 image: https://den-cards.pokellector.com/301/Corviknight.S4A.288.36584.png
-illustrator:
+illustrator: kirisAki
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '36584'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: アーマーガア
     variants_seen:
-    - normal
+      - normal
     rarity_code: SR

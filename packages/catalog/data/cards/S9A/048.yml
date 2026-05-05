@@ -7,10 +7,10 @@ name_en: Hisuian Overqwil
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/339/Hisuian-Overqwil.S9A.48.43129.png
-illustrator:
+illustrator: AKIRA EGAWA
 prints:
-- normal
-- poke_ball_mirror
+  - normal
+  - poke_ball_mirror
 sources:
   pokellector:
     id: '43129'
@@ -20,6 +20,6 @@ sources:
   cardrush:
     name_ja: ヒスイハリーマン
     variants_seen:
-    - normal
-    - poke_ball_mirror
+      - normal
+      - poke_ball_mirror
     rarity_code: U

@@ -7,9 +7,9 @@ name_en: Professor Burnet
 rarity_code: SR
 category: card
 image: https://den-cards.pokellector.com/338/Professor-Burnet.S8B.265.41554.png
-illustrator:
+illustrator: kirisAki
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '41554'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: バーネット博士
     variants_seen:
-    - normal
+      - normal
     rarity_code: SR

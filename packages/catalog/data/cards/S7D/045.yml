@@ -7,9 +7,9 @@ name_en: Kyurem
 rarity_code: R
 category: card
 image: https://den-cards.pokellector.com/318/Kyurem.S7D.45.39216.png
-illustrator:
+illustrator: Souichirou Gunjima
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '39216'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: キュレム
     variants_seen:
-    - normal
+      - normal
     rarity_code: R

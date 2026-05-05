@@ -7,9 +7,9 @@ name_en: Hydreigon
 rarity_code: R
 category: card
 image: https://den-cards.pokellector.com/318/Hydreigon.S7D.44.38999.png
-illustrator:
+illustrator: hatachu
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '38999'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: サザンドラ
     variants_seen:
-    - normal
+      - normal
     rarity_code: R

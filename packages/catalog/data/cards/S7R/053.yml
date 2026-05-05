@@ -7,9 +7,9 @@ name_en: Chansey
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/319/Chansey.S7R.53.39218.png
-illustrator:
+illustrator: miki kudo
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '39218'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ラッキー
     variants_seen:
-    - normal
+      - normal
     rarity_code: C

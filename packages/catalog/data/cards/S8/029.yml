@@ -7,9 +7,9 @@ name_en: Frosmoth
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/326/Frosmoth.S8.29.40437.png
-illustrator:
+illustrator: chibi
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '40437'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: 博士の研究/オーキド博士(25th)
     variants_seen:
-    - normal
+      - normal
     rarity_code: SR

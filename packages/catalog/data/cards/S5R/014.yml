@@ -7,9 +7,9 @@ name_en: Heatmor
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/307/Heatmor.S5R.14.36825.png
-illustrator:
+illustrator: Miki Tanaka
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '36825'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: クイタラン
     variants_seen:
-    - normal
+      - normal
     rarity_code: C

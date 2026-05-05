@@ -7,9 +7,9 @@ name_en: Kricketot
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/357/Kricketot.S12A.9.45835.png
-illustrator:
+illustrator: Masakazu Fukuda
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '45835'

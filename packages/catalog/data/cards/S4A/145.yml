@@ -7,9 +7,9 @@ name_en: Swanna
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/301/Swanna.S4A.145.36438.png
-illustrator:
+illustrator: Taira Akitsu
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '36438'

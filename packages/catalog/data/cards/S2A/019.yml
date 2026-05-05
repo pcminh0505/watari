@@ -7,9 +7,9 @@ name_en: Galarian Mr. Rime
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/295/Galarian-Mr-Rime.S2A.19.34365.png
-illustrator:
+illustrator: Naoki Saito
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '34365'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ガラルバリコオル(シャッフルダンス)
     variants_seen:
-    - normal
+      - normal
     rarity_code: U

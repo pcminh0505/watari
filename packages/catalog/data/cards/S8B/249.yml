@@ -7,9 +7,9 @@ name_en: Corviknight VMAX
 rarity_code: CSR
 category: card
 image: https://den-cards.pokellector.com/338/Corviknight-VMAX.S8B.249.41541.png
-illustrator:
+illustrator: Shigenori Negishi
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '41541'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: アーマーガアVMAX
     variants_seen:
-    - normal
+      - normal
     rarity_code: CSR

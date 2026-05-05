@@ -7,9 +7,9 @@ name_en: Milotic
 rarity_code: R
 category: card
 image: https://den-cards.pokellector.com/295/Milotic.S2A.21.34384.png
-illustrator:
+illustrator: AKIRA EGAWA
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '34384'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ミロカロス
     variants_seen:
-    - normal
+      - normal
     rarity_code: R

@@ -7,9 +7,9 @@ name_en: Skuntank
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/285/Skuntank.S1A.49.31850.png
-illustrator:
+illustrator: sowsow
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '31850'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: スカタンク
     variants_seen:
-    - normal
+      - normal
     rarity_code: U

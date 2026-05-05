@@ -3,13 +3,13 @@
 set_code: s1w
 local_id: '070'
 name_ja: Sonjourner VMAX
-name_en: Sonjourner VMAX
-rarity_code: UR
+name_en: Stonjourner VMAX
+rarity_code: HR
 category: card
 image: https://den-cards.pokellector.com/283/Sonjourner-VMAX.S1W.70.31373.png
-illustrator:
+illustrator: 5ban Graphics
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '31373'

@@ -7,9 +7,9 @@ name_en: Regieleki
 rarity_code: R
 category: card
 image: https://den-cards.pokellector.com/319/Regieleki.S7R.33.39486.png
-illustrator:
+illustrator: Shin Nagasawa
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '39486'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: レジエレキ
     variants_seen:
-    - normal
+      - normal
     rarity_code: R

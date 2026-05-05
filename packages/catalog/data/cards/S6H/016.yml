@@ -7,9 +7,9 @@ name_en: Raboot
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/309/Raboot.S6H.16.38663.png
-illustrator:
+illustrator: Souichirou Gunjima
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '38663'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ラビフット
     variants_seen:
-    - normal
+      - normal
     rarity_code: U

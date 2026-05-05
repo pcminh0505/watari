@@ -7,9 +7,9 @@ name_en: Cross Switcher
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/326/Cross-Switcher.S8.90.40475.png
-illustrator:
+illustrator: inose yukie
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '40475'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: クロススイッチャー
     variants_seen:
-    - normal
+      - normal
     rarity_code: U

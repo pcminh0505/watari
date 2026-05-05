@@ -7,9 +7,9 @@ name_en: Grimmsnarl
 rarity_code: R
 category: card
 image: https://den-cards.pokellector.com/322/Grimmsnarl.S6A.54.38839.png
-illustrator:
+illustrator: kawayoo
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '38839'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: オーロンゲ
     variants_seen:
-    - normal
+      - normal
     rarity_code: R

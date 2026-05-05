@@ -7,9 +7,9 @@ name_en: Porygon
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/309/Porygon.S6H.52.38717.png
-illustrator:
+illustrator: ryoma uratsuka
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '38717'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ポリゴン
     variants_seen:
-    - normal
+      - normal
     rarity_code: C

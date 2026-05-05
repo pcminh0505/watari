@@ -7,9 +7,9 @@ name_en: Flapple
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/319/Flapple.S7R.50.38989.png
-illustrator:
+illustrator: Anesaki Dynamic
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '38989'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: アップリュー
     variants_seen:
-    - normal
+      - normal
     rarity_code: U

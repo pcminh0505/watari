@@ -7,9 +7,9 @@ name_en: Castform Snowy Form
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/309/Castform-Snowy-Form.S6H.19.37859.png
-illustrator:
+illustrator: miki kudo
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '37859'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ポワルンゆきぐものすがた
     variants_seen:
-    - normal
+      - normal
     rarity_code: C

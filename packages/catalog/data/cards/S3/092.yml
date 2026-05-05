@@ -3,13 +3,13 @@
 set_code: s3
 local_id: '092'
 name_ja: ヤレユータン
-name_en: Toughness Cloak
+name_en: Cape of Toughness
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/293/Toughness-Cloak.S3.92.34925.png
-illustrator:
+illustrator: inose yukie
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '34925'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ヤレユータン
     variants_seen:
-    - normal
+      - normal
     rarity_code: UR

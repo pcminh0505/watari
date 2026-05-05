@@ -7,9 +7,9 @@ name_en: Orbeetle
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/284/Orbeetle.S1H.3.31280.png
-illustrator:
+illustrator: Hitoshi Ariga
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '31280'

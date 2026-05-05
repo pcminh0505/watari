@@ -7,9 +7,9 @@ name_en: Buizel
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/336/Buizel.S9.28.42568.png
-illustrator:
+illustrator: Tika Matsuno
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '42568'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ブイゼル
     variants_seen:
-    - normal
+      - normal
     rarity_code: RR

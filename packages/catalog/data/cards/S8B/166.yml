@@ -7,9 +7,9 @@ name_en: Tower of Darkness
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/338/Tower-of-Darkness.S8B.166.41403.png
-illustrator:
+illustrator: 5ban Graphics
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '41403'

@@ -7,9 +7,9 @@ name_en: Gardevoir
 rarity_code: CHR
 category: card
 image: https://den-cards.pokellector.com/338/Gardevoir.S8B.196.40522.png
-illustrator:
+illustrator: Sanosuke Sakuma
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '40522'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: サーナイト
     variants_seen:
-    - normal
+      - normal
     rarity_code: CHR

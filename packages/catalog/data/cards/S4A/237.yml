@@ -7,9 +7,9 @@ name_en: Rotom
 rarity_code: S
 category: card
 image: https://den-cards.pokellector.com/301/Rotom.S4A.237.36144.png
-illustrator:
+illustrator: kirisAki
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '36144'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ロトム
     variants_seen:
-    - normal
+      - normal
     rarity_code: SR

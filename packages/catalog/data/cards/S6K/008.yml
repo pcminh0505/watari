@@ -7,9 +7,9 @@ name_en: Rillaboom
 rarity_code: R
 category: card
 image: https://den-cards.pokellector.com/310/Rillaboom.S6K.8.38632.png
-illustrator:
+illustrator: Hitoshi Ariga
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '38632'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ゴリランダー
     variants_seen:
-    - normal
+      - normal
     rarity_code: R

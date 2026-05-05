@@ -7,9 +7,9 @@ name_en: Dragapult
 rarity_code: R
 category: card
 image: https://den-cards.pokellector.com/326/Dragapult.S8.51.39845.png
-illustrator:
+illustrator: Souichirou Gunjima
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '39845'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ドラパルト
     variants_seen:
-    - normal
+      - normal
     rarity_code: R

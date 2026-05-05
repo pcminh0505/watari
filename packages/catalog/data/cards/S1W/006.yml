@@ -7,9 +7,9 @@ name_en: Thwackey
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/283/Thwackey.S1W.6.31226.png
-illustrator:
+illustrator: Megumi Mizutani
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '31226'

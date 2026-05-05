@@ -7,9 +7,9 @@ name_en: Suicune
 rarity_code: R
 category: card
 image: https://den-cards.pokellector.com/293/Suicune.S3.16.34871.png
-illustrator:
+illustrator: so-taro
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '34871'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ラクライ
     variants_seen:
-    - normal
+      - normal
     rarity_code: R

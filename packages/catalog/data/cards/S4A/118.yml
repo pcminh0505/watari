@@ -7,9 +7,9 @@ name_en: Hoopa
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/301/Hoopa.S4A.118.36420.png
-illustrator:
+illustrator: so-taro
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '36420'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: フーパ(R仕様)
     variants_seen:
-    - normal
+      - normal
     rarity_code: R

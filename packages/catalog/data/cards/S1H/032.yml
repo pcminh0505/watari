@@ -7,9 +7,9 @@ name_en: Sandaconda
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/284/Sandaconda.S1H.32.31307.png
-illustrator:
+illustrator: Kouki Saitou
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '31307'

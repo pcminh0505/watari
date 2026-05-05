@@ -7,9 +7,9 @@ name_en: Skyla
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/285/Skyla.S1A.66.31862.png
-illustrator:
+illustrator: Hideki Ishikawa
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '31862'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: フウロ
     variants_seen:
-    - normal
+      - normal
     rarity_code: U

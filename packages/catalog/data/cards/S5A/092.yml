@@ -7,9 +7,9 @@ name_en: Brawly
 rarity_code: HR
 category: card
 image: https://den-cards.pokellector.com/308/Brawly.S5A.92.37939.png
-illustrator:
+illustrator: Sanosuke Sakuma
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '37939'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: トウキ
     variants_seen:
-    - normal
+      - normal
     rarity_code: HR

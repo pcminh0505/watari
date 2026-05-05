@@ -7,9 +7,9 @@ name_en: Passimian
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/338/Passimian.S8B.88.41264.png
-illustrator:
+illustrator: Teeziro
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '41264'

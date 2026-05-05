@@ -7,9 +7,9 @@ name_en: Vaporeon
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/297/Vaporeon.S4.17.35583.png
-illustrator:
+illustrator: kodama
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '35583'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: シャワーズ
     variants_seen:
-    - normal
+      - normal
     rarity_code: U

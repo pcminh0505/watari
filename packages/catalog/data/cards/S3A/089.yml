@@ -7,9 +7,9 @@ name_en: Beauty
 rarity_code: HR
 category: card
 image: https://den-cards.pokellector.com/294/Beauty.S3A.89.35086.png
-illustrator:
+illustrator: kirisAki
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '35086'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: おとなのおねえさん
     variants_seen:
-    - normal
+      - normal
     rarity_code: HR

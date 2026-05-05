@@ -3,13 +3,13 @@
 set_code: s8b
 local_id: '268'
 name_ja: ボスの指令/フラダリ
-name_en: Boss's Orders (Lysandre)
+name_en: Boss's Orders
 rarity_code: SR
 category: card
 image: https://den-cards.pokellector.com/338/Bosss-Orders-Lysandre.S8B.268.41557.png
-illustrator:
+illustrator: NC Empire
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '41557'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ボスの指令/フラダリ
     variants_seen:
-    - normal
+      - normal
     rarity_code: SR

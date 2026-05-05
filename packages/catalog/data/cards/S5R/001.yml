@@ -7,9 +7,9 @@ name_en: Bellsprout
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/307/Bellsprout.S5R.1.36816.png
-illustrator:
+illustrator: Sekio
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '36816'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: マダツボミ
     variants_seen:
-    - normal
+      - normal
     rarity_code: C

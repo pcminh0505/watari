@@ -4,12 +4,12 @@ set_code: s1h
 local_id: '067'
 name_ja: チームのエールイサキ
 name_en: Team Yell Grunt
-rarity_code: UR
+rarity_code: SR
 category: card
 image: https://den-cards.pokellector.com/284/Team-Yell-Grunt.S1H.67.31359.png
-illustrator:
+illustrator: nagimiso
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '31359'

@@ -7,9 +7,9 @@ name_en: Floette
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/322/Floette.S6A.38.38844.png
-illustrator:
+illustrator: chibi
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '38844'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: フラエッテ
     variants_seen:
-    - normal
+      - normal
     rarity_code: U

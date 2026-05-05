@@ -7,9 +7,9 @@ name_en: Grapploct V
 rarity_code: SR
 category: card
 image: https://den-cards.pokellector.com/295/Grapploct-V.S2A.75.34612.png
-illustrator:
+illustrator: PLANETA Igarashi
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '34612'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: オトスパスV
     variants_seen:
-    - normal
+      - normal
     rarity_code: SR

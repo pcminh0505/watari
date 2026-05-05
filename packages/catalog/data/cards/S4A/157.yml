@@ -7,9 +7,9 @@ name_en: Scoop Up Net
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/301/Scoop-Up-Net.S4A.157.35887.png
-illustrator:
+illustrator: Ryo Ueda
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '35887'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: 回収ネット
     variants_seen:
-    - normal
+      - normal
     rarity_code: C

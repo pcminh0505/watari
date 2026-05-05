@@ -7,9 +7,9 @@ name_en: Hawlucha
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/285/Hawlucha.S1A.61.31425.png
-illustrator:
+illustrator: tetsuya koizumi
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '31425'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ルチャブル
     variants_seen:
-    - normal
+      - normal
     rarity_code: C

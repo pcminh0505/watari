@@ -7,9 +7,9 @@ name_en: Zapdos
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/338/Zapdos.S8B.50.41321.png
-illustrator:
+illustrator: AKIRA EGAWA
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '41321'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: サンダー(R仕様)
     variants_seen:
-    - normal
+      - normal
     rarity_code: R

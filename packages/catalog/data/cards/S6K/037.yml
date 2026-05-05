@@ -7,9 +7,9 @@ name_en: Shadow Rider Calyrex VMAX
 rarity_code: RRR
 category: card
 image: https://den-cards.pokellector.com/310/Shadow-Rider-Calyrex-VMAX.S6K.37.38639.png
-illustrator:
+illustrator: 5ban Graphics
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '38639'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: こくばバドレックスVMAX
     variants_seen:
-    - normal
+      - normal
     rarity_code: RRR

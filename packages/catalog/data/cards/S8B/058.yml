@@ -4,12 +4,12 @@ set_code: s8b
 local_id: '058'
 name_ja: ラルトス
 name_en: Morpeko V-UNION
-rarity_code: C
+rarity_code: RRR
 category: card
 image: https://den-cards.pokellector.com/338/Morpeko-V-UNION.S8B.58.41251.png
-illustrator:
+illustrator: Mitsuhiro Arita
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '41251'

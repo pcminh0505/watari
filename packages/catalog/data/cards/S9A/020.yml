@@ -7,10 +7,10 @@ name_en: Mamoswine
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/339/Mamoswine.S9A.20.43105.png
-illustrator:
+illustrator: Uta
 prints:
-- normal
-- poke_ball_mirror
+  - normal
+  - poke_ball_mirror
 sources:
   pokellector:
     id: '43105'
@@ -20,6 +20,6 @@ sources:
   cardrush:
     name_ja: マンムー
     variants_seen:
-    - normal
-    - poke_ball_mirror
+      - normal
+      - poke_ball_mirror
     rarity_code: U

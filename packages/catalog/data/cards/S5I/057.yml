@@ -7,9 +7,9 @@ name_en: Lickitung
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/306/Lickitung.S5I.57.36809.png
-illustrator:
+illustrator: HYOGONOSUKE
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '36809'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ベロリンガ
     variants_seen:
-    - normal
+      - normal
     rarity_code: C

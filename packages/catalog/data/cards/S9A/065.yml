@@ -7,10 +7,10 @@ name_en: Roxanne
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/339/Roxanne.S9A.65.43142.png
-illustrator:
+illustrator: Megumi Mizutani
 prints:
-- normal
-- poke_ball_mirror
+  - normal
+  - poke_ball_mirror
 sources:
   pokellector:
     id: '43142'
@@ -20,6 +20,6 @@ sources:
   cardrush:
     name_ja: ツツジ
     variants_seen:
-    - normal
-    - poke_ball_mirror
+      - normal
+      - poke_ball_mirror
     rarity_code: U

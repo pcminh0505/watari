@@ -7,9 +7,9 @@ name_en: Inteleon VMAX
 rarity_code: HR
 category: card
 image: https://den-cards.pokellector.com/285/Inteleon-VMAX.S1A.81.31994.png
-illustrator:
+illustrator: 5ban Graphics
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '31994'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: インテレオンVMAX
     variants_seen:
-    - normal
+      - normal
     rarity_code: HR

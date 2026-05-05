@@ -7,9 +7,9 @@ name_en: Galarian Mr. Mime
 rarity_code: S
 category: card
 image: https://den-cards.pokellector.com/301/Galarian-Mr-Mime.S4A.219.36525.png
-illustrator:
+illustrator: Masakazu Fukuda
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '36525'

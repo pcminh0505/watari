@@ -3,13 +3,13 @@
 set_code: s1w
 local_id: '056'
 name_ja: 大きなおまもり
-name_en: Giant Charm
+name_en: Big Charm
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/283/Giant-Charm.S1W.56.31269.png
-illustrator:
+illustrator: inose yukie
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '31269'

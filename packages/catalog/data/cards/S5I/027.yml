@@ -7,9 +7,9 @@ name_en: Mimikyu V
 rarity_code: RR
 category: card
 image: https://den-cards.pokellector.com/306/Mimikyu-V.S5I.27.36717.png
-illustrator:
+illustrator: Eske Yoshinob
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '36717'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ミミッキュV
     variants_seen:
-    - normal
+      - normal
     rarity_code: RR

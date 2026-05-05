@@ -7,9 +7,9 @@ name_en: Roggenrola
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/308/Roggenrola.S5A.38.37889.png
-illustrator:
+illustrator: Tomokazu Komiya
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '37889'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ダンゴロ
     variants_seen:
-    - normal
+      - normal
     rarity_code: C

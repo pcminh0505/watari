@@ -7,9 +7,9 @@ name_en: Gyarados VMAX
 rarity_code: HR
 category: card
 image: https://den-cards.pokellector.com/319/Gyarados-VMAX.S7R.81.39566.png
-illustrator:
+illustrator: Shin Nagasawa
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '39566'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ギャラドスVMAX
     variants_seen:
-    - normal
+      - normal
     rarity_code: HR

@@ -7,9 +7,9 @@ name_en: Sigilyph
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/338/Sigilyph.S8B.70.41333.png
-illustrator:
+illustrator: Naoyo Kimura
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '41333'

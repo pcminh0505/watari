@@ -7,9 +7,9 @@ name_en: Rolycoly
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/301/Rolycoly.S4A.94.36400.png
-illustrator:
+illustrator: Misa Tsutsui
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '36400'

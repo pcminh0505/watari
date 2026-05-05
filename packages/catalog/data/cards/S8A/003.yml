@@ -7,9 +7,9 @@ name_en: Professor's Research
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/327/Professorss-Research.S8A.3.39863.png
-illustrator:
+illustrator: KIYOTAKA OSHIYAMA
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '39863'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ピカチュウ
     variants_seen:
-    - normal
+      - normal
     rarity_code: C

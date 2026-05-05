@@ -7,9 +7,9 @@ name_en: Snubbull
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/295/Snubbull.S2A.28.34391.png
-illustrator:
+illustrator: otumami
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '34391'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ブルー
     variants_seen:
-    - normal
+      - normal
     rarity_code: C

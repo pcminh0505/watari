@@ -7,9 +7,9 @@ name_en: Bruno
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/306/Bruno.S5I.66.36815.png
-illustrator:
+illustrator: Ken Sugimori
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '36815'

@@ -7,9 +7,9 @@ name_en: Mew
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/327/Mew.S8A.2.39422.png
-illustrator:
+illustrator: Yuu Nishida
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '39422'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ミュウ(25thミラー)
     variants_seen:
-    - normal
+      - normal
     rarity_code: C

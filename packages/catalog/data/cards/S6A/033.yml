@@ -7,9 +7,9 @@ name_en: Eelektrik
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/322/Eelektrik.S6A.33.38934.png
-illustrator:
+illustrator: Shigenori Negishi
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '38934'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: シビビール
     variants_seen:
-    - normal
+      - normal
     rarity_code: C

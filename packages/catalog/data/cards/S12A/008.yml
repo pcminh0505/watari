@@ -7,9 +7,9 @@ name_en: Torterra
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/357/Torterra.S12A.8.45834.png
-illustrator:
+illustrator: Oswaldo KATO
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '45834'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ドダイトス(R仕様)
     variants_seen:
-    - normal
+      - normal
     rarity_code: R

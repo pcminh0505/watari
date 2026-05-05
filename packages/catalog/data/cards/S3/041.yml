@@ -7,9 +7,9 @@ name_en: Golurk
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/293/Golurk.S3.41.34891.png
-illustrator:
+illustrator: Anesaki Dynamic
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '34891'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ルガルガン
     variants_seen:
-    - normal
+      - normal
     rarity_code: U

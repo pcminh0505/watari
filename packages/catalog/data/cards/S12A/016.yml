@@ -7,9 +7,9 @@ name_en: Magmar
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/357/Magmar.S12A.16.45839.png
-illustrator:
+illustrator: Shinji Kanda
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '45839'

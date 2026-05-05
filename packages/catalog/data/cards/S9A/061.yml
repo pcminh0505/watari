@@ -7,10 +7,10 @@ name_en: Wait and See Turbo
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/339/Wait-and-See-Turbo.S9A.61.43139.png
-illustrator:
+illustrator: sadaji
 prints:
-- normal
-- poke_ball_mirror
+  - normal
+  - poke_ball_mirror
 sources:
   pokellector:
     id: '43139'
@@ -20,6 +20,6 @@ sources:
   cardrush:
     name_ja: あとだしターボ
     variants_seen:
-    - normal
-    - poke_ball_mirror
+      - normal
+      - poke_ball_mirror
     rarity_code: U

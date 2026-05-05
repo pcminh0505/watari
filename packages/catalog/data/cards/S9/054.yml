@@ -7,9 +7,9 @@ name_en: Riolu
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/336/Riolu.S9.54.42592.png
-illustrator:
+illustrator: Teeziro
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '42592'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: リオル
     variants_seen:
-    - normal
+      - normal
     rarity_code: RR

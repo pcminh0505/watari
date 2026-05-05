@@ -7,9 +7,9 @@ name_en: Charizard V
 rarity_code: RR
 category: card
 image: https://den-cards.pokellector.com/357/Charizard-V.S12A.13.45313.png
-illustrator:
+illustrator: N-DESIGN Inc.
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '45313'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: リザードンV
     variants_seen:
-    - normal
+      - normal
     rarity_code: RR

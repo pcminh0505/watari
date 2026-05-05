@@ -7,9 +7,9 @@ name_en: Impidimp
 rarity_code: S
 category: card
 image: https://den-cards.pokellector.com/301/Impidimp.S4A.282.36579.png
-illustrator:
+illustrator: Misa Tsutsui
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '36579'

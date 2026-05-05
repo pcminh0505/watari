@@ -7,10 +7,10 @@ name_en: Relicanth
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/339/Relicanth.S9A.40.43123.png
-illustrator:
+illustrator: ryoma uratsuka
 prints:
-- normal
-- poke_ball_mirror
+  - normal
+  - poke_ball_mirror
 sources:
   pokellector:
     id: '43123'
@@ -20,6 +20,6 @@ sources:
   cardrush:
     name_ja: ジーランス
     variants_seen:
-    - normal
-    - poke_ball_mirror
+      - normal
+      - poke_ball_mirror
     rarity_code: U

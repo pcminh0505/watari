@@ -7,9 +7,9 @@ name_en: Phoebe
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/306/Phoebe.S5I.67.36720.png
-illustrator:
+illustrator: GAME FREAK inc.
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '36720'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: フヨウ
     variants_seen:
-    - normal
+      - normal
     rarity_code: U

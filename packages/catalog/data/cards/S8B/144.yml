@@ -3,13 +3,13 @@
 set_code: s8b
 local_id: '144'
 name_ja: ハンターグローブ
-name_en: Hunter Gloves
+name_en: Hunting Gloves
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/338/Hunter-Gloves.S8B.144.41268.png
-illustrator:
+illustrator: Toyste Beach
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '41268'

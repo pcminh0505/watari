@@ -3,13 +3,13 @@
 set_code: s8b
 local_id: '148'
 name_ja: アセロラの予感
-name_en: Acerola's Intuition
+name_en: Acerola's Premonition
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/338/Acerolas-Intuition.S8B.148.41244.png
-illustrator:
+illustrator: Shiburingaru
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '41244'

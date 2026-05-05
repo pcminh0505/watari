@@ -7,9 +7,9 @@ name_en: Kangaskhan
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/322/Kangaskhan.S6A.57.38847.png
-illustrator:
+illustrator: Souichirou Gunjima
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '38847'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ガルーラ
     variants_seen:
-    - normal
+      - normal
     rarity_code: U

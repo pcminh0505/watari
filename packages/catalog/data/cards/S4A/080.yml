@@ -7,9 +7,9 @@ name_en: Hatterene
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/301/Hatterene.S4A.80.36388.png
-illustrator:
+illustrator: Kagemaru Himeno
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '36388'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ブリムオン(R仕様)
     variants_seen:
-    - normal
+      - normal
     rarity_code: R

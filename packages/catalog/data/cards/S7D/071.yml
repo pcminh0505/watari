@@ -7,9 +7,9 @@ name_en: Lycanroc V
 rarity_code: SR
 category: card
 image: https://den-cards.pokellector.com/318/Lycanroc-V.S7D.71.39533.png
-illustrator:
+illustrator: PLANETA Tsuji
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '39533'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ルガルガンV
     variants_seen:
-    - normal
+      - normal
     rarity_code: SR

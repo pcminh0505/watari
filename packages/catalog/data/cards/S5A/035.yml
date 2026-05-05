@@ -7,9 +7,9 @@ name_en: Galarian Farfetch'd
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/308/Galarian-Farfetchd.S5A.35.37887.png
-illustrator:
+illustrator: HYOGONOSUKE
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '37887'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ガラルカモネギ
     variants_seen:
-    - normal
+      - normal
     rarity_code: C

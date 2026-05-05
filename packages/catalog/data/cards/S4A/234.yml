@@ -7,9 +7,9 @@ name_en: Eiscue
 rarity_code: S
 category: card
 image: https://den-cards.pokellector.com/301/Eiscue.S4A.234.36536.png
-illustrator:
+illustrator: Shigenori Negishi
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '36536'

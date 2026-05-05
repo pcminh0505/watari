@@ -7,9 +7,9 @@ name_en: Cinccino
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/336/Cinccino.S9.86.42621.png
-illustrator:
+illustrator: Atsuko Nishida
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '42621'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: チラチーノ
     variants_seen:
-    - normal
+      - normal
     rarity_code: HR

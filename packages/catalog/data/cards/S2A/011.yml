@@ -7,9 +7,9 @@ name_en: Heatran
 rarity_code: R
 category: card
 image: https://den-cards.pokellector.com/295/Heatran.S2A.11.34377.png
-illustrator:
+illustrator: Anesaki Dynamic
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '34377'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ヒードラン
     variants_seen:
-    - normal
+      - normal
     rarity_code: R

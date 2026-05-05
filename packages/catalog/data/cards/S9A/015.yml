@@ -7,10 +7,10 @@ name_en: Litleo
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/339/Litleo.S9A.15.43101.png
-illustrator:
+illustrator: Sekio
 prints:
-- normal
-- poke_ball_mirror
+  - normal
+  - poke_ball_mirror
 sources:
   pokellector:
     id: '43101'
@@ -20,6 +20,6 @@ sources:
   cardrush:
     name_ja: シシコ
     variants_seen:
-    - normal
-    - poke_ball_mirror
+      - normal
+      - poke_ball_mirror
     rarity_code: C

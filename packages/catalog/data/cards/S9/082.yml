@@ -7,9 +7,9 @@ name_en: Bibarel
 rarity_code: R
 category: card
 image: https://den-cards.pokellector.com/336/Bibarel.S9.82.42619.png
-illustrator:
+illustrator: OKACHEKE
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '42619'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ビーダル
     variants_seen:
-    - normal
+      - normal
     rarity_code: SR

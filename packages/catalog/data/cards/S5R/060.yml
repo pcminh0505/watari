@@ -7,9 +7,9 @@ name_en: Indeedee
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/307/Indeedee.S5R.60.36866.png
-illustrator:
+illustrator: Saya Tsuruta
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '36866'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: イエッサン
     variants_seen:
-    - normal
+      - normal
     rarity_code: C

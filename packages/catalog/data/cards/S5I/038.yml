@@ -7,9 +7,9 @@ name_en: Zubat
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/306/Zubat.S5I.38.36793.png
-illustrator:
+illustrator: Asako Ito
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '36793'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ズバット
     variants_seen:
-    - normal
+      - normal
     rarity_code: C

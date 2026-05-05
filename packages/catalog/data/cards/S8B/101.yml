@@ -7,9 +7,9 @@ name_en: Umbreon VMAX
 rarity_code: RRR
 category: card
 image: https://den-cards.pokellector.com/338/Umbreon-VMAX.S8B.101.41356.png
-illustrator:
+illustrator: AKIRA EGAWA
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '41356'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ブラッキーVMAX
     variants_seen:
-    - normal
+      - normal
     rarity_code: RRR

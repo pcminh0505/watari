@@ -7,10 +7,10 @@ name_en: Rhydon
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/339/Rhydon.S9A.38.43121.png
-illustrator:
+illustrator: HYOGONOSUKE
 prints:
-- normal
-- poke_ball_mirror
+  - normal
+  - poke_ball_mirror
 sources:
   pokellector:
     id: '43121'
@@ -20,6 +20,6 @@ sources:
   cardrush:
     name_ja: サイドン
     variants_seen:
-    - normal
-    - poke_ball_mirror
+      - normal
+      - poke_ball_mirror
     rarity_code: C

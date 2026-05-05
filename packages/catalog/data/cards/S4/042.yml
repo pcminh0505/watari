@@ -7,9 +7,9 @@ name_en: Shedinja
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/297/Shedinja.S4.42.35568.png
-illustrator:
+illustrator: Tomokazu Komiya
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '35568'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ヌケニン
     variants_seen:
-    - normal
+      - normal
     rarity_code: U

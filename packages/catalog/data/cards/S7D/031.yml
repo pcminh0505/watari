@@ -4,12 +4,12 @@ set_code: s7d
 local_id: '031'
 name_ja: ダストダスVMAX
 name_en: Garbodor VMAX
-rarity_code: C
+rarity_code: RRR
 category: card
 image: https://den-cards.pokellector.com/318/Garbodor-VMAX.S7D.31.39457.png
-illustrator:
+illustrator: 5ban Graphics
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '39457'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ダストダスVMAX
     variants_seen:
-    - normal
+      - normal
     rarity_code: RRR

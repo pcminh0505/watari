@@ -4,12 +4,12 @@ set_code: s1h
 local_id: '064'
 name_ja: ヤミラミV
 name_en: Sableye V
-rarity_code: UR
+rarity_code: SR
 category: card
 image: https://den-cards.pokellector.com/284/Sableye-V.S1H.64.31357.png
-illustrator:
+illustrator: Eske Yoshinob
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '31357'

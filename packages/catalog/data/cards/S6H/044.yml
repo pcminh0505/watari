@@ -7,9 +7,9 @@ name_en: Sandaconda VMAX
 rarity_code: RRR
 category: card
 image: https://den-cards.pokellector.com/309/Sandaconda-VMAX.S6H.44.38712.png
-illustrator:
+illustrator: aky CG Works
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '38712'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: サダイジャVMAX
     variants_seen:
-    - normal
+      - normal
     rarity_code: RRR

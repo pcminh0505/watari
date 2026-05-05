@@ -7,9 +7,9 @@ name_en: Applin
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/301/Applin.S4A.17.36330.png
-illustrator:
+illustrator: Kagemaru Himeno
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '36330'

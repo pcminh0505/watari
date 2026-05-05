@@ -7,9 +7,9 @@ name_en: Murkrow
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/306/Murkrow.S5I.42.36797.png
-illustrator:
+illustrator: Aya Kusube
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '36797'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ヤミカラス
     variants_seen:
-    - normal
+      - normal
     rarity_code: C

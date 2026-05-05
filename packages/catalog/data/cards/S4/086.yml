@@ -7,9 +7,9 @@ name_en: Swellow
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/297/Swellow.S4.86.35550.png
-illustrator:
+illustrator: kodama
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '35550'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: オオスバメ
     variants_seen:
-    - normal
+      - normal
     rarity_code: C

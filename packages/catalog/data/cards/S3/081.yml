@@ -4,12 +4,12 @@ set_code: s3
 local_id: '081'
 name_ja: ボーマンダVMAX
 name_en: Salamence VMAX
-rarity_code: SR
+rarity_code: RRR
 category: card
 image: https://den-cards.pokellector.com/293/Salamence-VMAX.S3.81.34916.png
-illustrator:
+illustrator: 5ban Graphics
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '34916'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ボーマンダVMAX
     variants_seen:
-    - normal
+      - normal
     rarity_code: SR

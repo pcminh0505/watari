@@ -7,9 +7,9 @@ name_en: Opal
 rarity_code: HR
 category: card
 image: https://den-cards.pokellector.com/294/Opal.S3A.91.35095.png
-illustrator:
+illustrator: Naoki Saito
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '35095'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ポプラ
     variants_seen:
-    - normal
+      - normal
     rarity_code: HR

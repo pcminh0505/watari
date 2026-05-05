@@ -4,12 +4,12 @@ set_code: s6h
 local_id: '059'
 name_ja: トリミアン
 name_en: Furfrou
-rarity_code: R
+rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/309/Greedent.S6H.59.38681.png
-illustrator:
+illustrator: Tika Matsuno
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '38681'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: トリミアン
     variants_seen:
-    - normal
+      - normal
     rarity_code: C

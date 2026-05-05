@@ -7,9 +7,9 @@ name_en: Bisharp
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/284/Bisharp.S1H.41.31315.png
-illustrator:
+illustrator: kawayoo
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '31315'

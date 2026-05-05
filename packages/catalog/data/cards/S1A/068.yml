@@ -3,13 +3,13 @@
 set_code: s1a
 local_id: '068'
 name_ja: ターフスタジアム
-name_en: Turrfield
+name_en: Turffield Stadium
 rarity_code: U
 category: trainer
 image: https://den-cards.pokellector.com/285/Turrfield.S1A.68.31412.png
-illustrator:
+illustrator: aky CG Works
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '31412'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ターフスタジアム
     variants_seen:
-    - normal
+      - normal
     rarity_code: U

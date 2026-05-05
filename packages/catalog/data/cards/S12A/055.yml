@@ -4,12 +4,12 @@ set_code: s12a
 local_id: '055'
 name_ja: ラディアントガルデヴォワール
 name_en: Radiant Gardevoir
-rarity_code: R
+rarity_code: K
 category: card
 image: https://den-cards.pokellector.com/357/Radiant-Gardevoir.S12A.55.45823.png
-illustrator:
+illustrator: Ryuta Fuse
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '45823'

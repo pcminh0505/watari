@@ -3,13 +3,13 @@
 set_code: s1w
 local_id: '035'
 name_ja: イシヘンジンVMAX
-name_en: Stonjourner V MAX
-rarity_code: UR
+name_en: Stonjourner VMAX
+rarity_code: RRR
 category: card
 image: https://den-cards.pokellector.com/283/Stonjourner-V-MAX.S1W.35.31250.png
-illustrator:
+illustrator: 5ban Graphics
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '31250'

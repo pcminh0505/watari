@@ -7,9 +7,9 @@ name_en: Aroma Lady
 rarity_code: HR
 category: card
 image: https://den-cards.pokellector.com/322/Aroma-Lady.S6A.96.38972.png
-illustrator:
+illustrator: En Morikura
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '38972'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: アロマなおねえさん
     variants_seen:
-    - normal
+      - normal
     rarity_code: HR

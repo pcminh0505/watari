@@ -7,9 +7,9 @@ name_en: Galarian Cursola
 rarity_code: R
 category: card
 image: https://den-cards.pokellector.com/285/Galarian-Cursola.S1A.37.31381.png
-illustrator:
+illustrator: Kagemaru Himeno
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '31381'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ガラルサニゴーン
     variants_seen:
-    - normal
+      - normal
     rarity_code: R

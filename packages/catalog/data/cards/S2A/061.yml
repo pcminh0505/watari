@@ -7,9 +7,9 @@ name_en: Corvisquire
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/295/Corvisquire.S2A.61.34417.png
-illustrator:
+illustrator: kirisAki
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '34417'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: アオガラス
     variants_seen:
-    - normal
+      - normal
     rarity_code: C

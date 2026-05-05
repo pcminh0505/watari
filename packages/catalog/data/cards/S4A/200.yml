@@ -7,9 +7,9 @@ name_en: Rowlet
 rarity_code: S
 category: card
 image: https://den-cards.pokellector.com/301/Rowlet.S4A.200.36511.png
-illustrator:
+illustrator: Akira Komayama
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '36511'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: モクロー
     variants_seen:
-    - normal
+      - normal
     rarity_code: SR

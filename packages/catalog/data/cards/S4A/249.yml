@@ -7,9 +7,9 @@ name_en: Galarian Cursola
 rarity_code: S
 category: card
 image: https://den-cards.pokellector.com/301/Galarian-Cursola.S4A.249.36550.png
-illustrator:
+illustrator: Shin Nagasawa
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '36550'

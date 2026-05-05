@@ -4,12 +4,12 @@ set_code: s1h
 local_id: '066'
 name_ja: カビゴンV
 name_en: Snorlax V
-rarity_code: UR
+rarity_code: SR
 category: card
 image: https://den-cards.pokellector.com/284/Snorlax-V.S1H.66.31362.png
-illustrator:
+illustrator: aky CG Works
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '31362'

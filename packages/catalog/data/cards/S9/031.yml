@@ -7,10 +7,10 @@ name_en: Manaphy
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/336/Manaphy.S9.31.42570.png
-illustrator:
+illustrator: HYOGONOSUKE
 prints:
-- normal
-- poke_ball_mirror
+  - normal
+  - poke_ball_mirror
 sources:
   pokellector:
     id: '42570'
@@ -20,6 +20,6 @@ sources:
   cardrush:
     name_ja: マナフィ
     variants_seen:
-    - normal
-    - poke_ball_mirror
+      - normal
+      - poke_ball_mirror
     rarity_code: U

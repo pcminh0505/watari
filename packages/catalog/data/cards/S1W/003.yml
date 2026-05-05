@@ -7,9 +7,9 @@ name_en: Maractus
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/283/Maractus.S1W.3.31223.png
-illustrator:
+illustrator: Atsuko Nishida
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '31223'

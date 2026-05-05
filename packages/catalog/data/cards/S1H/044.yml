@@ -7,9 +7,9 @@ name_en: Zamazenta V
 rarity_code: RR
 category: card
 image: https://den-cards.pokellector.com/284/Zamazenta-V.S1H.44.31194.png
-illustrator:
+illustrator: aky CG Works
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '31194'

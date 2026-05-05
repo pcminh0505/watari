@@ -7,9 +7,9 @@ name_en: Corviknight VMAX
 rarity_code: HR
 category: card
 image: https://den-cards.pokellector.com/307/Corviknight-VMAX.S5R.85.36885.png
-illustrator:
+illustrator: PLANETA Mochizuki
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '36885'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: アーマーガアVMAX
     variants_seen:
-    - normal
+      - normal
     rarity_code: HR

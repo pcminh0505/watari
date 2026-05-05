@@ -3,13 +3,13 @@
 set_code: s7r
 local_id: '079'
 name_ja: ヒガナの決意
-name_en: Zinnia's Resolution
+name_en: Zinnia's Resolve
 rarity_code: SR
 category: card
 image: https://den-cards.pokellector.com/319/Zinnias-Resolution.S7R.79.39564.png
-illustrator:
+illustrator: Taira Akitsu
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '39564'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ヒガナの決意
     variants_seen:
-    - normal
+      - normal
     rarity_code: SR

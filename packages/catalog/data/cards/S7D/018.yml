@@ -7,9 +7,9 @@ name_en: Hitmonchan
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/318/Hitmonchan.S7D.18.39449.png
-illustrator:
+illustrator: Uta
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '39449'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: エビワラー
     variants_seen:
-    - normal
+      - normal
     rarity_code: C

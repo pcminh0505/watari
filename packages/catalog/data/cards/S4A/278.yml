@@ -7,9 +7,9 @@ name_en: Galarian Linoone
 rarity_code: S
 category: card
 image: https://den-cards.pokellector.com/301/Galarian-Linoone.S4A.278.36575.png
-illustrator:
+illustrator: Shin Nagasawa
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '36575'

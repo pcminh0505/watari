@@ -7,9 +7,9 @@ name_en: Electrode
 rarity_code: UR
 category: card
 image: https://den-cards.pokellector.com/310/Electrode.S6K.92.38812.png
-illustrator:
+illustrator: Ryo Ueda
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '38812'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: マルマイン
     variants_seen:
-    - normal
+      - normal
     rarity_code: UR

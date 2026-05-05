@@ -7,9 +7,9 @@ name_en: Eternatus VMAX
 rarity_code: UR
 category: card
 image: https://den-cards.pokellector.com/301/Eternatus-VMAX.S4A.328.36618.png
-illustrator:
+illustrator: 5ban Graphics
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '36618'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ムゲンダイナVMAX
     variants_seen:
-    - normal
+      - normal
     rarity_code: UR

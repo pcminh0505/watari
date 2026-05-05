@@ -7,9 +7,9 @@ name_en: Arrokuda
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/285/Arrokuda.S1A.25.31831.png
-illustrator:
+illustrator: Mina Nakai
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '31831'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: サシカマス
     variants_seen:
-    - normal
+      - normal
     rarity_code: C

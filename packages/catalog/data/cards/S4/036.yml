@@ -7,9 +7,9 @@ name_en: Blitzle
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/297/Blitzle.S4.36.35602.png
-illustrator:
+illustrator: Saya Tsuruta
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '35602'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: シママ
     variants_seen:
-    - normal
+      - normal
     rarity_code: C

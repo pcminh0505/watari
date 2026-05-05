@@ -7,9 +7,9 @@ name_en: Copperajah VMAX
 rarity_code: HR
 category: card
 image: https://den-cards.pokellector.com/291/Copperajah-VMAX.S2.110.32015.png
-illustrator:
+illustrator: 5ban Graphics
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '32015'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ダイオウドウVMAX
     variants_seen:
-    - normal
+      - normal
     rarity_code: HR

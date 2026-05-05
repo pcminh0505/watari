@@ -4,12 +4,12 @@ set_code: s12a
 local_id: '078'
 name_ja: Radiant Hawlucha
 name_en: Radiant Hawlucha
-rarity_code: R
+rarity_code: K
 category: card
 image: https://den-cards.pokellector.com/357/Radiant-Hawlucha.S12A.78.45996.png
-illustrator:
+illustrator: Masakazu Fukuda
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '45996'

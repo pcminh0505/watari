@@ -7,9 +7,9 @@ name_en: Rose
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/338/Rose.S8B.165.41402.png
-illustrator:
+illustrator: Yusuke Ohmura
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '41402'

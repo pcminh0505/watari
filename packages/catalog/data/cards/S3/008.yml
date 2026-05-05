@@ -7,9 +7,9 @@ name_en: Decidueye
 rarity_code: R
 category: card
 image: https://den-cards.pokellector.com/293/Decidueye.S3.8.34865.png
-illustrator:
+illustrator: Ryota Murayama
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '34865'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: クヌギダマ
     variants_seen:
-    - normal
+      - normal
     rarity_code: R

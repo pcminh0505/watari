@@ -7,9 +7,9 @@ name_en: Bruno
 rarity_code: SR
 category: card
 image: https://den-cards.pokellector.com/306/Bruno.S5I.79.36899.png
-illustrator:
+illustrator: Ryuta Fuse
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '36899'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: シバ
     variants_seen:
-    - normal
+      - normal
     rarity_code: SR

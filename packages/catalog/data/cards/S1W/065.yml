@@ -4,12 +4,12 @@ set_code: s1w
 local_id: '065'
 name_ja: Zacian V
 name_en: Zacian V
-rarity_code: UR
+rarity_code: SR
 category: card
 image: https://den-cards.pokellector.com/283/Zacian-V.S1W.65.31353.png
-illustrator:
+illustrator: 5ban Graphics
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '31353'

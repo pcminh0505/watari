@@ -3,14 +3,14 @@
 set_code: s9a
 local_id: '062'
 name_ja: あまいミツ
-name_en: Honey
+name_en: Sweet Honey
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/339/Honey.S9A.62.42892.png
-illustrator:
+illustrator: ORBITALLINK Inc.
 prints:
-- normal
-- poke_ball_mirror
+  - normal
+  - poke_ball_mirror
 sources:
   pokellector:
     id: '42892'
@@ -20,6 +20,6 @@ sources:
   cardrush:
     name_ja: あまいミツ
     variants_seen:
-    - normal
-    - poke_ball_mirror
+      - normal
+      - poke_ball_mirror
     rarity_code: U

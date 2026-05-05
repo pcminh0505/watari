@@ -7,9 +7,9 @@ name_en: Hyper Potion
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/301/Hyper-Potion.S4A.160.36448.png
-illustrator:
+illustrator: Ryo Ueda
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '36448'

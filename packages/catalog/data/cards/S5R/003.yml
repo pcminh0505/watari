@@ -4,12 +4,12 @@ set_code: s5r
 local_id: '003'
 name_ja: ウツボット
 name_en: Victreebell
-rarity_code: C
+rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/307/Victreebell.S5R.3.36818.png
-illustrator:
+illustrator: Tika Matsuno
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '36818'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ウツボット
     variants_seen:
-    - normal
+      - normal
     rarity_code: U

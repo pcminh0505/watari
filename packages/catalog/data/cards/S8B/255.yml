@@ -3,13 +3,13 @@
 set_code: s8b
 local_id: '255'
 name_ja: アセロラの予感
-name_en: Acerola's Intuition
+name_en: Acerola's Premonition
 rarity_code: SR
 category: card
 image: https://den-cards.pokellector.com/338/Acerolas-Intuition.S8B.255.41544.png
-illustrator:
+illustrator: yuu
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '41544'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: アセロラの予感
     variants_seen:
-    - normal
+      - normal
     rarity_code: SR

@@ -7,9 +7,9 @@ name_en: Eternatus VMAX
 rarity_code: RRR
 category: card
 image: https://den-cards.pokellector.com/301/Eternatus-VMAX.S4A.125.35877.png
-illustrator:
+illustrator: 5ban Graphics
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '35877'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ムゲンダイナVMAX
     variants_seen:
-    - normal
+      - normal
     rarity_code: RRR

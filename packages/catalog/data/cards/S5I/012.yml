@@ -7,9 +7,9 @@ name_en: Emboar
 rarity_code: R
 category: card
 image: https://den-cards.pokellector.com/306/Emboar.S5I.12.36665.png
-illustrator:
+illustrator: Anesaki Dynamic
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '36665'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: エンブオー
     variants_seen:
-    - normal
+      - normal
     rarity_code: R

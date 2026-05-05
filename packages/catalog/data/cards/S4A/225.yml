@@ -7,9 +7,9 @@ name_en: Drizzile
 rarity_code: S
 category: card
 image: https://den-cards.pokellector.com/301/Drizzile.S4A.225.36530.png
-illustrator:
+illustrator: Ryuta Fuse
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '36530'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ジメレオン
     variants_seen:
-    - normal
+      - normal
     rarity_code: SR

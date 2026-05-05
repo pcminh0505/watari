@@ -7,9 +7,9 @@ name_en: Pangoro
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/322/Pangoro.S6A.51.38940.png
-illustrator:
+illustrator: HYOGONOSUKE
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '38940'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ゴロンダ
     variants_seen:
-    - normal
+      - normal
     rarity_code: C

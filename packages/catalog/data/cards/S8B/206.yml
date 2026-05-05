@@ -7,9 +7,9 @@ name_en: Houndoom
 rarity_code: CHR
 category: card
 image: https://den-cards.pokellector.com/338/Houndoom.S8B.206.41265.png
-illustrator:
+illustrator: NC Empire
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '41265'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ヘルガー
     variants_seen:
-    - normal
+      - normal
     rarity_code: CHR

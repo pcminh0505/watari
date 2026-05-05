@@ -7,9 +7,9 @@ name_en: Solgaleo
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/327/Solgaleo.S8A.16.40615.png
-illustrator:
+illustrator: kirisAki
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '40615'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ソルガレオ(25thミラー)
     variants_seen:
-    - normal
+      - normal
     rarity_code: C

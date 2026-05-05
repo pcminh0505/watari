@@ -3,13 +3,13 @@
 set_code: s5r
 local_id: '061'
 name_ja: うねりの扇
-name_en: Billowing Fan
+name_en: Fan of Waves
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/307/Billowing-Fan.S5R.61.36679.png
-illustrator:
+illustrator: sadaji
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '36679'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: うねりの扇
     variants_seen:
-    - normal
+      - normal
     rarity_code: U

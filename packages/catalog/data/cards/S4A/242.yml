@@ -7,9 +7,9 @@ name_en: Pincurchin
 rarity_code: S
 category: card
 image: https://den-cards.pokellector.com/301/Pincurchin.S4A.242.36543.png
-illustrator:
+illustrator: Motofumi Fujiwara
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '36543'

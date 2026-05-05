@@ -7,10 +7,10 @@ name_en: Infernape
 rarity_code: R
 category: card
 image: https://den-cards.pokellector.com/336/Infernape.S9.21.41612.png
-illustrator:
+illustrator: Anesaki Dynamic
 prints:
-- normal
-- poke_ball_mirror
+  - normal
+  - poke_ball_mirror
 sources:
   pokellector:
     id: '41612'
@@ -20,6 +20,6 @@ sources:
   cardrush:
     name_ja: ドジョッチ
     variants_seen:
-    - normal
-    - poke_ball_mirror
+      - normal
+      - poke_ball_mirror
     rarity_code: R

@@ -7,9 +7,9 @@ name_en: Seaking
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/284/Seaking.S1H.11.31287.png
-illustrator:
+illustrator: Shibuzoh.
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '31287'

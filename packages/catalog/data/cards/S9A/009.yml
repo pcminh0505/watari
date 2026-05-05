@@ -7,10 +7,10 @@ name_en: Vespiquen
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/339/Vespiquen.S9A.9.42884.png
-illustrator:
+illustrator: Yuya Oka
 prints:
-- normal
-- poke_ball_mirror
+  - normal
+  - poke_ball_mirror
 sources:
   pokellector:
     id: '42884'
@@ -20,6 +20,6 @@ sources:
   cardrush:
     name_ja: ビークイン
     variants_seen:
-    - normal
-    - poke_ball_mirror
+      - normal
+      - poke_ball_mirror
     rarity_code: U

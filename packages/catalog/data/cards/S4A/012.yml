@@ -7,9 +7,9 @@ name_en: Dottler
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/301/Dottler.S4A.12.36326.png
-illustrator:
+illustrator: Misa Tsutsui
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '36326'

@@ -7,9 +7,9 @@ name_en: Orbeetle V
 rarity_code: CSR
 category: card
 image: https://den-cards.pokellector.com/338/Orbeetle-V.S8B.214.41511.png
-illustrator:
+illustrator: Nisota Niso
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '41511'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: イオルブV
     variants_seen:
-    - normal
+      - normal
     rarity_code: CSR

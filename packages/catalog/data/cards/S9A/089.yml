@@ -7,9 +7,9 @@ name_en: Roxanne
 rarity_code: HR
 category: card
 image: https://den-cards.pokellector.com/339/Roxanne.S9A.89.43220.png
-illustrator:
+illustrator: Sanosuke Sakuma
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '43220'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ツツジ
     variants_seen:
-    - normal
+      - normal
     rarity_code: HR

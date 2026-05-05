@@ -7,9 +7,9 @@ name_en: Diglett
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/295/Diglett.S2A.38.34397.png
-illustrator:
+illustrator: Hideki Ishikawa
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '34397'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ディグダ
     variants_seen:
-    - normal
+      - normal
     rarity_code: C

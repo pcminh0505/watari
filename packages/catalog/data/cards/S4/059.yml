@@ -7,9 +7,9 @@ name_en: Drilbur
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/297/Drilbur.S4.59.35620.png
-illustrator:
+illustrator: Yuka Morii
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '35620'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: モグリュー
     variants_seen:
-    - normal
+      - normal
     rarity_code: RR

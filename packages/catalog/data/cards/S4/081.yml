@@ -4,12 +4,12 @@ set_code: s4
 local_id: '081'
 name_ja: ギルガルドVMAX
 name_en: Aegislash VMAX
-rarity_code: C
+rarity_code: RRR
 category: card
 image: https://den-cards.pokellector.com/297/Aegislash-VMAX.S4.81.35638.png
-illustrator:
+illustrator: aky CG Works
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '35638'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ギルガルドVMAX
     variants_seen:
-    - normal
+      - normal
     rarity_code: RRR

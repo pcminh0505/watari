@@ -7,9 +7,9 @@ name_en: Talonflame
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/295/Talonflame.S2A.15.34381.png
-illustrator:
+illustrator: kawayoo
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '34381'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ファイアロー
     variants_seen:
-    - normal
+      - normal
     rarity_code: U

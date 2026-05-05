@@ -7,10 +7,10 @@ name_en: Glameow
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/339/Glameow.S9A.59.43137.png
-illustrator:
+illustrator: Naoyo Kimura
 prints:
-- normal
-- poke_ball_mirror
+  - normal
+  - poke_ball_mirror
 sources:
   pokellector:
     id: '43137'
@@ -20,6 +20,6 @@ sources:
   cardrush:
     name_ja: ニャルマー
     variants_seen:
-    - normal
-    - poke_ball_mirror
+      - normal
+      - poke_ball_mirror
     rarity_code: C

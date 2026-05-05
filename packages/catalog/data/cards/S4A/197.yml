@@ -3,13 +3,13 @@
 set_code: s4a
 local_id: '197'
 name_ja: ポケモンごっこ
-name_en: Pok&eacute; Kid
+name_en: Poké Kid
 rarity_code: SR
 category: card
 image: https://den-cards.pokellector.com/301/Pokeacute-Kid.S4A.197.36508.png
-illustrator:
+illustrator: Sanosuke Sakuma
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '36508'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ポケモンごっこ
     variants_seen:
-    - normal
+      - normal
     rarity_code: SR

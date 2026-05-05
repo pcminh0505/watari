@@ -4,12 +4,12 @@ set_code: s1h
 local_id: '061'
 name_ja: コータスV
 name_en: Torkoal V
-rarity_code: UR
+rarity_code: SR
 category: card
 image: https://den-cards.pokellector.com/284/Torkoal-V.S1H.61.31354.png
-illustrator:
+illustrator: Ayaka Yoshida
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '31354'

@@ -7,9 +7,9 @@ name_en: Burning Scarf
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/285/Burning-Scarf.S1A.64.31409.png
-illustrator:
+illustrator: Toyste Beach
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '31409'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: 燃えるスカーフ
     variants_seen:
-    - normal
+      - normal
     rarity_code: U

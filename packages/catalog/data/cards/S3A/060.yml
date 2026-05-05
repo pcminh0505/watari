@@ -7,9 +7,9 @@ name_en: Tornadus
 rarity_code: R
 category: card
 image: https://den-cards.pokellector.com/294/Tornadus.S3A.60.35058.png
-illustrator:
+illustrator: Masakazu Fukuda
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '35058'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: トルネロス
     variants_seen:
-    - normal
+      - normal
     rarity_code: R

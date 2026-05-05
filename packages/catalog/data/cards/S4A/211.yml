@@ -7,9 +7,9 @@ name_en: Applin
 rarity_code: S
 category: card
 image: https://den-cards.pokellector.com/301/Applin.S4A.211.36518.png
-illustrator:
+illustrator: otumami
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '36518'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: カジッチュ
     variants_seen:
-    - normal
+      - normal
     rarity_code: SR

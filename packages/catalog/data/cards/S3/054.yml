@@ -7,9 +7,9 @@ name_en: Galarian Zigzagoon
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/293/Galarian-Zigzagoon.S3.54.34900.png
-illustrator:
+illustrator: Kouki Saitou
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '34900'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ガラルジグザグマ
     variants_seen:
-    - normal
+      - normal
     rarity_code: R

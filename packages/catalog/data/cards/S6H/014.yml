@@ -7,9 +7,9 @@ name_en: Volcanion V
 rarity_code: RR
 category: card
 image: https://den-cards.pokellector.com/309/Volcanion-V.S6H.14.38692.png
-illustrator:
+illustrator: Ryota Murayama
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '38692'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ボルケニオンV
     variants_seen:
-    - normal
+      - normal
     rarity_code: RR

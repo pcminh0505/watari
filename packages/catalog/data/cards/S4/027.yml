@@ -7,9 +7,9 @@ name_en: Cramorant
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/297/Cramorant.S4.27.35547.png
-illustrator:
+illustrator: Sanosuke Sakuma
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '35547'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ウッウ
     variants_seen:
-    - normal
+      - normal
     rarity_code: RR

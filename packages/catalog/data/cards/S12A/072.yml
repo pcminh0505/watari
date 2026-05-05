@@ -3,13 +3,13 @@
 set_code: s12a
 local_id: '072'
 name_ja: カイリキーVMAX
-name_en: Machamp V
+name_en: Machamp VMAX
 rarity_code: RRR
 category: card
 image: https://den-cards.pokellector.com/357/Machamp-V.S12A.72.45877.png
-illustrator:
+illustrator: N-DESIGN Inc.
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '45877'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: カイリキーVMAX
     variants_seen:
-    - normal
+      - normal
     rarity_code: RRR

@@ -7,9 +7,9 @@ name_en: Indeedee V
 rarity_code: RR
 category: card
 image: https://den-cards.pokellector.com/284/Indeedee-V.S1H.25.31202.png
-illustrator:
+illustrator: 5ban Graphics
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '31202'

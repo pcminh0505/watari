@@ -7,9 +7,9 @@ name_en: Piers
 rarity_code: SR
 category: card
 image: https://den-cards.pokellector.com/338/Piers.S8B.264.41553.png
-illustrator:
+illustrator: GOSSAN
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '41553'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ネズ
     variants_seen:
-    - normal
+      - normal
     rarity_code: SR

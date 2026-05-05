@@ -7,9 +7,9 @@ name_en: Weavile
 rarity_code: R
 category: card
 image: https://den-cards.pokellector.com/310/Weavile.S6K.12.38655.png
-illustrator:
+illustrator: Taira Akitsu
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '38655'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: マニューラ
     variants_seen:
-    - normal
+      - normal
     rarity_code: R

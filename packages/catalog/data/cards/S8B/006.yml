@@ -7,9 +7,9 @@ name_en: Cherrim
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/338/Cherrim.S8B.6.41285.png
-illustrator:
+illustrator: Tika Matsuno
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '41285'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: チェリム(R仕様)
     variants_seen:
-    - normal
+      - normal
     rarity_code: R

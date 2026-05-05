@@ -7,9 +7,9 @@ name_en: Kleavor
 rarity_code: R
 category: card
 image: https://den-cards.pokellector.com/339/Kleavor.S9A.46.42887.png
-illustrator:
+illustrator: Anesaki Dynamic
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '42887'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: バサギリ
     variants_seen:
-    - normal
+      - normal
     rarity_code: R

@@ -3,13 +3,13 @@
 set_code: s4
 local_id: '097'
 name_ja: キルクス温泉
-name_en: Hero's Bath
+name_en: Circhester Bath
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/297/Heros-Bath.S4.97.35647.png
-illustrator:
+illustrator: 5ban Graphics
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '35647'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: キルクス温泉
     variants_seen:
-    - normal
+      - normal
     rarity_code: U

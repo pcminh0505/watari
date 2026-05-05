@@ -7,9 +7,9 @@ name_en: Rhydon
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/284/Rhydon.S1H.29.31304.png
-illustrator:
+illustrator: KEIICHIRO ITO
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '31304'

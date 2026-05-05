@@ -4,12 +4,12 @@ set_code: s1w
 local_id: '071'
 name_ja: 教授の研究
 name_en: Professor's Research
-rarity_code: UR
+rarity_code: HR
 category: card
 image: https://den-cards.pokellector.com/283/Professors-Research.S1W.71.31372.png
-illustrator:
+illustrator: kirisAki
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '31372'

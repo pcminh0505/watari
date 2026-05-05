@@ -7,9 +7,9 @@ name_en: Morgrem
 rarity_code: S
 category: card
 image: https://den-cards.pokellector.com/301/Morgrem.S4A.283.36580.png
-illustrator:
+illustrator: SATOSHI NAKAI
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '36580'

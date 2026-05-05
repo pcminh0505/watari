@@ -7,9 +7,9 @@ name_en: Boltund
 rarity_code: S
 category: card
 image: https://den-cards.pokellector.com/301/Boltund.S4A.239.36540.png
-illustrator:
+illustrator: Kagemaru Himeno
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '36540'

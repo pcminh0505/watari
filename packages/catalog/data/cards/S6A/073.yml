@@ -7,9 +7,9 @@ name_en: Flareon V
 rarity_code: SR
 category: card
 image: https://den-cards.pokellector.com/322/Flareon-V.S6A.73.38949.png
-illustrator:
+illustrator: Souichirou Gunjima
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '38949'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ブースターV(SA)
     variants_seen:
-    - normal
+      - normal
     rarity_code: SR

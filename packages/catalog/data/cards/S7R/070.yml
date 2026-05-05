@@ -7,9 +7,9 @@ name_en: Gyarados V
 rarity_code: SR
 category: card
 image: https://den-cards.pokellector.com/319/Gyarados-V.S7R.70.39555.png
-illustrator:
+illustrator: PLANETA Tsuji
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '39555'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ギャラドスV
     variants_seen:
-    - normal
+      - normal
     rarity_code: SR

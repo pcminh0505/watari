@@ -4,12 +4,12 @@ set_code: s8
 local_id: '122'
 name_ja: カミツレのきらめき
 name_en: Elesa's Sparkle
-rarity_code: RR
+rarity_code: HR
 category: card
 image: https://den-cards.pokellector.com/326/Elesas-Sparkle.S8.122.40502.png
-illustrator:
+illustrator: Ryuta Fuse
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '40502'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: カミツレのきらめき
     variants_seen:
-    - normal
+      - normal
     rarity_code: RR

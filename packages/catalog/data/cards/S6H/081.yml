@@ -7,9 +7,9 @@ name_en: Doctor
 rarity_code: SR
 category: card
 image: https://den-cards.pokellector.com/309/Doctor.S6H.81.38779.png
-illustrator:
+illustrator: Sanosuke Sakuma
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '38779'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ドクター
     variants_seen:
-    - normal
+      - normal
     rarity_code: SR

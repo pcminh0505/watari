@@ -7,9 +7,9 @@ name_en: Turbo Patch
 rarity_code: UR
 category: card
 image: https://den-cards.pokellector.com/293/Turbo-Patch.S3.118.34966.png
-illustrator:
+illustrator: Toyste Beach
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '34966'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ターボパッチ
     variants_seen:
-    - normal
+      - normal
     rarity_code: UR

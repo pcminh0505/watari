@@ -7,9 +7,9 @@ name_en: Klinklang
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/336/Klinklang.S9.71.42608.png
-illustrator:
+illustrator: Megumi Higuchi
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '42608'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: バサギリ
     variants_seen:
-    - normal
+      - normal
     rarity_code: CHR

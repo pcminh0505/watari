@@ -7,9 +7,9 @@ name_en: Zekrom
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/327/Zekrom.S8A.11.40613.png
-illustrator:
+illustrator: Aya Kusube
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '40613'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ゼクロム(25thミラー)
     variants_seen:
-    - normal
+      - normal
     rarity_code: C

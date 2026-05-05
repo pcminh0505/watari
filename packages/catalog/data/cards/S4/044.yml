@@ -7,9 +7,9 @@ name_en: Dusclops
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/297/Dusclops.S4.44.35609.png
-illustrator:
+illustrator: Kazuma Koda
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '35609'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: サマヨール
     variants_seen:
-    - normal
+      - normal
     rarity_code: U

@@ -7,9 +7,9 @@ name_en: Single Strike Urshifu V
 rarity_code: SR
 category: card
 image: https://den-cards.pokellector.com/306/Single-Strike-Urshifu-V.S5I.74.36895.png
-illustrator:
+illustrator: PLANETA Mochizuki
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '36895'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: いちげきウーラオスV
     variants_seen:
-    - normal
+      - normal
     rarity_code: SR

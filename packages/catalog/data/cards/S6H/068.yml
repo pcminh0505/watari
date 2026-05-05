@@ -7,9 +7,9 @@ name_en: Melony
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/309/Melony.S6H.68.38633.png
-illustrator:
+illustrator: take
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '38633'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: メロン
     variants_seen:
-    - normal
+      - normal
     rarity_code: U

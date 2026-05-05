@@ -7,9 +7,9 @@ name_en: Rockruff
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/294/Rockruff.S3A.40.35046.png
-illustrator:
+illustrator: Eri Yamaki
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '35046'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: イワンコ
     variants_seen:
-    - normal
+      - normal
     rarity_code: C

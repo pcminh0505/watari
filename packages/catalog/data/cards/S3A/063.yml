@@ -7,9 +7,9 @@ name_en: Toucannon
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/294/Toucannon.S3A.63.35061.png
-illustrator:
+illustrator: Sekio
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '35061'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ドデカバシ
     variants_seen:
-    - normal
+      - normal
     rarity_code: C

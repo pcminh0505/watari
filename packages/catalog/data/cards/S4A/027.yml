@@ -7,9 +7,9 @@ name_en: Centiskorch V
 rarity_code: RR
 category: card
 image: https://den-cards.pokellector.com/301/Centiskorch-V.S4A.27.36339.png
-illustrator:
+illustrator: 5ban Graphics
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '36339'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: マルヤクデV
     variants_seen:
-    - normal
+      - normal
     rarity_code: RR

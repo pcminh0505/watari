@@ -7,9 +7,9 @@ name_en: Scizor VMAX
 rarity_code: HR
 category: card
 image: https://den-cards.pokellector.com/293/Scizor-VMAX.S3.113.34961.png
-illustrator:
+illustrator: 5ban Graphics
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '34961'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ハッサムVMAX
     variants_seen:
-    - normal
+      - normal
     rarity_code: HR

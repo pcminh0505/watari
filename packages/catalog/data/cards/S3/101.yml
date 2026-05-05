@@ -7,9 +7,9 @@ name_en: Houndoom V
 rarity_code: SR
 category: card
 image: https://den-cards.pokellector.com/293/Houndoom-V.S3.101.34949.png
-illustrator:
+illustrator: Ayaka Yoshida
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '34949'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ヘルガーV
     variants_seen:
-    - normal
+      - normal
     rarity_code: SR

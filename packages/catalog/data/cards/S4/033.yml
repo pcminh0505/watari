@@ -7,9 +7,9 @@ name_en: Electrode
 rarity_code: R
 category: card
 image: https://den-cards.pokellector.com/297/Electrode.S4.33.35336.png
-illustrator:
+illustrator: sui
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '35336'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: マルマイン
     variants_seen:
-    - normal
+      - normal
     rarity_code: R

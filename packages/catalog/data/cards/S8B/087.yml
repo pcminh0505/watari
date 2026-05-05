@@ -7,9 +7,9 @@ name_en: Lycanroc
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/338/Lycanroc.S8B.87.41346.png
-illustrator:
+illustrator: Teeziro
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '41346'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ルガルガン(R仕様)
     variants_seen:
-    - normal
+      - normal
     rarity_code: R

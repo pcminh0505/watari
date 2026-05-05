@@ -7,9 +7,9 @@ name_en: Hero's Medal
 rarity_code: UR
 category: card
 image: https://den-cards.pokellector.com/294/Heros-Medal.S3A.93.35094.png
-illustrator:
+illustrator: Toyste Beach
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '35094'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: 英雄のメダル
     variants_seen:
-    - normal
+      - normal
     rarity_code: UR

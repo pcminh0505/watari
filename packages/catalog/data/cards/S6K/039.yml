@@ -7,9 +7,9 @@ name_en: Seismitoad
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/310/Seismitoad.S6K.39.38749.png
-illustrator:
+illustrator: Pani Kobayashi
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '38749'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ガマゲロゲ
     variants_seen:
-    - normal
+      - normal
     rarity_code: U

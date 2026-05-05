@@ -7,9 +7,9 @@ name_en: Great Ball
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/319/Great-Ball.S7R.57.39500.png
-illustrator:
+illustrator: Toyste Beach
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '39500'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: スーパーボール
     variants_seen:
-    - normal
+      - normal
     rarity_code: U

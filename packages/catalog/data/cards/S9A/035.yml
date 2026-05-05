@@ -7,9 +7,9 @@ name_en: Diancie
 rarity_code: R
 category: card
 image: https://den-cards.pokellector.com/339/Diancie.S9A.35.43119.png
-illustrator:
+illustrator: Yuu Nishida
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '43119'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ディアンシー
     variants_seen:
-    - normal
+      - normal
     rarity_code: R

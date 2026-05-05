@@ -3,13 +3,13 @@
 set_code: s2
 local_id: '022'
 name_ja: クマシュン
-name_en: Milotic
+name_en: Milotic V
 rarity_code: RR
 category: card
 image: https://den-cards.pokellector.com/291/Milotic.S2.22.31911.png
-illustrator:
+illustrator: Ayaka Yoshida
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '31911'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: クマシュン
     variants_seen:
-    - normal
+      - normal
     rarity_code: RR

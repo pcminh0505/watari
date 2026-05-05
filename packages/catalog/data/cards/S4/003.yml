@@ -7,9 +7,9 @@ name_en: Shiftry
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/297/Shiftry.S4.3.35587.png
-illustrator:
+illustrator: Uta
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '35587'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ダーテング
     variants_seen:
-    - normal
+      - normal
     rarity_code: R

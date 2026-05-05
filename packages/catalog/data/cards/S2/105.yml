@@ -7,9 +7,9 @@ name_en: Oleana
 rarity_code: SR
 category: card
 image: https://den-cards.pokellector.com/291/Oleana.S2.105.32011.png
-illustrator:
+illustrator: kirisAki
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '32011'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: オリーヴ
     variants_seen:
-    - normal
+      - normal
     rarity_code: SR

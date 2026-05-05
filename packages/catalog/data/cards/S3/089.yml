@@ -3,13 +3,13 @@
 set_code: s3
 local_id: '089'
 name_ja: おとなのおねえさん
-name_en: Cheering Y-Horn
+name_en: Yell Horn
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/293/Cheering-Y-Horn.S3.89.34924.png
-illustrator:
+illustrator: 5ban Graphics
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '34924'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: おとなのおねえさん
     variants_seen:
-    - normal
+      - normal
     rarity_code: HR

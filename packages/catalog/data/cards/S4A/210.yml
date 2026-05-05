@@ -7,9 +7,9 @@ name_en: Eldegoss
 rarity_code: S
 category: card
 image: https://den-cards.pokellector.com/301/Eldegoss.S4A.210.36481.png
-illustrator:
+illustrator: Mizue
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '36481'

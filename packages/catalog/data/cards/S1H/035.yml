@@ -7,9 +7,9 @@ name_en: Galarian Obstagoon
 rarity_code: R
 category: card
 image: https://den-cards.pokellector.com/284/Galarian-Obstagoon.S1H.35.31309.png
-illustrator:
+illustrator: Kouki Saitou
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '31309'

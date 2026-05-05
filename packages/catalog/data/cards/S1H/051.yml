@@ -7,9 +7,9 @@ name_en: Dubwool
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/284/Dubwool.S1H.51.31322.png
-illustrator:
+illustrator: You Iribi
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '31322'

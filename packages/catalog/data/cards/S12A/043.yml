@@ -7,9 +7,9 @@ name_en: Toxel
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/357/Toxel.S12A.43.45860.png
-illustrator:
+illustrator: kodama
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '45860'

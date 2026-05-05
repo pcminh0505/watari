@@ -4,12 +4,12 @@ set_code: s6h
 local_id: '050'
 name_ja: ボスゴドラ
 name_en: Aggron
-rarity_code: C
+rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/309/Aggron.S6H.50.38716.png
-illustrator:
+illustrator: Teeziro
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '38716'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ボスゴドラ
     variants_seen:
-    - normal
+      - normal
     rarity_code: U

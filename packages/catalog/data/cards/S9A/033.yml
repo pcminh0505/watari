@@ -7,10 +7,10 @@ name_en: Kirlia
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/339/Kirlia.S9A.33.43117.png
-illustrator:
+illustrator: Saya Tsuruta
 prints:
-- normal
-- poke_ball_mirror
+  - normal
+  - poke_ball_mirror
 sources:
   pokellector:
     id: '43117'
@@ -20,6 +20,6 @@ sources:
   cardrush:
     name_ja: キルリア
     variants_seen:
-    - normal
-    - poke_ball_mirror
+      - normal
+      - poke_ball_mirror
     rarity_code: C

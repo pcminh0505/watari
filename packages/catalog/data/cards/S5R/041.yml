@@ -7,9 +7,9 @@ name_en: Marowak
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/307/Marowak.S5R.41.36850.png
-illustrator:
+illustrator: Narumi Sato
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '36850'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ガラガラ
     variants_seen:
-    - normal
+      - normal
     rarity_code: U

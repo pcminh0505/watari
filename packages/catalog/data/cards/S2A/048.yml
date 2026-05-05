@@ -7,9 +7,9 @@ name_en: Darkrai
 rarity_code: R
 category: card
 image: https://den-cards.pokellector.com/295/Darkrai.S2A.48.34405.png
-illustrator:
+illustrator: nagimiso
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '34405'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ダークライ
     variants_seen:
-    - normal
+      - normal
     rarity_code: R

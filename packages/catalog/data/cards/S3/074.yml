@@ -7,9 +7,9 @@ name_en: Kangaskhan
 rarity_code: R
 category: energy
 image: https://den-cards.pokellector.com/293/Kangaskhan.S3.74.34910.png
-illustrator:
+illustrator: kawayoo
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '34910'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: アロマ草エネルギー
     variants_seen:
-    - normal
+      - normal
     rarity_code: R

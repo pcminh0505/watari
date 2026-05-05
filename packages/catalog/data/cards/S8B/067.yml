@@ -7,9 +7,9 @@ name_en: Dusclops
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/338/Dusclops.S8B.67.41331.png
-illustrator:
+illustrator: Kazuma Koda
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '41331'

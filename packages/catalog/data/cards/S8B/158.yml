@@ -7,9 +7,9 @@ name_en: Boss's Orders
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/338/Bosss-Orders.S8B.158.41397.png
-illustrator:
+illustrator: Ryuta Fuse
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '41397'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ボスの指令/フラダリ(R仕様)
     variants_seen:
-    - normal
+      - normal
     rarity_code: R

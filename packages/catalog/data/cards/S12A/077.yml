@@ -7,9 +7,9 @@ name_en: Lucario
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/357/Lucario.S12A.77.45881.png
-illustrator:
+illustrator: NC Empire
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '45881'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ルカリオ(R仕様)
     variants_seen:
-    - normal
+      - normal
     rarity_code: R

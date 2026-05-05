@@ -7,9 +7,9 @@ name_en: Electabuzz
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/291/Electabuzz.S2.31.31920.png
-illustrator:
+illustrator: Midori Harada
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '31920'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: エレブー
     variants_seen:
-    - normal
+      - normal
     rarity_code: RRR

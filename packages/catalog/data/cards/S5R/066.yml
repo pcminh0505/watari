@@ -7,9 +7,9 @@ name_en: Korrina's Focus
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/307/Korrinas-Willpower.S5R.66.36869.png
-illustrator:
+illustrator: kirisAki
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '36869'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: コルニの気合い
     variants_seen:
-    - normal
+      - normal
     rarity_code: U

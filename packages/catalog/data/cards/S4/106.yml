@@ -7,9 +7,9 @@ name_en: Galarian Sirfetch'd V
 rarity_code: SR
 category: card
 image: https://den-cards.pokellector.com/297/Galarian-Sirfetchd-V.S4.106.35672.png
-illustrator:
+illustrator: PLANETA Tsuji
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '35672'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ガラルネギガナイトV
     variants_seen:
-    - normal
+      - normal
     rarity_code: SR

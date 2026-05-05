@@ -7,9 +7,9 @@ name_en: Mawile
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/284/Mawile.S1H.39.31313.png
-illustrator:
+illustrator: AKIRA EGAWA
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '31313'

@@ -7,9 +7,9 @@ name_en: Mankey
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/306/Mankey.S5I.28.36786.png
-illustrator:
+illustrator: Ryuta Fuse
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '36786'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: マンキー
     variants_seen:
-    - normal
+      - normal
     rarity_code: C

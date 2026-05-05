@@ -7,9 +7,9 @@ name_en: Zangoose
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/308/Zangoose.S5A.56.37902.png
-illustrator:
+illustrator: Anesaki Dynamic
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '37902'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ザングース
     variants_seen:
-    - normal
+      - normal
     rarity_code: C

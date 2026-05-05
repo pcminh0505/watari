@@ -7,9 +7,9 @@ name_en: Morpeko
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/306/Morpeko.S5I.47.36800.png
-illustrator:
+illustrator: NC Empire
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '36800'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: モルペコ
     variants_seen:
-    - normal
+      - normal
     rarity_code: C

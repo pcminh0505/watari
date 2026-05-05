@@ -7,9 +7,9 @@ name_en: Charmeleon
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/297/Charmeleon.S4.11.35591.png
-illustrator:
+illustrator: SATOSHI NAKAI
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '35591'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: リザード
     variants_seen:
-    - normal
+      - normal
     rarity_code: U

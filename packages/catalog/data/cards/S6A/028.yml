@@ -7,9 +7,9 @@ name_en: Voltorb
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/322/Voltorb.S6A.28.38838.png
-illustrator:
+illustrator: Tomokazu Komiya
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '38838'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ビリリダマ
     variants_seen:
-    - normal
+      - normal
     rarity_code: C

@@ -7,9 +7,9 @@ name_en: Fan of Waves
 rarity_code: UR
 category: card
 image: https://den-cards.pokellector.com/308/Fan-of-Waves.S5A.94.37941.png
-illustrator:
+illustrator: sadaji
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '37941'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: うねりの扇
     variants_seen:
-    - normal
+      - normal
     rarity_code: UR

@@ -7,10 +7,10 @@ name_en: Crawdaunt
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/336/Crawdaunt.S9.24.42567.png
-illustrator:
+illustrator: Shibuzoh.
 prints:
-- normal
-- poke_ball_mirror
+  - normal
+  - poke_ball_mirror
 sources:
   pokellector:
     id: '42567'
@@ -20,6 +20,6 @@ sources:
   cardrush:
     name_ja: シザリガー
     variants_seen:
-    - normal
-    - poke_ball_mirror
+      - normal
+      - poke_ball_mirror
     rarity_code: U

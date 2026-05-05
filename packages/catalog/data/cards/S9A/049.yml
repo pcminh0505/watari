@@ -7,10 +7,10 @@ name_en: Poochyena
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/339/Poochyena.S9A.49.43130.png
-illustrator:
+illustrator: KIYOTAKA OSHIYAMA
 prints:
-- normal
-- poke_ball_mirror
+  - normal
+  - poke_ball_mirror
 sources:
   pokellector:
     id: '43130'
@@ -20,6 +20,6 @@ sources:
   cardrush:
     name_ja: ポチエナ
     variants_seen:
-    - normal
-    - poke_ball_mirror
+      - normal
+      - poke_ball_mirror
     rarity_code: C

@@ -7,9 +7,9 @@ name_en: Nuzleaf
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/297/Nuzleaf.S4.2.35586.png
-illustrator:
+illustrator: otumami
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '35586'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: コノハナ
     variants_seen:
-    - normal
+      - normal
     rarity_code: C

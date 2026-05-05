@@ -7,9 +7,9 @@ name_en: Minccino
 rarity_code: S
 category: card
 image: https://den-cards.pokellector.com/301/Minccino.S4A.292.36588.png
-illustrator:
+illustrator: MAHOU
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '36588'

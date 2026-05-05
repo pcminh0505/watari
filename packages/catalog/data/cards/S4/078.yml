@@ -7,9 +7,9 @@ name_en: Ferroseed
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/297/Ferroseed.S4.78.35635.png
-illustrator:
+illustrator: HYOGONOSUKE
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '35635'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: テッシード
     variants_seen:
-    - normal
+      - normal
     rarity_code: C

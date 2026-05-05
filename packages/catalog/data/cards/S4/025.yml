@@ -7,9 +7,9 @@ name_en: Chewtle
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/297/Chewtle.S4.25.35599.png
-illustrator:
+illustrator: kirisAki
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '35599'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: カムカメ
     variants_seen:
-    - normal
+      - normal
     rarity_code: C

@@ -7,9 +7,9 @@ name_en: Oleana
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/291/Oleana.S2.90.31973.png
-illustrator:
+illustrator: Yusuke Ohmura
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '31973'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: オリーヴ
     variants_seen:
-    - normal
+      - normal
     rarity_code: U

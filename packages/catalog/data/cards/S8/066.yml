@@ -7,9 +7,9 @@ name_en: Hoopa V
 rarity_code: RR
 category: card
 image: https://den-cards.pokellector.com/326/Hoopa-V.S8.66.39840.png
-illustrator:
+illustrator: takuyoa
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '39840'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: フーパV
     variants_seen:
-    - normal
+      - normal
     rarity_code: RR

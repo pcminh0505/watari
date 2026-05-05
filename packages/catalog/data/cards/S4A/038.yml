@@ -7,9 +7,9 @@ name_en: Galarian Darmanitan
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/301/Galarian-Darmanitan.S4A.38.36349.png
-illustrator:
+illustrator: Masakazu Fukuda
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '36349'

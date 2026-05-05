@@ -7,9 +7,9 @@ name_en: Porygon-Z
 rarity_code: R
 category: card
 image: https://den-cards.pokellector.com/309/Porygon-Z.S6H.54.38719.png
-illustrator:
+illustrator: Tomokazu Komiya
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '38719'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ポリゴンZ
     variants_seen:
-    - normal
+      - normal
     rarity_code: R

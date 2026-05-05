@@ -7,10 +7,10 @@ name_en: Chimecho
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/336/Chimecho.S9.48.42586.png
-illustrator:
+illustrator: MAHOU
 prints:
-- normal
-- poke_ball_mirror
+  - normal
+  - poke_ball_mirror
 sources:
   pokellector:
     id: '42586'
@@ -20,6 +20,6 @@ sources:
   cardrush:
     name_ja: チリーン
     variants_seen:
-    - normal
-    - poke_ball_mirror
+      - normal
+      - poke_ball_mirror
     rarity_code: U

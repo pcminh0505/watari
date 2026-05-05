@@ -7,9 +7,9 @@ name_en: Lucky Ice Pop
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/319/Lucky-Ice-Pop.S7R.56.39499.png
-illustrator:
+illustrator: inose yukie
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '39499'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: 当たりつきアイス
     variants_seen:
-    - normal
+      - normal
     rarity_code: U

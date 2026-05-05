@@ -7,9 +7,9 @@ name_en: Galarian Obstagoon
 rarity_code: R
 category: card
 image: https://den-cards.pokellector.com/326/Galarian-Obstagoon.S8.61.40456.png
-illustrator:
+illustrator: kodama
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '40456'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ガラルタチフサグマ
     variants_seen:
-    - normal
+      - normal
     rarity_code: R

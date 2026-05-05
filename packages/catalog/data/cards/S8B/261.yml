@@ -7,9 +7,9 @@ name_en: Bea
 rarity_code: SR
 category: card
 image: https://den-cards.pokellector.com/338/Bea.S8B.261.41550.png
-illustrator:
+illustrator: Souichirou Gunjima
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '41550'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: サイトウ
     variants_seen:
-    - normal
+      - normal
     rarity_code: SR
