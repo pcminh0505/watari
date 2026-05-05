@@ -7,9 +7,9 @@ name_en: Ethan's Adventure
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/411/Ethans-Adventure.SV9A.63.56540.png
-illustrator:
+illustrator: Iori Suzuki
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '56540'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: ヒビキの冒険
     variants_seen:
-    - normal
+      - normal

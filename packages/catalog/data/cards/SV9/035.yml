@@ -7,9 +7,9 @@ name_en: Shuppet
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/408/Shuppet.SV9.35.55509.png
-illustrator:
+illustrator: miki kudo
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '55509'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: カゲボウズ
     variants_seen:
-    - normal
+      - normal

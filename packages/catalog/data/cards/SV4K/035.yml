@@ -7,9 +7,9 @@ name_en: Clobbopus
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/381/Clobbopus.SV4K.35.50767.png
-illustrator:
+illustrator: Kedamahadaitai Yawarakai
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '50767'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: タタッコ
     variants_seen:
-    - normal
+      - normal

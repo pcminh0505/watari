@@ -7,9 +7,9 @@ name_en: Slugma
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/391/Slugma.SV5A.12.52378.png
-illustrator:
+illustrator: Gapao
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '52378'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: マグマッグ
     variants_seen:
-    - normal
+      - normal

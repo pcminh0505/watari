@@ -4,12 +4,12 @@ set_code: SV5A
 local_id: '053'
 name_ja: アンフェアスタンプ
 name_en: Unfair Stamp
-rarity_code: R
+rarity_code: ACE
 category: card
 image: https://den-cards.pokellector.com/391/Unfair-Stamp.SV5A.53.52390.png
-illustrator:
+illustrator: Toyste Beach
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '52390'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: アンフェアスタンプ
     variants_seen:
-    - normal
+      - normal

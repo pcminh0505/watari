@@ -7,9 +7,9 @@ name_en: Slowpoke
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/362/Slowpoke.SV1V.19.46179.png
-illustrator:
+illustrator: Narumi Sato
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '46179'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: ヤドン
     variants_seen:
-    - normal
+      - normal

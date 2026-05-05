@@ -7,9 +7,9 @@ name_en: Quaxwell
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/403/Quaxwell.SV7A.14.53998.png
-illustrator:
+illustrator: OKACHEKE
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '53998'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: ウェルカモ
     variants_seen:
-    - normal
+      - normal

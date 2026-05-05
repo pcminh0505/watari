@@ -7,9 +7,9 @@ name_en: Lunatone
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/427/Lunatone.M2A.86.59981.png
-illustrator:
+illustrator: Ounishi
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '59981'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: ルナトーン(R仕様)
     variants_seen:
-    - normal
+      - normal

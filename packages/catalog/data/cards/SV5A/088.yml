@@ -3,13 +3,13 @@
 set_code: SV5A
 local_id: '088'
 name_ja: スイレンのお世話
-name_en: Lana's Assistance
+name_en: Lana's Aid
 rarity_code: SR
 category: card
 image: https://den-cards.pokellector.com/391/Lanas-Assistance.SV5A.88.52747.png
-illustrator:
+illustrator: Atsushi Furusawa
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '52747'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: スイレンのお世話
     variants_seen:
-    - normal
+      - normal

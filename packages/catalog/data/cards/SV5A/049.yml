@@ -7,9 +7,9 @@ name_en: Dipplin
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/391/Dipplin.SV5A.49.52396.png
-illustrator:
+illustrator: OKACHEKE
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '52396'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: カミッチュ
     variants_seen:
-    - normal
+      - normal

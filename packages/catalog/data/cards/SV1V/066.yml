@@ -7,9 +7,9 @@ name_en: Maushold
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/362/Maushold.SV1V.66.46340.png
-illustrator:
+illustrator: KIYOTAKA OSHIYAMA
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '46340'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: イッカネズミ
     variants_seen:
-    - normal
+      - normal

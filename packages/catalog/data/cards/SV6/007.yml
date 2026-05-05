@@ -7,9 +7,9 @@ name_en: Trevenant
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/393/Trevenant.SV6.7.52907.png
-illustrator:
+illustrator: Oswaldo KATO
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '52907'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: オーロット
     variants_seen:
-    - normal
+      - normal

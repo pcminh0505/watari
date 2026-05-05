@@ -7,9 +7,9 @@ name_en: Dwebble
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/381/Dwebble.SV4K.4.50736.png
-illustrator:
+illustrator: Scav
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '50736'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: イシズマイ
     variants_seen:
-    - normal
+      - normal

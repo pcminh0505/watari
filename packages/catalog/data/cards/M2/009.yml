@@ -7,9 +7,9 @@ name_en: Nymble
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/425/Nymble.M2.9.59194.png
-illustrator:
+illustrator: Yuka Morii
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '59194'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: マメバッタ
     variants_seen:
-    - normal
+      - normal

@@ -3,13 +3,13 @@
 set_code: SV4A
 local_id: '157'
 name_ja: Super Energy Retrieval
-name_en: Super Energy Retrieval
+name_en: Superior Energy Retrieval
 rarity_code: C
 category: energy
 image: https://den-cards.pokellector.com/375/Super-Energy-Retrieval.SV4A.157.50949.png
 illustrator: Studio Bora Inc.
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '50949'

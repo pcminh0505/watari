@@ -7,9 +7,9 @@ name_en: Oricorio
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/382/Oricorio.SV4K.25.50852.png
-illustrator:
+illustrator: Saya Tsuruta
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '50852'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: オドリドリ
     variants_seen:
-    - normal
+      - normal

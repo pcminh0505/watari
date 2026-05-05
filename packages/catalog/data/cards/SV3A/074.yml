@@ -7,9 +7,9 @@ name_en: Cyclizar
 rarity_code: AR
 category: card
 image: https://den-cards.pokellector.com/376/Cyclizar.SV3A.74.49393.png
-illustrator:
+illustrator: Mina Nakai
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '49393'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: モトトカゲ
     variants_seen:
-    - normal
+      - normal

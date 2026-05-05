@@ -7,9 +7,9 @@ name_en: Lillie's Determination
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/416/Lillie.M1L.62.57975.png
-illustrator:
+illustrator: Atsushi Furusawa
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '57975'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: リーリエの決心
     variants_seen:
-    - normal
+      - normal
     rarity_code: U

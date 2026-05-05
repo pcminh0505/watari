@@ -7,9 +7,9 @@ name_en: Galarian Zigzagoon
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/427/Galarian-Zigzagoon.M2A.105.59998.png
-illustrator:
+illustrator: osare
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '59998'

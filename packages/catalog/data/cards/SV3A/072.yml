@@ -7,9 +7,9 @@ name_en: Ferrothorn
 rarity_code: AR
 category: card
 image: https://den-cards.pokellector.com/376/Ferrothorn.SV3A.72.49392.png
-illustrator:
+illustrator: Kurata So
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '49392'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: ナットレイ
     variants_seen:
-    - normal
+      - normal

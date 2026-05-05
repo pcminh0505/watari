@@ -7,9 +7,9 @@ name_en: N's Darumaka
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/427/Ns-Darumaka.M2A.27.59935.png
-illustrator:
+illustrator: Gemi
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '59935'

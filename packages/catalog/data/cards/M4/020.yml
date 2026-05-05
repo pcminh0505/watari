@@ -7,9 +7,9 @@ name_en: Froakie
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/430/Froakie.M4.20.60929.png
-illustrator:
+illustrator: Kariya
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '60929'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: ケロマツ
     variants_seen:
-    - normal
+      - normal

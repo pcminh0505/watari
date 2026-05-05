@@ -7,9 +7,9 @@ name_en: Krokorok
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/361/Krokorok.SV1S.43.46257.png
-illustrator:
+illustrator: kantaro
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '46257'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: フラエッテ
     variants_seen:
-    - normal
+      - normal

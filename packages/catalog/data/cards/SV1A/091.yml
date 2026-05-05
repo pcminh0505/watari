@@ -7,9 +7,9 @@ name_en: Paldean Clodsire ex
 rarity_code: SR
 category: card
 image: https://den-cards.pokellector.com/366/Paldean-Quagsire-ex.SV1A.91.47002.png
-illustrator:
+illustrator: PLANETA Mochizuki
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '47002'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: パルデアドオーex
     variants_seen:
-    - normal
+      - normal

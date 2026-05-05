@@ -7,9 +7,9 @@ name_en: Mega Heracross ex
 rarity_code: SR
 category: card
 image: https://den-cards.pokellector.com/425/Mega-Heracross-ex.M2.93.59578.png
-illustrator:
+illustrator: 5ban Graphics
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '59578'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: メガヘラクロスex
     variants_seen:
-    - normal
+      - normal

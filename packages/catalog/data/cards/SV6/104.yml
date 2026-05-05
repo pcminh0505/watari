@@ -3,13 +3,13 @@
 set_code: SV6
 local_id: '104'
 name_ja: ユキメノコ
-name_en: Frosslass
+name_en: Froslass
 rarity_code: AR
 category: card
 image: https://den-cards.pokellector.com/393/Frosslass.SV6.104.52896.png
-illustrator:
+illustrator: matazo
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '52896'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: ユキメノコ
     variants_seen:
-    - normal
+      - normal

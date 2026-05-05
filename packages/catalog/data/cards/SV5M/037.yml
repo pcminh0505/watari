@@ -7,9 +7,9 @@ name_en: Meditite
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/387/Meditite.SV5M.37.51778.png
-illustrator:
+illustrator: Natsumi Miyanose
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '51778'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: アサナン
     variants_seen:
-    - normal
+      - normal

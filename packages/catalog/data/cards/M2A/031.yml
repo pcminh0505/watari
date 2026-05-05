@@ -7,9 +7,9 @@ name_en: Ceruledge ex
 rarity_code: RR
 category: card
 image: https://den-cards.pokellector.com/427/Ceruledge-ex.M2A.31.59939.png
-illustrator:
+illustrator: 5ban Graphics
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '59939'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: ソウブレイズex
     variants_seen:
-    - normal
+      - normal

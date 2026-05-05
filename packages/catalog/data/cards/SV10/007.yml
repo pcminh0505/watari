@@ -7,9 +7,9 @@ name_en: Team Rocket's Blipbug
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/413/Team-Rockets-Blipbug.SV10.7.57074.png
-illustrator:
+illustrator: buchi
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '57074'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: ロケット団のサッチムシ
     variants_seen:
-    - normal
+      - normal

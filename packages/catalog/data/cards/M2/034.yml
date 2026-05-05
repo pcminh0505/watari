@@ -7,9 +7,9 @@ name_en: Pawmot
 rarity_code: R
 category: card
 image: https://den-cards.pokellector.com/425/Pawmot.M2.34.59215.png
-illustrator:
+illustrator: satoma
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '59215'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: パーモット
     variants_seen:
-    - normal
+      - normal

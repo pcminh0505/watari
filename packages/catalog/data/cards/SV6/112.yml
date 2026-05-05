@@ -7,9 +7,9 @@ name_en: Tatsugiri
 rarity_code: AR
 category: card
 image: https://den-cards.pokellector.com/393/Tatsugiri.SV6.112.52963.png
-illustrator:
+illustrator: osare
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '52963'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: シャリタツ
     variants_seen:
-    - normal
+      - normal

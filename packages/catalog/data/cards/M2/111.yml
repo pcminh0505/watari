@@ -7,9 +7,9 @@ name_en: Oricorio ex
 rarity_code: SAR
 category: card
 image: https://den-cards.pokellector.com/425/Oricorio-ex.M2.111.59596.png
-illustrator:
+illustrator: Shinji Kanda
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '59596'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: オドリドリex
     variants_seen:
-    - normal
+      - normal

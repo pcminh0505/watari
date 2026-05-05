@@ -7,9 +7,9 @@ name_en: Finizen
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/386/Finizen.SV5K.22.51836.png
-illustrator:
+illustrator: HYOGONOSUKE
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '51836'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: ナミイルカ
     variants_seen:
-    - normal
+      - normal

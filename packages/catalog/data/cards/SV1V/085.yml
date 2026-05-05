@@ -7,9 +7,9 @@ name_en: Pawmot
 rarity_code: AR
 category: card
 image: https://den-cards.pokellector.com/362/Pawmot.SV1V.85.46818.png
-illustrator:
+illustrator: Kouki Saitou
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '46818'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: パーモット
     variants_seen:
-    - normal
+      - normal

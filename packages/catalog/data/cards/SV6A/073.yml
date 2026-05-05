@@ -7,9 +7,9 @@ name_en: Cufant
 rarity_code: AR
 category: card
 image: https://den-cards.pokellector.com/398/Cufant.SV6A.73.53578.png
-illustrator:
+illustrator: Mina Nakai
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '53578'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: ゾウドウ
     variants_seen:
-    - normal
+      - normal

@@ -7,9 +7,9 @@ name_en: Lacey
 rarity_code: SAR
 category: card
 image: https://den-cards.pokellector.com/401/Lacey.SV7.131.53787.png
-illustrator:
+illustrator: Souichirou Gunjima
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '53787'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: タロ
     variants_seen:
-    - normal
+      - normal

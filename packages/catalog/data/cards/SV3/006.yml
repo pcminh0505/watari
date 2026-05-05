@@ -7,9 +7,9 @@ name_en: Combee
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/368/Combee.SV3.6.48767.png
-illustrator:
+illustrator: HYOGONOSUKE
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '48767'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: ミツハニー
     variants_seen:
-    - normal
+      - normal

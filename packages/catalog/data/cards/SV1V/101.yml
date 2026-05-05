@@ -7,9 +7,9 @@ name_en: Spidops ex
 rarity_code: SAR
 category: card
 image: https://den-cards.pokellector.com/362/Spidops-ex.SV1V.101.46833.png
-illustrator:
+illustrator: Miki Tanaka
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '46833'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: ワナイダーex
     variants_seen:
-    - normal
+      - normal

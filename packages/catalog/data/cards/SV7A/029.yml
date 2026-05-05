@@ -7,9 +7,9 @@ name_en: Excadrill
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/403/Excadrill.SV7A.29.54394.png
-illustrator:
+illustrator: Yuya Oka
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '54394'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: ドリュウズ
     variants_seen:
-    - normal
+      - normal

@@ -7,9 +7,9 @@ name_en: Crustle
 rarity_code: AR
 category: card
 image: https://den-cards.pokellector.com/411/Crustle.SV9A.67.56609.png
-illustrator:
+illustrator: Takumi Wada
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '56609'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: イワパレス
     variants_seen:
-    - normal
+      - normal

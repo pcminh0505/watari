@@ -7,9 +7,9 @@ name_en: Raging Bolt ex
 rarity_code: SAR
 category: card
 image: https://den-cards.pokellector.com/386/Raging-Bolt-ex.SV5K.95.51714.png
-illustrator:
+illustrator: Teeziro
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '51714'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: タケルライコex
     variants_seen:
-    - normal
+      - normal

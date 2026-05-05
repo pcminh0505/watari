@@ -7,9 +7,9 @@ name_en: Baxcalibur
 rarity_code: R
 category: card
 image: https://den-cards.pokellector.com/369/Baxcalibur.SV2P.27.47033.png
-illustrator:
+illustrator: Shin Nagasawa
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '47033'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: セグレイブ
     variants_seen:
-    - normal
+      - normal

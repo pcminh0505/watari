@@ -7,9 +7,9 @@ name_en: Fletchinder
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/401/Fletchinder.SV7.84.53679.png
-illustrator:
+illustrator: Julie Hang
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '53679'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: ヒノヤコマ
     variants_seen:
-    - normal
+      - normal

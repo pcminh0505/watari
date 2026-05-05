@@ -7,11 +7,11 @@ name_en: Pansear
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/415/Pansear.SV11W.14.57744.png
-illustrator:
+illustrator: Julie Hang
 prints:
-- normal
-- master_ball_mirror
-- poke_ball_mirror
+  - normal
+  - master_ball_mirror
+  - poke_ball_mirror
 sources:
   pokellector:
     id: '57744'
@@ -21,6 +21,6 @@ sources:
   cardrush:
     name_ja: バオップ
     variants_seen:
-    - master_ball_mirror
-    - normal
-    - poke_ball_mirror
+      - master_ball_mirror
+      - normal
+      - poke_ball_mirror

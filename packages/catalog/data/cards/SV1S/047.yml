@@ -7,9 +7,9 @@ name_en: Sandaconda
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/361/Sandaconda.SV1S.47.46261.png
-illustrator:
+illustrator: Yuya Oka
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '46261'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: ボチ
     variants_seen:
-    - normal
+      - normal

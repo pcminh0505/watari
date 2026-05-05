@@ -7,9 +7,9 @@ name_en: Wigglytuff
 rarity_code: AR
 category: card
 image: https://den-cards.pokellector.com/425/Wigglytuff.M2.91.59577.png
-illustrator:
+illustrator: REND
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '59577'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: プクリン
     variants_seen:
-    - normal
+      - normal

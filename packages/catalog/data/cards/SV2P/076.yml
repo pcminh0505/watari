@@ -7,9 +7,9 @@ name_en: Arctibax
 rarity_code: AR
 category: card
 image: https://den-cards.pokellector.com/369/Arctibax.SV2P.76.47528.png
-illustrator:
+illustrator: Tomokazu Komiya
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '47528'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: セゴール
     variants_seen:
-    - normal
+      - normal

@@ -7,9 +7,9 @@ name_en: Corviknight
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/369/Corviknight.SV2P.52.47589.png
-illustrator:
+illustrator: Scav
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '47589'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: アーマーガア
     variants_seen:
-    - normal
+      - normal

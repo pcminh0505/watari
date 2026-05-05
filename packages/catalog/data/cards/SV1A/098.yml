@@ -7,9 +7,9 @@ name_en: Quaquaval ex
 rarity_code: SAR
 category: card
 image: https://den-cards.pokellector.com/366/Quaquaval-ex.SV1A.98.46988.png
-illustrator:
+illustrator: Souichirou Gunjima
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '46988'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: ウェーニバルex
     variants_seen:
-    - normal
+      - normal

@@ -7,9 +7,9 @@ name_en: Bouffalant
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/427/Bouffalant.M2A.140.60021.png
-illustrator:
+illustrator: GOSSAN
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '60021'

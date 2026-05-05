@@ -3,13 +3,13 @@
 set_code: SV10
 local_id: '061'
 name_ja: ロケット団のニドラン♂
-name_en: Team Rocket's Nidoran♂
+name_en: Team Rocket's Nidoran ♂
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/413/Team-Rockets-Nidoran.SV10.61.57110.png
-illustrator:
+illustrator: buchi
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '57110'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: ロケット団のニドラン♂
     variants_seen:
-    - normal
+      - normal

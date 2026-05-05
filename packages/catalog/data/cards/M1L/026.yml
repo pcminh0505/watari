@@ -7,9 +7,9 @@ name_en: Lunatone
 rarity_code: R
 category: card
 image: https://den-cards.pokellector.com/416/Lunatone.M1L.26.58832.png
-illustrator:
+illustrator: Whisker
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '58832'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ルナトーン
     variants_seen:
-    - normal
+      - normal
     rarity_code: R

@@ -7,9 +7,9 @@ name_en: Yveltal
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/398/Yveltal.SV6A.35.53523.png
-illustrator:
+illustrator: SIE NANAHARA
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '53523'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: イベルタル
     variants_seen:
-    - normal
+      - normal

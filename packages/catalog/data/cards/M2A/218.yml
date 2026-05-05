@@ -7,9 +7,9 @@ name_en: Counter Gain
 rarity_code: SR
 category: card
 image: https://den-cards.pokellector.com/427/Counter-Gain.M2A.218.60089.png
-illustrator:
+illustrator: Toyste Beach
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '60089'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: カウンターゲイン
     variants_seen:
-    - normal
+      - normal

@@ -7,9 +7,9 @@ name_en: Timburr
 rarity_code: AR
 category: card
 image: https://den-cards.pokellector.com/393/Timburr.SV6.109.52898.png
-illustrator:
+illustrator: Yuriko Akase
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '52898'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: ドッコラー
     variants_seen:
-    - normal
+      - normal

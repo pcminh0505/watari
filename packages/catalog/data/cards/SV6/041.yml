@@ -7,9 +7,9 @@ name_en: Luxray ex
 rarity_code: RR
 category: card
 image: https://den-cards.pokellector.com/393/Luxray-ex.SV6.41.52922.png
-illustrator:
+illustrator: PLANETA Yamashita
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '52922'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: ゾウドウ
     variants_seen:
-    - normal
+      - normal

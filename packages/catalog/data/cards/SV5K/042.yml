@@ -7,9 +7,9 @@ name_en: Great Tusk
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/386/Great-Tusk.SV5K.42.51851.png
-illustrator:
+illustrator: GIDORA
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '51851'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: イダイナキバ
     variants_seen:
-    - normal
+      - normal

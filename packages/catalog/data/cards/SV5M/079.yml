@@ -7,9 +7,9 @@ name_en: Excadrill
 rarity_code: AR
 category: card
 image: https://den-cards.pokellector.com/387/Excadrill.SV5M.79.52219.png
-illustrator:
+illustrator: Saboteri
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '52219'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: ドリュウズ
     variants_seen:
-    - normal
+      - normal

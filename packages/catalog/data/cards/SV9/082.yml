@@ -7,9 +7,9 @@ name_en: Komala
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/408/Komala.SV9.82.55765.png
-illustrator:
+illustrator: Natsumi Yoshida
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '55765'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: ネッコアラ
     variants_seen:
-    - normal
+      - normal

@@ -7,9 +7,9 @@ name_en: Prinplup
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/425/Prinplup.M2.28.59209.png
-illustrator:
+illustrator: Atsuya Uki
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '59209'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: ポッタイシ
     variants_seen:
-    - normal
+      - normal

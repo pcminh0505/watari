@@ -3,13 +3,13 @@
 set_code: SV6A
 local_id: '011'
 name_ja: シードラ
-name_en: Kingdra
+name_en: Seadra
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/398/Kingdra.SV6A.11.53526.png
-illustrator:
+illustrator: Yuya Oka
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '53526'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: シードラ
     variants_seen:
-    - normal
+      - normal

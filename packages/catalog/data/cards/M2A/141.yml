@@ -7,9 +7,9 @@ name_en: Hop's Wooloo
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/427/Hops-Wooloo.M2A.141.60022.png
-illustrator:
+illustrator: Tomomi Ozaki
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '60022'

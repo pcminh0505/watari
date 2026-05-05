@@ -7,10 +7,10 @@ name_en: Hilda
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/415/Hilda.SV11W.85.57189.png
-illustrator:
+illustrator: yuu
 prints:
-- normal
-- poke_ball_mirror
+  - normal
+  - poke_ball_mirror
 sources:
   pokellector:
     id: '57189'
@@ -20,5 +20,5 @@ sources:
   cardrush:
     name_ja: トウコ
     variants_seen:
-    - normal
-    - poke_ball_mirror
+      - normal
+      - poke_ball_mirror

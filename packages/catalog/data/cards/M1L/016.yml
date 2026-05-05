@@ -7,9 +7,9 @@ name_en: Raboot
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/416/Raboot.M1L.16.58003.png
-illustrator:
+illustrator: Narumi Sato
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '58003'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ラビフット
     variants_seen:
-    - normal
+      - normal
     rarity_code: C

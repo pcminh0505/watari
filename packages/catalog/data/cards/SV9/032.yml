@@ -3,13 +3,13 @@
 set_code: SV9
 local_id: '032'
 name_ja: ナンジャモのタイカイデン
-name_en: Iono's Killowattrel
+name_en: Iono's Kilowattrel
 rarity_code: R
 category: card
 image: https://den-cards.pokellector.com/408/Ionos-Killowattrel.SV9.32.55489.png
-illustrator:
+illustrator: chibi
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '55489'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: ナンジャモのタイカイデン
     variants_seen:
-    - normal
+      - normal

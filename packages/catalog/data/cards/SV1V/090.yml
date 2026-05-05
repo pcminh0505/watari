@@ -7,9 +7,9 @@ name_en: Skwovet
 rarity_code: AR
 category: card
 image: https://den-cards.pokellector.com/362/Skwovet.SV1V.90.46822.png
-illustrator:
+illustrator: Teeziro
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '46822'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: ホシガリス
     variants_seen:
-    - normal
+      - normal

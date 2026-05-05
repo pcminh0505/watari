@@ -7,9 +7,9 @@ name_en: Tauros
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/411/Tauros.SV9A.53.56648.png
-illustrator:
+illustrator: yuu
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '56648'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: ケンタロス
     variants_seen:
-    - normal
+      - normal

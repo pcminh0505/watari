@@ -7,9 +7,9 @@ name_en: Paldean Wooper
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/368/Paldean-Wooper.SV3.67.48805.png
-illustrator:
+illustrator: kirisAki
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '48805'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: パルデアウパー
     variants_seen:
-    - normal
+      - normal

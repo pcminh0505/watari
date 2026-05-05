@@ -3,13 +3,13 @@
 set_code: M3
 local_id: '078'
 name_ja: グロウ草エネルギー
-name_en: Grow Energy
+name_en: Growing Grass Energy
 rarity_code: R
 category: energy
 image: https://den-cards.pokellector.com/428/Grow-Energy.M3.78.60251.png
 illustrator:
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '60251'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: グロウ草エネルギー
     variants_seen:
-    - normal
+      - normal

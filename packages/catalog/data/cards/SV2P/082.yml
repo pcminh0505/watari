@@ -7,9 +7,9 @@ name_en: Rookidee
 rarity_code: AR
 category: card
 image: https://den-cards.pokellector.com/369/Rookidee.SV2P.82.47602.png
-illustrator:
+illustrator: GOSSAN
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '47602'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: ココガラ
     variants_seen:
-    - normal
+      - normal

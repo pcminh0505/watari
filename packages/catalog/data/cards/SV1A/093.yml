@@ -7,9 +7,9 @@ name_en: Clavell
 rarity_code: SR
 category: card
 image: https://den-cards.pokellector.com/366/Clavell.SV1A.93.47003.png
-illustrator:
+illustrator: Sanosuke Sakuma
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '47003'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: クラベル
     variants_seen:
-    - normal
+      - normal

@@ -7,9 +7,9 @@ name_en: Sacred Charm
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/425/Sacred-Charm.M2.75.59249.png
-illustrator:
+illustrator: Toyste Beach
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '59249'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: せいなるおまもり
     variants_seen:
-    - normal
+      - normal

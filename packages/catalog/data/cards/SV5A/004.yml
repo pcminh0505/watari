@@ -7,9 +7,9 @@ name_en: Spinarak
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/391/Spinarak.SV5A.4.52412.png
-illustrator:
+illustrator: Saya Tsuruta
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '52412'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: イトマル
     variants_seen:
-    - normal
+      - normal

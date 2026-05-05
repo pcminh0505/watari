@@ -4,12 +4,12 @@ set_code: M2A
 local_id: '239'
 name_ja: メガルチャブルex
 name_en: Mega Hawlucha ex
-rarity_code: SR
+rarity_code: SAR
 category: card
 image: https://den-cards.pokellector.com/427/Mega-Hawlucha-ex.M2A.239.60107.png
-illustrator:
+illustrator: AKIRA EGAWA
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '60107'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: メガルチャブルex
     variants_seen:
-    - normal
+      - normal

@@ -7,9 +7,9 @@ name_en: Snorunt
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/406/Snorunt.SV8A.37.54938.png
-illustrator:
+illustrator: Mékayu
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '54938'

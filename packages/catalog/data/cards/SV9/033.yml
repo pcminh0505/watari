@@ -7,9 +7,9 @@ name_en: Lillie's Clefairy ex
 rarity_code: RR
 category: card
 image: https://den-cards.pokellector.com/408/Lillies-Clefairy-ex.SV9.33.55478.png
-illustrator:
+illustrator: 5ban Graphics
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '55478'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: オーガポンいどのめん
     variants_seen:
-    - normal
+      - normal

@@ -3,13 +3,13 @@
 set_code: SV10
 local_id: '035'
 name_ja: ロケット団のモココ
-name_en: Team Rocket's Flaafy
+name_en: Team Rocket's Flaaffy
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/413/Team-Rockets-Flaafy.SV10.35.56883.png
-illustrator:
+illustrator: Jerky
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '56883'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: ロケット団のモココ
     variants_seen:
-    - normal
+      - normal

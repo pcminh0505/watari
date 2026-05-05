@@ -7,9 +7,9 @@ name_en: Dendra
 rarity_code: SAR
 category: card
 image: https://den-cards.pokellector.com/366/Dendra.SV1A.99.46924.png
-illustrator:
+illustrator: GIDORA
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '46924'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: キハダ
     variants_seen:
-    - normal
+      - normal

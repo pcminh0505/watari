@@ -3,14 +3,14 @@
 set_code: SV8
 local_id: '096'
 name_ja: のんびりじゃらし
-name_en: Fluffy Cat Toy
+name_en: Chill Teaser Toy
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/405/Fluffy-Cat-Toy.SV8.96.54507.png
-illustrator:
+illustrator: AYUMI ODASHIMA
 prints:
-- normal
-- master_ball_mirror
+  - normal
+  - master_ball_mirror
 sources:
   pokellector:
     id: '54507'
@@ -20,5 +20,5 @@ sources:
   cardrush:
     name_ja: のんびりじゃらし
     variants_seen:
-    - master_ball_mirror
-    - normal
+      - master_ball_mirror
+      - normal

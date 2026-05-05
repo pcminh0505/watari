@@ -7,9 +7,9 @@ name_en: Flamigo
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/370/Flamigo.SV2D.65.47649.png
-illustrator:
+illustrator: nagimiso
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '47649'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: カラミンゴ
     variants_seen:
-    - normal
+      - normal

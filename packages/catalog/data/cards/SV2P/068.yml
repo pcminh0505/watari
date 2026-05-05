@@ -7,9 +7,9 @@ name_en: Grusha
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/369/Grusha.SV2P.68.47034.png
-illustrator:
+illustrator: GIDORA
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '47034'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: グルーシャ
     variants_seen:
-    - normal
+      - normal

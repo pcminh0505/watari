@@ -7,9 +7,9 @@ name_en: Glass Trumpet
 rarity_code: SR
 category: card
 image: https://den-cards.pokellector.com/427/Glass-Trumpet.M2A.215.60086.png
-illustrator:
+illustrator: Toyste Beach
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '60086'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: ガラスのラッパ
     variants_seen:
-    - normal
+      - normal

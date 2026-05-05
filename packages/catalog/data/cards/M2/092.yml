@@ -7,9 +7,9 @@ name_en: Ambipom
 rarity_code: AR
 category: card
 image: https://den-cards.pokellector.com/425/Ambipom.M2.92.59254.png
-illustrator:
+illustrator: Shigenori Negishi
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '59254'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: エテボース
     variants_seen:
-    - normal
+      - normal

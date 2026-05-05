@@ -7,9 +7,9 @@ name_en: Iron Crown
 rarity_code: R
 category: card
 image: https://den-cards.pokellector.com/403/Iron-Crown.SV7A.39.54399.png
-illustrator:
+illustrator: akagi
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '54399'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: テツノカシラ
     variants_seen:
-    - normal
+      - normal

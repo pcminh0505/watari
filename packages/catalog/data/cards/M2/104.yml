@@ -7,9 +7,9 @@ name_en: Punk Helmet
 rarity_code: SR
 category: card
 image: https://den-cards.pokellector.com/425/Punk-Helmet.M2.104.59589.png
-illustrator:
+illustrator: Studio Bora Inc.
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '59589'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: ロケット団のニューラ(R仕様)
     variants_seen:
-    - normal
+      - normal

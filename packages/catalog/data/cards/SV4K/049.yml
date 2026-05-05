@@ -7,9 +7,9 @@ name_en: Trubbish
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/381/Trubbish.SV4K.49.50781.png
-illustrator:
+illustrator: Miki Tanaka
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '50781'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: ヤブクロン
     variants_seen:
-    - normal
+      - normal

@@ -7,9 +7,9 @@ name_en: Hypno
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/362/Hypno.SV1V.39.46315.png
-illustrator:
+illustrator: Toshinao Aoki
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '46315'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: スリーパー
     variants_seen:
-    - normal
+      - normal

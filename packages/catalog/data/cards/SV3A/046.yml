@@ -7,9 +7,9 @@ name_en: Doublade
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/376/Doublade.SV3A.46.49347.png
-illustrator:
+illustrator: Bun Toujo
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '49347'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: ニダンギル
     variants_seen:
-    - normal
+      - normal

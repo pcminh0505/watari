@@ -4,12 +4,12 @@ set_code: SV2D
 local_id: '018'
 name_ja: ライチュウ
 name_en: Raichu
-rarity_code: C
+rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/370/Raichu.SV2D.18.47045.png
-illustrator:
+illustrator: Teeziro
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '47045'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: ライチュウ
     variants_seen:
-    - normal
+      - normal

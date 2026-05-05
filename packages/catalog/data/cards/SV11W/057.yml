@@ -7,11 +7,11 @@ name_en: Garbodor
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/415/Garbodor.SV11W.57.57779.png
-illustrator:
+illustrator: OKUBO
 prints:
-- normal
-- master_ball_mirror
-- poke_ball_mirror
+  - normal
+  - master_ball_mirror
+  - poke_ball_mirror
 sources:
   pokellector:
     id: '57779'
@@ -21,6 +21,6 @@ sources:
   cardrush:
     name_ja: ダストダス
     variants_seen:
-    - master_ball_mirror
-    - normal
-    - poke_ball_mirror
+      - master_ball_mirror
+      - normal
+      - poke_ball_mirror

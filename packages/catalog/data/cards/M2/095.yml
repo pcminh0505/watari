@@ -7,9 +7,9 @@ name_en: Oricorio ex
 rarity_code: SR
 category: card
 image: https://den-cards.pokellector.com/425/Oricorio-ex.M2.95.59580.png
-illustrator:
+illustrator: 5ban Graphics
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '59580'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: オドリドリex
     variants_seen:
-    - normal
+      - normal

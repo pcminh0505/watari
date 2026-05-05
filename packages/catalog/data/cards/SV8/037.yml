@@ -7,9 +7,9 @@ name_en: Rotom
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/405/Rotom.SV8.37.54550.png
-illustrator:
+illustrator: Shinya Mizuno
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '54550'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: ロトム
     variants_seen:
-    - normal
+      - normal

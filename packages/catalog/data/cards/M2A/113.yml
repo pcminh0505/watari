@@ -7,9 +7,9 @@ name_en: Pangoro
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/427/Pangoro.M2A.113.60004.png
-illustrator:
+illustrator: takashi shiraishi
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '60004'

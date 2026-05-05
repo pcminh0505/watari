@@ -7,9 +7,9 @@ name_en: Tyranitar ex
 rarity_code: RR
 category: card
 image: https://den-cards.pokellector.com/368/Tyranitar-ex.SV3.32.48356.png
-illustrator:
+illustrator: 5ban Graphics
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '48356'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: カラミンゴ
     variants_seen:
-    - normal
+      - normal

@@ -7,9 +7,9 @@ name_en: Shuckle
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/368/Shuckle.SV3.5.48766.png
-illustrator:
+illustrator: Kurata So
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '48766'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: ユキワラシ
     variants_seen:
-    - normal
+      - normal

@@ -3,13 +3,13 @@
 set_code: SV1V
 local_id: '015'
 name_ja: ガーディ
-name_en: Growlith
+name_en: Growlithe
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/362/Growlith.SV1V.15.46127.png
-illustrator:
+illustrator: Tika Matsuno
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '46127'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: ガーディ
     variants_seen:
-    - normal
+      - normal

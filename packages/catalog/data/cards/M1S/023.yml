@@ -7,9 +7,9 @@ name_en: Inteleon
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/417/Inteleon.M1S.23.57993.png
-illustrator:
+illustrator: akagi
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '57993'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: インテレオン
     variants_seen:
-    - normal
+      - normal
     rarity_code: U

@@ -3,13 +3,13 @@
 set_code: SV8
 local_id: '047'
 name_ja: トゲキッス
-name_en: Togetic
+name_en: Togekiss
 rarity_code: R
 category: card
 image: https://den-cards.pokellector.com/405/Togetic.SV8.47.54469.png
-illustrator:
+illustrator: Narano
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '54469'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: トゲキッス
     variants_seen:
-    - normal
+      - normal

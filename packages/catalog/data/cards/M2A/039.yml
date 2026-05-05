@@ -7,9 +7,9 @@ name_en: N's Vanilluxe
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/427/Ns-Vanilluxe.M2A.39.59782.png
-illustrator:
+illustrator: imoniii
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '59782'

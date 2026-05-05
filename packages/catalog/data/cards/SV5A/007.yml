@@ -7,9 +7,9 @@ name_en: Iron Leaves
 rarity_code: R
 category: card
 image: https://den-cards.pokellector.com/391/Iron-Leaves.SV5A.7.52385.png
-illustrator:
+illustrator: Mitsuhiro Arita
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '52385'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: テツノイサハ
     variants_seen:
-    - normal
+      - normal

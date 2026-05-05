@@ -7,9 +7,9 @@ name_en: Sobble
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/417/Sobble.M1S.21.57991.png
-illustrator:
+illustrator: Taira Akitsu
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '57991'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: メッソン
     variants_seen:
-    - normal
+      - normal
     rarity_code: C

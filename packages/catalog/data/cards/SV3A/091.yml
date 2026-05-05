@@ -7,9 +7,9 @@ name_en: Beach Court
 rarity_code: UR
 category: card
 image: https://den-cards.pokellector.com/376/Beach-Court.SV3A.91.49408.png
-illustrator:
+illustrator: Oswaldo KATO
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '49408'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: ビーチコート
     variants_seen:
-    - normal
+      - normal

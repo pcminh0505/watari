@@ -7,9 +7,9 @@ name_en: Lileep
 rarity_code: AR
 category: card
 image: https://den-cards.pokellector.com/401/Lileep.SV7.104.53711.png
-illustrator:
+illustrator: Mori Yuu
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '53711'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: リリーラ
     variants_seen:
-    - normal
+      - normal

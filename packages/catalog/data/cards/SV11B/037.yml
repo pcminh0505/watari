@@ -7,9 +7,9 @@ name_en: Zekrom ex
 rarity_code: RR
 category: card
 image: https://den-cards.pokellector.com/414/Zekrom-ex.SV11B.37.57171.png
-illustrator:
+illustrator: takuyoa
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '57171'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: ゼクロムex
     variants_seen:
-    - normal
+      - normal

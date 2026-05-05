@@ -3,13 +3,13 @@
 set_code: SV1A
 local_id: '086'
 name_ja: マスカーニャex
-name_en: Meowscarada
+name_en: Meowscarada ex
 rarity_code: SR
 category: card
 image: https://den-cards.pokellector.com/366/Meowscarada.SV1A.86.46998.png
-illustrator:
+illustrator: 5ban Graphics
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '46998'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: マスカーニャex
     variants_seen:
-    - normal
+      - normal

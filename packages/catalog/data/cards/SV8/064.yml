@@ -7,10 +7,10 @@ name_en: Phanpy
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/405/Phanpy.SV8.64.54565.png
-illustrator:
+illustrator: ryoma uratsuka
 prints:
-- normal
-- master_ball_mirror
+  - normal
+  - master_ball_mirror
 sources:
   pokellector:
     id: '54565'
@@ -20,5 +20,5 @@ sources:
   cardrush:
     name_ja: ゴマゾウ
     variants_seen:
-    - master_ball_mirror
-    - normal
+      - master_ball_mirror
+      - normal

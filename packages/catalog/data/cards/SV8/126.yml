@@ -7,9 +7,9 @@ name_en: Slaking ex
 rarity_code: SR
 category: card
 image: https://den-cards.pokellector.com/405/Slaking-ex.SV8.126.54618.png
-illustrator:
+illustrator: PLANETA Igarashi
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '54618'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: ケッキングex
     variants_seen:
-    - normal
+      - normal

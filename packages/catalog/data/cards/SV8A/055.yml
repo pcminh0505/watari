@@ -7,9 +7,9 @@ name_en: Iron Thorns
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/406/Iron-Thorns.SV8A.55.55177.png
-illustrator:
+illustrator: Takeshi Nakamura
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '55177'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: テツノイバラ(R仕様)
     variants_seen:
-    - normal
+      - normal

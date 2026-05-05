@@ -7,9 +7,9 @@ name_en: Indeedee
 rarity_code: R
 category: card
 image: https://den-cards.pokellector.com/362/Indeedee.SV1V.63.46337.png
-illustrator:
+illustrator: Kagemaru Himeno
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '46337'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: イエッサン
     variants_seen:
-    - normal
+      - normal

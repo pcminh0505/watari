@@ -7,9 +7,9 @@ name_en: Fuecoco
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/366/Fuecoco.SV1A.17.46849.png
-illustrator:
+illustrator: Kagemaru Himeno
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '46849'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: ホゲータ
     variants_seen:
-    - normal
+      - normal

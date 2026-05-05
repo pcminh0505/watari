@@ -7,9 +7,9 @@ name_en: Hop's Rookidee
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/408/Hops-Rookidee.SV9.83.55766.png
-illustrator:
+illustrator: Shinya Mizuno
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '55766'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: ホップのココガラ
     variants_seen:
-    - normal
+      - normal

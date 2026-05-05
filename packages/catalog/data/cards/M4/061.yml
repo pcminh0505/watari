@@ -7,9 +7,9 @@ name_en: Ferrothorn
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/430/Ferrothorn.M4.61.60989.png
-illustrator:
+illustrator: Haru Akasaka
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '60989'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: ナットレイ
     variants_seen:
-    - normal
+      - normal

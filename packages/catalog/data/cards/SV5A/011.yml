@@ -7,9 +7,9 @@ name_en: Ninetales
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/391/Ninetales.SV5A.11.52773.png
-illustrator:
+illustrator: KEIICHIRO ITO
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '52773'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: キュウコン
     variants_seen:
-    - normal
+      - normal

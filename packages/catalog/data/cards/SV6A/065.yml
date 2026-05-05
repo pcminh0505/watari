@@ -7,9 +7,9 @@ name_en: Tapu Bulu
 rarity_code: AR
 category: card
 image: https://den-cards.pokellector.com/398/Tapu-Bulu.SV6A.65.53571.png
-illustrator:
+illustrator: IKEDA Saki
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '53571'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: カプ・ブルル
     variants_seen:
-    - normal
+      - normal

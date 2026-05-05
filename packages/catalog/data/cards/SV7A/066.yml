@@ -7,9 +7,9 @@ name_en: Shiinotic
 rarity_code: AR
 category: card
 image: https://den-cards.pokellector.com/403/Shiinotic.SV7A.66.54030.png
-illustrator:
+illustrator: matazo
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '54030'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: マシェード
     variants_seen:
-    - normal
+      - normal

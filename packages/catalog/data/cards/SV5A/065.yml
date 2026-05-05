@@ -7,9 +7,9 @@ name_en: Community Center
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/391/Community-Center.SV5A.65.52393.png
-illustrator:
+illustrator: MARINA Chikazawa
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '52393'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: 公民館
     variants_seen:
-    - normal
+      - normal

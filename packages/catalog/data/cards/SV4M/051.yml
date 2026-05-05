@@ -7,9 +7,9 @@ name_en: Aipom
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/382/Aipom.SV4K.51.50878.png
-illustrator:
+illustrator: aspara
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '50878'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: エイパム
     variants_seen:
-    - normal
+      - normal

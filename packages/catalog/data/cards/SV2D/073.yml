@@ -7,9 +7,9 @@ name_en: Fletchinder
 rarity_code: AR
 category: card
 image: https://den-cards.pokellector.com/370/Fletchinder.SV2D.73.47652.png
-illustrator:
+illustrator: Atsushi Furusawa
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '47652'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: ヒノヤコマ
     variants_seen:
-    - normal
+      - normal

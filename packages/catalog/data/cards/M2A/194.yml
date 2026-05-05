@@ -7,9 +7,9 @@ name_en: Beautifly
 rarity_code: AR
 category: card
 image: https://den-cards.pokellector.com/427/Beautifly.M2A.194.60069.png
-illustrator:
+illustrator: Mori Yuu
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '60069'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: アゲハント
     variants_seen:
-    - normal
+      - normal

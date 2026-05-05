@@ -7,9 +7,9 @@ name_en: Xerneas
 rarity_code: AR
 category: card
 image: https://den-cards.pokellector.com/430/Xerneas.M4.89.61009.png
-illustrator:
+illustrator: YASHIRO Nanaco
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '61009'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: ゼルネアス
     variants_seen:
-    - normal
+      - normal

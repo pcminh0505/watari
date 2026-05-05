@@ -7,9 +7,9 @@ name_en: Cobalion ex
 rarity_code: RR
 category: card
 image: https://den-cards.pokellector.com/430/Cobalion-ex.M4.62.60915.png
-illustrator:
+illustrator: 5ban Graphics
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '60915'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: コバルオンex
     variants_seen:
-    - normal
+      - normal

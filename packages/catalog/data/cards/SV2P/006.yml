@@ -7,9 +7,9 @@ name_en: Abomasnow
 rarity_code: R
 category: card
 image: https://den-cards.pokellector.com/369/Abomasnow.SV2P.6.47559.png
-illustrator:
+illustrator: Ryuta Fuse
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '47559'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: ユキノオー
     variants_seen:
-    - normal
+      - normal

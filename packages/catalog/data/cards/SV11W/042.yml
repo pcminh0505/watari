@@ -7,9 +7,9 @@ name_en: Jellicent ex
 rarity_code: RR
 category: card
 image: https://den-cards.pokellector.com/415/Jellicent-ex.SV11W.42.57256.png
-illustrator:
+illustrator: PLANETA Igarashi
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '57256'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: ブルンゲルex
     variants_seen:
-    - normal
+      - normal

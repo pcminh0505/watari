@@ -7,9 +7,9 @@ name_en: Gothorita
 rarity_code: AR
 category: card
 image: https://den-cards.pokellector.com/369/Gothorita.SV2P.78.47600.png
-illustrator:
+illustrator: SIE NANAHARA
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '47600'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: ゴチミル
     variants_seen:
-    - normal
+      - normal

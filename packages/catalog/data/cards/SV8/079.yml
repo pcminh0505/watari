@@ -7,9 +7,9 @@ name_en: Bronzong
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/405/Bronzong.SV8.79.54573.png
-illustrator:
+illustrator: kawayoo
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '54573'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: ドータクン
     variants_seen:
-    - normal
+      - normal

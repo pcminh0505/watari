@@ -7,9 +7,9 @@ name_en: Mega Signal
 rarity_code: SR
 category: card
 image: https://den-cards.pokellector.com/417/Mega-Signal.M1S.83.58959.png
-illustrator:
+illustrator: inose yukie
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '58959'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: メガシグナル
     variants_seen:
-    - normal
+      - normal
     rarity_code: SR

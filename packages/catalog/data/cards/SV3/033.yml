@@ -7,9 +7,9 @@ name_en: Tynamo
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/368/Tynamo.SV3.33.48784.png
-illustrator:
+illustrator: Kagemaru Himeno
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '48784'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: シビシラス
     variants_seen:
-    - normal
+      - normal

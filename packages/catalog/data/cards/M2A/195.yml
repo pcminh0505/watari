@@ -7,9 +7,9 @@ name_en: Dustox
 rarity_code: AR
 category: card
 image: https://den-cards.pokellector.com/427/Dustox.M2A.195.60070.png
-illustrator:
+illustrator: IKEDA Saki
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '60070'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: ドクケイル
     variants_seen:
-    - normal
+      - normal

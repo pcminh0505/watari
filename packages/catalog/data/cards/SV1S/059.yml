@@ -7,9 +7,9 @@ name_en: Varoom
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/361/Varoom.SV1S.59.46271.png
-illustrator:
+illustrator: Shin Nagasawa
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '46271'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: ラッキー
     variants_seen:
-    - normal
+      - normal

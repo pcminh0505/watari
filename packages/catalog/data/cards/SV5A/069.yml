@@ -7,9 +7,9 @@ name_en: Torkoal
 rarity_code: AR
 category: card
 image: https://den-cards.pokellector.com/391/Torkoal.SV5A.69.52825.png
-illustrator:
+illustrator: Masa
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '52825'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: コータス
     variants_seen:
-    - normal
+      - normal

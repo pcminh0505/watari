@@ -4,12 +4,12 @@ set_code: SV5K
 local_id: '066'
 name_ja: マキシマムベルト
 name_en: Maximum Belt
-rarity_code: R
+rarity_code: ACE
 category: card
 image: https://den-cards.pokellector.com/386/Maximum-Belt.SV5K.66.51868.png
-illustrator:
+illustrator: inose yukie
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '51868'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: マキシマムベルト
     variants_seen:
-    - normal
+      - normal

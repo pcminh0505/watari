@@ -7,9 +7,9 @@ name_en: Rellor
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/406/Rellor.SV8A.13.55158.png
-illustrator:
+illustrator: Saboteri
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '55158'

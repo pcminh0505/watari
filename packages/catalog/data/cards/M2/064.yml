@@ -7,9 +7,9 @@ name_en: Jigglypuff
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/425/Jigglypuff.M2.64.59239.png
-illustrator:
+illustrator: Naoyo Kimura
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '59239'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: プリン
     variants_seen:
-    - normal
+      - normal

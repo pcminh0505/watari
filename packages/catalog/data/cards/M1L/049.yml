@@ -7,9 +7,9 @@ name_en: Tinkatuff
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/416/Tinkatuff.M1L.49.58853.png
-illustrator:
+illustrator: KEIICHIRO ITO
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '58853'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ナカヌチャン
     variants_seen:
-    - normal
+      - normal
     rarity_code: C

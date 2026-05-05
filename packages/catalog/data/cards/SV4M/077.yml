@@ -7,9 +7,9 @@ name_en: Porygon-Z
 rarity_code: AR
 category: card
 image: https://den-cards.pokellector.com/382/Porygon-Z.SV4K.77.50904.png
-illustrator:
+illustrator: GOSSAN
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '50904'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: ポリゴンZ
     variants_seen:
-    - normal
+      - normal

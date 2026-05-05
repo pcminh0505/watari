@@ -4,12 +4,12 @@ set_code: SV8
 local_id: '095'
 name_ja: スクランブルスイッチ
 name_en: Scramble Switch
-rarity_code: R
+rarity_code: ACE
 category: card
 image: https://den-cards.pokellector.com/405/Scramble-Switch.SV8.95.54581.png
-illustrator:
+illustrator: Ayaka Yoshida
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '54581'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: スクランブルスイッチ
     variants_seen:
-    - normal
+      - normal

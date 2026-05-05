@@ -7,9 +7,9 @@ name_en: Skiploom
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/370/Skiploom.SV2D.2.47293.png
-illustrator:
+illustrator: Yoriyuki Ikegami
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '47293'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: ポポッコ
     variants_seen:
-    - normal
+      - normal

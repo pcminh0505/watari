@@ -7,9 +7,9 @@ name_en: Golbat
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/430/Golbat.M4.49.60940.png
-illustrator:
+illustrator: Mousho
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '60940'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: ゴルバット
     variants_seen:
-    - normal
+      - normal

@@ -7,9 +7,9 @@ name_en: Slugma
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/387/Slugma.SV5M.17.51764.png
-illustrator:
+illustrator: Haru Akasaka
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '51764'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: マグマッグ
     variants_seen:
-    - normal
+      - normal

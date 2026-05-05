@@ -7,9 +7,9 @@ name_en: Grafaiai
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/405/Grafaiai.SV8.74.54570.png
-illustrator:
+illustrator: NC Empire
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '54570'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: タギングル
     variants_seen:
-    - normal
+      - normal

@@ -7,9 +7,9 @@ name_en: Ethan's Ho-Oh ex
 rarity_code: RR
 category: card
 image: https://den-cards.pokellector.com/427/Ethans-Ho-Oh-ex.M2A.21.59932.png
-illustrator:
+illustrator: aky CG Works
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '59932'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: ヒビキのホウオウex
     variants_seen:
-    - normal
+      - normal

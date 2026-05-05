@@ -7,9 +7,9 @@ name_en: Penny
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/361/Penny.SV1S.77.46149.png
-illustrator:
+illustrator: yuu
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '46149'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: ボタン
     variants_seen:
-    - normal
+      - normal

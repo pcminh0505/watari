@@ -7,9 +7,9 @@ name_en: Impidimp
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/401/Impidimp.SV7.64.53757.png
-illustrator:
+illustrator: Tomokazu Komiya
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '53757'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: ベロバー
     variants_seen:
-    - normal
+      - normal

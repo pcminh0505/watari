@@ -7,9 +7,9 @@ name_en: Mega Camerupt ex
 rarity_code: RR
 category: card
 image: https://den-cards.pokellector.com/416/Mega-Camerupt-ex.M1L.13.58824.png
-illustrator:
+illustrator: 5ban Graphics
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '58824'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: メガバクーダex
     variants_seen:
-    - normal
+      - normal
     rarity_code: RR

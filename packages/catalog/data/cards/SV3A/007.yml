@@ -7,9 +7,9 @@ name_en: Mantyke
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/376/Mantyke.SV3A.7.49358.png
-illustrator:
+illustrator: miki kudo
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '49358'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: タマンタ
     variants_seen:
-    - normal
+      - normal

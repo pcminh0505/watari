@@ -7,9 +7,9 @@ name_en: Farigiraf
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/370/Farigiraf.SV2D.60.47647.png
-illustrator:
+illustrator: Kouki Saitou
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '47647'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: リキキリン
     variants_seen:
-    - normal
+      - normal

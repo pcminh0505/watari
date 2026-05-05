@@ -7,9 +7,9 @@ name_en: Chesnaught
 rarity_code: R
 category: card
 image: https://den-cards.pokellector.com/430/Chesnaught.M4.7.60924.png
-illustrator:
+illustrator: Uta
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '60924'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: ブリガロン
     variants_seen:
-    - normal
+      - normal

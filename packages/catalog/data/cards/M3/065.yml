@@ -7,9 +7,9 @@ name_en: Fletchling
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/428/Fletchling.M3.65.60245.png
-illustrator:
+illustrator: sowsow
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '60245'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: ヤヤコマ
     variants_seen:
-    - normal
+      - normal

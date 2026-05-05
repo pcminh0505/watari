@@ -7,9 +7,9 @@ name_en: Silicobra
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/361/Silicobra.SV1S.46.46260.png
-illustrator:
+illustrator: Kouki Saitou
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '46260'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: ボチ
     variants_seen:
-    - normal
+      - normal

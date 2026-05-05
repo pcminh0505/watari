@@ -7,9 +7,9 @@ name_en: Bouffalant
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/405/Bouffalant.SV8.87.54576.png
-illustrator:
+illustrator: Anesaki Dynamic
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '54576'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: バッフロン
     variants_seen:
-    - normal
+      - normal

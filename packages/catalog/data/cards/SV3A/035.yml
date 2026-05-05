@@ -7,9 +7,9 @@ name_en: Gengar
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/376/Gengar.SV3A.35.49309.png
-illustrator:
+illustrator: Nelnal
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '49309'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: ゲンガー
     variants_seen:
-    - normal
+      - normal

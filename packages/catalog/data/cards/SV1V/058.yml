@@ -7,9 +7,9 @@ name_en: Iron Treads ex
 rarity_code: RR
 category: card
 image: https://den-cards.pokellector.com/362/Iron-Treads-ex.SV1S.58.46165.png
-illustrator:
+illustrator: 5ban Graphics
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '46165'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: テツノワダチex
     variants_seen:
-    - normal
+      - normal

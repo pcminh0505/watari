@@ -7,9 +7,9 @@ name_en: Mega Starmie ex
 rarity_code: SR
 category: card
 image: https://den-cards.pokellector.com/428/Mega-Starmie-ex.M3.95.60264.png
-illustrator:
+illustrator: 5ban Graphics
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '60264'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: メガスターミーex
     variants_seen:
-    - normal
+      - normal

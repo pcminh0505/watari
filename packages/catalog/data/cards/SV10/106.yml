@@ -7,9 +7,9 @@ name_en: Team Rocket's Murkrow
 rarity_code: AR
 category: card
 image: https://den-cards.pokellector.com/413/Team-Rockets-Murkrow.SV10.106.57130.png
-illustrator:
+illustrator: Akira Komayama
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '57130'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: ロケット団のヤミカラス
     variants_seen:
-    - normal
+      - normal

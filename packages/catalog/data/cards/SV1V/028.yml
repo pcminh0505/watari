@@ -7,9 +7,9 @@ name_en: Magnezone ex
 rarity_code: RR
 category: card
 image: https://den-cards.pokellector.com/362/Magnezone-ex.SV1V.28.46164.png
-illustrator:
+illustrator: hncl
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '46164'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: ジバコイルex
     variants_seen:
-    - normal
+      - normal

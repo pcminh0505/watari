@@ -7,9 +7,9 @@ name_en: Finizen
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/368/Finizen.SV3.30.48368.png
-illustrator:
+illustrator: Kouki Saitou
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '48368'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: ナミイルカ
     variants_seen:
-    - normal
+      - normal

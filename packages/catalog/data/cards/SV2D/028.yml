@@ -7,9 +7,9 @@ name_en: Spiritomb
 rarity_code: R
 category: card
 image: https://den-cards.pokellector.com/370/Spiritomb.SV2D.28.47296.png
-illustrator:
+illustrator: Aya Kusube
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '47296'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: ミカルゲ
     variants_seen:
-    - normal
+      - normal

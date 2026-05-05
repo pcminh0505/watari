@@ -7,9 +7,9 @@ name_en: Centiskorch
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/405/Centiskorch.SV8.16.54539.png
-illustrator:
+illustrator: Aliya Chen
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '54539'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: マルヤクデ
     variants_seen:
-    - normal
+      - normal

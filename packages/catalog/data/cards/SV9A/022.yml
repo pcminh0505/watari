@@ -4,12 +4,12 @@ set_code: SV9A
 local_id: '022'
 name_ja: カスミのコダック
 name_en: Misty's Psyduck
-rarity_code: C
+rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/411/Mistys-Psyduck.SV9A.22.56549.png
-illustrator:
+illustrator: Yuu Nishida
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '56549'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: カスミのコダック
     variants_seen:
-    - normal
+      - normal

@@ -7,9 +7,9 @@ name_en: Togetic
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/368/Togetic.SV3.44.48695.png
-illustrator:
+illustrator: Kyoko Umemoto
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '48695'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: トゲチック
     variants_seen:
-    - normal
+      - normal

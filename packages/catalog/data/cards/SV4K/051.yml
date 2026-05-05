@@ -7,9 +7,9 @@ name_en: Morpeko
 rarity_code: R
 category: card
 image: https://den-cards.pokellector.com/381/Morpeko.SV4K.51.50783.png
-illustrator:
+illustrator: Cona Nitanda
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '50783'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: モルペコ
     variants_seen:
-    - normal
+      - normal

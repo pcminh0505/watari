@@ -7,9 +7,9 @@ name_en: Dragonair
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/427/Dragonair.M2A.125.59799.png
-illustrator:
+illustrator: Gemi
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '59799'

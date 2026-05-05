@@ -7,9 +7,9 @@ name_en: Misty's Lapras
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/411/Mistys-Lapras.SV9A.27.56633.png
-illustrator:
+illustrator: En Morikura
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '56633'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: カスミのラプラス
     variants_seen:
-    - normal
+      - normal

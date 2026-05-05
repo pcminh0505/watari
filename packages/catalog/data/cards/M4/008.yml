@@ -7,9 +7,9 @@ name_en: Vulpix
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/430/Vulpix.M4.8.60955.png
-illustrator:
+illustrator: Yoshimoto Yoshimon
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '60955'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: ロコン
     variants_seen:
-    - normal
+      - normal

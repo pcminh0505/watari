@@ -7,9 +7,9 @@ name_en: Okidogi
 rarity_code: R
 category: card
 image: https://den-cards.pokellector.com/393/Okidogi.SV6.64.52813.png
-illustrator:
+illustrator: Souichirou Gunjima
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '52813'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: 夜のアカデミー
     variants_seen:
-    - normal
+      - normal

@@ -7,9 +7,9 @@ name_en: Centiskorch
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/386/Centiskorch.SV5K.11.51826.png
-illustrator:
+illustrator: Krgc
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '51826'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: マルヤクデ
     variants_seen:
-    - normal
+      - normal

@@ -7,9 +7,9 @@ name_en: Enamorus
 rarity_code: R
 category: card
 image: https://den-cards.pokellector.com/391/Enamorus.SV5A.39.52789.png
-illustrator:
+illustrator: DOM
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '52789'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: ラブトロス
     variants_seen:
-    - normal
+      - normal

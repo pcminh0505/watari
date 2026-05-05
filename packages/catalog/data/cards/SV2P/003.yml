@@ -7,9 +7,9 @@ name_en: Combee
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/369/Combee.SV2P.3.47556.png
-illustrator:
+illustrator: Yoriyuki Ikegami
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '47556'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: ミツハニー
     variants_seen:
-    - normal
+      - normal

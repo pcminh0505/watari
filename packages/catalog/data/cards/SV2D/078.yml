@@ -7,9 +7,9 @@ name_en: Nacli
 rarity_code: AR
 category: card
 image: https://den-cards.pokellector.com/370/Nacli.SV2D.78.47654.png
-illustrator:
+illustrator: Ryota Murayama
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '47654'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: コジオ
     variants_seen:
-    - normal
+      - normal

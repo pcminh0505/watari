@@ -7,9 +7,9 @@ name_en: Hop's Zacian ex
 rarity_code: RR
 category: card
 image: https://den-cards.pokellector.com/427/Hops-Zacian-ex.M2A.123.60011.png
-illustrator:
+illustrator: PLANETA Mochizuki
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '60011'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: ホップのザシアンex
     variants_seen:
-    - normal
+      - normal

@@ -7,9 +7,9 @@ name_en: Ethan's Pinsir
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/427/Ethans-Pinsir.M2A.1.59914.png
-illustrator:
+illustrator: GIDORA
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '59914'

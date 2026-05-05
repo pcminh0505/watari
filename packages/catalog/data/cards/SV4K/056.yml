@@ -7,9 +7,9 @@ name_en: Loudred
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/381/Loudred.SV4K.56.50788.png
-illustrator:
+illustrator: Yukiko Baba
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '50788'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: ドゴーム
     variants_seen:
-    - normal
+      - normal

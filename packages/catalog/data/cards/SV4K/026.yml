@@ -7,9 +7,9 @@ name_en: Veluza
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/381/Veluza.SV4K.26.50758.png
-illustrator:
+illustrator: Oswaldo KATO
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '50758'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: ミガルーサ
     variants_seen:
-    - normal
+      - normal

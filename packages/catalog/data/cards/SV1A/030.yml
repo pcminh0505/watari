@@ -3,13 +3,13 @@
 set_code: SV1A
 local_id: '030'
 name_ja: ウェーニバルex
-name_en: Quaquaval
+name_en: Quaquaval ex
 rarity_code: RR
 category: card
 image: https://den-cards.pokellector.com/366/Quaquaval.SV1A.30.46857.png
-illustrator:
+illustrator: 5ban Graphics
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '46857'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: ウェーニバルex
     variants_seen:
-    - normal
+      - normal

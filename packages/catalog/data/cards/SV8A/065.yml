@@ -7,9 +7,9 @@ name_en: Dusclops
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/406/Dusclops.SV8A.65.55182.png
-illustrator:
+illustrator: Aya Kusube
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '55182'

@@ -7,11 +7,11 @@ name_en: Darmanitan
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/414/Darmanitan.SV11B.14.57680.png
-illustrator:
+illustrator: svlt
 prints:
-- normal
-- master_ball_mirror
-- poke_ball_mirror
+  - normal
+  - master_ball_mirror
+  - poke_ball_mirror
 sources:
   pokellector:
     id: '57680'
@@ -21,6 +21,6 @@ sources:
   cardrush:
     name_ja: ヒヒダルマ
     variants_seen:
-    - master_ball_mirror
-    - normal
-    - poke_ball_mirror
+      - master_ball_mirror
+      - normal
+      - poke_ball_mirror

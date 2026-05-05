@@ -7,9 +7,9 @@ name_en: Team Rocket's Zubat
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/427/Team-Rockets-Zubat.M2A.99.59994.png
-illustrator:
+illustrator: toi8
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '59994'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: ロケット団のズバット(R団ミラー)
     variants_seen:
-    - normal
+      - normal

@@ -7,9 +7,9 @@ name_en: Bellossom
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/368/Bellossom.SV3.3.48704.png
-illustrator:
+illustrator: sui
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '48704'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: テッポウオ
     variants_seen:
-    - normal
+      - normal

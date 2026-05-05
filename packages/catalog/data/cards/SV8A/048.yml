@@ -7,9 +7,9 @@ name_en: Chien-Pao
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/406/Chien-Pao.SV8A.48.55173.png
-illustrator:
+illustrator: Anesaki Dynamic
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '55173'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: パオジアン(R仕様)
     variants_seen:
-    - normal
+      - normal

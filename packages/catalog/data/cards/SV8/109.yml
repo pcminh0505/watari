@@ -7,10 +7,10 @@ name_en: Ceruledge
 rarity_code: AR
 category: card
 image: https://den-cards.pokellector.com/405/Ceruledge.SV8.109.54521.png
-illustrator:
+illustrator: Rond
 prints:
-- normal
-- master_ball_mirror
+  - normal
+  - master_ball_mirror
 sources:
   pokellector:
     id: '54521'
@@ -20,5 +20,5 @@ sources:
   cardrush:
     name_ja: ソウブレイズ
     variants_seen:
-    - master_ball_mirror
-    - normal
+      - master_ball_mirror
+      - normal

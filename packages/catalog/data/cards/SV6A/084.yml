@@ -3,13 +3,13 @@
 set_code: SV6A
 local_id: '084'
 name_ja: アンズの秘技
-name_en: Janine's Secret Technique
+name_en: Janine's Secret Art
 rarity_code: SR
 category: card
 image: https://den-cards.pokellector.com/398/Janines-Secret-Technique.SV6A.84.53589.png
-illustrator:
+illustrator: Taira Akitsu
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '53589'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: アンズの秘技
     variants_seen:
-    - normal
+      - normal

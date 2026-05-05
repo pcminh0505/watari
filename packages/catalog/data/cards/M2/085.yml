@@ -7,9 +7,9 @@ name_en: Piplup
 rarity_code: AR
 category: card
 image: https://den-cards.pokellector.com/425/Piplup.M2.85.59573.png
-illustrator:
+illustrator: Jiro Sasumo
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '59573'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: ポッチャマ
     variants_seen:
-    - normal
+      - normal

@@ -7,9 +7,9 @@ name_en: Misty's Gyarados
 rarity_code: R
 category: card
 image: https://den-cards.pokellector.com/411/Mistys-Gyarados.SV9A.26.56546.png
-illustrator:
+illustrator: GOSSAN
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '56546'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: カスミのギャラドス
     variants_seen:
-    - normal
+      - normal

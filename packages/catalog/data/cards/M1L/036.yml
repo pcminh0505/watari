@@ -7,9 +7,9 @@ name_en: Garganacl
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/416/Garganacl.M1L.36.58840.png
-illustrator:
+illustrator: danciao
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '58840'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: キョジオーン
     variants_seen:
-    - normal
+      - normal
     rarity_code: U

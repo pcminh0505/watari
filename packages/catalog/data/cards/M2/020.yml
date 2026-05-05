@@ -7,9 +7,9 @@ name_en: Ceruledge
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/425/Ceruledge.M2.20.59201.png
-illustrator:
+illustrator: Gemi
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '59201'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: ソウブレイズ
     variants_seen:
-    - normal
+      - normal

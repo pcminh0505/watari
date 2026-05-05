@@ -7,9 +7,9 @@ name_en: Camerupt
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/370/Camerupt.SV2D.11.47617.png
-illustrator:
+illustrator: Shiburingaru
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '47617'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: バクーダ
     variants_seen:
-    - normal
+      - normal

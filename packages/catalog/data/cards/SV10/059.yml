@@ -7,9 +7,9 @@ name_en: Team Rocket's Nidorina
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/413/Team-Rockets-Nidorina.SV10.59.57108.png
-illustrator:
+illustrator: Taiga Kasai
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '57108'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: ロケット団のニドリーナ
     variants_seen:
-    - normal
+      - normal

@@ -7,9 +7,9 @@ name_en: Cynthia's Power Weight
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/427/Cynthias-Power-Weight.M2A.162.60042.png
-illustrator:
+illustrator: Studio Bora Inc.
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '60042'

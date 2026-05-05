@@ -7,9 +7,9 @@ name_en: Sunflora
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/393/Sunflora.SV6.2.52904.png
-illustrator:
+illustrator: Ounishi
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '52904'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: キマワリ
     variants_seen:
-    - normal
+      - normal

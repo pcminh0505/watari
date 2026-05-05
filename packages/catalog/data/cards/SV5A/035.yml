@@ -7,9 +7,9 @@ name_en: Farigiraf
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/391/Farigiraf.SV5A.35.52374.png
-illustrator:
+illustrator: Dsuke
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '52374'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: リキキリン
     variants_seen:
-    - normal
+      - normal

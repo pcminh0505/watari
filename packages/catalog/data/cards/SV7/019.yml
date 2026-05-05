@@ -7,9 +7,9 @@ name_en: Lapras ex
 rarity_code: RR
 category: card
 image: https://den-cards.pokellector.com/401/Lapras.SV7.19.53650.png
-illustrator:
+illustrator: 5ban Graphics
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '53650'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: ラティアスex
     variants_seen:
-    - normal
+      - normal

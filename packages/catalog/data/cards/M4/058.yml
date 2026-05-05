@@ -7,9 +7,9 @@ name_en: Metang
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/430/Metang.M4.58.60986.png
-illustrator:
+illustrator: Kazumasa Yasukuni
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '60986'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: メタング
     variants_seen:
-    - normal
+      - normal

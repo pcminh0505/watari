@@ -7,9 +7,9 @@ name_en: Raticate
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/428/Raticate.M3.60.60241.png
-illustrator:
+illustrator: Minahamu
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '60241'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: ラッタ
     variants_seen:
-    - normal
+      - normal

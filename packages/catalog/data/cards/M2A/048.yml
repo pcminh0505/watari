@@ -7,9 +7,9 @@ name_en: Eelektrik
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/427/Eelektrik.M2A.48.59786.png
-illustrator:
+illustrator: Jerky
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '59786'

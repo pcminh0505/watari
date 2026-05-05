@@ -7,9 +7,9 @@ name_en: Aggron
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/393/Aggron.SV6.75.52947.png
-illustrator:
+illustrator: Dsuke
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '52947'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: ペルシアン
     variants_seen:
-    - normal
+      - normal

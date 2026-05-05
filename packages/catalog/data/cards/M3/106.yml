@@ -7,9 +7,9 @@ name_en: Naveen
 rarity_code: SR
 category: card
 image: https://den-cards.pokellector.com/428/Naveen.M3.106.60275.png
-illustrator:
+illustrator: DOM
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '60275'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: ピュール
     variants_seen:
-    - normal
+      - normal

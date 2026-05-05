@@ -7,9 +7,9 @@ name_en: Frosmoth
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/427/Frosmoth.M2A.41.59784.png
-illustrator:
+illustrator: cochi8i
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '59784'

@@ -7,9 +7,9 @@ name_en: Team Rocket's Transceiver
 rarity_code: SR
 category: card
 image: https://den-cards.pokellector.com/427/Team-Rockets-Transceiver.M2A.217.60088.png
-illustrator:
+illustrator: inose yukie
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '60088'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: ロケット団のレシーバー
     variants_seen:
-    - normal
+      - normal

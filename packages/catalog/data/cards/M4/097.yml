@@ -3,13 +3,13 @@
 set_code: M4
 local_id: '097'
 name_ja: メガカエンジシex
-name_en: Pyroar ex
+name_en: Mega Pyroar ex
 rarity_code: SR
 category: card
 image: https://den-cards.pokellector.com/430/Pyroar-ex.M4.97.61016.png
-illustrator:
+illustrator: Keisuke Azuma
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '61016'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: メガカエンジシex
     variants_seen:
-    - normal
+      - normal

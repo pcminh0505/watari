@@ -4,12 +4,12 @@ set_code: M2A
 local_id: '231'
 name_ja: メガズルズキンex
 name_en: Mega Scrafty ex
-rarity_code: SR
+rarity_code: MA
 category: card
 image: https://den-cards.pokellector.com/427/Mega-Scrafty-ex.M2A.231.60099.png
-illustrator:
+illustrator: Taiga Kasai
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '60099'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: メガズルズキンex
     variants_seen:
-    - normal
+      - normal

@@ -7,9 +7,9 @@ name_en: Magikarp
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/361/Magikarp.SV1S.13.46231.png
-illustrator:
+illustrator: KIYOTAKA OSHIYAMA
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '46231'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: カプサイジ
     variants_seen:
-    - normal
+      - normal

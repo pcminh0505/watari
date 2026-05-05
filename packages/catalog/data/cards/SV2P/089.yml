@@ -7,9 +7,9 @@ name_en: Squawkabilly ex
 rarity_code: SR
 category: card
 image: https://den-cards.pokellector.com/369/Squawkabilly-ex.SV2P.89.47608.png
-illustrator:
+illustrator: PLANETA Mochizuki
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '47608'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: イキリンコex
     variants_seen:
-    - normal
+      - normal

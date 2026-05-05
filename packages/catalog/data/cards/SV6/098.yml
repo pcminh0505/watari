@@ -7,9 +7,9 @@ name_en: Hassel
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/393/Hassel.SV6.98.52861.png
-illustrator:
+illustrator: GOSSAN
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '52861'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: ハッサク
     variants_seen:
-    - normal
+      - normal

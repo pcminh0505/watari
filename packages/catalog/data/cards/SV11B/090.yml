@@ -7,9 +7,9 @@ name_en: Simisage
 rarity_code: AR
 category: card
 image: https://den-cards.pokellector.com/414/Simisage.SV11B.90.57813.png
-illustrator:
+illustrator: Yuka Tanaka
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '57813'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: ヤナッキー
     variants_seen:
-    - normal
+      - normal

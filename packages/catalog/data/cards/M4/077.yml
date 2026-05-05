@@ -7,9 +7,9 @@ name_en: Roxie's Performance
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/430/Roxies-Performance.M4.77.61000.png
-illustrator:
+illustrator: Nobusawa/Mochipuyo
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '61000'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: ホミカの演奏
     variants_seen:
-    - normal
+      - normal

@@ -3,13 +3,13 @@
 set_code: SV9A
 local_id: '061'
 name_ja: MCの盛り上げ
-name_en: Emcee's Excitement
+name_en: Emcee's Hype
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/411/Emcees-Excitement.SV9A.61.56654.png
-illustrator:
+illustrator: Cona Nitanda
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '56654'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: MCの盛り上げ
     variants_seen:
-    - normal
+      - normal

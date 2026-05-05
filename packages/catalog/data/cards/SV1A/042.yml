@@ -7,9 +7,9 @@ name_en: Tinkatuff
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/366/Tinkatuff.SV1A.42.46896.png
-illustrator:
+illustrator: Akira Komayama
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '46896'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: ナカヌチャン
     variants_seen:
-    - normal
+      - normal

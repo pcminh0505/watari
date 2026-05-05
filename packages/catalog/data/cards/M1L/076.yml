@@ -7,9 +7,9 @@ name_en: Mega Venusaur ex
 rarity_code: SR
 category: card
 image: https://den-cards.pokellector.com/416/Mega-Venusaur-ex.M1L.76.58875.png
-illustrator:
+illustrator: 5ban Graphics
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '58875'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: メガフシギバナex
     variants_seen:
-    - normal
+      - normal
     rarity_code: SR

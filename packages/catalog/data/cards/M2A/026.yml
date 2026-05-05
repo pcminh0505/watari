@@ -7,9 +7,9 @@ name_en: Emboar
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/427/Emboar.M2A.26.59777.png
-illustrator:
+illustrator: Teeziro
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '59777'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: エンブオー(R仕様)
     variants_seen:
-    - normal
+      - normal

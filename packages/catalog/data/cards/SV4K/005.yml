@@ -7,9 +7,9 @@ name_en: Crustle
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/381/Crustle.SV4K.5.50737.png
-illustrator:
+illustrator: Shin Nagasawa
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '50737'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: イワパレス
     variants_seen:
-    - normal
+      - normal

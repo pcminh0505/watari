@@ -7,9 +7,9 @@ name_en: Pidgeot ex
 rarity_code: RR
 category: card
 image: https://den-cards.pokellector.com/368/Pidgeot-ex.SV3.89.48679.png
-illustrator:
+illustrator: takuyoa
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '48679'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: パラソルおねえさん
     variants_seen:
-    - normal
+      - normal

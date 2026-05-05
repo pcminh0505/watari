@@ -7,9 +7,9 @@ name_en: Rabsca
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/406/Rabsca.SV8A.14.55159.png
-illustrator:
+illustrator: mingo
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '55159'

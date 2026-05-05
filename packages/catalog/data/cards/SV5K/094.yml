@@ -7,9 +7,9 @@ name_en: Walking Wake ex
 rarity_code: SAR
 category: card
 image: https://den-cards.pokellector.com/386/Walking-Wake-ex.SV5K.94.51713.png
-illustrator:
+illustrator: Teeziro
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '51713'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: ウネルミナモex
     variants_seen:
-    - normal
+      - normal

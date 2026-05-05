@@ -7,9 +7,9 @@ name_en: Team Rocket's Zapdos
 rarity_code: R
 category: card
 image: https://den-cards.pokellector.com/413/Team-Rockets-Zapdos.SV10.33.57058.png
-illustrator:
+illustrator: Nurikabe
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '57058'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: ロケット団のサンダー
     variants_seen:
-    - normal
+      - normal

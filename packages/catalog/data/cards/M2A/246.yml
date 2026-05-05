@@ -7,9 +7,9 @@ name_en: Mega Dragonite ex
 rarity_code: SAR
 category: card
 image: https://den-cards.pokellector.com/427/Mega-Dragonite-ex.M2A.246.60112.png
-illustrator:
+illustrator: DOM
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '60112'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: メガカイリューex
     variants_seen:
-    - normal
+      - normal

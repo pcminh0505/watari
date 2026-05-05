@@ -7,9 +7,9 @@ name_en: Sacred Ash
 rarity_code: SR
 category: card
 image: https://den-cards.pokellector.com/428/Sacred-Ash.M3.102.60271.png
-illustrator:
+illustrator: Toyste Beach
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '60271'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: せいなるはい
     variants_seen:
-    - normal
+      - normal

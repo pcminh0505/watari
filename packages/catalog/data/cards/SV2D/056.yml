@@ -7,9 +7,9 @@ name_en: Bombirdier
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/370/Bombirdier.SV2D.56.47644.png
-illustrator:
+illustrator: Sekio
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '47644'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: オトシドリ
     variants_seen:
-    - normal
+      - normal

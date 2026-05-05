@@ -7,9 +7,9 @@ name_en: Wugtrio
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/361/Wugtrio.SV1S.20.46238.png
-illustrator:
+illustrator: KIYOTAKA OSHIYAMA
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '46238'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: ウミトリオ
     variants_seen:
-    - normal
+      - normal

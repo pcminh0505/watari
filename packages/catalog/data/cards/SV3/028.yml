@@ -7,9 +7,9 @@ name_en: Cryogonal
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/368/Cryogonal.SV3.28.48783.png
-illustrator:
+illustrator: kirisAki
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '48783'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: フリージオ
     variants_seen:
-    - normal
+      - normal

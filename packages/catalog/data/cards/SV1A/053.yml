@@ -7,9 +7,9 @@ name_en: Paldean Wooper
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/366/Paldean-Wooper.SV1A.53.46971.png
-illustrator:
+illustrator: Kouki Saitou
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '46971'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: パルデアウパー
     variants_seen:
-    - normal
+      - normal

@@ -7,9 +7,9 @@ name_en: Palpitoad
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/368/Palpitoad.SV3.24.48779.png
-illustrator:
+illustrator: sowsow
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '48779'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: ゴマゾウ
     variants_seen:
-    - normal
+      - normal

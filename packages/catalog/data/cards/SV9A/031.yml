@@ -7,9 +7,9 @@ name_en: Floatzel
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/411/Floatzel.SV9A.31.56635.png
-illustrator:
+illustrator: Shibuzoh.
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '56635'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: フローゼル
     variants_seen:
-    - normal
+      - normal

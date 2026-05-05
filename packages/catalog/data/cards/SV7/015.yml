@@ -7,9 +7,9 @@ name_en: Turtonator
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/401/Turtonator.SV7.15.53732.png
-illustrator:
+illustrator: AKIRA EGAWA
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '53732'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: バクガメス
     variants_seen:
-    - normal
+      - normal

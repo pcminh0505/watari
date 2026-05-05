@@ -7,9 +7,9 @@ name_en: Seaking
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/393/Seaking.SV6.27.52914.png
-illustrator:
+illustrator: Gemi
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '52914'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: アズマオウ
     variants_seen:
-    - normal
+      - normal

@@ -7,9 +7,9 @@ name_en: Emolga
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/393/Emolga.SV6.42.52923.png
-illustrator:
+illustrator: Shimaris Yukichi
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '52923'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: エモンガ
     variants_seen:
-    - normal
+      - normal

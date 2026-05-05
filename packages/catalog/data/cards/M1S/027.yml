@@ -7,9 +7,9 @@ name_en: Magnemite
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/417/Magnemite.M1S.27.58914.png
-illustrator:
+illustrator: Krgc
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '58914'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: コイル
     variants_seen:
-    - normal
+      - normal
     rarity_code: C

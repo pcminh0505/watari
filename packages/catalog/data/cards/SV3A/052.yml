@@ -7,9 +7,9 @@ name_en: Cyclizar
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/376/Cyclizar.SV3A.52.49387.png
-illustrator:
+illustrator: kawayoo
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '49387'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: モトトカゲ
     variants_seen:
-    - normal
+      - normal

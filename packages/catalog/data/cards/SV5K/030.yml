@@ -7,9 +7,9 @@ name_en: Solosis
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/386/Solosis.SV5K.30.51722.png
-illustrator:
+illustrator: Cona Nitanda
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '51722'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: ユニラン
     variants_seen:
-    - normal
+      - normal

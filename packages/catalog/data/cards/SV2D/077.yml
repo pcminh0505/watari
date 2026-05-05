@@ -7,9 +7,9 @@ name_en: Tinkatuff
 rarity_code: AR
 category: card
 image: https://den-cards.pokellector.com/370/Tinkatuff.SV2D.77.47531.png
-illustrator:
+illustrator: Tika Matsuno
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '47531'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: ナカヌチャン
     variants_seen:
-    - normal
+      - normal

@@ -7,9 +7,9 @@ name_en: Grafaiai
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/370/Grafaiai.SV2D.55.47539.png
-illustrator:
+illustrator: Souichirou Gunjima
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '47539'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: タギングル
     variants_seen:
-    - normal
+      - normal

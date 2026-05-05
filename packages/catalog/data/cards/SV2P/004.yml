@@ -7,9 +7,9 @@ name_en: Vespiquen
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/369/Vespiquen.SV2P.4.47557.png
-illustrator:
+illustrator: Megumi Higuchi
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '47557'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: ビークイン
     variants_seen:
-    - normal
+      - normal

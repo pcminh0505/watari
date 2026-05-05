@@ -7,9 +7,9 @@ name_en: Raikou
 rarity_code: R
 category: card
 image: https://den-cards.pokellector.com/417/Raikou.M1S.30.58917.png
-illustrator:
+illustrator: Takumi Wada
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '58917'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ライコウ
     variants_seen:
-    - normal
+      - normal
     rarity_code: R

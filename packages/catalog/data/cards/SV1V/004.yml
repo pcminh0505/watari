@@ -7,9 +7,9 @@ name_en: Spewpa
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/362/Spewpa.SV1V.4.46289.png
-illustrator:
+illustrator: Kagemaru Himeno
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '46289'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: コフーライ
     variants_seen:
-    - normal
+      - normal

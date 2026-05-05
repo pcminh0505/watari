@@ -7,9 +7,9 @@ name_en: Mega Kangaskhan ex
 rarity_code: RR
 category: card
 image: https://den-cards.pokellector.com/417/Mega-Kangaskhan-ex.M1S.51.58932.png
-illustrator:
+illustrator: 5ban Graphics
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '58932'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: メガガルーラex
     variants_seen:
-    - normal
+      - normal
     rarity_code: RR

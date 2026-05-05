@@ -7,9 +7,9 @@ name_en: Hydreigon ex
 rarity_code: RR
 category: card
 image: https://den-cards.pokellector.com/415/Hydreigon-ex.SV11W.62.57782.png
-illustrator:
+illustrator: 5ban Graphics
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '57782'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: サザンドラex
     variants_seen:
-    - normal
+      - normal

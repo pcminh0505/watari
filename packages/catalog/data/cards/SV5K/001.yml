@@ -7,9 +7,9 @@ name_en: Roselia
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/386/Roselia.SV5K.1.51816.png
-illustrator:
+illustrator: Tomomi Ozaki
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '51816'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: ロゼリア
     variants_seen:
-    - normal
+      - normal

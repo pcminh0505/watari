@@ -7,9 +7,9 @@ name_en: Trubbish
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/430/Trubbish.M4.54.60982.png
-illustrator:
+illustrator: Souichirou Gunjima
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '60982'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: ヤブクロン
     variants_seen:
-    - normal
+      - normal

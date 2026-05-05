@@ -7,9 +7,9 @@ name_en: Golisopod ex
 rarity_code: SR
 category: card
 image: https://den-cards.pokellector.com/381/Golisopod-ex.SV4K.81.50813.png
-illustrator:
+illustrator: N-DESIGN Inc.
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '50813'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: グソクムシャex
     variants_seen:
-    - normal
+      - normal

@@ -7,9 +7,9 @@ name_en: Hippowdon
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/428/Hippowdon.M3.39.60229.png
-illustrator:
+illustrator: Souichirou Gunjima
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '60229'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: カバルドン
     variants_seen:
-    - normal
+      - normal

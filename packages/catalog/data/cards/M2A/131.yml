@@ -7,9 +7,9 @@ name_en: Noivern
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/427/Noivern.M2A.131.60015.png
-illustrator:
+illustrator: Natsumi Miyanose
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '60015'

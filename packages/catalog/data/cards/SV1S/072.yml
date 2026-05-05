@@ -7,9 +7,9 @@ name_en: Exp. Share
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/361/Exp-Share.SV1S.72.46282.png
-illustrator:
+illustrator: Toyste Beach
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '46282'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: 学習装置
     variants_seen:
-    - normal
+      - normal

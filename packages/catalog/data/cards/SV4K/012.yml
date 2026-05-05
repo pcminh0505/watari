@@ -7,9 +7,9 @@ name_en: Camerupt
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/381/Camerupt.SV4K.12.50744.png
-illustrator:
+illustrator: satoma
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '50744'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: バクーダ
     variants_seen:
-    - normal
+      - normal

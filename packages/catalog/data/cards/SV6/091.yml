@@ -3,13 +3,13 @@
 set_code: SV6
 local_id: '091'
 name_ja: カシオペア
-name_en: Performance Flute
+name_en: Accompanying Flute
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/393/Performance-Flute.SV6.91.52878.png
-illustrator:
+illustrator: AYUMI ODASHIMA
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '52878'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: カシオペア
     variants_seen:
-    - normal
+      - normal

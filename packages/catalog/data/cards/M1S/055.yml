@@ -7,9 +7,9 @@ name_en: Stufful
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/417/Stufful.M1S.55.58936.png
-illustrator:
+illustrator: Shibuzoh.
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '58936'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ヌイコグマ
     variants_seen:
-    - normal
+      - normal
     rarity_code: C

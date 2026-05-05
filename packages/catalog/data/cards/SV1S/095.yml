@@ -7,9 +7,9 @@ name_en: Toxicroak ex
 rarity_code: SR
 category: card
 image: https://den-cards.pokellector.com/361/Toxicroak-ex.SV1S.95.46800.png
-illustrator:
+illustrator: PLANETA Hiiragi
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '46800'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: ドクロッグex
     variants_seen:
-    - normal
+      - normal

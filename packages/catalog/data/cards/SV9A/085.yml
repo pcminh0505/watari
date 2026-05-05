@@ -7,9 +7,9 @@ name_en: Yanmega ex
 rarity_code: SAR
 category: card
 image: https://den-cards.pokellector.com/411/Yanmega-ex.SV9A.85.56668.png
-illustrator:
+illustrator: Tonji Matsuno
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '56668'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: メガヤンマex
     variants_seen:
-    - normal
+      - normal

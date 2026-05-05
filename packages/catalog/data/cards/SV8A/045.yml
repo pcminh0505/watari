@@ -7,9 +7,9 @@ name_en: Palafin
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/406/Palafin.SV8A.45.54674.png
-illustrator:
+illustrator: Ligton
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '54674'

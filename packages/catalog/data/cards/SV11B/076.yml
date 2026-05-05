@@ -7,11 +7,11 @@ name_en: Audino
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/414/Audino.SV11B.76.57725.png
-illustrator:
+illustrator: Saya Tsuruta
 prints:
-- normal
-- master_ball_mirror
-- poke_ball_mirror
+  - normal
+  - master_ball_mirror
+  - poke_ball_mirror
 sources:
   pokellector:
     id: '57725'
@@ -21,6 +21,6 @@ sources:
   cardrush:
     name_ja: タブンネ
     variants_seen:
-    - master_ball_mirror
-    - normal
-    - poke_ball_mirror
+      - master_ball_mirror
+      - normal
+      - poke_ball_mirror

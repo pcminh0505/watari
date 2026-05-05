@@ -3,13 +3,13 @@
 set_code: SV10
 local_id: '023'
 name_ja: パールル
-name_en: Clampearl
+name_en: Clamperl
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/413/Clampearl.SV10.23.57055.png
-illustrator:
+illustrator: Miki Tanaka
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '57055'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: パールル
     variants_seen:
-    - normal
+      - normal

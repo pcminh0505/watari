@@ -7,9 +7,9 @@ name_en: Meowscarada ex
 rarity_code: UR
 category: card
 image: https://den-cards.pokellector.com/366/Meowscarada-ex.SV1A.101.47007.png
-illustrator:
+illustrator: 5ban Graphics
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '47007'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: マスカーニャex
     variants_seen:
-    - normal
+      - normal

@@ -7,9 +7,9 @@ name_en: Team Rocket's Dugtrio
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/427/Team-Rockets-Dugtrio.M2A.83.59790.png
-illustrator:
+illustrator: KEIICHIRO ITO
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '59790'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: ロケット団のダグトリオ(R団ミラー)
     variants_seen:
-    - normal
+      - normal

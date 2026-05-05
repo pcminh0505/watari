@@ -7,10 +7,10 @@ name_en: Kecleon
 rarity_code: AR
 category: card
 image: https://den-cards.pokellector.com/405/Kecleon.SV8.118.54523.png
-illustrator:
+illustrator: Mori Yuu
 prints:
-- normal
-- poke_ball_mirror
+  - normal
+  - poke_ball_mirror
 sources:
   pokellector:
     id: '54523'
@@ -20,5 +20,5 @@ sources:
   cardrush:
     name_ja: カクレオン
     variants_seen:
-    - normal
-    - poke_ball_mirror
+      - normal
+      - poke_ball_mirror

@@ -7,9 +7,9 @@ name_en: Greavard
 rarity_code: AR
 category: card
 image: https://den-cards.pokellector.com/362/Greavard.SV1V.87.46182.png
-illustrator:
+illustrator: sowsow
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '46182'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: ボチ
     variants_seen:
-    - normal
+      - normal

@@ -7,9 +7,9 @@ name_en: Jirachi
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/376/Jirachi.SV3A.42.49382.png
-illustrator:
+illustrator: Naoyo Kimura
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '49382'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: ジラーチ
     variants_seen:
-    - normal
+      - normal

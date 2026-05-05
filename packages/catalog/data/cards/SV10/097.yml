@@ -7,9 +7,9 @@ name_en: Team Rocket's Factory
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/413/Team-Rockets-Factory.SV10.97.57127.png
-illustrator:
+illustrator: imoniii
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '57127'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: ロケット団のファクトリー
     variants_seen:
-    - normal
+      - normal

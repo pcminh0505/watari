@@ -7,9 +7,9 @@ name_en: Remoraid
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/430/Remoraid.M4.16.60960.png
-illustrator:
+illustrator: Mori Yuu
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '60960'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: テッポウオ
     variants_seen:
-    - normal
+      - normal

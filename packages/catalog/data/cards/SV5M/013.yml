@@ -7,9 +7,9 @@ name_en: Brambleghast
 rarity_code: R
 category: card
 image: https://den-cards.pokellector.com/387/Brambleghast.SV5M.13.51763.png
-illustrator:
+illustrator: otumami
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '51763'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: アノホラグサ
     variants_seen:
-    - normal
+      - normal

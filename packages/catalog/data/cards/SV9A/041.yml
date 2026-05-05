@@ -7,9 +7,9 @@ name_en: Ethan's Sudowoodo
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/411/Ethans-Sudowoodo.SV9A.41.56571.png
-illustrator:
+illustrator: OKACHEKE
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '56571'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: ヒビキのウソッキー
     variants_seen:
-    - normal
+      - normal

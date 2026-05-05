@@ -7,9 +7,9 @@ name_en: N's Castle
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/427/Ns-Castle.M2A.181.60056.png
-illustrator:
+illustrator: AYUMI ODASHIMA
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '60056'

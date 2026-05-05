@@ -7,9 +7,9 @@ name_en: Tornadus
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/401/Tornadus.SV7.82.53764.png
-illustrator:
+illustrator: Uninori
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '53764'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: モトトカゲex
     variants_seen:
-    - normal
+      - normal

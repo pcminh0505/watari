@@ -7,9 +7,9 @@ name_en: Jolteon ex
 rarity_code: RR
 category: card
 image: https://den-cards.pokellector.com/406/Jolteon-ex.SV8A.52.54665.png
-illustrator:
+illustrator: 5ban Graphics
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '54665'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: サンダースex
     variants_seen:
-    - normal
+      - normal

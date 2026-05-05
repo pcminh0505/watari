@@ -7,9 +7,9 @@ name_en: Sentret
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/408/Sentret.SV9.76.55545.png
-illustrator:
+illustrator: Taiga Kayama
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '55545'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: オタチ
     variants_seen:
-    - normal
+      - normal

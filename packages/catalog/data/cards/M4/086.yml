@@ -7,9 +7,9 @@ name_en: Froakie
 rarity_code: AR
 category: card
 image: https://den-cards.pokellector.com/430/Froakie.M4.86.61006.png
-illustrator:
+illustrator: Susumu Maeya
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '61006'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: ケロマツ
     variants_seen:
-    - normal
+      - normal

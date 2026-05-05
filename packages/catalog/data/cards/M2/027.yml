@@ -7,9 +7,9 @@ name_en: Piplup
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/425/Piplup.M2.27.59208.png
-illustrator:
+illustrator: Hideki Ishikawa
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '59208'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: ポッチャマ
     variants_seen:
-    - normal
+      - normal

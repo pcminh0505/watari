@@ -7,9 +7,9 @@ name_en: Frogadier
 rarity_code: AR
 category: card
 image: https://den-cards.pokellector.com/430/Frogadier.M4.87.61007.png
-illustrator:
+illustrator: Susumu Maeya
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '61007'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: ゲコガシラ
     variants_seen:
-    - normal
+      - normal

@@ -7,9 +7,9 @@ name_en: Weedle
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/430/Weedle.M4.1.60948.png
-illustrator:
+illustrator: sowsow
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '60948'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: ビードル
     variants_seen:
-    - normal
+      - normal

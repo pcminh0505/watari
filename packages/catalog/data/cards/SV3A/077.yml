@@ -7,9 +7,9 @@ name_en: Tapu Koko ex
 rarity_code: SR
 category: card
 image: https://den-cards.pokellector.com/376/Tapu-Koko-ex.SV3A.77.49396.png
-illustrator:
+illustrator: PLANETA Igarashi
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '49396'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: カプ・コケコex
     variants_seen:
-    - normal
+      - normal

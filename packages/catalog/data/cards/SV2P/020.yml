@@ -7,9 +7,9 @@ name_en: Cetoddle
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/369/Cetoddle.SV2P.20.47570.png
-illustrator:
+illustrator: Sekio
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '47570'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: アルクジラ
     variants_seen:
-    - normal
+      - normal

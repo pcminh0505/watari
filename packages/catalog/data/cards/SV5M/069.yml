@@ -3,13 +3,13 @@
 set_code: SV5M
 local_id: '069'
 name_ja: ベルのまごころ
-name_en: Bianca's Sincerity
+name_en: Bianca's Devotion
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/387/Biancas-Sincerity.SV5M.69.51803.png
-illustrator:
+illustrator: En Morikura
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '51803'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: ベルのまごころ
     variants_seen:
-    - normal
+      - normal

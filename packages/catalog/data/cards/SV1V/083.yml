@@ -7,9 +7,9 @@ name_en: Clauncher
 rarity_code: AR
 category: card
 image: https://den-cards.pokellector.com/362/Clauncher.SV1V.83.46817.png
-illustrator:
+illustrator: Shinya Komatsu
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '46817'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: ウデッポウ
     variants_seen:
-    - normal
+      - normal

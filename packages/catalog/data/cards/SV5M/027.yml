@@ -7,9 +7,9 @@ name_en: Charjabug
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/387/Charjabug.SV5M.27.51703.png
-illustrator:
+illustrator: Misa Tsutsui
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '51703'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: デンヂムシ
     variants_seen:
-    - normal
+      - normal

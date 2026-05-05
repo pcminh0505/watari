@@ -7,9 +7,9 @@ name_en: Lisia's Appeal
 rarity_code: SAR
 category: card
 image: https://den-cards.pokellector.com/403/Lisias-Appeal.SV7A.91.54425.png
-illustrator:
+illustrator: Mochipuyo , Nobusawa
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '54425'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: ルチアのアピール
     variants_seen:
-    - normal
+      - normal

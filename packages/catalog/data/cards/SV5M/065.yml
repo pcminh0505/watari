@@ -7,9 +7,9 @@ name_en: Future Booster Energy Capsule
 rarity_code: U
 category: energy
 image: https://den-cards.pokellector.com/387/Future-Booster-Energy-Capsule.SV5M.65.51672.png
-illustrator:
+illustrator: 5ban Graphics
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '51672'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: ブーストエナジー未来
     variants_seen:
-    - normal
+      - normal

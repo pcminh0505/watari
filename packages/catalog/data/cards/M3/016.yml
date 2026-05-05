@@ -7,9 +7,9 @@ name_en: Salazzle ex
 rarity_code: RR
 category: card
 image: https://den-cards.pokellector.com/428/Salazzle-ex.M3.16.60184.png
-illustrator:
+illustrator: 5ban Graphics
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '60184'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: エンニュートex
     variants_seen:
-    - normal
+      - normal

@@ -7,9 +7,9 @@ name_en: Kangaskhan
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/368/Kangaskhan.SV3.90.48813.png
-illustrator:
+illustrator: Yuya Oka
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '48813'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: ガブリアスex
     variants_seen:
-    - normal
+      - normal

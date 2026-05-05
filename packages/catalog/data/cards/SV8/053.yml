@@ -7,10 +7,10 @@ name_en: Espurr
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/405/Espurr.SV8.53.54508.png
-illustrator:
+illustrator: Natsumi Yoshida
 prints:
-- normal
-- master_ball_mirror
+  - normal
+  - master_ball_mirror
 sources:
   pokellector:
     id: '54508'
@@ -20,5 +20,5 @@ sources:
   cardrush:
     name_ja: ニャスパー
     variants_seen:
-    - master_ball_mirror
-    - normal
+      - master_ball_mirror
+      - normal

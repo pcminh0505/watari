@@ -7,9 +7,9 @@ name_en: Yveltal
 rarity_code: R
 category: card
 image: https://den-cards.pokellector.com/376/Yveltal.SV3A.39.49379.png
-illustrator:
+illustrator: kawayoo
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '49379'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: イベルタル
     variants_seen:
-    - normal
+      - normal

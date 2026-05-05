@@ -7,9 +7,9 @@ name_en: Cresselia
 rarity_code: AR
 category: card
 image: https://den-cards.pokellector.com/398/Cresselia.SV6A.71.53576.png
-illustrator:
+illustrator: satoma
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '53576'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: クレセリア
     variants_seen:
-    - normal
+      - normal

@@ -7,11 +7,11 @@ name_en: Magneton
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/371/Magneton.SV2A.82.48294.png
-illustrator:
+illustrator: Yuka Morii
 prints:
-- normal
-- master_ball_mirror
-- poke_ball_mirror
+  - normal
+  - master_ball_mirror
+  - poke_ball_mirror
 sources:
   pokellector:
     id: '48294'
@@ -21,6 +21,6 @@ sources:
   cardrush:
     name_ja: レアコイル
     variants_seen:
-    - master_ball_mirror
-    - normal
-    - poke_ball_mirror
+      - master_ball_mirror
+      - normal
+      - poke_ball_mirror

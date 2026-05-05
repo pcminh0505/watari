@@ -3,13 +3,13 @@
 set_code: M2A
 local_id: '221'
 name_ja: バーベナとヘレナ
-name_en: Anthea & Concordia
+name_en: Anthea and Concordia
 rarity_code: SR
 category: card
 image: https://den-cards.pokellector.com/427/Anthea-Concordia.M2A.221.60092.png
-illustrator:
+illustrator: Sanosuke Sakuma
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '60092'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: バーベナとヘレナ
     variants_seen:
-    - normal
+      - normal

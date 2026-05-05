@@ -7,9 +7,9 @@ name_en: Ledyba
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/401/Ledyba.SV7.1.53668.png
-illustrator:
+illustrator: Whisker
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '53668'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: レディバ
     variants_seen:
-    - normal
+      - normal

@@ -7,9 +7,9 @@ name_en: Magcargo ex
 rarity_code: RR
 category: card
 image: https://den-cards.pokellector.com/391/Magcargo-ex.SV5A.13.52377.png
-illustrator:
+illustrator: PLANETA Mochizuki
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '52377'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: マグカルゴex
     variants_seen:
-    - normal
+      - normal

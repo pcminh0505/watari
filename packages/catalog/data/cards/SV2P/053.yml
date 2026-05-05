@@ -7,9 +7,9 @@ name_en: Cufant
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/369/Cufant.SV2P.53.47590.png
-illustrator:
+illustrator: Oswaldo KATO
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '47590'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: ゾウドウ
     variants_seen:
-    - normal
+      - normal

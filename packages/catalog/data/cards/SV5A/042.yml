@@ -7,9 +7,9 @@ name_en: Hisuian Arcanine
 rarity_code: R
 category: card
 image: https://den-cards.pokellector.com/391/Hisuian-Arcanine.SV5A.42.52791.png
-illustrator:
+illustrator: SIE NANAHARA
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '52791'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: ヒスイウインディ
     variants_seen:
-    - normal
+      - normal

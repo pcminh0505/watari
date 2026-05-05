@@ -7,9 +7,9 @@ name_en: N's Zorua
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/427/Ns-Zorua.M2A.111.59793.png
-illustrator:
+illustrator: Jiro Sasumo
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '59793'

@@ -7,9 +7,9 @@ name_en: Palossand
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/370/Palossand.SV2D.30.47628.png
-illustrator:
+illustrator: HYOGONOSUKE
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '47628'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: シロデスナ
     variants_seen:
-    - normal
+      - normal

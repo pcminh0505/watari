@@ -7,9 +7,9 @@ name_en: Swablu
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/382/Swablu.SV4K.54.50881.png
-illustrator:
+illustrator: HYOGONOSUKE
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '50881'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: チルット
     variants_seen:
-    - normal
+      - normal

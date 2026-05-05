@@ -7,9 +7,9 @@ name_en: Petilil
 rarity_code: AR
 category: card
 image: https://den-cards.pokellector.com/414/Petilil.SV11B.91.57814.png
-illustrator:
+illustrator: Tika Matsuno
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '57814'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: チュリネ
     variants_seen:
-    - normal
+      - normal

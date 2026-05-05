@@ -7,9 +7,9 @@ name_en: Clefairy
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/393/Clefairy.SV6.45.52926.png
-illustrator:
+illustrator: Sanosuke Sakuma
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '52926'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: ピッピ
     variants_seen:
-    - normal
+      - normal

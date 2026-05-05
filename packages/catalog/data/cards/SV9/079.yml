@@ -7,9 +7,9 @@ name_en: Dudunsparce ex
 rarity_code: RR
 category: card
 image: https://den-cards.pokellector.com/408/Dudunsparce-ex.SV9.79.55508.png
-illustrator:
+illustrator: 5ban Graphics
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '55508'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: エレキブルex
     variants_seen:
-    - normal
+      - normal

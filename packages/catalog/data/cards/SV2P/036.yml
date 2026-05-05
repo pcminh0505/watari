@@ -7,9 +7,9 @@ name_en: Polteageist
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/369/Polteageist.SV2P.36.47579.png
-illustrator:
+illustrator: Megumi Mizutani
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '47579'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: ポットデス
     variants_seen:
-    - normal
+      - normal

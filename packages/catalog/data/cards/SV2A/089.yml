@@ -7,11 +7,11 @@ name_en: Muk
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/371/Muk.SV2A.89.48301.png
-illustrator:
+illustrator: Nisota Niso
 prints:
-- normal
-- master_ball_mirror
-- poke_ball_mirror
+  - normal
+  - master_ball_mirror
+  - poke_ball_mirror
 sources:
   pokellector:
     id: '48301'
@@ -21,6 +21,6 @@ sources:
   cardrush:
     name_ja: ベトベトン
     variants_seen:
-    - master_ball_mirror
-    - normal
-    - poke_ball_mirror
+      - master_ball_mirror
+      - normal
+      - poke_ball_mirror

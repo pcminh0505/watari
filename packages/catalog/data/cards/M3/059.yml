@@ -7,9 +7,9 @@ name_en: Rattata
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/428/Rattata.M3.59.60240.png
-illustrator:
+illustrator: Shinya Komatsu
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '60240'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: コラッタ
     variants_seen:
-    - normal
+      - normal

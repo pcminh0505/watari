@@ -3,13 +3,13 @@
 set_code: SV2D
 local_id: '067'
 name_ja: 勇気のおまもり
-name_en: Brave Charm
+name_en: Bravery Charm
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/370/Brave-Charm.SV2D.67.47050.png
-illustrator:
+illustrator: Toyste Beach
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '47050'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: 勇気のおまもり
     variants_seen:
-    - normal
+      - normal

@@ -7,9 +7,9 @@ name_en: Slither Wing
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/398/Slither-Wing.SV6A.26.53155.png
-illustrator:
+illustrator: Shinji Kanda
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '53155'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: チヲハウハネ
     variants_seen:
-    - normal
+      - normal

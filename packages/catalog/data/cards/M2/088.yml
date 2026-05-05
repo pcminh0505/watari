@@ -7,9 +7,9 @@ name_en: Flygon
 rarity_code: AR
 category: card
 image: https://den-cards.pokellector.com/425/Flygon.M2.88.59575.png
-illustrator:
+illustrator: Ryota Murayama
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '59575'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: フライゴン
     variants_seen:
-    - normal
+      - normal

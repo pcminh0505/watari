@@ -7,9 +7,9 @@ name_en: Sneasel
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/425/Sneasel.M2.48.59227.png
-illustrator:
+illustrator: Souichirou Gunjima
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '59227'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: ニューラ
     variants_seen:
-    - normal
+      - normal

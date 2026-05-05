@@ -7,9 +7,9 @@ name_en: Heracross
 rarity_code: AR
 category: card
 image: https://den-cards.pokellector.com/370/Heracross.SV2D.72.47651.png
-illustrator:
+illustrator: Kurata So
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '47651'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: ヘラクロス
     variants_seen:
-    - normal
+      - normal

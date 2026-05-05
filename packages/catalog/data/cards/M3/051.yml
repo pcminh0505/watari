@@ -7,9 +7,9 @@ name_en: Drapion
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/428/Drapion.M3.51.60236.png
-illustrator:
+illustrator: Nelnal
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '60236'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: ドラピオン
     variants_seen:
-    - normal
+      - normal

@@ -7,9 +7,9 @@ name_en: Escavalier
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/408/Escavalier.SV9.63.55753.png
-illustrator:
+illustrator: Takumi Wada
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '55753'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: シュバルゴ
     variants_seen:
-    - normal
+      - normal

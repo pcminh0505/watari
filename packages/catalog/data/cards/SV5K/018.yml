@@ -7,9 +7,9 @@ name_en: Keldeo
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/386/Keldeo.SV5K.18.51832.png
-illustrator:
+illustrator: satoma
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '51832'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: ケルディオ
     variants_seen:
-    - normal
+      - normal

@@ -7,9 +7,9 @@ name_en: Yamper
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/425/Yamper.M2.30.59211.png
-illustrator:
+illustrator: Ayako Ozaki
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '59211'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: ワンパチ
     variants_seen:
-    - normal
+      - normal

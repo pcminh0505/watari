@@ -7,9 +7,9 @@ name_en: Team Rocket's Dugtrio
 rarity_code: AR
 category: card
 image: https://den-cards.pokellector.com/427/Team-Rockets-Dugtrio.M2A.206.60080.png
-illustrator:
+illustrator: Whisker
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '60080'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: ロケット団のダグトリオ
     variants_seen:
-    - normal
+      - normal

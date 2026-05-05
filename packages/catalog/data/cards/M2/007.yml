@@ -7,9 +7,9 @@ name_en: Ludicolo
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/425/Ludicolo.M2.7.59192.png
-illustrator:
+illustrator: Anesaki Dynamic
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '59192'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: ルンパッパ
     variants_seen:
-    - normal
+      - normal

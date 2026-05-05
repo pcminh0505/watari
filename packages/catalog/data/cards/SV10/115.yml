@@ -7,9 +7,9 @@ name_en: Regirock ex
 rarity_code: SR
 category: card
 image: https://den-cards.pokellector.com/413/Regirock-ex.SV10.115.57147.png
-illustrator:
+illustrator: PLANETA Mochizuki
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '57147'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: レジロックex
     variants_seen:
-    - normal
+      - normal

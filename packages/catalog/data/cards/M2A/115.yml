@@ -7,9 +7,9 @@ name_en: Pecharunt
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/427/Pecharunt.M2A.115.60006.png
-illustrator:
+illustrator: IKEDA Saki
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '60006'

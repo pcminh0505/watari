@@ -7,9 +7,9 @@ name_en: Silcoon
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/427/Silcoon.M2A.5.59918.png
-illustrator:
+illustrator: Eri Yamaki
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '59918'

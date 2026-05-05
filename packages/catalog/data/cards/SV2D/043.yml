@@ -7,9 +7,9 @@ name_en: Crabominable
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/370/Crabominable.SV2D.43.47639.png
-illustrator:
+illustrator: Misa Tsutsui
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '47639'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: ケケンカニ
     variants_seen:
-    - normal
+      - normal

@@ -7,9 +7,9 @@ name_en: Tirtouga
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/401/Tirtouga.SV7.22.53690.png
-illustrator:
+illustrator: takashi shiraishi
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '53690'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: プロトーガ
     variants_seen:
-    - normal
+      - normal

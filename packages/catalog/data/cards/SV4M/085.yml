@@ -7,9 +7,9 @@ name_en: Roark
 rarity_code: SR
 category: card
 image: https://den-cards.pokellector.com/382/Roark.SV4K.85.50912.png
-illustrator:
+illustrator: Ryuta Fuse
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '50912'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: ヒョウタ
     variants_seen:
-    - normal
+      - normal

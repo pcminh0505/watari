@@ -3,13 +3,13 @@
 set_code: M4
 local_id: '119'
 name_ja: ホミカの演奏
-name_en: Roxy's Performance
+name_en: Roxie's Performance
 rarity_code: SAR
 category: card
 image: https://den-cards.pokellector.com/430/Roxys-Performance.M4.119.61037.png
-illustrator:
+illustrator: Tomowaka
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '61037'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: ホミカの演奏
     variants_seen:
-    - normal
+      - normal

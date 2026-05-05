@@ -7,9 +7,9 @@ name_en: Misdreavus
 rarity_code: AR
 category: card
 image: https://den-cards.pokellector.com/427/Misdreavus.M2A.202.60076.png
-illustrator:
+illustrator: mashu
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '60076'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: ムウマ
     variants_seen:
-    - normal
+      - normal

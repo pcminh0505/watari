@@ -7,9 +7,9 @@ name_en: Finneon
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/401/Finneon.SV7.20.53733.png
-illustrator:
+illustrator: Yukiko Baba
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '53733'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: ケイコウオ
     variants_seen:
-    - normal
+      - normal

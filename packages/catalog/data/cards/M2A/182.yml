@@ -7,9 +7,9 @@ name_en: Forest of Vitality
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/427/Forest-of-Vitality.M2A.182.60057.png
-illustrator:
+illustrator: AYUMI ODASHIMA
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '60057'

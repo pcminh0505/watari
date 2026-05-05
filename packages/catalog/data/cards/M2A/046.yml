@@ -7,9 +7,9 @@ name_en: Magneton
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/427/Magneton.M2A.46.59947.png
-illustrator:
+illustrator: Shinya Mizuno
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '59947'

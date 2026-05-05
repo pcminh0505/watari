@@ -7,9 +7,9 @@ name_en: Miriam
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/362/Miriam.SV1V.77.46347.png
-illustrator:
+illustrator: Sanosuke Sakuma
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '46347'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: ミモザ
     variants_seen:
-    - normal
+      - normal

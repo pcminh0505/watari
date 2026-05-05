@@ -7,9 +7,9 @@ name_en: Iron Crown ex
 rarity_code: RR
 category: card
 image: https://den-cards.pokellector.com/406/Iron-Crown-ex.SV8A.78.55189.png
-illustrator:
+illustrator: 5ban Graphics
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '55189'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: テツノカシラex
     variants_seen:
-    - normal
+      - normal

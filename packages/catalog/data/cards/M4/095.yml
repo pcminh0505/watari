@@ -7,9 +7,9 @@ name_en: Watchog
 rarity_code: AR
 category: card
 image: https://den-cards.pokellector.com/430/Watchog.M4.95.61014.png
-illustrator:
+illustrator: MARINA Chikazawa
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '61014'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: ミルホッグ
     variants_seen:
-    - normal
+      - normal

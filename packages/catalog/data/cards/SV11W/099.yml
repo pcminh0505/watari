@@ -7,9 +7,9 @@ name_en: Pansear
 rarity_code: AR
 category: card
 image: https://den-cards.pokellector.com/415/Pansear.SV11W.99.57898.png
-illustrator:
+illustrator: GOTO minori
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '57898'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: バオップ
     variants_seen:
-    - normal
+      - normal

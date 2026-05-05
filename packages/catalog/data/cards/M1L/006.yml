@@ -7,9 +7,9 @@ name_en: Celebi
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/416/Celebi.M1L.6.58819.png
-illustrator:
+illustrator: Naoki Saito
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '58819'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: セレビィ
     variants_seen:
-    - normal
+      - normal
     rarity_code: U

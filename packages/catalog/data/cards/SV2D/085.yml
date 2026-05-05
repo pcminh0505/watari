@@ -7,9 +7,9 @@ name_en: Chi-Yu ex
 rarity_code: SR
 category: card
 image: https://den-cards.pokellector.com/370/Chi-Yu-ex.SV2D.85.47658.png
-illustrator:
+illustrator: PLANETA Yamashita
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '47658'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: イーユイex
     variants_seen:
-    - normal
+      - normal

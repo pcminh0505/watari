@@ -7,9 +7,9 @@ name_en: Sandshrew
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/416/Sandshrew.M1L.20.58828.png
-illustrator:
+illustrator: Shinji Kanda
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '58828'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: サンド
     variants_seen:
-    - normal
+      - normal
     rarity_code: C

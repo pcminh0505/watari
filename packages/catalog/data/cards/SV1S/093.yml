@@ -7,9 +7,9 @@ name_en: Great Tusk ex
 rarity_code: SR
 category: card
 image: https://den-cards.pokellector.com/361/Great-Tusk-ex.SV1S.93.46798.png
-illustrator:
+illustrator: 5ban Graphics
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '46798'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: イダイナキバex
     variants_seen:
-    - normal
+      - normal

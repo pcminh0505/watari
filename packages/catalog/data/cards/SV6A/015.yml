@@ -7,9 +7,9 @@ name_en: Revavroom ex
 rarity_code: RR
 category: card
 image: https://den-cards.pokellector.com/398/Revavroom-ex.SV6A.15.53548.png
-illustrator:
+illustrator: PLANETA Mochizuki
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '53548'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: ブロロロームex
     variants_seen:
-    - normal
+      - normal

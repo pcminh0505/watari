@@ -7,9 +7,9 @@ name_en: Probopass
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/391/Probopass.SV5A.44.52793.png
-illustrator:
+illustrator: OKUBO
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '52793'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: ダイノーズ
     variants_seen:
-    - normal
+      - normal

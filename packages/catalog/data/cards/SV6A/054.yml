@@ -4,12 +4,12 @@ set_code: SV6A
 local_id: '054'
 name_ja: デンジャラス光線
 name_en: Dangerous Laser
-rarity_code: R
+rarity_code: ACE
 category: card
 image: https://den-cards.pokellector.com/398/Dangerous-Laser.SV6A.54.53528.png
-illustrator:
+illustrator: inose yukie
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '53528'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: デンジャラス光線
     variants_seen:
-    - normal
+      - normal

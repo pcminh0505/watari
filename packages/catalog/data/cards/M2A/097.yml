@@ -7,9 +7,9 @@ name_en: Coalossal
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/427/Coalossal.M2A.97.59992.png
-illustrator:
+illustrator: Nisota Niso
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '59992'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: セキタンザン(R仕様)
     variants_seen:
-    - normal
+      - normal

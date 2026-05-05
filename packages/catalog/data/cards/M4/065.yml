@@ -7,9 +7,9 @@ name_en: Sliggoo
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/430/Sliggoo.M4.65.60992.png
-illustrator:
+illustrator: Yoriyuki Ikegami
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '60992'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: ヌメイル
     variants_seen:
-    - normal
+      - normal

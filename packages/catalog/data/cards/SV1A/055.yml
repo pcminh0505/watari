@@ -7,9 +7,9 @@ name_en: Sableye
 rarity_code: R
 category: card
 image: https://den-cards.pokellector.com/366/Sableye.SV1A.55.46908.png
-illustrator:
+illustrator: Nagomi Nijo
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '46908'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: ヤミラミ
     variants_seen:
-    - normal
+      - normal

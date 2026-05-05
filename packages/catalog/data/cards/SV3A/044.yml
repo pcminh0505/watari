@@ -7,9 +7,9 @@ name_en: Ferrothorn
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/376/Ferrothorn.SV3A.44.49384.png
-illustrator:
+illustrator: SATOSHI NAKAI
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '49384'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: ナットレイ
     variants_seen:
-    - normal
+      - normal

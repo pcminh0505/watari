@@ -7,9 +7,9 @@ name_en: Shaymin
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/427/Shaymin.M2A.12.59924.png
-illustrator:
+illustrator: tono
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '59924'

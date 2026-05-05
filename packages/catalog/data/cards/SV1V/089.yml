@@ -7,9 +7,9 @@ name_en: Bombirdier
 rarity_code: AR
 category: card
 image: https://den-cards.pokellector.com/362/Bombirdier.SV1V.89.46821.png
-illustrator:
+illustrator: Shibuzoh.
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '46821'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: オトシドリ
     variants_seen:
-    - normal
+      - normal

@@ -7,9 +7,9 @@ name_en: Iono's Electrode
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/408/Ionos-Electrode.SV9.27.55491.png
-illustrator:
+illustrator: GOTO minori
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '55491'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: カスミのラプラス
     variants_seen:
-    - normal
+      - normal

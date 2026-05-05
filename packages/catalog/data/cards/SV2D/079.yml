@@ -7,9 +7,9 @@ name_en: Tyranitar
 rarity_code: AR
 category: card
 image: https://den-cards.pokellector.com/370/Tyranitar.SV2D.79.47655.png
-illustrator:
+illustrator: Nurikabe
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '47655'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: バンギラス
     variants_seen:
-    - normal
+      - normal

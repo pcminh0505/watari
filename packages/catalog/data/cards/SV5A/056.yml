@@ -7,9 +7,9 @@ name_en: Switch
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/391/Switch.SV5A.56.52798.png
-illustrator:
+illustrator: Studio Bora Inc.
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '52798'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: ポケモンいれかえ
     variants_seen:
-    - normal
+      - normal

@@ -7,9 +7,9 @@ name_en: Claydol
 rarity_code: AR
 category: card
 image: https://den-cards.pokellector.com/430/Claydol.M4.90.61010.png
-illustrator:
+illustrator: matazo
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '61010'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: ネンドール
     variants_seen:
-    - normal
+      - normal

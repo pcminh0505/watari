@@ -7,9 +7,9 @@ name_en: Mega Charizard X ex
 rarity_code: SAR
 category: card
 image: https://den-cards.pokellector.com/425/Mega-Charizard-X-ex.M2.110.59595.png
-illustrator:
+illustrator: danciao
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '59595'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: メガリザードンXex
     variants_seen:
-    - normal
+      - normal

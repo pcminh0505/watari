@@ -3,13 +3,13 @@
 set_code: SV9A
 local_id: '076'
 name_ja: メガヤンマex
-name_en: Yanmega
+name_en: Yanmega ex
 rarity_code: SR
 category: card
 image: https://den-cards.pokellector.com/411/Yanmega.SV9A.76.56661.png
-illustrator:
+illustrator: takuyoa
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '56661'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: メガヤンマex
     variants_seen:
-    - normal
+      - normal

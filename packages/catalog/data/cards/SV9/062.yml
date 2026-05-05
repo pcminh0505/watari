@@ -7,9 +7,9 @@ name_en: Pangoro
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/408/Pangoro.SV9.62.55752.png
-illustrator:
+illustrator: nagimiso
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '55752'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: ゴロンダ
     variants_seen:
-    - normal
+      - normal

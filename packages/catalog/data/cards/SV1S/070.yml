@@ -7,9 +7,9 @@ name_en: Nest Ball
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/361/Nest-Ball.SV1S.70.46281.png
-illustrator:
+illustrator: Toyste Beach
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '46281'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: ネストボール
     variants_seen:
-    - normal
+      - normal

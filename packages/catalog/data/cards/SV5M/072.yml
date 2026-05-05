@@ -7,9 +7,9 @@ name_en: Shiftry
 rarity_code: AR
 category: card
 image: https://den-cards.pokellector.com/387/Shiftry.SV5M.72.51708.png
-illustrator:
+illustrator: SIE NANAHARA
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '51708'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: ダーテング
     variants_seen:
-    - normal
+      - normal

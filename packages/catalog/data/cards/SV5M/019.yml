@@ -7,9 +7,9 @@ name_en: Victini
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/387/Victini.SV5M.19.51766.png
-illustrator:
+illustrator: Shibuzoh.
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '51766'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: ビクティニ
     variants_seen:
-    - normal
+      - normal

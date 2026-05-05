@@ -7,9 +7,9 @@ name_en: Lillie's Ribombee
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/408/Lillies-Ribombee.SV9.42.55558.png
-illustrator:
+illustrator: mashu
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '55558'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: シロナのフカマル
     variants_seen:
-    - normal
+      - normal

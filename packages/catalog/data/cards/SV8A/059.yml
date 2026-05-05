@@ -7,9 +7,9 @@ name_en: Alakazam
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/406/Alakazam.SV8A.59.55180.png
-illustrator:
+illustrator: Masako Tomii
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '55180'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: フーディン(R仕様)
     variants_seen:
-    - normal
+      - normal

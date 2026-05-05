@@ -7,9 +7,9 @@ name_en: Ethan's Magcargo
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/427/Ethans-Magcargo.M2A.19.59931.png
-illustrator:
+illustrator: kodama
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '59931'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: ヒビキのマグカルゴ(R仕様)
     variants_seen:
-    - normal
+      - normal

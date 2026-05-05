@@ -7,9 +7,9 @@ name_en: Capsakid
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/362/Capsakid.SV1V.12.46297.png
-illustrator:
+illustrator: Kouki Saitou
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '46297'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: カプサイジ
     variants_seen:
-    - normal
+      - normal

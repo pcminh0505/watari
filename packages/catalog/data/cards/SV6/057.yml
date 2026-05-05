@@ -7,9 +7,9 @@ name_en: Sandshrew
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/393/Sandshrew.SV6.57.52931.png
-illustrator:
+illustrator: Tetsu Kayama
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '52931'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: サンド
     variants_seen:
-    - normal
+      - normal

@@ -7,9 +7,9 @@ name_en: Mawile
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/428/Mawile.M3.31.60221.png
-illustrator:
+illustrator: OKACHEKE
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '60221'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: クチート
     variants_seen:
-    - normal
+      - normal

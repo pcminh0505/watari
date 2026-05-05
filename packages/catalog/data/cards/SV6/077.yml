@@ -7,9 +7,9 @@ name_en: Varoom
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/393/Varoom.SV6.77.52949.png
-illustrator:
+illustrator: Shigenori Negishi
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '52949'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: ブロロン
     variants_seen:
-    - normal
+      - normal

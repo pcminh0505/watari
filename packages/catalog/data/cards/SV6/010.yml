@@ -7,9 +7,9 @@ name_en: Rillaboom
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/393/Rillaboom.SV6.10.52863.png
-illustrator:
+illustrator: toriyufu
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '52863'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: タッツー
     variants_seen:
-    - normal
+      - normal

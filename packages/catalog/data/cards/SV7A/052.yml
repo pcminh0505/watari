@@ -4,12 +4,12 @@ set_code: SV7A
 local_id: '052'
 name_ja: エネルギー転送PRO
 name_en: Energy Search PRO
-rarity_code: R
+rarity_code: ACE
 category: energy
 image: https://den-cards.pokellector.com/403/Energy-Search-PRO.SV7A.52.54403.png
-illustrator:
+illustrator: Toyste Beach
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '54403'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: エネルギー転送PRO
     variants_seen:
-    - normal
+      - normal

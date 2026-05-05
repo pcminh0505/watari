@@ -3,13 +3,13 @@
 set_code: SV8
 local_id: '077'
 name_ja: アローラダグトリオ
-name_en: Noctowl
-rarity_code: R
+name_en: Alolan Dugtrio
+rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/405/Noctowl.SV8.77.54464.png
-illustrator:
+illustrator: Dsuke
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '54464'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: アローラダグトリオ
     variants_seen:
-    - normal
+      - normal

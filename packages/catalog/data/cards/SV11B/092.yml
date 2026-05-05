@@ -7,9 +7,9 @@ name_en: Lilligant
 rarity_code: AR
 category: card
 image: https://den-cards.pokellector.com/414/Lilligant.SV11B.92.57815.png
-illustrator:
+illustrator: En Morikura
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '57815'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: ドレディア
     variants_seen:
-    - normal
+      - normal

@@ -7,9 +7,9 @@ name_en: Great Tusk ex
 rarity_code: SAR
 category: card
 image: https://den-cards.pokellector.com/361/Great-Tusk-ex.SV1S.102.46806.png
-illustrator:
+illustrator: Pani Kobayashi
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '46806'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: ミライドンex
     variants_seen:
-    - normal
+      - normal

@@ -7,9 +7,9 @@ name_en: Tinkatuff
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/370/Tinkatuff.SV2D.34.47631.png
-illustrator:
+illustrator: sowsow
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '47631'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: ナカヌチャン
     variants_seen:
-    - normal
+      - normal

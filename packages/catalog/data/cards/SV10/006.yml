@@ -7,9 +7,9 @@ name_en: Lurantis
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/413/Lurantis.SV10.6.57085.png
-illustrator:
+illustrator: Masako Tomii
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '57085'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: ラランテス
     variants_seen:
-    - normal
+      - normal

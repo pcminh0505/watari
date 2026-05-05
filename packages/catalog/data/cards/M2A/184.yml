@@ -7,9 +7,9 @@ name_en: Area Zero Underdepths
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/427/Area-Zero-Underdepths.M2A.184.60059.png
-illustrator:
+illustrator: MARINA Chikazawa
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '60059'

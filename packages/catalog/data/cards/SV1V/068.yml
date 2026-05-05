@@ -7,9 +7,9 @@ name_en: Cyclizar
 rarity_code: R
 category: card
 image: https://den-cards.pokellector.com/362/Cyclizar.SV1V.68.46342.png
-illustrator:
+illustrator: Ryota Murayama
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '46342'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: モトトカゲ
     variants_seen:
-    - normal
+      - normal

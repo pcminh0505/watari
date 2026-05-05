@@ -7,9 +7,9 @@ name_en: Zangoose
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/361/Zangoose.SV1S.62.46274.png
-illustrator:
+illustrator: aoki
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '46274'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: ヤングース
     variants_seen:
-    - normal
+      - normal

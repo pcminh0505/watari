@@ -7,9 +7,9 @@ name_en: Prism Tower
 rarity_code: SR
 category: card
 image: https://den-cards.pokellector.com/430/Prism-Tower.M4.113.61031.png
-illustrator:
+illustrator: MARINA Chikazawa
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '61031'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: プリズムタワー
     variants_seen:
-    - normal
+      - normal

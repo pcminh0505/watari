@@ -7,9 +7,9 @@ name_en: Explorer's Guidance
 rarity_code: SR
 category: card
 image: https://den-cards.pokellector.com/386/Explorers-Guidance.SV5K.90.52244.png
-illustrator:
+illustrator: Hideki Ishikawa
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '52244'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: 探検家の先導
     variants_seen:
-    - normal
+      - normal

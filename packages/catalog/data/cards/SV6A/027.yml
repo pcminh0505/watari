@@ -7,9 +7,9 @@ name_en: Zubat
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/398/Zubat.SV6A.27.53531.png
-illustrator:
+illustrator: osare
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '53531'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: ズバット
     variants_seen:
-    - normal
+      - normal

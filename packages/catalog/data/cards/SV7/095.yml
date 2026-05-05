@@ -3,13 +3,13 @@
 set_code: SV7
 local_id: '095'
 name_ja: 重力玉
-name_en: Gravity Stone
+name_en: Gravity Gemstone
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/401/Gravity-Stone.SV7.95.53677.png
-illustrator:
+illustrator: Toyste Beach
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '53677'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: 重力玉
     variants_seen:
-    - normal
+      - normal

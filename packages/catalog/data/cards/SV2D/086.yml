@@ -7,9 +7,9 @@ name_en: Bellibolt ex
 rarity_code: SR
 category: card
 image: https://den-cards.pokellector.com/370/Bellibolt-ex.SV2D.86.47659.png
-illustrator:
+illustrator: PLANETA Yamashita
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '47659'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: ハラバリーex
     variants_seen:
-    - normal
+      - normal

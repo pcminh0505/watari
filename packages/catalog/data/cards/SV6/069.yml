@@ -7,9 +7,9 @@ name_en: Whirlipede
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/393/Whirlipede.SV6.69.52941.png
-illustrator:
+illustrator: Krgc
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '52941'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: ホイーガ
     variants_seen:
-    - normal
+      - normal

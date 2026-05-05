@@ -7,9 +7,9 @@ name_en: Persian
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/398/Persian.SV6A.49.53564.png
-illustrator:
+illustrator: NC Empire
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '53564'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: ペルシアン
     variants_seen:
-    - normal
+      - normal

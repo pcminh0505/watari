@@ -7,9 +7,9 @@ name_en: Scream Tail
 rarity_code: AR
 category: card
 image: https://den-cards.pokellector.com/381/Scream-Tail.SV4K.71.50803.png
-illustrator:
+illustrator: GIDORA
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '50803'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: サケブシッポ
     variants_seen:
-    - normal
+      - normal

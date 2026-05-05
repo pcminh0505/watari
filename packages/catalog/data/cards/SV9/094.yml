@@ -7,9 +7,9 @@ name_en: Iris's Fighting Spirit
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/408/Iriss-Fighting-Spirit.SV9.94.55770.png
-illustrator:
+illustrator: yuu
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '55770'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: アイリスの闘志
     variants_seen:
-    - normal
+      - normal

@@ -7,9 +7,9 @@ name_en: Team Rocket's Nidoqueen
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/413/Team-Rockets-Nidoqueen.SV10.60.57109.png
-illustrator:
+illustrator: hncl
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '57109'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: ロケット団のニドクイン
     variants_seen:
-    - normal
+      - normal

@@ -3,13 +3,13 @@
 set_code: SV9A
 local_id: '060'
 name_ja: シロナのパワーウエイト
-name_en: Cynthia's Power Weights
+name_en: Cynthia's Power Weight
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/411/Cynthias-Power-Weights.SV9A.60.56584.png
-illustrator:
+illustrator: Studio Bora Inc.
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '56584'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: シロナのパワーウエイト
     variants_seen:
-    - normal
+      - normal

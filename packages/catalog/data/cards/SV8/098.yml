@@ -4,12 +4,12 @@ set_code: SV8
 local_id: '098'
 name_ja: 希望のアミュレット
 name_en: Amulet of Hope
-rarity_code: R
+rarity_code: ACE
 category: card
 image: https://den-cards.pokellector.com/405/Amulet-of-Hope.SV8.98.54510.png
-illustrator:
+illustrator: Toyste Beach
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '54510'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: 希望のアミュレット
     variants_seen:
-    - normal
+      - normal

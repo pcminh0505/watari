@@ -7,9 +7,9 @@ name_en: Excadrill ex
 rarity_code: RR
 category: card
 image: https://den-cards.pokellector.com/414/Excadrill-ex.SV11B.49.57701.png
-illustrator:
+illustrator: N-DESIGN Inc.
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '57701'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: ドリュウズex
     variants_seen:
-    - normal
+      - normal

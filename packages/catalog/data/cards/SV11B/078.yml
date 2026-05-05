@@ -3,15 +3,15 @@
 set_code: SV11B
 local_id: '078'
 name_ja: チラチーノ
-name_en: Cincinno
-rarity_code: C
+name_en: Cinccino
+rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/414/Cincinno.SV11B.78.57240.png
-illustrator:
+illustrator: Ayako Ozaki
 prints:
-- normal
-- master_ball_mirror
-- poke_ball_mirror
+  - normal
+  - master_ball_mirror
+  - poke_ball_mirror
 sources:
   pokellector:
     id: '57240'
@@ -21,6 +21,6 @@ sources:
   cardrush:
     name_ja: チラチーノ
     variants_seen:
-    - master_ball_mirror
-    - normal
-    - poke_ball_mirror
+      - master_ball_mirror
+      - normal
+      - poke_ball_mirror

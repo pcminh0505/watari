@@ -7,9 +7,9 @@ name_en: Solrock
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/416/Solrock.M1L.27.58833.png
-illustrator:
+illustrator: Whisker
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '58833'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ソルロック
     variants_seen:
-    - normal
+      - normal
     rarity_code: U

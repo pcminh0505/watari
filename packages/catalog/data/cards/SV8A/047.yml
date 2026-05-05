@@ -7,9 +7,9 @@ name_en: Iron Bundle
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/406/Iron-Bundle.SV8A.47.54632.png
-illustrator:
+illustrator: Lee HyunJung
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '54632'

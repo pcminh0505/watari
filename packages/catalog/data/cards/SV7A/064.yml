@@ -3,13 +3,13 @@
 set_code: SV7A
 local_id: '064'
 name_ja: リッチエネルギー
-name_en: Rich Energy
-rarity_code: R
+name_en: Enriching Energy
+rarity_code: ACE
 category: energy
 image: https://den-cards.pokellector.com/403/Rich-Energy.SV7A.64.54028.png
-illustrator:
+illustrator: 5ban Graphics
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '54028'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: リッチエネルギー
     variants_seen:
-    - normal
+      - normal

@@ -7,9 +7,9 @@ name_en: Tapu Koko
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/427/Tapu-Koko.M2A.54.59952.png
-illustrator:
+illustrator: Anesaki Dynamic
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '59952'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: カプ・コケコ(R仕様)
     variants_seen:
-    - normal
+      - normal

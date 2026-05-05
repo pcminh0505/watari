@@ -7,9 +7,9 @@ name_en: Hop's Sandaconda
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/408/Hops-Sandaconda.SV9.54.55543.png
-illustrator:
+illustrator: Sanosuke Sakuma
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '55543'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: ペパーのホシガリス
     variants_seen:
-    - normal
+      - normal

@@ -7,9 +7,9 @@ name_en: Wo-Chien
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/406/Wo-Chien.SV8A.15.55160.png
-illustrator:
+illustrator: Kouki Saitou
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '55160'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: チオンジェン(R仕様)
     variants_seen:
-    - normal
+      - normal

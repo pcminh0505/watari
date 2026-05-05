@@ -7,9 +7,9 @@ name_en: Bronzong
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/386/Bronzong.SV5K.29.51841.png
-illustrator:
+illustrator: Katsunori Sato
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '51841'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: ドータクン
     variants_seen:
-    - normal
+      - normal

@@ -7,9 +7,9 @@ name_en: Toxicroak
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/370/Toxicroak.SV2D.41.47637.png
-illustrator:
+illustrator: Yuya Oka
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '47637'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: ドクロッグ
     variants_seen:
-    - normal
+      - normal

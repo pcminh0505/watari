@@ -7,9 +7,9 @@ name_en: Glastrier
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/427/Glastrier.M2A.42.59943.png
-illustrator:
+illustrator: mashu
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '59943'

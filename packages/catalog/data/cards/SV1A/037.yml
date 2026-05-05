@@ -7,9 +7,9 @@ name_en: Grumpig
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/366/Grumpig.SV1A.37.46962.png
-illustrator:
+illustrator: Scav
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '46962'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: ブーピッグ
     variants_seen:
-    - normal
+      - normal

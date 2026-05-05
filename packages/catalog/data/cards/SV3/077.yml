@@ -7,9 +7,9 @@ name_en: Scizor
 rarity_code: R
 category: card
 image: https://den-cards.pokellector.com/368/Scizor.SV3.77.48358.png
-illustrator:
+illustrator: otumami
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '48358'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: カプ・コケコex
     variants_seen:
-    - normal
+      - normal

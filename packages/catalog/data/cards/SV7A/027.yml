@@ -7,9 +7,9 @@ name_en: Flygon ex
 rarity_code: RR
 category: card
 image: https://den-cards.pokellector.com/403/Flygon-ex.SV7A.27.54008.png
-illustrator:
+illustrator: 5ban Graphics
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '54008'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: フライゴンex
     variants_seen:
-    - normal
+      - normal

@@ -3,13 +3,13 @@
 set_code: M3
 local_id: '103'
 name_ja: ポケパッド
-name_en: Pok&eacute; Pad
+name_en: Poké Pad
 rarity_code: SR
 category: card
 image: https://den-cards.pokellector.com/428/Pok-Pad.M3.103.60272.png
-illustrator:
+illustrator: Studio Bora Inc.
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '60272'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: ポケパッド
     variants_seen:
-    - normal
+      - normal

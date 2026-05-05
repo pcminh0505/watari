@@ -7,9 +7,9 @@ name_en: Altaria ex
 rarity_code: RR
 category: card
 image: https://den-cards.pokellector.com/382/Altaria-ex.SV4K.46.50873.png
-illustrator:
+illustrator: Saki Hayashiro
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '50873'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: チルタリスex
     variants_seen:
-    - normal
+      - normal

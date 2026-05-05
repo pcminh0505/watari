@@ -7,9 +7,9 @@ name_en: Antique Sail Fossil
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/428/Antique-Sail-Fossil.M3.69.60170.png
-illustrator:
+illustrator: AYUMI ODASHIMA
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '60170'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: 古びたヒレの化石
     variants_seen:
-    - normal
+      - normal

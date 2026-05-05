@@ -7,9 +7,9 @@ name_en: Espathra
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/361/Espathra.SV1S.37.46252.png
-illustrator:
+illustrator: Hitoshi Ariga
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '46252'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: ミライドンex
     variants_seen:
-    - normal
+      - normal

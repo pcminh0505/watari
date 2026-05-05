@@ -7,9 +7,9 @@ name_en: Talonflame
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/370/Talonflame.SV2D.13.47619.png
-illustrator:
+illustrator: Nisota Niso
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '47619'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: ファイアロー
     variants_seen:
-    - normal
+      - normal

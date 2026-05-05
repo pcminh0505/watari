@@ -7,9 +7,9 @@ name_en: Drizzile
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/417/Drizzile.M1S.22.57992.png
-illustrator:
+illustrator: Souichirou Gunjima
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '57992'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ジメレオン
     variants_seen:
-    - normal
+      - normal
     rarity_code: C

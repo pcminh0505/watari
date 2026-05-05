@@ -7,9 +7,9 @@ name_en: Floette
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/391/Floette.SV5A.37.52787.png
-illustrator:
+illustrator: mingo
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '52787'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: フラエッテ
     variants_seen:
-    - normal
+      - normal

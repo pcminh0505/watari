@@ -7,9 +7,9 @@ name_en: Dusknoir
 rarity_code: R
 category: card
 image: https://den-cards.pokellector.com/398/Dusknoir.SV6A.20.53538.png
-illustrator:
+illustrator: danciao
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '53538'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: ヨノワール
     variants_seen:
-    - normal
+      - normal

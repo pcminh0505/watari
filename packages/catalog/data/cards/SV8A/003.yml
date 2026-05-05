@@ -7,9 +7,9 @@ name_en: Leafeon ex
 rarity_code: RR
 category: card
 image: https://den-cards.pokellector.com/406/Leafeon-ex.SV8A.3.54668.png
-illustrator:
+illustrator: 5ban Graphics
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '54668'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: リーフィアex
     variants_seen:
-    - normal
+      - normal

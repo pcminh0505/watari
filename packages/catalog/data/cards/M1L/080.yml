@@ -7,9 +7,9 @@ name_en: Mega Mawile ex
 rarity_code: SR
 category: card
 image: https://den-cards.pokellector.com/416/Mega-Mawile-ex.M1L.80.58879.png
-illustrator:
+illustrator: aky CG Works
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '58879'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: メガクチートex
     variants_seen:
-    - normal
+      - normal
     rarity_code: SR

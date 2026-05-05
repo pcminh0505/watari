@@ -7,9 +7,9 @@ name_en: Nosepass
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/368/Nosepass.SV3.57.48799.png
-illustrator:
+illustrator: Nobuhiro Imagawa
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '48799'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: ノズパス
     variants_seen:
-    - normal
+      - normal

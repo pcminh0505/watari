@@ -3,13 +3,13 @@
 set_code: SV9
 local_id: '098'
 name_ja: ハッコウシティ
-name_en: Levincia City
+name_en: Levincia
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/408/Levincia-City.SV9.98.55476.png
-illustrator:
+illustrator: MARINA Chikazawa
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '55476'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: ハッコウシティ
     variants_seen:
-    - normal
+      - normal

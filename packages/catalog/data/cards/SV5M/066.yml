@@ -7,9 +7,9 @@ name_en: Heavy Baton
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/387/Heavy-Baton.SV5M.66.51801.png
-illustrator:
+illustrator: Ayaka Yoshida
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '51801'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: ヘビーバトン
     variants_seen:
-    - normal
+      - normal

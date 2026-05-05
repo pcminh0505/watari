@@ -7,9 +7,9 @@ name_en: Team Rocket's Koffing
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/413/Team-Rockets-Koffing.SV10.69.57062.png
-illustrator:
+illustrator: kodama
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '57062'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: ロケット団のドガース
     variants_seen:
-    - normal
+      - normal

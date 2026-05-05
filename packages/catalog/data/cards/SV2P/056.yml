@@ -7,9 +7,9 @@ name_en: Dunsparce
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/369/Dunsparce.SV2P.56.47023.png
-illustrator:
+illustrator: Nagomi Nijo
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '47023'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: ノコッチ(SV2P)
     variants_seen:
-    - normal
+      - normal

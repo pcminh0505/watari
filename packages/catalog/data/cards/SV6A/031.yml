@@ -7,9 +7,9 @@ name_en: Zorua
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/398/Zorua.SV6A.31.53555.png
-illustrator:
+illustrator: Yuu Nishida
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '53555'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: ゾロア
     variants_seen:
-    - normal
+      - normal

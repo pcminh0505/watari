@@ -7,9 +7,9 @@ name_en: Charizard ex
 rarity_code: RR
 category: card
 image: https://den-cards.pokellector.com/368/Charizard-ex.SV3.66.48355.png
-illustrator:
+illustrator: 5ban Graphics
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '48355'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: リザードンex
     variants_seen:
-    - normal
+      - normal

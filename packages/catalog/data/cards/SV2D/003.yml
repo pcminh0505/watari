@@ -7,9 +7,9 @@ name_en: Jumpluff
 rarity_code: R
 category: card
 image: https://den-cards.pokellector.com/370/Jumpluff.SV2D.3.47292.png
-illustrator:
+illustrator: Naoyo Kimura
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '47292'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: ワタッコ
     variants_seen:
-    - normal
+      - normal

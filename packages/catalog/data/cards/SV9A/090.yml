@@ -7,9 +7,9 @@ name_en: Ethan's Ho-oh ex
 rarity_code: UR
 category: card
 image: https://den-cards.pokellector.com/411/Ethans-Ho-oh-ex.SV9A.90.56671.png
-illustrator:
+illustrator: aky CG Works
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '56671'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: ヒビキのホウオウex
     variants_seen:
-    - normal
+      - normal

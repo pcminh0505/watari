@@ -7,9 +7,9 @@ name_en: Shroodle
 rarity_code: AR
 category: card
 image: https://den-cards.pokellector.com/416/Shroodle.M1L.72.58871.png
-illustrator:
+illustrator: Shimaris Yukichi
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '58871'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: シルシュルー
     variants_seen:
-    - normal
+      - normal
     rarity_code: AR

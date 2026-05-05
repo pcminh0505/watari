@@ -7,9 +7,9 @@ name_en: Hearthflame Mask Ogerpon ex
 rarity_code: SR
 category: card
 image: https://den-cards.pokellector.com/393/Hearthflame-Mask-Ogerpon-ex.SV6.115.53103.png
-illustrator:
+illustrator: 5ban Graphics
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '53103'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: オーガポンかまどのめんex
     variants_seen:
-    - normal
+      - normal

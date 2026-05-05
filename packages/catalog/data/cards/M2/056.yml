@@ -7,9 +7,9 @@ name_en: Toxel
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/425/Toxel.M2.56.59178.png
-illustrator:
+illustrator: OKACHEKE
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '59178'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: エレズン
     variants_seen:
-    - normal
+      - normal

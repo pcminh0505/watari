@@ -3,13 +3,13 @@
 set_code: SV2P
 local_id: '070'
 name_ja: 災いの雪山
-name_en: Snowy Mountain of Disaster
+name_en: Calamitous Snowy Mountain
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/369/Snowy-Mountain-of-Disaster.SV2P.70.47290.png
-illustrator:
+illustrator: AYUMI ODASHIMA
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '47290'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: 災いの雪山
     variants_seen:
-    - normal
+      - normal

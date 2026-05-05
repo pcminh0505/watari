@@ -7,9 +7,9 @@ name_en: Jamming Tower
 rarity_code: SR
 category: card
 image: https://den-cards.pokellector.com/427/Jamming-Tower.M2A.222.60093.png
-illustrator:
+illustrator: AYUMI ODASHIMA
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '60093'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: ジャミングタワー
     variants_seen:
-    - normal
+      - normal

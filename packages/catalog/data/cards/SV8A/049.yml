@@ -7,9 +7,9 @@ name_en: Walking Wake ex
 rarity_code: RR
 category: card
 image: https://den-cards.pokellector.com/406/Walking-Wake-ec.SV8A.49.54633.png
-illustrator:
+illustrator: takuyoa
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '54633'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: ウネルミナモex
     variants_seen:
-    - normal
+      - normal

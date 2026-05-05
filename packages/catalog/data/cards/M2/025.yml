@@ -7,9 +7,9 @@ name_en: Mamoswine
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/425/Mamoswine.M2.25.59206.png
-illustrator:
+illustrator: Takumi Wada
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '59206'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: マンムー
     variants_seen:
-    - normal
+      - normal

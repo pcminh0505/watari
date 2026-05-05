@@ -7,9 +7,9 @@ name_en: Landorus
 rarity_code: R
 category: card
 image: https://den-cards.pokellector.com/403/Landorus.SV7A.30.54395.png
-illustrator:
+illustrator: Souichirou Gunjima
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '54395'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: ランドロス
     variants_seen:
-    - normal
+      - normal

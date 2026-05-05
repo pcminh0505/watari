@@ -7,9 +7,9 @@ name_en: Dipplin
 rarity_code: AR
 category: card
 image: https://den-cards.pokellector.com/393/Dipplin.SV6.103.52897.png
-illustrator:
+illustrator: Akira Komayama
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '52897'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: カミッチュ
     variants_seen:
-    - normal
+      - normal

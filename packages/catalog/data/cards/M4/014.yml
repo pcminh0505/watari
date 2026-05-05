@@ -7,9 +7,9 @@ name_en: Litleo
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/430/Litleo.M4.14.60958.png
-illustrator:
+illustrator: Mina Nakai
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '60958'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: シシコ
     variants_seen:
-    - normal
+      - normal

@@ -7,9 +7,9 @@ name_en: Stunky
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/430/Stunky.M4.52.60980.png
-illustrator:
+illustrator: Nobuhiro Imagawa
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '60980'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: スカンプー
     variants_seen:
-    - normal
+      - normal

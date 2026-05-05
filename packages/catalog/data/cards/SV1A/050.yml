@@ -7,9 +7,9 @@ name_en: Lycanroc ex
 rarity_code: RR
 category: card
 image: https://den-cards.pokellector.com/366/Lycanroc-ex.SV1A.50.46943.png
-illustrator:
+illustrator: kawayoo
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '46943'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: ルガルガンex
     variants_seen:
-    - normal
+      - normal

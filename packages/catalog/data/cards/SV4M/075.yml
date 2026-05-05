@@ -7,9 +7,9 @@ name_en: Aipom
 rarity_code: AR
 category: card
 image: https://den-cards.pokellector.com/382/Aipom.SV4K.75.50902.png
-illustrator:
+illustrator: Yuka Morii
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '50902'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: エイパム
     variants_seen:
-    - normal
+      - normal

@@ -7,9 +7,9 @@ name_en: Phanpy
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/430/Phanpy.M4.44.60975.png
-illustrator:
+illustrator: Akino Fukuji
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '60975'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: ゴマゾウ
     variants_seen:
-    - normal
+      - normal

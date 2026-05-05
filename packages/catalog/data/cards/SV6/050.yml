@@ -7,9 +7,9 @@ name_en: Chimecho
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/393/Chimecho.SV6.50.52928.png
-illustrator:
+illustrator: Mousho
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '52928'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: チリーン
     variants_seen:
-    - normal
+      - normal

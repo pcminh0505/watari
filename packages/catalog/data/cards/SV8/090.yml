@@ -7,9 +7,9 @@ name_en: Oranguru
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/405/Oranguru.SV8.90.54579.png
-illustrator:
+illustrator: Saboteri
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '54579'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: ヤレユータン
     variants_seen:
-    - normal
+      - normal

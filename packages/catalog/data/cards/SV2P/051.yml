@@ -7,9 +7,9 @@ name_en: Bronzong
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/369/Bronzong.SV2P.51.47588.png
-illustrator:
+illustrator: Nobuhiro Imagawa
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '47588'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: ドータクン
     variants_seen:
-    - normal
+      - normal

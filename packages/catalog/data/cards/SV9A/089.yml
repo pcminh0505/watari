@@ -7,9 +7,9 @@ name_en: Ethan's Adventure
 rarity_code: SAR
 category: card
 image: https://den-cards.pokellector.com/411/Ethans-Adventure.SV9A.89.56670.png
-illustrator:
+illustrator: Kariya
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '56670'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: ヒビキの冒険
     variants_seen:
-    - normal
+      - normal

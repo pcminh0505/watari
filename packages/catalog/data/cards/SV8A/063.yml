@@ -7,9 +7,9 @@ name_en: Espeon ex
 rarity_code: RR
 category: card
 image: https://den-cards.pokellector.com/406/Espeon-ex.SV8A.63.54666.png
-illustrator:
+illustrator: 5ban Graphics
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '54666'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: エーフィex
     variants_seen:
-    - normal
+      - normal

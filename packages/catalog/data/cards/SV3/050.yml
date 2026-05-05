@@ -7,9 +7,9 @@ name_en: Claydol
 rarity_code: R
 category: card
 image: https://den-cards.pokellector.com/368/Claydol.SV3.50.48794.png
-illustrator:
+illustrator: Shigenori Negishi
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '48794'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: ネンドール
     variants_seen:
-    - normal
+      - normal

@@ -3,13 +3,13 @@
 set_code: SV6A
 local_id: '058'
 name_ja: 力の砂時計
-name_en: Power Hourglass
+name_en: Powerglass
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/398/Power-Hourglass.SV6A.58.53569.png
-illustrator:
+illustrator: Studio Bora Inc.
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '53569'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: 力の砂時計
     variants_seen:
-    - normal
+      - normal

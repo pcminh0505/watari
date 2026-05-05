@@ -7,9 +7,9 @@ name_en: Tatsugiri
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/427/Tatsugiri.M2A.135.60016.png
-illustrator:
+illustrator: Jerky
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '60016'

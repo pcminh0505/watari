@@ -7,9 +7,9 @@ name_en: Gimmighoul
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/376/Gimmighoul.SV3A.21.49370.png
-illustrator:
+illustrator: Kouki Saitou
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '49370'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: コレクレー
     variants_seen:
-    - normal
+      - normal

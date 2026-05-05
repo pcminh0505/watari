@@ -7,9 +7,9 @@ name_en: Raichu
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/387/Raichu.SV5M.24.51770.png
-illustrator:
+illustrator: cochi8i
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '51770'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: ライチュウ
     variants_seen:
-    - normal
+      - normal

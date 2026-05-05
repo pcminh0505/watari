@@ -7,9 +7,9 @@ name_en: Black Kyurem ex
 rarity_code: SR
 category: card
 image: https://den-cards.pokellector.com/403/Black-Kyurem-ex.SV7A.77.54413.png
-illustrator:
+illustrator: N-DESIGN Inc.
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '54413'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: ブラックキュレムex
     variants_seen:
-    - normal
+      - normal

@@ -3,13 +3,13 @@
 set_code: SV9
 local_id: '090'
 name_ja: とりかえチケット
-name_en: Exchange Ticket
+name_en: Redeemable Ticket
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/408/Exchange-Ticket.SV9.90.55493.png
-illustrator:
+illustrator: Studio Bora Inc.
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '55493'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: とりかえチケット
     variants_seen:
-    - normal
+      - normal

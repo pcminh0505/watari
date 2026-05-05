@@ -7,9 +7,9 @@ name_en: Grubbin
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/387/Grubbin.SV5M.10.51702.png
-illustrator:
+illustrator: Kagemaru Himeno
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '51702'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: アゴジムシ
     variants_seen:
-    - normal
+      - normal

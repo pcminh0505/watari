@@ -7,9 +7,9 @@ name_en: Spritzee
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/428/Spritzee.M3.34.60224.png
-illustrator:
+illustrator: Pani Kobayashi
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '60224'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: シュシュプ
     variants_seen:
-    - normal
+      - normal

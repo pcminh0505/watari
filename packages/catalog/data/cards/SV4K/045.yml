@@ -7,9 +7,9 @@ name_en: Golbat
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/381/Golbat.SV4K.45.50777.png
-illustrator:
+illustrator: Eri Yamaki
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '50777'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: ゴルバット
     variants_seen:
-    - normal
+      - normal

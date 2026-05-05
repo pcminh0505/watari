@@ -7,9 +7,9 @@ name_en: Iron Hands ex
 rarity_code: SR
 category: card
 image: https://den-cards.pokellector.com/382/Iron-Hands-ex.SV4K.79.50906.png
-illustrator:
+illustrator: PLANETA Mochizuki
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '50906'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: テツノカイナex
     variants_seen:
-    - normal
+      - normal

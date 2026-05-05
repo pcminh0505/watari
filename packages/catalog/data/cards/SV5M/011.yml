@@ -7,9 +7,9 @@ name_en: Dhelmise
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/387/Dhelmise.SV5M.11.51761.png
-illustrator:
+illustrator: Saya Tsuruta
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '51761'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: ダダリン
     variants_seen:
-    - normal
+      - normal

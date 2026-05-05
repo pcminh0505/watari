@@ -7,9 +7,9 @@ name_en: Defiance Vest
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/381/Defiance-Vest.SV4K.62.50794.png
-illustrator:
+illustrator: Ayaka Yoshida
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '50794'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: まけんきチョッキ
     variants_seen:
-    - normal
+      - normal

@@ -7,9 +7,9 @@ name_en: Sandygast
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/393/Sandygast.SV6.53.52929.png
-illustrator:
+illustrator: Asako Ito
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '52929'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: スナバァ
     variants_seen:
-    - normal
+      - normal

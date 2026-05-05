@@ -7,9 +7,9 @@ name_en: Oinkologne ex
 rarity_code: SR
 category: card
 image: https://den-cards.pokellector.com/361/Oinkologne-ex.SV1S.96.46801.png
-illustrator:
+illustrator: aky CG Works
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '46801'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: パフュートンex
     variants_seen:
-    - normal
+      - normal

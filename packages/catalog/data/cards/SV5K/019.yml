@@ -7,9 +7,9 @@ name_en: Snom
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/386/Snom.SV5K.19.51833.png
-illustrator:
+illustrator: Orca
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '51833'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: ユキハミ
     variants_seen:
-    - normal
+      - normal

@@ -7,9 +7,9 @@ name_en: Togetic
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/427/Togetic.M2A.65.59963.png
-illustrator:
+illustrator: Teeziro
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '59963'

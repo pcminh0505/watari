@@ -7,9 +7,9 @@ name_en: Shroodle
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/416/Shroodle.M1L.43.58847.png
-illustrator:
+illustrator: osare
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '58847'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: シルシュルー
     variants_seen:
-    - normal
+      - normal
     rarity_code: C

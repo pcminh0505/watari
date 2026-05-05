@@ -7,9 +7,9 @@ name_en: Naclstack
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/416/Naclstack.M1L.35.58839.png
-illustrator:
+illustrator: kodama
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '58839'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ジオヅム
     variants_seen:
-    - normal
+      - normal
     rarity_code: C

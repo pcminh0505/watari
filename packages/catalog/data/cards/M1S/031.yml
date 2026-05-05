@@ -7,9 +7,9 @@ name_en: Electrike
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/417/Electrike.M1S.31.58918.png
-illustrator:
+illustrator: Naoki Saito
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '58918'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ラクライ
     variants_seen:
-    - normal
+      - normal
     rarity_code: C

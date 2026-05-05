@@ -7,9 +7,9 @@ name_en: Delibird
 rarity_code: AR
 category: card
 image: https://den-cards.pokellector.com/417/Delibird.M1S.74.58951.png
-illustrator:
+illustrator: Takeshi Nakamura
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '58951'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: デリバード
     variants_seen:
-    - normal
+      - normal
     rarity_code: AR

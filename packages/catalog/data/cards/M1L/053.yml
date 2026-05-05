@@ -7,9 +7,9 @@ name_en: Fearow
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/416/Fearow.M1L.53.58857.png
-illustrator:
+illustrator: Saboteri
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '58857'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: オニドリル
     variants_seen:
-    - normal
+      - normal
     rarity_code: C

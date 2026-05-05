@@ -7,9 +7,9 @@ name_en: Kingdra ex
 rarity_code: SR
 category: card
 image: https://den-cards.pokellector.com/398/Kingdra-ex.SV6A.77.53582.png
-illustrator:
+illustrator: PLANETA Igarashi
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '53582'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: キングドラex
     variants_seen:
-    - normal
+      - normal

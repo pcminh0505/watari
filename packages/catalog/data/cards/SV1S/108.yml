@@ -3,13 +3,13 @@
 set_code: SV1S
 local_id: '108'
 name_ja: 基本雷エネルギー(SVデザイン)
-name_en: Fighting Energy
+name_en: Basic Fighting Energy
 rarity_code: UR
 category: energy
 image: https://den-cards.pokellector.com/361/Fighting-Energy.SV1S.108.46812.png
 illustrator:
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '46812'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: 基本雷エネルギー(SVデザイン)
     variants_seen:
-    - normal
+      - normal

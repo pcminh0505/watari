@@ -7,9 +7,9 @@ name_en: Quaxly
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/366/Quaxly.SV1A.27.46854.png
-illustrator:
+illustrator: sui
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '46854'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: クワッス
     variants_seen:
-    - normal
+      - normal

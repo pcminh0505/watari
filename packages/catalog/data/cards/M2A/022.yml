@@ -7,9 +7,9 @@ name_en: Numel
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/427/Numel.M2A.22.59933.png
-illustrator:
+illustrator: Ounishi
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '59933'

@@ -7,9 +7,9 @@ name_en: Nymble
 rarity_code: AR
 category: card
 image: https://den-cards.pokellector.com/425/Nymble.M2.82.59570.png
-illustrator:
+illustrator: Nakamura Ippan
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '59570'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: ロケット団のディグダ(R団ミラー)
     variants_seen:
-    - normal
+      - normal

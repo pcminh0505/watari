@@ -7,9 +7,9 @@ name_en: Riolu
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/361/Riolu.SV1S.40.46186.png
-illustrator:
+illustrator: chibi
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '46186'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: リオル
     variants_seen:
-    - normal
+      - normal

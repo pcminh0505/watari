@@ -7,9 +7,9 @@ name_en: Scorbunny
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/401/Scorbunny.SV7.16.53661.png
-illustrator:
+illustrator: Cona Nitanda
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '53661'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: ヒバニー
     variants_seen:
-    - normal
+      - normal

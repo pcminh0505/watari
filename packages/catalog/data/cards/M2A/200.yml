@@ -7,9 +7,9 @@ name_en: Snorunt
 rarity_code: AR
 category: card
 image: https://den-cards.pokellector.com/427/Snorunt.M2A.200.60074.png
-illustrator:
+illustrator: June
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '60074'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: ユキワラシ
     variants_seen:
-    - normal
+      - normal

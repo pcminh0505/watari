@@ -7,9 +7,9 @@ name_en: Grusha
 rarity_code: SAR
 category: card
 image: https://den-cards.pokellector.com/369/Grusha.SV2P.95.47610.png
-illustrator:
+illustrator: DOM
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '47610'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: グルーシャ
     variants_seen:
-    - normal
+      - normal

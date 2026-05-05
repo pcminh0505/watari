@@ -7,9 +7,9 @@ name_en: Corphish
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/391/Corphish.SV5A.19.52776.png
-illustrator:
+illustrator: Kouki Saitou
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '52776'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: ヘイガニ
     variants_seen:
-    - normal
+      - normal

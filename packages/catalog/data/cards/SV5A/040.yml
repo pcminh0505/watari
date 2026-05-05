@@ -7,9 +7,9 @@ name_en: Scream Tail ex
 rarity_code: RR
 category: card
 image: https://den-cards.pokellector.com/391/Scream-Tail-ex.SV5A.40.52388.png
-illustrator:
+illustrator: akagi
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '52388'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: サケブシッポex
     variants_seen:
-    - normal
+      - normal

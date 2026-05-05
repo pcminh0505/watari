@@ -7,9 +7,9 @@ name_en: Drilbur
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/406/Drilbur.SV8A.83.55192.png
-illustrator:
+illustrator: Kariya
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '55192'

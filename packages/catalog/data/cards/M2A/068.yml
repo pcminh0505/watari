@@ -7,9 +7,9 @@ name_en: Mismagius
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/427/Mismagius.M2A.68.59966.png
-illustrator:
+illustrator: nisimono
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '59966'

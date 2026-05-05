@@ -7,9 +7,9 @@ name_en: Mesprit
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/405/Mesprit.SV8.49.54557.png
-illustrator:
+illustrator: HYOGONOSUKE
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '54557'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: エムリット
     variants_seen:
-    - normal
+      - normal

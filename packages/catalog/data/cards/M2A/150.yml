@@ -7,9 +7,9 @@ name_en: Sacred Ash
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/427/Sacred-Ash.M2A.150.60031.png
-illustrator:
+illustrator: Eske Yoshinob
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '60031'

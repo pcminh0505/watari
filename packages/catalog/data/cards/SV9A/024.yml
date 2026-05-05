@@ -7,9 +7,9 @@ name_en: Misty's Starmie
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/411/Mistys-Starmie.SV9A.24.56600.png
-illustrator:
+illustrator: Natsumi Yoshida
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '56600'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: カスミのスターミー
     variants_seen:
-    - normal
+      - normal

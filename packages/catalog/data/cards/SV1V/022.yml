@@ -7,9 +7,9 @@ name_en: Clawitzer
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/362/Clawitzer.SV1V.22.46304.png
-illustrator:
+illustrator: Souichirou Gunjima
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '46304'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: ブロスター
     variants_seen:
-    - normal
+      - normal

@@ -7,9 +7,9 @@ name_en: Team Rocket's Orbeetle
 rarity_code: AR
 category: card
 image: https://den-cards.pokellector.com/413/Team-Rockets-Orbeetle.SV10.104.57077.png
-illustrator:
+illustrator: HYOGONOSUKE
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '57077'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: ロケット団のイオルブ
     variants_seen:
-    - normal
+      - normal

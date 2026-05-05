@@ -7,9 +7,9 @@ name_en: Chien-Pao
 rarity_code: R
 category: card
 image: https://den-cards.pokellector.com/428/Chien-Pao.M3.53.60238.png
-illustrator:
+illustrator: Satoshi Ito
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '60238'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: パオジアン
     variants_seen:
-    - normal
+      - normal

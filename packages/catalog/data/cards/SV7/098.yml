@@ -7,9 +7,9 @@ name_en: Lacey
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/401/Lacey.SV7.98.53672.png
-illustrator:
+illustrator: Sanosuke Sakuma
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '53672'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: タロ
     variants_seen:
-    - normal
+      - normal

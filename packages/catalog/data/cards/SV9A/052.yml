@@ -7,9 +7,9 @@ name_en: Arven's Mabosstiff ex
 rarity_code: RR
 category: card
 image: https://den-cards.pokellector.com/411/Arvens-Mabosstiff-ex.SV9A.52.56647.png
-illustrator:
+illustrator: akagi
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '56647'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: ペパーのマフィティフex
     variants_seen:
-    - normal
+      - normal

@@ -7,9 +7,9 @@ name_en: Drampa
 rarity_code: R
 category: card
 image: https://den-cards.pokellector.com/387/Drampa.SV5M.60.51798.png
-illustrator:
+illustrator: Toshinao Aoki
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '51798'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: ジジーロン
     variants_seen:
-    - normal
+      - normal

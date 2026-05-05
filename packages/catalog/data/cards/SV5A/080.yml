@@ -7,9 +7,9 @@ name_en: Magcargo ex
 rarity_code: SR
 category: card
 image: https://den-cards.pokellector.com/391/Magcargo-ex.SV5A.80.52828.png
-illustrator:
+illustrator: PLANETA Yamashita
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '52828'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: マグカルゴex
     variants_seen:
-    - normal
+      - normal

@@ -7,9 +7,9 @@ name_en: Iron Bundle
 rarity_code: AR
 category: card
 image: https://den-cards.pokellector.com/382/Iron-Bundle.SV4K.71.50898.png
-illustrator:
+illustrator: Teeziro
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '50898'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: テツノツツミ
     variants_seen:
-    - normal
+      - normal

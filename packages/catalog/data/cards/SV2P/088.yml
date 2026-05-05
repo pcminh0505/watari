@@ -7,9 +7,9 @@ name_en: Copperajah ex
 rarity_code: SR
 category: card
 image: https://den-cards.pokellector.com/369/Copperajah-ex.SV2P.88.47607.png
-illustrator:
+illustrator: Eske Yoshinob
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '47607'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: ダイオウドウex
     variants_seen:
-    - normal
+      - normal

@@ -7,9 +7,9 @@ name_en: Rowlet
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/398/Rowlet.SV6A.3.53140.png
-illustrator:
+illustrator: Yoshimi Miyoshi
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '53140'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: モクロー
     variants_seen:
-    - normal
+      - normal

@@ -7,9 +7,9 @@ name_en: Light Ball
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/427/Light-Ball.M2A.163.60043.png
-illustrator:
+illustrator: Studio Bora Inc.
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '60043'

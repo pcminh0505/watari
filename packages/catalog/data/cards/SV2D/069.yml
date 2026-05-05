@@ -7,9 +7,9 @@ name_en: Iono
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/370/Iono.SV2D.69.47049.png
-illustrator:
+illustrator: Sanosuke Sakuma
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '47049'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: ナンジャモ
     variants_seen:
-    - normal
+      - normal

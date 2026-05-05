@@ -7,9 +7,9 @@ name_en: Magneton
 rarity_code: AR
 category: card
 image: https://den-cards.pokellector.com/405/Magneton.SV8.112.54609.png
-illustrator:
+illustrator: Shinji Kanda
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '54609'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: レアコイル
     variants_seen:
-    - normal
+      - normal

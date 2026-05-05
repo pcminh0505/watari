@@ -3,13 +3,13 @@
 set_code: SV6A
 local_id: '086'
 name_ja: クセロシキのたくらみ
-name_en: Xerosic's Scheme
+name_en: Xerosic's Machinations
 rarity_code: SR
 category: card
 image: https://den-cards.pokellector.com/398/Xerosics-Scheme.SV6A.86.53591.png
-illustrator:
+illustrator: GOSSAN
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '53591'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: クセロシキのたくらみ
     variants_seen:
-    - normal
+      - normal

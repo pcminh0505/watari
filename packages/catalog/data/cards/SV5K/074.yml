@@ -7,9 +7,9 @@ name_en: Bronzor
 rarity_code: AR
 category: card
 image: https://den-cards.pokellector.com/386/Bronzor.SV5K.74.52235.png
-illustrator:
+illustrator: sowsow
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '52235'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: ドーミラー
     variants_seen:
-    - normal
+      - normal

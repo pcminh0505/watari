@@ -7,9 +7,9 @@ name_en: Special Red Card
 rarity_code: SR
 category: card
 image: https://den-cards.pokellector.com/430/Special-Red-Card.M4.106.61024.png
-illustrator:
+illustrator: Studio Bora Inc.
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '61024'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: スペシャルレッドカード
     variants_seen:
-    - normal
+      - normal

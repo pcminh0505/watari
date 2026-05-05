@@ -7,9 +7,9 @@ name_en: Wellspring Mask Ogerpon
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/411/Wellspring-Mask-Ogerpon.SV9A.33.56576.png
-illustrator:
+illustrator: rika
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '56576'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: オーガポンいどのめん
     variants_seen:
-    - normal
+      - normal

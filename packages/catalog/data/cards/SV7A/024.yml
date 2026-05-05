@@ -7,9 +7,9 @@ name_en: Gimmighoul
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/403/Gimmighoul.SV7A.24.54005.png
-illustrator:
+illustrator: Scav
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '54005'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: コレクレー
     variants_seen:
-    - normal
+      - normal

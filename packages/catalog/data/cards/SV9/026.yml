@@ -7,9 +7,9 @@ name_en: Iono's Voltorb
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/408/Ionos-Voltorb.SV9.26.55492.png
-illustrator:
+illustrator: Kazumasa Yasukuni
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '55492'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: ナンジャモのビリリダマ
     variants_seen:
-    - normal
+      - normal

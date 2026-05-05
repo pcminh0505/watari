@@ -7,9 +7,9 @@ name_en: Ethan's Cyndaquil
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/411/Ethans-Cyndaquil.SV9A.15.56543.png
-illustrator:
+illustrator: Susumu Maeya
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '56543'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: ヒビキのヒノアラシ
     variants_seen:
-    - normal
+      - normal

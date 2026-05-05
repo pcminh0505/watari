@@ -7,9 +7,9 @@ name_en: Iron Treads ex
 rarity_code: SAR
 category: card
 image: https://den-cards.pokellector.com/362/Iron-Treads-ex.SV1V.103.46835.png
-illustrator:
+illustrator: KEIICHIRO ITO
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '46835'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: テツノワダチex
     variants_seen:
-    - normal
+      - normal

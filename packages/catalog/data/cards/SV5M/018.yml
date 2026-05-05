@@ -7,9 +7,9 @@ name_en: Magcargo
 rarity_code: R
 category: card
 image: https://den-cards.pokellector.com/387/Magcargo.SV5M.18.51765.png
-illustrator:
+illustrator: Mitsuhiro Arita
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '51765'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: マグカルゴ
     variants_seen:
-    - normal
+      - normal

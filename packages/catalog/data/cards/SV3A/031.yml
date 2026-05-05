@@ -7,9 +7,9 @@ name_en: Klawf
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/376/Klawf.SV3A.31.49375.png
-illustrator:
+illustrator: Yuya Oka
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '49375'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: ガケガニ
     variants_seen:
-    - normal
+      - normal

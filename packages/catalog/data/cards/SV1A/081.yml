@@ -7,9 +7,9 @@ name_en: Quaxly
 rarity_code: AR
 category: card
 image: https://den-cards.pokellector.com/366/Quaxly.SV1A.81.46841.png
-illustrator:
+illustrator: Souichirou Gunjima
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '46841'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: クワッス
     variants_seen:
-    - normal
+      - normal

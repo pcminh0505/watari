@@ -7,9 +7,9 @@ name_en: Ninetales
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/430/Ninetales.M4.9.60956.png
-illustrator:
+illustrator: Ryuta Fuse
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '60956'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: キュウコン
     variants_seen:
-    - normal
+      - normal

@@ -7,9 +7,9 @@ name_en: Pawniard
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/368/Pawniard.SV3.80.48643.png
-illustrator:
+illustrator: Hitoshi Ariga
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '48643'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: コマタナ
     variants_seen:
-    - normal
+      - normal

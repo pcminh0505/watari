@@ -7,11 +7,11 @@ name_en: Pidgeotto
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/371/Pidgeotto.SV2A.17.48249.png
-illustrator:
+illustrator: Oswaldo KATO
 prints:
-- normal
-- master_ball_mirror
-- poke_ball_mirror
+  - normal
+  - master_ball_mirror
+  - poke_ball_mirror
 sources:
   pokellector:
     id: '48249'
@@ -21,6 +21,6 @@ sources:
   cardrush:
     name_ja: ピジョン
     variants_seen:
-    - master_ball_mirror
-    - normal
-    - poke_ball_mirror
+      - master_ball_mirror
+      - normal
+      - poke_ball_mirror

@@ -7,9 +7,9 @@ name_en: Ethan's Adventure
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/427/Ethans-Adventure.M2A.174.60050.png
-illustrator:
+illustrator: Iori Suzuki
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '60050'

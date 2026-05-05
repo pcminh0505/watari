@@ -3,13 +3,13 @@
 set_code: SV7
 local_id: '045'
 name_ja: パピモッチ
-name_en: Dachsbun
+name_en: Fidough
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/401/Dachsbun.SV7.45.53670.png
-illustrator:
+illustrator: Narumi Sato
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '53670'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: パピモッチ
     variants_seen:
-    - normal
+      - normal

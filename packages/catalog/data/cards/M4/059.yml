@@ -7,9 +7,9 @@ name_en: Metagross
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/430/Metagross.M4.59.60987.png
-illustrator:
+illustrator: Bun Toujo
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '60987'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: メタグロス
     variants_seen:
-    - normal
+      - normal

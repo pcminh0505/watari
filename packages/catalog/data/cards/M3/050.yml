@@ -7,9 +7,9 @@ name_en: Skorupi
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/428/Skorupi.M3.50.60235.png
-illustrator:
+illustrator: Aya Kusube
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '60235'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: スコルピ
     variants_seen:
-    - normal
+      - normal

@@ -7,9 +7,9 @@ name_en: Inkay
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/368/Inkay.SV3.75.48809.png
-illustrator:
+illustrator: Kedamahadaitai Yawarakai
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '48809'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: マーイーカ
     variants_seen:
-    - normal
+      - normal

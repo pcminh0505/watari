@@ -7,9 +7,9 @@ name_en: Iron Moth
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/406/Iron-Moth.SV8A.24.55165.png
-illustrator:
+illustrator: Kouki Saitou
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '55165'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: テツノドクガ(R仕様)
     variants_seen:
-    - normal
+      - normal

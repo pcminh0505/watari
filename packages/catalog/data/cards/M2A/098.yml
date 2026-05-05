@@ -7,9 +7,9 @@ name_en: Okidogi
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/427/Okidogi.M2A.98.59993.png
-illustrator:
+illustrator: Mitsuhiro Arita
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '59993'

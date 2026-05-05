@@ -3,13 +3,13 @@
 set_code: M3
 local_id: '080'
 name_ja: ロック闘エネルギー
-name_en: Rock Fighting Energy
+name_en: Rocky Fighting Energy
 rarity_code: R
 category: energy
 image: https://den-cards.pokellector.com/428/Rock-Fighting-Energy.M3.80.60161.png
 illustrator:
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '60161'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: ロック闘エネルギー
     variants_seen:
-    - normal
+      - normal

@@ -7,9 +7,9 @@ name_en: Dondozo
 rarity_code: R
 category: card
 image: https://den-cards.pokellector.com/361/Dondozo.SV1S.21.46239.png
-illustrator:
+illustrator: Souichirou Gunjima
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '46239'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: ウデッポウ
     variants_seen:
-    - normal
+      - normal

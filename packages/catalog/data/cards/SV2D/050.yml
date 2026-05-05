@@ -7,9 +7,9 @@ name_en: Sneasel
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/370/Sneasel.SV2D.50.47641.png
-illustrator:
+illustrator: Kagemaru Himeno
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '47641'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: ニューラ
     variants_seen:
-    - normal
+      - normal

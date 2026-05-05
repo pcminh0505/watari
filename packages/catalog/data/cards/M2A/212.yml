@@ -7,9 +7,9 @@ name_en: Drakloak
 rarity_code: AR
 category: card
 image: https://den-cards.pokellector.com/427/Drakloak.M2A.212.59814.png
-illustrator:
+illustrator: Jerky
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '59814'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: ドロンチ
     variants_seen:
-    - normal
+      - normal

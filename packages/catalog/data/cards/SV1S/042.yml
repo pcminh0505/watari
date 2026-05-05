@@ -7,9 +7,9 @@ name_en: Sandile
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/361/Sandile.SV1S.42.46256.png
-illustrator:
+illustrator: Tomokazu Komiya
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '46256'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: ナカヌチャン
     variants_seen:
-    - normal
+      - normal

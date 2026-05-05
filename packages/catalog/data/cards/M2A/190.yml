@@ -7,9 +7,9 @@ name_en: Team Rocket's Factory
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/427/Team-Rockets-Factory.M2A.190.60065.png
-illustrator:
+illustrator: imoniii
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '60065'

@@ -7,9 +7,9 @@ name_en: Diggersby
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/368/Diggersby.SV3.60.48802.png
-illustrator:
+illustrator: SATOSHI NAKAI
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '48802'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: ホルード
     variants_seen:
-    - normal
+      - normal

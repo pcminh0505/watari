@@ -7,9 +7,9 @@ name_en: Iris's Fighting Spirit
 rarity_code: SAR
 category: card
 image: https://den-cards.pokellector.com/427/Iriss-Fighting-Spirit.M2A.247.60113.png
-illustrator:
+illustrator: Kuroimori
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '60113'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: アイリスの闘志
     variants_seen:
-    - normal
+      - normal

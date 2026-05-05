@@ -7,9 +7,9 @@ name_en: Energy Retrieval
 rarity_code: SR
 category: energy
 image: https://den-cards.pokellector.com/430/Energy-Retrieval.M4.104.61021.png
-illustrator:
+illustrator: Studio Bora Inc.
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '61021'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: エネルギー回収
     variants_seen:
-    - normal
+      - normal

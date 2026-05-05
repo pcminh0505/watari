@@ -7,9 +7,9 @@ name_en: Snorlax Doll
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/381/Snorlax-Doll.SV4K.59.50791.png
-illustrator:
+illustrator: AYUMI ODASHIMA
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '50791'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: カビゴンドール
     variants_seen:
-    - normal
+      - normal

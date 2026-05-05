@@ -7,9 +7,9 @@ name_en: Wo-Chien ex
 rarity_code: RR
 category: card
 image: https://den-cards.pokellector.com/369/Wo-Chien-ex.SV2P.15.47288.png
-illustrator:
+illustrator: 5ban Graphics
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '47288'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: チオンジェンex
     variants_seen:
-    - normal
+      - normal

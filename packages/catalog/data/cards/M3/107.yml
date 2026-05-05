@@ -7,9 +7,9 @@ name_en: Rosa's Encouragement
 rarity_code: SR
 category: card
 image: https://den-cards.pokellector.com/428/Rosas-Encouragement.M3.107.60276.png
-illustrator:
+illustrator: Atsushi Furusawa
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '60276'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: メイのはげまし
     variants_seen:
-    - normal
+      - normal

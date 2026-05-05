@@ -7,10 +7,10 @@ name_en: Jumbo Ice Cream
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/425/Jumbo-Ice-Cream.M2.73.59248.png
-illustrator:
+illustrator: AYUMI ODASHIMA
 prints:
-- normal
-- jumbo
+  - normal
+  - jumbo
 sources:
   pokellector:
     id: '59248'
@@ -20,5 +20,5 @@ sources:
   cardrush:
     name_ja: ジャンボアイス
     variants_seen:
-    - jumbo
-    - normal
+      - jumbo
+      - normal

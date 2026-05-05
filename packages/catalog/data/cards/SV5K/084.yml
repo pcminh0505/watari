@@ -7,9 +7,9 @@ name_en: Torterra ex
 rarity_code: SR
 category: card
 image: https://den-cards.pokellector.com/386/Torterra-ex.SV5K.84.52239.png
-illustrator:
+illustrator: PLANETA Tsuji
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '52239'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: ドダイトスex
     variants_seen:
-    - normal
+      - normal

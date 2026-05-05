@@ -7,9 +7,9 @@ name_en: Staravia
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/361/Staravia.SV1S.64.46276.png
-illustrator:
+illustrator: kantaro
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '46276'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: ムクバード
     variants_seen:
-    - normal
+      - normal

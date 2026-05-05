@@ -7,9 +7,9 @@ name_en: Fidough
 rarity_code: AR
 category: card
 image: https://den-cards.pokellector.com/361/Fidough.SV1S.85.46792.png
-illustrator:
+illustrator: Tika Matsuno
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '46792'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: パルデアウパー
     variants_seen:
-    - normal
+      - normal

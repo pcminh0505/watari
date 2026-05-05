@@ -7,9 +7,9 @@ name_en: Team Rocket's Mareep
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/413/Team-Rockets-Mareep.SV10.34.56882.png
-illustrator:
+illustrator: Teeziro
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '56882'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: ロケット団のメリープ
     variants_seen:
-    - normal
+      - normal

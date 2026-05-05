@@ -7,9 +7,9 @@ name_en: Foongus
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/366/Foongus.SV1A.2.46948.png
-illustrator:
+illustrator: You Iribi
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '46948'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: タマゲタケ
     variants_seen:
-    - normal
+      - normal

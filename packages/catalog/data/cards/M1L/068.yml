@@ -7,9 +7,9 @@ name_en: Riolu
 rarity_code: AR
 category: card
 image: https://den-cards.pokellector.com/416/Riolu.M1L.68.58005.png
-illustrator:
+illustrator: GOSSAN
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '58005'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: リオル
     variants_seen:
-    - normal
+      - normal
     rarity_code: AR

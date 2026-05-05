@@ -7,9 +7,9 @@ name_en: Team Rocket's Spidops
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/427/Team-Rockets-Spidops.M2A.16.59928.png
-illustrator:
+illustrator: Taiga Kasai
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '59928'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: ロケット団のワナイダー(R仕様)
     variants_seen:
-    - normal
+      - normal

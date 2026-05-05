@@ -7,11 +7,11 @@ name_en: Fearow
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/371/Fearow.SV2A.22.47806.png
-illustrator:
+illustrator: Gemi
 prints:
-- normal
-- master_ball_mirror
-- poke_ball_mirror
+  - normal
+  - master_ball_mirror
+  - poke_ball_mirror
 sources:
   pokellector:
     id: '47806'
@@ -21,6 +21,6 @@ sources:
   cardrush:
     name_ja: オニドリル
     variants_seen:
-    - master_ball_mirror
-    - normal
-    - poke_ball_mirror
+      - master_ball_mirror
+      - normal
+      - poke_ball_mirror

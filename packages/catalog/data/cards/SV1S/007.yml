@@ -7,9 +7,9 @@ name_en: Dolliv
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/361/Dolliv.SV1S.7.46225.png
-illustrator:
+illustrator: Mina Nakai
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '46225'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: タマンチュラ
     variants_seen:
-    - normal
+      - normal

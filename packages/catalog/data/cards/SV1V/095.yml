@@ -7,9 +7,9 @@ name_en: Banette ex
 rarity_code: SR
 category: card
 image: https://den-cards.pokellector.com/362/Banette-ex.SV1V.95.46827.png
-illustrator:
+illustrator: PLANETA Mochizuki
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '46827'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: ジュペッタex
     variants_seen:
-    - normal
+      - normal

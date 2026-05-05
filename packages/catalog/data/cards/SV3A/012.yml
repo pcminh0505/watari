@@ -7,9 +7,9 @@ name_en: Chinchou
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/376/Chinchou.SV3A.12.49362.png
-illustrator:
+illustrator: yuu
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '49362'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: チョンチー
     variants_seen:
-    - normal
+      - normal

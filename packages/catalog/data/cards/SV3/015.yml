@@ -7,9 +7,9 @@ name_en: Ninetales
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/368/Ninetales.SV3.15.48771.png
-illustrator:
+illustrator: Yoshioka
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '48771'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: マイナン
     variants_seen:
-    - normal
+      - normal

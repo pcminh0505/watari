@@ -7,9 +7,9 @@ name_en: Vikavolt
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/387/Vikavolt.SV5M.28.51704.png
-illustrator:
+illustrator: Hitoshi Ariga
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '51704'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: クワガノン
     variants_seen:
-    - normal
+      - normal

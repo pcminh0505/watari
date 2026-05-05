@@ -7,9 +7,9 @@ name_en: Mienfoo
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/381/Mienfoo.SV4K.33.50765.png
-illustrator:
+illustrator: Natsumi Yoshida
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '50765'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: コジョフー
     variants_seen:
-    - normal
+      - normal

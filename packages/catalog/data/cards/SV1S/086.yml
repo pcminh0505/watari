@@ -7,9 +7,9 @@ name_en: Riolu
 rarity_code: AR
 category: card
 image: https://den-cards.pokellector.com/361/Riolu.SV1S.86.46185.png
-illustrator:
+illustrator: Nelnal
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '46185'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: スリープ
     variants_seen:
-    - normal
+      - normal

@@ -7,9 +7,9 @@ name_en: Whimsicott
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/406/Whimsicott.SV8A.5.55153.png
-illustrator:
+illustrator: Mizue
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '55153'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: エルフーン(R仕様)
     variants_seen:
-    - normal
+      - normal

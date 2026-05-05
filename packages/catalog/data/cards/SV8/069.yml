@@ -7,9 +7,9 @@ name_en: Koraidon
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/405/Koraidon.SV8.69.54495.png
-illustrator:
+illustrator: Ryuta Fuse
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '54495'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: コライドン
     variants_seen:
-    - normal
+      - normal

@@ -7,9 +7,9 @@ name_en: Barboach
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/370/Barboach.SV2D.38.47634.png
-illustrator:
+illustrator: Scav
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '47634'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: ドジョッチ
     variants_seen:
-    - normal
+      - normal

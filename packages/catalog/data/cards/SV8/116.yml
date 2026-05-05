@@ -7,9 +7,9 @@ name_en: Alolan Dugtrio
 rarity_code: AR
 category: card
 image: https://den-cards.pokellector.com/405/Alolan-Dugtrio.SV8.116.54611.png
-illustrator:
+illustrator: Yukihiro Tada
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '54611'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: アローラダグトリオ
     variants_seen:
-    - normal
+      - normal

@@ -7,9 +7,9 @@ name_en: Ultra Ball
 rarity_code: SR
 category: card
 image: https://den-cards.pokellector.com/427/Ultra-Ball.M2A.216.60087.png
-illustrator:
+illustrator: Studio Bora Inc.
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '60087'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: ハイパーボール
     variants_seen:
-    - normal
+      - normal

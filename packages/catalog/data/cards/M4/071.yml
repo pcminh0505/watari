@@ -7,9 +7,9 @@ name_en: Cinccino ex
 rarity_code: RR
 category: card
 image: https://den-cards.pokellector.com/430/Cinccino-ex.M4.71.60998.png
-illustrator:
+illustrator: 5ban Graphics
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '60998'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: チラチーノex
     variants_seen:
-    - normal
+      - normal

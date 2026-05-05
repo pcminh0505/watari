@@ -7,9 +7,9 @@ name_en: Klawf
 rarity_code: AR
 category: card
 image: https://den-cards.pokellector.com/361/Klawf.SV1S.88.46813.png
-illustrator:
+illustrator: Mina Nakai
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '46813'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: ウェーニバルex
     variants_seen:
-    - normal
+      - normal

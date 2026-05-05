@@ -7,9 +7,9 @@ name_en: Team Rocket's Nidoking ex
 rarity_code: RR
 category: card
 image: https://den-cards.pokellector.com/413/Team-Rockets-Nidoking-ex.SV10.63.57112.png
-illustrator:
+illustrator: 5ban Graphics
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '57112'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: ロケット団のニドキングex
     variants_seen:
-    - normal
+      - normal

@@ -7,9 +7,9 @@ name_en: Palafin
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/393/Palafin.SV6.35.52870.png
-illustrator:
+illustrator: Ligton
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '52870'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: イルカマン
     variants_seen:
-    - normal
+      - normal

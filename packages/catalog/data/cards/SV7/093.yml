@@ -7,9 +7,9 @@ name_en: Occa Berry
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/401/Occa-Berry.SV7.93.53768.png
-illustrator:
+illustrator: Studio Bora Inc.
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '53768'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: オッカのみ
     variants_seen:
-    - normal
+      - normal

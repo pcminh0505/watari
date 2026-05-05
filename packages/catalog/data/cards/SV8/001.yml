@@ -7,10 +7,10 @@ name_en: Exeggcute
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/405/Exeggcute.SV8.1.54527.png
-illustrator:
+illustrator: OKUBO
 prints:
-- normal
-- poke_ball_mirror
+  - normal
+  - poke_ball_mirror
 sources:
   pokellector:
     id: '54527'
@@ -20,5 +20,5 @@ sources:
   cardrush:
     name_ja: タマタマ
     variants_seen:
-    - normal
-    - poke_ball_mirror
+      - normal
+      - poke_ball_mirror

@@ -7,9 +7,9 @@ name_en: Cyclizar ex
 rarity_code: RR
 category: card
 image: https://den-cards.pokellector.com/403/Cyclizar-ex.SV7A.51.54402.png
-illustrator:
+illustrator: 5ban Graphics
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '54402'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: モトトカゲex
     variants_seen:
-    - normal
+      - normal

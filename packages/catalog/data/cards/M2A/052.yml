@@ -7,9 +7,9 @@ name_en: Helioptile
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/427/Helioptile.M2A.52.59950.png
-illustrator:
+illustrator: Tika Matsuno
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '59950'

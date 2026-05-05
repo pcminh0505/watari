@@ -7,9 +7,9 @@ name_en: Night Stretcher
 rarity_code: SR
 category: card
 image: https://den-cards.pokellector.com/416/Rescue-Stretcher.M1L.83.57976.png
-illustrator:
+illustrator: Toyste Beach
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '57976'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: 夜のタンカ
     variants_seen:
-    - normal
+      - normal
     rarity_code: SR

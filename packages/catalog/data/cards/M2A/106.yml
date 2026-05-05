@@ -7,9 +7,9 @@ name_en: Galarian Linoone
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/427/Galarian-Linoone.M2A.106.59999.png
-illustrator:
+illustrator: Tomowaka
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '59999'

@@ -7,9 +7,9 @@ name_en: Team Rocket's Wobbuffet
 rarity_code: R
 category: card
 image: https://den-cards.pokellector.com/413/Team-Rockets-Wobbuffet.SV10.40.56881.png
-illustrator:
+illustrator: Kazumasa Yasukuni
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '56881'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: ロケット団のソーナンス
     variants_seen:
-    - normal
+      - normal

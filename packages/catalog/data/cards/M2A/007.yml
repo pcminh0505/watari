@@ -7,9 +7,9 @@ name_en: Cascoon
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/427/Cascoon.M2A.7.59920.png
-illustrator:
+illustrator: June
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '59920'

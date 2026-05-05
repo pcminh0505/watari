@@ -7,9 +7,9 @@ name_en: Frogadier
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/391/Frogadier.SV5A.24.52780.png
-illustrator:
+illustrator: Hitoshi Ariga
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '52780'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: ゲコガシラ
     variants_seen:
-    - normal
+      - normal

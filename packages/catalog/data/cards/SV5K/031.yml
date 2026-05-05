@@ -7,9 +7,9 @@ name_en: Duosion
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/386/Duosion.SV5K.31.51723.png
-illustrator:
+illustrator: mele
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '51723'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: ダブラン
     variants_seen:
-    - normal
+      - normal

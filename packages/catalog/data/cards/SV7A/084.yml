@@ -7,9 +7,9 @@ name_en: Surfer
 rarity_code: SR
 category: card
 image: https://den-cards.pokellector.com/403/Surfer.SV7A.84.54420.png
-illustrator:
+illustrator: Sanosuke Sakuma
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '54420'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: サーファー
     variants_seen:
-    - normal
+      - normal

@@ -7,9 +7,9 @@ name_en: Luxurious Cape
 rarity_code: UR
 category: card
 image: https://den-cards.pokellector.com/381/Luxurious-Cape.SV4K.94.50826.png
-illustrator:
+illustrator: Toyste Beach
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '50826'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: ゴージャスマント
     variants_seen:
-    - normal
+      - normal

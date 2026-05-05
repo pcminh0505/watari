@@ -7,9 +7,9 @@ name_en: Grookey
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/393/Grookey.SV6.8.52866.png
-illustrator:
+illustrator: Tomomi Ozaki
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '52866'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: サルノリ
     variants_seen:
-    - normal
+      - normal

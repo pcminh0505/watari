@@ -7,9 +7,9 @@ name_en: Watchog
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/430/Watchog.M4.69.60996.png
-illustrator:
+illustrator: Kouki Saitou
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '60996'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: ミルホッグ
     variants_seen:
-    - normal
+      - normal

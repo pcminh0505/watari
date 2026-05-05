@@ -7,9 +7,9 @@ name_en: Hilda
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/427/Hilda.M2A.172.60049.png
-illustrator:
+illustrator: yuu
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '60049'

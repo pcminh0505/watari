@@ -3,13 +3,13 @@
 set_code: M4
 local_id: '073'
 name_ja: 大漁ネット
-name_en: Big Catch Net
+name_en: Big Haul Net
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/430/Big-Catch-Net.M4.73.60931.png
-illustrator:
+illustrator: Toyste Beach
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '60931'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: 大漁ネット
     variants_seen:
-    - normal
+      - normal

@@ -7,11 +7,11 @@ name_en: Slowpoke
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/371/Slowpoke.SV2A.79.48291.png
-illustrator:
+illustrator: OKACHEKE
 prints:
-- normal
-- master_ball_mirror
-- poke_ball_mirror
+  - normal
+  - master_ball_mirror
+  - poke_ball_mirror
 sources:
   pokellector:
     id: '48291'
@@ -21,6 +21,6 @@ sources:
   cardrush:
     name_ja: ヤドン
     variants_seen:
-    - master_ball_mirror
-    - normal
-    - poke_ball_mirror
+      - master_ball_mirror
+      - normal
+      - poke_ball_mirror

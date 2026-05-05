@@ -7,9 +7,9 @@ name_en: Plusle
 rarity_code: AR
 category: card
 image: https://den-cards.pokellector.com/376/Plusle.SV3A.65.49299.png
-illustrator:
+illustrator: OKACHEKE
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '49299'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: プラスル
     variants_seen:
-    - normal
+      - normal

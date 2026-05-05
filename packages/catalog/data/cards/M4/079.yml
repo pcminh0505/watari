@@ -3,13 +3,13 @@
 set_code: M4
 local_id: '079'
 name_ja: アンジュフラエッテ
-name_en: Hyperrogue Ange Floette
+name_en: Ange Floette
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/430/Ange-Floette.M4.79.60935.png
-illustrator:
+illustrator: MARINA Chikazawa
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '60935'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: アンジュフラエッテ
     variants_seen:
-    - normal
+      - normal

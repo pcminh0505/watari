@@ -7,10 +7,10 @@ name_en: Sinistcha
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/406/Sinistcha.SV8A.18.55162.png
-illustrator:
+illustrator: Kouki Saitou
 prints:
-- normal
-- master_ball_mirror
+  - normal
+  - master_ball_mirror
 sources:
   pokellector:
     id: '55162'
@@ -20,5 +20,5 @@ sources:
   cardrush:
     name_ja: ヤバソチャ(R仕様)
     variants_seen:
-    - master_ball_mirror
-    - normal
+      - master_ball_mirror
+      - normal

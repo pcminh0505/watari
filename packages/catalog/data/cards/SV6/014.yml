@@ -7,9 +7,9 @@ name_en: Sinistcha
 rarity_code: R
 category: card
 image: https://den-cards.pokellector.com/393/Sinistcha.SV6.14.52807.png
-illustrator:
+illustrator: Kouki Saitou
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '52807'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: マニューラ
     variants_seen:
-    - normal
+      - normal

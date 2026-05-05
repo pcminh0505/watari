@@ -7,9 +7,9 @@ name_en: Ethan's Slugma
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/427/Ethans-Slugma.M2A.18.59930.png
-illustrator:
+illustrator: Sanosuke Sakuma
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '59930'

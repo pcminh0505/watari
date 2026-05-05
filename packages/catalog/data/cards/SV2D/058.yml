@@ -7,9 +7,9 @@ name_en: Noivern ex
 rarity_code: RR
 category: card
 image: https://den-cards.pokellector.com/370/Noivern-ex.SV2D.58.47543.png
-illustrator:
+illustrator: Nisota Niso
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '47543'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: オンバーンex
     variants_seen:
-    - normal
+      - normal

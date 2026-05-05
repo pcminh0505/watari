@@ -7,9 +7,9 @@ name_en: Palossand ex
 rarity_code: RR
 category: card
 image: https://den-cards.pokellector.com/405/Palossand-ex.SV8.57.54494.png
-illustrator:
+illustrator: 5ban Graphics
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '54494'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: シロデスナex
     variants_seen:
-    - normal
+      - normal

@@ -7,9 +7,9 @@ name_en: Shelmet
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/408/Shelmet.SV9.8.55733.png
-illustrator:
+illustrator: Toshinao Aoki
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '55733'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: チョボマキ
     variants_seen:
-    - normal
+      - normal

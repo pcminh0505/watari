@@ -7,9 +7,9 @@ name_en: Frigibax
 rarity_code: AR
 category: card
 image: https://den-cards.pokellector.com/369/Frigibax.SV2P.75.47527.png
-illustrator:
+illustrator: Tomokazu Komiya
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '47527'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: セビエ
     variants_seen:
-    - normal
+      - normal

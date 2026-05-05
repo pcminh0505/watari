@@ -7,9 +7,9 @@ name_en: Sandygast
 rarity_code: AR
 category: card
 image: https://den-cards.pokellector.com/370/Sandygast.SV2D.75.47653.png
-illustrator:
+illustrator: Teeziro
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '47653'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: スナバァ
     variants_seen:
-    - normal
+      - normal

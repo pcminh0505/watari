@@ -7,9 +7,9 @@ name_en: Lampent
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/393/Lampent.SV6.20.52856.png
-illustrator:
+illustrator: Rond
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '52856'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: ランプラー
     variants_seen:
-    - normal
+      - normal

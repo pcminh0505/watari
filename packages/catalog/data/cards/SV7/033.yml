@@ -7,9 +7,9 @@ name_en: Galvantula ex
 rarity_code: RR
 category: card
 image: https://den-cards.pokellector.com/401/Galvantula-ex.SV7.33.53651.png
-illustrator:
+illustrator: 5ban Graphics
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '53651'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: オトスパス
     variants_seen:
-    - normal
+      - normal

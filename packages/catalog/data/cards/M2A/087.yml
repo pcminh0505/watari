@@ -7,9 +7,9 @@ name_en: Solrock
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/427/Solrock.M2A.87.59982.png
-illustrator:
+illustrator: Whisker
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '59982'

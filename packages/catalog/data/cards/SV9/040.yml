@@ -7,9 +7,9 @@ name_en: N's Sigilyph
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/408/Ns-Sigilyph.SV9.40.55465.png
-illustrator:
+illustrator: Shiburingaru
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '55465'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: Nのシンボラー
     variants_seen:
-    - normal
+      - normal

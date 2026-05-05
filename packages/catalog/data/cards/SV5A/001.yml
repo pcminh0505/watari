@@ -7,9 +7,9 @@ name_en: Tangela
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/391/Tangela.SV5A.1.52768.png
-illustrator:
+illustrator: Yoriyuki Ikegami
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '52768'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: モンジャラ
     variants_seen:
-    - normal
+      - normal

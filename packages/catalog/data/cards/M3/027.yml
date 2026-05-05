@@ -7,9 +7,9 @@ name_en: Luxray
 rarity_code: R
 category: card
 image: https://den-cards.pokellector.com/428/Luxray.M3.27.60217.png
-illustrator:
+illustrator: Taiga Kasai
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '60217'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: レントラー
     variants_seen:
-    - normal
+      - normal

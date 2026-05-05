@@ -7,9 +7,9 @@ name_en: Canari
 rarity_code: SAR
 category: card
 image: https://den-cards.pokellector.com/427/Canari.M2A.248.60114.png
-illustrator:
+illustrator: kantaro
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '60114'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: カナリィ
     variants_seen:
-    - normal
+      - normal

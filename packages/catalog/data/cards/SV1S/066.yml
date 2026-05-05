@@ -7,9 +7,9 @@ name_en: Lechonk
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/361/Lechonk.SV1S.66.46122.png
-illustrator:
+illustrator: Teeziro
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '46122'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: グルトン
     variants_seen:
-    - normal
+      - normal

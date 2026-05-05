@@ -7,9 +7,9 @@ name_en: Teal Mask Ogerpon ex
 rarity_code: UR
 category: card
 image: https://den-cards.pokellector.com/393/Teal-Mask-Ogerpon-ex.SV6.131.53113.png
-illustrator:
+illustrator: 5ban Graphics
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '53113'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: オーガポンみどりのめんex
     variants_seen:
-    - normal
+      - normal

@@ -7,9 +7,9 @@ name_en: Hop's Trevenant
 rarity_code: AR
 category: card
 image: https://den-cards.pokellector.com/427/Hops-Trevenant.M2A.204.60078.png
-illustrator:
+illustrator: Tomowaka
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '60078'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: ホップのオーロット
     variants_seen:
-    - normal
+      - normal

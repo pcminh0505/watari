@@ -4,12 +4,12 @@ set_code: SV6
 local_id: '130'
 name_ja: ゼイユ
 name_en: Carmine
-rarity_code: SR
+rarity_code: SAR
 category: card
 image: https://den-cards.pokellector.com/393/Carmine.SV6.130.53112.png
-illustrator:
+illustrator: En Morikura
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '53112'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: ゼイユ
     variants_seen:
-    - normal
+      - normal

@@ -7,9 +7,9 @@ name_en: Dugtrio
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/366/Dugtrio.SV1A.45.46966.png
-illustrator:
+illustrator: Nelnal
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '46966'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: ダグトリオ
     variants_seen:
-    - normal
+      - normal

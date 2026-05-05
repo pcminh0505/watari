@@ -7,9 +7,9 @@ name_en: Gouging Fire ex
 rarity_code: SAR
 category: card
 image: https://den-cards.pokellector.com/386/Gouging-Fire-ex.SV5K.93.51712.png
-illustrator:
+illustrator: Teeziro
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '51712'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: ウガツホムラex
     variants_seen:
-    - normal
+      - normal

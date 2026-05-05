@@ -7,9 +7,9 @@ name_en: Croconaw
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/386/Croconaw.SV5K.14.51828.png
-illustrator:
+illustrator: Jerky
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '51828'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: アリゲイツ
     variants_seen:
-    - normal
+      - normal

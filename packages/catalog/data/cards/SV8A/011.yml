@@ -7,9 +7,9 @@ name_en: Bramblin
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/406/Bramblin.SV8A.11.55156.png
-illustrator:
+illustrator: Tetsu Kayama
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '55156'

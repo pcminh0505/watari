@@ -7,9 +7,9 @@ name_en: Houndoom
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/398/Houndoom.SV6A.8.53545.png
-illustrator:
+illustrator: burari
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '53545'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: ヘルガー
     variants_seen:
-    - normal
+      - normal

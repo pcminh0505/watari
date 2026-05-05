@@ -7,9 +7,9 @@ name_en: Mega Gardevoir ex
 rarity_code: SAR
 category: card
 image: https://den-cards.pokellector.com/417/Mega-Gardevoir-ex.M1S.87.58963.png
-illustrator:
+illustrator: Raita Kazama
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '58963'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: メガサーナイトex
     variants_seen:
-    - normal
+      - normal
     rarity_code: SAR

@@ -7,9 +7,9 @@ name_en: Darmanitan
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/368/Darmanitan.SV3.18.48774.png
-illustrator:
+illustrator: Yuya Oka
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '48774'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: ヒヒダルマ
     variants_seen:
-    - normal
+      - normal

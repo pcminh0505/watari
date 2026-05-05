@@ -3,13 +3,13 @@
 set_code: SV2P
 local_id: '067'
 name_ja: ファイトオレ
-name_en: Fight Au Lait
+name_en: Fighting Au Lait
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/369/Fight-Au-Lait.SV2P.67.47596.png
-illustrator:
+illustrator: Ayaka Yoshida
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '47596'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: ファイトオレ
     variants_seen:
-    - normal
+      - normal

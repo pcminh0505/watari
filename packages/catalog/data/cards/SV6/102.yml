@@ -7,9 +7,9 @@ name_en: Sunflora
 rarity_code: AR
 category: card
 image: https://den-cards.pokellector.com/393/Sunflora.SV6.102.53100.png
-illustrator:
+illustrator: Shinya Komatsu
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '53100'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: キマワリ
     variants_seen:
-    - normal
+      - normal

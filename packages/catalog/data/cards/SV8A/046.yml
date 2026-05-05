@@ -7,9 +7,9 @@ name_en: Palafin ex
 rarity_code: RR
 category: card
 image: https://den-cards.pokellector.com/406/Palafin-ex.SV8A.46.54676.png
-illustrator:
+illustrator: PLANETA Mochizuki
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '54676'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: イルカマンex
     variants_seen:
-    - normal
+      - normal

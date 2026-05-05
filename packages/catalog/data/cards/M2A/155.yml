@@ -7,9 +7,9 @@ name_en: Fighting Gong
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/427/Fighting-Gong.M2A.155.60035.png
-illustrator:
+illustrator: Toyste Beach
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '60035'

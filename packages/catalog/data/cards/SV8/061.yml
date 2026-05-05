@@ -7,9 +7,9 @@ name_en: Primeape
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/405/Primeape.SV8.61.54562.png
-illustrator:
+illustrator: Felicia Chen
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '54562'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: オコリザル
     variants_seen:
-    - normal
+      - normal

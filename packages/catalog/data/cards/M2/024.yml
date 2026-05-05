@@ -7,9 +7,9 @@ name_en: Piloswine
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/425/Piloswine.M2.24.59205.png
-illustrator:
+illustrator: Shinya Komatsu
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '59205'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: イノムー
     variants_seen:
-    - normal
+      - normal

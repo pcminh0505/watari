@@ -7,9 +7,9 @@ name_en: Wigglytuff ex
 rarity_code: RR
 category: card
 image: https://den-cards.pokellector.com/371/Wigglytuff-ex.SV2A.40.48261.png
-illustrator:
+illustrator: Saki Hayashiro
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '48261'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: プクリンex
     variants_seen:
-    - normal
+      - normal

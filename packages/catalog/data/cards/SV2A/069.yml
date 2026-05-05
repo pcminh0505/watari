@@ -7,11 +7,11 @@ name_en: Bellsprout
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/371/Bellsprout.SV2A.69.47745.png
-illustrator:
+illustrator: Jerky
 prints:
-- normal
-- master_ball_mirror
-- poke_ball_mirror
+  - normal
+  - master_ball_mirror
+  - poke_ball_mirror
 sources:
   pokellector:
     id: '47745'
@@ -21,6 +21,6 @@ sources:
   cardrush:
     name_ja: マダツボミ
     variants_seen:
-    - master_ball_mirror
-    - normal
-    - poke_ball_mirror
+      - master_ball_mirror
+      - normal
+      - poke_ball_mirror

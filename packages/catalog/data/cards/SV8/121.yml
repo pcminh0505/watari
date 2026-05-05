@@ -7,9 +7,9 @@ name_en: Milotic ex
 rarity_code: SR
 category: card
 image: https://den-cards.pokellector.com/405/Milotic-ex.SV8.121.54615.png
-illustrator:
+illustrator: N-DESIGN Inc.
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '54615'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: ミロカロスex
     variants_seen:
-    - normal
+      - normal

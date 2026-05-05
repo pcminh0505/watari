@@ -3,13 +3,13 @@
 set_code: SV7
 local_id: '067'
 name_ja: ギアル
-name_en: Kling
+name_en: Klink
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/401/Kling.SV7.67.53683.png
-illustrator:
+illustrator: osare
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '53683'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: ギアル
     variants_seen:
-    - normal
+      - normal

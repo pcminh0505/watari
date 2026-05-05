@@ -4,12 +4,12 @@ set_code: SV6
 local_id: '129'
 name_ja: スグリ
 name_en: Kieran
-rarity_code: SR
+rarity_code: SAR
 category: card
 image: https://den-cards.pokellector.com/393/Kieran.SV6.129.53111.png
-illustrator:
+illustrator: Teeziro
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '53111'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: スグリ
     variants_seen:
-    - normal
+      - normal

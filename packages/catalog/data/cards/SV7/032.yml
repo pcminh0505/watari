@@ -7,9 +7,9 @@ name_en: Joltik
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/401/Joltik.SV7.32.53671.png
-illustrator:
+illustrator: Nisota Niso
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '53671'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: バチュル
     variants_seen:
-    - normal
+      - normal

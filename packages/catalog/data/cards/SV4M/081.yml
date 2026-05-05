@@ -7,9 +7,9 @@ name_en: Toxtricity ex
 rarity_code: SR
 category: card
 image: https://den-cards.pokellector.com/382/Toxtricity-ex.SV4K.81.50908.png
-illustrator:
+illustrator: 5ban Graphics
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '50908'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: ストリンダーex
     variants_seen:
-    - normal
+      - normal

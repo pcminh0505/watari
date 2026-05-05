@@ -7,9 +7,9 @@ name_en: Surfer
 rarity_code: SAR
 category: card
 image: https://den-cards.pokellector.com/427/Surfer.M2A.249.60115.png
-illustrator:
+illustrator: OKUBO
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '60115'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: サーファー
     variants_seen:
-    - normal
+      - normal

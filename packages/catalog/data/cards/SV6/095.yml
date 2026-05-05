@@ -3,13 +3,13 @@
 set_code: SV6
 local_id: '095'
 name_ja: ハンディサーキュレーター
-name_en: Handy Fan
+name_en: Handheld Fan
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/393/Handy-Fan.SV6.95.52961.png
-illustrator:
+illustrator: Toyste Beach
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '52961'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: ハンディサーキュレーター
     variants_seen:
-    - normal
+      - normal

@@ -7,9 +7,9 @@ name_en: Gorebyss
 rarity_code: R
 category: card
 image: https://den-cards.pokellector.com/413/Gorebyss.SV10.25.57057.png
-illustrator:
+illustrator: Naoyo Kimura
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '57057'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: サクラビス
     variants_seen:
-    - normal
+      - normal

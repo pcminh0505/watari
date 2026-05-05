@@ -7,9 +7,9 @@ name_en: Lucario
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/361/Lucario.SV1S.41.46255.png
-illustrator:
+illustrator: Nurikabe
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '46255'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: カヌチャン
     variants_seen:
-    - normal
+      - normal

@@ -7,9 +7,9 @@ name_en: Eri
 rarity_code: SR
 category: card
 image: https://den-cards.pokellector.com/386/Eri.SV5K.91.51882.png
-illustrator:
+illustrator: GOSSAN
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '51882'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: ビワ
     variants_seen:
-    - normal
+      - normal

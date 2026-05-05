@@ -7,9 +7,9 @@ name_en: Professor Sada's Vitality
 rarity_code: SR
 category: card
 image: https://den-cards.pokellector.com/381/Professor-Sadas-Vitality.SV4K.85.50817.png
-illustrator:
+illustrator: Megumi Mizutani
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '50817'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: オーリム博士の気迫
     variants_seen:
-    - normal
+      - normal

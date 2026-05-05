@@ -7,9 +7,9 @@ name_en: Buneary
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/417/Buneary.M1S.53.58934.png
-illustrator:
+illustrator: ryoma uratsuka
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '58934'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ミミロル
     variants_seen:
-    - normal
+      - normal
     rarity_code: C

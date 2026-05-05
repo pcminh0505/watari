@@ -7,9 +7,9 @@ name_en: Donphan
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/430/Donphan.M4.45.60976.png
-illustrator:
+illustrator: Julie Hang
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '60976'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: ドンファン
     variants_seen:
-    - normal
+      - normal

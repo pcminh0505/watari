@@ -4,12 +4,12 @@ set_code: SV7
 local_id: '074'
 name_ja: ミミズズex
 name_en: Orthworm ex
-rarity_code: R
+rarity_code: RR
 category: card
 image: https://den-cards.pokellector.com/401/Orthworm-ex.SV7.74.53674.png
-illustrator:
+illustrator: PLANETA Yamashita
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '53674'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: ミミズズex
     variants_seen:
-    - normal
+      - normal

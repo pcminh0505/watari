@@ -7,9 +7,9 @@ name_en: Fan Rotom
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/427/Fan-Rotom.M2A.139.60020.png
-illustrator:
+illustrator: Toshinao Aoki
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '60020'

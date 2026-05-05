@@ -7,9 +7,9 @@ name_en: Metagross
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/387/Metagross.SV5M.48.51786.png
-illustrator:
+illustrator: Nurikabe
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '51786'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: メタグロス
     variants_seen:
-    - normal
+      - normal

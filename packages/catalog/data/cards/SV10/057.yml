@@ -7,9 +7,9 @@ name_en: Team Rocket's Arbok
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/413/Team-Rockets-Arbok.SV10.57.57106.png
-illustrator:
+illustrator: Teeziro
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '57106'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: ロケット団のアーボック
     variants_seen:
-    - normal
+      - normal

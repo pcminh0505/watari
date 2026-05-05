@@ -7,9 +7,9 @@ name_en: Breloom
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/387/Breloom.SV5M.7.51758.png
-illustrator:
+illustrator: Taiga Kasai
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '51758'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: キノガッサ
     variants_seen:
-    - normal
+      - normal

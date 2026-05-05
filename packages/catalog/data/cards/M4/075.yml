@@ -3,13 +3,13 @@
 set_code: M4
 local_id: '075'
 name_ja: AZの安らぎ
-name_en: AZ's Relaxation
+name_en: AZ's Tranquility
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/430/AZs-Relaxation.M4.75.60925.png
-illustrator:
+illustrator: GIDORA
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '60925'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: AZの安らぎ
     variants_seen:
-    - normal
+      - normal

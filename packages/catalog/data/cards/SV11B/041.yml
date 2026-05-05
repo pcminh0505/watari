@@ -7,11 +7,11 @@ name_en: Duosion
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/414/Duosion.SV11B.41.57251.png
-illustrator:
+illustrator: LINNE
 prints:
-- normal
-- master_ball_mirror
-- poke_ball_mirror
+  - normal
+  - master_ball_mirror
+  - poke_ball_mirror
 sources:
   pokellector:
     id: '57251'
@@ -21,6 +21,6 @@ sources:
   cardrush:
     name_ja: ダブラン
     variants_seen:
-    - master_ball_mirror
-    - normal
-    - poke_ball_mirror
+      - master_ball_mirror
+      - normal
+      - poke_ball_mirror

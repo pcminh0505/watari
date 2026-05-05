@@ -7,9 +7,9 @@ name_en: Espathra
 rarity_code: R
 category: card
 image: https://den-cards.pokellector.com/382/Espathra.SV4K.33.50860.png
-illustrator:
+illustrator: Teeziro
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '50860'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: クエスパトラ
     variants_seen:
-    - normal
+      - normal

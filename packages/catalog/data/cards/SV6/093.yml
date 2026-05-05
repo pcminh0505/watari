@@ -4,12 +4,12 @@ set_code: SV6
 local_id: '093'
 name_ja: 大地の器
 name_en: Scoop Up Cyclone
-rarity_code: R
+rarity_code: ACE
 category: card
 image: https://den-cards.pokellector.com/393/Scoop-Up-Cyclone.SV6.93.52895.png
-illustrator:
+illustrator: Toyste Beach
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '52895'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: 大地の器
     variants_seen:
-    - normal
+      - normal

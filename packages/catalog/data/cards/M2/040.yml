@@ -7,9 +7,9 @@ name_en: Bramblin
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/425/Bramblin.M2.40.59219.png
-illustrator:
+illustrator: Takeshi Nakamura
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '59219'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: アノクサ
     variants_seen:
-    - normal
+      - normal

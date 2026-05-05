@@ -7,9 +7,9 @@ name_en: Iris's Fighting Spirit
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/427/Iriss-Fighting-Spirit.M2A.168.60046.png
-illustrator:
+illustrator: yuu
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '60046'

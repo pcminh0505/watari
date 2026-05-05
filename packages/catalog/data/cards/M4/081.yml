@@ -3,13 +3,13 @@
 set_code: M4
 local_id: '081'
 name_ja: ニトロ炎エネルギー
-name_en: Nitro Energy
+name_en: Nitro Fire Energy
 rarity_code: R
 category: energy
 image: https://den-cards.pokellector.com/430/Nitro-Energy.M4.81.61002.png
 illustrator:
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '61002'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: ニトロ炎エネルギー
     variants_seen:
-    - normal
+      - normal

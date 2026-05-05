@@ -7,9 +7,9 @@ name_en: Lairon
 rarity_code: AR
 category: card
 image: https://den-cards.pokellector.com/393/Lairon.SV6.111.53101.png
-illustrator:
+illustrator: Dsuke
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '53101'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: コドラ
     variants_seen:
-    - normal
+      - normal

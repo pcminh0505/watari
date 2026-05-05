@@ -7,9 +7,9 @@ name_en: Numel
 rarity_code: AR
 category: card
 image: https://den-cards.pokellector.com/427/Numel.M2A.198.60073.png
-illustrator:
+illustrator: Yoshimi Miyoshi
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '60073'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: ドンメル
     variants_seen:
-    - normal
+      - normal

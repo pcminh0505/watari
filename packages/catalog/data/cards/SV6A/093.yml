@@ -7,9 +7,9 @@ name_en: Earthen Vessel
 rarity_code: UR
 category: card
 image: https://den-cards.pokellector.com/398/Earthen-Vessel.SV6A.93.53597.png
-illustrator:
+illustrator: AYUMI ODASHIMA
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '53597'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: 大地の器
     variants_seen:
-    - normal
+      - normal

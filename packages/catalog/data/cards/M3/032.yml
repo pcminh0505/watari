@@ -7,9 +7,9 @@ name_en: Espurr
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/428/Espurr.M3.32.60222.png
-illustrator:
+illustrator: Terada Tera
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '60222'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: ニャスパー
     variants_seen:
-    - normal
+      - normal

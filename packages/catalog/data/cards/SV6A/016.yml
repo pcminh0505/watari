@@ -7,9 +7,9 @@ name_en: Drowzee
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/398/Drowzee.SV6A.16.53549.png
-illustrator:
+illustrator: OKUBO
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '53549'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: スリープ
     variants_seen:
-    - normal
+      - normal

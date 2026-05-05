@@ -7,9 +7,9 @@ name_en: Flittle
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/382/Flittle.SV4K.31.50858.png
-illustrator:
+illustrator: Mizue
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '50858'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: ヒラヒナ
     variants_seen:
-    - normal
+      - normal

@@ -7,11 +7,11 @@ name_en: Eelektross
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/414/Eelektross.SV11B.35.57177.png
-illustrator:
+illustrator: Jerky
 prints:
-- normal
-- master_ball_mirror
-- poke_ball_mirror
+  - normal
+  - master_ball_mirror
+  - poke_ball_mirror
 sources:
   pokellector:
     id: '57177'
@@ -21,6 +21,6 @@ sources:
   cardrush:
     name_ja: シビルドン
     variants_seen:
-    - master_ball_mirror
-    - normal
-    - poke_ball_mirror
+      - master_ball_mirror
+      - normal
+      - poke_ball_mirror

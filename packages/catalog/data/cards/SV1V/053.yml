@@ -7,9 +7,9 @@ name_en: Maschiff
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/362/Maschiff.SV1V.53.46328.png
-illustrator:
+illustrator: kantaro
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '46328'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: オラチフ
     variants_seen:
-    - normal
+      - normal

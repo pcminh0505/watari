@@ -7,9 +7,9 @@ name_en: Charjabug
 rarity_code: AR
 category: card
 image: https://den-cards.pokellector.com/387/Charjabug.SV5M.76.51701.png
-illustrator:
+illustrator: Mina Nakai
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '51701'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: デンヂムシ
     variants_seen:
-    - normal
+      - normal

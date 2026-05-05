@@ -7,9 +7,9 @@ name_en: Incineroar ex
 rarity_code: RR
 category: card
 image: https://den-cards.pokellector.com/387/Incineroar-ex.SV5M.22.51720.png
-illustrator:
+illustrator: N-DESIGN Inc.
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '51720'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: ガオガエンex
     variants_seen:
-    - normal
+      - normal

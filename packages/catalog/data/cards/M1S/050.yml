@@ -7,9 +7,9 @@ name_en: Latios
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/417/Latios.M1S.50.57988.png
-illustrator:
+illustrator: Uninori
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '57988'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ラティオス
     variants_seen:
-    - normal
+      - normal
     rarity_code: U

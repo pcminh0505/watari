@@ -7,9 +7,9 @@ name_en: Sacred Ash
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/411/Sacred-Ash.SV9A.56.56551.png
-illustrator:
+illustrator: Eske Yoshinob
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '56551'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: せいなるはい
     variants_seen:
-    - normal
+      - normal

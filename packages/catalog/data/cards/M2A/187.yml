@@ -7,9 +7,9 @@ name_en: Mystery Garden
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/427/Mystery-Garden.M2A.187.60062.png
-illustrator:
+illustrator: AYUMI ODASHIMA
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '60062'

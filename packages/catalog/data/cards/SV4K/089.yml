@@ -7,9 +7,9 @@ name_en: Sandy Shocks ex
 rarity_code: SAR
 category: card
 image: https://den-cards.pokellector.com/381/Sandy-Shocks-ex.SV4K.89.50821.png
-illustrator:
+illustrator: Toshinao Aoki
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '50821'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: スナノケガワex
     variants_seen:
-    - normal
+      - normal

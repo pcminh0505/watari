@@ -7,9 +7,9 @@ name_en: Primeape
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/362/Primeape.SV1V.50.46325.png
-illustrator:
+illustrator: Ryuta Fuse
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '46325'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: オコリザル
     variants_seen:
-    - normal
+      - normal

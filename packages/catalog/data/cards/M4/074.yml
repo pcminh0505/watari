@@ -3,13 +3,13 @@
 set_code: M4
 local_id: '074'
 name_ja: 変化の書
-name_en: Tomes of Transformation
+name_en: Book of Transformation
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/430/Tomes-of-Transformation.M4.74.60938.png
-illustrator:
+illustrator: Toyste Beach
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '60938'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: 変化の書
     variants_seen:
-    - normal
+      - normal

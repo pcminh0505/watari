@@ -7,9 +7,9 @@ name_en: Dipplin
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/411/Dipplin.SV9A.10.56604.png
-illustrator:
+illustrator: Shigenori Negishi
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '56604'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: カミッチュ
     variants_seen:
-    - normal
+      - normal

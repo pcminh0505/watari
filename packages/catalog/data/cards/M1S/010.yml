@@ -7,9 +7,9 @@ name_en: Litleo
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/417/Litleo.M1S.10.58900.png
-illustrator:
+illustrator: Kurata So
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '58900'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: シシコ
     variants_seen:
-    - normal
+      - normal
     rarity_code: C

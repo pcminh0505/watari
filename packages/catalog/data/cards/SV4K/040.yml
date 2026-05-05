@@ -7,9 +7,9 @@ name_en: Garganacl
 rarity_code: R
 category: card
 image: https://den-cards.pokellector.com/381/Garganacl.SV4K.40.50772.png
-illustrator:
+illustrator: Souichirou Gunjima
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '50772'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: キョジオーン
     variants_seen:
-    - normal
+      - normal

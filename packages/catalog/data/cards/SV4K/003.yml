@@ -7,9 +7,9 @@ name_en: Maractus
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/381/Maractus.SV4K.3.50735.png
-illustrator:
+illustrator: Masako Tomii
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '50735'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: マラカッチ
     variants_seen:
-    - normal
+      - normal

@@ -7,9 +7,9 @@ name_en: Tsareena
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/369/Tsareena.SV2P.9.47562.png
-illustrator:
+illustrator: Atsushi Furusawa
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '47562'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: アマージョ
     variants_seen:
-    - normal
+      - normal

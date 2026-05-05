@@ -7,9 +7,9 @@ name_en: Drayton
 rarity_code: SR
 category: card
 image: https://den-cards.pokellector.com/403/Drayton.SV7A.83.54419.png
-illustrator:
+illustrator: GIDORA
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '54419'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: カキツバタ
     variants_seen:
-    - normal
+      - normal

@@ -3,13 +3,13 @@
 set_code: M2A
 local_id: '164'
 name_ja: Thick Scales
-name_en: Thick Scales
+name_en: Thick Scale
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/427/Thick-Scales.M2A.164.59806.png
-illustrator:
+illustrator: Toyste Beach
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '59806'

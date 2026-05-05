@@ -7,9 +7,9 @@ name_en: Applin
 rarity_code: AR
 category: card
 image: https://den-cards.pokellector.com/391/Applin.SV5A.77.52752.png
-illustrator:
+illustrator: Katsunori Sato
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '52752'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: カジッチュ
     variants_seen:
-    - normal
+      - normal

@@ -7,9 +7,9 @@ name_en: Victini
 rarity_code: AR
 category: card
 image: https://den-cards.pokellector.com/414/Victini.SV11B.97.57186.png
-illustrator:
+illustrator: Amelicart
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '57186'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: ビクティニ
     variants_seen:
-    - normal
+      - normal

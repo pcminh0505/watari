@@ -7,9 +7,9 @@ name_en: Mega Pyroar ex
 rarity_code: RR
 category: card
 image: https://den-cards.pokellector.com/430/Mega-Pyroar-ex.M4.15.60959.png
-illustrator:
+illustrator: Keisuke Azuma
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '60959'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: メガカエンジシex
     variants_seen:
-    - normal
+      - normal

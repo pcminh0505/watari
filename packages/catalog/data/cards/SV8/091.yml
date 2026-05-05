@@ -7,9 +7,9 @@ name_en: Tandemaus
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/405/Tandemaus.SV8.91.54513.png
-illustrator:
+illustrator: USGMEN
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '54513'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: ワッカネズミ
     variants_seen:
-    - normal
+      - normal

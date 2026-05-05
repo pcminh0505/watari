@@ -7,9 +7,9 @@ name_en: 'Technical Machine: Devolution'
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/381/Technical-Machine-Devolution.SV4K.63.50795.png
-illustrator:
+illustrator: Studio Bora Inc.
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '50795'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: ワザマシンデヴォリューション
     variants_seen:
-    - normal
+      - normal

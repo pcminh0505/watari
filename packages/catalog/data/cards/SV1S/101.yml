@@ -7,9 +7,9 @@ name_en: Gardevoir ex
 rarity_code: SAR
 category: card
 image: https://den-cards.pokellector.com/361/Gardevoir-ex.SV1S.101.46187.png
-illustrator:
+illustrator: Jiro Sasumo
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '46187'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: ワナイダーex
     variants_seen:
-    - normal
+      - normal

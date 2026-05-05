@@ -3,13 +3,13 @@
 set_code: m1l
 local_id: '057'
 name_ja: アイアンディフェンダー
-name_en: Iron X Defense
+name_en: Iron Defender
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/416/Iron-X-Defense.M1L.57.58861.png
-illustrator:
+illustrator: Studio Bora Inc.
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '58861'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: アイアンディフェンダー
     variants_seen:
-    - normal
+      - normal
     rarity_code: U

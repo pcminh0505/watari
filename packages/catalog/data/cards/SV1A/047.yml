@@ -7,9 +7,9 @@ name_en: Makuhita
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/366/Makuhita.SV1A.47.46967.png
-illustrator:
+illustrator: Kurata So
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '46967'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: マクノシタ
     variants_seen:
-    - normal
+      - normal

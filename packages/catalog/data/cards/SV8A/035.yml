@@ -7,9 +7,9 @@ name_en: Feebas
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/406/Feebas.SV8A.35.55169.png
-illustrator:
+illustrator: Scav
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '55169'

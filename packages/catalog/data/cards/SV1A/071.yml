@@ -3,13 +3,13 @@
 set_code: SV1A
 local_id: '071'
 name_ja: レッスンスタジオ
-name_en: Lesson Studio
+name_en: Practice Studio
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/366/Lesson-Studio.SV1A.71.46890.png
-illustrator:
+illustrator: AYUMI ODASHIMA
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '46890'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: レッスンスタジオ
     variants_seen:
-    - normal
+      - normal

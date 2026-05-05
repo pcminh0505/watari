@@ -7,9 +7,9 @@ name_en: Miraidon
 rarity_code: R
 category: card
 image: https://den-cards.pokellector.com/387/Miraidon.SV5M.52.51790.png
-illustrator:
+illustrator: GOSSAN
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '51790'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: ミライドン
     variants_seen:
-    - normal
+      - normal

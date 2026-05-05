@@ -7,9 +7,9 @@ name_en: Uxie
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/405/Uxie.SV8.48.54556.png
-illustrator:
+illustrator: HYOGONOSUKE
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '54556'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: ユクシー
     variants_seen:
-    - normal
+      - normal

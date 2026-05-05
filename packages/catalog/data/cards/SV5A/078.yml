@@ -7,9 +7,9 @@ name_en: Eevee
 rarity_code: AR
 category: card
 image: https://den-cards.pokellector.com/391/Eevee.SV5A.78.52763.png
-illustrator:
+illustrator: Narumi Sato
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '52763'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: イーブイ
     variants_seen:
-    - normal
+      - normal

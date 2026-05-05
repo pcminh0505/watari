@@ -7,9 +7,9 @@ name_en: Team Rocket's Nidorino
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/413/Team-Rockets-Nidorino.SV10.62.57111.png
-illustrator:
+illustrator: KEIICHIRO ITO
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '57111'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: ロケット団のニドリーノ
     variants_seen:
-    - normal
+      - normal

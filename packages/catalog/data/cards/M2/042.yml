@@ -7,9 +7,9 @@ name_en: Paldean Tauros
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/425/Paldean-Tauros.M2.42.59221.png
-illustrator:
+illustrator: Souichirou Gunjima
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '59221'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: パルデアケンタロス
     variants_seen:
-    - normal
+      - normal

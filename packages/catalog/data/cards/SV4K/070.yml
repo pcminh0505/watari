@@ -7,9 +7,9 @@ name_en: Veluza
 rarity_code: AR
 category: card
 image: https://den-cards.pokellector.com/381/Veluza.SV4K.70.50802.png
-illustrator:
+illustrator: Shibuzoh.
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '50802'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: ミガルーサ
     variants_seen:
-    - normal
+      - normal

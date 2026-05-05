@@ -7,10 +7,10 @@ name_en: Milotic ex
 rarity_code: SAR
 category: card
 image: https://den-cards.pokellector.com/405/Milotic-ex.SV8.131.54503.png
-illustrator:
+illustrator: Kuroimori
 prints:
-- normal
-- master_ball_mirror
+  - normal
+  - master_ball_mirror
 sources:
   pokellector:
     id: '54503'
@@ -20,5 +20,5 @@ sources:
   cardrush:
     name_ja: ミロカロスex
     variants_seen:
-    - master_ball_mirror
-    - normal
+      - master_ball_mirror
+      - normal

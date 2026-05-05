@@ -4,12 +4,12 @@ set_code: M2A
 local_id: '225'
 name_ja: メガシビルドンex
 name_en: Mega Eelektross ex
-rarity_code: SR
+rarity_code: MA
 category: card
 image: https://den-cards.pokellector.com/427/Mega-Eelektross-ex.M2A.225.60095.png
-illustrator:
+illustrator: DOM
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '60095'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: メガシビルドンex
     variants_seen:
-    - normal
+      - normal

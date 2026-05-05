@@ -7,9 +7,9 @@ name_en: Tyrunt
 rarity_code: AR
 category: card
 image: https://den-cards.pokellector.com/428/Tyrunt.M3.89.60258.png
-illustrator:
+illustrator: Shimaris Yukichi
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '60258'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: チゴラス
     variants_seen:
-    - normal
+      - normal

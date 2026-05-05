@@ -7,9 +7,9 @@ name_en: Conkeldurr
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/393/Conkeldurr.SV6.61.52935.png
-illustrator:
+illustrator: Takeshi Nakamura
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '52935'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: ローブシン
     variants_seen:
-    - normal
+      - normal

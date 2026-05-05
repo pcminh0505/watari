@@ -7,9 +7,9 @@ name_en: Ambipom
 rarity_code: R
 category: card
 image: https://den-cards.pokellector.com/425/Ambipom.M2.67.59242.png
-illustrator:
+illustrator: hncl
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '59242'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: エテボース
     variants_seen:
-    - normal
+      - normal

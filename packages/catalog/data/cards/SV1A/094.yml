@@ -7,9 +7,9 @@ name_en: Falkner
 rarity_code: SR
 category: card
 image: https://den-cards.pokellector.com/366/Falkner.SV1A.94.47004.png
-illustrator:
+illustrator: Ryuta Fuse
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '47004'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: ハヤト
     variants_seen:
-    - normal
+      - normal

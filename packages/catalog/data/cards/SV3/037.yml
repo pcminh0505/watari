@@ -7,9 +7,9 @@ name_en: Toxel
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/368/Toxel.SV3.37.48692.png
-illustrator:
+illustrator: AKIRA EGAWA
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '48692'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: ズルッグ
     variants_seen:
-    - normal
+      - normal

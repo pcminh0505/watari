@@ -7,9 +7,9 @@ name_en: Bulbasaur
 rarity_code: AR
 category: card
 image: https://den-cards.pokellector.com/416/Bulbasaur.M1L.64.57980.png
-illustrator:
+illustrator: mashu
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '57980'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: フシギダネ
     variants_seen:
-    - normal
+      - normal
     rarity_code: AR

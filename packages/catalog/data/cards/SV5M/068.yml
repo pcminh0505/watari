@@ -7,9 +7,9 @@ name_en: Salvatore
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/387/Salvatore.SV5M.68.51802.png
-illustrator:
+illustrator: Ryuta Fuse
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '51802'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: セイジ
     variants_seen:
-    - normal
+      - normal

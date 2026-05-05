@@ -7,9 +7,9 @@ name_en: Medicham ex
 rarity_code: SR
 category: card
 image: https://den-cards.pokellector.com/401/Medicham-ex.SV7.120.53779.png
-illustrator:
+illustrator: PLANETA Yamashita
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '53779'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: チャーレムex
     variants_seen:
-    - normal
+      - normal

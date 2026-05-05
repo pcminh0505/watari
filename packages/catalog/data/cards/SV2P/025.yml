@@ -7,9 +7,9 @@ name_en: Frigibax
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/369/Frigibax.SV2P.25.47030.png
-illustrator:
+illustrator: AKIRA EGAWA
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '47030'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: セビエ
     variants_seen:
-    - normal
+      - normal

@@ -7,9 +7,9 @@ name_en: Gumshoos
 rarity_code: AR
 category: card
 image: https://den-cards.pokellector.com/416/Gumshoos.M1L.75.58874.png
-illustrator:
+illustrator: Mina Nakai
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '58874'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: デカグース
     variants_seen:
-    - normal
+      - normal
     rarity_code: AR

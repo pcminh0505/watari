@@ -7,9 +7,9 @@ name_en: Exeggutor
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/416/Exeggutor.M1L.5.58818.png
-illustrator:
+illustrator: Kazumasa Yasukuni
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '58818'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ナッシー
     variants_seen:
-    - normal
+      - normal
     rarity_code: U

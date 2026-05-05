@@ -7,9 +7,9 @@ name_en: Mega Zygarde ex
 rarity_code: SAR
 category: card
 image: https://den-cards.pokellector.com/428/Mega-Zygarde-ex.M3.113.60282.png
-illustrator:
+illustrator: kantaro
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '60282'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: メガジガルデex
     variants_seen:
-    - normal
+      - normal

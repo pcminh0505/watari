@@ -7,9 +7,9 @@ name_en: Mega Greninja ex
 rarity_code: SR
 category: card
 image: https://den-cards.pokellector.com/430/Greninja-ex.M4.98.61017.png
-illustrator:
+illustrator: takuyoa
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '61017'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: メガゲッコウガex
     variants_seen:
-    - normal
+      - normal

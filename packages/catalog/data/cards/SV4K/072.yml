@@ -7,9 +7,9 @@ name_en: Mienshao
 rarity_code: AR
 category: card
 image: https://den-cards.pokellector.com/381/Mienshao.SV4K.72.50804.png
-illustrator:
+illustrator: Taira Akitsu
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '50804'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: コジョンド
     variants_seen:
-    - normal
+      - normal

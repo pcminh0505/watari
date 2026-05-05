@@ -7,9 +7,9 @@ name_en: Infernape
 rarity_code: AR
 category: card
 image: https://den-cards.pokellector.com/391/Infernape.SV5A.70.52750.png
-illustrator:
+illustrator: Krgc
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '52750'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: ゴウカザル
     variants_seen:
-    - normal
+      - normal

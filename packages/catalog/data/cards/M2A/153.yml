@@ -7,9 +7,9 @@ name_en: Buddy-Buddy Poffin
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/427/Buddy-Buddy-Poffin.M2A.153.59805.png
-illustrator:
+illustrator: AYUMI ODASHIMA
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '59805'

@@ -7,10 +7,10 @@ name_en: Energy Retrieval
 rarity_code: U
 category: energy
 image: https://den-cards.pokellector.com/415/Energy-Retrieval.SV11W.79.57192.png
-illustrator:
+illustrator: Studio Bora Inc.
 prints:
-- normal
-- poke_ball_mirror
+  - normal
+  - poke_ball_mirror
 sources:
   pokellector:
     id: '57192'
@@ -20,5 +20,5 @@ sources:
   cardrush:
     name_ja: エネルギー回収
     variants_seen:
-    - normal
-    - poke_ball_mirror
+      - normal
+      - poke_ball_mirror

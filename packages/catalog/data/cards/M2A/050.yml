@@ -7,9 +7,9 @@ name_en: Stunfisk
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/427/Stunfisk.M2A.50.59948.png
-illustrator:
+illustrator: Tetsu Kayama
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '59948'

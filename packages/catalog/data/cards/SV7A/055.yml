@@ -3,13 +3,13 @@
 set_code: SV7A
 local_id: '055'
 name_ja: ぼうがいレター
-name_en: Disruptive Letter
+name_en: Meddling Memo
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/403/Disruptive-Letter.SV7A.55.54034.png
-illustrator:
+illustrator: Ayaka Yoshida
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '54034'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: ぼうがいレター
     variants_seen:
-    - normal
+      - normal

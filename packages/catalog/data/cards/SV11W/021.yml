@@ -7,11 +7,11 @@ name_en: Basculin
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/415/Basculin.SV11W.21.57747.png
-illustrator:
+illustrator: KEIICHIRO ITO
 prints:
-- normal
-- master_ball_mirror
-- poke_ball_mirror
+  - normal
+  - master_ball_mirror
+  - poke_ball_mirror
 sources:
   pokellector:
     id: '57747'
@@ -21,6 +21,6 @@ sources:
   cardrush:
     name_ja: バスラオ
     variants_seen:
-    - master_ball_mirror
-    - normal
-    - poke_ball_mirror
+      - master_ball_mirror
+      - normal
+      - poke_ball_mirror

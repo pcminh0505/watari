@@ -7,9 +7,9 @@ name_en: Leafeon
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/391/Leafeon.SV5A.6.52770.png
-illustrator:
+illustrator: Kuroimori
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '52770'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: リーフィア
     variants_seen:
-    - normal
+      - normal

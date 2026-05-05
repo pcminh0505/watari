@@ -7,11 +7,11 @@ name_en: Flareon
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/406/Flareon.SV8A.21.54656.png
-illustrator:
+illustrator: SIE NANAHARA
 prints:
-- normal
-- master_ball_mirror
-- poke_ball_mirror
+  - normal
+  - master_ball_mirror
+  - poke_ball_mirror
 sources:
   pokellector:
     id: '54656'
@@ -21,6 +21,6 @@ sources:
   cardrush:
     name_ja: ブースター(R仕様)
     variants_seen:
-    - master_ball_mirror
-    - normal
-    - poke_ball_mirror
+      - master_ball_mirror
+      - normal
+      - poke_ball_mirror

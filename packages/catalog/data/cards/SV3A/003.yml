@@ -7,9 +7,9 @@ name_en: Remoraid
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/376/Remoraid.SV3A.3.49356.png
-illustrator:
+illustrator: Midori Harada
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '49356'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: テッポウオ
     variants_seen:
-    - normal
+      - normal

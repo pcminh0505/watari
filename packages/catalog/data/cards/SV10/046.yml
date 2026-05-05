@@ -7,9 +7,9 @@ name_en: Primeape
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/413/Primeape.SV10.46.56906.png
-illustrator:
+illustrator: GOTO minori
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '56906'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: オコリザル
     variants_seen:
-    - normal
+      - normal

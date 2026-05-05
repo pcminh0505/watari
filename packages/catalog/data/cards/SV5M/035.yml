@@ -7,9 +7,9 @@ name_en: Iron Valiant
 rarity_code: R
 category: card
 image: https://den-cards.pokellector.com/387/Iron-Valiant.SV5M.35.51777.png
-illustrator:
+illustrator: chibi
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '51777'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: テツノブジン
     variants_seen:
-    - normal
+      - normal

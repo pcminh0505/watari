@@ -7,9 +7,9 @@ name_en: Scatterbug
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/428/Scatterbug.M3.7.60201.png
-illustrator:
+illustrator: OKACHEKE
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '60201'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: コフキムシ
     variants_seen:
-    - normal
+      - normal

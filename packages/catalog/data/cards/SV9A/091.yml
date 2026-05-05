@@ -7,9 +7,9 @@ name_en: Cynthia's Garchomp ex
 rarity_code: UR
 category: card
 image: https://den-cards.pokellector.com/411/Cynthias-Garchomp-ex.SV9A.91.56672.png
-illustrator:
+illustrator: 5ban Graphics
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '56672'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: シロナのガブリアスex
     variants_seen:
-    - normal
+      - normal

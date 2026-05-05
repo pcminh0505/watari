@@ -7,9 +7,9 @@ name_en: Weavile
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/398/Weavile.SV6A.14.53547.png
-illustrator:
+illustrator: aspara
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '53547'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: マニューラ
     variants_seen:
-    - normal
+      - normal

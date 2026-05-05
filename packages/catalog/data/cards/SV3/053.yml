@@ -7,9 +7,9 @@ name_en: Greavard
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/368/Greavard.SV3.53.48797.png
-illustrator:
+illustrator: Pani Kobayashi
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '48797'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: ボチ
     variants_seen:
-    - normal
+      - normal

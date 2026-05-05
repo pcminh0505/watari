@@ -7,9 +7,9 @@ name_en: Hop's Corvisquire
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/408/Hops-Corvisquire.SV9.84.55767.png
-illustrator:
+illustrator: Souichirou Gunjima
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '55767'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: ホップのアオガラス
     variants_seen:
-    - normal
+      - normal

@@ -7,9 +7,9 @@ name_en: Groudon
 rarity_code: R
 category: card
 image: https://den-cards.pokellector.com/376/Groudon.SV3A.26.49238.png
-illustrator:
+illustrator: Uta
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '49238'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: グラードン
     variants_seen:
-    - normal
+      - normal

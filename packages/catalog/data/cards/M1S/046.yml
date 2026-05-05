@@ -7,9 +7,9 @@ name_en: Xerneas
 rarity_code: R
 category: card
 image: https://den-cards.pokellector.com/417/Xerneas.M1S.46.58929.png
-illustrator:
+illustrator: Kazumasa Yasukuni
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '58929'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ゼルネアス
     variants_seen:
-    - normal
+      - normal
     rarity_code: R

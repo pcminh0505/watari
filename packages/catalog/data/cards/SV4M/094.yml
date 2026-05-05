@@ -7,9 +7,9 @@ name_en: Counter Catcher
 rarity_code: UR
 category: card
 image: https://den-cards.pokellector.com/382/Counter-Catcher.SV4K.94.50921.png
-illustrator:
+illustrator: Toyste Beach
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '50921'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: カウンターキャッチャー
     variants_seen:
-    - normal
+      - normal

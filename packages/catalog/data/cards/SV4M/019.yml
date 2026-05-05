@@ -7,9 +7,9 @@ name_en: Vanilluxe
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/382/Vanilluxe.SV4K.19.50846.png
-illustrator:
+illustrator: Nelnal
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '50846'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: バイバニラ
     variants_seen:
-    - normal
+      - normal

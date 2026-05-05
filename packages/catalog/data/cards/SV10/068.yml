@@ -7,9 +7,9 @@ name_en: Team Rocket's Muk
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/413/Team-Rockets-Muk.SV10.68.57114.png
-illustrator:
+illustrator: Uta
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '57114'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: ロケット団のベトベトン
     variants_seen:
-    - normal
+      - normal

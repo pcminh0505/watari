@@ -3,13 +3,13 @@
 set_code: M3
 local_id: '068'
 name_ja: 古びたアゴの化石
-name_en: Jaw Fossil
+name_en: Antique Jaw Fossil
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/428/Jaw-Fossil.M3.68.60167.png
-illustrator:
+illustrator: AYUMI ODASHIMA
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '60167'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: 古びたアゴの化石
     variants_seen:
-    - normal
+      - normal

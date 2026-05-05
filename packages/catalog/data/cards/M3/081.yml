@@ -7,9 +7,9 @@ name_en: Spewpa
 rarity_code: AR
 category: card
 image: https://den-cards.pokellector.com/428/Spewpa.M3.81.60253.png
-illustrator:
+illustrator: kamonabe
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '60253'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: コフーライ
     variants_seen:
-    - normal
+      - normal

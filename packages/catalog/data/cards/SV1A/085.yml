@@ -7,9 +7,9 @@ name_en: Paldean Wooper
 rarity_code: AR
 category: card
 image: https://den-cards.pokellector.com/366/Paldean-Wooper.SV1A.85.46927.png
-illustrator:
+illustrator: Miki Tanaka
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '46927'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: パルデアウパー
     variants_seen:
-    - normal
+      - normal

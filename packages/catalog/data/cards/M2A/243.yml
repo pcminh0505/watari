@@ -7,9 +7,9 @@ name_en: Marnie's Grimmsnarl ex
 rarity_code: SAR
 category: card
 image: https://den-cards.pokellector.com/427/Marnies-Grimmsnarl-ex.M2A.243.59819.png
-illustrator:
+illustrator: Ligton
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '59819'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: マリィのオーロンゲex
     variants_seen:
-    - normal
+      - normal

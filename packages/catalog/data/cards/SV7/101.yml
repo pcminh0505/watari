@@ -3,13 +3,13 @@
 set_code: SV7
 local_id: '101'
 name_ja: 偉大な大樹
-name_en: Venerable Tree
-rarity_code: R
+name_en: Grand Tree
+rarity_code: ACE
 category: card
 image: https://den-cards.pokellector.com/401/Venerable-Tree.SV7.101.53673.png
-illustrator:
+illustrator: AYUMI ODASHIMA
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '53673'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: 偉大な大樹
     variants_seen:
-    - normal
+      - normal

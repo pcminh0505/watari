@@ -3,13 +3,13 @@
 set_code: SV1S
 local_id: '071'
 name_ja: レッスンスタジオ
-name_en: Boulder Breastplate
+name_en: Rock Chestplate
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/361/Boulder-Breastplate.SV1S.71.46151.png
-illustrator:
+illustrator: Toyste Beach
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '46151'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: レッスンスタジオ
     variants_seen:
-    - normal
+      - normal

@@ -3,13 +3,13 @@
 set_code: SV5A
 local_id: '057'
 name_ja: ポケモンキャッチャー(SV5a)
-name_en: Pok&eacute;mon Catcher
+name_en: Pokémon Catcher
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/391/Pokmon-Catcher.SV5A.57.52799.png
-illustrator:
+illustrator: Studio Bora Inc.
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '52799'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: ポケモンキャッチャー(SV5a)
     variants_seen:
-    - normal
+      - normal

@@ -7,9 +7,9 @@ name_en: Exploud
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/381/Exploud.SV4K.57.50789.png
-illustrator:
+illustrator: LINNE
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '50789'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: バクオング
     variants_seen:
-    - normal
+      - normal

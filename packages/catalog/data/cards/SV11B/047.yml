@@ -7,9 +7,9 @@ name_en: Meloetta ex
 rarity_code: RR
 category: card
 image: https://den-cards.pokellector.com/414/Meloetta-ex.SV11B.47.57699.png
-illustrator:
+illustrator: 5ban Graphics
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '57699'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: メロエッタex
     variants_seen:
-    - normal
+      - normal

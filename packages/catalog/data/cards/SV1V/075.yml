@@ -3,13 +3,13 @@
 set_code: SV1V
 local_id: '075'
 name_ja: 博士の研究/フトゥー博士
-name_en: Professor's Research (Professor Turo)
+name_en: Professor's Research
 rarity_code: R
 category: card
 image: https://den-cards.pokellector.com/362/Professors-Research-Professor-Turo.SV1V.75.46128.png
-illustrator:
+illustrator: kirisAki
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '46128'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: 博士の研究/フトゥー博士
     variants_seen:
-    - normal
+      - normal

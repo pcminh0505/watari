@@ -7,9 +7,9 @@ name_en: Orbeetle
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/382/Orbeetle.SV4K.5.50832.png
-illustrator:
+illustrator: Oku
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '50832'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: イオルブ
     variants_seen:
-    - normal
+      - normal

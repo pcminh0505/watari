@@ -7,9 +7,9 @@ name_en: Spidops
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/370/Spidops.SV2D.9.47615.png
-illustrator:
+illustrator: Oswaldo KATO
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '47615'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: ワナイダー
     variants_seen:
-    - normal
+      - normal

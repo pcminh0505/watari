@@ -7,9 +7,9 @@ name_en: Aromatisse
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/428/Aromatisse.M3.35.60225.png
-illustrator:
+illustrator: Mori Yuu
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '60225'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: フレフワン
     variants_seen:
-    - normal
+      - normal

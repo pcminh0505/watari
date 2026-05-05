@@ -7,9 +7,9 @@ name_en: Ancient Booster Energy Capsule
 rarity_code: U
 category: energy
 image: https://den-cards.pokellector.com/386/Ancient-Booster-Energy-Capsule.SV5K.65.51673.png
-illustrator:
+illustrator: 5ban Graphics
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '51673'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: ブーストエナジー古代
     variants_seen:
-    - normal
+      - normal

@@ -7,9 +7,9 @@ name_en: Seviper
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/366/Seviper.SV1A.56.46972.png
-illustrator:
+illustrator: Nisota Niso
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '46972'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: ハブネーク
     variants_seen:
-    - normal
+      - normal

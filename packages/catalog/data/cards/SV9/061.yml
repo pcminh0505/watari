@@ -7,9 +7,9 @@ name_en: N's Zoroark ex
 rarity_code: RR
 category: card
 image: https://den-cards.pokellector.com/408/Ns-Zoroark-ex.SV9.61.55458.png
-illustrator:
+illustrator: takuyoa
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '55458'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: MCの盛り上げ
     variants_seen:
-    - normal
+      - normal

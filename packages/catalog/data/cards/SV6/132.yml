@@ -7,9 +7,9 @@ name_en: Enhanced Hammer
 rarity_code: UR
 category: card
 image: https://den-cards.pokellector.com/393/Enhanced-Hammer.SV6.132.53114.png
-illustrator:
+illustrator: Eske Yoshinob
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '53114'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: 改造ハンマー
     variants_seen:
-    - normal
+      - normal

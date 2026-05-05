@@ -4,12 +4,12 @@ set_code: M2A
 local_id: '101'
 name_ja: ロケット団のクロバットex
 name_en: Team Rocket's Crobat ex
-rarity_code: C
+rarity_code: RR
 category: card
 image: https://den-cards.pokellector.com/427/Team-Rockets-Crobat-ex.M2A.101.59996.png
-illustrator:
+illustrator: 5ban Graphics
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '59996'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: ロケット団のクロバットex
     variants_seen:
-    - normal
+      - normal

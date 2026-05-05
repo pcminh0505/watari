@@ -7,9 +7,9 @@ name_en: Heliolisk
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/417/Heliolisk.M1S.35.58921.png
-illustrator:
+illustrator: Nakamura Ippan
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '58921'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: エレザード
     variants_seen:
-    - normal
+      - normal
     rarity_code: C

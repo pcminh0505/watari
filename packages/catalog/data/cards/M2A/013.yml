@@ -7,9 +7,9 @@ name_en: Dwebble
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/427/Dwebble.M2A.13.59925.png
-illustrator:
+illustrator: Kanami Ogata
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '59925'

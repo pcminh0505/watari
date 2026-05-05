@@ -7,9 +7,9 @@ name_en: Mantine
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/417/Mantine.M1S.15.58905.png
-illustrator:
+illustrator: Shimaris Yukichi
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '58905'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: マンタイン
     variants_seen:
-    - normal
+      - normal
     rarity_code: C

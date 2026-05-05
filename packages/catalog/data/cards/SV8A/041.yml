@@ -7,9 +7,9 @@ name_en: Glaceon ex
 rarity_code: RR
 category: card
 image: https://den-cards.pokellector.com/406/Glaceon-ex.SV8A.41.54669.png
-illustrator:
+illustrator: aky CG Works
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '54669'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: グレイシアex
     variants_seen:
-    - normal
+      - normal

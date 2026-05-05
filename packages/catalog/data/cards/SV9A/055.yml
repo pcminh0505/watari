@@ -7,9 +7,9 @@ name_en: Arven's Greedent
 rarity_code: R
 category: card
 image: https://den-cards.pokellector.com/411/Arvens-Greedent.SV9A.55.56650.png
-illustrator:
+illustrator: Akira Komayama
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '56650'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: ペパーのヨクバリス
     variants_seen:
-    - normal
+      - normal

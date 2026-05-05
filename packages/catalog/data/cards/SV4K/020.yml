@@ -7,9 +7,9 @@ name_en: Tsareena ex
 rarity_code: RR
 category: card
 image: https://den-cards.pokellector.com/381/Tsareena-ex.SV4K.20.50752.png
-illustrator:
+illustrator: 5ban Graphics
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '50752'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: アマージョex
     variants_seen:
-    - normal
+      - normal

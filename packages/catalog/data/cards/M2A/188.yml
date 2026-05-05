@@ -3,13 +3,13 @@
 set_code: M2A
 local_id: '188'
 name_ja: Mine at Night
-name_en: Mine at Night
+name_en: Nighttime Mine
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/427/Mine-at-Night.M2A.188.60063.png
-illustrator:
+illustrator: Kenichi Yamaguchi
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '60063'

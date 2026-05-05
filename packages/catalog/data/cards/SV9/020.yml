@@ -7,9 +7,9 @@ name_en: Octillery
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/408/Octillery.SV9.20.55739.png
-illustrator:
+illustrator: Toshinao Aoki
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '55739'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: オクタン
     variants_seen:
-    - normal
+      - normal

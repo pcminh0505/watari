@@ -7,10 +7,10 @@ name_en: Energy Coin
 rarity_code: U
 category: energy
 image: https://den-cards.pokellector.com/414/Energy-Coin.SV11B.79.57727.png
-illustrator:
+illustrator: Toyste Beach
 prints:
-- normal
-- poke_ball_mirror
+  - normal
+  - poke_ball_mirror
 sources:
   pokellector:
     id: '57727'
@@ -20,5 +20,5 @@ sources:
   cardrush:
     name_ja: エネルギーコイン
     variants_seen:
-    - normal
-    - poke_ball_mirror
+      - normal
+      - poke_ball_mirror

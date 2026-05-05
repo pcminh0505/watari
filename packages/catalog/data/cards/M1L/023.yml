@@ -7,9 +7,9 @@ name_en: Tyrogue
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/416/Tyrogue.M1L.23.58831.png
-illustrator:
+illustrator: OKUBO
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '58831'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: バルキー
     variants_seen:
-    - normal
+      - normal
     rarity_code: C

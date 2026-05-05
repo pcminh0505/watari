@@ -7,9 +7,9 @@ name_en: Cornerstone Mask Ogerpon ex
 rarity_code: SAR
 category: card
 image: https://den-cards.pokellector.com/393/Cornerstone-Mask-Ogerpon-ex.SV6.128.52893.png
-illustrator:
+illustrator: Yano Keiji
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '52893'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: オーガポンいしずえのめんex
     variants_seen:
-    - normal
+      - normal

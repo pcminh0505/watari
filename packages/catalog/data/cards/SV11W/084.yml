@@ -7,10 +7,10 @@ name_en: Cheren
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/415/Cheren.SV11W.84.57193.png
-illustrator:
+illustrator: Atsushi Furusawa
 prints:
-- normal
-- poke_ball_mirror
+  - normal
+  - poke_ball_mirror
 sources:
   pokellector:
     id: '57193'
@@ -20,5 +20,5 @@ sources:
   cardrush:
     name_ja: チェレン
     variants_seen:
-    - normal
-    - poke_ball_mirror
+      - normal
+      - poke_ball_mirror

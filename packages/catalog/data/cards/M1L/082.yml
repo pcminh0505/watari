@@ -3,13 +3,13 @@
 set_code: m1l
 local_id: '082'
 name_ja: ファイトゴング
-name_en: Fight Gong
+name_en: Fighting Gong
 rarity_code: SR
 category: card
 image: https://den-cards.pokellector.com/416/Fight-Gong.M1L.82.58881.png
-illustrator:
+illustrator: Toyste Beach
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '58881'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ファイトゴング
     variants_seen:
-    - normal
+      - normal
     rarity_code: SR

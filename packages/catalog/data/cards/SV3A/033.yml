@@ -7,9 +7,9 @@ name_en: Gastly
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/376/Gastly.SV3A.33.49307.png
-illustrator:
+illustrator: Nobuhiro Imagawa
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '49307'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: ゴース
     variants_seen:
-    - normal
+      - normal

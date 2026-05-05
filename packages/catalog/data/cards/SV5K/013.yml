@@ -7,9 +7,9 @@ name_en: Totodile
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/386/Totodile.SV5K.13.51827.png
-illustrator:
+illustrator: MINAMINAMI Take
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '51827'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: ワニノコ
     variants_seen:
-    - normal
+      - normal

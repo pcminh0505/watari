@@ -7,9 +7,9 @@ name_en: Mega Lucario ex
 rarity_code: SAR
 category: card
 image: https://den-cards.pokellector.com/416/Mega-Lucario-ex.M1L.88.58886.png
-illustrator:
+illustrator: Atsushi Furusawa
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '58886'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: メガルカリオex
     variants_seen:
-    - normal
+      - normal
     rarity_code: SAR

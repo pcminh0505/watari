@@ -7,9 +7,9 @@ name_en: Cynthia's Feebas
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/411/Cynthias-Feebas.SV9A.28.56623.png
-illustrator:
+illustrator: kamonabe
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '56623'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: シロナのヒンバス
     variants_seen:
-    - normal
+      - normal

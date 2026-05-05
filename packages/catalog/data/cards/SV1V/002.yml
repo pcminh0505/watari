@@ -7,9 +7,9 @@ name_en: Heracross
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/362/Heracross.SV1V.2.46287.png
-illustrator:
+illustrator: Taira Akitsu
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '46287'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: ヘラクロス
     variants_seen:
-    - normal
+      - normal

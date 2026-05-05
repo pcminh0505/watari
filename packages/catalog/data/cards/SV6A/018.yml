@@ -7,9 +7,9 @@ name_en: Duskull
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/398/Duskull.SV6A.18.53536.png
-illustrator:
+illustrator: IKEDA Saki
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '53536'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: ヨマワル
     variants_seen:
-    - normal
+      - normal

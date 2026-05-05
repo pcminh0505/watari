@@ -7,9 +7,9 @@ name_en: Seel
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/428/Seel.M3.18.60210.png
-illustrator:
+illustrator: Kanami Ogata
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '60210'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: パウワウ
     variants_seen:
-    - normal
+      - normal

@@ -7,9 +7,9 @@ name_en: Abra
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/406/Abra.SV8A.57.55178.png
-illustrator:
+illustrator: Kariya
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '55178'

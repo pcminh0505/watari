@@ -7,9 +7,9 @@ name_en: Mismagius ex
 rarity_code: SR
 category: card
 image: https://den-cards.pokellector.com/425/Mismagius-ex.M2.97.59582.png
-illustrator:
+illustrator: 5ban Graphics
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '59582'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: ムウマージex
     variants_seen:
-    - normal
+      - normal

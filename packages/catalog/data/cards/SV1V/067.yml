@@ -7,9 +7,9 @@ name_en: Squawkabilly
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/362/Squawkabilly.SV1V.67.46341.png
-illustrator:
+illustrator: Oswaldo KATO
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '46341'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: イキリンコ
     variants_seen:
-    - normal
+      - normal

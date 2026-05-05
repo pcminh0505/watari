@@ -7,9 +7,9 @@ name_en: Team Rocket's Tarountula
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/413/Team-Rockets-Tarountula.SV10.8.56885.png
-illustrator:
+illustrator: Saboteri
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '56885'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: ロケット団のタマンチュラ
     variants_seen:
-    - normal
+      - normal

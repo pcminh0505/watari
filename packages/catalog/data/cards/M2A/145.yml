@@ -7,9 +7,9 @@ name_en: Terapagos ex
 rarity_code: RR
 category: card
 image: https://den-cards.pokellector.com/427/Terapagos-ex.M2A.145.60026.png
-illustrator:
+illustrator: 5ban Graphics
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '60026'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: テラパゴスex
     variants_seen:
-    - normal
+      - normal

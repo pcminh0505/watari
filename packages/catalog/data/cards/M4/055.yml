@@ -7,9 +7,9 @@ name_en: Garbodor
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/430/Garbodor.M4.55.60983.png
-illustrator:
+illustrator: HYOGONOSUKE
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '60983'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: ダストダス
     variants_seen:
-    - normal
+      - normal

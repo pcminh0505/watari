@@ -7,9 +7,9 @@ name_en: Carvanha
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/425/Carvanha.M2.50.59228.png
-illustrator:
+illustrator: Shin Nagasawa
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '59228'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: キバニア
     variants_seen:
-    - normal
+      - normal

@@ -7,9 +7,9 @@ name_en: Slakoth
 rarity_code: AR
 category: card
 image: https://den-cards.pokellector.com/405/Slakoth.SV8.117.54612.png
-illustrator:
+illustrator: Mékayu
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '54612'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: ナマケロ
     variants_seen:
-    - normal
+      - normal

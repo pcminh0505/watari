@@ -7,9 +7,9 @@ name_en: Patrat
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/430/Patrat.M4.68.60995.png
-illustrator:
+illustrator: Souichirou Gunjima
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '60995'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: ミネズミ
     variants_seen:
-    - normal
+      - normal

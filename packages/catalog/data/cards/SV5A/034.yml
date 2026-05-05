@@ -7,9 +7,9 @@ name_en: Girafarig
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/391/Girafarig.SV5A.34.52375.png
-illustrator:
+illustrator: Shinji Kanda
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '52375'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: キリンリキ
     variants_seen:
-    - normal
+      - normal

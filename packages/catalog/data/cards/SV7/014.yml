@@ -7,9 +7,9 @@ name_en: Salazzle
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/401/Salazzle.SV7.14.53692.png
-illustrator:
+illustrator: Taiga Kasai
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '53692'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: ウェルカモ
     variants_seen:
-    - normal
+      - normal

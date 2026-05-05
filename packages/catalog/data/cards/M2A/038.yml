@@ -7,9 +7,9 @@ name_en: N's Vanillish
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/427/Ns-Vanillish.M2A.38.59781.png
-illustrator:
+illustrator: kirisAki
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '59781'

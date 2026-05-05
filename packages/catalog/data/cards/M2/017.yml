@@ -7,9 +7,9 @@ name_en: Reshiram
 rarity_code: R
 category: card
 image: https://den-cards.pokellector.com/425/Reshiram.M2.17.59199.png
-illustrator:
+illustrator: AKIRA EGAWA
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '59199'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: レシラム
     variants_seen:
-    - normal
+      - normal

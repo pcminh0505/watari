@@ -7,9 +7,9 @@ name_en: Tinkatink
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/366/Tinkatink.SV1A.40.46964.png
-illustrator:
+illustrator: Mizue
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '46964'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: カヌチャン
     variants_seen:
-    - normal
+      - normal

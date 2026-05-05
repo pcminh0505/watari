@@ -7,11 +7,11 @@ name_en: Boldore
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/415/Boldore.SV11W.44.57766.png
-illustrator:
+illustrator: Anesaki Dynamic
 prints:
-- normal
-- master_ball_mirror
-- poke_ball_mirror
+  - normal
+  - master_ball_mirror
+  - poke_ball_mirror
 sources:
   pokellector:
     id: '57766'
@@ -21,6 +21,6 @@ sources:
   cardrush:
     name_ja: ガントル
     variants_seen:
-    - master_ball_mirror
-    - normal
-    - poke_ball_mirror
+      - master_ball_mirror
+      - normal
+      - poke_ball_mirror

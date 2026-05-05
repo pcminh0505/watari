@@ -7,9 +7,9 @@ name_en: Pansage
 rarity_code: AR
 category: card
 image: https://den-cards.pokellector.com/414/Pansage.SV11B.89.57812.png
-illustrator:
+illustrator: saino misaki
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '57812'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: ヤナップ
     variants_seen:
-    - normal
+      - normal

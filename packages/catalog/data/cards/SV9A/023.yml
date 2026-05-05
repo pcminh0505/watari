@@ -7,9 +7,9 @@ name_en: Misty's Staryu
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/411/Mistys-Staryu.SV9A.23.56599.png
-illustrator:
+illustrator: Shinya Komatsu
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '56599'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: カスミのヒトデマン
     variants_seen:
-    - normal
+      - normal

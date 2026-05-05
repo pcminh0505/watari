@@ -3,13 +3,13 @@
 set_code: SV1S
 local_id: '076'
 name_ja: ニャローテ
-name_en: Professor's Research (Professor Sada)
+name_en: Professor's Research
 rarity_code: R
 category: card
 image: https://den-cards.pokellector.com/361/Professors-Research-Professor-Sada.SV1S.76.46124.png
-illustrator:
+illustrator: kirisAki
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '46124'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: ニャローテ
     variants_seen:
-    - normal
+      - normal

@@ -7,9 +7,9 @@ name_en: Squawkabilly ex
 rarity_code: RR
 category: card
 image: https://den-cards.pokellector.com/369/Squawkabilly-ex.SV2P.65.47029.png
-illustrator:
+illustrator: PLANETA Mochizuki
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '47029'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: イキリンコex
     variants_seen:
-    - normal
+      - normal

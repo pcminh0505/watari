@@ -7,9 +7,9 @@ name_en: Togedemaru
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/425/Togedemaru.M2.61.59236.png
-illustrator:
+illustrator: Bun Toujo
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '59236'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: トゲデマル
     variants_seen:
-    - normal
+      - normal

@@ -7,9 +7,9 @@ name_en: Accelgor
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/408/Accelgor.SV9.9.55734.png
-illustrator:
+illustrator: Kazumasa Yasukuni
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '55734'
@@ -19,4 +19,4 @@ sources:
   cardrush:
     name_ja: カジッチュ
     variants_seen:
-    - normal
+      - normal

@@ -7,9 +7,9 @@ name_en: Team Rocket's Ariana
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/427/Team-Rockets-Ariana.M2A.176.60051.png
-illustrator:
+illustrator: hncl
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '60051'
