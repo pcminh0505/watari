@@ -3,13 +3,13 @@
 set_code: sm1s
 local_id: '024'
 name_ja: エーフィ
-name_en: Espeon GX
+name_en: Espeon-GX
 rarity_code: RR
 category: card
 image: https://den-cards.pokellector.com/201/Espeon-GX.SM1S.24.13715.png
-illustrator:
+illustrator: 5ban Graphics
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '13715'

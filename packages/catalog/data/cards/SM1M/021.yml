@@ -7,9 +7,9 @@ name_en: Togedemaru
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/202/Togedemaru.SM1M.21.13795.png
-illustrator:
+illustrator: Megumi Mizutani
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '13795'

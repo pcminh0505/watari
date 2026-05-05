@@ -3,13 +3,13 @@
 set_code: sm11a
 local_id: '066'
 name_ja: フシギバナ＆ツタージャGX(SA)
-name_en: Venusaur & Snivy GX
+name_en: Venusaur & Snivy-GX
 rarity_code: SR
 category: card
 image: https://den-cards.pokellector.com/272/Venusaur-Snivy-GX.SM11A.66.29023.png
-illustrator:
+illustrator: Yuka Morii
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '29023'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: フシギバナ＆ツタージャGX(SA)
     variants_seen:
-    - normal
+      - normal
     rarity_code: SR

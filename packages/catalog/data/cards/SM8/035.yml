@@ -7,9 +7,9 @@ name_en: Flaaffy
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/258/Flaaffy.SM8.35.23260.png
-illustrator:
+illustrator: Mizue
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '23260'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ドーミラー
     variants_seen:
-    - normal
+      - normal
     rarity_code: C

@@ -3,13 +3,13 @@
 set_code: sm12a
 local_id: '048'
 name_ja: デデンネGX
-name_en: Dedenne GX
+name_en: Dedenne-GX
 rarity_code: RR
 category: card
 image: https://den-cards.pokellector.com/288/Dedenne-GX.SM12A.48.30196.png
-illustrator:
+illustrator: PLANETA Igarashi
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '30196'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: デデンネGX
     variants_seen:
-    - normal
+      - normal
     rarity_code: RR

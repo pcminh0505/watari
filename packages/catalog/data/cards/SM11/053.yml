@@ -7,9 +7,9 @@ name_en: Terrakion
 rarity_code: R
 category: card
 image: https://den-cards.pokellector.com/277/Terrakion.SM11.53.28822.png
-illustrator:
+illustrator: Anesaki Dynamic
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '28822'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ヨワシ
     variants_seen:
-    - normal
+      - normal
     rarity_code: CHR

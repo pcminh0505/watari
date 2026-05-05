@@ -7,9 +7,9 @@ name_en: Hustle Belt
 rarity_code: UR
 category: card
 image: https://den-cards.pokellector.com/242/Hustle-Belt.SM7.112.21061.png
-illustrator:
+illustrator: Yoshinobu Saito
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '21061'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ハッスルベルト
     variants_seen:
-    - normal
+      - normal
     rarity_code: UR

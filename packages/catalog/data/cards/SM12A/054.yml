@@ -7,9 +7,9 @@ name_en: Mewtwo
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/288/Mewtwo.SM12A.54.30408.png
-illustrator:
+illustrator: Shin Nagasawa
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '30408'

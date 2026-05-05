@@ -3,13 +3,13 @@
 set_code: sm10a
 local_id: '056'
 name_ja: ライチュウ＆アローラライチュウGX
-name_en: Raichu & Alolan Raichu GX
+name_en: Raichu & Alolan Raichu-GX
 rarity_code: SR
 category: card
 image: https://den-cards.pokellector.com/267/Raichu-Alolan-Raichu-GX.SM10A.56.27539.png
-illustrator:
+illustrator: ConceptLab
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '27539'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ライチュウ＆アローラライチュウGX
     variants_seen:
-    - normal
+      - normal
     rarity_code: SR

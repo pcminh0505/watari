@@ -3,13 +3,13 @@
 set_code: sm6b
 local_id: '014'
 name_ja: フリーザーGX
-name_en: Articuno GX
+name_en: Articuno-GX
 rarity_code: RR
 category: card
 image: https://den-cards.pokellector.com/237/Articuno-GX.SM6B.14.20635.png
-illustrator:
+illustrator: 5ban Graphics
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '20635'

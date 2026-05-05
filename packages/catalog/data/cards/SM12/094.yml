@@ -4,12 +4,12 @@ set_code: sm12
 local_id: '094'
 name_ja: ポケモン通信
 name_en: Pokémon Communication
-rarity_code: C
+rarity_code: TR
 category: card
 image: https://den-cards.pokellector.com/281/Pokmon-Communication.SM12.94.30118.png
-illustrator:
+illustrator: Studio Bora Inc.
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '30118'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ポケモン通信
     variants_seen:
-    - normal
+      - normal
     rarity_code: RR

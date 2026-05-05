@@ -7,9 +7,9 @@ name_en: Dratini
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/277/Dratini.SM11.66.28831.png
-illustrator:
+illustrator: Sekio
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '28831'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ミニリュウ
     variants_seen:
-    - normal
+      - normal
     rarity_code: SR

@@ -7,9 +7,9 @@ name_en: Lucario
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/267/Lucario.SM10A.26.27350.png
-illustrator:
+illustrator: kirisAki
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '27350'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ルカリオ
     variants_seen:
-    - normal
+      - normal
     rarity_code: U

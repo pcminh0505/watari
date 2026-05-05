@@ -7,9 +7,9 @@ name_en: Basculin
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/277/Basculin.SM11.15.28792.png
-illustrator:
+illustrator: SATOSHI NAKAI
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '28792'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: バスラオ
     variants_seen:
-    - normal
+      - normal
     rarity_code: U

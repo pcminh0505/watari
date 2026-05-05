@@ -7,9 +7,9 @@ name_en: Whismur
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/242/Whismur.SM7.71.21025.png
-illustrator:
+illustrator: Shibuzoh.
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '21025'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ゴニョニョ
     variants_seen:
-    - normal
+      - normal
     rarity_code: UR

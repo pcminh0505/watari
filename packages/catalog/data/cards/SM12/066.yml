@@ -3,13 +3,13 @@
 set_code: sm12
 local_id: '066'
 name_ja: アーゴヨン＆アクジキングGX
-name_en: Naganadel & Guzzlord GX
+name_en: Naganadel & Guzzlord-GX
 rarity_code: RR
 category: card
 image: https://den-cards.pokellector.com/281/Naganadel-Guzzlord-GX.SM12.66.29639.png
-illustrator:
+illustrator: Mitsuhiro Arita
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '29639'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: アーゴヨン＆アクジキングGX
     variants_seen:
-    - normal
+      - normal
     rarity_code: RR

@@ -7,9 +7,9 @@ name_en: Crabrawler
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/272/Crabrawler.SM11A.36.28982.png
-illustrator:
+illustrator: Miki Tanaka
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '28982'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: マケンカニ
     variants_seen:
-    - normal
+      - normal
     rarity_code: C

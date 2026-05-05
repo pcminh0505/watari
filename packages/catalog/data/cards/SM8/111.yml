@@ -4,12 +4,12 @@ set_code: sm8
 local_id: '111'
 name_ja: こだわりメット
 name_en: Choice Helmet
-rarity_code: RR
+rarity_code: UR
 category: card
 image: https://den-cards.pokellector.com/258/Choice-Helmet.SM8.111.23614.png
-illustrator:
+illustrator: Eske Yoshinob
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '23614'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: こだわりメット
     variants_seen:
-    - normal
+      - normal
     rarity_code: RR

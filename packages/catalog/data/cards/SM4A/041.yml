@@ -7,9 +7,9 @@ name_en: Miltank
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/227/Miltank.SM4A.41.19430.png
-illustrator:
+illustrator: Mina Nakai
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '19430'

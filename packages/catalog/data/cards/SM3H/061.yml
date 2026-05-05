@@ -3,13 +3,13 @@
 set_code: sm3h
 local_id: '061'
 name_ja: Noivern GX
-name_en: Noivern GX
-rarity_code: UR
+name_en: Noivern-GX
+rarity_code: HR
 category: card
 image: https://den-cards.pokellector.com/219/Noivern-GX.SM3H.61.18195.png
-illustrator:
+illustrator: 5ban Graphics
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '18195'

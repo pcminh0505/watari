@@ -7,9 +7,9 @@ name_en: Totodile
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/237/Totodile.SM6B.15.20880.png
-illustrator:
+illustrator: Hironobu Yoshida
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '20880'

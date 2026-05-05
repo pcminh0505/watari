@@ -7,9 +7,9 @@ name_en: Grumpig
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/242/Grumpig.SM7.39.21002.png
-illustrator:
+illustrator: Ken Sugimori
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '21002'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: アイアント
     variants_seen:
-    - normal
+      - normal
     rarity_code: R

@@ -3,13 +3,13 @@
 set_code: sm10a
 local_id: '050'
 name_ja: 巨大なカマド
-name_en: Huge Oven
+name_en: Giant Hearth
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/267/Huge-Oven.SM10A.50.27212.png
-illustrator:
+illustrator: 5ban Graphics
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '27212'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: 巨大なカマド
     variants_seen:
-    - normal
+      - normal
     rarity_code: U

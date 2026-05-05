@@ -3,13 +3,13 @@
 set_code: sm12a
 local_id: '168'
 name_ja: ライフフォレスト◇
-name_en: Life Forest Prism Star
-rarity_code: R
+name_en: Life Forest ◇
+rarity_code: PR
 category: card
 image: https://den-cards.pokellector.com/288/Life-Forest-Prism-Star.SM12A.168.30511.png
-illustrator:
+illustrator: 5ban Graphics
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '30511'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ライフフォレスト◇
     variants_seen:
-    - normal
+      - normal
     rarity_code: R

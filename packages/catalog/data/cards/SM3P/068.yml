@@ -3,13 +3,13 @@
 set_code: sm3p
 local_id: '068'
 name_ja: ハウ
-name_en: Pokemon Breeder
+name_en: Pokémon Breeder
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/224/Pokemon-Breeder.SM3+.68.18246.png
-illustrator:
+illustrator: Kanako Eo
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '18246'

@@ -7,9 +7,9 @@ name_en: Wailmer
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/242/Wailmer.SM7.25.20989.png
-illustrator:
+illustrator: Kagemaru Himeno
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '20989'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: アローラキュウコンGX
     variants_seen:
-    - normal
+      - normal
     rarity_code: RR

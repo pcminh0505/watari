@@ -3,13 +3,13 @@
 set_code: sm3p
 local_id: '040'
 name_ja: ミュウツーGX
-name_en: Mewtwo GX
-rarity_code: R
+name_en: Mewtwo-GX
+rarity_code: RR
 category: card
 image: https://den-cards.pokellector.com/224/Mewtwo-GX.SM3+.40.18238.png
-illustrator:
+illustrator: 5ban Graphics
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '18238'

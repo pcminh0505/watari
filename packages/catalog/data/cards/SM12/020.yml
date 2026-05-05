@@ -7,9 +7,9 @@ name_en: Spheal
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/281/Spheal.SM12.20.30066.png
-illustrator:
+illustrator: SATOSHI NAKAI
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '30066'

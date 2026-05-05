@@ -7,9 +7,9 @@ name_en: Popplio
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/243/Popplio.SM7A.22.22402.png
-illustrator:
+illustrator: Yusuke Ohmura
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '22402'

@@ -3,13 +3,13 @@
 set_code: sm6
 local_id: '064'
 name_ja: マサキのメンテナンス
-name_en: Xerneas GX
+name_en: Xerneas-GX
 rarity_code: RR
 category: card
 image: https://den-cards.pokellector.com/235/Xerneas-GX.SM6.64.20472.png
-illustrator:
+illustrator: 5ban Graphics
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '20472'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: マサキのメンテナンス
     variants_seen:
-    - normal
+      - normal
     rarity_code: RR

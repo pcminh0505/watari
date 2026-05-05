@@ -7,9 +7,9 @@ name_en: Bill's Analysis
 rarity_code: R
 category: card
 image: https://den-cards.pokellector.com/260/Bills-Analysis.SM9.89.25514.png
-illustrator:
+illustrator: Naoki Saito
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '25514'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: マサキの解析
     variants_seen:
-    - normal
+      - normal
     rarity_code: R

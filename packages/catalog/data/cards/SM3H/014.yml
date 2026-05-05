@@ -7,9 +7,9 @@ name_en: Simisear
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/219/Simisear.SM3H.14.18166.png
-illustrator:
+illustrator: kirisAki
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '18166'

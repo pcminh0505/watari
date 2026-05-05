@@ -7,9 +7,9 @@ name_en: Drifblim
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/233/Drifblim.SM5M.24.19846.png
-illustrator:
+illustrator: Yumi
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '19846'

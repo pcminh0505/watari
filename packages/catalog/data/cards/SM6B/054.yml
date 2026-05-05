@@ -7,9 +7,9 @@ name_en: Super Scoop Up
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/237/Super-Scoop-Up.SM6B.54.20911.png
-illustrator:
+illustrator: Keiji Kinebuchi
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '20911'

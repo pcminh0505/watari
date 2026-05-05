@@ -3,13 +3,13 @@
 set_code: sm8b
 local_id: '235'
 name_ja: カミツルギGX
-name_en: Kartana GX
-rarity_code: SR
+name_en: Kartana-GX
+rarity_code: SSR
 category: card
 image: https://den-cards.pokellector.com/241/Kartana-GX.SM8B.235.25336.png
-illustrator:
+illustrator: 5ban Graphics
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '25336'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: カミツルギGX
     variants_seen:
-    - normal
+      - normal
     rarity_code: SR

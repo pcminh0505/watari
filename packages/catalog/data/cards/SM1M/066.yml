@@ -4,12 +4,12 @@ set_code: sm1m
 local_id: '066'
 name_ja: Lillie
 name_en: Lillie
-rarity_code: UR
+rarity_code: SR
 category: card
 image: https://den-cards.pokellector.com/202/Lillie.SM1M.66.13830.png
-illustrator:
+illustrator: Megumi Mizutani
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '13830'

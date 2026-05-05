@@ -7,9 +7,9 @@ name_en: Musharna
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/267/Musharna.SM10A.18.27508.png
-illustrator:
+illustrator: Misa Tsutsui
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '27508'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ムシャーナ
     variants_seen:
-    - normal
+      - normal
     rarity_code: C

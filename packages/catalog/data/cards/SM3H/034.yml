@@ -7,9 +7,9 @@ name_en: Darkrai
 rarity_code: R
 category: card
 image: https://den-cards.pokellector.com/219/Darkrai.SM3H.34.18135.png
-illustrator:
+illustrator: Hitoshi Ariga
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '18135'

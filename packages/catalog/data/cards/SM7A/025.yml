@@ -7,9 +7,9 @@ name_en: Bruxish
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/243/Bruxish.SM7A.25.22405.png
-illustrator:
+illustrator: tetsuya koizumi
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '22405'

@@ -4,12 +4,12 @@ set_code: sm8b
 local_id: '198'
 name_ja: フカマル
 name_en: Gible
-rarity_code: SR
+rarity_code: S
 category: card
 image: https://den-cards.pokellector.com/241/Gible.SM8B.198.25256.png
-illustrator:
+illustrator: Saya Tsuruta
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '25256'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: フカマル
     variants_seen:
-    - normal
+      - normal
     rarity_code: SR

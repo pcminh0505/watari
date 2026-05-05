@@ -7,9 +7,9 @@ name_en: Golem
 rarity_code: R
 category: card
 image: https://den-cards.pokellector.com/263/Golem.SM9B.25.26440.png
-illustrator:
+illustrator: Kyoko Umemoto
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '26440'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ゴローニャ
     variants_seen:
-    - normal
+      - normal
     rarity_code: R

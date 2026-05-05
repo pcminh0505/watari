@@ -4,12 +4,12 @@ set_code: sm12
 local_id: '093'
 name_ja: ぼうけんのカバン
 name_en: Adventure Bag
-rarity_code: C
+rarity_code: TR
 category: card
 image: https://den-cards.pokellector.com/281/Adventure-Bag.SM12.93.30117.png
-illustrator:
+illustrator: Yoshinobu Saito
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '30117'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ぼうけんのカバン
     variants_seen:
-    - normal
+      - normal
     rarity_code: TR

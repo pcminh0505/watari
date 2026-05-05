@@ -7,9 +7,9 @@ name_en: Beedrill
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/227/Beedrill.SM4A.3.19334.png
-illustrator:
+illustrator: kirisAki
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '19334'

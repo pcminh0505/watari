@@ -7,9 +7,9 @@ name_en: Giant Hearth
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/288/Giant-Hearth.SM12A.162.30505.png
-illustrator:
+illustrator: 5ban Graphics
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '30505'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: 巨大なカマド
     variants_seen:
-    - normal
+      - normal
     rarity_code: C

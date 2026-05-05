@@ -7,9 +7,9 @@ name_en: Oranguru
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/277/Oranguru.SM11.79.28841.png
-illustrator:
+illustrator: Naoki Saito
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '28841'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ヤレユータン
     variants_seen:
-    - normal
+      - normal
     rarity_code: UR

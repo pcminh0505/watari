@@ -7,9 +7,9 @@ name_en: Metang
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/210/Metang.SM2L.34.17294.png
-illustrator:
+illustrator: Kagemaru Himeno
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '17294'

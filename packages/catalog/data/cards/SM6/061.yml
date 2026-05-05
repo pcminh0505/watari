@@ -7,9 +7,9 @@ name_en: Sylveon
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/235/Sylveon.SM6.61.20456.png
-illustrator:
+illustrator: '0313'
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '20456'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: キングドラGX
     variants_seen:
-    - normal
+      - normal
     rarity_code: HR

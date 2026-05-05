@@ -7,9 +7,9 @@ name_en: Flygon
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/236/Flygon.SM6A.30.20625.png
-illustrator:
+illustrator: Shigenori Negishi
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '20625'

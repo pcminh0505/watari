@@ -3,13 +3,13 @@
 set_code: sm7a
 local_id: '067'
 name_ja: ビリジオンGX
-name_en: Virizion GX
-rarity_code: UR
+name_en: Virizion-GX
+rarity_code: HR
 category: card
 image: https://den-cards.pokellector.com/243/Virizion-GX.SM7A.67.22530.png
-illustrator:
+illustrator: 5ban Graphics
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '22530'

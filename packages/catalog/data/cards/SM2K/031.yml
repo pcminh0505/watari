@@ -7,9 +7,9 @@ name_en: Nosepass
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/211/Nosepass.SM2K.31.17341.png
-illustrator:
+illustrator: Tomokazu Komiya
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '17341'

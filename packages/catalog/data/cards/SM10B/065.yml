@@ -3,13 +3,13 @@
 set_code: sm10b
 local_id: '065'
 name_ja: アーゴヨンGX
-name_en: Naganadel GX
+name_en: Naganadel-GX
 rarity_code: HR
 category: card
 image: https://den-cards.pokellector.com/268/Naganadel-GX.SM10B.65.28000.png
-illustrator:
+illustrator: ConceptLab
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '28000'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: アーゴヨンGX
     variants_seen:
-    - normal
+      - normal
     rarity_code: HR

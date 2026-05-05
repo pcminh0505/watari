@@ -3,13 +3,13 @@
 set_code: sm5m
 local_id: '011'
 name_ja: グレイシアGX
-name_en: Glaceon GX
+name_en: Glaceon-GX
 rarity_code: RR
 category: card
 image: https://den-cards.pokellector.com/233/Glaceon-GX.SM5M.11.19875.png
-illustrator:
+illustrator: 5ban Graphics
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '19875'

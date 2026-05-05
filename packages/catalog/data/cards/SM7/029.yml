@@ -7,9 +7,9 @@ name_en: Gorebyss
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/242/Gorebyss.SM7.29.20993.png
-illustrator:
+illustrator: Mizue
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '20993'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: シママ
     variants_seen:
-    - normal
+      - normal
     rarity_code: C

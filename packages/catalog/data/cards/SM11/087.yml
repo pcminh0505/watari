@@ -3,13 +3,13 @@
 set_code: sm11
 local_id: '087'
 name_ja: グリーンの戦略
-name_en: Blue's Strategy
+name_en: Blue's Tactics
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/277/Blues-Strategy.SM11.87.28751.png
-illustrator:
+illustrator: Megumi Mizutani
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '28751'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: グリーンの戦略
     variants_seen:
-    - normal
+      - normal
     rarity_code: U

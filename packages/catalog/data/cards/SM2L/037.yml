@@ -7,9 +7,9 @@ name_en: Whimsicott
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/210/Whimsicott.SM2L.37.17297.png
-illustrator:
+illustrator: Kouki Saitou
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '17297'

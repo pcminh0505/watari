@@ -7,9 +7,9 @@ name_en: Rainbow Brush
 rarity_code: UR
 category: card
 image: https://den-cards.pokellector.com/242/Rainbow-Brush.SM7.111.21056.png
-illustrator:
+illustrator: Eske Yoshinob
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '21056'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: レインボーブラシ
     variants_seen:
-    - normal
+      - normal
     rarity_code: UR

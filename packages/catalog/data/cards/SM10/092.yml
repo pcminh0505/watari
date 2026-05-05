@@ -4,12 +4,12 @@ set_code: sm10
 local_id: '092'
 name_ja: 火打石
 name_en: Fiery Flint
-rarity_code: R
+rarity_code: TR
 category: card
 image: https://den-cards.pokellector.com/266/Fiery-Flint.SM10.92.26943.png
-illustrator:
+illustrator: Yoshinobu Saito
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '26943'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: 火打石
     variants_seen:
-    - normal
+      - normal
     rarity_code: TR

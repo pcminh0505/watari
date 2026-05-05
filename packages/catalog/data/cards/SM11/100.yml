@@ -3,13 +3,13 @@
 set_code: sm11
 local_id: '100'
 name_ja: プテラGX
-name_en: Aerodactyl GX
+name_en: Aerodactyl-GX
 rarity_code: SR
 category: card
 image: https://den-cards.pokellector.com/277/Aerodactyl-GX.SM11.100.28897.png
-illustrator:
+illustrator: ConceptLab
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '28897'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: プテラGX
     variants_seen:
-    - normal
+      - normal
     rarity_code: SR

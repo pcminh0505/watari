@@ -7,9 +7,9 @@ name_en: Alolan Ninetales
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/241/Alolan-Ninetales.SM8B.89.24878.png
-illustrator:
+illustrator: Misa Tsutsui
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '24878'

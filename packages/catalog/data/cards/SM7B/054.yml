@@ -3,13 +3,13 @@
 set_code: sm7b
 local_id: '054'
 name_ja: Mimikyu GX
-name_en: Mimikyu GX
-rarity_code: UR
+name_en: Mimikyu-GX
+rarity_code: SR
 category: card
 image: https://den-cards.pokellector.com/240/Mimikyu-GX.SM7B.54.23153.png
-illustrator:
+illustrator: 5ban Graphics
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '23153'

@@ -7,9 +7,9 @@ name_en: Barbaracle
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/235/Barbaracle.SM6.44.20513.png
-illustrator:
+illustrator: kirisAki
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '20513'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: コモルー
     variants_seen:
-    - normal
+      - normal
     rarity_code: U

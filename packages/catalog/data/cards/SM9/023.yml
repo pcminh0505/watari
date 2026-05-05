@@ -7,9 +7,9 @@ name_en: Blastoise
 rarity_code: R
 category: card
 image: https://den-cards.pokellector.com/260/Blastoise.SM9.23.25350.png
-illustrator:
+illustrator: Hitoshi Ariga
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '25350'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: イシツブテ
     variants_seen:
-    - normal
+      - normal
     rarity_code: R

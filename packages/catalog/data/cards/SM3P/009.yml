@@ -7,9 +7,9 @@ name_en: Virizion
 rarity_code: R
 category: card
 image: https://den-cards.pokellector.com/224/Virizion.SM3+.9.18290.png
-illustrator:
+illustrator: kawayoo
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '18290'

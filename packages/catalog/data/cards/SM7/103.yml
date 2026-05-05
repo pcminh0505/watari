@@ -7,9 +7,9 @@ name_en: Tate & Liza
 rarity_code: SR
 category: card
 image: https://den-cards.pokellector.com/242/Tate-Liza.SM7.103.21059.png
-illustrator:
+illustrator: Hideki Ishikawa
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '21059'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: フウとラン
     variants_seen:
-    - normal
+      - normal
     rarity_code: SR

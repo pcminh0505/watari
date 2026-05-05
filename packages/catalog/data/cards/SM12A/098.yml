@@ -7,9 +7,9 @@ name_en: Whimsicott
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/288/Whimsicott.SM12A.98.30207.png
-illustrator:
+illustrator: Yumi
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '30207'

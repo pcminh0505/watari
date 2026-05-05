@@ -3,13 +3,13 @@
 set_code: sm6a
 local_id: '056'
 name_ja: Dragonite GX
-name_en: Dragonite GX
-rarity_code: UR
+name_en: Dragonite-GX
+rarity_code: SR
 category: card
 image: https://den-cards.pokellector.com/236/Dragonite-GX.SM6A.56.20680.png
-illustrator:
+illustrator: 5ban Graphics
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '20680'

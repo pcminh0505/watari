@@ -7,9 +7,9 @@ name_en: Eneporter
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/235/Eneporter.SM6.76.20533.png
-illustrator:
+illustrator: Toyste Beach
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '20533'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: マサキのメンテナンス
     variants_seen:
-    - normal
+      - normal
     rarity_code: SR

@@ -3,13 +3,13 @@
 set_code: sm9
 local_id: '090'
 name_ja: シオンタウン
-name_en: Lavender Tower
+name_en: Lavender Town
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/260/Lavender-Tower.SM9.90.25445.png
-illustrator:
+illustrator: 5ban Graphics
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '25445'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: シオンタウン
     variants_seen:
-    - normal
+      - normal
     rarity_code: U

@@ -7,9 +7,9 @@ name_en: Hariyama
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/201/Hariyama.SM1S.30.13745.png
-illustrator:
+illustrator: Miki Tanaka
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '13745'

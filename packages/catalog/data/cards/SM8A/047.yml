@@ -3,13 +3,13 @@
 set_code: sm8a
 local_id: '047'
 name_ja: エレキパワー
-name_en: Electripower
+name_en: Electropower
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/245/Electripower.SM8A.47.24147.png
-illustrator:
+illustrator: Eske Yoshinob
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '24147'

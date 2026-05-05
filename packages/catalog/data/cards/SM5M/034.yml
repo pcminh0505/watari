@@ -7,9 +7,9 @@ name_en: Cranidos
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/233/Cranidos.SM5M.34.19940.png
-illustrator:
+illustrator: Kouki Saitou
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '19940'

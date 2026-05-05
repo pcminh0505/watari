@@ -3,13 +3,13 @@
 set_code: sm12
 local_id: '013'
 name_ja: ウルガモスGX
-name_en: Volcarona GX
+name_en: Volcarona-GX
 rarity_code: RR
 category: card
 image: https://den-cards.pokellector.com/281/Volcarona-GX.SM12.13.29642.png
-illustrator:
+illustrator: Hiroyuki Yamamoto
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '29642'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ウルガモスGX
     variants_seen:
-    - normal
+      - normal
     rarity_code: RR

@@ -7,9 +7,9 @@ name_en: Gulpin
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/237/Gulpin.SM6B.26.20888.png
-illustrator:
+illustrator: Yuka Morii
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '20888'

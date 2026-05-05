@@ -3,13 +3,13 @@
 set_code: sm4p
 local_id: '117'
 name_ja: Celesteela GX
-name_en: Celesteela GX
-rarity_code: UR
+name_en: Celesteela-GX
+rarity_code: SR
 category: card
 image: https://den-cards.pokellector.com/228/Celesteela-GX.SM4+.117.19671.png
-illustrator:
+illustrator: 5ban Graphics
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '19671'

@@ -3,13 +3,13 @@
 set_code: sm8b
 local_id: '217'
 name_ja: マルマインGX
-name_en: Electrode GX
-rarity_code: SR
+name_en: Electrode-GX
+rarity_code: SSR
 category: card
 image: https://den-cards.pokellector.com/241/Electrode-GX.SM8B.217.25257.png
-illustrator:
+illustrator: 5ban Graphics
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '25257'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: マルマインGX
     variants_seen:
-    - normal
+      - normal
     rarity_code: SR

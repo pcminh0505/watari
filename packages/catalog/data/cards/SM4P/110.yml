@@ -7,9 +7,9 @@ name_en: Aether Paradise Conservation Area
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/228/Aether-Paradise-Conservation-Area.SM4+.110.19664.png
-illustrator:
+illustrator: 5ban Graphics
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '19664'

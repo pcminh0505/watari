@@ -7,9 +7,9 @@ name_en: Lucario
 rarity_code: R
 category: card
 image: https://den-cards.pokellector.com/233/Lucario.SM5M.37.19879.png
-illustrator:
+illustrator: Mitsuhiro Arita
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '19879'

@@ -3,13 +3,13 @@
 set_code: sm8b
 local_id: '125'
 name_ja: ねがいのバトン
-name_en: Wish Baton
+name_en: Wishful Baton
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/241/Wish-Baton.SM8B.125.24420.png
-illustrator:
+illustrator: Toyste Beach
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '24420'

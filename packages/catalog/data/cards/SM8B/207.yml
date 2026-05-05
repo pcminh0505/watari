@@ -3,13 +3,13 @@
 set_code: sm8b
 local_id: '207'
 name_ja: ジュナイパーGX
-name_en: Decidueye GX
-rarity_code: SR
+name_en: Decidueye-GX
+rarity_code: SSR
 category: card
 image: https://den-cards.pokellector.com/241/Decidueye-GX.SM8B.207.24931.png
-illustrator:
+illustrator: 5ban Graphics
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '24931'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ジュナイパーGX
     variants_seen:
-    - normal
+      - normal
     rarity_code: SR

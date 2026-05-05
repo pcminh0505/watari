@@ -3,13 +3,13 @@
 set_code: sm7a
 local_id: '041'
 name_ja: ゲノセクトGX
-name_en: Genesect GX
+name_en: Genesect-GX
 rarity_code: RR
 category: card
 image: https://den-cards.pokellector.com/243/Genesect-GX.SM7A.41.21719.png
-illustrator:
+illustrator: Yoshinobu Saito
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '21719'

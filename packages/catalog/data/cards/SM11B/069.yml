@@ -3,13 +3,13 @@
 set_code: sm11b
 local_id: '069'
 name_ja: ラフレシアGX(SA)
-name_en: Vileplume GX
+name_en: Vileplume-GX
 rarity_code: HR
 category: card
 image: https://den-cards.pokellector.com/278/Vileplume-GX.SM11B.69.29335.png
-illustrator:
+illustrator: Kagemaru Himeno
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '29335'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ラフレシアGX(SA)
     variants_seen:
-    - normal
+      - normal
     rarity_code: HR

@@ -7,9 +7,9 @@ name_en: Exeggcute
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/241/Exeggcute.SM8B.4.24808.png
-illustrator:
+illustrator: Yuka Morii
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '24808'

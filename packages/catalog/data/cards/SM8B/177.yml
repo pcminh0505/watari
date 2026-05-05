@@ -4,12 +4,12 @@ set_code: sm8b
 local_id: '177'
 name_ja: マーイーカ
 name_en: Inkay
-rarity_code: SR
+rarity_code: S
 category: card
 image: https://den-cards.pokellector.com/241/Inkay.SM8B.177.25062.png
-illustrator:
+illustrator: Shigenori Negishi
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '25062'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: マーイーカ
     variants_seen:
-    - normal
+      - normal
     rarity_code: SR

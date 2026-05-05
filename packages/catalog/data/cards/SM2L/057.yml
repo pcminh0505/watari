@@ -3,13 +3,13 @@
 set_code: sm2l
 local_id: '057'
 name_ja: Tapu楽楽GX
-name_en: Tapu Lele GX
-rarity_code: UR
+name_en: Tapu Lele-GX
+rarity_code: HR
 category: card
 image: https://den-cards.pokellector.com/210/Tapu-Lele-GX.SM2L.57.17316.png
-illustrator:
+illustrator: 5ban Graphics
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '17316'

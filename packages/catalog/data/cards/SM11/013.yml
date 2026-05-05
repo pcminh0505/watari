@@ -7,9 +7,9 @@ name_en: Finneon
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/277/Finneon.SM11.13.28790.png
-illustrator:
+illustrator: sui
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '28790'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ポカブ
     variants_seen:
-    - normal
+      - normal
     rarity_code: R

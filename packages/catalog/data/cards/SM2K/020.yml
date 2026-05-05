@@ -7,9 +7,9 @@ name_en: Helioptile
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/211/Helioptile.SM2K.20.17334.png
-illustrator:
+illustrator: Masakazu Fukuda
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '17334'

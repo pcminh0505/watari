@@ -7,9 +7,9 @@ name_en: Starly
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/226/Starly.SM4S.38.19386.png
-illustrator:
+illustrator: miki kudo
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '19386'

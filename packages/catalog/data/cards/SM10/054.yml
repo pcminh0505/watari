@@ -7,9 +7,9 @@ name_en: Crabominable
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/266/Crabominable.SM10.54.26913.png
-illustrator:
+illustrator: Tomokazu Komiya
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '26913'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ルザミーネ
     variants_seen:
-    - normal
+      - normal
     rarity_code: TR

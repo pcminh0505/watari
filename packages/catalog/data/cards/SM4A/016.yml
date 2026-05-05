@@ -7,9 +7,9 @@ name_en: Alolan Raichu
 rarity_code: R
 category: card
 image: https://den-cards.pokellector.com/227/Alolan-Raichu.SM4A.16.19304.png
-illustrator:
+illustrator: Akira Komayama
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '19304'

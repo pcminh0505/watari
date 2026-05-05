@@ -4,12 +4,12 @@ set_code: sm1s
 local_id: '065'
 name_ja: Ilima
 name_en: Ilima
-rarity_code: UR
+rarity_code: SR
 category: card
 image: https://den-cards.pokellector.com/201/Ilima.SM1S.65.13771.png
-illustrator:
+illustrator: Sanosuke Sakuma
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '13771'

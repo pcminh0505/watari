@@ -7,9 +7,9 @@ name_en: Clay
 rarity_code: SR
 category: card
 image: https://den-cards.pokellector.com/288/Clay.SM12A.199.30538.png
-illustrator:
+illustrator: Hideki Ishikawa
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '30538'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ヤーコン
     variants_seen:
-    - normal
+      - normal
     rarity_code: SR

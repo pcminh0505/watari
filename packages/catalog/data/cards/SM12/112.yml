@@ -3,13 +3,13 @@
 set_code: sm12
 local_id: '112'
 name_ja: アルセウス＆ディアルガ＆パルキアGX
-name_en: Arceus & Dialga & Palkia GX
+name_en: Arceus & Dialga & Palkia-GX
 rarity_code: HR
 category: card
 image: https://den-cards.pokellector.com/281/Arceus-Dialga-Palkia-GX.SM12.112.30161.png
-illustrator:
+illustrator: 5ban Graphics
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '30161'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: アルセウス＆ディアルガ＆パルキアGX
     variants_seen:
-    - normal
+      - normal
     rarity_code: HR

@@ -7,9 +7,9 @@ name_en: Beast Bringer
 rarity_code: UR
 category: card
 image: https://den-cards.pokellector.com/263/Beast-Bringer.SM9B.67.26497.png
-illustrator:
+illustrator: Ayaka Yoshida
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '26497'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ビーストブリンガー
     variants_seen:
-    - normal
+      - normal
     rarity_code: UR

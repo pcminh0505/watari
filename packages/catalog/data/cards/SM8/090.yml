@@ -7,9 +7,9 @@ name_en: Hau
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/258/Hau.SM8.90.23312.png
-illustrator:
+illustrator: TOKIYA
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '23312'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ハウ
     variants_seen:
-    - normal
+      - normal
     rarity_code: U

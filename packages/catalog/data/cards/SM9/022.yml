@@ -7,9 +7,9 @@ name_en: Wartortle
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/260/Wartortle.SM9.22.25460.png
-illustrator:
+illustrator: Misa Tsutsui
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '25460'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: カメール
     variants_seen:
-    - normal
+      - normal
     rarity_code: U

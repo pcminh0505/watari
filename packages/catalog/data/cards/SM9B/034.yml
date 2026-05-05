@@ -7,9 +7,9 @@ name_en: Aggron
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/263/Aggron.SM9B.34.25655.png
-illustrator:
+illustrator: Satoshi Shirai
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '25655'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ボスゴドラ
     variants_seen:
-    - normal
+      - normal
     rarity_code: U

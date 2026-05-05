@@ -7,9 +7,9 @@ name_en: Coach Trainer
 rarity_code: U
 category: trainer
 image: https://den-cards.pokellector.com/267/Coach-Trainer.SM10A.49.27369.png
-illustrator:
+illustrator: nagimiso
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '27369'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: コーチトレーナー
     variants_seen:
-    - normal
+      - normal
     rarity_code: U

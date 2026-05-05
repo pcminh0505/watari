@@ -7,9 +7,9 @@ name_en: Duskull
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/272/Duskull.SM11A.23.28972.png
-illustrator:
+illustrator: ryoma uratsuka
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '28972'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ヨマワル
     variants_seen:
-    - normal
+      - normal
     rarity_code: C

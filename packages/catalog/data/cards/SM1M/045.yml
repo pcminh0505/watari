@@ -7,9 +7,9 @@ name_en: Spearow
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/202/Spearow.SM1M.45.13815.png
-illustrator:
+illustrator: Yukiko Baba
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '13815'

@@ -3,13 +3,13 @@
 set_code: sm2p
 local_id: '034'
 name_ja: ルガルガンGX
-name_en: Lycanroc GX
+name_en: Lycanroc-GX
 rarity_code: RR
 category: card
 image: https://den-cards.pokellector.com/212/Lycanroc-GX.SM2+.34.17494.png
-illustrator:
+illustrator: 5ban Graphics
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '17494'

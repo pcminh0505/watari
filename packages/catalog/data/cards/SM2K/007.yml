@@ -7,9 +7,9 @@ name_en: Golisopod
 rarity_code: R
 category: card
 image: https://den-cards.pokellector.com/211/Golisopod.SM2K.7.17328.png
-illustrator:
+illustrator: Kouki Saitou
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '17328'

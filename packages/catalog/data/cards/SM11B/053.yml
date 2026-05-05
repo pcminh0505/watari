@@ -7,9 +7,9 @@ name_en: Wishiwashi
 rarity_code: CHR
 category: card
 image: https://den-cards.pokellector.com/278/Wishiwashi.SM11B.53.29320.png
-illustrator:
+illustrator: Misaki Hashimoto
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '29320'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ヨワシ
     variants_seen:
-    - normal
+      - normal
     rarity_code: CHR

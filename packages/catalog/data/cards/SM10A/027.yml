@@ -7,9 +7,9 @@ name_en: Meloetta
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/267/Meloetta.SM10A.27.27351.png
-illustrator:
+illustrator: Kouki Saitou
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '27351'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: メロエッタ
     variants_seen:
-    - normal
+      - normal
     rarity_code: U

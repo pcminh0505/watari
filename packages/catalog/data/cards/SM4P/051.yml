@@ -7,9 +7,9 @@ name_en: Sudowoodo
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/228/Sudowoodo.SM4+.51.19620.png
-illustrator:
+illustrator: Hajime Kusajima
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '19620'

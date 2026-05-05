@@ -7,9 +7,9 @@ name_en: Tentacruel
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/210/Tentacruel.SM2L.9.17275.png
-illustrator:
+illustrator: Masakazu Fukuda
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '17275'

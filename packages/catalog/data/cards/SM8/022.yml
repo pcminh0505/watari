@@ -7,9 +7,9 @@ name_en: Entei
 rarity_code: R
 category: card
 image: https://den-cards.pokellector.com/258/Entei.SM8.22.23248.png
-illustrator:
+illustrator: kawayoo
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '23248'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: アローラロコン(ミラー/ハイクラスパック仕様)
     variants_seen:
-    - normal
+      - normal
     rarity_code: R

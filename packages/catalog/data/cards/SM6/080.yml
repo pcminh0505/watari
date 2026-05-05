@@ -4,12 +4,12 @@ set_code: sm6
 local_id: '080'
 name_ja: バリヤードGX
 name_en: Rare Candy
-rarity_code: C
+rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/235/Ultra-Ball.SM6.80.20536.png
-illustrator:
+illustrator: Toyste Beach
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '20536'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: バリヤードGX
     variants_seen:
-    - normal
+      - normal
     rarity_code: HR

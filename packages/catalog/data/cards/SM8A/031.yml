@@ -3,13 +3,13 @@
 set_code: sm8a
 local_id: '031'
 name_ja: フーパGX
-name_en: Hoopa GX
+name_en: Hoopa-GX
 rarity_code: RR
 category: card
 image: https://den-cards.pokellector.com/245/Hoopa-GX.SM8A.31.23935.png
-illustrator:
+illustrator: 5ban Graphics
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '23935'

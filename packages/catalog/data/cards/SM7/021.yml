@@ -7,9 +7,9 @@ name_en: Mudkip
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/242/Mudkip.SM7.21.20986.png
-illustrator:
+illustrator: Shigenori Negishi
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '20986'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ミズゴロウ
     variants_seen:
-    - normal
+      - normal
     rarity_code: R

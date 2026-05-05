@@ -7,9 +7,9 @@ name_en: Golurk
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/224/Golurk.SM3+.45.18316.png
-illustrator:
+illustrator: Kagemaru Himeno
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '18316'

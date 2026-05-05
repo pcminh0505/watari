@@ -7,9 +7,9 @@ name_en: Purugly
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/232/Purugly.SM5S.50.19995.png
-illustrator:
+illustrator: Shibuzoh.
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '19995'

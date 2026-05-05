@@ -4,12 +4,12 @@ set_code: sm5s
 local_id: '072'
 name_ja: Mars
 name_en: Mars
-rarity_code: UR
+rarity_code: SR
 category: card
 image: https://den-cards.pokellector.com/232/Mars.SM5S.72.19887.png
-illustrator:
+illustrator: kodama
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '19887'

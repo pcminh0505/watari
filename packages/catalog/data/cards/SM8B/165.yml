@@ -4,12 +4,12 @@ set_code: sm8b
 local_id: '165'
 name_ja: フェローチェ
 name_en: Pheromosa
-rarity_code: SR
+rarity_code: S
 category: card
 image: https://den-cards.pokellector.com/241/Pheromosa.SM8B.165.25287.png
-illustrator:
+illustrator: Mizue
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '25287'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: フェローチェ
     variants_seen:
-    - normal
+      - normal
     rarity_code: SR

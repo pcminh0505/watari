@@ -3,13 +3,13 @@
 set_code: sm7a
 local_id: '071'
 name_ja: 電力
-name_en: Electric Power
+name_en: Electropower
 rarity_code: UR
 category: card
 image: https://den-cards.pokellector.com/243/Electric-Power.SM7A.71.22527.png
-illustrator:
+illustrator: Eske Yoshinob
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '22527'

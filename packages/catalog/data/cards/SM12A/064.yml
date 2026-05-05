@@ -7,9 +7,9 @@ name_en: Marshadow
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/288/Marshadow.SM12A.64.30417.png
-illustrator:
+illustrator: chibi
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '30417'

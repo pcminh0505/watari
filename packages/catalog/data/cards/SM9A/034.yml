@@ -7,9 +7,9 @@ name_en: Togepi
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/262/Togepi.SM9A.34.25612.png
-illustrator:
+illustrator: Sekio
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '25612'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: トゲピー
     variants_seen:
-    - normal
+      - normal
     rarity_code: C

@@ -7,9 +7,9 @@ name_en: Quilava
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/258/Quilava.SM8.18.23244.png
-illustrator:
+illustrator: Miki Tanaka
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '23244'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: アローラベトベター
     variants_seen:
-    - normal
+      - normal
     rarity_code: RR

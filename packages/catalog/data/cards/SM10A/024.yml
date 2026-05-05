@@ -7,9 +7,9 @@ name_en: Garchomp
 rarity_code: R
 category: card
 image: https://den-cards.pokellector.com/267/Garchomp.SM10A.24.27360.png
-illustrator:
+illustrator: Akira Komayama
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '27360'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ガブリアス
     variants_seen:
-    - normal
+      - normal
     rarity_code: R

@@ -7,9 +7,9 @@ name_en: Rowlet
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/200/Rowlet.SM1+.1.14575.png
-illustrator:
+illustrator: Megumi Mizutani
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '14575'

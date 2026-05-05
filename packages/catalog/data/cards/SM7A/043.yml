@@ -3,13 +3,13 @@
 set_code: sm7a
 local_id: '043'
 name_ja: メタモン
-name_en: Ditto Prism Star
-rarity_code: SR
+name_en: Ditto ◇
+rarity_code: PR
 category: card
 image: https://den-cards.pokellector.com/243/Ditto-Prism-Star.SM7A.43.22051.png
-illustrator:
+illustrator: kirisAki
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '22051'

@@ -7,9 +7,9 @@ name_en: Donphan
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/258/Donphan.SM8.51.23275.png
-illustrator:
+illustrator: Naoyo Kimura
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '23275'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ドンファン
     variants_seen:
-    - normal
+      - normal
     rarity_code: U

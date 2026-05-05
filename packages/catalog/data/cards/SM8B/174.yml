@@ -4,12 +4,12 @@ set_code: sm8b
 local_id: '174'
 name_ja: Xurkitree
 name_en: Xurkitree
-rarity_code: UR
+rarity_code: S
 category: card
 image: https://den-cards.pokellector.com/241/Xurkitree.SM8B.174.25294.png
-illustrator:
+illustrator: Naoki Saito
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '25294'

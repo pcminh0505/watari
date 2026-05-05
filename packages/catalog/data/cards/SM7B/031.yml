@@ -7,9 +7,9 @@ name_en: Dedenne
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/240/Dedenne.SM7B.31.23133.png
-illustrator:
+illustrator: Megumi Mizutani
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '23133'

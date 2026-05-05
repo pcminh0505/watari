@@ -7,9 +7,9 @@ name_en: Poliwhirl
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/202/Poliwhirl.SM1M.10.13785.png
-illustrator:
+illustrator: Atsuko Nishida
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '13785'

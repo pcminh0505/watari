@@ -7,9 +7,9 @@ name_en: Sandygast
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/219/Sandygast.SM3H.25.18174.png
-illustrator:
+illustrator: Masakazu Fukuda
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '18174'

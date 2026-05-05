@@ -7,9 +7,9 @@ name_en: Turtonator
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/241/Turtonator.SM8B.103.24890.png
-illustrator:
+illustrator: Sumiyoshi Kizuki
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '24890'

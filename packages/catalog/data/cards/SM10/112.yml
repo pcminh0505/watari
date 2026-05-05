@@ -3,13 +3,13 @@
 set_code: sm10
 local_id: '112'
 name_ja: エルフーンGX
-name_en: Whimsicott GX
+name_en: Whimsicott-GX
 rarity_code: HR
 category: card
 image: https://den-cards.pokellector.com/266/Whimsicott-GX.SM10.112.26956.png
-illustrator:
+illustrator: 5ban Graphics
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '26956'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: エルフーンGX
     variants_seen:
-    - normal
+      - normal
     rarity_code: HR

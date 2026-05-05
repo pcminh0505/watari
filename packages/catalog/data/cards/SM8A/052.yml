@@ -3,13 +3,13 @@
 set_code: sm8a
 local_id: '052'
 name_ja: ブラックマーケット
-name_en: Black Market Prism Star
-rarity_code: SR
+name_en: Black Market ◇
+rarity_code: PR
 category: card
 image: https://den-cards.pokellector.com/245/Black-Market-Prism-Star.SM8A.52.23837.png
-illustrator:
+illustrator: 5ban Graphics
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '23837'

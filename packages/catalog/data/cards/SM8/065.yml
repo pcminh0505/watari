@@ -7,9 +7,9 @@ name_en: Granbull
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/258/Granbull.SM8.65.23289.png
-illustrator:
+illustrator: Shin Nagasawa
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '23289'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: グランブル
     variants_seen:
-    - normal
+      - normal
     rarity_code: UR

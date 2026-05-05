@@ -7,9 +7,9 @@ name_en: Order Pad
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/233/Order-Pad.SM5M.53.19952.png
-illustrator:
+illustrator: Eske Yoshinob
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '19952'

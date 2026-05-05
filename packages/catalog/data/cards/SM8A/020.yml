@@ -7,9 +7,9 @@ name_en: Tyranitar
 rarity_code: R
 category: card
 image: https://den-cards.pokellector.com/245/Tyranitar.SM8A.20.24004.png
-illustrator:
+illustrator: Hasuno
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '24004'

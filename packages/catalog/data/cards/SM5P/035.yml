@@ -3,13 +3,13 @@
 set_code: sm5p
 local_id: '035'
 name_ja: ディアルガGX
-name_en: Dialga GX
+name_en: Dialga-GX
 rarity_code: RR
 category: card
 image: https://den-cards.pokellector.com/238/Dialga-GX.SM5+.35.20090.png
-illustrator:
+illustrator: 5ban Graphics
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '20090'

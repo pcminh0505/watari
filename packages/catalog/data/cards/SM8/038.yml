@@ -7,9 +7,9 @@ name_en: Natu
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/258/Natu.SM8.38.23263.png
-illustrator:
+illustrator: Anesaki Dynamic
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '23263'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ネイティ
     variants_seen:
-    - normal
+      - normal
     rarity_code: U

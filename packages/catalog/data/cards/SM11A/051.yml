@@ -7,9 +7,9 @@ name_en: Energy Switch
 rarity_code: U
 category: energy
 image: https://den-cards.pokellector.com/272/Energy-Switch.SM11A.51.28993.png
-illustrator:
+illustrator: Ryo Ueda
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '28993'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: エネルギーつけかえ
     variants_seen:
-    - normal
+      - normal
     rarity_code: U

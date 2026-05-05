@@ -4,12 +4,12 @@ set_code: sm9
 local_id: '095'
 name_ja: デンジ
 name_en: Volkner
-rarity_code: R
+rarity_code: TR
 category: card
 image: https://den-cards.pokellector.com/260/Volkner.SM9.95.25443.png
-illustrator:
+illustrator: Hideki Ishikawa
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '25443'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: デンジ
     variants_seen:
-    - normal
+      - normal
     rarity_code: TR

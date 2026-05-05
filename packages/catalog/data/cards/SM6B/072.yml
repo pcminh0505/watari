@@ -3,13 +3,13 @@
 set_code: sm6b
 local_id: '072'
 name_ja: Salamence GX
-name_en: Salamence GX
-rarity_code: UR
+name_en: Salamence-GX
+rarity_code: SR
 category: card
 image: https://den-cards.pokellector.com/237/Salamence-GX.SM6B.72.20928.png
-illustrator:
+illustrator: 5ban Graphics
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '20928'

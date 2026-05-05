@@ -7,9 +7,9 @@ name_en: Lunatone
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/228/Lunatone.SM4+.52.19621.png
-illustrator:
+illustrator: Shin Nagasawa
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '19621'

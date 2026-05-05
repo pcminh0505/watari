@@ -7,9 +7,9 @@ name_en: Tapu Fini
 rarity_code: R
 category: card
 image: https://den-cards.pokellector.com/240/Tapu-Pipi.SM7B.40.23140.png
-illustrator:
+illustrator: Kagemaru Himeno
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '23140'

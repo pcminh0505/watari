@@ -7,9 +7,9 @@ name_en: Vaporeon
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/288/Vaporeon.SM12A.33.30394.png
-illustrator:
+illustrator: sui
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '30394'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: シャワーズ(ミラー)
     variants_seen:
-    - normal
+      - normal
     rarity_code: C

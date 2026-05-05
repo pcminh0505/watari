@@ -3,13 +3,13 @@
 set_code: sm4p
 local_id: '036'
 name_ja: ミュウツーGX
-name_en: Mewtwo GX
+name_en: Mewtwo-GX
 rarity_code: RR
 category: card
 image: https://den-cards.pokellector.com/228/Mewtwo-GX.SM4+.36.19610.png
-illustrator:
+illustrator: 5ban Graphics
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '19610'

@@ -3,13 +3,13 @@
 set_code: sm3h
 local_id: '048'
 name_ja: ムキムキダンベル
-name_en: Muscle Dumbbells
+name_en: Bodybuilding Dumbbells
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/219/Muscle-Dumbbells.SM3H.48.18094.png
-illustrator:
+illustrator: Eske Yoshinob
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '18094'

@@ -7,9 +7,9 @@ name_en: Counter Catcher
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/241/Counter-Catcher.SM8B.114.24899.png
-illustrator:
+illustrator: Toyste Beach
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '24899'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: カウンターキャッチャー(ミラー/ハイクラスパック仕様)
     variants_seen:
-    - normal
+      - normal
     rarity_code: C

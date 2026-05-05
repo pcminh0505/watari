@@ -4,12 +4,12 @@ set_code: sm8b
 local_id: '192'
 name_ja: Celesteela
 name_en: Celesteela
-rarity_code: UR
+rarity_code: S
 category: card
 image: https://den-cards.pokellector.com/241/Celesteela.SM8B.192.25308.png
-illustrator:
+illustrator: Kouki Saitou
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '25308'

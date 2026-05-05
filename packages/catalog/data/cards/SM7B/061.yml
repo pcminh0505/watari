@@ -7,9 +7,9 @@ name_en: Net Ball
 rarity_code: UR
 category: card
 image: https://den-cards.pokellector.com/240/Net-Ball.SM7B.61.23158.png
-illustrator:
+illustrator: Ryo Ueda
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '23158'

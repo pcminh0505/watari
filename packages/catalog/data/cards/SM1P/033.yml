@@ -7,9 +7,9 @@ name_en: Passimian
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/200/Passimian.SM1+.33.14597.png
-illustrator:
+illustrator: Naoki Saito
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '14597'

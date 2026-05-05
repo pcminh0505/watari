@@ -7,9 +7,9 @@ name_en: Vespiquen
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/240/Vespiquen.SM7B.12.23098.png
-illustrator:
+illustrator: chibi
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '23098'

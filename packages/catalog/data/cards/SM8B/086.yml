@@ -3,13 +3,13 @@
 set_code: sm8b
 local_id: '086'
 name_ja: ネクロズマたそがれのたてがみGX
-name_en: Dusk Mane Necrozma
+name_en: Dusk Mane Necrozma-GX
 rarity_code: RR
 category: card
 image: https://den-cards.pokellector.com/241/Dusk-Mane-Necrozma.SM8B.86.24400.png
-illustrator:
+illustrator: 5ban Graphics
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '24400'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ネクロズマたそがれのたてがみGX
     variants_seen:
-    - normal
+      - normal
     rarity_code: RR

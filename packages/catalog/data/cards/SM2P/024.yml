@@ -7,9 +7,9 @@ name_en: Trubbish
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/212/Trubbish.SM2+.24.17486.png
-illustrator:
+illustrator: Yuka Morii
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '17486'

@@ -3,13 +3,13 @@
 set_code: sm3p
 local_id: '081'
 name_ja: ゾロアークGX
-name_en: Zoroark GX
-rarity_code: UR
+name_en: Zoroark-GX
+rarity_code: HR
 category: card
 image: https://den-cards.pokellector.com/224/Zoroark-GX.SM3+.81.18341.png
-illustrator:
+illustrator: 5ban Graphics
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '18341'

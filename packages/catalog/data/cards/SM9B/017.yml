@@ -7,9 +7,9 @@ name_en: Golbat
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/263/Golbat.SM9B.17.26432.png
-illustrator:
+illustrator: Shin Nagasawa
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '26432'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ゴルバット
     variants_seen:
-    - normal
+      - normal
     rarity_code: C

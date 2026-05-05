@@ -7,9 +7,9 @@ name_en: Sableye
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/228/Sableye.SM4+.63.19632.png
-illustrator:
+illustrator: Aya Kusube
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '19632'

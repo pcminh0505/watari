@@ -7,9 +7,9 @@ name_en: Fairy Charm Ability
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/262/Fairy-Charm-Ability.SM9A.48.25625.png
-illustrator:
+illustrator: Toyste Beach
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '25625'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: フェアリーチャーム特性
     variants_seen:
-    - normal
+      - normal
     rarity_code: U

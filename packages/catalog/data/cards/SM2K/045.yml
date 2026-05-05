@@ -7,9 +7,9 @@ name_en: Swellow
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/211/Swellow.SM2K.45.17354.png
-illustrator:
+illustrator: Kagemaru Himeno
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '17354'

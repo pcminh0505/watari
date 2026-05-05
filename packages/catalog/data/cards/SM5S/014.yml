@@ -7,9 +7,9 @@ name_en: Shaymin
 rarity_code: R
 category: card
 image: https://den-cards.pokellector.com/232/Shaymin.SM5S.14.19892.png
-illustrator:
+illustrator: Mizue
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '19892'

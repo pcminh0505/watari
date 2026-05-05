@@ -3,13 +3,13 @@
 set_code: sm1m
 local_id: '068'
 name_ja: Lunala GX
-name_en: Lunala GX
-rarity_code: UR
+name_en: Lunala-GX
+rarity_code: HR
 category: card
 image: https://den-cards.pokellector.com/202/Lunala-GX.SM1M.68.13832.png
-illustrator:
+illustrator: 5ban Graphics
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '13832'

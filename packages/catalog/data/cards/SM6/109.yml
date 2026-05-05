@@ -3,13 +3,13 @@
 set_code: sm6
 local_id: '109'
 name_ja: ミステリートレジャー
-name_en: Mystery Treasure
+name_en: Mysterious Treasure
 rarity_code: UR
 category: card
 image: https://den-cards.pokellector.com/235/Mystery-Treasure.SM6.109.20556.png
-illustrator:
+illustrator: Eske Yoshinob
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '20556'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ミステリートレジャー
     variants_seen:
-    - normal
+      - normal
     rarity_code: UR

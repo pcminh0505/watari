@@ -7,9 +7,9 @@ name_en: Diggersby
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/235/Diggersby.SM6.72.20529.png
-illustrator:
+illustrator: Mina Nakai
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '20529'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ボーマンダGX
     variants_seen:
-    - normal
+      - normal
     rarity_code: SR

@@ -7,9 +7,9 @@ name_en: Naganadel
 rarity_code: R
 category: card
 image: https://den-cards.pokellector.com/258/Naganadel.SM8.48.23273.png
-illustrator:
+illustrator: Shin Nagasawa
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '23273'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: デンジャラスドリル
     variants_seen:
-    - normal
+      - normal
     rarity_code: R

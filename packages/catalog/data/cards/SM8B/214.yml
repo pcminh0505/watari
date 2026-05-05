@@ -3,13 +3,13 @@
 set_code: sm8b
 local_id: '214'
 name_ja: フリーザーGX
-name_en: Articuno GX
-rarity_code: SR
+name_en: Articuno-GX
+rarity_code: SSR
 category: card
 image: https://den-cards.pokellector.com/241/Articuno-GX.SM8B.214.25321.png
-illustrator:
+illustrator: 5ban Graphics
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '25321'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: フリーザーGX
     variants_seen:
-    - normal
+      - normal
     rarity_code: SR

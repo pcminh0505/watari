@@ -7,9 +7,9 @@ name_en: Treecko
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/242/Treecko.SM7.1.20962.png
-illustrator:
+illustrator: Sekio
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '20962'

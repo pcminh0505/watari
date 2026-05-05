@@ -3,13 +3,13 @@
 set_code: sm2p
 local_id: '053'
 name_ja: 基本水エネルギー
-name_en: Machamp GX
-rarity_code: UR
+name_en: Machamp-GX
+rarity_code: SR
 category: card
 image: https://den-cards.pokellector.com/212/Machamp-GX.SM2+.53.17510.png
-illustrator:
+illustrator: 5ban Graphics
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '17510'

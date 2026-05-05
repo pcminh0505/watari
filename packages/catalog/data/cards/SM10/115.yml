@@ -7,9 +7,9 @@ name_en: Shrine of Punishment
 rarity_code: UR
 category: card
 image: https://den-cards.pokellector.com/266/Shrine-of-Punishment.SM10.115.26953.png
-illustrator:
+illustrator: 5ban Graphics
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '26953'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: 戒めの祠
     variants_seen:
-    - normal
+      - normal
     rarity_code: UR

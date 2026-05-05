@@ -7,9 +7,9 @@ name_en: Whitney
 rarity_code: SR
 category: card
 image: https://den-cards.pokellector.com/258/Whitney.SM8.101.23540.png
-illustrator:
+illustrator: Sanosuke Sakuma
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '23540'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: アカネ
     variants_seen:
-    - normal
+      - normal
     rarity_code: SR

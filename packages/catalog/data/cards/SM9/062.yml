@@ -7,9 +7,9 @@ name_en: Dratini
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/260/Dratini.SM9.62.25495.png
-illustrator:
+illustrator: Midori Harada
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '25495'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ミニリュウ
     variants_seen:
-    - normal
+      - normal
     rarity_code: SR

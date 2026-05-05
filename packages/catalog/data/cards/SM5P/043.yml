@@ -3,13 +3,13 @@
 set_code: sm5p
 local_id: '043'
 name_ja: こだわりハチマキ
-name_en: Muscle Band
+name_en: Choice Band
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/238/Muscle-Band.SM5+.43.20037.png
-illustrator:
+illustrator: Eske Yoshinob
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '20037'

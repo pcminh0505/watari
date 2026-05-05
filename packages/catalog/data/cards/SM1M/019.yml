@@ -7,9 +7,9 @@ name_en: Charjabug
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/202/Charjabug.SM1M.19.13794.png
-illustrator:
+illustrator: Naoki Saito
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '13794'

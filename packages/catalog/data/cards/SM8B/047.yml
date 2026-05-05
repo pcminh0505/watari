@@ -3,13 +3,13 @@
 set_code: sm8b
 local_id: '047'
 name_ja: ルナアーラ◇
-name_en: Lunala Prism Star
-rarity_code: R
+name_en: Lunala ◇
+rarity_code: PR
 category: card
 image: https://den-cards.pokellector.com/241/Lunala-Prism-Star.SM8B.47.24845.png
-illustrator:
+illustrator: Hitoshi Ariga
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '24845'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ルナアーラ◇
     variants_seen:
-    - normal
+      - normal
     rarity_code: R

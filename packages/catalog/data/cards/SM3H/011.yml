@@ -3,13 +3,13 @@
 set_code: sm3h
 local_id: '011'
 name_ja: リザードンGX
-name_en: Charizard GX
+name_en: Charizard-GX
 rarity_code: RR
 category: card
 image: https://den-cards.pokellector.com/219/Charizard-GX.SM3H.11.18109.png
-illustrator:
+illustrator: 5ban Graphics
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '18109'

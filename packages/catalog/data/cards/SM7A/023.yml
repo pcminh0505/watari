@@ -7,9 +7,9 @@ name_en: Brionne
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/243/Brionne.SM7A.23.22403.png
-illustrator:
+illustrator: Atsuko Nishida
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '22403'

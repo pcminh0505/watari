@@ -3,13 +3,13 @@
 set_code: sm12a
 local_id: '100'
 name_ja: レックウザGX
-name_en: Rayquaza GX
+name_en: Rayquaza-GX
 rarity_code: RR
 category: card
 image: https://den-cards.pokellector.com/288/Rayquaza-GX.SM12A.100.30447.png
-illustrator:
+illustrator: 5ban Graphics
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '30447'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: レックウザGX
     variants_seen:
-    - normal
+      - normal
     rarity_code: RR

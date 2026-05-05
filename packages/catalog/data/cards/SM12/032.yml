@@ -7,9 +7,9 @@ name_en: Golurk
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/281/Golurk.SM12.32.29755.png
-illustrator:
+illustrator: Ayaka Yoshida
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '29755'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ゴルーグ
     variants_seen:
-    - normal
+      - normal
     rarity_code: U

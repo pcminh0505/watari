@@ -7,9 +7,9 @@ name_en: Diancie
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/228/Diancie.SM4+.74.19638.png
-illustrator:
+illustrator: TOKIYA
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '19638'

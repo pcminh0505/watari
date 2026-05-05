@@ -7,9 +7,9 @@ name_en: Red's Challenge
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/288/Reds-Challenge.SM12A.159.30502.png
-illustrator:
+illustrator: Megumi Mizutani
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '30502'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: レッドの挑戦(ミラー)
     variants_seen:
-    - normal
+      - normal
     rarity_code: C

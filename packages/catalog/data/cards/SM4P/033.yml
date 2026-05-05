@@ -3,13 +3,13 @@
 set_code: sm4p
 local_id: '033'
 name_ja: デンジュモクGX
-name_en: Xurkitree GX
+name_en: Xurkitree-GX
 rarity_code: RR
 category: card
 image: https://den-cards.pokellector.com/228/Xurkitree-GX.SM4+.33.19475.png
-illustrator:
+illustrator: 5ban Graphics
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '19475'

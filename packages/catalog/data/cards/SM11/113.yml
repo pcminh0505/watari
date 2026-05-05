@@ -7,9 +7,9 @@ name_en: Cherish Ball
 rarity_code: UR
 category: card
 image: https://den-cards.pokellector.com/277/Cherish-Ball.SM11.113.28902.png
-illustrator:
+illustrator: 5ban Graphics
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '28902'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: プレシャスボール
     variants_seen:
-    - normal
+      - normal
     rarity_code: UR

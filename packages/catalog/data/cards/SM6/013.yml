@@ -7,9 +7,9 @@ name_en: Braixen
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/235/Braixen.SM6.13.20457.png
-illustrator:
+illustrator: Kagemaru Himeno
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '20457'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: シードラ
     variants_seen:
-    - normal
+      - normal
     rarity_code: R

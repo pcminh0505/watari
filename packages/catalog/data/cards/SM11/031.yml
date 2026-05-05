@@ -7,9 +7,9 @@ name_en: Exeggutor
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/277/Exeggutor.SM11.31.28749.png
-illustrator:
+illustrator: kirisAki
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '28749'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ズガドーン
     variants_seen:
-    - normal
+      - normal
     rarity_code: R

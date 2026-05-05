@@ -3,13 +3,13 @@
 set_code: sm9
 local_id: '060'
 name_ja: ラティアス＆ラティオスGX
-name_en: Latios & Latias GX
-rarity_code: SR
+name_en: Latias & Latios-GX
+rarity_code: RR
 category: card
 image: https://den-cards.pokellector.com/260/Latios-Latias-GX.SM9.60.25436.png
-illustrator:
+illustrator: Mitsuhiro Arita
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '25436'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ラティアス＆ラティオスGX
     variants_seen:
-    - normal
+      - normal
     rarity_code: SR

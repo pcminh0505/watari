@@ -4,12 +4,12 @@ set_code: sm10b
 local_id: '053'
 name_ja: リーリエ
 name_en: Lillie
-rarity_code: R
+rarity_code: TR
 category: card
 image: https://den-cards.pokellector.com/268/Lillie.SM10B.53.27694.png
-illustrator:
+illustrator: Mana Ibe
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '27694'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: リーリエ
     variants_seen:
-    - normal
+      - normal
     rarity_code: TR

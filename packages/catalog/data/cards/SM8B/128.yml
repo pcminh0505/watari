@@ -7,9 +7,9 @@ name_en: Acerola
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/241/Acerola.SM8B.128.24415.png
-illustrator:
+illustrator: Ken Sugimori
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '24415'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: アセロラ(ミラー/ハイクラスパック仕様)
     variants_seen:
-    - normal
+      - normal
     rarity_code: C

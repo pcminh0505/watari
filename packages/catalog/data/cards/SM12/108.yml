@@ -7,9 +7,9 @@ name_en: Red & Blue
 rarity_code: SR
 category: card
 image: https://den-cards.pokellector.com/281/Red-Blue.SM12.108.30157.png
-illustrator:
+illustrator: Hitoshi Ariga
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '30157'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: レッド＆グリーン
     variants_seen:
-    - normal
+      - normal
     rarity_code: SR

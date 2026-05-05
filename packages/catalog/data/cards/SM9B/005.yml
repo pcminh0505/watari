@@ -7,9 +7,9 @@ name_en: Tangela
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/263/Tangela.SM9B.5.26422.png
-illustrator:
+illustrator: Naoyo Kimura
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '26422'

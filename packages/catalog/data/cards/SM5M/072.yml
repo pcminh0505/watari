@@ -4,12 +4,12 @@ set_code: sm5m
 local_id: '072'
 name_ja: Looker
 name_en: Looker
-rarity_code: UR
+rarity_code: SR
 category: card
 image: https://den-cards.pokellector.com/233/Looker.SM5M.72.19910.png
-illustrator:
+illustrator: Hitoshi Ariga
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '19910'

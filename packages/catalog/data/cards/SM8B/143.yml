@@ -7,9 +7,9 @@ name_en: Ultra Space
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/241/Ultra-Space.SM8B.143.24922.png
-illustrator:
+illustrator: 5ban Graphics
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '24922'

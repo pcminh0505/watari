@@ -3,13 +3,13 @@
 set_code: sm12a
 local_id: '144'
 name_ja: アカギ◇
-name_en: Cyrus Prism Star
-rarity_code: R
+name_en: Cyrus ◇
+rarity_code: PR
 category: card
 image: https://den-cards.pokellector.com/288/Cyrus-Prism-Star.SM12A.144.30489.png
-illustrator:
+illustrator: Masakazu Fukuda
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '30489'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: アカギ◇
     variants_seen:
-    - normal
+      - normal
     rarity_code: R

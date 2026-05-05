@@ -7,9 +7,9 @@ name_en: Lickitung
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/262/Lickitung.SM9A.41.25619.png
-illustrator:
+illustrator: Yukiko Baba
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '25619'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ベロリンガ
     variants_seen:
-    - normal
+      - normal
     rarity_code: C

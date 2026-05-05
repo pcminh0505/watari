@@ -7,9 +7,9 @@ name_en: Flabébé
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/281/Flabeacutebeacute.SM12.58.30095.png
-illustrator:
+illustrator: tetsuya koizumi
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '30095'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: フラベベ
     variants_seen:
-    - normal
+      - normal
     rarity_code: R

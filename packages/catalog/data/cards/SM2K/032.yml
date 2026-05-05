@@ -7,9 +7,9 @@ name_en: Barboach
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/211/Barboach.SM2K.32.17342.png
-illustrator:
+illustrator: sui
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '17342'

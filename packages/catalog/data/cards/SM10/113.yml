@@ -3,13 +3,13 @@
 set_code: sm10
 local_id: '113'
 name_ja: ペルシアンGX
-name_en: Persian GX
+name_en: Persian-GX
 rarity_code: HR
 category: card
 image: https://den-cards.pokellector.com/266/Persian-GX.SM10.113.26960.png
-illustrator:
+illustrator: 5ban Graphics
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '26960'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ペルシアンGX
     variants_seen:
-    - normal
+      - normal
     rarity_code: HR

@@ -7,9 +7,9 @@ name_en: Sandile
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/266/Sandile.SM10.58.26915.png
-illustrator:
+illustrator: Yuka Morii
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '26915'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: メグロコ
     variants_seen:
-    - normal
+      - normal
     rarity_code: SR

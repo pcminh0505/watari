@@ -3,13 +3,13 @@
 set_code: sm5s
 local_id: '069'
 name_ja: ディアルガGX
-name_en: Dialga GX
-rarity_code: UR
+name_en: Dialga-GX
+rarity_code: SR
 category: card
 image: https://den-cards.pokellector.com/232/Arceus-GX.SM5S.69.20010.png
-illustrator:
+illustrator: 5ban Graphics
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '20010'

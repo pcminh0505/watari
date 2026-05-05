@@ -7,9 +7,9 @@ name_en: Vigoroth
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/277/Vigoroth.SM11.75.28838.png
-illustrator:
+illustrator: Midori Harada
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '28838'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ヤルキモノ
     variants_seen:
-    - normal
+      - normal
     rarity_code: UR

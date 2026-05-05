@@ -7,9 +7,9 @@ name_en: Great Ball
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/224/Great-Ball.SM3+.61.18325.png
-illustrator:
+illustrator: Ryo Ueda
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '18325'

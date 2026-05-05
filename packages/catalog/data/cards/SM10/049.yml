@@ -7,9 +7,9 @@ name_en: Rhydon
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/266/Rhydon.SM10.49.26908.png
-illustrator:
+illustrator: kirisAki
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '26908'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: サイドン
     variants_seen:
-    - normal
+      - normal
     rarity_code: U

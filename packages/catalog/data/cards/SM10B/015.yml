@@ -7,9 +7,9 @@ name_en: Froslass
 rarity_code: R
 category: card
 image: https://den-cards.pokellector.com/268/Froslass.SM10B.15.27660.png
-illustrator:
+illustrator: Mizue
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '27660'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ユキメノコ
     variants_seen:
-    - normal
+      - normal
     rarity_code: R

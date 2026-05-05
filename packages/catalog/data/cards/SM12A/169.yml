@@ -3,13 +3,13 @@
 set_code: sm12a
 local_id: '169'
 name_ja: ワンダーラビリンス◇
-name_en: Wondrous Labyrinth
-rarity_code: C
+name_en: Wondrous Labyrinth ◇
+rarity_code: PR
 category: card
 image: https://den-cards.pokellector.com/288/Wondrous-Labyrinth.SM12A.169.30512.png
-illustrator:
+illustrator: 5ban Graphics
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '30512'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ワンダーラビリンス◇
     variants_seen:
-    - normal
+      - normal
     rarity_code: R

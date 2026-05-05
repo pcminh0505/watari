@@ -3,13 +3,13 @@
 set_code: sm6a
 local_id: '063'
 name_ja: ホワイトキュレムGX
-name_en: White Kyurem GX
-rarity_code: UR
+name_en: White Kyurem-GX
+rarity_code: HR
 category: card
 image: https://den-cards.pokellector.com/236/White-Kyurem-GX.SM6A.63.20688.png
-illustrator:
+illustrator: 5ban Graphics
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '20688'

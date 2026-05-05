@@ -3,13 +3,13 @@
 set_code: sm11a
 local_id: '077'
 name_ja: アローラペルシアンGX
-name_en: Alolan Persian GX
+name_en: Alolan Persian-GX
 rarity_code: HR
 category: card
 image: https://den-cards.pokellector.com/272/Alolan-Persian-GX.SM11A.77.29026.png
-illustrator:
+illustrator: PLANETA Tsuji
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '29026'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: アローラペルシアンGX
     variants_seen:
-    - normal
+      - normal
     rarity_code: HR

@@ -7,9 +7,9 @@ name_en: Lucario
 rarity_code: R
 category: card
 image: https://den-cards.pokellector.com/263/Lucario.SM9B.35.26446.png
-illustrator:
+illustrator: Midori Harada
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '26446'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ルカリオ
     variants_seen:
-    - normal
+      - normal
     rarity_code: R

@@ -3,13 +3,13 @@
 set_code: sm6b
 local_id: '081'
 name_ja: ジュペッタGX
-name_en: Banette GX
-rarity_code: UR
+name_en: Banette-GX
+rarity_code: HR
 category: card
 image: https://den-cards.pokellector.com/237/Banette-GX.SM6B.81.20932.png
-illustrator:
+illustrator: 5ban Graphics
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '20932'

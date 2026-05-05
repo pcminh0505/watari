@@ -3,13 +3,13 @@
 set_code: sm12a
 local_id: '213'
 name_ja: オーロット＆ヨノワールGX
-name_en: Trevenant & Dusknoir GX
+name_en: Trevenant & Dusknoir-GX
 rarity_code: HR
 category: card
 image: https://den-cards.pokellector.com/288/Trevenant-Dusknoir-GX.SM12A.213.30551.png
-illustrator:
+illustrator: 5ban Graphics
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '30551'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: オーロット＆ヨノワールGX
     variants_seen:
-    - normal
+      - normal
     rarity_code: HR

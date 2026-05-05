@@ -7,9 +7,9 @@ name_en: Lady
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/235/Lady.SM6.85.20462.png
-illustrator:
+illustrator: Yusuke Ohmura
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '20462'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ポケナビ
     variants_seen:
-    - normal
+      - normal
     rarity_code: UR

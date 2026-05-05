@@ -3,13 +3,13 @@
 set_code: sm2l
 local_id: '059'
 name_ja: メタグロスGX
-name_en: Metagross GX
-rarity_code: UR
+name_en: Metagross-GX
+rarity_code: HR
 category: card
 image: https://den-cards.pokellector.com/210/Metagross-GX.SM2L.59.17318.png
-illustrator:
+illustrator: 5ban Graphics
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '17318'

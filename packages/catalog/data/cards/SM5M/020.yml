@@ -7,9 +7,9 @@ name_en: Luxray
 rarity_code: R
 category: card
 image: https://den-cards.pokellector.com/233/Luxray.SM5M.20.19859.png
-illustrator:
+illustrator: Akira Komayama
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '19859'

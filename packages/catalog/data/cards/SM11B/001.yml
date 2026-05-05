@@ -7,9 +7,9 @@ name_en: Oddish
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/278/Oddish.SM11B.1.29291.png
-illustrator:
+illustrator: Yumi
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '29291'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ナゾノクサ
     variants_seen:
-    - normal
+      - normal
     rarity_code: C

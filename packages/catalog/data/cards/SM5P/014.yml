@@ -7,9 +7,9 @@ name_en: Magneton
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/238/Magneton.SM5+.14.20082.png
-illustrator:
+illustrator: kirisAki
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '20082'

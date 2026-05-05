@@ -3,13 +3,13 @@
 set_code: sm9
 local_id: '082'
 name_ja: ポケモン通信
-name_en: Pok&eacute;mon Communication
+name_en: Pokémon Communication
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/260/Pokeacutemon-Communication.SM9.82.25509.png
-illustrator:
+illustrator: Ayaka Yoshida
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '25509'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ポケモン通信
     variants_seen:
-    - normal
+      - normal
     rarity_code: U

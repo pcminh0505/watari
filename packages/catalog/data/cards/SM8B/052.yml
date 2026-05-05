@@ -3,13 +3,13 @@
 set_code: sm8b
 local_id: '052'
 name_ja: アーゴヨンGX
-name_en: Naganadel GX
+name_en: Naganadel-GX
 rarity_code: RR
 category: card
 image: https://den-cards.pokellector.com/241/Naganadel-GX.SM8B.52.24398.png
-illustrator:
+illustrator: 5ban Graphics
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '24398'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: アーゴヨンGX
     variants_seen:
-    - normal
+      - normal
     rarity_code: RR

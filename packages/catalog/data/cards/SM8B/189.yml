@@ -4,12 +4,12 @@ set_code: sm8b
 local_id: '189'
 name_ja: ジバコイル
 name_en: Magnezone
-rarity_code: SR
+rarity_code: S
 category: card
 image: https://den-cards.pokellector.com/241/Magnezone.SM8B.189.25273.png
-illustrator:
+illustrator: Misa Tsutsui
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '25273'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ジバコイル
     variants_seen:
-    - normal
+      - normal
     rarity_code: SR

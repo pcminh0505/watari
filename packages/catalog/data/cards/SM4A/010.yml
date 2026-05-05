@@ -7,9 +7,9 @@ name_en: Piloswine
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/227/Piloswine.SM4A.10.19409.png
-illustrator:
+illustrator: Kouki Saitou
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '19409'

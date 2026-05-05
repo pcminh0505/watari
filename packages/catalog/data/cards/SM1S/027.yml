@@ -7,9 +7,9 @@ name_en: Cosmog
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/201/Cosmog.SM1S.27.13496.png
-illustrator:
+illustrator: Megumi Mizutani
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '13496'

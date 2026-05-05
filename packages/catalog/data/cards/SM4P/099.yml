@@ -3,13 +3,13 @@
 set_code: sm4p
 local_id: '099'
 name_ja: エレクトロメモリ
-name_en: Electro Memory
+name_en: Electric Memory
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/228/Electro-Memory.SM4+.99.19575.png
-illustrator:
+illustrator: 5ban Graphics
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '19575'

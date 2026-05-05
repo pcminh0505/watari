@@ -7,9 +7,9 @@ name_en: Decidueye
 rarity_code: R
 category: card
 image: https://den-cards.pokellector.com/281/Decidueye.SM12.10.29652.png
-illustrator:
+illustrator: kawayoo
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '29652'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ジュナイパー
     variants_seen:
-    - normal
+      - normal
     rarity_code: RR

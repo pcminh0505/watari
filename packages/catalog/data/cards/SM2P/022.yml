@@ -7,9 +7,9 @@ name_en: Slowpoke
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/212/Slowpoke.SM2+.22.17484.png
-illustrator:
+illustrator: Mina Nakai
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '17484'

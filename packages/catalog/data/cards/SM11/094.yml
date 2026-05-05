@@ -4,12 +4,12 @@ set_code: sm11
 local_id: '094'
 name_ja: かんこうきゃく
 name_en: Sightseer
-rarity_code: R
+rarity_code: TR
 category: card
 image: https://den-cards.pokellector.com/277/Sightseer.SM11.94.28771.png
-illustrator:
+illustrator: Naoki Saito
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '28771'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: かんこうきゃく
     variants_seen:
-    - normal
+      - normal
     rarity_code: TR

@@ -7,9 +7,9 @@ name_en: Heatran
 rarity_code: R
 category: card
 image: https://den-cards.pokellector.com/232/Heatran.SM5S.42.19992.png
-illustrator:
+illustrator: tetsuya koizumi
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '19992'

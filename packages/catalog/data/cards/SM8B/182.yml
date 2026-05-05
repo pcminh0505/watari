@@ -4,12 +4,12 @@ set_code: sm8b
 local_id: '182'
 name_ja: ルカリオ
 name_en: Lucario
-rarity_code: SR
+rarity_code: S
 category: card
 image: https://den-cards.pokellector.com/241/Lucario.SM8B.182.25300.png
-illustrator:
+illustrator: Kouki Saitou
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '25300'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ルカリオ
     variants_seen:
-    - normal
+      - normal
     rarity_code: SR

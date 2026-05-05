@@ -3,13 +3,13 @@
 set_code: sm3n
 local_id: '033'
 name_ja: マーシャドーGX
-name_en: Marshadow GX
+name_en: Marshadow-GX
 rarity_code: RR
 category: card
 image: https://den-cards.pokellector.com/218/Marshadow-GX.SM3N.33.18146.png
-illustrator:
+illustrator: 5ban Graphics
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '18146'

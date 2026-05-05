@@ -7,9 +7,9 @@ name_en: Island Challenge Amulet
 rarity_code: UR
 category: card
 image: https://den-cards.pokellector.com/281/Island-Challenge-Amulet.SM12.116.30165.png
-illustrator:
+illustrator: sadaji
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '30165'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: しまめぐりのあかし
     variants_seen:
-    - normal
+      - normal
     rarity_code: UR

@@ -4,12 +4,12 @@ set_code: sm1m
 local_id: '065'
 name_ja: チームのスカルイサキ
 name_en: Team Skull Grunt
-rarity_code: UR
+rarity_code: SR
 category: card
 image: https://den-cards.pokellector.com/202/Team-Skull-Grunt.SM1M.65.13829.png
-illustrator:
+illustrator: Sanosuke Sakuma
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '13829'

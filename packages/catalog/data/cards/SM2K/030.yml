@@ -7,9 +7,9 @@ name_en: Machamp
 rarity_code: R
 category: card
 image: https://den-cards.pokellector.com/211/Machamp.SM2K.30.17261.png
-illustrator:
+illustrator: Hitoshi Ariga
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '17261'

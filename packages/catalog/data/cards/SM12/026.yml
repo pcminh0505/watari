@@ -7,9 +7,9 @@ name_en: Chinchou
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/281/Chinchou.SM12.26.30071.png
-illustrator:
+illustrator: Sekio
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '30071'

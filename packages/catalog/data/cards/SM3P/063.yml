@@ -7,9 +7,9 @@ name_en: Damage Mover
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/224/Damage-Mover.SM3+.63.18247.png
-illustrator:
+illustrator: Toyste Beach
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '18247'

@@ -3,13 +3,13 @@
 set_code: sm12a
 local_id: '011'
 name_ja: シェイミ◇
-name_en: Shaymin Prism Star
-rarity_code: R
+name_en: Shaymin ◇
+rarity_code: PR
 category: card
 image: https://den-cards.pokellector.com/288/Shaymin-Prism-Star.SM12A.11.30374.png
-illustrator:
+illustrator: kawayoo
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '30374'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: シェイミ◇
     variants_seen:
-    - normal
+      - normal
     rarity_code: R

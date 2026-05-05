@@ -7,9 +7,9 @@ name_en: Pokémon Communication
 rarity_code: UR
 category: card
 image: https://den-cards.pokellector.com/260/Pokmon-Communication.SM9.116.25551.png
-illustrator:
+illustrator: Ayaka Yoshida
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '25551'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ポケモン通信
     variants_seen:
-    - normal
+      - normal
     rarity_code: UR

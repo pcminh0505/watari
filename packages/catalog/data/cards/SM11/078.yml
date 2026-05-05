@@ -7,9 +7,9 @@ name_en: Gumshoos
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/277/Gumshoos.SM11.78.28840.png
-illustrator:
+illustrator: Midori Harada
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '28840'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: グレートキャッチャー
     variants_seen:
-    - normal
+      - normal
     rarity_code: UR

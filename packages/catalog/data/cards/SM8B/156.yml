@@ -7,9 +7,9 @@ name_en: Hiker
 rarity_code: SR
 category: card
 image: https://den-cards.pokellector.com/241/Hiker.SM8B.156.25272.png
-illustrator:
+illustrator: Naoki Saito
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '25272'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: やまおとこ
     variants_seen:
-    - normal
+      - normal
     rarity_code: SR

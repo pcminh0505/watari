@@ -7,9 +7,9 @@ name_en: Floatzel
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/224/Floatzel.SM3+.24.18301.png
-illustrator:
+illustrator: Suwama Chiaki
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '18301'

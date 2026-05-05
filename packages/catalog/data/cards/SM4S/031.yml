@@ -7,9 +7,9 @@ name_en: Mawile
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/226/Mawile.SM4S.31.19382.png
-illustrator:
+illustrator: tetsuya koizumi
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '19382'

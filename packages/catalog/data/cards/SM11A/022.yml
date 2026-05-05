@@ -3,13 +3,13 @@
 set_code: sm11a
 local_id: '022'
 name_ja: フィオネ
-name_en: Manaphy
+name_en: Phione
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/272/Manaphy.SM11A.22.28937.png
-illustrator:
+illustrator: AKIRA EGAWA
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '28937'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: フィオネ
     variants_seen:
-    - normal
+      - normal
     rarity_code: U

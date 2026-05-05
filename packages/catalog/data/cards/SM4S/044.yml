@@ -7,9 +7,9 @@ name_en: 'Type: Null'
 rarity_code: R
 category: card
 image: https://den-cards.pokellector.com/226/Type-Null.SM4S.44.19315.png
-illustrator:
+illustrator: Hitoshi Ariga
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '19315'

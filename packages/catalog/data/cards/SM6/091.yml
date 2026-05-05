@@ -4,12 +4,12 @@ set_code: sm6
 local_id: '091'
 name_ja: リーリエ
 name_en: Lillie
-rarity_code: C
+rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/235/Lillie.SM6.91.20541.png
-illustrator:
+illustrator: Ken Sugimori
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '20541'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: リーリエ
     variants_seen:
-    - normal
+      - normal
     rarity_code: U

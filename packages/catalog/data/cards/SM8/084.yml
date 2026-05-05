@@ -7,9 +7,9 @@ name_en: Choice Band
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/258/Choice-Band.SM8.84.23307.png
-illustrator:
+illustrator: Eske Yoshinob
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '23307'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: こだわりハチマキ
     variants_seen:
-    - normal
+      - normal
     rarity_code: U

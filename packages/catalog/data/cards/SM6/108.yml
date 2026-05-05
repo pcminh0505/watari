@@ -7,9 +7,9 @@ name_en: Eneporter
 rarity_code: UR
 category: card
 image: https://den-cards.pokellector.com/235/Eneporter.SM6.108.20555.png
-illustrator:
+illustrator: Toyste Beach
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '20555'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: エネポーター
     variants_seen:
-    - normal
+      - normal
     rarity_code: UR

@@ -7,9 +7,9 @@ name_en: Snubbull
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/258/Snubbull.SM8.64.23288.png
-illustrator:
+illustrator: Akira Komayama
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '23288'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ブルー
     variants_seen:
-    - normal
+      - normal
     rarity_code: RR

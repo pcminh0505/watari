@@ -3,13 +3,13 @@
 set_code: sm8
 local_id: '106'
 name_ja: スイクンGX
-name_en: Suicune GX
+name_en: Suicune-GX
 rarity_code: HR
 category: card
 image: https://den-cards.pokellector.com/258/Suicune-GX.SM8.106.23610.png
-illustrator:
+illustrator: 5ban Graphics
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '23610'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: スイクンGX
     variants_seen:
-    - normal
+      - normal
     rarity_code: HR

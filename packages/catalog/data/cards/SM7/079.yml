@@ -3,13 +3,13 @@
 set_code: sm7
 local_id: '079'
 name_ja: ギリギリポーション
-name_en: Bare Potion
+name_en: Last Chance Potion
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/242/Bare-Potion.SM7.79.21032.png
-illustrator:
+illustrator: Ayaka Yoshida
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '21032'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ギリギリポーション
     variants_seen:
-    - normal
+      - normal
     rarity_code: U

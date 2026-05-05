@@ -7,9 +7,9 @@ name_en: Metagross
 rarity_code: R
 category: card
 image: https://den-cards.pokellector.com/242/Metagross.SM7.55.21016.png
-illustrator:
+illustrator: TOKIYA
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '21016'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: カヒリ
     variants_seen:
-    - normal
+      - normal
     rarity_code: SR

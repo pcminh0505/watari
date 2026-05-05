@@ -3,13 +3,13 @@
 set_code: sm4a
 local_id: '046'
 name_ja: ダッシュポーチ
-name_en: Dash Pouch
+name_en: Dashing Pouch
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/227/Dash-Pouch.SM4A.46.18599.png
-illustrator:
+illustrator: Eske Yoshinob
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '18599'

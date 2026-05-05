@@ -4,12 +4,12 @@ set_code: sm5p
 local_id: '055'
 name_ja: Ultra Recon Squad
 name_en: Ultra Recon Squad
-rarity_code: UR
+rarity_code: SR
 category: card
 image: https://den-cards.pokellector.com/238/Ultra-Recon-Squad.SM5+.55.20063.png
-illustrator:
+illustrator: Megumi Mizutani
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '20063'

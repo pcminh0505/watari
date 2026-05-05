@@ -7,9 +7,9 @@ name_en: Honedge
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/277/Honedge.SM11.39.28810.png
-illustrator:
+illustrator: Suwama Chiaki
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '28810'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ヒトツキ
     variants_seen:
-    - normal
+      - normal
     rarity_code: R

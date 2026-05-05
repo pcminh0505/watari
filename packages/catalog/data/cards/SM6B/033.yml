@@ -7,9 +7,9 @@ name_en: Phanpy
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/237/Phanpy.SM6B.33.20894.png
-illustrator:
+illustrator: Ken Sugimori
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '20894'

@@ -4,12 +4,12 @@ set_code: sm9a
 local_id: '054'
 name_ja: まんたんのくすり
 name_en: Max Potion
-rarity_code: R
+rarity_code: TR
 category: card
 image: https://den-cards.pokellector.com/262/Max-Potion.SM9A.54.25631.png
-illustrator:
+illustrator: Toyste Beach
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '25631'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: まんたんのくすり
     variants_seen:
-    - normal
+      - normal
     rarity_code: TR

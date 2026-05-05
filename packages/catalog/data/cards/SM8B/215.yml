@@ -3,13 +3,13 @@
 set_code: sm8b
 local_id: '215'
 name_ja: グレイシアGX
-name_en: Glaceon GX
-rarity_code: SR
+name_en: Glaceon-GX
+rarity_code: SSR
 category: card
 image: https://den-cards.pokellector.com/241/Glaceon-GX.SM8B.215.25269.png
-illustrator:
+illustrator: 5ban Graphics
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '25269'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: グレイシアGX
     variants_seen:
-    - normal
+      - normal
     rarity_code: SR

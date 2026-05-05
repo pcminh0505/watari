@@ -7,9 +7,9 @@ name_en: Fossil Excavation Map
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/235/Fossil-Excavation-Map.SM6.77.20445.png
-illustrator:
+illustrator: Yoshinobu Saito
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '20445'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: モノマネむすめ
     variants_seen:
-    - normal
+      - normal
     rarity_code: SR

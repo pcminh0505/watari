@@ -7,9 +7,9 @@ name_en: Choice Band
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/243/Choice-Band.SM7A.54.21720.png
-illustrator:
+illustrator: Eske Yoshinob
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '21720'

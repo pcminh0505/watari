@@ -7,9 +7,9 @@ name_en: Steelix
 rarity_code: CHR
 category: card
 image: https://den-cards.pokellector.com/278/Steelix.SM11B.60.29326.png
-illustrator:
+illustrator: Avec Yoko
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '29326'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ハガネール
     variants_seen:
-    - normal
+      - normal
     rarity_code: CHR

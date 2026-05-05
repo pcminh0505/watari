@@ -7,9 +7,9 @@ name_en: Oranguru
 rarity_code: R
 category: card
 image: https://den-cards.pokellector.com/202/Oranguru.SM1M.52.13821.png
-illustrator:
+illustrator: Mitsuhiro Arita
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '13821'

@@ -3,13 +3,13 @@
 set_code: sm4a
 local_id: '022'
 name_ja: ウツロイドGX
-name_en: Nihilego GX
+name_en: Nihilego-GX
 rarity_code: RR
 category: card
 image: https://den-cards.pokellector.com/227/Nihilego-GX.SM4A.22.18612.png
-illustrator:
+illustrator: 5ban Graphics
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '18612'

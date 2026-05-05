@@ -7,9 +7,9 @@ name_en: Charmeleon
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/219/Charmeleon.SM3H.10.18164.png
-illustrator:
+illustrator: kawayoo
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '18164'

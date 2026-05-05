@@ -7,9 +7,9 @@ name_en: Garchomp
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/238/Garchomp.SM5+.28.20061.png
-illustrator:
+illustrator: Megumi Mizutani
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '20061'

@@ -7,9 +7,9 @@ name_en: Trumbeak
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/288/Trumbeak.SM12A.117.30463.png
-illustrator:
+illustrator: Shin Nagasawa
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '30463'

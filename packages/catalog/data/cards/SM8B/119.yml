@@ -3,13 +3,13 @@
 set_code: sm8b
 local_id: '119'
 name_ja: ミステリートレジャー
-name_en: Mystery Treasure
+name_en: Mysterious Treasure
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/241/Mystery-Treasure.SM8B.119.24412.png
-illustrator:
+illustrator: Eske Yoshinob
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '24412'

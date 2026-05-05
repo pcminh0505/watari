@@ -3,13 +3,13 @@
 set_code: sm2k
 local_id: '013'
 name_ja: アローラキュウコンGX
-name_en: Alolan Ninetales GX
+name_en: Alolan Ninetales-GX
 rarity_code: RR
 category: card
 image: https://den-cards.pokellector.com/211/Alolan-Ninetales-GC.SM2K.13.17254.png
-illustrator:
+illustrator: 5ban Graphics
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '17254'

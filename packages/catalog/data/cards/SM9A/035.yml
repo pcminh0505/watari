@@ -7,9 +7,9 @@ name_en: Togetic
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/262/Togetic.SM9A.35.25613.png
-illustrator:
+illustrator: sui
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '25613'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: トゲチック
     variants_seen:
-    - normal
+      - normal
     rarity_code: C

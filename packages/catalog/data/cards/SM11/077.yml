@@ -7,9 +7,9 @@ name_en: Yungoos
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/277/Yungoos.SM11.77.28839.png
-illustrator:
+illustrator: Shigenori Negishi
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '28839'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: アローラペルシアンGX
     variants_seen:
-    - normal
+      - normal
     rarity_code: HR

@@ -7,9 +7,9 @@ name_en: Alolan Muk
 rarity_code: R
 category: card
 image: https://den-cards.pokellector.com/202/Alolan-Muk.SM1M.23.13796.png
-illustrator:
+illustrator: Hitoshi Ariga
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '13796'

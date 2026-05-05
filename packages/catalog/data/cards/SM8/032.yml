@@ -7,9 +7,9 @@ name_en: Lanturn
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/258/Lanturn.SM8.32.23257.png
-illustrator:
+illustrator: Ken Sugimori
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '23257'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ガオガエンGX
     variants_seen:
-    - normal
+      - normal
     rarity_code: RR

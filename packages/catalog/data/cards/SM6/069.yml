@@ -3,13 +3,13 @@
 set_code: sm6
 local_id: '069'
 name_ja: バリヤードGX
-name_en: Ultra Necrozma GX
-rarity_code: SR
+name_en: Ultra Necrozma-GX
+rarity_code: RR
 category: card
 image: https://den-cards.pokellector.com/235/Ultra-Necrozma-GX.SM6.69.20068.png
-illustrator:
+illustrator: PLANETA Otani
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '20068'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: バリヤードGX
     variants_seen:
-    - normal
+      - normal
     rarity_code: SR

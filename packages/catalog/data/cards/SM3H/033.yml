@@ -3,13 +3,13 @@
 set_code: sm3h
 local_id: '033'
 name_ja: アローラベトベトンGX
-name_en: Alolan Muk GX
+name_en: Alolan Muk-GX
 rarity_code: RR
 category: card
 image: https://den-cards.pokellector.com/219/Alolan-Muk-GX.SM3H.33.18180.png
-illustrator:
+illustrator: 5ban Graphics
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '18180'

@@ -3,13 +3,13 @@
 set_code: sm8b
 local_id: '098'
 name_ja: レックウザGX
-name_en: Rayquaza GX
+name_en: Rayquaza-GX
 rarity_code: RR
 category: card
 image: https://den-cards.pokellector.com/241/Rayquaza-GX.SM8B.98.24392.png
-illustrator:
+illustrator: 5ban Graphics
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '24392'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: レックウザGX
     variants_seen:
-    - normal
+      - normal
     rarity_code: RR

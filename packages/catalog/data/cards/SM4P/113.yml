@@ -7,9 +7,9 @@ name_en: Altar of the Sunne
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/228/Altar-of-the-Sunne.SM4+.113.19667.png
-illustrator:
+illustrator: 5ban Graphics
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '19667'

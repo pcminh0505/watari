@@ -7,9 +7,9 @@ name_en: Tapu Lele
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/212/Tapu-Lele.SM2+.26.17451.png
-illustrator:
+illustrator: You Iribi
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '17451'

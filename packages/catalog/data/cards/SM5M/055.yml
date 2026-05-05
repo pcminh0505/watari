@@ -3,13 +3,13 @@
 set_code: sm5m
 local_id: '055'
 name_ja: なぞの化石
-name_en: Mysterious Fossil
+name_en: Unidentified Fossil
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/233/Mysterious-Fossil.SM5M.55.19954.png
-illustrator:
+illustrator: Toyste Beach
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '19954'

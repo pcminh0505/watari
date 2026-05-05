@@ -7,9 +7,9 @@ name_en: Durant
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/243/Durant.SM7A.39.22412.png
-illustrator:
+illustrator: Ken Sugimori
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '22412'

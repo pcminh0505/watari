@@ -3,13 +3,13 @@
 set_code: sm6
 local_id: '057'
 name_ja: フラベベ
-name_en: Flab&eacute;b&eacute;
+name_en: Flabébé
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/235/Flabeacutebeacute.SM6.57.20520.png
-illustrator:
+illustrator: kirisAki
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '20520'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: フラベベ
     variants_seen:
-    - normal
+      - normal
     rarity_code: SR

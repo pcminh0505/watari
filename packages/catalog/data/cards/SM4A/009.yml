@@ -7,9 +7,9 @@ name_en: Swinub
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/227/Swinub.SM4A.9.19408.png
-illustrator:
+illustrator: Eri Yamaki
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '19408'

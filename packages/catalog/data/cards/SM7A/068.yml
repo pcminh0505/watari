@@ -3,13 +3,13 @@
 set_code: sm7a
 local_id: '068'
 name_ja: マグカルゴGX
-name_en: Magcargo GX
-rarity_code: UR
+name_en: Magcargo-GX
+rarity_code: HR
 category: card
 image: https://den-cards.pokellector.com/243/Magcargo-GX.SM7A.68.22533.png
-illustrator:
+illustrator: 5ban Graphics
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '22533'

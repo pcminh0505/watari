@@ -7,9 +7,9 @@ name_en: Druddigon
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/236/Druddigon.SM6A.32.20581.png
-illustrator:
+illustrator: Mitsuhiro Arita
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '20581'

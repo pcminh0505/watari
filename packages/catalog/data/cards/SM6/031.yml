@@ -4,12 +4,12 @@ set_code: sm6
 local_id: '031'
 name_ja: チルタリス
 name_en: Meowstic
-rarity_code: C
+rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/235/Meowstic.SM6.31.20474.png
-illustrator:
+illustrator: '0313'
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '20474'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: チルタリス
     variants_seen:
-    - normal
+      - normal
     rarity_code: RR

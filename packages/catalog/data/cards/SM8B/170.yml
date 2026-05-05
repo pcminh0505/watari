@@ -4,12 +4,12 @@ set_code: sm8b
 local_id: '170'
 name_ja: ヌオー
 name_en: Quagsire
-rarity_code: SR
+rarity_code: S
 category: card
 image: https://den-cards.pokellector.com/241/Quagsire.SM8B.170.25292.png
-illustrator:
+illustrator: Saya Tsuruta
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '25292'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ヌオー
     variants_seen:
-    - normal
+      - normal
     rarity_code: SR

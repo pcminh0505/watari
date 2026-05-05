@@ -7,9 +7,9 @@ name_en: Giant Hearth
 rarity_code: UR
 category: card
 image: https://den-cards.pokellector.com/281/Giant-Hearth.SM12.117.30166.png
-illustrator:
+illustrator: 5ban Graphics
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '30166'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: 巨大なカマド
     variants_seen:
-    - normal
+      - normal
     rarity_code: UR

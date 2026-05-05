@@ -7,9 +7,9 @@ name_en: Alolan Diglett
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/232/Alolan-Diglett.SM5S.32.19985.png
-illustrator:
+illustrator: Naoyo Kimura
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '19985'

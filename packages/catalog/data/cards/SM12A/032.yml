@@ -7,9 +7,9 @@ name_en: Alolan Vulpix
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/288/Alolan-Vulpix.SM12A.32.30393.png
-illustrator:
+illustrator: Naoyo Kimura
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '30393'

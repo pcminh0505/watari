@@ -7,9 +7,9 @@ name_en: Spearow
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/263/Spearow.SM9B.39.26450.png
-illustrator:
+illustrator: tetsuya koizumi
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '26450'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: オニスズメ
     variants_seen:
-    - normal
+      - normal
     rarity_code: C

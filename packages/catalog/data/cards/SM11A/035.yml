@@ -7,9 +7,9 @@ name_en: Pangoro
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/272/Pangoro.SM11A.35.28981.png
-illustrator:
+illustrator: Shin Nagasawa
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '28981'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ゴロンダ
     variants_seen:
-    - normal
+      - normal
     rarity_code: C

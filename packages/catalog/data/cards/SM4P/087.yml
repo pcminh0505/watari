@@ -3,13 +3,13 @@
 set_code: sm4p
 local_id: '087'
 name_ja: ジジーロンGX
-name_en: Drampa GX
+name_en: Drampa-GX
 rarity_code: RR
 category: card
 image: https://den-cards.pokellector.com/228/Drampa-GX.SM4+.87.19477.png
-illustrator:
+illustrator: 5ban Graphics
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '19477'

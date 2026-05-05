@@ -7,9 +7,9 @@ name_en: Litwick
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/210/Litwick.SM2L.3.17270.png
-illustrator:
+illustrator: Mitsuhiro Arita
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '17270'

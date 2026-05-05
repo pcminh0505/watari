@@ -7,9 +7,9 @@ name_en: Magikarp
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/271/Magikarp.SMP2.10.28867.png
-illustrator:
+illustrator: Framestore
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '28867'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: コイキング
     variants_seen:
-    - normal
+      - normal
     rarity_code: C

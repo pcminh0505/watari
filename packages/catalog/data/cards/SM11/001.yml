@@ -7,9 +7,9 @@ name_en: Yanma
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/277/Yanma.SM11.1.28782.png
-illustrator:
+illustrator: Eri Yamaki
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '28782'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ヤンヤンマ
     variants_seen:
-    - normal
+      - normal
     rarity_code: RR

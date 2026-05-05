@@ -3,13 +3,13 @@
 set_code: sm4p
 local_id: '027'
 name_ja: カプ・レヒレGX
-name_en: Tapu Fini GX
+name_en: Tapu Fini-GX
 rarity_code: RR
 category: card
 image: https://den-cards.pokellector.com/228/Tapu-Fini-GX.SM4+.27.19602.png
-illustrator:
+illustrator: 5ban Graphics
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '19602'

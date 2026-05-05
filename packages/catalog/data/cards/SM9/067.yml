@@ -7,9 +7,9 @@ name_en: Pidgey
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/260/Pidgey.SM9.67.25426.png
-illustrator:
+illustrator: Shigenori Negishi
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '25426'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ポッポ
     variants_seen:
-    - normal
+      - normal
     rarity_code: UR

@@ -3,13 +3,13 @@
 set_code: sm10
 local_id: '108'
 name_ja: レシラム＆リザードンGX
-name_en: Charizard & Reshiram GX
+name_en: Reshiram & Charizard-GX
 rarity_code: HR
 category: card
 image: https://den-cards.pokellector.com/266/Charizard-Reshiram-GX.SM10.108.26951.png
-illustrator:
+illustrator: aky CG Works
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '26951'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: レシラム＆リザードンGX
     variants_seen:
-    - normal
+      - normal
     rarity_code: HR

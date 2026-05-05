@@ -7,9 +7,9 @@ name_en: Spinarak
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/258/Spinarak.SM8.6.23234.png
-illustrator:
+illustrator: Misa Tsutsui
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '23234'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: デンリュウGX
     variants_seen:
-    - normal
+      - normal
     rarity_code: RR

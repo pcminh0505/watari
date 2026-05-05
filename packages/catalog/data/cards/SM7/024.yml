@@ -7,9 +7,9 @@ name_en: Swampert
 rarity_code: R
 category: card
 image: https://den-cards.pokellector.com/242/Swampert.SM7.24.20965.png
-illustrator:
+illustrator: SATOSHI NAKAI
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '20965'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ラグラージ
     variants_seen:
-    - normal
+      - normal
     rarity_code: R

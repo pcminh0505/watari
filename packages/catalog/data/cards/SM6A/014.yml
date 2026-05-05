@@ -3,13 +3,13 @@
 set_code: sm6a
 local_id: '014'
 name_ja: キングドラGX
-name_en: Kingdra GX
+name_en: Kingdra-GX
 rarity_code: RR
 category: card
 image: https://den-cards.pokellector.com/236/Kingdra-GX.SM6A.14.20627.png
-illustrator:
+illustrator: 5ban Graphics
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '20627'

@@ -7,9 +7,9 @@ name_en: White Kyurem
 rarity_code: R
 category: card
 image: https://den-cards.pokellector.com/243/White-Kyurem.SM7A.21.22401.png
-illustrator:
+illustrator: Hitoshi Ariga
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '22401'

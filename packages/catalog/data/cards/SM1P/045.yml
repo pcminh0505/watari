@@ -7,9 +7,9 @@ name_en: Ultra Ball
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/200/Ultra-Ball.SM1+.45.14602.png
-illustrator:
+illustrator: Ryo Ueda
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '14602'

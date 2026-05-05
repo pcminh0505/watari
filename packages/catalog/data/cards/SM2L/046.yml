@@ -7,9 +7,9 @@ name_en: Talonflame
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/210/Talonflame.SM2L.46.17305.png
-illustrator:
+illustrator: Shin Nagasawa
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '17305'

@@ -7,9 +7,9 @@ name_en: Kommo-o
 rarity_code: R
 category: card
 image: https://den-cards.pokellector.com/227/Kommo-o.SM4A.40.19429.png
-illustrator:
+illustrator: kawayoo
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '19429'

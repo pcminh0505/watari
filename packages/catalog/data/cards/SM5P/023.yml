@@ -3,13 +3,13 @@
 set_code: sm5p
 local_id: '023'
 name_ja: アーゴヨンGX
-name_en: Naganadel GX
+name_en: Naganadel-GX
 rarity_code: RR
 category: card
 image: https://den-cards.pokellector.com/238/Naganadel-GX.SM5+.23.20036.png
-illustrator:
+illustrator: 5ban Graphics
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '20036'

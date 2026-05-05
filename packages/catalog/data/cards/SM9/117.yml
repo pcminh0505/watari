@@ -3,13 +3,13 @@
 set_code: sm9
 local_id: '117'
 name_ja: ジャッジマンホイッスル
-name_en: Judge's Whistle
+name_en: Judge Whistle
 rarity_code: UR
 category: card
 image: https://den-cards.pokellector.com/260/Judges-Whistle.SM9.117.25552.png
-illustrator:
+illustrator: Ayaka Yoshida
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '25552'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ジャッジマンホイッスル
     variants_seen:
-    - normal
+      - normal
     rarity_code: UR

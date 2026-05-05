@@ -7,9 +7,9 @@ name_en: Darmanitan
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/266/Darmanitan.SM10.11.26876.png
-illustrator:
+illustrator: Midori Harada
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '26876'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: マッギョ
     variants_seen:
-    - normal
+      - normal
     rarity_code: R

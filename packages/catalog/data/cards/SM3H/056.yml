@@ -4,12 +4,12 @@ set_code: sm3h
 local_id: '056'
 name_ja: Kiawe
 name_en: Kiawe
-rarity_code: UR
+rarity_code: SR
 category: card
 image: https://den-cards.pokellector.com/219/Kiawe.SM3H.56.18137.png
-illustrator:
+illustrator: Naoki Saito
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '18137'

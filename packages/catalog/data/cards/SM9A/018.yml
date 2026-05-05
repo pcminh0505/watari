@@ -7,9 +7,9 @@ name_en: Vikavolt
 rarity_code: R
 category: card
 image: https://den-cards.pokellector.com/262/Vikavolt.SM9A.18.25600.png
-illustrator:
+illustrator: Hasuno
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '25600'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: クワガノン
     variants_seen:
-    - normal
+      - normal
     rarity_code: R

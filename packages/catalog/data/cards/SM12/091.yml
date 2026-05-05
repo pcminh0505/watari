@@ -3,13 +3,13 @@
 set_code: sm12
 local_id: '091'
 name_ja: 混沌のうねり
-name_en: Chaos Swell
+name_en: Chaotic Swell
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/281/Chaos-Swell.SM12.91.30116.png
-illustrator:
+illustrator: Ryo Ueda
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '30116'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: 混沌のうねり
     variants_seen:
-    - normal
+      - normal
     rarity_code: R

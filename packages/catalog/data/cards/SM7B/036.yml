@@ -7,9 +7,9 @@ name_en: Morelull
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/240/Morelull.SM7B.36.23137.png
-illustrator:
+illustrator: You Iribi
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '23137'

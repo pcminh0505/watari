@@ -7,9 +7,9 @@ name_en: Pachirisu
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/243/Pachirisu.SM7A.28.22408.png
-illustrator:
+illustrator: Yuka Morii
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '22408'

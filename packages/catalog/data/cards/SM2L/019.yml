@@ -7,9 +7,9 @@ name_en: Garbodor
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/210/Garbodor.SM2L.19.17283.png
-illustrator:
+illustrator: Mitsuhiro Arita
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '17283'

@@ -7,9 +7,9 @@ name_en: Spiritomb
 rarity_code: R
 category: card
 image: https://den-cards.pokellector.com/266/Spiritomb.SM10.57.26856.png
-illustrator:
+illustrator: Kagemaru Himeno
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '26856'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ケルディオGX
     variants_seen:
-    - normal
+      - normal
     rarity_code: SR

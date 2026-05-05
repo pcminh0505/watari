@@ -7,9 +7,9 @@ name_en: Nidoqueen
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/260/Nidoqueen.SM9.41.25475.png
-illustrator:
+illustrator: nagimiso
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '25475'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ニャルマー
     variants_seen:
-    - normal
+      - normal
     rarity_code: U

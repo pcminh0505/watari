@@ -7,9 +7,9 @@ name_en: Moomoo Milk
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/258/Moomoo-Milk.SM8.82.23305.png
-illustrator:
+illustrator: Ayaka Yoshida
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '23305'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: モーモーミルク
     variants_seen:
-    - normal
+      - normal
     rarity_code: R

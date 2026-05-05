@@ -3,13 +3,13 @@
 set_code: sm9a
 local_id: '069'
 name_ja: ポケギア3.0
-name_en: PokeGear 3.0
+name_en: Pokégear 3.0
 rarity_code: UR
 category: card
 image: https://den-cards.pokellector.com/262/PokeGear-30.SM9A.69.25636.png
-illustrator:
+illustrator: Studio Bora Inc.
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '25636'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ポケギア3.0
     variants_seen:
-    - normal
+      - normal
     rarity_code: UR

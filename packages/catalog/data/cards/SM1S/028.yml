@@ -7,9 +7,9 @@ name_en: Cosmoem
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/201/Cosmoem.SM1S.28.13497.png
-illustrator:
+illustrator: Sanosuke Sakuma
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '13497'

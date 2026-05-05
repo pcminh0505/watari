@@ -7,9 +7,9 @@ name_en: Plusle
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/242/Plusle.SM7.35.20998.png
-illustrator:
+illustrator: Kanako Eo
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '20998'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: アブリボン
     variants_seen:
-    - normal
+      - normal
     rarity_code: U

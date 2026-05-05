@@ -3,13 +3,13 @@
 set_code: sm3p
 local_id: '066'
 name_ja: ポケモンキャッチャー
-name_en: Pokemon Catcher
+name_en: Pokémon Catcher
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/224/Pokemon-Catcher.SM3+.66.18345.png
-illustrator:
+illustrator: Toyste Beach
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '18345'

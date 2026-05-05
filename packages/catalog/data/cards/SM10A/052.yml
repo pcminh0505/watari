@@ -4,12 +4,12 @@ set_code: sm10a
 local_id: '052'
 name_ja: ネストボール
 name_en: Nest Ball
-rarity_code: C
+rarity_code: TR
 category: card
 image: https://den-cards.pokellector.com/267/Nest-Ball.SM10A.52.27526.png
-illustrator:
+illustrator: Ryo Ueda
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '27526'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ネストボール
     variants_seen:
-    - normal
+      - normal
     rarity_code: TR

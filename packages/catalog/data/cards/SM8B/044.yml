@@ -3,13 +3,13 @@
 set_code: sm8b
 local_id: '044'
 name_ja: カプ・テテフGX
-name_en: Tapu Lele GX
+name_en: Tapu Lele-GX
 rarity_code: RR
 category: card
 image: https://den-cards.pokellector.com/241/Tapu-Lele-GX.SM8B.44.24399.png
-illustrator:
+illustrator: 5ban Graphics
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '24399'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: カプ・テテフGX
     variants_seen:
-    - normal
+      - normal
     rarity_code: RR

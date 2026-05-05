@@ -3,13 +3,13 @@
 set_code: sm7
 local_id: '084'
 name_ja: ポケモンキャッチャー
-name_en: Pok&eacute;mon Catcher
+name_en: Pokémon Catcher
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/242/Pokeacutemon-Catcher.SM7.84.21036.png
-illustrator:
+illustrator: Toyste Beach
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '21036'

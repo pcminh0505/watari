@@ -7,9 +7,9 @@ name_en: Bronzor
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/232/Bronzor.SM5S.40.19990.png
-illustrator:
+illustrator: Sumiyoshi Kizuki
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '19990'

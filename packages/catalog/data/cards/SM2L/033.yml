@@ -7,9 +7,9 @@ name_en: Beldum
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/210/Beldum.SM2L.33.17293.png
-illustrator:
+illustrator: Kyoko Umemoto
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '17293'

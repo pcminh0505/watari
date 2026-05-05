@@ -4,12 +4,12 @@ set_code: sm12
 local_id: '095'
 name_ja: アローラキュウコンGX
 name_en: Professor Elm's Lecture
-rarity_code: C
+rarity_code: TR
 category: card
 image: https://den-cards.pokellector.com/281/Professor-Elms-Lecture.SM12.95.30119.png
-illustrator:
+illustrator: nagimiso
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '30119'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: アローラキュウコンGX
     variants_seen:
-    - normal
+      - normal
     rarity_code: RR

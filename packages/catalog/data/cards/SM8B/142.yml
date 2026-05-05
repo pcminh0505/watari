@@ -7,9 +7,9 @@ name_en: Wela Volcano Park
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/241/Wela-Volcano-Park.SM8B.142.24921.png
-illustrator:
+illustrator: 5ban Graphics
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '24921'

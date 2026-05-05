@@ -7,9 +7,9 @@ name_en: Froakie
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/262/Froakie.SM9A.12.25595.png
-illustrator:
+illustrator: Kyoko Umemoto
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '25595'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ケロマツ
     variants_seen:
-    - normal
+      - normal
     rarity_code: C

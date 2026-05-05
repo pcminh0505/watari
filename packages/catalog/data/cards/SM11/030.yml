@@ -7,9 +7,9 @@ name_en: Exeggcute
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/277/Exeggcute.SM11.30.28803.png
-illustrator:
+illustrator: otumami
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '28803'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: モグリュー
     variants_seen:
-    - normal
+      - normal
     rarity_code: U

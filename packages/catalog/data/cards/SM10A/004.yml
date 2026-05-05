@@ -3,13 +3,13 @@
 set_code: sm10a
 local_id: '004'
 name_ja: ヒードランGX
-name_en: Heatran GX
+name_en: Heatran-GX
 rarity_code: RR
 category: card
 image: https://den-cards.pokellector.com/267/Heatran-GX.SM10A.4.27211.png
-illustrator:
+illustrator: PLANETA Tsuji
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '27211'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ヒードランGX
     variants_seen:
-    - normal
+      - normal
     rarity_code: RR

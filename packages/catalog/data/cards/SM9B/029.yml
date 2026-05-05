@@ -3,13 +3,13 @@
 set_code: sm9b
 local_id: '029'
 name_ja: ルカリオ＆メルメタルGX
-name_en: Lucario & Melmetal GX
+name_en: Lucario & Melmetal-GX
 rarity_code: RR
 category: card
 image: https://den-cards.pokellector.com/263/Lucario-Melmetal-GX.SM9B.29.25652.png
-illustrator:
+illustrator: Mitsuhiro Arita
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '25652'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ルカリオ＆メルメタルGX
     variants_seen:
-    - normal
+      - normal
     rarity_code: RR

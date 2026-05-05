@@ -3,13 +3,13 @@
 set_code: sm4p
 local_id: '073'
 name_ja: ニンフィアGX
-name_en: Sylveon GX
+name_en: Sylveon-GX
 rarity_code: RR
 category: card
 image: https://den-cards.pokellector.com/228/Sylveon-GX.SM4+.73.19454.png
-illustrator:
+illustrator: 5ban Graphics
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '19454'

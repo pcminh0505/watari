@@ -7,9 +7,9 @@ name_en: Smeargle
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/258/Smeargle.SM8.70.23294.png
-illustrator:
+illustrator: Ken Sugimori
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '23294'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ゾロアークGX
     variants_seen:
-    - normal
+      - normal
     rarity_code: RR

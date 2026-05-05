@@ -3,13 +3,13 @@
 set_code: sm12
 local_id: '111'
 name_ja: フライゴンGX
-name_en: Flygon GX
+name_en: Flygon-GX
 rarity_code: HR
 category: card
 image: https://den-cards.pokellector.com/281/Flygon-GX.SM12.111.30160.png
-illustrator:
+illustrator: PLANETA Tsuji
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '30160'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: フライゴンGX
     variants_seen:
-    - normal
+      - normal
     rarity_code: HR

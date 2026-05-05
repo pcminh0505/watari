@@ -4,12 +4,12 @@ set_code: sm5s
 local_id: '070'
 name_ja: Gardenia
 name_en: Gardenia
-rarity_code: UR
+rarity_code: SR
 category: card
 image: https://den-cards.pokellector.com/232/Gardenia.SM5S.70.19895.png
-illustrator:
+illustrator: You Iribi
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '19895'

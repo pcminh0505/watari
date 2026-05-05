@@ -7,9 +7,9 @@ name_en: Litleo
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/243/Litleo.SM7A.15.22381.png
-illustrator:
+illustrator: Akira Komayama
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '22381'

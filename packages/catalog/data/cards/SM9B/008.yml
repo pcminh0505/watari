@@ -7,9 +7,9 @@ name_en: Squirtle
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/263/Squirtle.SM9B.8.26425.png
-illustrator:
+illustrator: tetsuya koizumi
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '26425'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ゼニガメ
     variants_seen:
-    - normal
+      - normal
     rarity_code: C

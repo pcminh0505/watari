@@ -7,9 +7,9 @@ name_en: Exeggcute
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/260/Exeggcute.SM9.8.25452.png
-illustrator:
+illustrator: Ken Sugimori
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '25452'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: タマタマ
     variants_seen:
-    - normal
+      - normal
     rarity_code: C

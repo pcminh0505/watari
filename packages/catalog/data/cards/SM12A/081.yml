@@ -7,9 +7,9 @@ name_en: Hoopa
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/288/Hoopa.SM12A.81.30433.png
-illustrator:
+illustrator: Ayaka Yoshida
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '30433'

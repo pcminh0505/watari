@@ -7,9 +7,9 @@ name_en: Timer Ball
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/228/Timer-Ball.SM4+.91.19651.png
-illustrator:
+illustrator: Toyste Beach
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '19651'

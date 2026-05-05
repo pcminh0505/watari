@@ -7,9 +7,9 @@ name_en: Fennekin
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/241/Fennekin.SM8B.19.24821.png
-illustrator:
+illustrator: Atsuko Nishida
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '24821'

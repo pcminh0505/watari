@@ -7,9 +7,9 @@ name_en: Alolan Sandslash
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/233/Alolan-Sandslash.SM5M.2.19918.png
-illustrator:
+illustrator: Anesaki Dynamic
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '19918'

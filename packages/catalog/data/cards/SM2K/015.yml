@@ -7,9 +7,9 @@ name_en: Snorunt
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/211/Snorunt.SM2K.15.17331.png
-illustrator:
+illustrator: Tomokazu Komiya
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '17331'

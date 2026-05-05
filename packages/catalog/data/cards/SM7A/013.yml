@@ -7,9 +7,9 @@ name_en: Heatran
 rarity_code: R
 category: card
 image: https://den-cards.pokellector.com/243/Heatran.SM7A.13.22395.png
-illustrator:
+illustrator: Kagemaru Himeno
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '22395'

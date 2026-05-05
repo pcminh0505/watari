@@ -7,9 +7,9 @@ name_en: Heracross
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/277/Heracross.SM11.46.28815.png
-illustrator:
+illustrator: Sanosuke Sakuma
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '28815'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ヘラクロス
     variants_seen:
-    - normal
+      - normal
     rarity_code: R

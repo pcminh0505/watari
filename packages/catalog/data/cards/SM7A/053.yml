@@ -7,9 +7,9 @@ name_en: Counter Gain
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/243/Counter-Gain.SM7A.53.21718.png
-illustrator:
+illustrator: Toyste Beach
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '21718'

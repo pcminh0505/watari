@@ -7,9 +7,9 @@ name_en: Vikavolt
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/228/Vikavolt.SM4+.31.19606.png
-illustrator:
+illustrator: Hitoshi Ariga
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '19606'

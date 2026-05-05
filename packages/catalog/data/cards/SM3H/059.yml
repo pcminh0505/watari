@@ -3,13 +3,13 @@
 set_code: sm3h
 local_id: '059'
 name_ja: Ho-Oh GX
-name_en: Ho-Oh GX
-rarity_code: UR
+name_en: Ho-Oh-GX
+rarity_code: HR
 category: card
 image: https://den-cards.pokellector.com/219/Ho-Oh-GX.SM3H.59.18138.png
-illustrator:
+illustrator: 5ban Graphics
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '18138'

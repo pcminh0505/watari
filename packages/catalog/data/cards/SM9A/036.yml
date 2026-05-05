@@ -7,9 +7,9 @@ name_en: Togekiss
 rarity_code: R
 category: card
 image: https://den-cards.pokellector.com/262/Togekiss.SM9A.36.25614.png
-illustrator:
+illustrator: Kagemaru Himeno
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '25614'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: トゲキッス
     variants_seen:
-    - normal
+      - normal
     rarity_code: R

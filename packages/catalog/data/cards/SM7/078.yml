@@ -7,9 +7,9 @@ name_en: Kecleon
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/242/Kecleon.SM7.78.21031.png
-illustrator:
+illustrator: OOYAMA
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '21031'

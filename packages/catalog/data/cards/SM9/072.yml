@@ -7,9 +7,9 @@ name_en: Persian
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/260/Persian.SM9.72.25500.png
-illustrator:
+illustrator: Yukiko Baba
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '25500'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ペルシアン
     variants_seen:
-    - normal
+      - normal
     rarity_code: C

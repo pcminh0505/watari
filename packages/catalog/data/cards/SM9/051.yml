@@ -7,9 +7,9 @@ name_en: Jynx
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/260/Jynx.SM9.51.25485.png
-illustrator:
+illustrator: HYOGONOSUKE
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '25485'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ルージュラ
     variants_seen:
-    - normal
+      - normal
     rarity_code: TR

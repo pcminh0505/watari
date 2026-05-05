@@ -3,13 +3,13 @@
 set_code: sm9
 local_id: '110'
 name_ja: セレビィ＆フシギバナGX
-name_en: Venusaur & Celebi GX
+name_en: Celebi & Venusaur-GX
 rarity_code: HR
 category: card
 image: https://den-cards.pokellector.com/260/Venusaur-Celebi-GX.SM9.110.25545.png
-illustrator:
+illustrator: 5ban Graphics
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '25545'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: セレビィ＆フシギバナGX
     variants_seen:
-    - normal
+      - normal
     rarity_code: HR

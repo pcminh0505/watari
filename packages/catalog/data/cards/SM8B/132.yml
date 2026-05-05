@@ -7,9 +7,9 @@ name_en: Cynthia
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/241/Cynthia.SM8B.132.24411.png
-illustrator:
+illustrator: Ken Sugimori
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '24411'

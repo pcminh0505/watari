@@ -3,13 +3,13 @@
 set_code: sm9a
 local_id: '047'
 name_ja: フェアリーチャーム雷
-name_en: Fairy Charm L
+name_en: Fairy Charm Lightning
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/262/Fairy-Charm-L.SM9A.47.25624.png
-illustrator:
+illustrator: Toyste Beach
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '25624'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: フェアリーチャーム雷
     variants_seen:
-    - normal
+      - normal
     rarity_code: U

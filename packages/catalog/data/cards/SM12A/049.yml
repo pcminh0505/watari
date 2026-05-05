@@ -3,13 +3,13 @@
 set_code: sm12a
 local_id: '049'
 name_ja: カプ・コケコ◇
-name_en: Tapu Koko Prism Star
-rarity_code: R
+name_en: Tapu Koko ◇
+rarity_code: PR
 category: card
 image: https://den-cards.pokellector.com/288/Tapu-Koko-Prism-Star.SM12A.49.30406.png
-illustrator:
+illustrator: Kouki Saitou
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '30406'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: カプ・コケコ◇
     variants_seen:
-    - normal
+      - normal
     rarity_code: R

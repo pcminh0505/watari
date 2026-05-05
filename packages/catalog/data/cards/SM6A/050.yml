@@ -3,13 +3,13 @@
 set_code: sm6a
 local_id: '050'
 name_ja: ワタル
-name_en: Lance Prism Star
-rarity_code: SR
+name_en: Lance ◇
+rarity_code: PR
 category: card
 image: https://den-cards.pokellector.com/236/Lance-Prism-Star.SM6A.50.20594.png
-illustrator:
+illustrator: kodama
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '20594'

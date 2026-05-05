@@ -3,13 +3,13 @@
 set_code: sm10b
 local_id: '044'
 name_ja: ノーマルZ たいあたり
-name_en: Normalium Z Tackle
+name_en: 'Normalium Z: Tackle'
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/268/Normalium-Z-Tackle.SM10B.44.27687.png
-illustrator:
+illustrator: 5ban Graphics
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '27687'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ノーマルZ たいあたり
     variants_seen:
-    - normal
+      - normal
     rarity_code: U

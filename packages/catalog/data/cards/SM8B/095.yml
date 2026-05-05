@@ -7,9 +7,9 @@ name_en: Mimikyu
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/241/Mimikyu.SM8B.95.24883.png
-illustrator:
+illustrator: Eri Yamaki
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '24883'

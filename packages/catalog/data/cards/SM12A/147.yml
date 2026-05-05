@@ -7,9 +7,9 @@ name_en: Misty & Lorelei
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/288/Misty-Lorelei.SM12A.147.30206.png
-illustrator:
+illustrator: Megumi Mizutani
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '30206'

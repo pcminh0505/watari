@@ -7,9 +7,9 @@ name_en: Rotom Dex
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/228/Rotom-Dex.SM4+.98.19658.png
-illustrator:
+illustrator: 5ban Graphics
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '19658'

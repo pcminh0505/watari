@@ -3,13 +3,13 @@
 set_code: sm11
 local_id: '027'
 name_ja: ボクレー
-name_en: Elektross
+name_en: Eelektross
 rarity_code: R
 category: card
 image: https://den-cards.pokellector.com/277/Elektross.SM11.27.28766.png
-illustrator:
+illustrator: Shigenori Negishi
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '28766'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ボクレー
     variants_seen:
-    - normal
+      - normal
     rarity_code: R

@@ -7,9 +7,9 @@ name_en: Ditto
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/271/Ditto.SMP2.23.28876.png
-illustrator:
+illustrator: MPC Film
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '28876'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: メタモン
     variants_seen:
-    - normal
+      - normal
     rarity_code: U

@@ -7,9 +7,9 @@ name_en: Alomomola
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/210/Alomomola.SM2L.12.17278.png
-illustrator:
+illustrator: Aya Kusube
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '17278'

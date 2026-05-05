@@ -7,9 +7,9 @@ name_en: Cresselia
 rarity_code: R
 category: card
 image: https://den-cards.pokellector.com/233/Cresselia.SM5M.31.19938.png
-illustrator:
+illustrator: chibi
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '19938'

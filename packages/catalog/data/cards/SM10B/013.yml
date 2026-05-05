@@ -7,9 +7,9 @@ name_en: Talonflame
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/268/Talonflame.SM10B.13.27658.png
-illustrator:
+illustrator: SATOSHI NAKAI
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '27658'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ファイアロー
     variants_seen:
-    - normal
+      - normal
     rarity_code: U

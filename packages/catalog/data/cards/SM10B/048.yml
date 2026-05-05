@@ -3,13 +3,13 @@
 set_code: sm10b
 local_id: '048'
 name_ja: ムサシとコジロウ
-name_en: Jesse & James
+name_en: Jessie & James
 rarity_code: R
 category: card
 image: https://den-cards.pokellector.com/268/Jesse-James.SM10B.48.27628.png
-illustrator:
+illustrator: Megumi Mizutani
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '27628'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ムサシとコジロウ
     variants_seen:
-    - normal
+      - normal
     rarity_code: R

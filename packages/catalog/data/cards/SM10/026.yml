@@ -7,9 +7,9 @@ name_en: Krabby
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/266/Krabby.SM10.26.26890.png
-illustrator:
+illustrator: Sekio
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '26890'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ルカリオ
     variants_seen:
-    - normal
+      - normal
     rarity_code: U

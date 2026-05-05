@@ -7,9 +7,9 @@ name_en: Fletchinder
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/268/Fletchinder.SM10B.12.27657.png
-illustrator:
+illustrator: Mina Nakai
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '27657'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ヒノヤコマ
     variants_seen:
-    - normal
+      - normal
     rarity_code: C

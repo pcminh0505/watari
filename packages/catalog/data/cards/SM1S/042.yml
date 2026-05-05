@@ -7,9 +7,9 @@ name_en: Ribombee
 rarity_code: R
 category: card
 image: https://den-cards.pokellector.com/201/Ribombee.SM1S.42.13754.png
-illustrator:
+illustrator: Shin Nagasawa
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '13754'

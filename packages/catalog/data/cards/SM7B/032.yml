@@ -7,9 +7,9 @@ name_en: Carbink
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/240/Carbink.SM7B.32.23134.png
-illustrator:
+illustrator: Ken Sugimori
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '23134'

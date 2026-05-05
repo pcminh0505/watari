@@ -7,9 +7,9 @@ name_en: Ultra Necrozma
 rarity_code: R
 category: card
 image: https://den-cards.pokellector.com/281/Ultra-Necrozma.SM12.72.29756.png
-illustrator:
+illustrator: Hasuno
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '29756'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ゲッコウガ＆ゾロアークGX
     variants_seen:
-    - normal
+      - normal
     rarity_code: RR

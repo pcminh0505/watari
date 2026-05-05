@@ -7,9 +7,9 @@ name_en: Spoink
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/242/Spoink.SM7.38.21001.png
-illustrator:
+illustrator: MAHOU
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '21001'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ミミッキュGX
     variants_seen:
-    - normal
+      - normal
     rarity_code: RR

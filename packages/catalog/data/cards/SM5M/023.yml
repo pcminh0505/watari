@@ -4,12 +4,12 @@ set_code: sm5m
 local_id: '023'
 name_ja: フワンテ
 name_en: Drifloon
-rarity_code: SR
+rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/233/Lunala-Prism-Star.SM5M.23.19852.png
-illustrator:
+illustrator: Asako Ito
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '19852'

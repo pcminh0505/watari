@@ -7,9 +7,9 @@ name_en: Dwebble
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/268/Dwebble.SM10B.2.27649.png
-illustrator:
+illustrator: kawayoo
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '27649'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: イシズマイ
     variants_seen:
-    - normal
+      - normal
     rarity_code: C

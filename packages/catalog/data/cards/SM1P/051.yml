@@ -3,13 +3,13 @@
 set_code: sm1p
 local_id: '051'
 name_ja: 日輪の祭壇
-name_en: Altar of the Sun
+name_en: Altar of the Sunne
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/200/Altar-of-the-Sun.SM1+.51.13933.png
-illustrator:
+illustrator: 5ban Graphics
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '13933'

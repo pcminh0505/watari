@@ -7,9 +7,9 @@ name_en: Bellelba & Brycen-Man
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/288/Bellelba-Brycen-Man.SM12A.152.30495.png
-illustrator:
+illustrator: Hideki Ishikawa
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '30495'

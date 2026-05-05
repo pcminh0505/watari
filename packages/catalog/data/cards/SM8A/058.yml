@@ -4,12 +4,12 @@ set_code: sm8a
 local_id: '058'
 name_ja: ジャスミン
 name_en: Jasmine
-rarity_code: UR
+rarity_code: SR
 category: card
 image: https://den-cards.pokellector.com/245/Jasmine.SM8A.58.24272.png
-illustrator:
+illustrator: Hideki Ishikawa
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '24272'

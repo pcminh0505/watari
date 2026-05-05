@@ -7,9 +7,9 @@ name_en: Brooklet Hill
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/236/Brooklet-Hill.SM6A.53.20677.png
-illustrator:
+illustrator: 5ban Graphics
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '20677'

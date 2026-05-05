@@ -3,13 +3,13 @@
 set_code: sm11b
 local_id: '074'
 name_ja: リーリエのピッピ人形
-name_en: Lillie's Clefairy Doll
+name_en: Lillie's Poké Doll
 rarity_code: UR
 category: card
 image: https://den-cards.pokellector.com/278/Lillies-Clefairy-Doll.SM11B.71.29341.png
-illustrator:
+illustrator: Studio Bora Inc.
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '29341'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: リーリエのピッピ人形
     variants_seen:
-    - normal
+      - normal
     rarity_code: UR

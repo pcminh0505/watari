@@ -3,13 +3,13 @@
 set_code: sm10
 local_id: '085'
 name_ja: サカキの追放
-name_en: Gionvanni’s Exile
+name_en: Giovanni's Exile
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/266/Gionvannis-Exile.SM10.85.26864.png
-illustrator:
+illustrator: Megumi Mizutani
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '26864'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: サカキの追放
     variants_seen:
-    - normal
+      - normal
     rarity_code: U

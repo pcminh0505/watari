@@ -7,9 +7,9 @@ name_en: Mina
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/240/Mina.SM7B.49.23103.png
-illustrator:
+illustrator: Ken Sugimori
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '23103'

@@ -4,12 +4,12 @@ set_code: sm7a
 local_id: '066'
 name_ja: 判断
 name_en: Judge
-rarity_code: UR
+rarity_code: SR
 category: card
 image: https://den-cards.pokellector.com/243/Judge.SM7A.66.22526.png
-illustrator:
+illustrator: Sanosuke Sakuma
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '22526'

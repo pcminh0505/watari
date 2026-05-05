@@ -7,9 +7,9 @@ name_en: Welder
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/266/Welder.SM10.87.26940.png
-illustrator:
+illustrator: Hitoshi Ariga
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '26940'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: 溶接工
     variants_seen:
-    - normal
+      - normal
     rarity_code: U

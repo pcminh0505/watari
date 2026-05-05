@@ -7,9 +7,9 @@ name_en: Zekrom
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/241/Zekrom.SM8B.37.24837.png
-illustrator:
+illustrator: nagimiso
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '24837'

@@ -7,9 +7,9 @@ name_en: Rockruff
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/212/Rockruff.SM2+.32.17492.png
-illustrator:
+illustrator: match
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '17492'

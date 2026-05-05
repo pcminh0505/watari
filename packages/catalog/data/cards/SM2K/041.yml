@@ -3,13 +3,13 @@
 set_code: sm2k
 local_id: '041'
 name_ja: ジャラランガGX
-name_en: Kommo-o GX
+name_en: Kommo-o-GX
 rarity_code: RR
 category: card
 image: https://den-cards.pokellector.com/211/Kommo-o-GX.SM2K.41.17350.png
-illustrator:
+illustrator: 5ban Graphics
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '17350'

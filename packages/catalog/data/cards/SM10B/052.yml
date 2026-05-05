@@ -4,12 +4,12 @@ set_code: sm10b
 local_id: '052'
 name_ja: グラジオ
 name_en: Gladion
-rarity_code: R
+rarity_code: TR
 category: card
 image: https://den-cards.pokellector.com/268/Gladion.SM10B.52.27693.png
-illustrator:
+illustrator: Mana Ibe
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '27693'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: グラジオ
     variants_seen:
-    - normal
+      - normal
     rarity_code: TR

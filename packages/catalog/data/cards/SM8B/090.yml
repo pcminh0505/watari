@@ -7,9 +7,9 @@ name_en: Ralts
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/241/Ralts.SM8B.90.24879.png
-illustrator:
+illustrator: Yumi
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '24879'

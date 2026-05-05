@@ -7,9 +7,9 @@ name_en: 'Type: Null'
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/228/Type-Null.SM4+.85.19646.png
-illustrator:
+illustrator: match
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '19646'

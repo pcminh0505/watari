@@ -7,9 +7,9 @@ name_en: Altar of the Moone
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/228/Altar-of-the-Moone.SM4+.111.19665.png
-illustrator:
+illustrator: 5ban Graphics
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '19665'

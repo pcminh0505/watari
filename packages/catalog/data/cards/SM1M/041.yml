@@ -7,9 +7,9 @@ name_en: Granbull
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/202/Granbull.SM1M.41.13811.png
-illustrator:
+illustrator: Suwama Chiaki
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '13811'

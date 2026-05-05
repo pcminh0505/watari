@@ -7,9 +7,9 @@ name_en: Snover
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/241/Snover.SM8B.25.24827.png
-illustrator:
+illustrator: match
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '24827'

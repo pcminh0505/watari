@@ -7,9 +7,9 @@ name_en: Milotic
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/236/Milotic.SM6A.22.20656.png
-illustrator:
+illustrator: hatachu
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '20656'

@@ -7,9 +7,9 @@ name_en: Tag Switch
 rarity_code: UR
 category: card
 image: https://den-cards.pokellector.com/267/Tag-Switch.SM10A.67.27537.png
-illustrator:
+illustrator: Yoshinobu Saito
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '27537'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: タッグスイッチ
     variants_seen:
-    - normal
+      - normal
     rarity_code: UR

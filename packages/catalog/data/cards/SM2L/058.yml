@@ -3,13 +3,13 @@
 set_code: sm2l
 local_id: '058'
 name_ja: Lycanroc GX
-name_en: Lycanroc GX
-rarity_code: UR
+name_en: Lycanroc-GX
+rarity_code: HR
 category: card
 image: https://den-cards.pokellector.com/210/Lycanroc-GX.SM2L.58.17317.png
-illustrator:
+illustrator: 5ban Graphics
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '17317'

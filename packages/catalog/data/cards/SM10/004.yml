@@ -7,9 +7,9 @@ name_en: Vileplume
 rarity_code: R
 category: card
 image: https://den-cards.pokellector.com/266/Vileplume.SM10.4.26871.png
-illustrator:
+illustrator: Suwama Chiaki
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '26871'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: カリキリ
     variants_seen:
-    - normal
+      - normal
     rarity_code: RR

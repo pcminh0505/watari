@@ -4,12 +4,12 @@ set_code: sm12
 local_id: '092'
 name_ja: プレシャスボール
 name_en: Cherish Ball
-rarity_code: R
+rarity_code: TR
 category: card
 image: https://den-cards.pokellector.com/281/Cherish-Ball.SM12.92.29647.png
-illustrator:
+illustrator: Ryo Ueda
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '29647'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: プレシャスボール
     variants_seen:
-    - normal
+      - normal
     rarity_code: TR

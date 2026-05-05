@@ -7,9 +7,9 @@ name_en: Crabominable
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/202/Crabominable.SM1M.15.13790.png
-illustrator:
+illustrator: TOKIYA
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '13790'

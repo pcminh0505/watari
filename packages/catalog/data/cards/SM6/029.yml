@@ -7,9 +7,9 @@ name_en: Heliolisk
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/235/Heliolisk.SM6.29.20505.png
-illustrator:
+illustrator: otumami
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '20505'

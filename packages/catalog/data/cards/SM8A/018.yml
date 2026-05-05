@@ -7,9 +7,9 @@ name_en: Alolan Grimer
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/245/Alolan-Grimer.SM8A.18.23937.png
-illustrator:
+illustrator: SATOSHI NAKAI
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '23937'

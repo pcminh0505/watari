@@ -7,9 +7,9 @@ name_en: Voltorb
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/260/Voltorb.SM9.36.25472.png
-illustrator:
+illustrator: Ken Sugimori
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '25472'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ビリリダマ
     variants_seen:
-    - normal
+      - normal
     rarity_code: R

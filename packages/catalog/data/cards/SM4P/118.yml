@@ -4,12 +4,12 @@ set_code: sm4p
 local_id: '118'
 name_ja: Lana
 name_en: Lana
-rarity_code: UR
+rarity_code: SR
 category: card
 image: https://den-cards.pokellector.com/228/Lana.SM4+.118.19568.png
-illustrator:
+illustrator: Kanako Eo
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '19568'

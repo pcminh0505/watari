@@ -3,13 +3,13 @@
 set_code: sm4a
 local_id: '056'
 name_ja: Gyarados GX
-name_en: Gyarados GX
-rarity_code: UR
+name_en: Gyarados-GX
+rarity_code: HR
 category: card
 image: https://den-cards.pokellector.com/227/Gyarados-GX.SM4A.56.19438.png
-illustrator:
+illustrator: 5ban Graphics
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '19438'

@@ -7,9 +7,9 @@ name_en: Salazzle
 rarity_code: R
 category: card
 image: https://den-cards.pokellector.com/226/Salazzle.SM4S.27.19379.png
-illustrator:
+illustrator: Shin Nagasawa
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '19379'

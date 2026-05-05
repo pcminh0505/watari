@@ -3,13 +3,13 @@
 set_code: sm4a
 local_id: '048'
 name_ja: 虚ろの海
-name_en: Sea Of Emptiness
+name_en: Sea of Nothingness
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/227/Sea-Of-Emptiness.SM4A.48.19343.png
-illustrator:
+illustrator: Ryo Ueda
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '19343'

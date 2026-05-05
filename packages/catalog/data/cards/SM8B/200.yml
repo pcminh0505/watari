@@ -4,12 +4,12 @@ set_code: sm8b
 local_id: '200'
 name_ja: ガブリアス
 name_en: Garchomp
-rarity_code: SR
+rarity_code: S
 category: card
 image: https://den-cards.pokellector.com/241/Garchomp.SM8B.200.25252.png
-illustrator:
+illustrator: Shin Nagasawa
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '25252'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ガブリアス
     variants_seen:
-    - normal
+      - normal
     rarity_code: SR

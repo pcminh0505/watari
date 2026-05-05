@@ -3,13 +3,13 @@
 set_code: sm10a
 local_id: '047'
 name_ja: くろおび
-name_en: Black Belt
+name_en: Karate Belt
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/267/Black-Belt.SM10A.47.27348.png
-illustrator:
+illustrator: Yoshinobu Saito
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '27348'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: くろおび
     variants_seen:
-    - normal
+      - normal
     rarity_code: U

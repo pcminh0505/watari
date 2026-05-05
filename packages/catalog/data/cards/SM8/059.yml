@@ -3,13 +3,13 @@
 set_code: sm8
 local_id: '059'
 name_ja: デンリュウGX
-name_en: Tyranitar GX
+name_en: Tyranitar-GX
 rarity_code: RR
 category: card
 image: https://den-cards.pokellector.com/258/Tyranitar-GX.SM8.59.23283.png
-illustrator:
+illustrator: 5ban Graphics
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '23283'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: デンリュウGX
     variants_seen:
-    - normal
+      - normal
     rarity_code: RR

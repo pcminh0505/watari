@@ -7,9 +7,9 @@ name_en: Lusamine
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/228/Lusamine.SM4+.109.19663.png
-illustrator:
+illustrator: take
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '19663'

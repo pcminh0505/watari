@@ -7,9 +7,9 @@ name_en: Electrode
 rarity_code: R
 category: card
 image: https://den-cards.pokellector.com/260/Electrode.SM9.37.25346.png
-illustrator:
+illustrator: Asako Ito
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '25346'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: メルタン
     variants_seen:
-    - normal
+      - normal
     rarity_code: R

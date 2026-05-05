@@ -7,9 +7,9 @@ name_en: Fire Crystal
 rarity_code: UR
 category: card
 image: https://den-cards.pokellector.com/266/Fire-Crystal.SM10.114.26955.png
-illustrator:
+illustrator: Yoshinobu Saito
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '26955'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: 炎の結晶
     variants_seen:
-    - normal
+      - normal
     rarity_code: UR

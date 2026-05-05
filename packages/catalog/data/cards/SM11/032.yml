@@ -7,9 +7,9 @@ name_en: Jynx
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/277/Jynx.SM11.32.28804.png
-illustrator:
+illustrator: sowsow
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '28804'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ガマガル
     variants_seen:
-    - normal
+      - normal
     rarity_code: R

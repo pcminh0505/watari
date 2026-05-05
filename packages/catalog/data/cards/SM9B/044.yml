@@ -7,9 +7,9 @@ name_en: Devolution Spray Z
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/263/Devolution-Spray-Z.SM9B.44.26455.png
-illustrator:
+illustrator: Toyste Beach
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '26455'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: 退化スプレーZ
     variants_seen:
-    - normal
+      - normal
     rarity_code: U

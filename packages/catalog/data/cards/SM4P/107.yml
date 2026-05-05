@@ -7,9 +7,9 @@ name_en: Mallow
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/228/Mallow.SM4+.107.19662.png
-illustrator:
+illustrator: Ken Sugimori
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '19662'

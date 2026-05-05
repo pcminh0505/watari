@@ -7,9 +7,9 @@ name_en: Sandslash
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/263/Sandslash.SM9B.22.26437.png
-illustrator:
+illustrator: Shigenori Negishi
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '26437'

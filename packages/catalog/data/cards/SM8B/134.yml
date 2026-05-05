@@ -7,9 +7,9 @@ name_en: Ingo & Emmet
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/241/Ingo-ampamp-Emmet.SM8B.134.24913.png
-illustrator:
+illustrator: Yusuke Ohmura
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '24913'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ノボリとクダリ(ミラー/ハイクラスパック仕様)
     variants_seen:
-    - normal
+      - normal
     rarity_code: C

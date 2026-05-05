@@ -7,9 +7,9 @@ name_en: Pawniard
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/245/Pawniard.SM8A.39.24140.png
-illustrator:
+illustrator: Masakazu Fukuda
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '24140'

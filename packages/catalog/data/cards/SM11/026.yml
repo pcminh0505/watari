@@ -7,9 +7,9 @@ name_en: Eelektrik
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/277/Eelektrik.SM11.26.28802.png
-illustrator:
+illustrator: Midori Harada
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '28802'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: シビビール
     variants_seen:
-    - normal
+      - normal
     rarity_code: C

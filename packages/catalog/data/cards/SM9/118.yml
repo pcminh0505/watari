@@ -7,9 +7,9 @@ name_en: Brooklet Hill
 rarity_code: UR
 category: card
 image: https://den-cards.pokellector.com/260/Brooklet-Hill.SM9.118.25553.png
-illustrator:
+illustrator: 5ban Graphics
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '25553'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: せせらぎの丘
     variants_seen:
-    - normal
+      - normal
     rarity_code: UR

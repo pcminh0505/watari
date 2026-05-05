@@ -7,9 +7,9 @@ name_en: Shining Arceus
 rarity_code: UR
 category: card
 image: https://den-cards.pokellector.com/224/Shining-Arceus.SM3+.59.18234.png
-illustrator:
+illustrator: Kouki Saitou
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '18234'

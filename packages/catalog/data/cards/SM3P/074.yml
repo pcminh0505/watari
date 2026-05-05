@@ -3,13 +3,13 @@
 set_code: sm3p
 local_id: '074'
 name_ja: ライチュウGX
-name_en: Raichu GX
-rarity_code: UR
+name_en: Raichu-GX
+rarity_code: SR
 category: card
 image: https://den-cards.pokellector.com/224/Raichu-GX.SM3+.74.18335.png
-illustrator:
+illustrator: 5ban Graphics
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '18335'

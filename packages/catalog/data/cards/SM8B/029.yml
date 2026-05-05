@@ -7,9 +7,9 @@ name_en: Frost Rotom
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/241/Frost-Rotom.SM8B.29.24830.png
-illustrator:
+illustrator: MAHOU
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '24830'

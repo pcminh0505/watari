@@ -3,13 +3,13 @@
 set_code: sm3n
 local_id: '061'
 name_ja: Gardevoir GX
-name_en: Gardevoir GX
-rarity_code: UR
+name_en: Gardevoir-GX
+rarity_code: HR
 category: card
 image: https://den-cards.pokellector.com/218/Gardevoir-GX.SM3N.61.18139.png
-illustrator:
+illustrator: 5ban Graphics
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '18139'

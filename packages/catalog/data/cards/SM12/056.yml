@@ -7,9 +7,9 @@ name_en: Alolan Ninetales
 rarity_code: R
 category: card
 image: https://den-cards.pokellector.com/281/Alolan-Ninetales.SM12.56.30094.png
-illustrator:
+illustrator: Eri Yamaki
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '30094'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: アローラキュウコン
     variants_seen:
-    - normal
+      - normal
     rarity_code: R

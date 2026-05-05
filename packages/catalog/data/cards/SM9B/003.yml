@@ -7,9 +7,9 @@ name_en: Metapod
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/263/Metapod.SM9B.3.26421.png
-illustrator:
+illustrator: Shigenori Negishi
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '26421'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: トランセル
     variants_seen:
-    - normal
+      - normal
     rarity_code: C

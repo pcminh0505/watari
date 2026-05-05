@@ -3,13 +3,13 @@
 set_code: sm8b
 local_id: '111'
 name_ja: シルヴァディGX
-name_en: Silvally GX
+name_en: Silvally-GX
 rarity_code: RR
 category: card
 image: https://den-cards.pokellector.com/241/Silvally-GX.SM8B.111.24404.png
-illustrator:
+illustrator: 5ban Graphics
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '24404'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: シルヴァディGX
     variants_seen:
-    - normal
+      - normal
     rarity_code: RR

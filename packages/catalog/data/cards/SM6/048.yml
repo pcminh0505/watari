@@ -7,9 +7,9 @@ name_en: Zygarde
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/235/Zygarde.SM6.48.20517.png
-illustrator:
+illustrator: Akira Komayama
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '20517'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: カツラの一発勝負
     variants_seen:
-    - normal
+      - normal
     rarity_code: R

@@ -3,13 +3,13 @@
 set_code: sm8b
 local_id: '082'
 name_ja: ソルガレオ◇
-name_en: Solgaleo Prism Star
-rarity_code: R
+name_en: Solgaleo ◇
+rarity_code: PR
 category: card
 image: https://den-cards.pokellector.com/241/Solgaleo-Prism-Star.SM8B.82.24873.png
-illustrator:
+illustrator: Shin Nagasawa
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '24873'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ソルガレオ◇
     variants_seen:
-    - normal
+      - normal
     rarity_code: R

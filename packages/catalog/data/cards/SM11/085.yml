@@ -3,13 +3,13 @@
 set_code: sm11
 local_id: '085'
 name_ja: カスミのおねがい
-name_en: Misty's Request
+name_en: Misty's Favor
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/277/Mistys-Request.SM11.85.28748.png
-illustrator:
+illustrator: Hideki Ishikawa
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '28748'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: カスミのおねがい
     variants_seen:
-    - normal
+      - normal
     rarity_code: U

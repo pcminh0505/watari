@@ -7,9 +7,9 @@ name_en: Croagunk
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/218/Croagunk.SM3N.22.18211.png
-illustrator:
+illustrator: Naoki Saito
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '18211'

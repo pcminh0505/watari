@@ -3,13 +3,13 @@
 set_code: sm1p
 local_id: '064'
 name_ja: Sylveon GX
-name_en: Sylveon GX
-rarity_code: UR
+name_en: Sylveon-GX
+rarity_code: HR
 category: card
 image: https://den-cards.pokellector.com/200/Sylveon-GX.SM1+.64.14613.png
-illustrator:
+illustrator: 5ban Graphics
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '14613'

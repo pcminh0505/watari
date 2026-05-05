@@ -7,9 +7,9 @@ name_en: Lana's Fishing Rod
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/278/Lanas-Fishing-Rod.SM11B.42.29316.png
-illustrator:
+illustrator: Eske Yoshinob
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '29316'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: スイレンのつりざお
     variants_seen:
-    - normal
+      - normal
     rarity_code: U

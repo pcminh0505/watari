@@ -7,9 +7,9 @@ name_en: Roggenrola
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/202/Roggenrola.SM1M.29.13801.png
-illustrator:
+illustrator: Kanako Eo
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '13801'

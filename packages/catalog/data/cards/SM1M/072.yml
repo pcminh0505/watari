@@ -7,9 +7,9 @@ name_en: Switch
 rarity_code: UR
 category: card
 image: https://den-cards.pokellector.com/202/Switch.SM1M.72.13836.png
-illustrator:
+illustrator: Ryo Ueda
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '13836'

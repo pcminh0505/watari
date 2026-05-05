@@ -7,9 +7,9 @@ name_en: Whimsicott
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/277/Whimsicott.SM11.63.28744.png
-illustrator:
+illustrator: Shibuzoh.
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '28744'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: おじょうさま
     variants_seen:
-    - normal
+      - normal
     rarity_code: SR

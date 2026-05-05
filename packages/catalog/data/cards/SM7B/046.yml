@@ -3,13 +3,13 @@
 set_code: sm7b
 local_id: '046'
 name_ja: 妖精の魅力[格闘]
-name_en: Fairy Charm [Fighting]
+name_en: Fairy Charm Fighting
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/240/Fairy-Charm-Fighting.SM7B.46.23093.png
-illustrator:
+illustrator: Toyste Beach
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '23093'

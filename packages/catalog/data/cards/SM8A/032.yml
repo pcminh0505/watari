@@ -3,13 +3,13 @@
 set_code: sm8a
 local_id: '032'
 name_ja: ガオガエンGX
-name_en: Incineroar GX
+name_en: Incineroar-GX
 rarity_code: RR
 category: card
 image: https://den-cards.pokellector.com/245/Inceneroar-GX.SM8A.32.23934.png
-illustrator:
+illustrator: 5ban Graphics
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '23934'

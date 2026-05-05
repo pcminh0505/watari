@@ -4,12 +4,12 @@ set_code: sm11a
 local_id: '061'
 name_ja: ダートじてんしゃ
 name_en: Acro Bike
-rarity_code: R
+rarity_code: TR
 category: card
 image: https://den-cards.pokellector.com/272/Acro-Bike.SM11A.61.28999.png
-illustrator:
+illustrator: Toyste Beach
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '28999'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ダートじてんしゃ
     variants_seen:
-    - normal
+      - normal
     rarity_code: TR

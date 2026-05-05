@@ -7,9 +7,9 @@ name_en: Steelix
 rarity_code: R
 category: card
 image: https://den-cards.pokellector.com/237/Steelix.SM6B.40.20900.png
-illustrator:
+illustrator: Ken Sugimori
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '20900'

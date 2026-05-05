@@ -7,9 +7,9 @@ name_en: Lickitung
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/232/Lickitung.SM5S.46.19993.png
-illustrator:
+illustrator: Mizue
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '19993'

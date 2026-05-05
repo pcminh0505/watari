@@ -7,9 +7,9 @@ name_en: Diantha
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/241/Diantha.SM8B.129.24910.png
-illustrator:
+illustrator: Ken Sugimori
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '24910'

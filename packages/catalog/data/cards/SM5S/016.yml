@@ -7,9 +7,9 @@ name_en: Magmortar
 rarity_code: R
 category: card
 image: https://den-cards.pokellector.com/232/Magmortar.SM5S.16.19972.png
-illustrator:
+illustrator: nagimiso
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '19972'

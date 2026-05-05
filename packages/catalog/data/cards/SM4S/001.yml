@@ -7,9 +7,9 @@ name_en: Cacnea
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/226/Cacnea.SM4S.1.19359.png
-illustrator:
+illustrator: Anesaki Dynamic
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '19359'

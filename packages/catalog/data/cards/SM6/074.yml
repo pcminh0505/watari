@@ -7,9 +7,9 @@ name_en: Noibat
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/235/Noibat.SM6.74.20531.png
-illustrator:
+illustrator: Anesaki Dynamic
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '20531'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: オンバット
     variants_seen:
-    - normal
+      - normal
     rarity_code: SR

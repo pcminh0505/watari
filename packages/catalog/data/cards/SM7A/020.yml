@@ -7,9 +7,9 @@ name_en: Beartic
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/243/Beartic.SM7A.20.22400.png
-illustrator:
+illustrator: Mina Nakai
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '22400'

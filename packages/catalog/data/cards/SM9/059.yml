@@ -7,9 +7,9 @@ name_en: Kabutops
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/260/Kabutops.SM9.59.25493.png
-illustrator:
+illustrator: Shin Nagasawa
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '25493'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ルカリオ＆メルメタルGX(SA)
     variants_seen:
-    - normal
+      - normal
     rarity_code: SR

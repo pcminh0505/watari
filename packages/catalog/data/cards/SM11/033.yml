@@ -7,9 +7,9 @@ name_en: Wynaut
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/277/Wynaut.SM11.33.28805.png
-illustrator:
+illustrator: Kagemaru Himeno
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '28805'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ソーナノ
     variants_seen:
-    - normal
+      - normal
     rarity_code: U

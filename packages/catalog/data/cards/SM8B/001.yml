@@ -7,9 +7,9 @@ name_en: Bulbasaur
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/241/Bulbasaur.SM8B.1.24805.png
-illustrator:
+illustrator: Mizue
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '24805'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: フシギダネ(ミラー/ハイクラスパック仕様)
     variants_seen:
-    - normal
+      - normal
     rarity_code: C

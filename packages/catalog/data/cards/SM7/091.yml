@@ -7,9 +7,9 @@ name_en: Tate & Liza
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/242/Tate-and-Liza.SM7.91.21042.png
-illustrator:
+illustrator: Megumi Mizutani
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '21042'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: フウとラン
     variants_seen:
-    - normal
+      - normal
     rarity_code: U

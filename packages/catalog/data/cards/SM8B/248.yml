@@ -3,13 +3,13 @@
 set_code: sm8b
 local_id: '248'
 name_ja: ルナアーラGX
-name_en: Lunala GX
+name_en: Lunala-GX
 rarity_code: UR
 category: card
 image: https://den-cards.pokellector.com/241/Lunala-GX.SM8B.248.25271.png
-illustrator:
+illustrator: PLANETA Igarashi
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '25271'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ルナアーラGX
     variants_seen:
-    - normal
+      - normal
     rarity_code: UR

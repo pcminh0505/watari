@@ -7,9 +7,9 @@ name_en: Solgaleo
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/228/Solgaleo.SM4+.69.19637.png
-illustrator:
+illustrator: 5ban Graphics
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '19637'

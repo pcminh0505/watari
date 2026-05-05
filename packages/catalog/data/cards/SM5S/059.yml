@@ -3,13 +3,13 @@
 set_code: sm5s
 local_id: '059'
 name_ja: アカギ
-name_en: Cyrus Prism Star
-rarity_code: SR
+name_en: Cyrus ◇
+rarity_code: PR
 category: card
 image: https://den-cards.pokellector.com/232/Cyrus-Prism-Star.SM5S.59.19871.png
-illustrator:
+illustrator: Masakazu Fukuda
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '19871'

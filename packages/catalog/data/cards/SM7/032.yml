@@ -7,9 +7,9 @@ name_en: Kyogre
 rarity_code: R
 category: card
 image: https://den-cards.pokellector.com/242/Kyogre.SM7.32.20996.png
-illustrator:
+illustrator: Shin Nagasawa
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '20996'

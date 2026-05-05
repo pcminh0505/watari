@@ -7,9 +7,9 @@ name_en: Xerneas
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/241/Xerneas.SM8B.93.24881.png
-illustrator:
+illustrator: sui
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '24881'

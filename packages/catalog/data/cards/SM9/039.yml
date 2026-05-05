@@ -3,13 +3,13 @@
 set_code: sm9
 local_id: '039'
 name_ja: コラッタ
-name_en: Nidoran♀
+name_en: Nidoran ♀
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/260/Nidoran.SM9.39.25473.png
-illustrator:
+illustrator: miki kudo
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '25473'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: コラッタ
     variants_seen:
-    - normal
+      - normal
     rarity_code: C

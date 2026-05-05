@@ -7,9 +7,9 @@ name_en: Aegislash
 rarity_code: R
 category: card
 image: https://den-cards.pokellector.com/245/Aegislash.SM8A.44.24144.png
-illustrator:
+illustrator: Kagemaru Himeno
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '24144'

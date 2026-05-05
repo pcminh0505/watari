@@ -7,9 +7,9 @@ name_en: Machamp
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/271/Machamp.SMP2.18.28871.png
-illustrator:
+illustrator: MPC Film
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '28871'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: カイリキー
     variants_seen:
-    - normal
+      - normal
     rarity_code: C

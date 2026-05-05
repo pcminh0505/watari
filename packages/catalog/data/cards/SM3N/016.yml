@@ -7,9 +7,9 @@ name_en: Eelektrik
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/218/Eelektrik.SM3N.16.18209.png
-illustrator:
+illustrator: OOYAMA
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '18209'

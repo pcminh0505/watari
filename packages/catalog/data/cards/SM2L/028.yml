@@ -7,9 +7,9 @@ name_en: Minior
 rarity_code: R
 category: card
 image: https://den-cards.pokellector.com/210/Minior.SM2L.28.17252.png
-illustrator:
+illustrator: Naoki Saito
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '17252'

@@ -3,13 +3,13 @@
 set_code: sm6a
 local_id: '004'
 name_ja: ビクティニ
-name_en: Victini Prism Star
-rarity_code: SR
+name_en: Victini ◇
+rarity_code: PR
 category: card
 image: https://den-cards.pokellector.com/236/Victini-Prism-Star.SM6A.4.20628.png
-illustrator:
+illustrator: Shin Nagasawa
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '20628'

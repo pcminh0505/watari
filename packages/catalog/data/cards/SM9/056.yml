@@ -7,9 +7,9 @@ name_en: Omanyte
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/260/Omanyte.SM9.56.25490.png
-illustrator:
+illustrator: Midori Harada
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '25490'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: モルフォンGX
     variants_seen:
-    - normal
+      - normal
     rarity_code: SR

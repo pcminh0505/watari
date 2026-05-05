@@ -3,13 +3,13 @@
 set_code: sm2k
 local_id: '051'
 name_ja: Turtonator GX
-name_en: Turtonator GX
-rarity_code: UR
+name_en: Turtonator-GX
+rarity_code: SR
 category: card
 image: https://den-cards.pokellector.com/211/Turtonator-GX.SM2K.51.17356.png
-illustrator:
+illustrator: 5ban Graphics
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '17356'

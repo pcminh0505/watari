@@ -3,13 +3,13 @@
 set_code: sm8a
 local_id: '063'
 name_ja: 充電器
-name_en: Electric Charger
+name_en: Electrocharger
 rarity_code: UR
 category: card
 image: https://den-cards.pokellector.com/245/Electric-Charger.SM8A.63.24277.png
-illustrator:
+illustrator: Eske Yoshinob
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '24277'

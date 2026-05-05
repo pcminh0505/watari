@@ -3,13 +3,13 @@
 set_code: sm11
 local_id: '096'
 name_ja: ヤドン＆コダックGX(SA)
-name_en: Slowpoke & Psyduck GX
+name_en: Slowpoke & Psyduck-GX
 rarity_code: SR
 category: card
 image: https://den-cards.pokellector.com/277/Slowpoke-Psyduck-GX.SM11.96.28888.png
-illustrator:
+illustrator: Miki Tanaka
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '28888'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ヤドン＆コダックGX(SA)
     variants_seen:
-    - normal
+      - normal
     rarity_code: SR

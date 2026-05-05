@@ -4,12 +4,12 @@ set_code: sm6a
 local_id: '059'
 name_ja: Zinnia
 name_en: Zinnia
-rarity_code: UR
+rarity_code: SR
 category: card
 image: https://den-cards.pokellector.com/236/Zinnia.SM6A.59.20639.png
-illustrator:
+illustrator: Hideki Ishikawa
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '20639'

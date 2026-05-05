@@ -7,9 +7,9 @@ name_en: Ultra Forest Kartenvoy
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/263/Ultra-Forest-Kartenvoy.SM9B.47.26457.png
-illustrator:
+illustrator: Masakazu Fukuda
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '26457'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ウルトラフォレストのかみつかい
     variants_seen:
-    - normal
+      - normal
     rarity_code: U

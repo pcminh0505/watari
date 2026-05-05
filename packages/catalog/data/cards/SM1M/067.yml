@@ -3,13 +3,13 @@
 set_code: sm1m
 local_id: '067'
 name_ja: Lurantis GX
-name_en: Lurantis GX
-rarity_code: UR
+name_en: Lurantis-GX
+rarity_code: HR
 category: card
 image: https://den-cards.pokellector.com/202/Lurantis-GX.SM1M.67.13831.png
-illustrator:
+illustrator: 5ban Graphics
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '13831'

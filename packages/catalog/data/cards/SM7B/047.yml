@@ -3,13 +3,13 @@
 set_code: sm7b
 local_id: '047'
 name_ja: 妖精が魅力の"ドラゴン"
-name_en: Fairy Charm [Dragon]
+name_en: Fairy Charm Dragon
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/240/Fairy-Charm-Dragon.SM7B.47.23095.png
-illustrator:
+illustrator: Toyste Beach
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '23095'

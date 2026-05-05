@@ -3,13 +3,13 @@
 set_code: sm11b
 local_id: '020'
 name_ja: ソルガレオ＆ルナアーラGX
-name_en: Solgaleo & Lunala GX
+name_en: Solgaleo & Lunala-GX
 rarity_code: RR
 category: card
 image: https://den-cards.pokellector.com/278/Solgaleo-Lunala-GX.SM11B.20.29032.png
-illustrator:
+illustrator: Hideki Ishikawa
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '29032'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ソルガレオ＆ルナアーラGX
     variants_seen:
-    - normal
+      - normal
     rarity_code: RR

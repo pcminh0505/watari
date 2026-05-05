@@ -7,9 +7,9 @@ name_en: Swadloon
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/277/Swadloon.SM11.7.28851.png
-illustrator:
+illustrator: Shibuzoh.
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '28851'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: クルマユ
     variants_seen:
-    - normal
+      - normal
     rarity_code: R

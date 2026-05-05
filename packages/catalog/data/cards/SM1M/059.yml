@@ -7,9 +7,9 @@ name_en: Lillie
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/202/Lillie.SM1M.59.13538.png
-illustrator:
+illustrator: Ken Sugimori
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '13538'

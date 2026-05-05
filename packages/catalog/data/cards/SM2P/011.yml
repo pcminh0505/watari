@@ -7,9 +7,9 @@ name_en: Alolan Sandshrew
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/212/Alolan-Sandshrew.SM2+.11.17476.png
-illustrator:
+illustrator: Mizue
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '17476'

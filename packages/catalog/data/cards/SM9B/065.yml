@@ -3,13 +3,13 @@
 set_code: sm9b
 local_id: '065'
 name_ja: ルカリオ＆メルメタルGX
-name_en: Lucario & Melmetal GX
+name_en: Lucario & Melmetal-GX
 rarity_code: HR
 category: card
 image: https://den-cards.pokellector.com/263/Lucario-Melmetal-GX.SM9B.65.26495.png
-illustrator:
+illustrator: 5ban Graphics
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '26495'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ルカリオ＆メルメタルGX
     variants_seen:
-    - normal
+      - normal
     rarity_code: HR

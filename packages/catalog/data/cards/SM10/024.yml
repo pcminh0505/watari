@@ -7,9 +7,9 @@ name_en: Seel
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/266/Seel.SM10.24.26888.png
-illustrator:
+illustrator: Sumiyoshi Kizuki
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '26888'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: パウワウ
     variants_seen:
-    - normal
+      - normal
     rarity_code: R

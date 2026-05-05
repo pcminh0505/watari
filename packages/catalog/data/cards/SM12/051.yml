@@ -7,9 +7,9 @@ name_en: Alolan Sandshrew
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/281/Alolan-Sandshrew.SM12.51.30091.png
-illustrator:
+illustrator: ryoma uratsuka
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '30091'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: アローラサンド
     variants_seen:
-    - normal
+      - normal
     rarity_code: RR

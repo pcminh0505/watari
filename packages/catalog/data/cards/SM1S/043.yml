@@ -7,9 +7,9 @@ name_en: Kangaskhan
 rarity_code: R
 category: card
 image: https://den-cards.pokellector.com/201/Kangaskhan.SM1S.43.13755.png
-illustrator:
+illustrator: TOKIYA
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '13755'

@@ -7,9 +7,9 @@ name_en: Energy Switch
 rarity_code: U
 category: energy
 image: https://den-cards.pokellector.com/237/Energy-Switch.SM6B.53.20699.png
-illustrator:
+illustrator: Ken Ikuji
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '20699'

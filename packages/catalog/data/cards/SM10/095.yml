@@ -4,12 +4,12 @@ set_code: sm10
 local_id: '095'
 name_ja: シロナ
 name_en: Cynthia
-rarity_code: R
+rarity_code: TR
 category: card
 image: https://den-cards.pokellector.com/266/Cynthia.SM10.95.26946.png
-illustrator:
+illustrator: Hideki Ishikawa
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '26946'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: シロナ
     variants_seen:
-    - normal
+      - normal
     rarity_code: TR

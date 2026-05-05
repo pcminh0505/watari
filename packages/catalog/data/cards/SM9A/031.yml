@@ -3,13 +3,13 @@
 set_code: sm9a
 local_id: '031'
 name_ja: サーナイト＆ニンフィアGX
-name_en: Gardevoir & Sylveon GX
+name_en: Gardevoir & Sylveon-GX
 rarity_code: RR
 category: card
 image: https://den-cards.pokellector.com/262/Gardevoir-Sylveon-GX.SM9A.31.25571.png
-illustrator:
+illustrator: Mitsuhiro Arita
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '25571'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: サーナイト＆ニンフィアGX
     variants_seen:
-    - normal
+      - normal
     rarity_code: RR

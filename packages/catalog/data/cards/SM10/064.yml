@@ -7,9 +7,9 @@ name_en: Cleffa
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/266/Cleffa.SM10.64.26921.png
-illustrator:
+illustrator: Shibuzoh.
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '26921'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ピィ
     variants_seen:
-    - normal
+      - normal
     rarity_code: HR

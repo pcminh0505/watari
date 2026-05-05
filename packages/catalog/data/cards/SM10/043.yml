@@ -7,9 +7,9 @@ name_en: Diglett
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/266/Diglett.SM10.43.26902.png
-illustrator:
+illustrator: Kouki Saitou
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '26902'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ディグダ
     variants_seen:
-    - normal
+      - normal
     rarity_code: R

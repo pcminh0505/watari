@@ -3,13 +3,13 @@
 set_code: sm12a
 local_id: '226'
 name_ja: ファイヤー＆サンダー＆フリーザーGX
-name_en: Moltres & Zapdos & Articuno GX
+name_en: Moltres & Zapdos & Articuno-GX
 rarity_code: UR
 category: card
 image: https://den-cards.pokellector.com/288/Moltres-Zapdos-Articuno-GX.SM12A.226.30564.png
-illustrator:
+illustrator: 5ban Graphics
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '30564'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ファイヤー＆サンダー＆フリーザーGX
     variants_seen:
-    - normal
+      - normal
     rarity_code: UR

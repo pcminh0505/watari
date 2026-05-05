@@ -7,9 +7,9 @@ name_en: Ribombee
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/240/Ribombee.SM7B.35.23104.png
-illustrator:
+illustrator: Hasuno
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '23104'

@@ -3,13 +3,13 @@
 set_code: sm5p
 local_id: '046'
 name_ja: マキシ
-name_en: Wake
+name_en: Crasher Wake
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/238/Wake.SM5+.46.20039.png
-illustrator:
+illustrator: Ken Sugimori
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '20039'

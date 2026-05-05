@@ -7,9 +7,9 @@ name_en: Rockruff
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/228/Rockruff.SM4+.55.19624.png
-illustrator:
+illustrator: Naoki Saito
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '19624'

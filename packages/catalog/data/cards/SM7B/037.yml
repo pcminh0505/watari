@@ -7,9 +7,9 @@ name_en: Shiinotic
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/240/Shiinotic.SM7B.37.23138.png
-illustrator:
+illustrator: Suwama Chiaki
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '23138'

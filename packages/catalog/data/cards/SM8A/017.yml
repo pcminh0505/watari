@@ -7,9 +7,9 @@ name_en: Pancham
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/245/Pancham.SM8A.17.24127.png
-illustrator:
+illustrator: Yuka Morii
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '24127'

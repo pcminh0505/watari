@@ -3,13 +3,13 @@
 set_code: sm8b
 local_id: '064'
 name_ja: マーシャドーGX
-name_en: Marshadow GX
+name_en: Marshadow-GX
 rarity_code: RR
 category: card
 image: https://den-cards.pokellector.com/241/Marshadow-GX.SM8B.64.24409.png
-illustrator:
+illustrator: 5ban Graphics
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '24409'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: マーシャドーGX
     variants_seen:
-    - normal
+      - normal
     rarity_code: RR

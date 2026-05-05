@@ -4,12 +4,12 @@ set_code: sm6b
 local_id: '076'
 name_ja: Bill's Maintenance
 name_en: Bill's Maintenance
-rarity_code: UR
+rarity_code: SR
 category: card
 image: https://den-cards.pokellector.com/237/Bills-Maintenance.SM6B.76.20867.png
-illustrator:
+illustrator: Sanosuke Sakuma
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '20867'

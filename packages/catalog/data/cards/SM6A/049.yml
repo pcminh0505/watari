@@ -7,9 +7,9 @@ name_en: Zinnia
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/236/Zinnia.SM6A.49.20575.png
-illustrator:
+illustrator: Megumi Mizutani
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '20575'

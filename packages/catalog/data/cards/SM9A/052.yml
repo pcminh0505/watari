@@ -4,12 +4,12 @@ set_code: sm9a
 local_id: '052'
 name_ja: エレキパワー
 name_en: Electropower
-rarity_code: R
+rarity_code: TR
 category: card
 image: https://den-cards.pokellector.com/262/Electropower.SM9A.52.25629.png
-illustrator:
+illustrator: Ayaka Yoshida
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '25629'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: エレキパワー
     variants_seen:
-    - normal
+      - normal
     rarity_code: TR

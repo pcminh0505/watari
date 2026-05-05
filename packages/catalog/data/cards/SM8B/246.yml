@@ -3,13 +3,13 @@
 set_code: sm8b
 local_id: '246'
 name_ja: カプ・コケコGX
-name_en: Tapu Koko GX
+name_en: Tapu Koko-GX
 rarity_code: UR
 category: card
 image: https://den-cards.pokellector.com/241/Tapu-Koko-GX.SM8B.246.25341.png
-illustrator:
+illustrator: 5ban Graphics
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '25341'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: カプ・コケコGX
     variants_seen:
-    - normal
+      - normal
     rarity_code: UR

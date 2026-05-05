@@ -7,9 +7,9 @@ name_en: Voltorb
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/224/Voltorb.SM3+.31.18306.png
-illustrator:
+illustrator: match
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '18306'

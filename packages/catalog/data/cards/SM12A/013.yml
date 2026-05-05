@@ -7,9 +7,9 @@ name_en: Steenee
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/288/Steenee.SM12A.13.30376.png
-illustrator:
+illustrator: Kagemaru Himeno
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '30376'

@@ -4,12 +4,12 @@ set_code: sm6
 local_id: '088'
 name_ja: ハウ
 name_en: Hau
-rarity_code: C
+rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/235/Hau.SM6.88.20540.png
-illustrator:
+illustrator: Ken Sugimori
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '20540'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ハウ
     variants_seen:
-    - normal
+      - normal
     rarity_code: U

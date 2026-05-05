@@ -3,13 +3,13 @@
 set_code: sm6
 local_id: '020'
 name_ja: ゲッコウガGX
-name_en: Greninja GX
+name_en: Greninja-GX
 rarity_code: RR
 category: card
 image: https://den-cards.pokellector.com/235/Greninja-GX.SM6.20.20484.png
-illustrator:
+illustrator: 5ban Graphics
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '20484'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ゲッコウガGX
     variants_seen:
-    - normal
+      - normal
     rarity_code: RR

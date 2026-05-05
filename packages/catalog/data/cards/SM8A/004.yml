@@ -7,9 +7,9 @@ name_en: Mareep
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/245/Mareep.SM8A.4.24116.png
-illustrator:
+illustrator: Akira Komayama
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '24116'

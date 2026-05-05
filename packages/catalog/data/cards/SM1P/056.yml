@@ -3,13 +3,13 @@
 set_code: sm1p
 local_id: '056'
 name_ja: 基本超エネルギー
-name_en: Toxapex GX
-rarity_code: UR
+name_en: Toxapex-GX
+rarity_code: SR
 category: card
 image: https://den-cards.pokellector.com/200/Toxapex-GX.SM1+.56.14606.png
-illustrator:
+illustrator: 5ban Graphics
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '14606'

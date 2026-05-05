@@ -7,9 +7,9 @@ name_en: Shining Jirachi
 rarity_code: UR
 category: card
 image: https://den-cards.pokellector.com/224/Shining-Jirachi.SM3+.43.18314.png
-illustrator:
+illustrator: Shigenori Negishi
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '18314'

@@ -7,9 +7,9 @@ name_en: Torterra
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/238/Torterra.SM5+.24.20056.png
-illustrator:
+illustrator: kawayoo
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '20056'

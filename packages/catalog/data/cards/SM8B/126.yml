@@ -7,9 +7,9 @@ name_en: Fairy Charm UB
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/241/Fairy-Charm-UB.SM8B.126.24908.png
-illustrator:
+illustrator: Toyste Beach
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '24908'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: フェアリーチャームUB
     variants_seen:
-    - normal
+      - normal
     rarity_code: U

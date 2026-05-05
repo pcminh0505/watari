@@ -7,9 +7,9 @@ name_en: Kakuna
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/260/Kakuna.SM9.4.25449.png
-illustrator:
+illustrator: Yuka Morii
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '25449'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: コクーン
     variants_seen:
-    - normal
+      - normal
     rarity_code: U

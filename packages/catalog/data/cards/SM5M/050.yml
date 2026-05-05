@@ -7,9 +7,9 @@ name_en: Yungoos
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/233/Yungoos.SM5M.50.19949.png
-illustrator:
+illustrator: Misa Tsutsui
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '19949'

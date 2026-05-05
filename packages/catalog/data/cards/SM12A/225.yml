@@ -3,13 +3,13 @@
 set_code: sm12a
 local_id: '225'
 name_ja: ガブリアス＆ギラティナGX
-name_en: Garchomp & Giratina GX
+name_en: Garchomp & Giratina-GX
 rarity_code: UR
 category: card
 image: https://den-cards.pokellector.com/288/Garchomp-Giratina-GX.SM12A.225.30563.png
-illustrator:
+illustrator: aky CG Works
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '30563'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ガブリアス＆ギラティナGX
     variants_seen:
-    - normal
+      - normal
     rarity_code: UR

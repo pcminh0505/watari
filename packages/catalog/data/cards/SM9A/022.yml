@@ -7,9 +7,9 @@ name_en: Quagsire
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/262/Quagsire.SM9A.22.25604.png
-illustrator:
+illustrator: kirisAki
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '25604'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ヌオー
     variants_seen:
-    - normal
+      - normal
     rarity_code: U

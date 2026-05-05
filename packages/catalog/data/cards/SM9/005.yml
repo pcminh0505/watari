@@ -7,9 +7,9 @@ name_en: Beedrill
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/260/Beedrill.SM9.5.25450.png
-illustrator:
+illustrator: You Iribi
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '25450'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: スピアー
     variants_seen:
-    - normal
+      - normal
     rarity_code: U

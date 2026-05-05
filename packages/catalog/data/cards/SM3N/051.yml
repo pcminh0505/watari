@@ -3,13 +3,13 @@
 set_code: sm3n
 local_id: '051'
 name_ja: ポータウン
-name_en: Port Town
+name_en: Po Town
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/218/Po-Town.SM3N.51.18222.png
-illustrator:
+illustrator: 5ban Graphics
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '18222'

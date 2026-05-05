@@ -3,13 +3,13 @@
 set_code: sm8a
 local_id: '014'
 name_ja: カプ・コケコ
-name_en: Tapu Koko
-rarity_code: C
+name_en: Tapu Koko ◇
+rarity_code: PR
 category: card
 image: https://den-cards.pokellector.com/245/Tapu-Koko.SM8A.14.24124.png
-illustrator:
+illustrator: Kouki Saitou
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '24124'

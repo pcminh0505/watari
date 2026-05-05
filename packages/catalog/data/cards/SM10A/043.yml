@@ -7,9 +7,9 @@ name_en: Unfezant
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/267/Unfezant.SM10A.43.27523.png
-illustrator:
+illustrator: Shin Nagasawa
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '27523'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ケンホロウ
     variants_seen:
-    - normal
+      - normal
     rarity_code: U

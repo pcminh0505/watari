@@ -7,9 +7,9 @@ name_en: Golett
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/281/Golett.SM12.31.30076.png
-illustrator:
+illustrator: Shigenori Negishi
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '30076'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ゴビット
     variants_seen:
-    - normal
+      - normal
     rarity_code: C

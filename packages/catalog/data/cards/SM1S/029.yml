@@ -7,9 +7,9 @@ name_en: Makuhita
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/201/Makuhita.SM1S.29.13744.png
-illustrator:
+illustrator: Mina Nakai
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '13744'

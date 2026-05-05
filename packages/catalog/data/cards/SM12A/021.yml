@@ -3,13 +3,13 @@
 set_code: sm12a
 local_id: '021'
 name_ja: ビクティニ◇
-name_en: Victini Prism Star
-rarity_code: R
+name_en: Victini ◇
+rarity_code: PR
 category: card
 image: https://den-cards.pokellector.com/288/Victini-Prism-Star.SM12A.21.30382.png
-illustrator:
+illustrator: Shin Nagasawa
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '30382'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ビクティニ◇
     variants_seen:
-    - normal
+      - normal
     rarity_code: R

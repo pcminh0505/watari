@@ -7,9 +7,9 @@ name_en: Boldore
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/202/Boldore.SM1M.30.13802.png
-illustrator:
+illustrator: Shigenori Negishi
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '13802'

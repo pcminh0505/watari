@@ -7,9 +7,9 @@ name_en: Vikavolt
 rarity_code: R
 category: card
 image: https://den-cards.pokellector.com/202/Vikavolt.SM1M.20.png
-illustrator:
+illustrator: Hitoshi Ariga
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '20'

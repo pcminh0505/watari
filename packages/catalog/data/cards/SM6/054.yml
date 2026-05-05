@@ -7,9 +7,9 @@ name_en: Pangoro
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/235/Pangoro.SM6.54.20460.png
-illustrator:
+illustrator: SATOSHI NAKAI
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '20460'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: レシラムGX
     variants_seen:
-    - normal
+      - normal
     rarity_code: SR

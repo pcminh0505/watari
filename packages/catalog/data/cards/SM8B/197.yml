@@ -4,12 +4,12 @@ set_code: sm8b
 local_id: '197'
 name_ja: チルタリス
 name_en: Altaria
-rarity_code: SR
+rarity_code: S
 category: card
 image: https://den-cards.pokellector.com/241/Altaria.SM8B.197.25312.png
-illustrator:
+illustrator: kirisAki
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '25312'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: チルタリス
     variants_seen:
-    - normal
+      - normal
     rarity_code: SR

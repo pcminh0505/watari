@@ -7,9 +7,9 @@ name_en: Onix
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/243/Onix.SM7A.34.22379.png
-illustrator:
+illustrator: Tomokazu Komiya
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '22379'

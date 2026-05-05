@@ -3,13 +3,13 @@
 set_code: sm8b
 local_id: '225'
 name_ja: ジガルデGX
-name_en: Zygarde GX
-rarity_code: SR
+name_en: Zygarde-GX
+rarity_code: SSR
 category: card
 image: https://den-cards.pokellector.com/241/Zygarde-GX.SM8B.225.24419.png
-illustrator:
+illustrator: 5ban Graphics
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '24419'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ジガルデGX
     variants_seen:
-    - normal
+      - normal
     rarity_code: SR

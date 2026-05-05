@@ -7,9 +7,9 @@ name_en: Custom Catcher
 rarity_code: UR
 category: card
 image: https://den-cards.pokellector.com/243/Custom-Catcher.SM7A.72.22529.png
-illustrator:
+illustrator: Toyste Beach
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '22529'

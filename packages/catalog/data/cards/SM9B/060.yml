@@ -3,13 +3,13 @@
 set_code: sm9b
 local_id: '060'
 name_ja: テッカグヤGX
-name_en: Celesteela GX
+name_en: Celesteela-GX
 rarity_code: SR
 category: card
 image: https://den-cards.pokellector.com/263/Celesteela-GX.SM9B.60.26491.png
-illustrator:
+illustrator: aky CG Works
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '26491'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: テッカグヤGX
     variants_seen:
-    - normal
+      - normal
     rarity_code: SR

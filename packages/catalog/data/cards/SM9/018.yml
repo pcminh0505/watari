@@ -7,9 +7,9 @@ name_en: Moltres
 rarity_code: R
 category: card
 image: https://den-cards.pokellector.com/260/Moltres.SM9.18.25457.png
-illustrator:
+illustrator: Shin Nagasawa
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '25457'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: クワガノン
     variants_seen:
-    - normal
+      - normal
     rarity_code: R

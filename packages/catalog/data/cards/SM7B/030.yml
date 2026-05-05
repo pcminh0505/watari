@@ -7,9 +7,9 @@ name_en: Gardevoir
 rarity_code: R
 category: card
 image: https://den-cards.pokellector.com/240/Gardevoir.SM7B.30.23132.png
-illustrator:
+illustrator: Ryota Murayama
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '23132'

@@ -7,9 +7,9 @@ name_en: Kangaskhan
 rarity_code: R
 category: card
 image: https://den-cards.pokellector.com/267/Kangaskhan.SM10A.37.27349.png
-illustrator:
+illustrator: Sanosuke Sakuma
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '27349'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ガルーラ
     variants_seen:
-    - normal
+      - normal
     rarity_code: R

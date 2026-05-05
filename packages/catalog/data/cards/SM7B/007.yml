@@ -7,9 +7,9 @@ name_en: Silcoon
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/240/Silcoon.SM7B.7.23116.png
-illustrator:
+illustrator: Satoshi Shirai
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '23116'

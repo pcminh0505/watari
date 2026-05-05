@@ -7,9 +7,9 @@ name_en: Murkrow
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/212/Murkrow.SM2+.35.17495.png
-illustrator:
+illustrator: Sekio
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '17495'

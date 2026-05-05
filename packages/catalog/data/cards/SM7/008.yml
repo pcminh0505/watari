@@ -3,13 +3,13 @@
 set_code: sm7
 local_id: '008'
 name_ja: ダーテングGX
-name_en: Shiftry GX
+name_en: Shiftry-GX
 rarity_code: RR
 category: card
 image: https://den-cards.pokellector.com/242/Shiftry-GX.SM7.8.20975.png
-illustrator:
+illustrator: PLANETA Igarashi
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '20975'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ダーテングGX
     variants_seen:
-    - normal
+      - normal
     rarity_code: RR

@@ -3,13 +3,13 @@
 set_code: sm7
 local_id: '068'
 name_ja: マグカルゴGX
-name_en: Rayquaza GX
+name_en: Rayquaza-GX
 rarity_code: RR
 category: card
 image: https://den-cards.pokellector.com/242/Rayquaza-GX.SM7.68.20946.png
-illustrator:
+illustrator: 5ban Graphics
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '20946'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: マグカルゴGX
     variants_seen:
-    - normal
+      - normal
     rarity_code: RR

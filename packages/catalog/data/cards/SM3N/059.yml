@@ -3,13 +3,13 @@
 set_code: sm3n
 local_id: '059'
 name_ja: Necrozma GX
-name_en: Necrozma GX
-rarity_code: UR
+name_en: Necrozma-GX
+rarity_code: HR
 category: card
 image: https://den-cards.pokellector.com/218/Necrozma-GX.SM3N.59.18140.png
-illustrator:
+illustrator: 5ban Graphics
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '18140'

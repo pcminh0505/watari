@@ -3,13 +3,13 @@
 set_code: sm12
 local_id: '109'
 name_ja: ウルガモスGX
-name_en: Volcarona GX
+name_en: Volcarona-GX
 rarity_code: HR
 category: card
 image: https://den-cards.pokellector.com/281/Volcarona-GX.SM12.109.30158.png
-illustrator:
+illustrator: PLANETA Tsuji
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '30158'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ウルガモスGX
     variants_seen:
-    - normal
+      - normal
     rarity_code: HR

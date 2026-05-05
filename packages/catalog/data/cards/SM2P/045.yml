@@ -7,9 +7,9 @@ name_en: Weakness Policy
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/212/Weakness-Policy.SM2+.45.17504.png
-illustrator:
+illustrator: Ayaka Yoshida
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '17504'

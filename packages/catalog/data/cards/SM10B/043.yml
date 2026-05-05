@@ -7,9 +7,9 @@ name_en: Silvally
 rarity_code: R
 category: card
 image: https://den-cards.pokellector.com/268/Silvally.SM10B.43.27686.png
-illustrator:
+illustrator: Eske Yoshinob
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '27686'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: シルヴァディ
     variants_seen:
-    - normal
+      - normal
     rarity_code: R

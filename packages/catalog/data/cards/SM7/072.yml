@@ -7,9 +7,9 @@ name_en: Whismur
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/242/Whismur.SM7.72.21026.png
-illustrator:
+illustrator: Asako Ito
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '21026'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: カスタムキャッチャー
     variants_seen:
-    - normal
+      - normal
     rarity_code: UR

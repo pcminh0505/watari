@@ -7,9 +7,9 @@ name_en: Great Potion
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/277/Great-Potion.SM11.81.28773.png
-illustrator:
+illustrator: Yoshinobu Saito
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '28773'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: グレートポーション
     variants_seen:
-    - normal
+      - normal
     rarity_code: U

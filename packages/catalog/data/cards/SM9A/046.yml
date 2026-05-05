@@ -3,13 +3,13 @@
 set_code: sm9a
 local_id: '046'
 name_ja: 隠密フード
-name_en: Secret Hood
+name_en: Stealthy Hood
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/262/Secret-Hood.SM9A.46.25623.png
-illustrator:
+illustrator: Ryo Ueda
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '25623'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: 隠密フード
     variants_seen:
-    - normal
+      - normal
     rarity_code: U

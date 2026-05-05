@@ -3,13 +3,13 @@
 set_code: sm5s
 local_id: '064'
 name_ja: テンガン山
-name_en: Mt Coronet
+name_en: Mt. Coronet
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/232/Mt-Coronet.SM5S.64.19877.png
-illustrator:
+illustrator: Ryo Ueda
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '19877'

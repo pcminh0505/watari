@@ -4,12 +4,12 @@ set_code: sm6
 local_id: '084'
 name_ja: ふっかつそう
 name_en: Choice Band
-rarity_code: C
+rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/235/Choice-Band.SM6.84.20538.png
-illustrator:
+illustrator: Eske Yoshinob
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '20538'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ふっかつそう
     variants_seen:
-    - normal
+      - normal
     rarity_code: UR

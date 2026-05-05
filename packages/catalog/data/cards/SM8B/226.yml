@@ -3,13 +3,13 @@
 set_code: sm8b
 local_id: '226'
 name_ja: ルガルガンGX
-name_en: Lycanroc GX
-rarity_code: SR
+name_en: Lycanroc-GX
+rarity_code: SSR
 category: card
 image: https://den-cards.pokellector.com/241/Lycanroc-GX.SM8B.226.25254.png
-illustrator:
+illustrator: 5ban Graphics
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '25254'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ルガルガンGX
     variants_seen:
-    - normal
+      - normal
     rarity_code: SR

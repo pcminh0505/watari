@@ -7,9 +7,9 @@ name_en: Buizel
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/233/Buizel.SM5M.7.19922.png
-illustrator:
+illustrator: so-taro
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '19922'

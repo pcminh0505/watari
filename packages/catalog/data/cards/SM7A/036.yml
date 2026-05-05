@@ -7,9 +7,9 @@ name_en: Alolan Dugtrio
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/243/Alolan-Dugtrio.SM7A.36.22378.png
-illustrator:
+illustrator: Yuka Morii
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '22378'

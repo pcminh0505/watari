@@ -7,9 +7,9 @@ name_en: Guzzlord
 rarity_code: R
 category: card
 image: https://den-cards.pokellector.com/272/Guzzlord.SM11A.46.28938.png
-illustrator:
+illustrator: Kouki Saitou
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '28938'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: アクジキング
     variants_seen:
-    - normal
+      - normal
     rarity_code: R

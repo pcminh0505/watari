@@ -7,9 +7,9 @@ name_en: Alolan Dugtrio
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/232/Alolan-Dugtrio.SM5S.33.19986.png
-illustrator:
+illustrator: Megumi Mizutani
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '19986'

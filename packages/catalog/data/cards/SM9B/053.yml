@@ -4,12 +4,12 @@ set_code: sm9b
 local_id: '053'
 name_ja: 鋼鉄のフライパン
 name_en: Metal Frying Pan
-rarity_code: C
+rarity_code: TR
 category: card
 image: https://den-cards.pokellector.com/263/Metal-Frying-Pan.SM9B.53.26463.png
-illustrator:
+illustrator: Ryo Ueda
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '26463'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: 鋼鉄のフライパン
     variants_seen:
-    - normal
+      - normal
     rarity_code: TR

@@ -4,12 +4,12 @@ set_code: sm8b
 local_id: '167'
 name_ja: リザード
 name_en: Charmeleon
-rarity_code: SR
+rarity_code: S
 category: card
 image: https://den-cards.pokellector.com/241/Charmeleon.SM8B.167.25289.png
-illustrator:
+illustrator: nagimiso
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '25289'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: リザード
     variants_seen:
-    - normal
+      - normal
     rarity_code: SR

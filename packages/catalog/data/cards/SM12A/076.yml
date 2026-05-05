@@ -7,9 +7,9 @@ name_en: Spiritomb
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/288/Spiritomb.SM12A.76.30428.png
-illustrator:
+illustrator: Kagemaru Himeno
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '30428'

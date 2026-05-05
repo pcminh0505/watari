@@ -3,13 +3,13 @@
 set_code: sm6b
 local_id: '069'
 name_ja: Mr. Mime GX
-name_en: Mr. Mime GX
-rarity_code: UR
+name_en: Mr. Mime-GX
+rarity_code: SR
 category: card
 image: https://den-cards.pokellector.com/237/Mr-Mime-GX.SM6B.69.20925.png
-illustrator:
+illustrator: 5ban Graphics
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '20925'

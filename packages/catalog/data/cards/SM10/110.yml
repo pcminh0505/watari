@@ -3,13 +3,13 @@
 set_code: sm10
 local_id: '110'
 name_ja: マーシャドー＆カイリキーGX
-name_en: Marshadow & Machamp GX
+name_en: Marshadow & Machamp-GX
 rarity_code: HR
 category: card
 image: https://den-cards.pokellector.com/266/Marshadow-Machamp-GX.SM10.110.26962.png
-illustrator:
+illustrator: 5ban Graphics
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '26962'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: マーシャドー＆カイリキーGX
     variants_seen:
-    - normal
+      - normal
     rarity_code: HR

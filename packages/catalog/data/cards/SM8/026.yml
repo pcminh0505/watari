@@ -7,9 +7,9 @@ name_en: Delibird
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/258/Delibird.SM8.26.23251.png
-illustrator:
+illustrator: Ken Sugimori
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '23251'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ゾロアーク
     variants_seen:
-    - normal
+      - normal
     rarity_code: R

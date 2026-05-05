@@ -3,13 +3,13 @@
 set_code: sm2k
 local_id: '059'
 name_ja: Kommo-o GX
-name_en: Kommo-o GX
-rarity_code: UR
+name_en: Kommo-o-GX
+rarity_code: HR
 category: card
 image: https://den-cards.pokellector.com/211/Kommo-o-GX.SM2K.59.17364.png
-illustrator:
+illustrator: 5ban Graphics
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '17364'

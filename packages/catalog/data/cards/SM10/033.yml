@@ -7,9 +7,9 @@ name_en: Gengar
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/266/Gengar.SM10.33.26895.png
-illustrator:
+illustrator: so-taro
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '26895'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: クリムガン
     variants_seen:
-    - normal
+      - normal
     rarity_code: U

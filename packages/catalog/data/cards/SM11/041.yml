@@ -7,9 +7,9 @@ name_en: Aegislash
 rarity_code: R
 category: card
 image: https://den-cards.pokellector.com/277/Aegislash.SM11.41.28770.png
-illustrator:
+illustrator: Eske Yoshinob
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '28770'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: アローラベトベター
     variants_seen:
-    - normal
+      - normal
     rarity_code: RR

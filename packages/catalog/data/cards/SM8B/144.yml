@@ -7,9 +7,9 @@ name_en: Mt. Coronet
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/241/Mt-Coronet.SM8B.144.24923.png
-illustrator:
+illustrator: Ryo Ueda
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '24923'

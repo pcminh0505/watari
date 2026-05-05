@@ -7,9 +7,9 @@ name_en: Gladion
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/226/Gladion.SM4S.50.19313.png
-illustrator:
+illustrator: Ken Sugimori
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '19313'

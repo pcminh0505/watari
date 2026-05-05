@@ -7,9 +7,9 @@ name_en: Sunflora
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/281/Sunflora.SM12.2.29751.png
-illustrator:
+illustrator: Yumi
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '29751'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: キマワリ
     variants_seen:
-    - normal
+      - normal
     rarity_code: U

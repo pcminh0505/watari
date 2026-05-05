@@ -3,13 +3,13 @@
 set_code: sm10
 local_id: '080'
 name_ja: ザクザクピッケル
-name_en: Zag Zag Pickel
+name_en: Chip-Chip Ice Axe
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/266/Zag-Zag-Pickel.SM10.80.26935.png
-illustrator:
+illustrator: Yoshinobu Saito
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '26935'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ザクザクピッケル
     variants_seen:
-    - normal
+      - normal
     rarity_code: U

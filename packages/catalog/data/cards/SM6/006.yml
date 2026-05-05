@@ -4,12 +4,12 @@ set_code: sm6
 local_id: '006'
 name_ja: ビビヨン
 name_en: Vivillon
-rarity_code: C
+rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/235/Vivillon.SM6.6.20493.png
-illustrator:
+illustrator: Akira Komayama
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '20493'

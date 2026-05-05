@@ -4,12 +4,12 @@ set_code: sm9b
 local_id: '052'
 name_ja: ビーストリング
 name_en: Beast Ring
-rarity_code: C
+rarity_code: TR
 category: card
 image: https://den-cards.pokellector.com/263/Beast-Ring.SM9B.52.26462.png
-illustrator:
+illustrator: 5ban Graphics
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '26462'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ビーストリング
     variants_seen:
-    - normal
+      - normal
     rarity_code: TR

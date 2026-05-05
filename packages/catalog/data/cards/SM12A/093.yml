@@ -7,9 +7,9 @@ name_en: Melmetal
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/288/Melmetal.SM12A.93.30444.png
-illustrator:
+illustrator: TOKIYA
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '30444'

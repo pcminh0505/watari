@@ -7,9 +7,9 @@ name_en: Primarina
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/243/Primarina.SM7A.24.22404.png
-illustrator:
+illustrator: Shin Nagasawa
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '22404'

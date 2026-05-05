@@ -7,9 +7,9 @@ name_en: Looker
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/233/Looker.SM5M.63.19911.png
-illustrator:
+illustrator: Ken Sugimori
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '19911'

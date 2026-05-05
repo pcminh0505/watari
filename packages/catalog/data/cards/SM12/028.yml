@@ -7,9 +7,9 @@ name_en: Togedemaru
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/281/Togedemaru.SM12.28.30073.png
-illustrator:
+illustrator: sowsow
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '30073'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: トゲデマル
     variants_seen:
-    - normal
+      - normal
     rarity_code: RR

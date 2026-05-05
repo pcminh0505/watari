@@ -3,13 +3,13 @@
 set_code: sm5s
 local_id: '031'
 name_ja: ダークライ
-name_en: Darkrai Prism Star
-rarity_code: SR
+name_en: Darkrai ◇
+rarity_code: PR
 category: card
 image: https://den-cards.pokellector.com/232/Darkrai-Prism-Star.SM5S.31.19914.png
-illustrator:
+illustrator: Naoki Saito
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '19914'

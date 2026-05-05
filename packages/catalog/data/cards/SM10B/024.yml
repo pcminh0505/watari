@@ -7,9 +7,9 @@ name_en: Xurkitree
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/268/Xurkitree.SM10B.24.27668.png
-illustrator:
+illustrator: Satoshi Shirai
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '27668'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: デンジュモク
     variants_seen:
-    - normal
+      - normal
     rarity_code: U

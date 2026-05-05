@@ -7,9 +7,9 @@ name_en: Copycat
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/237/Copycat.SM6B.65.20921.png
-illustrator:
+illustrator: Ken Sugimori
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '20921'

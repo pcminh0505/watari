@@ -7,9 +7,9 @@ name_en: Sableye
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/237/Sableye.SM6B.39.20865.png
-illustrator:
+illustrator: Yukiko Baba
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '20865'

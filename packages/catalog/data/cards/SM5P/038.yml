@@ -7,9 +7,9 @@ name_en: Aqua Patch
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/238/Aqua-Patch.SM5+.38.20050.png
-illustrator:
+illustrator: Toyste Beach
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '20050'

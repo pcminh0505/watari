@@ -7,9 +7,9 @@ name_en: Fomantis
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/202/Fomantis.SM1M.5.13781.png
-illustrator:
+illustrator: Kagemaru Himeno
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '13781'

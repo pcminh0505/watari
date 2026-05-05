@@ -7,9 +7,9 @@ name_en: Max Potion
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/200/Max-Potion.SM1+.48.13930.png
-illustrator:
+illustrator: Toyste Beach
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '13930'

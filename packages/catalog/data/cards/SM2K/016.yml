@@ -7,9 +7,9 @@ name_en: Glalie
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/211/Glalie.SM2K.16.17249.png
-illustrator:
+illustrator: so-taro
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '17249'

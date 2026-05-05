@@ -7,9 +7,9 @@ name_en: Inkay
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/288/Inkay.SM12A.61.30414.png
-illustrator:
+illustrator: sowsow
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '30414'

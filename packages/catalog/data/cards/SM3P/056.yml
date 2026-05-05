@@ -7,9 +7,9 @@ name_en: Hoopa
 rarity_code: R
 category: card
 image: https://den-cards.pokellector.com/224/Hoopa.SM3+.56.18279.png
-illustrator:
+illustrator: TOKIYA
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '18279'

@@ -3,13 +3,13 @@
 set_code: sm10
 local_id: '029'
 name_ja: ベトベトン＆アローラベトベトンGX
-name_en: Muk & Alolan Muk GX
+name_en: Muk & Alolan Muk-GX
 rarity_code: RR
 category: card
 image: https://den-cards.pokellector.com/266/Muk-Alolan-Muk-GX.SM10.29.26843.png
-illustrator:
+illustrator: Mitsuhiro Arita
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '26843'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ベトベトン＆アローラベトベトンGX
     variants_seen:
-    - normal
+      - normal
     rarity_code: RR

@@ -3,13 +3,13 @@
 set_code: sm6
 local_id: '058'
 name_ja: カツラの一発勝負
-name_en: Flab&eacute;b&eacute;
+name_en: Flabébé
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/235/Flabeacutebeacute.SM6.58.20521.png
-illustrator:
+illustrator: Ken Sugimori
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '20521'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: カツラの一発勝負
     variants_seen:
-    - normal
+      - normal
     rarity_code: SR

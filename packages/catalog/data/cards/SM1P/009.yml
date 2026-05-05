@@ -3,13 +3,13 @@
 set_code: sm1p
 local_id: '009'
 name_ja: ガオガエンGX
-name_en: Incineroar GX
+name_en: Incineroar-GX
 rarity_code: RR
 category: card
 image: https://den-cards.pokellector.com/200/Incineroar-GX.SM1+.9.14582.png
-illustrator:
+illustrator: 5ban Graphics
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '14582'

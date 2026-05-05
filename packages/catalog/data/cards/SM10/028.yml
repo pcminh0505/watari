@@ -7,9 +7,9 @@ name_en: Stunfisk
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/266/Stunfisk.SM10.28.26857.png
-illustrator:
+illustrator: sowsow
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '26857'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: マッギョ
     variants_seen:
-    - normal
+      - normal
     rarity_code: U

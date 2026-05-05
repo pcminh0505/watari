@@ -3,13 +3,13 @@
 set_code: sm11
 local_id: '069'
 name_ja: ラフレシアGX(SA)
-name_en: Dragonite GX
-rarity_code: SR
+name_en: Dragonite-GX
+rarity_code: RR
 category: card
 image: https://den-cards.pokellector.com/277/Dragonite-GX.SM11.69.28764.png
-illustrator:
+illustrator: PLANETA Igarashi
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '28764'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ラフレシアGX(SA)
     variants_seen:
-    - normal
+      - normal
     rarity_code: SR

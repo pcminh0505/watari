@@ -3,13 +3,13 @@
 set_code: sm5p
 local_id: '042'
 name_ja: 鋼鉄のフライパン
-name_en: Steel Frying Pan
+name_en: Metal Frying Pan
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/238/Steel-Frying-Pan.SM5+.42.20053.png
-illustrator:
+illustrator: Toyste Beach
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '20053'

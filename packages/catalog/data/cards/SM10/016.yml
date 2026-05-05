@@ -7,9 +7,9 @@ name_en: Incineroar
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/266/Incineroar.SM10.16.26880.png
-illustrator:
+illustrator: Misa Tsutsui
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '26880'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ユキカブリ
     variants_seen:
-    - normal
+      - normal
     rarity_code: R

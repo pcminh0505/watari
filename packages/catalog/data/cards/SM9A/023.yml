@@ -7,9 +7,9 @@ name_en: Gligar
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/262/Gligar.SM9A.23.25605.png
-illustrator:
+illustrator: Ken Sugimori
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '25605'

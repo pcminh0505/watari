@@ -7,9 +7,9 @@ name_en: Carnivine
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/224/Carnivine.SM3+.7.18289.png
-illustrator:
+illustrator: Tomokazu Komiya
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '18289'

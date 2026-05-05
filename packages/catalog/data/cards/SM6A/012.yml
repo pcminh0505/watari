@@ -7,9 +7,9 @@ name_en: Horsea
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/236/Horsea.SM6A.12.20648.png
-illustrator:
+illustrator: Mizue
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '20648'

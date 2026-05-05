@@ -7,9 +7,9 @@ name_en: Field Blower
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/228/Field-Blower.SM4+.93.19653.png
-illustrator:
+illustrator: Toyste Beach
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '19653'

@@ -3,13 +3,13 @@
 set_code: sm11
 local_id: '088'
 name_ja: まどろみの森
-name_en: Slumber Forest
+name_en: Slumbering Forest
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/277/Slumber-Forest.SM11.88.28846.png
-illustrator:
+illustrator: Ryo Ueda
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '28846'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: まどろみの森
     variants_seen:
-    - normal
+      - normal
     rarity_code: U

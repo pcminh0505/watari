@@ -3,13 +3,13 @@
 set_code: sm11
 local_id: '045'
 name_ja: キリキザン
-name_en: Aerodactyl GX
+name_en: Aerodactyl-GX
 rarity_code: RR
 category: card
 image: https://den-cards.pokellector.com/277/Aerodactyl-GX.SM11.45.28814.png
-illustrator:
+illustrator: PLANETA Igarashi
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '28814'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: キリキザン
     variants_seen:
-    - normal
+      - normal
     rarity_code: RR

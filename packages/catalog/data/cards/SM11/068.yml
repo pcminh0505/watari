@@ -7,9 +7,9 @@ name_en: Dragonite
 rarity_code: R
 category: card
 image: https://den-cards.pokellector.com/277/Dragonite.SM11.68.28752.png
-illustrator:
+illustrator: Misa Tsutsui
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '28752'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: カイリュー
     variants_seen:
-    - normal
+      - normal
     rarity_code: SR

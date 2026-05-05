@@ -7,9 +7,9 @@ name_en: Mysterious Treasure
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/288/Mysterious-Treasure.SM12A.134.30479.png
-illustrator:
+illustrator: Eske Yoshinob
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '30479'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ミステリートレジャー(ミラー)
     variants_seen:
-    - normal
+      - normal
     rarity_code: C

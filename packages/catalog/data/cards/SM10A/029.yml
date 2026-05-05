@@ -7,9 +7,9 @@ name_en: Hoopa
 rarity_code: R
 category: card
 image: https://den-cards.pokellector.com/267/Hoopa.SM10A.29.27358.png
-illustrator:
+illustrator: Ayaka Yoshida
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '27358'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: フーパ
     variants_seen:
-    - normal
+      - normal
     rarity_code: R

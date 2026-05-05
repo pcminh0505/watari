@@ -4,12 +4,12 @@ set_code: sm8b
 local_id: '163'
 name_ja: Dartrix
 name_en: Dartrix
-rarity_code: UR
+rarity_code: S
 category: card
 image: https://den-cards.pokellector.com/241/Dartrix.SM8B.163.24930.png
-illustrator:
+illustrator: Shigenori Negishi
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '24930'

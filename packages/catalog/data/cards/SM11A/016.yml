@@ -3,13 +3,13 @@
 set_code: sm11a
 local_id: '016'
 name_ja: カメックス＆ポッチャマGX
-name_en: Blastoise & Piplup GX
+name_en: Blastoise & Piplup-GX
 rarity_code: RR
 category: card
 image: https://den-cards.pokellector.com/272/Blastoise-Piplup-GX.SM11A.16.28935.png
-illustrator:
+illustrator: Mitsuhiro Arita
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '28935'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: カメックス＆ポッチャマGX
     variants_seen:
-    - normal
+      - normal
     rarity_code: RR

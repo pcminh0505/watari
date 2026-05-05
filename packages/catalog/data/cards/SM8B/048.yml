@@ -7,9 +7,9 @@ name_en: Dawn Wings Necrozma
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/241/Dawn-Wings-Necrozma.SM8B.48.24846.png
-illustrator:
+illustrator: nagimiso
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '24846'

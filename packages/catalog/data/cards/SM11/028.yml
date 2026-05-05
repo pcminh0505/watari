@@ -7,9 +7,9 @@ name_en: Tapu Koko
 rarity_code: R
 category: card
 image: https://den-cards.pokellector.com/277/Tapu-Koko.SM11.28.28765.png
-illustrator:
+illustrator: Shin Nagasawa
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '28765'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ミミッキュ
     variants_seen:
-    - normal
+      - normal
     rarity_code: R

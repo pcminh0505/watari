@@ -7,9 +7,9 @@ name_en: Pokémon Communication
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/288/Pokmon-Communication.SM12A.132.30477.png
-illustrator:
+illustrator: OOYAMA
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '30477'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ポケモン通信
     variants_seen:
-    - normal
+      - normal
     rarity_code: C

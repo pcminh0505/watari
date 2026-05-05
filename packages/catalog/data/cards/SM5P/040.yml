@@ -3,13 +3,13 @@
 set_code: sm5p
 local_id: '040'
 name_ja: スーパーポケモン回収
-name_en: Super Pokemon Recovery
+name_en: Super Scoop Up
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/238/Super-Pokemon-Recovery.SM5+.40.20091.png
-illustrator:
+illustrator: Toyste Beach
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '20091'

@@ -7,9 +7,9 @@ name_en: Meganium
 rarity_code: R
 category: card
 image: https://den-cards.pokellector.com/258/Meganium.SM8.5.23206.png
-illustrator:
+illustrator: nagimiso
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '23206'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: モココ
     variants_seen:
-    - normal
+      - normal
     rarity_code: R

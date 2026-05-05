@@ -7,9 +7,9 @@ name_en: Exeggcute
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/227/Exeggcute.SM4A.4.19404.png
-illustrator:
+illustrator: Kouki Saitou
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '19404'

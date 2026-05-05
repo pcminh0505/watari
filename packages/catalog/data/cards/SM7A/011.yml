@@ -7,9 +7,9 @@ name_en: Slugma
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/243/Slugma.SM7A.11.22394.png
-illustrator:
+illustrator: SATOSHI NAKAI
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '22394'

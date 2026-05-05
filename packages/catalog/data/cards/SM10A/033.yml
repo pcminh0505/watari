@@ -7,9 +7,9 @@ name_en: Latias
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/267/Latias.SM10A.33.27515.png
-illustrator:
+illustrator: chibi
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '27515'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ラティアス
     variants_seen:
-    - normal
+      - normal
     rarity_code: U

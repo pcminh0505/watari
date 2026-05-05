@@ -3,13 +3,13 @@
 set_code: sm11a
 local_id: '075'
 name_ja: リザードン＆テールナーGX
-name_en: Charizard & Braixen GX
+name_en: Charizard & Braixen-GX
 rarity_code: HR
 category: card
 image: https://den-cards.pokellector.com/272/Charizard-Braixen-GX.SM11A.75.29016.png
-illustrator:
+illustrator: 5ban Graphics
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '29016'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: リザードン＆テールナーGX
     variants_seen:
-    - normal
+      - normal
     rarity_code: HR

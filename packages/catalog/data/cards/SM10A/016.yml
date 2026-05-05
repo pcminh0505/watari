@@ -7,9 +7,9 @@ name_en: Giratina
 rarity_code: R
 category: card
 image: https://den-cards.pokellector.com/267/Giratina.SM10A.16.27357.png
-illustrator:
+illustrator: Misa Tsutsui
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '27357'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ギラティナ
     variants_seen:
-    - normal
+      - normal
     rarity_code: R

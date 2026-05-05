@@ -3,13 +3,13 @@
 set_code: sm9
 local_id: '106'
 name_ja: イーブイ＆カビゴンGX
-name_en: Eevee & Snorlax GX
+name_en: Eevee & Snorlax-GX
 rarity_code: SR
 category: card
 image: https://den-cards.pokellector.com/260/Eevee-Snorlax-GX.SM9.106.25543.png
-illustrator:
+illustrator: 5ban Graphics
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '25543'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: イーブイ＆カビゴンGX
     variants_seen:
-    - normal
+      - normal
     rarity_code: SR

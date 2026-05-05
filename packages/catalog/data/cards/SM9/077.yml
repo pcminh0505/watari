@@ -7,9 +7,9 @@ name_en: Escape Rope
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/260/Escape-Rope.SM9.77.25504.png
-illustrator:
+illustrator: Toyste Beach
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '25504'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: あなぬけのヒモ
     variants_seen:
-    - normal
+      - normal
     rarity_code: U

@@ -7,9 +7,9 @@ name_en: Honchkrow
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/210/Honchkrow.SM2L.30.17290.png
-illustrator:
+illustrator: Hideki Ishikawa
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '17290'

@@ -7,9 +7,9 @@ name_en: Alolan Graveler
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/260/Alolan-Graveler.SM9.34.25470.png
-illustrator:
+illustrator: Misa Tsutsui
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '25470'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: アローラゴローン
     variants_seen:
-    - normal
+      - normal
     rarity_code: U

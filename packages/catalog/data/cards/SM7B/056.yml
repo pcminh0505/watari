@@ -4,12 +4,12 @@ set_code: sm7b
 local_id: '056'
 name_ja: Mina
 name_en: Mina
-rarity_code: UR
+rarity_code: SR
 category: card
 image: https://den-cards.pokellector.com/240/Mina.SM7B.56.23147.png
-illustrator:
+illustrator: You Iribi
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '23147'

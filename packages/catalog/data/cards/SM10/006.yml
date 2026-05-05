@@ -3,13 +3,13 @@
 set_code: sm10
 local_id: '006'
 name_ja: ランプラー
-name_en: Venemoth
+name_en: Venomoth
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/266/Venemoth.SM10.6.26860.png
-illustrator:
+illustrator: Mina Nakai
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '26860'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ランプラー
     variants_seen:
-    - normal
+      - normal
     rarity_code: U

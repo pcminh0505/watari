@@ -7,9 +7,9 @@ name_en: Sightseer
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/243/Sightseer.SM7A.56.21603.png
-illustrator:
+illustrator: Naoki Saito
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '21603'

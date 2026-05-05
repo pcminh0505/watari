@@ -3,13 +3,13 @@
 set_code: sm6b
 local_id: '041'
 name_ja: ハッサムGX
-name_en: Scizor GX
+name_en: Scizor-GX
 rarity_code: RR
 category: card
 image: https://den-cards.pokellector.com/237/Scisor-GX.SM6B.41.20700.png
-illustrator:
+illustrator: 5ban Graphics
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '20700'

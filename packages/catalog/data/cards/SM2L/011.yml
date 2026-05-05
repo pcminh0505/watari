@@ -7,9 +7,9 @@ name_en: Wailord
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/210/Wailord.SM2L.11.17277.png
-illustrator:
+illustrator: OOYAMA
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '17277'

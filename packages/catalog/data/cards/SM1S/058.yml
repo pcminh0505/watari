@@ -7,9 +7,9 @@ name_en: Ilima
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/201/Llima.SM1S.58.13719.png
-illustrator:
+illustrator: Ken Sugimori
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '13719'

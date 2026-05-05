@@ -7,9 +7,9 @@ name_en: Goodra
 rarity_code: R
 category: card
 image: https://den-cards.pokellector.com/210/Goodra.SM2L.40.17299.png
-illustrator:
+illustrator: Naoki Saito
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '17299'

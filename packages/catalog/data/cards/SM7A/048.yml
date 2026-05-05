@@ -7,9 +7,9 @@ name_en: Super Scoop Up
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/243/Super-Scoop-Up.SM7A.48.22416.png
-illustrator:
+illustrator: Toyste Beach
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '22416'

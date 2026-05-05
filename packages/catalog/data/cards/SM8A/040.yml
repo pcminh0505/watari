@@ -7,9 +7,9 @@ name_en: Bisharp
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/245/Bisharp.SM8A.40.24003.png
-illustrator:
+illustrator: Anesaki Dynamic
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '24003'

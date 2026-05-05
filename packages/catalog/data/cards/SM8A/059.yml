@@ -3,13 +3,13 @@
 set_code: sm8a
 local_id: '059'
 name_ja: デンリュウGX
-name_en: Ampharos GX
-rarity_code: UR
+name_en: Ampharos-GX
+rarity_code: HR
 category: card
 image: https://den-cards.pokellector.com/245/Ampharos-GX.SM8A.59.24273.png
-illustrator:
+illustrator: 5ban Graphics
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '24273'

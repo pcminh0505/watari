@@ -7,9 +7,9 @@ name_en: Ampharos
 rarity_code: R
 category: card
 image: https://den-cards.pokellector.com/258/Ampharos.SM8.36.23261.png
-illustrator:
+illustrator: Satoshi Shirai
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '23261'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ドータクン
     variants_seen:
-    - normal
+      - normal
     rarity_code: R

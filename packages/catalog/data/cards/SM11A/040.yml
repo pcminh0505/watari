@@ -3,13 +3,13 @@
 set_code: sm11a
 local_id: '040'
 name_ja: アローラペルシアンGX
-name_en: Alolan Persian GX
+name_en: Alolan Persian-GX
 rarity_code: RR
 category: card
 image: https://den-cards.pokellector.com/272/Alolan-Persian-GX.SM11A.40.28951.png
-illustrator:
+illustrator: 5ban Graphics
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '28951'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: アローラペルシアンGX
     variants_seen:
-    - normal
+      - normal
     rarity_code: RR

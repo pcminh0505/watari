@@ -3,13 +3,13 @@
 set_code: sm8
 local_id: '104'
 name_ja: ツボツボGX
-name_en: Shuckle GX
-rarity_code: RR
+name_en: Shuckle-GX
+rarity_code: HR
 category: card
 image: https://den-cards.pokellector.com/258/Shuckle-GX.SM8.104.23608.png
-illustrator:
+illustrator: 5ban Graphics
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '23608'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ツボツボGX
     variants_seen:
-    - normal
+      - normal
     rarity_code: RR

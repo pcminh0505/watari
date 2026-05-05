@@ -4,12 +4,12 @@ set_code: sm4p
 local_id: '119'
 name_ja: Lillie
 name_en: Lillie
-rarity_code: UR
+rarity_code: SR
 category: card
 image: https://den-cards.pokellector.com/228/Lillie.SM4+.119.19571.png
-illustrator:
+illustrator: Naoki Saito
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '19571'

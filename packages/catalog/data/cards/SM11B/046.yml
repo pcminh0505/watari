@@ -7,9 +7,9 @@ name_en: Roxie
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/278/Roxie.SM11B.46.29267.png
-illustrator:
+illustrator: Yusuke Ohmura
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '29267'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ホミカ
     variants_seen:
-    - normal
+      - normal
     rarity_code: U

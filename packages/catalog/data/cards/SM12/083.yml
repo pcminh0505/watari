@@ -3,13 +3,13 @@
 set_code: sm12
 local_id: '083'
 name_ja: タッグコール
-name_en: Tag Whistle
+name_en: Tag Call
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/281/Tag-Whistle.SM12.83.29637.png
-illustrator:
+illustrator: Toyste Beach
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '29637'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: タッグコール
     variants_seen:
-    - normal
+      - normal
     rarity_code: RR

@@ -7,9 +7,9 @@ name_en: Alolan Graveler
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/226/Alolan-Graveler.SM4S.17.19375.png
-illustrator:
+illustrator: kirisAki
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '19375'

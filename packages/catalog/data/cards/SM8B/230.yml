@@ -3,13 +3,13 @@
 set_code: sm8b
 local_id: '230'
 name_ja: ダークライGX
-name_en: Darkrai GX
-rarity_code: SR
+name_en: Darkrai-GX
+rarity_code: SSR
 category: card
 image: https://den-cards.pokellector.com/241/Darkrai-GX.SM8B.230.25332.png
-illustrator:
+illustrator: 5ban Graphics
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '25332'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ダークライGX
     variants_seen:
-    - normal
+      - normal
     rarity_code: SR

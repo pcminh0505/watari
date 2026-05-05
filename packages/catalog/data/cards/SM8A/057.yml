@@ -4,12 +4,12 @@ set_code: sm8a
 local_id: '057'
 name_ja: Nanu
 name_en: Nanu
-rarity_code: UR
+rarity_code: SR
 category: card
 image: https://den-cards.pokellector.com/245/Nanu.SM8A.57.24271.png
-illustrator:
+illustrator: Hitoshi Ariga
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '24271'

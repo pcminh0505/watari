@@ -3,13 +3,13 @@
 set_code: sm6
 local_id: '082'
 name_ja: ハッサムGX
-name_en: Pokemon Catcher
+name_en: Pokémon Catcher
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/235/Pokemon-Catcher.SM6.82.20487.png
-illustrator:
+illustrator: Toyste Beach
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '20487'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ハッサムGX
     variants_seen:
-    - normal
+      - normal
     rarity_code: HR

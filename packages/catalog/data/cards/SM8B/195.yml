@@ -4,12 +4,12 @@ set_code: sm8b
 local_id: '195'
 name_ja: キルリア
 name_en: Kirlia
-rarity_code: SR
+rarity_code: S
 category: card
 image: https://den-cards.pokellector.com/241/Kirlia.SM8B.195.25310.png
-illustrator:
+illustrator: Sumiyoshi Kizuki
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '25310'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: キルリア
     variants_seen:
-    - normal
+      - normal
     rarity_code: SR

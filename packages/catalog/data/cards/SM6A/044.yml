@@ -3,13 +3,13 @@
 set_code: sm6a
 local_id: '044'
 name_ja: いれかえフロート
-name_en: Switch Float
+name_en: Switch Raft
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/236/Switch-Float.SM6A.44.20672.png
-illustrator:
+illustrator: Yoshinobu Saito
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '20672'

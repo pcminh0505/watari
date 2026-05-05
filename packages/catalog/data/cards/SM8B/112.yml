@@ -7,9 +7,9 @@ name_en: Energy Loto
 rarity_code: C
 category: energy
 image: https://den-cards.pokellector.com/241/Energy-Loto.SM8B.112.24897.png
-illustrator:
+illustrator: Yoshinobu Saito
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '24897'

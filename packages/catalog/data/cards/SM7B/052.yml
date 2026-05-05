@@ -3,13 +3,13 @@
 set_code: sm7b
 local_id: '052'
 name_ja: シンボラーGX
-name_en: Sigilyph GX
-rarity_code: UR
+name_en: Sigilyph-GX
+rarity_code: SR
 category: card
 image: https://den-cards.pokellector.com/240/Sigilyph-GX.SM7B.52.23151.png
-illustrator:
+illustrator: PLANETA Igarashi
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '23151'

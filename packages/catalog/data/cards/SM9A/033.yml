@@ -7,9 +7,9 @@ name_en: Clefable
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/262/Clefable.SM9A.33.25580.png
-illustrator:
+illustrator: Suwama Chiaki
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '25580'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ピクシー
     variants_seen:
-    - normal
+      - normal
     rarity_code: U

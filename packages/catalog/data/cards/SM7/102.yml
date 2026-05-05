@@ -3,13 +3,13 @@
 set_code: sm7
 local_id: '102'
 name_ja: ダイゴの決断
-name_en: Steven's Decision
+name_en: Steven's Resolve
 rarity_code: SR
 category: card
 image: https://den-cards.pokellector.com/242/Stevens-Decision.SM7.102.20970.png
-illustrator:
+illustrator: Hitoshi Ariga
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '20970'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ダイゴの決断
     variants_seen:
-    - normal
+      - normal
     rarity_code: SR

@@ -7,9 +7,9 @@ name_en: Chinchou
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/202/Chinchou.SM1M.17.13792.png
-illustrator:
+illustrator: Ayaka Yoshida
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '13792'

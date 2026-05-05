@@ -7,9 +7,9 @@ name_en: Cosmog
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/281/Cosmog.SM12.37.30080.png
-illustrator:
+illustrator: Masakazu Fukuda
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '30080'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: コスモッグ
     variants_seen:
-    - normal
+      - normal
     rarity_code: R

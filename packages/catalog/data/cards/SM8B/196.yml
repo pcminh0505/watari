@@ -4,12 +4,12 @@ set_code: sm8b
 local_id: '196'
 name_ja: Diancie
 name_en: Diancie
-rarity_code: UR
+rarity_code: S
 category: card
 image: https://den-cards.pokellector.com/241/Diancie.SM8B.196.25311.png
-illustrator:
+illustrator: Akira Komayama
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '25311'

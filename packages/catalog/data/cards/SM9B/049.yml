@@ -7,9 +7,9 @@ name_en: Molayne
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/263/Molayne.SM9B.49.26459.png
-illustrator:
+illustrator: Ken Sugimori
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '26459'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: マーレイン
     variants_seen:
-    - normal
+      - normal
     rarity_code: U

@@ -7,9 +7,9 @@ name_en: Spewpa
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/235/Spewpa.SM6.5.20492.png
-illustrator:
+illustrator: Miki Tanaka
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '20492'

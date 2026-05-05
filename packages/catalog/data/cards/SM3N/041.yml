@@ -7,9 +7,9 @@ name_en: Zygarde
 rarity_code: R
 category: card
 image: https://den-cards.pokellector.com/218/Zygarde.SM3N.41.18119.png
-illustrator:
+illustrator: Masakazu Fukuda
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '18119'

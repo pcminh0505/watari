@@ -3,13 +3,13 @@
 set_code: sm8a
 local_id: '041'
 name_ja: コバルオンGX
-name_en: Cobalion GX
+name_en: Cobalion-GX
 rarity_code: RR
 category: card
 image: https://den-cards.pokellector.com/245/Cobalion-GX.SM8A.41.24141.png
-illustrator:
+illustrator: 5ban Graphics
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '24141'

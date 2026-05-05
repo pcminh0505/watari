@@ -3,13 +3,13 @@
 set_code: sm5p
 local_id: '048'
 name_ja: ビーストエネルギー
-name_en: Beast Energy
-rarity_code: SR
+name_en: Beast Energy ◇
+rarity_code: PR
 category: energy
 image: https://den-cards.pokellector.com/238/Beast-Energy.SM5+.48.20031.png
 illustrator:
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '20031'

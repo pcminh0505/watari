@@ -3,13 +3,13 @@
 set_code: sm7b
 local_id: '005'
 name_ja: ジュカインGX
-name_en: Sceptile GX
+name_en: Sceptile-GX
 rarity_code: RR
 category: card
 image: https://den-cards.pokellector.com/240/Sceptile-GX.SM7B.5.23109.png
-illustrator:
+illustrator: Yoshinobu Saito
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '23109'

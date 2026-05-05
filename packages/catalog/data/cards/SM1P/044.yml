@@ -7,9 +7,9 @@ name_en: Enhanced Hammer
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/200/Enhanced-Hammer.SM1+.44.13982.png
-illustrator:
+illustrator: Yoshinobu Saito
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '13982'

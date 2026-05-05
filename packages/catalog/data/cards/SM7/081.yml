@@ -7,9 +7,9 @@ name_en: Ultra Ball
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/242/Ultra-Ball.SM7.81.21033.png
-illustrator:
+illustrator: Ryo Ueda
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '21033'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ハイパーボール
     variants_seen:
-    - normal
+      - normal
     rarity_code: U

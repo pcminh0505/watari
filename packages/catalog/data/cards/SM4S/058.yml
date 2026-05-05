@@ -3,13 +3,13 @@
 set_code: sm4s
 local_id: '058'
 name_ja: Kartana GX
-name_en: Kartana GX
-rarity_code: UR
+name_en: Kartana-GX
+rarity_code: HR
 category: card
 image: https://den-cards.pokellector.com/226/Kartana-GX.SM4S.58.19397.png
-illustrator:
+illustrator: 5ban Graphics
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '19397'

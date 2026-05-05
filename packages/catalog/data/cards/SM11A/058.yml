@@ -3,13 +3,13 @@
 set_code: sm11a
 local_id: '058'
 name_ja: ローラースケーター
-name_en: Rollerskater
+name_en: Roller Skater
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/272/Rollerskater.SM11A.58.28930.png
-illustrator:
+illustrator: Yusuke Ohmura
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '28930'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ローラースケーター
     variants_seen:
-    - normal
+      - normal
     rarity_code: C

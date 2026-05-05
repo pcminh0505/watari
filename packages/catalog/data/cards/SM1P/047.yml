@@ -7,9 +7,9 @@ name_en: Multi Switch
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/200/Multi-Switch.SM1+.47.13937.png
-illustrator:
+illustrator: Toyste Beach
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '13937'

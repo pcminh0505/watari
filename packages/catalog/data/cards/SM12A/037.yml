@@ -3,13 +3,13 @@
 set_code: sm12a
 local_id: '037'
 name_ja: ボルケニオン◇
-name_en: Volcanion Prism Star
-rarity_code: R
+name_en: Volcanion ◇
+rarity_code: PR
 category: card
 image: https://den-cards.pokellector.com/288/Volcanion-Prism-Star.SM12A.37.30397.png
-illustrator:
+illustrator: Naoki Saito
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '30397'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ボルケニオン◇
     variants_seen:
-    - normal
+      - normal
     rarity_code: R

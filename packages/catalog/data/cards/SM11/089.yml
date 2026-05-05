@@ -3,13 +3,13 @@
 set_code: sm11
 local_id: '089'
 name_ja: ポケモンけんきゅうじょ
-name_en: Pokemon Research Lab
+name_en: Pokémon Research Lab
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/277/Pokemon-Research-Lab.SM11.89.28769.png
-illustrator:
+illustrator: aky CG Works
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '28769'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ポケモンけんきゅうじょ
     variants_seen:
-    - normal
+      - normal
     rarity_code: U

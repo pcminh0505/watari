@@ -7,9 +7,9 @@ name_en: Hypno
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/202/Hypno.SM1M.25.13798.png
-illustrator:
+illustrator: OOYAMA
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '13798'

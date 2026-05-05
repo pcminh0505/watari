@@ -7,9 +7,9 @@ name_en: Tag Call
 rarity_code: UR
 category: card
 image: https://den-cards.pokellector.com/281/Tag-Call.SM12.115.30164.png
-illustrator:
+illustrator: Toyste Beach
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '30164'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: タッグコール
     variants_seen:
-    - normal
+      - normal
     rarity_code: UR

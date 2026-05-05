@@ -7,9 +7,9 @@ name_en: Cottonee
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/277/Cottonee.SM11.62.28828.png
-illustrator:
+illustrator: Asako Ito
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '28828'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: モンメン
     variants_seen:
-    - normal
+      - normal
     rarity_code: SR

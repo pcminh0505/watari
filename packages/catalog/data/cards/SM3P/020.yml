@@ -7,9 +7,9 @@ name_en: Croconaw
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/224/Croconaw.SM3+.20.18298.png
-illustrator:
+illustrator: Naoki Saito
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '18298'

@@ -7,9 +7,9 @@ name_en: Unown
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/258/Unown.SM8.41.23266.png
-illustrator:
+illustrator: Masakazu Fukuda
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '23266'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: アンノーン
     variants_seen:
-    - normal
+      - normal
     rarity_code: RR

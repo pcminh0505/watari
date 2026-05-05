@@ -3,13 +3,13 @@
 set_code: sm7
 local_id: '099'
 name_ja: ツンデツンデGX
-name_en: Stakataka GX
+name_en: Stakataka-GX
 rarity_code: SR
 category: card
 image: https://den-cards.pokellector.com/242/Stakataka-GX.SM7.99.21049.png
-illustrator:
+illustrator: 5ban Graphics
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '21049'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ツンデツンデGX
     variants_seen:
-    - normal
+      - normal
     rarity_code: SR

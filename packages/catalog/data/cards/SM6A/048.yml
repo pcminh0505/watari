@@ -3,13 +3,13 @@
 set_code: sm6a
 local_id: '048'
 name_ja: カツラの一発勝負
-name_en: Blaine's Explosive Battle
+name_en: Blaine's Last Stand
 rarity_code: R
 category: card
 image: https://den-cards.pokellector.com/236/Blaines-Explosive-Battle.SM6A.48.20624.png
-illustrator:
+illustrator: Ken Sugimori
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '20624'

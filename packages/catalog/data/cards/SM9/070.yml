@@ -7,9 +7,9 @@ name_en: Pidgeot
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/260/Pidgeot.SM9.70.25428.png
-illustrator:
+illustrator: Akira Komayama
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '25428'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: エーテルパラダイス保護区
     variants_seen:
-    - normal
+      - normal
     rarity_code: UR

@@ -7,9 +7,9 @@ name_en: Rare Candy
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/228/Rare-Candy.SM4+.94.19654.png
-illustrator:
+illustrator: Toyste Beach
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '19654'

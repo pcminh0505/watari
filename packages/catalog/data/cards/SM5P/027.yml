@@ -7,9 +7,9 @@ name_en: Gabite
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/238/Gabite.SM5+.27.20087.png
-illustrator:
+illustrator: Sumiyoshi Kizuki
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '20087'

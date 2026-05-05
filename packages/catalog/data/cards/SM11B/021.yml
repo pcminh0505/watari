@@ -7,9 +7,9 @@ name_en: Koffing
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/278/Koffing.SM11B.21.29266.png
-illustrator:
+illustrator: Naoyo Kimura
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '29266'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ドガース
     variants_seen:
-    - normal
+      - normal
     rarity_code: C

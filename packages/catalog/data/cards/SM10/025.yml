@@ -7,9 +7,9 @@ name_en: Dewgong
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/266/Dewgong.SM10.25.26889.png
-illustrator:
+illustrator: Kagemaru Himeno
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '26889'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: リオル
     variants_seen:
-    - normal
+      - normal
     rarity_code: U

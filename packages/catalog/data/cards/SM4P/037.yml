@@ -7,9 +7,9 @@ name_en: Wobbuffet
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/228/Wobbuffet.SM4+.37.19611.png
-illustrator:
+illustrator: nagimiso
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '19611'

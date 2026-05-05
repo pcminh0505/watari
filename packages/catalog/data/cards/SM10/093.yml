@@ -4,12 +4,12 @@ set_code: sm10
 local_id: '093'
 name_ja: レスキュータンカ
 name_en: Rescue Stretcher
-rarity_code: R
+rarity_code: TR
 category: card
 image: https://den-cards.pokellector.com/266/Rescue-Stretcher.SM10.93.26944.png
-illustrator:
+illustrator: Yoshinobu Saito
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '26944'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: レスキュータンカ
     variants_seen:
-    - normal
+      - normal
     rarity_code: TR

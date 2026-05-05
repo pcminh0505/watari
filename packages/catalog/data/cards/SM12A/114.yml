@@ -7,9 +7,9 @@ name_en: Munchlax
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/288/Munchlax.SM12A.114.30460.png
-illustrator:
+illustrator: sowsow
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '30460'

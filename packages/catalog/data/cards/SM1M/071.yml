@@ -7,9 +7,9 @@ name_en: Nest Ball
 rarity_code: UR
 category: card
 image: https://den-cards.pokellector.com/202/Nest-Ball.SM1M.71.13835.png
-illustrator:
+illustrator: Toyste Beach
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '13835'

@@ -3,13 +3,13 @@
 set_code: sm2p
 local_id: '010'
 name_ja: エンニュートGX
-name_en: Salazzle GX
+name_en: Salazzle-GX
 rarity_code: RR
 category: card
 image: https://den-cards.pokellector.com/212/Salazzle-GX.SM2+.10.17475.png
-illustrator:
+illustrator: 5ban Graphics
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '17475'

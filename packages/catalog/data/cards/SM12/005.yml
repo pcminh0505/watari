@@ -7,9 +7,9 @@ name_en: Kricketot
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/281/Kricketot.SM12.5.30053.png
-illustrator:
+illustrator: Ken Sugimori
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '30053'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: コロボーシ
     variants_seen:
-    - normal
+      - normal
     rarity_code: C

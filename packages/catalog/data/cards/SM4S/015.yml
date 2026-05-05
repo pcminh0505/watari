@@ -7,9 +7,9 @@ name_en: Shellos
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/226/Shellos.SM4S.15.19373.png
-illustrator:
+illustrator: Kouki Saitou
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '19373'

@@ -4,12 +4,12 @@ set_code: sm6
 local_id: '039'
 name_ja: ヤミラミ
 name_en: Dragalge
-rarity_code: C
+rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/235/Dragalge.SM6.39.20511.png
-illustrator:
+illustrator: SATOSHI NAKAI
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '20511'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ヤミラミ
     variants_seen:
-    - normal
+      - normal
     rarity_code: U

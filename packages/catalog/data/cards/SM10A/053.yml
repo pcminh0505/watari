@@ -4,12 +4,12 @@ set_code: sm10a
 local_id: '053'
 name_ja: ロトム図鑑
 name_en: Rotom Dex
-rarity_code: C
+rarity_code: TR
 category: card
 image: https://den-cards.pokellector.com/267/Rotom-Dex.SM10A.53.27527.png
-illustrator:
+illustrator: aky CG Works
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '27527'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ロトム図鑑
     variants_seen:
-    - normal
+      - normal
     rarity_code: TR

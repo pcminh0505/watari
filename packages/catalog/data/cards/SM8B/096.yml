@@ -7,9 +7,9 @@ name_en: Alolan Exeggutor
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/241/Alolan-Exeggutor.SM8B.96.24884.png
-illustrator:
+illustrator: Anesaki Dynamic
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '24884'

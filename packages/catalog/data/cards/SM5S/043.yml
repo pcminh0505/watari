@@ -3,13 +3,13 @@
 set_code: sm5s
 local_id: '043'
 name_ja: ソルガレオ
-name_en: Solgaleo Prism Star
-rarity_code: SR
+name_en: Solgaleo ◇
+rarity_code: PR
 category: card
 image: https://den-cards.pokellector.com/232/Solgaleo-Prism-Star.SM5S.43.19850.png
-illustrator:
+illustrator: Shin Nagasawa
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '19850'

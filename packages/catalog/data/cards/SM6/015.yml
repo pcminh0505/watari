@@ -7,9 +7,9 @@ name_en: Litleo
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/235/Litleo.SM6.15.20497.png
-illustrator:
+illustrator: Yuka Morii
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '20497'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: コイキング
     variants_seen:
-    - normal
+      - normal
     rarity_code: C

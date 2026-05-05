@@ -7,9 +7,9 @@ name_en: Hoppip
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/258/Hoppip.SM8.9.23237.png
-illustrator:
+illustrator: kawayoo
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '23237'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ハネッコ
     variants_seen:
-    - normal
+      - normal
     rarity_code: C

@@ -7,9 +7,9 @@ name_en: Komala
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/212/Komala.SM2+.43.17502.png
-illustrator:
+illustrator: Kouki Saitou
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '17502'

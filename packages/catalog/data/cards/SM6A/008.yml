@@ -3,13 +3,13 @@
 set_code: sm6a
 local_id: '008'
 name_ja: レシラムGX
-name_en: Reshiram GX
+name_en: Reshiram-GX
 rarity_code: RR
 category: card
 image: https://den-cards.pokellector.com/236/Reshiram-GX.SM6A.8.20623.png
-illustrator:
+illustrator: PLANETA Otani
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '20623'

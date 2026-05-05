@@ -3,13 +3,13 @@
 set_code: sm1s
 local_id: '061'
 name_ja: ラプラス
-name_en: Lapras GX
-rarity_code: UR
+name_en: Lapras-GX
+rarity_code: SR
 category: card
 image: https://den-cards.pokellector.com/201/Lapras-GX.SM1S.61.13767.png
-illustrator:
+illustrator: 5ban Graphics
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '13767'

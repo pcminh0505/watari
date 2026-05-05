@@ -7,9 +7,9 @@ name_en: Dusclops
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/218/Dusclops.SM3N.20.18128.png
-illustrator:
+illustrator: SATOSHI NAKAI
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '18128'

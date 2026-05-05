@@ -3,13 +3,13 @@
 set_code: sm2p
 local_id: '046'
 name_ja: ねがいのバトン
-name_en: Wish Baton
+name_en: Wishful Baton
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/212/Wish-Baton.SM2+.46.17447.png
-illustrator:
+illustrator: Toyste Beach
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '17447'

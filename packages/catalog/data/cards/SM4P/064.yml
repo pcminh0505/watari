@@ -3,13 +3,13 @@
 set_code: sm4p
 local_id: '064'
 name_ja: ダークライGX
-name_en: Darkrai GX
+name_en: Darkrai-GX
 rarity_code: RR
 category: card
 image: https://den-cards.pokellector.com/228/Darkrai-GX.SM4+.64.19481.png
-illustrator:
+illustrator: PLANETA
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '19481'

@@ -7,9 +7,9 @@ name_en: Grovyle
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/288/Grovyle.SM12A.9.30372.png
-illustrator:
+illustrator: Ayaka Yoshida
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '30372'

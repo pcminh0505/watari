@@ -3,13 +3,13 @@
 set_code: sm6a
 local_id: '066'
 name_ja: ドラゴンTalon
-name_en: Dragon's Talon
+name_en: Dragon Talon
 rarity_code: UR
 category: card
 image: https://den-cards.pokellector.com/236/Dragons-Talon.SM6A.66.20691.png
-illustrator:
+illustrator: Toyste Beach
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '20691'

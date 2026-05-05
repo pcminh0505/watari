@@ -7,9 +7,9 @@ name_en: Gumshoos
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/233/Gumshoos.SM5M.51.19950.png
-illustrator:
+illustrator: nagimiso
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '19950'

@@ -3,13 +3,13 @@
 set_code: sm2k
 local_id: '009'
 name_ja: バクガメスGX
-name_en: Turtonator GX
+name_en: Turtonator-GX
 rarity_code: RR
 category: card
 image: https://den-cards.pokellector.com/211/Turtonator-GX.SM2K.9.16509.png
-illustrator:
+illustrator: 5ban Graphics
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '16509'

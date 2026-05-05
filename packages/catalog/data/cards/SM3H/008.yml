@@ -7,9 +7,9 @@ name_en: Araquanid
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/219/Araquanid.SM3H.8.18092.png
-illustrator:
+illustrator: Naoki Saito
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '18092'

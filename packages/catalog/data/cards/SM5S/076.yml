@@ -7,9 +7,9 @@ name_en: Peeking Red Card
 rarity_code: UR
 category: card
 image: https://den-cards.pokellector.com/232/Peeking-Red-Card.SM5S.76.20015.png
-illustrator:
+illustrator: Toyste Beach
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '20015'

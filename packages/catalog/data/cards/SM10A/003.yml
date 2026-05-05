@@ -7,9 +7,9 @@ name_en: Magmortar
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/267/Magmortar.SM10A.3.27500.png
-illustrator:
+illustrator: KEIICHIRO ITO
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '27500'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ブーバーン
     variants_seen:
-    - normal
+      - normal
     rarity_code: U

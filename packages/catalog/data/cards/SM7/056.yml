@@ -7,9 +7,9 @@ name_en: Registeel
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/242/Registeel.SM7.56.21017.png
-illustrator:
+illustrator: Shin Nagasawa
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '21017'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: かんこうきゃく
     variants_seen:
-    - normal
+      - normal
     rarity_code: SR

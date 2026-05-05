@@ -7,9 +7,9 @@ name_en: Breloom
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/224/Breloom.SM3+.6.18288.png
-illustrator:
+illustrator: Mizue
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '18288'

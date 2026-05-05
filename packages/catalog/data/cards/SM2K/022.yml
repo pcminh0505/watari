@@ -3,13 +3,13 @@
 set_code: sm2k
 local_id: '022'
 name_ja: カプ・コケコGX
-name_en: Tapu Koko GX
+name_en: Tapu Koko-GX
 rarity_code: RR
 category: card
 image: https://den-cards.pokellector.com/211/Tapu-Koko-GX.SM2K.22.16508.png
-illustrator:
+illustrator: 5ban Graphics
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '16508'

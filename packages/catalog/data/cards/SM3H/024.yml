@@ -4,12 +4,12 @@ set_code: sm3h
 local_id: '024'
 name_ja: ペンドラー
 name_en: Scolipede
-rarity_code: R
+rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/219/Darkrai.SM3H.24.18031.png
-illustrator:
+illustrator: Ayaka Yoshida
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '18031'

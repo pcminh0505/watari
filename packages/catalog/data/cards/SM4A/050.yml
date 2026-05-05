@@ -4,12 +4,12 @@ set_code: sm4a
 local_id: '050'
 name_ja: カウンターエネルギー
 name_en: Counter Energy
-rarity_code: C
+rarity_code: U
 category: energy
 image: https://den-cards.pokellector.com/227/Counter-Energy.SM4A.50.19349.png
 illustrator:
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '19349'

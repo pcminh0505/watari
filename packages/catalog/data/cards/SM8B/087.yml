@@ -7,9 +7,9 @@ name_en: Magearna
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/241/Magearna.SM8B.87.24877.png
-illustrator:
+illustrator: kawayoo
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '24877'

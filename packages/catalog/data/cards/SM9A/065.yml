@@ -3,13 +3,13 @@
 set_code: sm9a
 local_id: '065'
 name_ja: デデンネGX
-name_en: Dedenne GX
+name_en: Dedenne-GX
 rarity_code: HR
 category: card
 image: https://den-cards.pokellector.com/262/Dedenne-GX.SM9A.65.25648.png
-illustrator:
+illustrator: 5ban Graphics
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '25648'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: デデンネGX
     variants_seen:
-    - normal
+      - normal
     rarity_code: HR

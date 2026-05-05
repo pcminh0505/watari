@@ -3,13 +3,13 @@
 set_code: sm10b
 local_id: '034'
 name_ja: アーゴヨンGX
-name_en: Naganadel GX
+name_en: Naganadel-GX
 rarity_code: RR
 category: card
 image: https://den-cards.pokellector.com/268/Naganadel-GX.SM10B.34.27678.png
-illustrator:
+illustrator: PLANETA Tsuji
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '27678'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: アーゴヨンGX
     variants_seen:
-    - normal
+      - normal
     rarity_code: RR

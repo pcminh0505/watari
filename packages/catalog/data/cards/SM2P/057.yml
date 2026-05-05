@@ -4,12 +4,12 @@ set_code: sm2p
 local_id: '057'
 name_ja: Sophocles
 name_en: Sophocles
-rarity_code: UR
+rarity_code: SR
 category: card
 image: https://den-cards.pokellector.com/212/Sophocles.SM2+.57.17463.png
-illustrator:
+illustrator: Sanosuke Sakuma
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '17463'

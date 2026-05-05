@@ -7,9 +7,9 @@ name_en: Minun
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/224/Minun.SM3+.35.18309.png
-illustrator:
+illustrator: nagimiso
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '18309'

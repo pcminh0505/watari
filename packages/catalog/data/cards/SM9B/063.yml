@@ -3,13 +3,13 @@
 set_code: sm9b
 local_id: '063'
 name_ja: フェローチェ＆マッシブーンGX
-name_en: Pheromosa & Buzzwole GX
+name_en: Pheromosa & Buzzwole-GX
 rarity_code: HR
 category: card
 image: https://den-cards.pokellector.com/263/Pheromosa-Buzzwole-GX.SM9B.63.26493.png
-illustrator:
+illustrator: aky CG Works
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '26493'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: フェローチェ＆マッシブーンGX
     variants_seen:
-    - normal
+      - normal
     rarity_code: HR

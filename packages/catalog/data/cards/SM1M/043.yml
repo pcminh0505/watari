@@ -7,9 +7,9 @@ name_en: Dragonair
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/202/Dragonair.SM1M.43.13813.png
-illustrator:
+illustrator: hatachu
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '13813'

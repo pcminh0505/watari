@@ -7,9 +7,9 @@ name_en: Noivern
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/235/Noivern.SM6.75.20532.png
-illustrator:
+illustrator: You Iribi
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '20532'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ぼんぐり職人
     variants_seen:
-    - normal
+      - normal
     rarity_code: SR

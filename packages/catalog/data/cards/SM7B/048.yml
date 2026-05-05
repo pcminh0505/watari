@@ -7,9 +7,9 @@ name_en: Morty
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/240/Morty.SM7B.48.23107.png
-illustrator:
+illustrator: Ken Sugimori
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '23107'

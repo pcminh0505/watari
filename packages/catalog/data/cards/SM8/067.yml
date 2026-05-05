@@ -7,9 +7,9 @@ name_en: Blissey
 rarity_code: R
 category: card
 image: https://den-cards.pokellector.com/258/Blissey.SM8.67.23291.png
-illustrator:
+illustrator: MAHOU
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '23291'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ハピナス
     variants_seen:
-    - normal
+      - normal
     rarity_code: R

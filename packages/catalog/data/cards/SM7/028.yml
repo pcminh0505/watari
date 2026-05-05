@@ -7,9 +7,9 @@ name_en: Huntail
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/242/Huntail.SM7.28.20992.png
-illustrator:
+illustrator: Shigenori Negishi
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '20992'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ラルトス
     variants_seen:
-    - normal
+      - normal
     rarity_code: C

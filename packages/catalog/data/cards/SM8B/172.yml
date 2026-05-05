@@ -4,12 +4,12 @@ set_code: sm8b
 local_id: '172'
 name_ja: ゲコガシラ
 name_en: Frogadier
-rarity_code: SR
+rarity_code: S
 category: card
 image: https://den-cards.pokellector.com/241/Frogadier.SM8B.172.25251.png
-illustrator:
+illustrator: Anesaki Dynamic
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '25251'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ゲコガシラ
     variants_seen:
-    - normal
+      - normal
     rarity_code: SR

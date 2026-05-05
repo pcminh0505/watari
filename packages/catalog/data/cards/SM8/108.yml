@@ -3,13 +3,13 @@
 set_code: sm8
 local_id: '108'
 name_ja: ルギアGX
-name_en: Lugia GX
+name_en: Lugia-GX
 rarity_code: HR
 category: card
 image: https://den-cards.pokellector.com/258/Lugia-GX.SM8.108.23612.png
-illustrator:
+illustrator: PLANETA Igarashi
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '23612'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ルギアGX
     variants_seen:
-    - normal
+      - normal
     rarity_code: HR

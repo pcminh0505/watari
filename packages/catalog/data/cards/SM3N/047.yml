@@ -3,13 +3,13 @@
 set_code: sm3n
 local_id: '047'
 name_ja: いちゃもんスプレー
-name_en: Torment Spray
+name_en: Tormenting Spray
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/218/Torment-Spray.SM3N.47.18082.png
-illustrator:
+illustrator: Toyste Beach
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '18082'

@@ -3,13 +3,13 @@
 set_code: sm9
 local_id: '101'
 name_ja: ピカチュウ＆ゼクロムGX(SA)
-name_en: Pikachu & Zekrom GX
+name_en: Pikachu & Zekrom-GX
 rarity_code: SR
 category: card
 image: https://den-cards.pokellector.com/260/Pikachu-Zekrom-GX.SM9.101.25538.png
-illustrator:
+illustrator: kawayoo
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '25538'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ピカチュウ＆ゼクロムGX(SA)
     variants_seen:
-    - normal
+      - normal
     rarity_code: SR

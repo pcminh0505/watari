@@ -7,9 +7,9 @@ name_en: Piplup
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/233/Piplup.SM5M.4.19847.png
-illustrator:
+illustrator: Shibuzoh.
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '19847'

@@ -7,9 +7,9 @@ name_en: Gothita
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/211/Gothita.SM2K.25.17338.png
-illustrator:
+illustrator: Yuka Morii
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '17338'

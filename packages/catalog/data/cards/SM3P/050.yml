@@ -7,9 +7,9 @@ name_en: Liepard
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/224/Liepard.SM3+.50.18319.png
-illustrator:
+illustrator: kawayoo
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '18319'

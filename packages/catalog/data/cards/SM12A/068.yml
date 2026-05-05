@@ -7,9 +7,9 @@ name_en: Tyrogue
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/288/Tyrogue.SM12A.68.30420.png
-illustrator:
+illustrator: Mina Nakai
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '30420'

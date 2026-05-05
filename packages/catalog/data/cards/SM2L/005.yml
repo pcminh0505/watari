@@ -7,9 +7,9 @@ name_en: Chandelure
 rarity_code: R
 category: card
 image: https://den-cards.pokellector.com/210/Chandelure.SM2L.5.17272.png
-illustrator:
+illustrator: Kouki Saitou
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '17272'

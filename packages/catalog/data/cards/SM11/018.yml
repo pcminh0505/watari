@@ -7,9 +7,9 @@ name_en: Dewpider
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/277/Dewpider.SM11.18.28795.png
-illustrator:
+illustrator: Atsuko Nishida
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '28795'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ゴルダック
     variants_seen:
-    - normal
+      - normal
     rarity_code: C

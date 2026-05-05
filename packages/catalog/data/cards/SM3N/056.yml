@@ -4,12 +4,12 @@ set_code: sm3n
 local_id: '056'
 name_ja: Guzma
 name_en: Guzma
-rarity_code: UR
+rarity_code: SR
 category: card
 image: https://den-cards.pokellector.com/218/Guzma.SM3N.56.18132.png
-illustrator:
+illustrator: Masakazu Fukuda
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '18132'

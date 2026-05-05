@@ -7,9 +7,9 @@ name_en: Brock's Grit
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/260/Brocks-Grit.SM9.87.25512.png
-illustrator:
+illustrator: Naoki Saito
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '25512'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: タケシのガッツ
     variants_seen:
-    - normal
+      - normal
     rarity_code: U

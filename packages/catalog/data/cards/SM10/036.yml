@@ -7,9 +7,9 @@ name_en: Mewtwo
 rarity_code: R
 category: card
 image: https://den-cards.pokellector.com/266/Mewtwo.SM10.36.26863.png
-illustrator:
+illustrator: Shin Nagasawa
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '26863'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ベロリンガ
     variants_seen:
-    - normal
+      - normal
     rarity_code: R

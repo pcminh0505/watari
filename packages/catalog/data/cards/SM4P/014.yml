@@ -7,9 +7,9 @@ name_en: Victini
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/228/Victini.SM4+.14.19589.png
-illustrator:
+illustrator: kodama
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '19589'

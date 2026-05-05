@@ -7,9 +7,9 @@ name_en: Arcanine
 rarity_code: R
 category: card
 image: https://den-cards.pokellector.com/266/Arcanine.SM10.9.26874.png
-illustrator:
+illustrator: Shin Nagasawa
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '26874'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ピカチュウ
     variants_seen:
-    - normal
+      - normal
     rarity_code: R

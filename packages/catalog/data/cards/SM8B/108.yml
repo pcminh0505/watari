@@ -7,9 +7,9 @@ name_en: Fan Rotom
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/241/Fan-Rotom.SM8B.108.24894.png
-illustrator:
+illustrator: Masakazu Fukuda
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '24894'

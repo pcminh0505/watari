@@ -3,13 +3,13 @@
 set_code: sm5s
 local_id: '057'
 name_ja: ポケモンキャッチャー(sm5s)
-name_en: Pokemon Catcher
+name_en: Pokémon Catcher
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/232/Pokemon-Catcher.SM5S.57.20005.png
-illustrator:
+illustrator: Toyste Beach
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '20005'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ポケモンキャッチャー(sm5s)
     variants_seen:
-    - normal
+      - normal
     rarity_code: U

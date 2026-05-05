@@ -7,9 +7,9 @@ name_en: Ingo & Emmet
 rarity_code: SR
 category: card
 image: https://den-cards.pokellector.com/241/Ingo-Emmet.SM8B.155.25281.png
-illustrator:
+illustrator: Megumi Mizutani
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '25281'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ノボリとクダリ
     variants_seen:
-    - normal
+      - normal
     rarity_code: SR

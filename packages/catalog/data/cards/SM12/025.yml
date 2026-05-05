@@ -7,9 +7,9 @@ name_en: Black Kyurem
 rarity_code: R
 category: card
 image: https://den-cards.pokellector.com/281/Black-Kyurem.SM12.25.30070.png
-illustrator:
+illustrator: Kouki Saitou
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '30070'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ブラックキュレム
     variants_seen:
-    - normal
+      - normal
     rarity_code: R

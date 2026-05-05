@@ -3,13 +3,13 @@
 set_code: sm8b
 local_id: '232'
 name_ja: アクジキングGX
-name_en: Guzzlord GX
-rarity_code: SR
+name_en: Guzzlord-GX
+rarity_code: SSR
 category: card
 image: https://den-cards.pokellector.com/241/Guzzlord-GX.SM8B.232.25333.png
-illustrator:
+illustrator: 5ban Graphics
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '25333'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: アクジキングGX
     variants_seen:
-    - normal
+      - normal
     rarity_code: SR

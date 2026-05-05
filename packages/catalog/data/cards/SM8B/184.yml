@@ -4,12 +4,12 @@ set_code: sm8b
 local_id: '184'
 name_ja: マッシブーン
 name_en: Buzzwole
-rarity_code: SR
+rarity_code: S
 category: card
 image: https://den-cards.pokellector.com/241/Buzzwole.SM8B.184.25302.png
-illustrator:
+illustrator: Shin Nagasawa
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '25302'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: マッシブーン
     variants_seen:
-    - normal
+      - normal
     rarity_code: SR

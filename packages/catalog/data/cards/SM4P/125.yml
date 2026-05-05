@@ -3,13 +3,13 @@
 set_code: sm4p
 local_id: '125'
 name_ja: Solgaleo GX
-name_en: Solgaleo GX
+name_en: Solgaleo-GX
 rarity_code: UR
 category: card
 image: https://den-cards.pokellector.com/228/Solgaleo-GX.SM4+.125.19676.png
-illustrator:
+illustrator: 5ban Graphics
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '19676'

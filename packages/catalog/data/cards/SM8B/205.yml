@@ -4,12 +4,12 @@ set_code: sm8b
 local_id: '205'
 name_ja: タイプ:ヌル
 name_en: 'Type: Null'
-rarity_code: SR
+rarity_code: S
 category: card
 image: https://den-cards.pokellector.com/241/Type-Null.SM8B.205.25274.png
-illustrator:
+illustrator: Shin Nagasawa
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '25274'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: タイプ:ヌル
     variants_seen:
-    - normal
+      - normal
     rarity_code: SR

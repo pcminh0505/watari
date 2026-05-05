@@ -7,9 +7,9 @@ name_en: Uxie
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/238/Uxie.SM5+.18.20067.png
-illustrator:
+illustrator: Shin Nagasawa
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '20067'

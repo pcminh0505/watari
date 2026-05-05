@@ -7,9 +7,9 @@ name_en: Litwick
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/267/Litwick.SM10A.5.27501.png
-illustrator:
+illustrator: sowsow
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '27501'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ヒトモシ
     variants_seen:
-    - normal
+      - normal
     rarity_code: C

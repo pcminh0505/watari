@@ -7,9 +7,9 @@ name_en: Missing Clover
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/232/Missing-Clover.SM5S.58.19999.png
-illustrator:
+illustrator: Toyste Beach
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '19999'

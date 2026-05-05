@@ -4,12 +4,12 @@ set_code: sm5m
 local_id: '071'
 name_ja: Volkner
 name_en: Volkner
-rarity_code: UR
+rarity_code: SR
 category: card
 image: https://den-cards.pokellector.com/233/Volkner.SM5M.71.19906.png
-illustrator:
+illustrator: TOKIYA
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '19906'

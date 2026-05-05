@@ -4,12 +4,12 @@ set_code: sm8b
 local_id: '201'
 name_ja: イーブイ
 name_en: Eevee
-rarity_code: SR
+rarity_code: S
 category: card
 image: https://den-cards.pokellector.com/241/Eevee.SM8B.201.25313.png
-illustrator:
+illustrator: kirisAki
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '25313'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: イーブイ
     variants_seen:
-    - normal
+      - normal
     rarity_code: SR

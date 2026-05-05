@@ -7,9 +7,9 @@ name_en: Skorupi
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/277/Skorupi.SM11.35.28806.png
-illustrator:
+illustrator: Ken Sugimori
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '28806'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ゴロンダ
     variants_seen:
-    - normal
+      - normal
     rarity_code: U

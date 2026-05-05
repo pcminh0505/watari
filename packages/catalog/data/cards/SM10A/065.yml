@@ -3,13 +3,13 @@
 set_code: sm10a
 local_id: '065'
 name_ja: クチートGX
-name_en: Mawile GX
+name_en: Mawile-GX
 rarity_code: HR
 category: card
 image: https://den-cards.pokellector.com/267/Mawile-GX.SM10A.65.27545.png
-illustrator:
+illustrator: ConceptLab
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '27545'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: クチートGX
     variants_seen:
-    - normal
+      - normal
     rarity_code: HR

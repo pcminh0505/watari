@@ -7,9 +7,9 @@ name_en: Buzzwole
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/238/Buzzwole.SM5+.33.20055.png
-illustrator:
+illustrator: Masakazu Fukuda
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '20055'

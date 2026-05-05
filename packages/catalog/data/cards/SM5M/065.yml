@@ -3,13 +3,13 @@
 set_code: sm5m
 local_id: '065'
 name_ja: 超ブーストエネルギー
-name_en: Super Boost Energy Prism Star
-rarity_code: SR
+name_en: Super Boost Energy ◇
+rarity_code: PR
 category: energy
 image: https://den-cards.pokellector.com/233/Super-Boost-Energy-Prism-Star.SM5M.65.19916.png
 illustrator:
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '19916'

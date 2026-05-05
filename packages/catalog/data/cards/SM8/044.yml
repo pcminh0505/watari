@@ -7,9 +7,9 @@ name_en: Wobbuffet
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/258/Wobbuffet.SM8.44.23269.png
-illustrator:
+illustrator: Megumi Mizutani
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '23269'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ソーナンス
     variants_seen:
-    - normal
+      - normal
     rarity_code: RR

@@ -4,12 +4,12 @@ set_code: sm8b
 local_id: '181'
 name_ja: リオル
 name_en: Riolu
-rarity_code: SR
+rarity_code: S
 category: card
 image: https://den-cards.pokellector.com/241/Riolu.SM8B.181.25299.png
-illustrator:
+illustrator: Misa Tsutsui
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '25299'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: リオル
     variants_seen:
-    - normal
+      - normal
     rarity_code: SR

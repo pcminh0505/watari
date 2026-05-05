@@ -3,13 +3,13 @@
 set_code: sm8
 local_id: '092'
 name_ja: ルザミーネ◇
-name_en: Lusamine Prism Star
-rarity_code: RR
+name_en: Lusamine ◇
+rarity_code: PR
 category: card
 image: https://den-cards.pokellector.com/258/Lusamine.SM8.92.23314.png
-illustrator:
+illustrator: nagimiso
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '23314'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ルザミーネ◇
     variants_seen:
-    - normal
+      - normal
     rarity_code: RR

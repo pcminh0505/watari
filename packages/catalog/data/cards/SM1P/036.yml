@@ -7,9 +7,9 @@ name_en: Alolan Rattata
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/200/Alolan-Rattata.SM1+.36.14600.png
-illustrator:
+illustrator: Kouki Saitou
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '14600'

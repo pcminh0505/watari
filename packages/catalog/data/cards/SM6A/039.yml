@@ -7,9 +7,9 @@ name_en: Jangmo-o
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/236/Jangmo-o.SM6A.39.20667.png
-illustrator:
+illustrator: Yusuke Ohmura
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '20667'

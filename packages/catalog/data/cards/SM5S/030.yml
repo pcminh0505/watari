@@ -7,9 +7,9 @@ name_en: Skuntank
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/232/Skuntank.SM5S.30.19984.png
-illustrator:
+illustrator: Studio Bora Inc.
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '19984'

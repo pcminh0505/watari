@@ -4,12 +4,12 @@ set_code: sm7a
 local_id: '065'
 name_ja: Kahili
 name_en: Kahili
-rarity_code: UR
+rarity_code: SR
 category: card
 image: https://den-cards.pokellector.com/243/Kahili.SM7A.65.22052.png
-illustrator:
+illustrator: Megumi Mizutani
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '22052'

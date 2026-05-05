@@ -3,13 +3,13 @@
 set_code: sm12a
 local_id: '211'
 name_ja: ヨワシGX
-name_en: Wishiwashi GX
+name_en: Wishiwashi-GX
 rarity_code: HR
 category: card
 image: https://den-cards.pokellector.com/288/Wishiwashi-GX.SM12A.211.30549.png
-illustrator:
+illustrator: sadaji
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '30549'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ヨワシGX
     variants_seen:
-    - normal
+      - normal
     rarity_code: HR

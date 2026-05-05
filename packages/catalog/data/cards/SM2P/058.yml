@@ -3,13 +3,13 @@
 set_code: sm2p
 local_id: '058'
 name_ja: Tapu Bulu GX
-name_en: Tapu Bulu GX
-rarity_code: UR
+name_en: Tapu Bulu-GX
+rarity_code: HR
 category: card
 image: https://den-cards.pokellector.com/212/Tapu-Bulu-GX.SM2+.58.17513.png
-illustrator:
+illustrator: 5ban Graphics
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '17513'

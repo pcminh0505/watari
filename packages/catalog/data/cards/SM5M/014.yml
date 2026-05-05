@@ -7,9 +7,9 @@ name_en: Manaphy
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/233/Manaphy.SM5M.14.19928.png
-illustrator:
+illustrator: kawayoo
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '19928'

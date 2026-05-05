@@ -7,9 +7,9 @@ name_en: Skarmory
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/245/Skarmory.SM8A.33.24135.png
-illustrator:
+illustrator: kirisAki
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '24135'

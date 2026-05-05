@@ -7,9 +7,9 @@ name_en: Araquanid
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/201/Araquanid.SM1S.19.13738.png
-illustrator:
+illustrator: match
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '13738'

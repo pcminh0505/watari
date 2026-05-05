@@ -3,13 +3,13 @@
 set_code: sm1p
 local_id: '063'
 name_ja: Toxapex GX
-name_en: Toxapex GX
-rarity_code: UR
+name_en: Toxapex-GX
+rarity_code: HR
 category: card
 image: https://den-cards.pokellector.com/200/Toxapex-GX.SM1+.63.14612.png
-illustrator:
+illustrator: 5ban Graphics
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '14612'

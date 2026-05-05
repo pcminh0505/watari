@@ -4,12 +4,12 @@ set_code: sm8b
 local_id: '164'
 name_ja: Wimpod
 name_en: Wimpod
-rarity_code: UR
+rarity_code: S
 category: card
 image: https://den-cards.pokellector.com/241/Wimpod.SM8B.164.25261.png
-illustrator:
+illustrator: SATOSHI NAKAI
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '25261'

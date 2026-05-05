@@ -7,9 +7,9 @@ name_en: Swoobat
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/281/Swoobat.SM12.30.30075.png
-illustrator:
+illustrator: Tomokazu Komiya
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '30075'

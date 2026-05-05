@@ -7,9 +7,9 @@ name_en: Meowth
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/266/Meowth.SM10.67.26923.png
-illustrator:
+illustrator: Shibuzoh.
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '26923'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ニャース
     variants_seen:
-    - normal
+      - normal
     rarity_code: UR

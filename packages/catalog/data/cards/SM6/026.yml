@@ -4,12 +4,12 @@ set_code: sm6
 local_id: '026'
 name_ja: クレベース
 name_en: Avalugg
-rarity_code: C
+rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/235/Avalugg.SM6.26.20503.png
-illustrator:
+illustrator: sowsow
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '20503'

@@ -3,13 +3,13 @@
 set_code: sm6a
 local_id: '046'
 name_ja: 竜の鉤爪
-name_en: Dragon's Talon
+name_en: Dragon Talon
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/236/Dragons-Talon.SM6A.46.20582.png
-illustrator:
+illustrator: Toyste Beach
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '20582'

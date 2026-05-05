@@ -7,9 +7,9 @@ name_en: Shiinotic
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/218/Shiinotic.SM3N.40.18153.png
-illustrator:
+illustrator: Naoki Saito
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '18153'

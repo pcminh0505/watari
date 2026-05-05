@@ -4,12 +4,12 @@ set_code: sm10
 local_id: '094'
 name_ja: カキ
 name_en: Kiawe
-rarity_code: R
+rarity_code: TR
 category: card
 image: https://den-cards.pokellector.com/266/Kiawe.SM10.94.26945.png
-illustrator:
+illustrator: Masakazu Fukuda
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '26945'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: カキ
     variants_seen:
-    - normal
+      - normal
     rarity_code: TR

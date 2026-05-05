@@ -3,13 +3,13 @@
 set_code: sm9a
 local_id: '064'
 name_ja: モルフォンGX
-name_en: Venemoth GX
+name_en: Venomoth-GX
 rarity_code: HR
 category: card
 image: https://den-cards.pokellector.com/262/Venemoth-GX.SM9A.64.25642.png
-illustrator:
+illustrator: 5ban Graphics
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '25642'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: モルフォンGX
     variants_seen:
-    - normal
+      - normal
     rarity_code: HR

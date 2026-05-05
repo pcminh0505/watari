@@ -7,9 +7,9 @@ name_en: Plusle
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/224/Plusle.SM3+.34.18308.png
-illustrator:
+illustrator: Tomokazu Komiya
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '18308'

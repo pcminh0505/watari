@@ -7,9 +7,9 @@ name_en: Buneary
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/233/Buneary.SM5M.47.19870.png
-illustrator:
+illustrator: Kagemaru Himeno
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '19870'

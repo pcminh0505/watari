@@ -7,9 +7,9 @@ name_en: Wailord
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/272/Wailord.SM11A.20.28970.png
-illustrator:
+illustrator: Kyoko Umemoto
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '28970'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ホエルオー
     variants_seen:
-    - normal
+      - normal
     rarity_code: U

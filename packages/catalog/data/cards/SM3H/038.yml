@@ -7,9 +7,9 @@ name_en: Cutiefly
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/219/Cutiefly.SM3H.38.18182.png
-illustrator:
+illustrator: Atsuko Nishida
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '18182'

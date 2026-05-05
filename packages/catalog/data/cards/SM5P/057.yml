@@ -3,13 +3,13 @@
 set_code: sm5p
 local_id: '057'
 name_ja: パルキアGX
-name_en: Palkia GX
-rarity_code: UR
+name_en: Palkia-GX
+rarity_code: HR
 category: card
 image: https://den-cards.pokellector.com/238/Palkia-GX.SM5+.57.20097.png
-illustrator:
+illustrator: 5ban Graphics
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '20097'

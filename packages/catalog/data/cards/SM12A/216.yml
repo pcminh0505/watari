@@ -3,13 +3,13 @@
 set_code: sm12a
 local_id: '216'
 name_ja: マニューラGX
-name_en: Weavile GX
+name_en: Weavile-GX
 rarity_code: HR
 category: card
 image: https://den-cards.pokellector.com/288/Weavile-GX.SM12A.216.30554.png
-illustrator:
+illustrator: aky CG Works
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '30554'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: マニューラGX
     variants_seen:
-    - normal
+      - normal
     rarity_code: HR

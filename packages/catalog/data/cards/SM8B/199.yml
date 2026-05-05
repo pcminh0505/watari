@@ -4,12 +4,12 @@ set_code: sm8b
 local_id: '199'
 name_ja: ガバイト
 name_en: Gabite
-rarity_code: SR
+rarity_code: S
 category: card
 image: https://den-cards.pokellector.com/241/Gabite.SM8B.199.25262.png
-illustrator:
+illustrator: Masakazu Fukuda
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '25262'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ガバイト
     variants_seen:
-    - normal
+      - normal
     rarity_code: SR

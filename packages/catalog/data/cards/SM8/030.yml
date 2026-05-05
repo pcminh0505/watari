@@ -7,9 +7,9 @@ name_en: Toxapex
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/258/Toxapex.SM8.30.23255.png
-illustrator:
+illustrator: kirisAki
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '23255'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: イベルタル
     variants_seen:
-    - normal
+      - normal
     rarity_code: R

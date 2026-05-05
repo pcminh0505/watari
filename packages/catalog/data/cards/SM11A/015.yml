@@ -7,9 +7,9 @@ name_en: Emboar
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/272/Emboar.SM11A.15.28966.png
-illustrator:
+illustrator: kawayoo
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '28966'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: エンブオー
     variants_seen:
-    - normal
+      - normal
     rarity_code: U

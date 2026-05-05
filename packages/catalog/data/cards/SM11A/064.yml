@@ -4,12 +4,12 @@ set_code: sm11a
 local_id: '064'
 name_ja: 溶接工
 name_en: Welder
-rarity_code: R
+rarity_code: TR
 category: card
 image: https://den-cards.pokellector.com/272/Welder.SM11A.64.29002.png
-illustrator:
+illustrator: Hitoshi Ariga
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '29002'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: 溶接工
     variants_seen:
-    - normal
+      - normal
     rarity_code: TR

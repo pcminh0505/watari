@@ -7,9 +7,9 @@ name_en: Wingull
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/202/Wingull.SM1M.13.13788.png
-illustrator:
+illustrator: Aya Kusube
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '13788'

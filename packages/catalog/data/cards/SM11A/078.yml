@@ -7,9 +7,9 @@ name_en: Great Catcher
 rarity_code: UR
 category: card
 image: https://den-cards.pokellector.com/272/Great-Catcher.SM11A.78.29025.png
-illustrator:
+illustrator: Studio Bora Inc.
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '29025'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: グレートキャッチャー
     variants_seen:
-    - normal
+      - normal
     rarity_code: UR

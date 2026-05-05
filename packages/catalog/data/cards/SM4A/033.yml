@@ -3,13 +3,13 @@
 set_code: sm4a
 local_id: '033'
 name_ja: アクジキングGX
-name_en: Guzzlord GX
+name_en: Guzzlord-GX
 rarity_code: RR
 category: card
 image: https://den-cards.pokellector.com/227/Guzzlord-GX.SM4A.33.18613.png
-illustrator:
+illustrator: 5ban Graphics
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '18613'

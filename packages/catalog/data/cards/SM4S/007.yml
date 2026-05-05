@@ -7,9 +7,9 @@ name_en: Numel
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/226/Numel.SM4S.7.19365.png
-illustrator:
+illustrator: sui
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '19365'

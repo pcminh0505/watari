@@ -7,9 +7,9 @@ name_en: Lillie
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/258/Lillie.SM8.91.23313.png
-illustrator:
+illustrator: Sanosuke Sakuma
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '23313'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: リーリエ
     variants_seen:
-    - normal
+      - normal
     rarity_code: U

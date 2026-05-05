@@ -7,9 +7,9 @@ name_en: Dedenne
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/277/Dedenne.SM11.64.28829.png
-illustrator:
+illustrator: Saya Tsuruta
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '28829'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: デデンネ
     variants_seen:
-    - normal
+      - normal
     rarity_code: SR

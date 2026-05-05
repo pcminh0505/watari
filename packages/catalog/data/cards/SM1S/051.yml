@@ -7,9 +7,9 @@ name_en: Stufful
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/201/Stufful.SM1S.51.13760.png
-illustrator:
+illustrator: Sanosuke Sakuma
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '13760'

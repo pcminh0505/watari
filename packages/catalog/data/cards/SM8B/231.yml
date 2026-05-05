@@ -3,13 +3,13 @@
 set_code: sm8b
 local_id: '231'
 name_ja: ゾロアークGX
-name_en: Zoroark GX
-rarity_code: SR
+name_en: Zoroark-GX
+rarity_code: SSR
 category: card
 image: https://den-cards.pokellector.com/241/Zoroark-GX.SM8B.231.25276.png
-illustrator:
+illustrator: 5ban Graphics
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '25276'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ゾロアークGX
     variants_seen:
-    - normal
+      - normal
     rarity_code: SR

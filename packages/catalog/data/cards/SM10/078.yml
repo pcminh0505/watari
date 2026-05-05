@@ -7,9 +7,9 @@ name_en: Chatot
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/266/Chatot.SM10.78.26933.png
-illustrator:
+illustrator: HYOGONOSUKE
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '26933'

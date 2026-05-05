@@ -7,9 +7,9 @@ name_en: Claydol
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/242/Claydol.SM7.48.21009.png
-illustrator:
+illustrator: Yumi
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '21009'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: スーパーポケモン回収
     variants_seen:
-    - normal
+      - normal
     rarity_code: U

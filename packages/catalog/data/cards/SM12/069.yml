@@ -7,9 +7,9 @@ name_en: Jangmo-o
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/281/Jangmo-o.SM12.69.30102.png
-illustrator:
+illustrator: Tomokazu Komiya
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '30102'
@@ -19,5 +19,5 @@ sources:
   cardrush:
     name_ja: ジャラコ
     variants_seen:
-    - normal
+      - normal
     rarity_code: C

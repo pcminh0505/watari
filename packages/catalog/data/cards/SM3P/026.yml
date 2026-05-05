@@ -7,9 +7,9 @@ name_en: Manaphy
 rarity_code: R
 category: card
 image: https://den-cards.pokellector.com/224/Manaphy.SM3+.26.18303.png
-illustrator:
+illustrator: Kagemaru Himeno
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '18303'

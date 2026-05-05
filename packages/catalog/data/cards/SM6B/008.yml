@@ -7,9 +7,9 @@ name_en: Cacturne
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/237/Cacturne.SM6B.8.20875.png
-illustrator:
+illustrator: Atsuko Nishida
 prints:
-- normal
+  - normal
 sources:
   pokellector:
     id: '20875'
