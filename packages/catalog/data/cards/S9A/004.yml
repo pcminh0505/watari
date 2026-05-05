@@ -7,7 +7,7 @@ name_en: Scyther
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/339/Scyther.S9A.4.42886.png
-illustrator: Unknown
+illustrator:
 prints:
 - normal
 - poke_ball_mirror

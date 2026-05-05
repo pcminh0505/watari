@@ -7,7 +7,7 @@ name_en: Staryu
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/260/Staryu.SM9.26.25463.png
-illustrator: Unknown
+illustrator:
 prints:
 - normal
 sources:

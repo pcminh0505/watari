@@ -7,7 +7,7 @@ name_en: Krabby
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/371/Krabby.SV2A.98.48307.png
-illustrator: Unknown
+illustrator:
 prints:
 - normal
 - master_ball_mirror

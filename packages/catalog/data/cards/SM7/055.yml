@@ -7,7 +7,7 @@ name_en: Metagross
 rarity_code: R
 category: card
 image: https://den-cards.pokellector.com/242/Metagross.SM7.55.21016.png
-illustrator: Unknown
+illustrator:
 prints:
 - normal
 sources:

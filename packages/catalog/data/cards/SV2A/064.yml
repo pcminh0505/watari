@@ -7,7 +7,7 @@ name_en: Kadabra
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/371/Kadabra.SV2A.64.47514.png
-illustrator: Unknown
+illustrator:
 prints:
 - normal
 - master_ball_mirror

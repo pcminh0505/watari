@@ -7,7 +7,7 @@ name_en: Dusknoir
 rarity_code: R
 category: card
 image: https://den-cards.pokellector.com/336/Dusknoir.S9.47.42539.png
-illustrator: Unknown
+illustrator:
 prints:
 - normal
 - poke_ball_mirror

@@ -7,7 +7,7 @@ name_en: Mew
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/288/Mew.SM12A.55.30200.png
-illustrator: Unknown
+illustrator:
 prints:
 - normal
 sources:

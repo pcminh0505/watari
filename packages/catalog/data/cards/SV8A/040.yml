@@ -7,7 +7,7 @@ name_en: Glaceon
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/406/Glaceon.SV8A.40.54661.png
-illustrator: Unknown
+illustrator:
 prints:
 - normal
 - master_ball_mirror

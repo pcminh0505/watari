@@ -7,7 +7,7 @@ name_en: Charizard
 rarity_code: R
 category: card
 image: https://den-cards.pokellector.com/297/Charizard.S4.12.35539.png
-illustrator: Unknown
+illustrator:
 prints:
 - normal
 sources:

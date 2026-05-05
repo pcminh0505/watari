@@ -7,7 +7,7 @@ name_en: Haxorus
 rarity_code: R
 category: card
 image: https://den-cards.pokellector.com/414/Haxorus.SV11B.72.57721.png
-illustrator: Unknown
+illustrator:
 prints:
 - normal
 - master_ball_mirror

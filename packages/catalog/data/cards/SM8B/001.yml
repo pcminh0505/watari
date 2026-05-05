@@ -7,7 +7,7 @@ name_en: Bulbasaur
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/241/Bulbasaur.SM8B.1.24805.png
-illustrator: Unknown
+illustrator:
 prints:
 - normal
 sources:

@@ -7,7 +7,7 @@ name_en: Tapu Koko VMAX
 rarity_code: HR
 category: card
 image: https://den-cards.pokellector.com/306/Tapu-Koko-VMAX.S5I.83.36903.png
-illustrator: Unknown
+illustrator:
 prints:
 - normal
 sources:

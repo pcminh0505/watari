@@ -7,7 +7,7 @@ name_en: Ivysaur
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/371/Ivysaur.SV2A.2.47700.png
-illustrator: Unknown
+illustrator:
 prints:
 - normal
 - master_ball_mirror

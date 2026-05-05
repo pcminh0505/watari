@@ -7,7 +7,7 @@ name_en: Primeape
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/371/Primeape.SV2A.57.48275.png
-illustrator: Unknown
+illustrator:
 prints:
 - normal
 - master_ball_mirror

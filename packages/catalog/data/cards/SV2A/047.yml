@@ -7,7 +7,7 @@ name_en: Parasect
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/371/Parasect.SV2A.47.47789.png
-illustrator: Unknown
+illustrator:
 prints:
 - normal
 - master_ball_mirror

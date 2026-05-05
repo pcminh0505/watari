@@ -7,7 +7,7 @@ name_en: Psyduck
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/371/Psyduck.SV2A.54.48272.png
-illustrator: Unknown
+illustrator:
 prints:
 - normal
 - master_ball_mirror

@@ -7,7 +7,7 @@ name_en: Klink
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/415/Klink.SV11W.65.57785.png
-illustrator: Unknown
+illustrator:
 prints:
 - normal
 - master_ball_mirror

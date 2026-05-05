@@ -7,7 +7,7 @@ name_en: Pikachu
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/371/Pikachu.SV2A.25.47520.png
-illustrator: Unknown
+illustrator:
 prints:
 - normal
 - master_ball_mirror

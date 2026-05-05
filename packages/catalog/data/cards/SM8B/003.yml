@@ -7,7 +7,7 @@ name_en: Venusaur
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/241/Venusaur.SM8B.3.24807.png
-illustrator: Unknown
+illustrator:
 prints:
 - normal
 sources:

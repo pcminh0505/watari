@@ -7,7 +7,7 @@ name_en: Hippowdon
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/339/Hippowdon.S9A.42.43125.png
-illustrator: Unknown
+illustrator:
 prints:
 - normal
 - poke_ball_mirror

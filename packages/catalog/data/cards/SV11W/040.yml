@@ -7,7 +7,7 @@ name_en: Gothitelle
 rarity_code: R
 category: card
 image: https://den-cards.pokellector.com/415/Gothitelle.SV11W.40.57764.png
-illustrator: Unknown
+illustrator:
 prints:
 - normal
 - master_ball_mirror

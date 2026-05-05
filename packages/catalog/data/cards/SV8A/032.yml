@@ -7,7 +7,7 @@ name_en: Totodile
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/406/Totodile.SV8A.32.54953.png
-illustrator: Unknown
+illustrator:
 prints:
 - normal
 - master_ball_mirror

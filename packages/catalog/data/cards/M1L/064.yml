@@ -7,7 +7,7 @@ name_en: Bulbasaur
 rarity_code: AR
 category: card
 image: https://den-cards.pokellector.com/416/Bulbasaur.M1L.64.57980.png
-illustrator: Unknown
+illustrator:
 prints:
 - normal
 sources:

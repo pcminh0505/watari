@@ -7,7 +7,7 @@ name_en: Probopass
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/336/Probopass.S9.67.42604.png
-illustrator: Unknown
+illustrator:
 prints:
 - normal
 - poke_ball_mirror

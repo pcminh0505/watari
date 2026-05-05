@@ -7,7 +7,7 @@ name_en: Barboach
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/339/Barboach.S9A.21.43106.png
-illustrator: Unknown
+illustrator:
 prints:
 - normal
 - poke_ball_mirror

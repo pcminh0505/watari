@@ -7,7 +7,7 @@ name_en: Machop
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/371/Machop.SV2A.66.48281.png
-illustrator: Unknown
+illustrator:
 prints:
 - normal
 - master_ball_mirror

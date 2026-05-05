@@ -7,7 +7,7 @@ name_en: Larvesta
 rarity_code: AR
 category: card
 image: https://den-cards.pokellector.com/405/Larvesta.SV8.108.54608.png
-illustrator: Unknown
+illustrator:
 prints:
 - normal
 - master_ball_mirror

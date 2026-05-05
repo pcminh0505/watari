@@ -7,7 +7,7 @@ name_en: Pachirisu
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/336/Pachirisu.S9.40.42579.png
-illustrator: Unknown
+illustrator:
 prints:
 - normal
 - poke_ball_mirror

@@ -7,7 +7,7 @@ name_en: Magnemite
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/278/Magnemite.SM11B.18.29302.png
-illustrator: Unknown
+illustrator:
 prints:
 - normal
 sources:

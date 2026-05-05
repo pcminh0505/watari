@@ -7,7 +7,7 @@ name_en: Metapod
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/371/Metapod.SV2A.11.48243.png
-illustrator: Unknown
+illustrator:
 prints:
 - normal
 - master_ball_mirror

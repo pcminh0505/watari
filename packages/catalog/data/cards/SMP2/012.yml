@@ -7,7 +7,7 @@ name_en: Greninja
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/271/Greninja.SMP2.12.28868.png
-illustrator: Unknown
+illustrator:
 prints:
 - normal
 sources:

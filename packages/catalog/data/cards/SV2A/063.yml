@@ -7,7 +7,7 @@ name_en: Abra
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/371/Abra.SV2A.63.47513.png
-illustrator: Unknown
+illustrator:
 prints:
 - normal
 - master_ball_mirror

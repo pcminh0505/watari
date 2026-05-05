@@ -7,7 +7,7 @@ name_en: Clefable
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/371/Clefable.SV2A.36.48257.png
-illustrator: Unknown
+illustrator:
 prints:
 - normal
 - master_ball_mirror

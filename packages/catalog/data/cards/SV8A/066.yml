@@ -7,7 +7,7 @@ name_en: Dusknoir
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/406/Dusknoir.SV8A.66.55183.png
-illustrator: Unknown
+illustrator:
 prints:
 - normal
 - master_ball_mirror

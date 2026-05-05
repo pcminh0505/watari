@@ -7,7 +7,7 @@ name_en: Poliwag
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/200/Poliwag.SM1+.11.14583.png
-illustrator: Unknown
+illustrator:
 prints:
 - normal
 sources:

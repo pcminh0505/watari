@@ -7,7 +7,7 @@ name_en: Dodrio
 rarity_code: R
 category: card
 image: https://den-cards.pokellector.com/371/Dodrio.SV2A.85.48297.png
-illustrator: Unknown
+illustrator:
 prints:
 - normal
 - master_ball_mirror

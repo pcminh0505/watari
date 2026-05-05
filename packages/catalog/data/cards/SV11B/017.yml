@@ -7,7 +7,7 @@ name_en: Chandelure
 rarity_code: R
 category: card
 image: https://den-cards.pokellector.com/414/Chandelure.SV11B.17.57258.png
-illustrator: Unknown
+illustrator:
 prints:
 - normal
 - master_ball_mirror

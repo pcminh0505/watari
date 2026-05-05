@@ -7,7 +7,7 @@ name_en: Flareon
 rarity_code: CHR
 category: card
 image: https://den-cards.pokellector.com/338/Flareon.S8B.188.41499.png
-illustrator: Unknown
+illustrator:
 prints:
 - normal
 sources:

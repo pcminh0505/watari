@@ -7,7 +7,7 @@ name_en: Arcanine
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/271/Arcanine.SMP2.8.28864.png
-illustrator: Unknown
+illustrator:
 prints:
 - normal
 sources:

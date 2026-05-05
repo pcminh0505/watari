@@ -7,7 +7,7 @@ name_en: Palpitoad
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/414/Palpitoad.SV11B.23.57686.png
-illustrator: Unknown
+illustrator:
 prints:
 - normal
 - master_ball_mirror

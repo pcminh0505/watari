@@ -7,7 +7,7 @@ name_en: Riolu
 rarity_code: AR
 category: card
 image: https://den-cards.pokellector.com/416/Riolu.M1L.68.58005.png
-illustrator: Unknown
+illustrator:
 prints:
 - normal
 sources:

@@ -7,7 +7,7 @@ name_en: Glameow
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/339/Glameow.S9A.59.43137.png
-illustrator: Unknown
+illustrator:
 prints:
 - normal
 - poke_ball_mirror

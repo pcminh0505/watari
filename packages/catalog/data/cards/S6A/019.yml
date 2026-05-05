@@ -7,7 +7,7 @@ name_en: Mudkip
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/322/Mudkip.S6A.19.38848.png
-illustrator: Unknown
+illustrator:
 prints:
 - normal
 sources:

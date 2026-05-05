@@ -7,7 +7,7 @@ name_en: Air Balloon
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/414/Air-Balloon.SV11B.82.57188.png
-illustrator: Unknown
+illustrator:
 prints:
 - normal
 - poke_ball_mirror

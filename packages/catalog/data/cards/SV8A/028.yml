@@ -7,7 +7,7 @@ name_en: Goldeen
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/406/Goldeen.SV8A.28.54942.png
-illustrator: Unknown
+illustrator:
 prints:
 - normal
 - master_ball_mirror

@@ -7,7 +7,7 @@ name_en: Meowth
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/260/Meowth.SM9.71.25499.png
-illustrator: Unknown
+illustrator:
 prints:
 - normal
 sources:

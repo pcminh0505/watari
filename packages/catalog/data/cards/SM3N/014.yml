@@ -7,7 +7,7 @@ name_en: Raichu
 rarity_code: R
 category: card
 image: https://den-cards.pokellector.com/218/Raichu.SM3N.14.18081.png
-illustrator: Unknown
+illustrator:
 prints:
 - normal
 sources:

@@ -7,7 +7,7 @@ name_en: Blastoise
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/288/Blastoise.SM12A.31.30392.png
-illustrator: Unknown
+illustrator:
 prints:
 - normal
 sources:

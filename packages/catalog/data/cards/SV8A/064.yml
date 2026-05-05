@@ -7,7 +7,7 @@ name_en: Duskull
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/406/Duskull.SV8A.64.55181.png
-illustrator: Unknown
+illustrator:
 prints:
 - normal
 - master_ball_mirror

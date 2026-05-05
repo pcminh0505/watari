@@ -7,7 +7,7 @@ name_en: Leafeon
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/406/Leafeon.SV8A.2.54658.png
-illustrator: Unknown
+illustrator:
 prints:
 - normal
 - master_ball_mirror

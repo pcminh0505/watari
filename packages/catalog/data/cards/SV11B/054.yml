@@ -7,7 +7,7 @@ name_en: Dwebble
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/414/Dwebble.SV11B.54.57706.png
-illustrator: Unknown
+illustrator:
 prints:
 - normal
 - master_ball_mirror

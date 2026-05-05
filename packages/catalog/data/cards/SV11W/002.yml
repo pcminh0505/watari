@@ -7,7 +7,7 @@ name_en: Swadloon
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/415/Swadloon.SV11W.2.57735.png
-illustrator: Unknown
+illustrator:
 prints:
 - normal
 - master_ball_mirror

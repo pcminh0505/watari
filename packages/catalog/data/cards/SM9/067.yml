@@ -7,7 +7,7 @@ name_en: Pidgey
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/260/Pidgey.SM9.67.25426.png
-illustrator: Unknown
+illustrator:
 prints:
 - normal
 sources:

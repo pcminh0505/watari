@@ -7,7 +7,7 @@ name_en: Machamp
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/271/Machamp.SMP2.18.28871.png
-illustrator: Unknown
+illustrator:
 prints:
 - normal
 sources:

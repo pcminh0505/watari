@@ -7,7 +7,7 @@ name_en: Tentacruel
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/371/Tentacruel.SV2A.73.48285.png
-illustrator: Unknown
+illustrator:
 prints:
 - normal
 - master_ball_mirror

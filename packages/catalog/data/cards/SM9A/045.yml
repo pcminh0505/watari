@@ -7,7 +7,7 @@ name_en: PokeGear 3.0
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/262/PokeGear-30.SM9A.45.25633.png
-illustrator: Unknown
+illustrator:
 prints:
 - normal
 sources:

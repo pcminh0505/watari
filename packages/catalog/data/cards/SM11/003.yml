@@ -7,7 +7,7 @@ name_en: Celebi
 rarity_code: R
 category: card
 image: https://den-cards.pokellector.com/277/Celebi.SM11.3.28763.png
-illustrator: Unknown
+illustrator:
 prints:
 - normal
 sources:

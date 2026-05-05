@@ -7,7 +7,7 @@ name_en: Mamoswine
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/339/Mamoswine.S9A.20.43105.png
-illustrator: Unknown
+illustrator:
 prints:
 - normal
 - poke_ball_mirror

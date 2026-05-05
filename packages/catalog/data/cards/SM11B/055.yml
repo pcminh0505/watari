@@ -7,7 +7,7 @@ name_en: Magnemite
 rarity_code: CHR
 category: card
 image: https://den-cards.pokellector.com/278/Magnemite.SM11B.55.29322.png
-illustrator: Unknown
+illustrator:
 prints:
 - normal
 sources:

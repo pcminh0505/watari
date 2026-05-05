@@ -7,7 +7,7 @@ name_en: Magikarp
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/285/Magikarp.S1A.20.31829.png
-illustrator: Unknown
+illustrator:
 prints:
 - normal
 sources:

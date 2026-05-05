@@ -7,7 +7,7 @@ name_en: Penny
 rarity_code: SR
 category: card
 image: https://den-cards.pokellector.com/361/Penny.SV1S.100.46805.png
-illustrator: Unknown
+illustrator:
 prints:
 - normal
 sources:

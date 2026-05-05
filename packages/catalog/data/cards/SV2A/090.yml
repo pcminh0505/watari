@@ -7,7 +7,7 @@ name_en: Shellder
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/371/Shellder.SV2A.90.48302.png
-illustrator: Unknown
+illustrator:
 prints:
 - normal
 - master_ball_mirror

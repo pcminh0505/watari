@@ -7,7 +7,7 @@ name_en: Terrakion
 rarity_code: R
 category: card
 image: https://den-cards.pokellector.com/415/Terrakion.SV11W.51.57773.png
-illustrator: Unknown
+illustrator:
 prints:
 - normal
 - master_ball_mirror

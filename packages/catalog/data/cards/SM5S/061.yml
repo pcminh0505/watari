@@ -7,7 +7,7 @@ name_en: Pokemon Fan Club
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/232/Pokemon-Fan-Club.SM5S.61.20006.png
-illustrator: Unknown
+illustrator:
 prints:
 - normal
 sources:

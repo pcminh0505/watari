@@ -7,7 +7,7 @@ name_en: Gyarados
 rarity_code: R
 category: card
 image: https://den-cards.pokellector.com/260/Gyarados.SM9.28.25465.png
-illustrator: Unknown
+illustrator:
 prints:
 - normal
 sources:

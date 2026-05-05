@@ -7,7 +7,7 @@ name_en: Hypno
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/371/Hypno.SV2A.97.47730.png
-illustrator: Unknown
+illustrator:
 prints:
 - normal
 - master_ball_mirror

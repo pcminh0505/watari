@@ -7,7 +7,7 @@ name_en: Makuhita
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/318/Makuhita.S7D.22.39398.png
-illustrator: Unknown
+illustrator:
 prints:
 - normal
 sources:

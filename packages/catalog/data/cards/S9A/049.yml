@@ -7,7 +7,7 @@ name_en: Poochyena
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/339/Poochyena.S9A.49.43130.png
-illustrator: Unknown
+illustrator:
 prints:
 - normal
 - poke_ball_mirror

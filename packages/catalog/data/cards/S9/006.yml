@@ -7,7 +7,7 @@ name_en: Turtwig
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/336/Turtwig.S9.6.41607.png
-illustrator: Unknown
+illustrator:
 prints:
 - normal
 - poke_ball_mirror

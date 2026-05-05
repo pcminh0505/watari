@@ -7,7 +7,7 @@ name_en: Pidgeotto
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/371/Pidgeotto.SV2A.17.48249.png
-illustrator: Unknown
+illustrator:
 prints:
 - normal
 - master_ball_mirror

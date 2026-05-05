@@ -7,7 +7,7 @@ name_en: Poliwhirl
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/371/Poliwhirl.SV2A.61.48279.png
-illustrator: Unknown
+illustrator:
 prints:
 - normal
 - master_ball_mirror

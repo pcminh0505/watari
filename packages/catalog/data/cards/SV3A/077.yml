@@ -7,7 +7,7 @@ name_en: Tapu Koko ex
 rarity_code: SR
 category: card
 image: https://den-cards.pokellector.com/376/Tapu-Koko-ex.SV3A.77.49396.png
-illustrator: Unknown
+illustrator:
 prints:
 - normal
 sources:

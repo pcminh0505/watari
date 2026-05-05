@@ -7,7 +7,7 @@ name_en: Gengar
 rarity_code: R
 category: card
 image: https://den-cards.pokellector.com/371/Gengar.SV2A.94.48306.png
-illustrator: Unknown
+illustrator:
 prints:
 - normal
 - master_ball_mirror

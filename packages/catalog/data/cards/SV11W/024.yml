@@ -7,7 +7,7 @@ name_en: Vanillite
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/415/Vanillite.SV11W.24.57750.png
-illustrator: Unknown
+illustrator:
 prints:
 - normal
 - master_ball_mirror

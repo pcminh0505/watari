@@ -7,7 +7,7 @@ name_en: Deino
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/415/Deino.SV11W.60.57780.png
-illustrator: Unknown
+illustrator:
 prints:
 - normal
 - master_ball_mirror

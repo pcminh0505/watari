@@ -7,7 +7,7 @@ name_en: Tapu Koko
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/301/Tapu-Koko.S4A.53.36364.png
-illustrator: Unknown
+illustrator:
 prints:
 - normal
 sources:

@@ -7,7 +7,7 @@ name_en: Glimmora
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/405/Glimmora.SV8.68.54568.png
-illustrator: Unknown
+illustrator:
 prints:
 - normal
 - master_ball_mirror

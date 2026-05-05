@@ -7,7 +7,7 @@ name_en: Rhydon
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/339/Rhydon.S9A.38.43121.png
-illustrator: Unknown
+illustrator:
 prints:
 - normal
 - poke_ball_mirror

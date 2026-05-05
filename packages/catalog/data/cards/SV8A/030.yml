@@ -7,7 +7,7 @@ name_en: Vaporeon
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/406/Vaporeon.SV8A.30.54660.png
-illustrator: Unknown
+illustrator:
 prints:
 - normal
 - master_ball_mirror

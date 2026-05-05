@@ -7,7 +7,7 @@ name_en: Weedle
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/371/Weedle.SV2A.13.48245.png
-illustrator: Unknown
+illustrator:
 prints:
 - normal
 - master_ball_mirror

@@ -7,7 +7,7 @@ name_en: Infernape
 rarity_code: R
 category: card
 image: https://den-cards.pokellector.com/336/Infernape.S9.21.41612.png
-illustrator: Unknown
+illustrator:
 prints:
 - normal
 - poke_ball_mirror

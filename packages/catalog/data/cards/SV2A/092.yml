@@ -7,7 +7,7 @@ name_en: Gastly
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/371/Gastly.SV2A.92.48304.png
-illustrator: Unknown
+illustrator:
 prints:
 - normal
 - master_ball_mirror

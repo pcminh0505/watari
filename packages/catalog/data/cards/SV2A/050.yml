@@ -7,7 +7,7 @@ name_en: Diglett
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/371/Diglett.SV2A.50.48268.png
-illustrator: Unknown
+illustrator:
 prints:
 - normal
 - master_ball_mirror

@@ -7,7 +7,7 @@ name_en: Ponyta
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/371/Ponyta.SV2A.77.48289.png
-illustrator: Unknown
+illustrator:
 prints:
 - normal
 - master_ball_mirror

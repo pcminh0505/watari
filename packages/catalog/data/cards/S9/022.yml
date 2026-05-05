@@ -7,7 +7,7 @@ name_en: Lapras
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/336/Lapras.S9.22.42565.png
-illustrator: Unknown
+illustrator:
 prints:
 - normal
 - poke_ball_mirror

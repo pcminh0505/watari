@@ -7,7 +7,7 @@ name_en: Tapu Koko V
 rarity_code: SR
 category: card
 image: https://den-cards.pokellector.com/306/Tapu-Koko-V.S5I.72.36893.png
-illustrator: Unknown
+illustrator:
 prints:
 - normal
 sources:

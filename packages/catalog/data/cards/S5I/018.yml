@@ -7,7 +7,7 @@ name_en: Tapu Koko VMAX
 rarity_code: RRR
 category: card
 image: https://den-cards.pokellector.com/306/Tapu-Koko-VMAX.S5I.18.36715.png
-illustrator: Unknown
+illustrator:
 prints:
 - normal
 sources:

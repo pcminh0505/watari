@@ -7,7 +7,7 @@ name_en: Tepig
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/415/Tepig.SV11W.11.57197.png
-illustrator: Unknown
+illustrator:
 prints:
 - normal
 - master_ball_mirror

@@ -7,7 +7,7 @@ name_en: Oddish
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/371/Oddish.SV2A.43.48264.png
-illustrator: Unknown
+illustrator:
 prints:
 - normal
 - master_ball_mirror

@@ -7,7 +7,7 @@ name_en: Manaphy
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/336/Manaphy.S9.31.42570.png
-illustrator: Unknown
+illustrator:
 prints:
 - normal
 - poke_ball_mirror

@@ -7,7 +7,7 @@ name_en: Venipede
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/414/Venipede.SV11B.57.57708.png
-illustrator: Unknown
+illustrator:
 prints:
 - normal
 - master_ball_mirror

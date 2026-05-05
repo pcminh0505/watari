@@ -7,7 +7,7 @@ name_en: Farfetch'd
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/371/Farfetchd.SV2A.83.48295.png
-illustrator: Unknown
+illustrator:
 prints:
 - normal
 - master_ball_mirror

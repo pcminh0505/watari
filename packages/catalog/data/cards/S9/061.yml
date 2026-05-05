@@ -7,7 +7,7 @@ name_en: Muk
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/336/Muk.S9.61.42598.png
-illustrator: Unknown
+illustrator:
 prints:
 - normal
 - poke_ball_mirror

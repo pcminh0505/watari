@@ -7,7 +7,7 @@ name_en: Shellos
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/405/Shellos.SV8.30.54517.png
-illustrator: Unknown
+illustrator:
 prints:
 - normal
 - master_ball_mirror

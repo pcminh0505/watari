@@ -7,7 +7,7 @@ name_en: Vulpix
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/371/Vulpix.SV2A.37.48258.png
-illustrator: Unknown
+illustrator:
 prints:
 - normal
 - master_ball_mirror

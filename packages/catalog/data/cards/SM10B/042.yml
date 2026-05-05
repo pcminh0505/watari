@@ -7,7 +7,7 @@ name_en: 'Type: Null'
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/268/Type-Null.SM10B.42.27685.png
-illustrator: Unknown
+illustrator:
 prints:
 - normal
 sources:

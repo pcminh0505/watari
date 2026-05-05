@@ -7,7 +7,7 @@ name_en: Doduo
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/371/Doduo.SV2A.84.48296.png
-illustrator: Unknown
+illustrator:
 prints:
 - normal
 - master_ball_mirror

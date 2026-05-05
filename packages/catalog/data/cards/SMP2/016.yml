@@ -7,7 +7,7 @@ name_en: Mewtwo
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/271/Mewtwo.SMP2.16.28870.png
-illustrator: Unknown
+illustrator:
 prints:
 - normal
 sources:

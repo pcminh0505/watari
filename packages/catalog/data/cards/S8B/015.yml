@@ -7,7 +7,7 @@ name_en: Charmander
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/338/Charmander.S8B.15.41294.png
-illustrator: Unknown
+illustrator:
 prints:
 - normal
 sources:

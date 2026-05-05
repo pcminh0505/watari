@@ -7,7 +7,7 @@ name_en: Espurr
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/405/Espurr.SV8.53.54508.png
-illustrator: Unknown
+illustrator:
 prints:
 - normal
 - master_ball_mirror

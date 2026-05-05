@@ -7,7 +7,7 @@ name_en: Charizard GX
 rarity_code: RR
 category: card
 image: https://den-cards.pokellector.com/271/Charizard-GX.SMP2.7.27338.png
-illustrator: Unknown
+illustrator:
 prints:
 - normal
 sources:

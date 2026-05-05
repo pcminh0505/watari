@@ -7,7 +7,7 @@ name_en: Tapu Lele GX
 rarity_code: UR
 category: card
 image: https://den-cards.pokellector.com/241/Tapu-Lele-GX.SM8B.247.25267.png
-illustrator: Unknown
+illustrator:
 prints:
 - normal
 sources:

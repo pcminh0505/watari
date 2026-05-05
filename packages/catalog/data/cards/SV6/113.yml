@@ -7,7 +7,7 @@ name_en: Chansey
 rarity_code: AR
 category: card
 image: https://den-cards.pokellector.com/393/Chansey.SV6.113.52894.png
-illustrator: Unknown
+illustrator:
 prints:
 - normal
 sources:

@@ -7,7 +7,7 @@ name_en: Machamp
 rarity_code: R
 category: card
 image: https://den-cards.pokellector.com/371/Machamp.SV2A.68.48283.png
-illustrator: Unknown
+illustrator:
 prints:
 - normal
 - master_ball_mirror

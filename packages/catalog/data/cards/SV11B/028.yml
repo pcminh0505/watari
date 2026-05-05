@@ -7,7 +7,7 @@ name_en: Cubchoo
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/414/Cubchoo.SV11B.28.57691.png
-illustrator: Unknown
+illustrator:
 prints:
 - normal
 - master_ball_mirror

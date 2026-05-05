@@ -7,7 +7,7 @@ name_en: Litwick
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/414/Litwick.SV11B.15.57260.png
-illustrator: Unknown
+illustrator:
 prints:
 - normal
 - master_ball_mirror

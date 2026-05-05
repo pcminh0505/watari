@@ -7,7 +7,7 @@ name_en: Charizard
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/271/Charizard.SMP2.6.28863.png
-illustrator: Unknown
+illustrator:
 prints:
 - normal
 sources:

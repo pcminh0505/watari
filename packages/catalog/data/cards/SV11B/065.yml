@@ -7,7 +7,7 @@ name_en: Escavalier
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/414/Escavalier.SV11B.65.57714.png
-illustrator: Unknown
+illustrator:
 prints:
 - normal
 - master_ball_mirror

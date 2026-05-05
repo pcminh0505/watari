@@ -7,7 +7,7 @@ name_en: Venomoth
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/371/Venomoth.SV2A.49.48267.png
-illustrator: Unknown
+illustrator:
 prints:
 - normal
 - master_ball_mirror

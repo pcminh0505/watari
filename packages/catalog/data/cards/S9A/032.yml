@@ -7,7 +7,7 @@ name_en: Ralts
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/339/Ralts.S9A.32.43116.png
-illustrator: Unknown
+illustrator:
 prints:
 - normal
 - poke_ball_mirror

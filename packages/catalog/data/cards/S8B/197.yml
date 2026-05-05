@@ -7,7 +7,7 @@ name_en: Banette
 rarity_code: CHR
 category: card
 image: https://den-cards.pokellector.com/338/Banette.S8B.197.41502.png
-illustrator: Unknown
+illustrator:
 prints:
 - normal
 sources:

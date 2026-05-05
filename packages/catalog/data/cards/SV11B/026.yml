@@ -7,7 +7,7 @@ name_en: Carracosta
 rarity_code: R
 category: card
 image: https://den-cards.pokellector.com/414/Carracosta.SV11B.26.57689.png
-illustrator: Unknown
+illustrator:
 prints:
 - normal
 - master_ball_mirror

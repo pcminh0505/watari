@@ -7,7 +7,7 @@ name_en: Moltres
 rarity_code: R
 category: card
 image: https://den-cards.pokellector.com/336/Moltres.S9.18.41005.png
-illustrator: Unknown
+illustrator:
 prints:
 - normal
 - poke_ball_mirror

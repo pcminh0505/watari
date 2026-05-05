@@ -7,7 +7,7 @@ name_en: Gible
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/406/Gible.SV8A.81.54634.png
-illustrator: Unknown
+illustrator:
 prints:
 - normal
 - master_ball_mirror

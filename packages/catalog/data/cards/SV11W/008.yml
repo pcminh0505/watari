@@ -7,7 +7,7 @@ name_en: Shelmet
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/415/Shelmet.SV11W.8.57741.png
-illustrator: Unknown
+illustrator:
 prints:
 - normal
 - master_ball_mirror

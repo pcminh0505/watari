@@ -7,7 +7,7 @@ name_en: Whiscash
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/339/Whiscash.S9A.22.43107.png
-illustrator: Unknown
+illustrator:
 prints:
 - normal
 - poke_ball_mirror

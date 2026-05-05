@@ -7,7 +7,7 @@ name_en: Jolteon
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/406/Jolteon.SV8A.51.54659.png
-illustrator: Unknown
+illustrator:
 prints:
 - normal
 - master_ball_mirror

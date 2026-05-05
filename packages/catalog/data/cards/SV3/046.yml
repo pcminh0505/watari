@@ -7,7 +7,7 @@ name_en: Espeon
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/368/Espeon.SV3.46.48677.png
-illustrator: Unknown
+illustrator:
 prints:
 - normal
 sources:

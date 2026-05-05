@@ -7,7 +7,7 @@ name_en: Lampent
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/414/Lampent.SV11B.16.57259.png
-illustrator: Unknown
+illustrator:
 prints:
 - normal
 - master_ball_mirror

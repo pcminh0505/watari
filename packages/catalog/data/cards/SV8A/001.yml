@@ -7,7 +7,7 @@ name_en: Budew
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/406/Budew.SV8A.1.54936.png
-illustrator: Unknown
+illustrator:
 prints:
 - normal
 - poke_ball_mirror

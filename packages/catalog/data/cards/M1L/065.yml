@@ -7,7 +7,7 @@ name_en: Ivysaur
 rarity_code: AR
 category: card
 image: https://den-cards.pokellector.com/416/Ivysaur.M1L.65.58866.png
-illustrator: Unknown
+illustrator:
 prints:
 - normal
 sources:

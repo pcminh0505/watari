@@ -7,7 +7,7 @@ name_en: Jynx
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/339/Jynx.S9A.27.43111.png
-illustrator: Unknown
+illustrator:
 prints:
 - normal
 - poke_ball_mirror

@@ -7,7 +7,7 @@ name_en: Pokemon Catcher
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/232/Pokemon-Catcher.SM5S.57.20005.png
-illustrator: Unknown
+illustrator:
 prints:
 - normal
 sources:

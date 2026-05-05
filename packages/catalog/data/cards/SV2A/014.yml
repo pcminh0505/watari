@@ -7,7 +7,7 @@ name_en: Kakuna
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/371/Kakuna.SV2A.14.48246.png
-illustrator: Unknown
+illustrator:
 prints:
 - normal
 - master_ball_mirror

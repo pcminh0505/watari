@@ -7,7 +7,7 @@ name_en: Chespin
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/430/Chespin.M4.5.60922.png
-illustrator: Unknown
+illustrator:
 prints:
 - normal
 sources:

@@ -7,7 +7,7 @@ name_en: Samurott
 rarity_code: R
 category: card
 image: https://den-cards.pokellector.com/415/Samurott.SV11W.20.57205.png
-illustrator: Unknown
+illustrator:
 prints:
 - normal
 - master_ball_mirror

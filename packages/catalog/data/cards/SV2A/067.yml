@@ -7,7 +7,7 @@ name_en: Machoke
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/371/Machoke.SV2A.67.48282.png
-illustrator: Unknown
+illustrator:
 prints:
 - normal
 - master_ball_mirror

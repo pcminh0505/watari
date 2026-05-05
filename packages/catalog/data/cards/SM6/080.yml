@@ -7,7 +7,7 @@ name_en: Rare Candy
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/235/Ultra-Ball.SM6.80.20536.png
-illustrator: Unknown
+illustrator:
 prints:
 - normal
 sources:

@@ -7,7 +7,7 @@ name_en: Chespin
 rarity_code: AR
 category: card
 image: https://den-cards.pokellector.com/430/Chespin.M4.84.61004.png
-illustrator: Unknown
+illustrator:
 prints:
 - normal
 sources:

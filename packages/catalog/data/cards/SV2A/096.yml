@@ -7,7 +7,7 @@ name_en: Drowzee
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/371/Drowzee.SV2A.96.47732.png
-illustrator: Unknown
+illustrator:
 prints:
 - normal
 - master_ball_mirror

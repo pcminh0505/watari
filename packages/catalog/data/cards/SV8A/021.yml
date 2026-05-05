@@ -7,7 +7,7 @@ name_en: Flareon
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/406/Flareon.SV8A.21.54656.png
-illustrator: Unknown
+illustrator:
 prints:
 - normal
 - master_ball_mirror

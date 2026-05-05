@@ -7,7 +7,7 @@ name_en: Mimikyu
 rarity_code: R
 category: card
 image: https://den-cards.pokellector.com/210/Mimikyu.SM2L.20.16501.png
-illustrator: Unknown
+illustrator:
 prints:
 - normal
 sources:

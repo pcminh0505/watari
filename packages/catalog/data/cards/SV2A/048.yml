@@ -7,7 +7,7 @@ name_en: Venonat
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/371/Venonat.SV2A.48.48266.png
-illustrator: Unknown
+illustrator:
 prints:
 - normal
 - master_ball_mirror

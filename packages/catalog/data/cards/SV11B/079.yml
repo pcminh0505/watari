@@ -7,7 +7,7 @@ name_en: Energy Coin
 rarity_code: U
 category: energy
 image: https://den-cards.pokellector.com/414/Energy-Coin.SV11B.79.57727.png
-illustrator: Unknown
+illustrator:
 prints:
 - normal
 - poke_ball_mirror

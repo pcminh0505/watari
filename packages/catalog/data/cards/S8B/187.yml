@@ -7,7 +7,7 @@ name_en: Charizard
 rarity_code: CHR
 category: card
 image: https://den-cards.pokellector.com/338/Charizard.S8B.187.41277.png
-illustrator: Unknown
+illustrator:
 prints:
 - normal
 sources:

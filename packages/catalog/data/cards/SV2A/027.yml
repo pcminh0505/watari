@@ -7,7 +7,7 @@ name_en: Sandshrew
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/371/Sandshrew.SV2A.27.48254.png
-illustrator: Unknown
+illustrator:
 prints:
 - normal
 - master_ball_mirror

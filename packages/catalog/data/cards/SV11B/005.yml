@@ -7,7 +7,7 @@ name_en: Simisage
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/414/Simisage.SV11B.5.57674.png
-illustrator: Unknown
+illustrator:
 prints:
 - normal
 - master_ball_mirror

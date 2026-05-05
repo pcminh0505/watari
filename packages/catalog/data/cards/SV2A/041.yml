@@ -7,7 +7,7 @@ name_en: Zubat
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/371/Zubat.SV2A.41.48262.png
-illustrator: Unknown
+illustrator:
 prints:
 - normal
 - master_ball_mirror

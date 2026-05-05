@@ -7,7 +7,7 @@ name_en: Nidorino
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/371/Nidorino.SV2A.33.47734.png
-illustrator: Unknown
+illustrator:
 prints:
 - normal
 - master_ball_mirror

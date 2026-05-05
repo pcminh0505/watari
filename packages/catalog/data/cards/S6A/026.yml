@@ -7,7 +7,7 @@ name_en: Pikachu
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/322/Pikachu.S6A.26.38870.png
-illustrator: Unknown
+illustrator:
 prints:
 - normal
 sources:

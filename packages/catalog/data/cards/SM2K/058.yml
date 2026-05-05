@@ -7,7 +7,7 @@ name_en: Tapu Koko GX
 rarity_code: UR
 category: card
 image: https://den-cards.pokellector.com/211/Tapu-Koko-GX.SM2K.58.17363.png
-illustrator: Unknown
+illustrator:
 prints:
 - normal
 sources:

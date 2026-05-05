@@ -7,7 +7,7 @@ name_en: Antique Cover Fossil
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/414/Antique-Cover-Fossil.SV11B.80.57728.png
-illustrator: Unknown
+illustrator:
 prints:
 - normal
 - poke_ball_mirror

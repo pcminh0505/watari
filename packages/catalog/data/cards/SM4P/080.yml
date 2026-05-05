@@ -7,7 +7,7 @@ name_en: Chansey
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/228/Chansey.SM4+.80.19642.png
-illustrator: Unknown
+illustrator:
 prints:
 - normal
 sources:

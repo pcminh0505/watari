@@ -7,7 +7,7 @@ name_en: Wattrel
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/405/Wattrel.SV8.42.54554.png
-illustrator: Unknown
+illustrator:
 prints:
 - normal
 - master_ball_mirror

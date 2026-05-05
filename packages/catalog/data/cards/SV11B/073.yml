@@ -7,7 +7,7 @@ name_en: Pidove
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/414/Pidove.SV11B.73.57722.png
-illustrator: Unknown
+illustrator:
 prints:
 - normal
 - master_ball_mirror

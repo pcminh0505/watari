@@ -7,7 +7,7 @@ name_en: Monferno
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/336/Monferno.S9.20.41611.png
-illustrator: Unknown
+illustrator:
 prints:
 - normal
 - poke_ball_mirror

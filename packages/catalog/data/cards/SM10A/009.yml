@@ -7,7 +7,7 @@ name_en: Pikachu
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/267/Pikachu.SM10A.9.27503.png
-illustrator: Unknown
+illustrator:
 prints:
 - normal
 sources:

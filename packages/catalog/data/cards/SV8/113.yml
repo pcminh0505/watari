@@ -7,7 +7,7 @@ name_en: Stunfisk
 rarity_code: AR
 category: card
 image: https://den-cards.pokellector.com/405/Stunfisk.SV8.113.54610.png
-illustrator: Unknown
+illustrator:
 prints:
 - normal
 - master_ball_mirror

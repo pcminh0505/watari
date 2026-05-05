@@ -7,7 +7,7 @@ name_en: Growlithe
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/371/Growlithe.SV2A.58.48276.png
-illustrator: Unknown
+illustrator:
 prints:
 - normal
 - master_ball_mirror

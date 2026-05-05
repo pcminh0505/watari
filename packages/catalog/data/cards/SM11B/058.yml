@@ -7,7 +7,7 @@ name_en: Mimikyu
 rarity_code: CHR
 category: card
 image: https://den-cards.pokellector.com/278/Mimikyu.SM11B.58.29277.png
-illustrator: Unknown
+illustrator:
 prints:
 - normal
 sources:

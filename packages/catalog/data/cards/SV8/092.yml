@@ -7,7 +7,7 @@ name_en: Maushold
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/405/Maushold.SV8.92.54514.png
-illustrator: Unknown
+illustrator:
 prints:
 - normal
 - master_ball_mirror

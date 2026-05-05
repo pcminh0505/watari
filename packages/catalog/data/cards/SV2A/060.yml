@@ -7,7 +7,7 @@ name_en: Poliwag
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/371/Poliwag.SV2A.60.48278.png
-illustrator: Unknown
+illustrator:
 prints:
 - normal
 - master_ball_mirror

@@ -7,7 +7,7 @@ name_en: Pokemon Breeder
 rarity_code: U
 category: card
 image: https://den-cards.pokellector.com/224/Pokemon-Breeder.SM3+.68.18246.png
-illustrator: Unknown
+illustrator:
 prints:
 - normal
 sources:

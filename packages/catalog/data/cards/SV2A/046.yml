@@ -7,7 +7,7 @@ name_en: Paras
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/371/Paras.SV2A.46.48265.png
-illustrator: Unknown
+illustrator:
 prints:
 - normal
 - master_ball_mirror

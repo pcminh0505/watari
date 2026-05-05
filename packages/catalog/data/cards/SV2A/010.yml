@@ -7,7 +7,7 @@ name_en: Caterpie
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/371/Caterpie.SV2A.10.48242.png
-illustrator: Unknown
+illustrator:
 prints:
 - normal
 - master_ball_mirror

@@ -7,7 +7,7 @@ name_en: Pikachu
 rarity_code: CHR
 category: card
 image: https://den-cards.pokellector.com/278/Pikachu.SM11B.54.29321.png
-illustrator: Unknown
+illustrator:
 prints:
 - normal
 sources:

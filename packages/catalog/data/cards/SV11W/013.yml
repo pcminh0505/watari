@@ -7,7 +7,7 @@ name_en: Emboar
 rarity_code: R
 category: card
 image: https://den-cards.pokellector.com/415/Emboar.SV11W.13.57199.png
-illustrator: Unknown
+illustrator:
 prints:
 - normal
 - master_ball_mirror

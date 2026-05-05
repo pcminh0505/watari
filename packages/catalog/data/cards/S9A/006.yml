@@ -7,7 +7,7 @@ name_en: Roselia
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/339/Roselia.S9A.6.43098.png
-illustrator: Unknown
+illustrator:
 prints:
 - normal
 - poke_ball_mirror

@@ -7,7 +7,7 @@ name_en: Ducklett
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/415/Ducklett.SV11W.22.57748.png
-illustrator: Unknown
+illustrator:
 prints:
 - normal
 - master_ball_mirror

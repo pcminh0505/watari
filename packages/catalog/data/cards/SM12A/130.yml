@@ -7,7 +7,7 @@ name_en: Pokégear 3.0
 rarity_code: C
 category: card
 image: https://den-cards.pokellector.com/288/Pokgear-30.SM12A.130.30475.png
-illustrator: Unknown
+illustrator:
 prints:
 - normal
 sources:
