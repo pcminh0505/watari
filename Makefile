@@ -69,12 +69,20 @@ catalog-audit-diff:
 	uv run python -m watari_catalog audit-diff $(if $(SET),--set $(SET))
 
 # Phase 5: apply audit values from a TSV. Pass MODE=auto|review.
+#         Optional CONFLICTS=1 with MODE=auto applies CONFLICT rows (oracle wins).
 #         Usage: make catalog-audit-apply TSV=reports/audit-diff-...tsv MODE=auto
+#                make catalog-audit-apply TSV=... MODE=auto CONFLICTS=1
 #                make catalog-audit-apply TSV=reports/audit-diff-...tsv MODE=review
 catalog-audit-apply:
 	@test -n "$(TSV)" || (echo "Usage: make catalog-audit-apply TSV=reports/...tsv MODE=auto|review"; exit 1)
 	@test -n "$(MODE)" || (echo "Usage: pass MODE=auto or MODE=review"; exit 1)
-	uv run python -m watari_catalog audit-apply --tsv "$(TSV)" --$(MODE)
+	@if [ "$(MODE)" = "review" ]; then \
+	  uv run python -m watari_catalog audit-apply --tsv "$(TSV)" --review; \
+	elif [ "$(CONFLICTS)" = "1" ]; then \
+	  uv run python -m watari_catalog audit-apply --tsv "$(TSV)" --auto --conflicts; \
+	else \
+	  uv run python -m watari_catalog audit-apply --tsv "$(TSV)" --auto; \
+	fi
 
 # Phase 6: per-set rollout — fetch, diff, apply AUTO_FILL, re-seed DB.
 #         Usage: make catalog-audit-rollout SET=SV4A

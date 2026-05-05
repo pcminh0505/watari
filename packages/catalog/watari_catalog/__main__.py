@@ -42,9 +42,10 @@ Commands (v3 pipeline):
         oracle (pokemon-card.com for name_ja, Bulbapedia for name_en /
         illustrator) and append the answers into ``data/audit/<SET>.yml``.
 
-    audit-apply --tsv reports/audit-diff-...tsv [--auto | --review]
+    audit-apply --tsv reports/audit-diff-...tsv [--auto | --review] [--conflicts]
         Apply the chosen oracle values to ``data/cards/<SET>/<NNN>.yml``.
-        ``--auto`` writes only AUTO_FILL rows; ``--review`` writes the
+        ``--auto`` writes only AUTO_FILL rows; ``--auto --conflicts`` also
+        applies CONFLICT rows (oracle wins). ``--review`` writes the
         operator-edited TSV and prepends ``# manual: true`` to each file.
 """
 
@@ -175,6 +176,11 @@ def _build_parser() -> argparse.ArgumentParser:
         ),
     )
     aap.add_argument(
+        "--conflicts",
+        action="store_true",
+        help="With --auto: also apply CONFLICT rows using the oracle column",
+    )
+    aap.add_argument(
         "--dry-run",
         action="store_true",
         help="Show what would change without writing",
@@ -238,6 +244,7 @@ async def _dispatch(args: argparse.Namespace) -> int:
             tsv_path=args.tsv,
             auto=args.auto,
             review=args.review,
+            include_conflicts=args.conflicts,
             dry_run=args.dry_run,
         )
     return 1

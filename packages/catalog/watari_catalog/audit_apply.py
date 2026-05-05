@@ -5,6 +5,9 @@ Two modes:
 - ``--auto`` writes only ``AUTO_FILL`` rows from the diff TSV (current
   null, oracle non-null). It does **not** prepend ``# manual: true`` —
   these are recoverable by re-bootstrapping if the oracle changes.
+- ``--auto --conflicts`` additionally applies ``CONFLICT`` rows using the
+  oracle column (TCGCollector wins). Same no-``manual`` banner as plain
+  ``--auto`` — re-bootstrap may revert if source precedence disagrees.
 - ``--review`` writes whichever rows have a non-empty ``chosen`` cell
   (the operator hand-fills these for ``CONFLICT`` rows). It **does**
   prepend ``# manual: true`` so the bootstrap pipeline can't overwrite
@@ -44,6 +47,7 @@ SUPPORTED_FIELDS: frozenset[str] = frozenset(
     {"name_ja", "name_en", "rarity_code", "illustrator"}
 )
 AUTO_FILL = "AUTO_FILL"
+CONFLICT = "CONFLICT"
 MANUAL_HEADER = "# manual: true\n"
 
 
@@ -147,25 +151,28 @@ def _apply_field(doc: dict[str, Any], field: str, value: str | None) -> bool:
 
 
 def _row_is_applicable(
-    row: dict[str, str], *, mode: str
+    row: dict[str, str], *, mode: str, include_conflicts: bool
 ) -> tuple[bool, str | None]:
     """Return ``(applicable, chosen_value)``.
 
     For ``--auto`` mode: only ``AUTO_FILL`` rows are applicable; the
-    chosen value is the oracle column.
+    chosen value is the oracle column. With ``include_conflicts=True``,
+    ``CONFLICT`` rows also apply when oracle is non-empty (oracle wins).
     For ``--review`` mode: any row with a non-empty ``chosen`` cell is
     applicable; the chosen value is the ``chosen`` column.
     """
     cls = (row.get("classification") or "").strip()
     if mode == "auto":
-        if cls != AUTO_FILL:
-            return False, None
-        # Oracle must have a value (TSV may have empty oracle for NO_ORACLE rows
-        # the operator left misclassified).
         oracle = (row.get("oracle") or "").strip()
-        if not oracle:
-            return False, None
-        return True, oracle
+        if cls == AUTO_FILL:
+            if not oracle:
+                return False, None
+            return True, oracle
+        if include_conflicts and cls == CONFLICT:
+            if not oracle:
+                return False, None
+            return True, oracle
+        return False, None
     if mode == "review":
         chosen = (row.get("chosen") or "").strip()
         if not chosen:
@@ -178,6 +185,7 @@ def _apply_one_row(
     row: dict[str, str],
     *,
     mode: str,
+    include_conflicts: bool,
     dry_run: bool,
     result: ApplyResult,
 ) -> None:
@@ -186,7 +194,9 @@ def _apply_one_row(
         result.skipped_unsupported += 1
         return
 
-    applicable, chosen = _row_is_applicable(row, mode=mode)
+    applicable, chosen = _row_is_applicable(
+        row, mode=mode, include_conflicts=include_conflicts
+    )
     if not applicable:
         return
 
@@ -251,11 +261,15 @@ async def run(
     tsv_path: str,
     auto: bool,
     review: bool,
+    include_conflicts: bool = False,
     dry_run: bool,
 ) -> int:
     if auto == review:
         # argparse mutex prevents both, but be defensive.
         logger.error("audit-apply: pass exactly one of --auto / --review")
+        return 2
+    if include_conflicts and not auto:
+        logger.error("audit-apply: --conflicts is only valid with --auto")
         return 2
     mode = "auto" if auto else "review"
 
@@ -267,10 +281,19 @@ async def run(
 
     result = ApplyResult()
     for row in rows:
-        _apply_one_row(row, mode=mode, dry_run=dry_run, result=result)
+        _apply_one_row(
+            row,
+            mode=mode,
+            include_conflicts=include_conflicts,
+            dry_run=dry_run,
+            result=result,
+        )
 
+    mode_label = mode
+    if mode == "auto" and include_conflicts:
+        mode_label = "auto+conflicts"
     print(
-        f"audit-apply ({mode}{', dry-run' if dry_run else ''}): "
+        f"audit-apply ({mode_label}{', dry-run' if dry_run else ''}): "
         f"written={result.written} "
         f"skipped_manual={result.skipped_manual} "
         f"skipped_unchanged={result.skipped_unchanged} "
