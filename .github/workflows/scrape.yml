@@ -5,8 +5,8 @@ on:
     - cron: "0 0,8 * * *"
     # SNKRDUNK: 03:00 JST (= 18:00 UTC previous day)
     - cron: "0 18 * * *"
-    # Legacy SM/SW weekly backfill window: Sunday 06:00 JST (= Sat 21:00 UTC)
-    - cron: "0 21 * * 6"
+    # Legacy SM/SW daily run: 06:00 JST (= 21:00 UTC previous day)
+    - cron: "0 21 * * *"
   workflow_dispatch:
     inputs:
       job:
@@ -56,7 +56,7 @@ jobs:
 
   cardrush-sw:
     if: >
-      (github.event_name == 'schedule' && contains(github.event.schedule, '0 21 * * 6')) ||
+      (github.event_name == 'schedule' && contains(github.event.schedule, '0 21 * * *')) ||
       (github.event_name == 'workflow_dispatch' && inputs.job == 'cardrush-sw')
     runs-on: ubuntu-latest
     steps:
@@ -76,7 +76,7 @@ jobs:
 
   cardrush-sm:
     if: >
-      (github.event_name == 'schedule' && contains(github.event.schedule, '0 21 * * 6')) ||
+      (github.event_name == 'schedule' && contains(github.event.schedule, '0 21 * * *')) ||
       (github.event_name == 'workflow_dispatch' && inputs.job == 'cardrush-sm')
     runs-on: ubuntu-latest
     steps:
@@ -152,7 +152,7 @@ jobs:
 
   snkrdunk-legacy:
     if: >
-      (github.event_name == 'schedule' && contains(github.event.schedule, '0 21 * * 6')) ||
+      (github.event_name == 'schedule' && contains(github.event.schedule, '0 21 * * *')) ||
       (github.event_name == 'workflow_dispatch' && inputs.job == 'snkrdunk-legacy')
     runs-on: ubuntu-latest
     strategy:
