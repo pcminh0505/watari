@@ -74,7 +74,7 @@ export function CardsPage() {
   // Fetch all cards for the set using the search endpoint to get price data
   const { data, isPending, error, refetch } = useCardSearch({
     set_code: setCode,
-    limit: 200,
+    limit: 500,
   });
 
   const allCards = data?.data ?? [];

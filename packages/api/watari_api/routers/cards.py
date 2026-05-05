@@ -62,7 +62,7 @@ async def search_cards(
     q: str | None = Query(None, min_length=1, max_length=80),
     set_code: str | None = Query(None, description="Filter by set code"),
     rarity: str | None = Query(None, description="Filter by rarity code"),
-    limit: int = Query(60, ge=1, le=200),
+    limit: int = Query(60, ge=1, le=500),
     offset: int = Query(0, ge=0),
 ) -> list[ArtworkSearchResult]:
     q_clean = q.strip() if q is not None else None
