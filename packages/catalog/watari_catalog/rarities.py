@@ -128,7 +128,7 @@ POKELLECTOR_RARITY_MAP: dict[str, str] = {
     "Shiny": "S",           # baby shiny tier (SV4A Shiny Treasure, S4A Shiny Star V)
     # SV-era labels (jp.pokellector.com uses shorter forms than EN Pokellector)
     "Ace Spec": "R",                # ACE SPEC cards (same tier as ACE SPEC Rare)
-    "Super Secret Rare": "SAR",     # SV4A high-number secret ex (Special Art Rare tier)
+    "Super Secret Rare": "SSR",     # shiny ex/V/VMAX (SV4A, S4A — Shiny Super Rare tier)
     "B Double Rare": "RR",          # SV11 box-topper ex (Double Rare tier)
 }
 

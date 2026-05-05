@@ -74,7 +74,7 @@ class TestPokellector:
             ("Masterball Rare", "MA"),
             # SV-era jp.pokellector.com labels
             ("Ace Spec", "R"),
-            ("Super Secret Rare", "SAR"),
+            ("Super Secret Rare", "SSR"),
             ("B Double Rare", "RR"),
         ],
     )
