@@ -43,6 +43,7 @@ interface CardSearchParams {
   q?: string;
   set_code?: string;
   rarity?: string;
+  illustrator?: string;
   page?: number;
   limit?: number;
 }
@@ -56,6 +57,7 @@ export function useCardSearch(params: CardSearchParams) {
   if (q.trim()) qs.set("q", q.trim());
   if (set_code) qs.set("set_code", set_code);
   if (rarity) qs.set("rarity", rarity);
+  if (params.illustrator) qs.set("illustrator", params.illustrator);
 
   return useQuery<{ data: ArtworkSearchResult[]; total: number }>({
     queryKey: ["cards-search", params],

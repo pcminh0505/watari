@@ -45,9 +45,16 @@ export function SearchCardThumbnail({ card }: SearchCardThumbnailProps) {
       <div className="px-3 py-3">
         <p className="truncate text-xs font-medium text-slate-800 dark:text-slate-200">{displayName}</p>
         <p className="truncate text-[10px] text-slate-500 dark:text-slate-500">{setName}</p>
-        <p className="mt-1 text-sm font-semibold text-primary-600 dark:text-primary-400 text-glow">
-          {card.cardrush_a_floor_jpy != null ? formatJPY(card.cardrush_a_floor_jpy) : "—"}
-        </p>
+        <div className="mt-1 flex items-baseline gap-1.5">
+          <p className="text-sm font-semibold text-primary-600 dark:text-primary-400 text-glow">
+            {card.cardrush_a_floor_jpy != null ? formatJPY(card.cardrush_a_floor_jpy) : "—"}
+          </p>
+          {card.cardrush_a_floor_jpy != null && (
+            <span className="text-[9px] text-slate-500 dark:text-slate-500 uppercase tracking-wide">
+              listed
+            </span>
+          )}
+        </div>
       </div>
     </Link>
   );

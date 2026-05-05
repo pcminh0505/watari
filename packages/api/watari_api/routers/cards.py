@@ -62,6 +62,7 @@ async def search_cards(
     q: str | None = Query(None, min_length=1, max_length=80),
     set_code: str | None = Query(None, description="Filter by set code"),
     rarity: str | None = Query(None, description="Filter by rarity code"),
+    illustrator: str | None = Query(None, description="Filter by illustrator name"),
     limit: int = Query(60, ge=1, le=500),
     offset: int = Query(0, ge=0),
 ) -> list[ArtworkSearchResult]:
@@ -79,6 +80,8 @@ async def search_cards(
             stmt = stmt.where(func.upper(Artwork.set_code) == set_code.upper())
         if rarity is not None:
             stmt = stmt.where(Artwork.rarity_code == rarity)
+        if illustrator is not None:
+            stmt = stmt.where(Artwork.illustrator == illustrator)
         if q_clean:
             stmt = stmt.where(
                 or_(

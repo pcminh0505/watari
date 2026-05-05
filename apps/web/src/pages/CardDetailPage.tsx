@@ -99,7 +99,13 @@ export function CardDetailPage() {
           )}
           {card.illustrator && (
             <p className="mt-3 text-center text-xs text-slate-500">
-              Illus. {card.illustrator}
+              Illus.{" "}
+              <Link
+                to={`/cards?illustrator=${encodeURIComponent(card.illustrator)}`}
+                className="hover:text-primary-500 dark:hover:text-primary-400 hover:underline transition-colors"
+              >
+                {card.illustrator}
+              </Link>
             </p>
           )}
         </div>

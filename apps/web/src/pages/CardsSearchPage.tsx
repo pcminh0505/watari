@@ -23,6 +23,7 @@ export function CardsSearchPage() {
   const qParam = searchParams.get("q") || "";
   const setCode = searchParams.get("set") || "";
   const rarityParam = searchParams.get("rarity") || "";
+  const illustratorParam = searchParams.get("illustrator") || "";
   const page = parseInt(searchParams.get("page") || "0", 10);
 
   const [localQ, setLocalQ] = useState(qParam);
@@ -30,6 +31,9 @@ export function CardsSearchPage() {
 
   const [localRarity, setLocalRarity] = useState(rarityParam);
   const debouncedRarity = useDebounce(localRarity, 300);
+
+  const [localIllustrator, setLocalIllustrator] = useState(illustratorParam);
+  const debouncedIllustrator = useDebounce(localIllustrator, 300);
 
   function updateParams(updates: Record<string, string | undefined>) {
     setSearchParams(prev => {
@@ -60,12 +64,18 @@ export function CardsSearchPage() {
     }
   }, [debouncedRarity, rarityParam]);
 
+  useEffect(() => {
+    if (illustratorParam !== debouncedIllustrator) {
+      updateParams({ illustrator: debouncedIllustrator });
+    }
+  }, [debouncedIllustrator, illustratorParam]);
+
   const {
     data,
     isPending,
     error,
     refetch,
-  } = useCardSearch({ q: qParam, set_code: setCode, rarity: rarityParam, page, limit: PAGE_SIZE });
+  } = useCardSearch({ q: qParam, set_code: setCode, rarity: rarityParam, illustrator: illustratorParam, page, limit: PAGE_SIZE });
 
   const { data: sets } = useAllSets();
 
@@ -73,7 +83,7 @@ export function CardsSearchPage() {
   const total = data?.total ?? 0;
 
   return (
-    <div className="mx-auto max-w-4xl">
+    <div>
       <h1 className="mb-8 text-3xl font-bold text-slate-900 dark:text-slate-50 text-glow">
         Search Cards
       </h1>
@@ -122,13 +132,28 @@ export function CardsSearchPage() {
           </div>
 
           {/* Active filter chips + clear all */}
-          {(setCode || rarityParam) && (
-            <button
-              onClick={() => { updateParams({ set: undefined, rarity: undefined }); setLocalRarity(""); }}
-              className="text-xs font-medium text-primary-600 dark:text-primary-400 hover:text-primary-800 dark:hover:text-primary-300 hover:underline"
-            >
-              Clear filters
-            </button>
+          {(setCode || rarityParam || illustratorParam) && (
+            <div className="flex flex-wrap items-center gap-2">
+              {illustratorParam && (
+                <div className="flex items-center gap-1 rounded-full bg-primary-100 dark:bg-primary-900/30 px-2 py-1 text-xs font-medium text-primary-700 dark:text-primary-300">
+                  <span>Artist: {illustratorParam}</span>
+                  <button
+                    onClick={() => { updateParams({ illustrator: undefined }); setLocalIllustrator(""); }}
+                    className="ml-1 rounded-full p-0.5 hover:bg-primary-200 dark:hover:bg-primary-800"
+                  >
+                    <svg className="h-3 w-3" viewBox="0 0 16 16" fill="currentColor">
+                      <path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z" />
+                    </svg>
+                  </button>
+                </div>
+              )}
+              <button
+                onClick={() => { updateParams({ set: undefined, rarity: undefined, illustrator: undefined }); setLocalRarity(""); setLocalIllustrator(""); }}
+                className="text-xs font-medium text-primary-600 dark:text-primary-400 hover:text-primary-800 dark:hover:text-primary-300 hover:underline"
+              >
+                Clear all filters
+              </button>
+            </div>
           )}
 
           <div className="flex items-center ml-auto text-xs text-slate-400">
