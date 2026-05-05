@@ -44,6 +44,8 @@ class ArtworkSearchResult(ArtworkDetail):
     set_name_en: str | None = None
     set_release_date: date | None = None
     cardrush_a_floor_jpy: int | None = None
+    market_price_jpy: int | None = None
+    market_price_source_used: str | None = None
 
 
 class LatestPrice(BaseModel):

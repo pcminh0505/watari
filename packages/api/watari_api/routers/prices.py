@@ -20,7 +20,7 @@ from fastapi import APIRouter, Depends, HTTPException, Query, Request, Response
 from watari_core.catalog import pad_local_id
 from watari_core.models import Card, PricePoint, Set
 from watari_core.schemas import PricePointOut
-from sqlalchemy import bindparam, func, select, text
+from sqlalchemy import Integer, bindparam, func, select, text
 from sqlalchemy.ext.asyncio import AsyncSession
 
 from watari_api.deps import get_session
@@ -35,6 +35,7 @@ SessionDep = Annotated[AsyncSession, Depends(get_session)]
 
 # MV data refreshes only after a scrape run (a few times per day).
 _PRICE_CACHE = "public, max-age=300, stale-while-revalidate=60"
+_LATEST_PRICE_MAX_AGE_DAYS = 90
 
 
 def _compute_etag(data: list[Any]) -> str:
@@ -100,7 +101,7 @@ async def latest_prices(
     response: Response,
     variant: str = Query("normal", description="Variant slug (default: normal)"),
 ) -> Any:
-    """Latest observation per (source, condition) for a card, from ``mv_latest_price``.
+    """Recent observation per (source, condition) for a card, from ``mv_latest_price``.
 
     Supports conditional GET via ``If-None-Match`` / ``ETag``.
     """
@@ -114,9 +115,14 @@ async def latest_prices(
     stmt = text(
         "SELECT card_id, source, condition, price_jpy, stock_qty, observed_at "
         "FROM mv_latest_price WHERE card_id = :card_id "
+        "AND observed_at >= now() - make_interval(days => :max_age_days) "
         "ORDER BY source, condition"
-    ).bindparams(bindparam("card_id", type_=None))
-    rows = (await session.execute(stmt, {"card_id": card.card_id})).mappings().all()
+    ).bindparams(bindparam("card_id", type_=None), bindparam("max_age_days", type_=Integer))
+    rows = (
+        await session.execute(
+            stmt, {"card_id": card.card_id, "max_age_days": _LATEST_PRICE_MAX_AGE_DAYS}
+        )
+    ).mappings().all()
     data = [LatestPrice.model_validate(dict(r)) for r in rows]
 
     etag = _compute_etag(data)

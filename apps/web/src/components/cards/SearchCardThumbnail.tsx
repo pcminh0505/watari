@@ -9,9 +9,17 @@ interface SearchCardThumbnailProps {
   card: ArtworkSearchResult;
 }
 
+const SOURCE_LABEL: Record<string, string> = {
+  snkrdunk: "sold",
+  cardrush: "listed",
+};
+
 export function SearchCardThumbnail({ card }: SearchCardThumbnailProps) {
   const displayName = card.name_en ?? card.name_ja ?? card.local_id;
   const setName = card.set_name_en ?? card.set_name_ja ?? card.set_code;
+  const displayPrice = card.market_price_jpy ?? card.cardrush_a_floor_jpy;
+  const source = card.market_price_source_used
+    ?? (card.cardrush_a_floor_jpy != null ? "cardrush" : null);
 
   return (
     <Link
@@ -47,11 +55,11 @@ export function SearchCardThumbnail({ card }: SearchCardThumbnailProps) {
         <p className="truncate text-[10px] text-slate-500 dark:text-slate-500">{setName}</p>
         <div className="mt-1 flex items-baseline gap-1.5">
           <p className="text-sm font-semibold text-primary-600 dark:text-primary-400 text-glow">
-            {card.cardrush_a_floor_jpy != null ? formatJPY(card.cardrush_a_floor_jpy) : "—"}
+            {displayPrice != null ? formatJPY(displayPrice) : "—"}
           </p>
-          {card.cardrush_a_floor_jpy != null && (
+          {source && (
             <span className="text-[9px] text-slate-500 dark:text-slate-500 uppercase tracking-wide">
-              listed
+              {SOURCE_LABEL[source] ?? source}
             </span>
           )}
         </div>

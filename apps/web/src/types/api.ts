@@ -43,6 +43,8 @@ export interface ArtworkSearchResult extends ArtworkDetail {
   set_name_en: string | null;
   set_release_date: string | null;
   cardrush_a_floor_jpy: number | null;
+  market_price_jpy: number | null;
+  market_price_source_used: "snkrdunk" | "cardrush" | null;
 }
 
 /** Mirrors packages/api/watari_api/schemas.py: LatestPrice */

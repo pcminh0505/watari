@@ -413,12 +413,23 @@ def test_search_cards_matches_name_ja(client_factory) -> None:  # type: ignore[n
     )
     variants = FakeResult(rows=[_fake_variant_row("jp-sv2a-089", "normal")])
     floors = FakeResult(rows=[{"artwork_id": "jp-sv2a-089", "price_jpy": 1200}])
-    client, _ = client_factory([count, artworks, variants, floors])
+    market = FakeResult(
+        rows=[
+            {
+                "card_id": "jp-sv2a-089-normal",
+                "market_price_jpy": 1500,
+                "source_used": "snkrdunk",
+            }
+        ]
+    )
+    client, _ = client_factory([count, artworks, variants, floors, market])
     resp = client.get("/jp/cards/search?q=ベト")
     assert resp.status_code == 200
     body = resp.json()
     assert body[0]["artwork_id"] == "jp-sv2a-089"
     assert body[0]["cardrush_a_floor_jpy"] == 1200
+    assert body[0]["market_price_jpy"] == 1500
+    assert body[0]["market_price_source_used"] == "snkrdunk"
 
 
 def test_search_cards_matches_local_id(client_factory) -> None:  # type: ignore[no-untyped-def]
@@ -435,7 +446,8 @@ def test_search_cards_matches_local_id(client_factory) -> None:  # type: ignore[
     )
     variants = FakeResult(rows=[_fake_variant_row("jp-sv2a-089", "normal")])
     floors = FakeResult(rows=[])
-    client, _ = client_factory([count, artworks, variants, floors])
+    market = FakeResult(rows=[])
+    client, _ = client_factory([count, artworks, variants, floors, market])
     resp = client.get("/jp/cards/search?q=089")
     assert resp.status_code == 200
     assert resp.json()[0]["local_id"] == "089"
@@ -455,7 +467,8 @@ def test_search_cards_matches_set_code(client_factory) -> None:  # type: ignore[
     )
     variants = FakeResult(rows=[_fake_variant_row("jp-sv2a-001", "normal")])
     floors = FakeResult(rows=[])
-    client, _ = client_factory([count, artworks, variants, floors])
+    market = FakeResult(rows=[])
+    client, _ = client_factory([count, artworks, variants, floors, market])
     resp = client.get("/jp/cards/search?q=sv2a")
     assert resp.status_code == 200
     assert resp.json()[0]["set_code"] == "SV2A"

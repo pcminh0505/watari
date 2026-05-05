@@ -28,6 +28,12 @@ mv_latest_price = table(
     column("price_jpy", Integer),
     column("stock_qty", Integer),
 )
+mv_market_price = table(
+    "mv_market_price",
+    column("card_id"),
+    column("market_price_jpy", Integer),
+    column("source_used", String),
+)
 
 
 def _artwork_columns() -> tuple[Any, ...]:
@@ -136,6 +142,15 @@ async def search_cards(
             )
         )
 
+    # Match the detail page default variant selection:
+    # "normal" first, otherwise lexicographic variant.
+    default_card_id_by_artwork: dict[str, str] = {}
+    for artwork_id, variants in variants_by_artwork.items():
+        if not variants:
+            continue
+        first_variant = min(variants, key=lambda v: _variant_sort_key(v.variant))
+        default_card_id_by_artwork[artwork_id] = first_variant.card_id
+
     floor_stmt = (
         select(Card.artwork_id, mv_latest_price.c.price_jpy)
         .join(mv_latest_price, mv_latest_price.c.card_id == Card.card_id)
@@ -151,17 +166,36 @@ async def search_cards(
     floor_rows = (await session.execute(floor_stmt)).all()
     floor_by_artwork = {row.artwork_id: int(row.price_jpy) for row in floor_rows}
 
+    market_by_card_id: dict[str, tuple[int, str]] = {}
+    default_card_ids = list(default_card_id_by_artwork.values())
+    if default_card_ids:
+        market_stmt = select(
+            mv_market_price.c.card_id,
+            mv_market_price.c.market_price_jpy,
+            mv_market_price.c.source_used,
+        ).where(mv_market_price.c.card_id.in_(default_card_ids))
+        market_rows = (await session.execute(market_stmt)).all()
+        market_by_card_id = {
+            str(row.card_id): (int(row.market_price_jpy), str(row.source_used))
+            for row in market_rows
+            if row.market_price_jpy is not None and row.source_used is not None
+        }
+
     results: list[ArtworkSearchResult] = []
     for row in artwork_rows:
         variants = sorted(
             variants_by_artwork[row.artwork_id], key=lambda v: _variant_sort_key(v.variant)
         )
+        default_card_id = default_card_id_by_artwork.get(row.artwork_id)
+        market = market_by_card_id.get(default_card_id) if default_card_id else None
         results.append(
             ArtworkSearchResult.model_validate(
                 {
                     **dict(row._mapping),
                     "variants": variants,
                     "cardrush_a_floor_jpy": floor_by_artwork.get(row.artwork_id),
+                    "market_price_jpy": market[0] if market else None,
+                    "market_price_source_used": market[1] if market else None,
                 }
             )
         )
