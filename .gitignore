@@ -58,3 +58,6 @@ apps/web/.env.*.local
 
 # Note: uv.lock is NOT ignored — keep in git for reproducibility
 .vercel
+
+# Catalog — generated TCGCollector audit sidecars (from `audit-fetch`; regenerate locally)
+packages/catalog/data/audit/*.yml
