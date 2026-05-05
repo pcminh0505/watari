@@ -181,7 +181,7 @@ class TcgCollectorClient:
         self,
         *,
         impersonate: str = DEFAULT_IMPERSONATE,
-        timeout_sec: float = 30.0,
+        timeout_sec: float = 60.0,
         jitter_min: float = 1.2,
         jitter_max: float = 2.4,
         user_agent: str = DEFAULT_UA,
@@ -220,19 +220,48 @@ class TcgCollectorClient:
         delay = random.uniform(self._jitter_min, self._jitter_max)
         await asyncio.sleep(delay)
 
-    async def _fetch(self, path_or_url: str) -> str:
-        sess = self._ensure_session()
+    async def _fetch(
+        self,
+        path_or_url: str,
+        *,
+        max_attempts: int = 4,
+    ) -> str:
+        """GET with retries — TCGCollector detail pages often hit CF slowness."""
         url = (
             path_or_url
             if path_or_url.startswith("http")
             else f"{BASE_URL}{path_or_url}"
         )
-        resp = await asyncio.to_thread(sess.get, url, timeout=self._timeout)
-        if resp.status_code == 404:
-            raise FileNotFoundError(f"tcgcollector: {url} -> 404")
-        if resp.status_code != 200:
-            raise RuntimeError(f"tcgcollector: {url} -> HTTP {resp.status_code}")
-        return str(resp.text)
+        last_err: Exception | None = None
+        for attempt in range(max_attempts):
+            try:
+                sess = self._ensure_session()
+                resp = await asyncio.to_thread(sess.get, url, timeout=self._timeout)
+                if resp.status_code == 404:
+                    raise FileNotFoundError(f"tcgcollector: {url} -> 404")
+                if resp.status_code != 200:
+                    raise RuntimeError(
+                        f"tcgcollector: {url} -> HTTP {resp.status_code}"
+                    )
+                return str(resp.text)
+            except FileNotFoundError:
+                raise
+            except Exception as exc:
+                last_err = exc
+                if attempt == max_attempts - 1:
+                    break
+                backoff = 2.0 * (2**attempt) + random.uniform(0.0, 1.5)
+                logger.warning(
+                    "tcgcollector: fetch attempt %s/%s failed for %s — retry in %.1fs: %s",
+                    attempt + 1,
+                    max_attempts,
+                    url,
+                    backoff,
+                    exc,
+                )
+                await asyncio.sleep(backoff)
+        assert last_err is not None
+        raise last_err
 
     # --- bronze-mirrored fetches -----------------------------------------
 
