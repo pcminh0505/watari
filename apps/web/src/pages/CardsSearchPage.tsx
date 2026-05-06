@@ -1,13 +1,17 @@
-import { useEffect, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { useSearchParams } from "react-router";
 import { useCardRarities, useCardSearch } from "../api/cards";
 import { useAllSets } from "../api/sets";
+import type { SortKey } from "../components/cards/CardFilterBar";
 import { SearchCardThumbnail } from "../components/cards/SearchCardThumbnail";
 import { CardSkeleton } from "../components/cards/CardSkeleton";
 import { ErrorMessage } from "../components/ui/ErrorMessage";
 import { Pagination } from "../components/ui/Pagination";
+import { sortSearchCards } from "../lib/sortSearchCards";
 
-const PAGE_SIZE = 50;
+/** Match set page: client-side sort + paginate up to API max per request. */
+const FETCH_LIMIT = 500;
+const PAGE_SIZE = 60;
 
 function useDebounce<T>(value: T, delay: number): T {
   const [debouncedValue, setDebouncedValue] = useState<T>(value);
@@ -24,6 +28,7 @@ export function CardsSearchPage() {
   const setCode = searchParams.get("set") || "";
   const rarityParam = searchParams.get("rarity") || "";
   const illustratorParam = searchParams.get("illustrator") || "";
+  const sort = (searchParams.get("sort") || "number") as SortKey;
   const page = parseInt(searchParams.get("page") || "0", 10);
 
   const [localQ, setLocalQ] = useState(qParam);
@@ -66,7 +71,14 @@ export function CardsSearchPage() {
     isPending,
     error,
     refetch,
-  } = useCardSearch({ q: qParam, set_code: setCode, rarity: rarityParam, illustrator: illustratorParam, page, limit: PAGE_SIZE });
+  } = useCardSearch({
+    q: qParam,
+    set_code: setCode,
+    rarity: rarityParam,
+    illustrator: illustratorParam,
+    page: 0,
+    limit: FETCH_LIMIT,
+  });
 
   const { data: sets } = useAllSets();
   const { data: rarityOptions } = useCardRarities(setCode);
@@ -78,8 +90,23 @@ export function CardsSearchPage() {
     }
   }, [rarityParam, rarityOptions]);
 
-  const cards = data?.data ?? [];
-  const total = data?.total ?? 0;
+  const allCards = data?.data ?? [];
+  const apiTotal = data?.total ?? 0;
+  const sorted = useMemo(() => sortSearchCards(allCards, sort), [allCards, sort]);
+  const paginationTotal = sorted.length;
+  const totalPages =
+    paginationTotal === 0 ? 0 : Math.max(1, Math.ceil(paginationTotal / PAGE_SIZE));
+  const safePage =
+    paginationTotal === 0 ? 0 : Math.min(page, totalPages - 1);
+  const pageCards = sorted.slice(safePage * PAGE_SIZE, (safePage + 1) * PAGE_SIZE);
+  const isTruncated = apiTotal > allCards.length;
+
+  useEffect(() => {
+    if (isPending || paginationTotal === 0) return;
+    if (page !== safePage) {
+      updateParams({ page: safePage === 0 ? undefined : String(safePage) });
+    }
+  }, [isPending, paginationTotal, page, safePage]);
 
   return (
     <div>
@@ -137,6 +164,27 @@ export function CardsSearchPage() {
               <path d="M4 6l4 4 4-4" strokeLinecap="round" strokeLinejoin="round" />
             </svg>
           </div>
+          <div className="flex-1 relative min-w-[10rem]">
+            <select
+              value={sort}
+              onChange={(e) => {
+                const v = e.target.value as SortKey;
+                updateParams({ sort: v === "number" ? undefined : v, page: undefined });
+              }}
+              className="w-full appearance-none rounded-lg border border-slate-200 dark:border-white/10 bg-white dark:bg-slate-950 py-2.5 pl-4 pr-10 text-sm text-slate-700 dark:text-slate-300 shadow-sm focus:border-primary-500 focus:outline-none focus:ring-1 focus:ring-primary-500"
+            >
+              <option value="number">Card number</option>
+              <option value="name_asc">Card name (A-Z)</option>
+              <option value="name_desc">Card name (Z-A)</option>
+              <option value="rarity_desc">Rarity (desc)</option>
+              <option value="rarity_asc">Rarity (asc)</option>
+              <option value="price_desc">Market price (desc)</option>
+              <option value="price_asc">Market price (asc)</option>
+            </select>
+            <svg className="pointer-events-none absolute right-3 top-1/2 -translate-y-1/2 h-4 w-4 text-slate-400" viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="1.8">
+              <path d="M4 6l4 4 4-4" strokeLinecap="round" strokeLinejoin="round" />
+            </svg>
+          </div>
 
           {/* Active filter chips + clear all */}
           {(setCode || rarityParam || illustratorParam) && (
@@ -163,8 +211,19 @@ export function CardsSearchPage() {
             </div>
           )}
 
-          <div className="flex items-center ml-auto text-xs text-slate-400">
-            {isPending ? "…" : `${total} cards`}
+          <div className="flex flex-col items-end gap-0.5 ml-auto text-xs text-slate-400">
+            {isPending ? (
+              "…"
+            ) : (
+              <>
+                <span>{apiTotal} cards</span>
+                {isTruncated && (
+                  <span className="max-w-[14rem] text-right text-amber-600/90 dark:text-amber-400/90">
+                    Showing first {allCards.length} — refine search to narrow results
+                  </span>
+                )}
+              </>
+            )}
           </div>
         </div>
       </div>
@@ -177,18 +236,23 @@ export function CardsSearchPage() {
         </div>
       ) : error ? (
         <ErrorMessage error={error} onRetry={refetch} />
-      ) : cards.length === 0 ? (
+      ) : sorted.length === 0 ? (
         <div className="rounded-xl border border-slate-200 dark:border-white/5 bg-white/50 dark:bg-slate-900/50 p-12 text-center shadow-sm">
           <p className="text-slate-500 dark:text-slate-400">No cards found matching your criteria.</p>
         </div>
       ) : (
         <>
           <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6">
-            {cards.map((card) => (
+            {pageCards.map((card) => (
               <SearchCardThumbnail key={card.artwork_id} card={card} />
             ))}
           </div>
-          <Pagination page={page} total={total} limit={PAGE_SIZE} onPageChange={(p) => updateParams({ page: p === 0 ? undefined : p.toString() })} />
+          <Pagination
+            page={safePage}
+            total={paginationTotal}
+            limit={PAGE_SIZE}
+            onPageChange={(p) => updateParams({ page: p === 0 ? undefined : p.toString() })}
+          />
         </>
       )}
     </div>

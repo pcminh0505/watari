@@ -1,4 +1,4 @@
-import { useMemo } from "react";
+import { useEffect, useMemo } from "react";
 import { Link, useParams } from "react-router";
 import { useSearchParams } from "react-router";
 import { useCardSearch } from "../api/cards";
@@ -10,39 +10,9 @@ import { CardSkeleton } from "../components/cards/CardSkeleton";
 import { ErrorMessage } from "../components/ui/ErrorMessage";
 import { Pagination } from "../components/ui/Pagination";
 import { RARITY_SORT_ORDER } from "../lib/constants";
-import type { ArtworkSearchResult } from "../types/api";
+import { sortSearchCards } from "../lib/sortSearchCards";
 
 const PAGE_SIZE = 60;
-
-function sortCards(cards: ArtworkSearchResult[], sort: SortKey): ArtworkSearchResult[] {
-  const rarityOrder = (code: string | null) =>
-    RARITY_SORT_ORDER[code ?? ""] ?? 99;
-
-  return [...cards].sort((a, b) => {
-    switch (sort) {
-      case "number":
-        return a.local_id.localeCompare(b.local_id);
-      case "name_asc": {
-        const na = a.name_en ?? a.name_ja ?? a.local_id;
-        const nb = b.name_en ?? b.name_ja ?? b.local_id;
-        return na.localeCompare(nb, "en");
-      }
-      case "name_desc": {
-        const na = a.name_en ?? a.name_ja ?? a.local_id;
-        const nb = b.name_en ?? b.name_ja ?? b.local_id;
-        return nb.localeCompare(na, "en");
-      }
-      case "rarity_desc":
-        return rarityOrder(b.rarity_code) - rarityOrder(a.rarity_code);
-      case "rarity_asc":
-        return rarityOrder(a.rarity_code) - rarityOrder(b.rarity_code);
-      case "price_desc":
-        return (b.cardrush_a_floor_jpy ?? -1) - (a.cardrush_a_floor_jpy ?? -1);
-      case "price_asc":
-        return (a.cardrush_a_floor_jpy ?? Infinity) - (b.cardrush_a_floor_jpy ?? Infinity);
-    }
-  });
-}
 
 export function CardsPage() {
   const { setCode = "" } = useParams<{ setCode: string }>();
@@ -99,14 +69,28 @@ export function CardsPage() {
     return result;
   }, [allCards, rarity, trackedOnly]);
 
-  const sorted = useMemo(() => sortCards(filtered, sort), [filtered, sort]);
-  const pageCards = sorted.slice(page * PAGE_SIZE, (page + 1) * PAGE_SIZE);
+  const sorted = useMemo(() => sortSearchCards(filtered, sort), [filtered, sort]);
+  const paginationTotal = sorted.length;
+  const totalPages =
+    paginationTotal === 0 ? 0 : Math.max(1, Math.ceil(paginationTotal / PAGE_SIZE));
+  const safePage =
+    paginationTotal === 0 ? 0 : Math.min(page, totalPages - 1);
+  const pageCards = sorted.slice(safePage * PAGE_SIZE, (safePage + 1) * PAGE_SIZE);
+
+  useEffect(() => {
+    if (isPending || paginationTotal === 0) return;
+    if (page !== safePage) {
+      updateParams({ page: safePage === 0 ? undefined : String(safePage) });
+    }
+  }, [isPending, paginationTotal, page, safePage]);
 
   const setName = set ? (set.name_en ?? set.name_ja ?? setCode.toLowerCase()) : setCode.toLowerCase();
 
   function handleRarityChange(v: string) { updateParams({ rarity: v }); }
   function handleTrackedOnlyChange(v: boolean) { updateParams({ tracked: v ? "true" : undefined }); }
-  function handleSortChange(v: SortKey) { updateParams({ sort: v === "number" ? undefined : v }); }
+  function handleSortChange(v: SortKey) {
+    updateParams({ sort: v === "number" ? undefined : v, page: undefined });
+  }
 
   return (
     <div>
@@ -143,8 +127,8 @@ export function CardsPage() {
         <>
           <CardGrid cards={pageCards} />
           <Pagination
-            page={page}
-            total={sorted.length}
+            page={safePage}
+            total={paginationTotal}
             limit={PAGE_SIZE}
             onPageChange={(p) => updateParams({ page: p === 0 ? undefined : p.toString() })}
           />

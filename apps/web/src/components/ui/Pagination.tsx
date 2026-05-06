@@ -6,7 +6,7 @@ interface PaginationProps {
 }
 
 const btnBase =
-  "inline-flex items-center gap-1.5 rounded-md border border-gray-200 bg-white px-3 py-1.5 text-sm font-medium text-gray-700 shadow-sm transition hover:bg-gray-50 disabled:cursor-not-allowed disabled:opacity-40";
+  "inline-flex items-center gap-1.5 rounded-md border border-gray-200 bg-white px-3 py-1.5 text-sm font-medium text-gray-700 shadow-sm transition hover:bg-gray-50 disabled:cursor-not-allowed disabled:opacity-40 dark:border-white/10 dark:bg-slate-900 dark:text-slate-200 dark:hover:bg-slate-800";
 
 export function Pagination({ page, total, limit, onPageChange }: PaginationProps) {
   const totalPages = Math.ceil(total / limit);
@@ -14,9 +14,9 @@ export function Pagination({ page, total, limit, onPageChange }: PaginationProps
 
   return (
     <div className="mt-6 flex items-center justify-between">
-      <p className="text-sm text-gray-500">
+      <p className="text-sm text-gray-500 dark:text-slate-400">
         {page * limit + 1}–{Math.min((page + 1) * limit, total)}{" "}
-        <span className="text-gray-400">of {total}</span>
+        <span className="text-gray-400 dark:text-slate-500">of {total}</span>
       </p>
       <div className="flex items-center gap-2">
         <button
@@ -29,7 +29,7 @@ export function Pagination({ page, total, limit, onPageChange }: PaginationProps
           </svg>
           Prev
         </button>
-        <span className="min-w-[4rem] text-center text-sm text-gray-500">
+        <span className="min-w-[4rem] text-center text-sm text-gray-500 dark:text-slate-400">
           {page + 1} / {totalPages}
         </span>
         <button
