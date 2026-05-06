@@ -1,6 +1,6 @@
 import { Link } from "react-router";
 import { useMarketPrice } from "../../api/prices";
-import { formatJPY } from "../../lib/formatters";
+import { useCurrency } from "../../contexts/CurrencyContext";
 import type { ArtworkDetail } from "../../types/api";
 import { Badge } from "../ui/Badge";
 import { CardPlaceholder } from "./CardPlaceholder";
@@ -20,6 +20,7 @@ export function CardThumbnail({ card }: CardThumbnailProps) {
   const displayName = card.name_en ?? card.name_ja ?? card.local_id;
   const variant = card.variants[0]?.variant ?? "normal";
   const { data: market } = useMarketPrice(card.set_code, card.local_id, variant);
+  const { formatPrice } = useCurrency();
 
   return (
     <Link
@@ -59,7 +60,7 @@ export function CardThumbnail({ card }: CardThumbnailProps) {
         {market != null && (
           <div className="mt-1 flex items-baseline gap-1.5">
             <p className="text-sm font-semibold text-primary-600 dark:text-primary-400 text-glow">
-              {formatJPY(market.market_price_jpy)}
+              {formatPrice(market.market_price_jpy)}
             </p>
             <span className="text-[9px] text-slate-500 dark:text-slate-500 uppercase tracking-wide">
               {SOURCE_LABEL[market.source_used] ?? market.source_used}

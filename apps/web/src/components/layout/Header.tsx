@@ -1,4 +1,5 @@
 import { NavLink } from "react-router";
+import { CurrencyToggle } from "./CurrencyToggle";
 import { ThemeToggle } from "./ThemeToggle";
 
 const navLinkClass = ({ isActive }: { isActive: boolean }) =>
@@ -28,6 +29,8 @@ export function Header() {
               Cards
             </NavLink>
           </nav>
+          <div className="w-px h-5 bg-slate-200 dark:bg-slate-700"></div>
+          <CurrencyToggle />
           <div className="w-px h-5 bg-slate-200 dark:bg-slate-700"></div>
           <ThemeToggle />
         </div>

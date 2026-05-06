@@ -7,6 +7,7 @@ import {
   XAxis,
   YAxis,
 } from "recharts";
+import { useCurrency } from "../../contexts/CurrencyContext";
 import type { PricePointOut } from "../../types/api";
 
 interface PriceHistoryChartProps {
@@ -41,6 +42,7 @@ function aggregateByDay(points: PricePointOut[]): DayPoint[] {
 }
 
 export function PriceHistoryChart({ history, condition }: PriceHistoryChartProps) {
+  const { formatPrice } = useCurrency();
   const data = aggregateByDay(history);
 
   if (data.length === 0) {
@@ -58,14 +60,14 @@ export function PriceHistoryChart({ history, condition }: PriceHistoryChartProps
           <CartesianGrid strokeDasharray="3 3" stroke="var(--color-chart-grid)" />
           <XAxis dataKey="date" tick={{ fontSize: 11, fill: "var(--color-chart-text)" }} />
           <YAxis
-            tickFormatter={(v: number) => `¥${v.toLocaleString("ja-JP")}`}
+            tickFormatter={(v: number) => formatPrice(v)}
             tick={{ fontSize: 11, fill: "var(--color-chart-text)" }}
             width={80}
           />
           <Tooltip
             contentStyle={{ backgroundColor: "var(--color-chart-tooltip-bg)", borderColor: "var(--color-chart-tooltip-border)", color: "var(--color-chart-tooltip-text)" }}
             itemStyle={{ color: "var(--color-chart-line)" }}
-            formatter={(value: number) => `¥${value.toLocaleString("ja-JP")}`}
+            formatter={(value: number) => formatPrice(value)}
           />
           <Line type="monotone" dataKey="price" stroke="var(--color-chart-line)" strokeWidth={2} dot={false} connectNulls />
         </LineChart>

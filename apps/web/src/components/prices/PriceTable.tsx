@@ -1,5 +1,6 @@
+import { useCurrency } from "../../contexts/CurrencyContext";
+import { formatDate } from "../../lib/formatters";
 import type { LatestPrice } from "../../types/api";
-import { formatDate, formatJPY } from "../../lib/formatters";
 
 const STALE_DAYS = 14;
 
@@ -19,6 +20,7 @@ const SOURCE_LABELS: Record<string, string> = {
 };
 
 export function PriceTable({ prices }: PriceTableProps) {
+  const { formatPrice } = useCurrency();
   if (prices.length === 0) {
     return <p className="text-sm text-neutral-500">No price data available.</p>;
   }
@@ -54,7 +56,7 @@ export function PriceTable({ prices }: PriceTableProps) {
                     >
                       <td className="py-2.5 font-medium text-slate-800 dark:text-slate-200">{row.condition}</td>
                       <td className="py-2.5 text-right font-medium text-primary-600 dark:text-primary-400">
-                        {formatJPY(row.price_jpy)}
+                        {formatPrice(row.price_jpy)}
                       </td>
                       <td className="py-2.5 text-right text-xs">
                         <span className={stale ? "text-amber-600 dark:text-amber-400" : "text-slate-500"}>

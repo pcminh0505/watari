@@ -1,11 +1,12 @@
+import { useCurrency } from "../../contexts/CurrencyContext";
 import type { SpreadRow } from "../../types/api";
-import { formatJPY } from "../../lib/formatters";
 
 interface SpreadTableProps {
   rows: SpreadRow[];
 }
 
 export function SpreadTable({ rows }: SpreadTableProps) {
+  const { formatPrice } = useCurrency();
   if (rows.length === 0) return null;
 
   return (
@@ -28,13 +29,13 @@ export function SpreadTable({ rows }: SpreadTableProps) {
             <tr key={row.condition} className="border-b border-slate-100 dark:border-white/5 last:border-0 hover:bg-slate-50 dark:hover:bg-white/5 transition-colors">
               <td className="py-2.5 font-medium text-slate-800 dark:text-slate-200">{row.condition}</td>
               <td className="py-2.5 text-right text-slate-700 dark:text-slate-300">
-                {formatJPY(row.cardrush_floor)}
+                {formatPrice(row.cardrush_floor)}
               </td>
               <td className="py-2.5 text-right text-slate-700 dark:text-slate-300">
-                {formatJPY(Math.round(row.snkrdunk_median_7d))}
+                {formatPrice(Math.round(row.snkrdunk_median_7d))}
               </td>
               <td className="py-2.5 text-right font-medium text-accent-600 dark:text-accent-400">
-                {formatJPY(Math.round(row.spread_jpy))}
+                {formatPrice(Math.round(row.spread_jpy))}
               </td>
               <td className="py-2.5 text-right text-accent-600 dark:text-accent-400">
                 {row.spread_pct != null

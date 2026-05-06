@@ -1,5 +1,5 @@
 import { Link } from "react-router";
-import { formatJPY } from "../../lib/formatters";
+import { useCurrency } from "../../contexts/CurrencyContext";
 import type { ArtworkSearchResult } from "../../types/api";
 import { Badge } from "../ui/Badge";
 import { CardPlaceholder } from "./CardPlaceholder";
@@ -15,6 +15,7 @@ const SOURCE_LABEL: Record<string, string> = {
 };
 
 export function SearchCardThumbnail({ card }: SearchCardThumbnailProps) {
+  const { formatPrice } = useCurrency();
   const displayName = card.name_en ?? card.name_ja ?? card.local_id;
   const setName = card.set_name_en ?? card.set_name_ja ?? card.set_code;
   const displayPrice = card.market_price_jpy ?? card.cardrush_a_floor_jpy;
@@ -55,7 +56,7 @@ export function SearchCardThumbnail({ card }: SearchCardThumbnailProps) {
         <p className="truncate text-[10px] text-slate-500 dark:text-slate-500">{setName}</p>
         <div className="mt-1 flex items-baseline gap-1.5">
           <p className="text-sm font-semibold text-primary-600 dark:text-primary-400 text-glow">
-            {displayPrice != null ? formatJPY(displayPrice) : "—"}
+            {displayPrice != null ? formatPrice(displayPrice) : "—"}
           </p>
           {source && (
             <span className="text-[9px] text-slate-500 dark:text-slate-500 uppercase tracking-wide">
