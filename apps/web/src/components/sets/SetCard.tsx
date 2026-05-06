@@ -1,5 +1,6 @@
 import { Link } from "react-router";
-import { formatDate, formatJPY } from "../../lib/formatters";
+import { useCurrency } from "../../contexts/CurrencyContext";
+import { formatDate } from "../../lib/formatters";
 import { SET_LOGO_URLS } from "../../lib/constants";
 import type { SetOut } from "../../types/api";
 import { SetSymbol } from "../cards/SetSymbol";
@@ -9,6 +10,7 @@ interface SetCardProps {
 }
 
 export function SetCard({ set }: SetCardProps) {
+  const { formatPrice } = useCurrency();
   const codeKey = set.set_code.toUpperCase();
   const logoUrl = SET_LOGO_URLS[codeKey];
   const displayName = set.name_en ?? set.name_ja ?? set.set_code.toLowerCase();
@@ -53,7 +55,7 @@ export function SetCard({ set }: SetCardProps) {
         <div className="flex items-center justify-between text-xs text-slate-500 dark:text-slate-400">
           <span>{set.release_date ? formatDate(set.release_date) : "—"}</span>
           <span className="font-semibold text-primary-600 dark:text-primary-400 text-glow">
-            {set.total_value_jpy != null ? formatJPY(set.total_value_jpy) : "—"}
+            {set.total_value_jpy != null ? formatPrice(set.total_value_jpy) : "—"}
           </span>
         </div>
         <p className="text-xs text-slate-500 dark:text-slate-500">{set.total != null ? `${set.total} cards` : ""}</p>

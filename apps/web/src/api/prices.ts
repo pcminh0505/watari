@@ -40,7 +40,8 @@ export function usePriceHistory(
 export function useMarketPrice(
   setCode: string,
   localId: string,
-  variant: string
+  variant: string,
+  enabled = true
 ) {
   return useQuery<MarketPriceOut | null>({
     queryKey: ["market-price", setCode, localId, variant],
@@ -53,7 +54,7 @@ export function useMarketPrice(
         throw err;
       }),
     staleTime: 5 * 60 * 1000,
-    enabled: setCode.length > 0 && localId.length > 0,
+    enabled: enabled && setCode.length > 0 && localId.length > 0,
   });
 }
 
