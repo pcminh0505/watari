@@ -10,12 +10,6 @@ interface CardThumbnailProps {
   card: ArtworkDetail;
 }
 
-// Small indicator: sold comp vs. listed price
-const SOURCE_LABEL: Record<string, string> = {
-  snkrdunk: "sold",
-  cardrush: "listed",
-};
-
 // Type guard: ArtworkSearchResult extends ArtworkDetail with embedded price fields.
 // CardsPage passes search results directly to CardGrid, so we skip individual fetches.
 function isSearchResult(card: ArtworkDetail): card is ArtworkSearchResult {
@@ -85,14 +79,9 @@ export function CardThumbnail({ card }: CardThumbnailProps) {
         {isLoadingPrice ? (
           <div className="mt-1.5 h-4 w-16 animate-pulse rounded bg-slate-200 dark:bg-slate-700" />
         ) : market != null ? (
-          <div className="mt-1 flex items-baseline gap-1.5">
-            <p className="text-sm font-semibold text-primary-600 dark:text-primary-400 text-glow">
-              {formatPrice(market.market_price_jpy)}
-            </p>
-            <span className="text-[9px] text-slate-500 dark:text-slate-500 uppercase tracking-wide">
-              {SOURCE_LABEL[market.source_used] ?? market.source_used}
-            </span>
-          </div>
+          <p className="mt-1 text-sm font-semibold text-primary-600 dark:text-primary-400 text-glow">
+            {formatPrice(market.market_price_jpy)}
+          </p>
         ) : null}
       </div>
     </Link>
