@@ -6,7 +6,7 @@
 > Update it whenever the architecture changes — especially after a
 > destructive migration, a new source, or a schema split.
 >
-> Last updated: 2026-05-04 (Catalog data-quality audit pipeline shipped — TCGCollector sidecar oracle in `data/audit/`, `audit-current`/`audit-fetch`/`audit-diff`/`audit-fallback`/`audit-apply` CLI, Phase-7 bootstrap regression-proofing for Pokellector "Secret Rare" coarse labels, `verify --strict` mode).
+> Last updated: 2026-05-06 (Frontend: currency toggle (JPY/USD/VND) with Frankfurter.app live rates + localStorage persistence; N+1 price fetch eliminated via embedded `ArtworkSearchResult` price data; price skeleton; SetCard currency; UI cleanup — removed sold/listed labels and Updated column).
 
 ---
 
@@ -26,6 +26,7 @@ Stack: Python 3.13, `uv` workspaces, PostgreSQL, SQLAlchemy async, Alembic,
 MinIO (S3-compatible) for the **bronze layer** of raw scrape payloads,
 `curl_cffi` for Cloudflare-fronted sites, `httpx` for everything else.
 Frontend: Vite + React + TypeScript, `bun` package manager (`apps/web/`).
+React Query (`@tanstack/react-query`) for all data fetching and exchange-rate caching.
 
 ---
 
@@ -34,6 +35,18 @@ Frontend: Vite + React + TypeScript, `bun` package manager (`apps/web/`).
 ```
 apps/
   web/                 ← Vite + React frontend (bun; VITE_API_BASE_URL → FastAPI)
+    src/
+      contexts/        ← CurrencyContext.tsx (global JPY/USD/VND toggle, Frankfurter rates)
+      components/
+        layout/        ← Header, ThemeToggle, CurrencyToggle
+        cards/         ← CardThumbnail, SearchCardThumbnail, CardGrid, CardSkeleton, …
+        prices/        ← PriceTable, SpreadTable, PriceHistoryChart
+        sets/          ← SetCard, SetsFilterBar, …
+        ui/            ← Badge, Skeleton, Pagination, ErrorMessage, …
+      pages/           ← SetsPage, CardsPage, CardsSearchPage, CardDetailPage, AdminPage
+      api/             ← useCards, useCardSearch, useMarketPrice, useLatestPrices, …
+      lib/             ← formatters.ts (formatJPY, formatPrice), constants.ts, sortSearchCards.ts
+      types/           ← api.ts (ArtworkDetail, ArtworkSearchResult, SetOut, …)
 packages/
   core/                ← SQLAlchemy models, Pydantic DTOs, catalog.py helpers, bronze writer
   catalog/             ← YML data tree + bootstrap/seed pipeline + CLI
@@ -281,11 +294,63 @@ the first two, 006 for `mv_cross_source_spread`, 007 for
 lock — readers stay online. If you ever add a fifth MV, **create its
 unique index in the same migration** or `CONCURRENTLY` will fail.
 
+### 3.7 Frontend architecture (`apps/web/`)
+
+Stack: Vite + React 18 + TypeScript + Tailwind CSS + React Query + Recharts. `bun` as package manager.
+
+**Pages & routing** (React Router, file `src/App.tsx`):
+
+| Route | Page | Description |
+|-------|------|-------------|
+| `/` | `SetsPage` | Grid of all 98 sets with era/sort/search filters, pagination |
+| `/sets/:setCode` | `CardsPage` | Cards for one set (uses `useCardSearch` for embedded prices) |
+| `/sets/:setCode/:localId` | `CardDetailPage` | Card detail: image, variants, PriceTable, SpreadTable, PriceHistoryChart |
+| `/cards` | `CardsSearchPage` | Cross-set card search with name/set/rarity/illustrator/sort filters |
+| `/admin` | `AdminPage` | Scrape health dashboard (GET /admin/scrape-health) |
+
+**Key data fetching hooks** (`src/api/`):
+
+| Hook | Endpoint | Notes |
+|------|----------|-------|
+| `useAllSets` | `GET /jp/sets` | Sets list; sort/era params |
+| `useSet` | `GET /jp/sets/{code}` | Single set |
+| `useCards` | `GET /jp/sets/{code}/cards` | `ArtworkDetail[]`, no prices |
+| `useCardSearch` | `GET /jp/cards/search` | `ArtworkSearchResult[]` — **includes embedded `market_price_jpy`** |
+| `useCard` | `GET /jp/cards/{set}/{id}` | Single `ArtworkDetail` |
+| `useMarketPrice` | `GET /jp/cards/{set}/{id}/market-price` | Per-variant market price; accepts `enabled` param |
+| `useLatestPrices` | `GET /jp/cards/{set}/{id}/prices` | All condition rows from `mv_latest_price` |
+| `useSpread` | `GET /jp/cards/{set}/{id}/spread` | Cross-source spread from `mv_cross_source_spread` |
+| `usePriceHistory` | `GET /jp/cards/{set}/{id}/history` | Raw `price_points` for chart |
+
+**Currency system** (`src/contexts/CurrencyContext.tsx`):
+
+- `CurrencyProvider` wraps the whole app (inside `QueryClientProvider`).
+- Reads initial currency from `localStorage.currency` (JPY default).
+- `useExchangeRates()` — React Query, fetches `https://api.frankfurter.app/latest?from=JPY&to=USD,VND`, `staleTime: 1h`. Falls back to `{ USD: 0.0065, VND: 163 }` on error — never throws to the UI.
+- `useCurrency()` — returns `{ currency, setCurrency, rates, formatPrice }`. `formatPrice(jpy)` is the single call site for all price display.
+- `formatPrice(jpy, currency, rates)` lives in `src/lib/formatters.ts` (pure function). `formatJPY` is kept as internal helper.
+- `CurrencyToggle` (3-button pill ¥·$·₫) lives in `Header` between nav and ThemeToggle.
+
+**CardThumbnail performance pattern:**
+
+`CardThumbnail` accepts `ArtworkDetail` but `CardsPage` passes `ArtworkSearchResult` objects (which extend `ArtworkDetail` with `market_price_jpy` already included). A runtime type guard `isSearchResult` checks for the extra field:
+- If present → use embedded price directly, `useMarketPrice` called with `enabled: false` (zero API requests)
+- If absent → fire `useMarketPrice`, show animated pulse skeleton while pending
+
+This eliminates 60+ individual market-price requests per set-gallery page load.
+
+**Price display rules (current):**
+- Card gallery thumbnails: price only (no "sold"/"listed" source label)
+- `PriceTable` (detail page): Condition + Price only (no "Updated" date column)
+- `SpreadTable`: CR Floor, SD Median 7d, Spread, Spread % — all currency-converted
+- `PriceHistoryChart`: Y-axis and tooltip both call `formatPrice`
+- `SetCard` (sets page): `total_value_jpy` currency-converted
+
 ---
 
 ## 4. What works right now
 
-### 4.1 End-to-end smoke (last run 2026-05-04, SV + ME + SM + SWSH)
+### 4.1 End-to-end smoke (last run 2026-05-06, SV + ME + SM + SWSH)
 
 | Step                                               | Result                                                                                         |
 | -------------------------------------------------- | ---------------------------------------------------------------------------------------------- |
@@ -298,6 +363,7 @@ unique index in the same migration** or `CONCURRENTLY` will fail.
 | `make scrape-snkrdunk ERA=<code>` × SV+ME          | ~104k SNKRDUNK rows. **SV1 still 0 rows** (upstream uses `sv1v` namespace). SM/SW: scheduled weekly via CI. |
 | `watari-api refresh-mvs` (CONCURRENTLY)            | mv_latest_price, mv_median_7d, mv_cross_source_spread, mv_market_price — refreshed             |
 | `uv run pytest`                                    | **232 passed**                                                                                 |
+| `make web-dev`                                     | Currency toggle ¥/$/₫ in header; all price surfaces convert correctly; localStorage persists   |
 
 ### 4.2 Data that's already committed
 
@@ -376,14 +442,21 @@ SV1 remains Cardrush-only (SNKRDUNK lists it under `sv1v`).
   `make catalog-verify` and confirm SNKRDUNK product namespaces are correct
   for each legacy era (apply the M1L lesson: probe manually on `not_found=N`).
   Cardrush SM/SW disambiguation is now live (set alias + name_ja matching).
-- **API polish.** Add pagination (`limit`/`offset`) to `/sets/{code}/cards`,
-  E-Tag / `Cache-Control` headers on `/cards/{card_id}/prices` and
-  `/spread`, and OpenAPI examples. Consider a `/cards/search?name=...`
-  endpoint backed by `artworks.name_ja` + `name_en`.
+- **API polish.** Add E-Tag / `Cache-Control` headers on `/cards/{card_id}/prices`
+  and `/spread`. Add OpenAPI examples. `/cards/search` already exists (powers
+  `CardsSearchPage` + `CardsPage`).
 - **Live rate-limit integration test.** The unit suite stubs Redis via a
   fake limiter. We don't yet have a smoke test that drives the real Lua
   token-bucket against the `docker-compose` Redis. Worth adding once CI
   has service containers.
+- **Frontend: card detail market price banner.** The detail page shows
+  `PriceTable` (all conditions per source) but no single prominent "market
+  price" figure. Consider adding a hero price using `useMarketPrice` at the
+  top of the detail panel, currency-converted.
+- **Frontend: price age indicator.** Removed the "Updated" column from
+  `PriceTable` for cleanliness, but stale data (>14 days old) is now
+  silently shown without any warning. Consider a subtle badge on the section
+  header when all rows are stale rather than per-row opacity.
 
 ### 5.3 Nice-to-haves
 
@@ -504,6 +577,27 @@ SV1 remains Cardrush-only (SNKRDUNK lists it under `sv1v`).
     `bulbapedia_slug`) and update `seed_sets._normalize` to surface it
     inside `source_refs`. Add canonicalization to `rarities.py` if the
     new oracle reports rarities in a new shape.
+24. **All price display must go through `formatPrice` from `useCurrency()`.**
+    Never call `formatJPY` directly in components — it bypasses the currency
+    toggle. `formatJPY` is an internal helper used only inside `formatPrice`.
+    Every component that shows a JPY value (including set total values) must
+    call `useCurrency()` and use the returned `formatPrice` bound function.
+25. **`CurrencyProvider` must sit inside `QueryClientProvider`** so
+    `useExchangeRates()` (which calls `useQuery`) can work. The order in
+    `main.tsx` is: `StrictMode` → `QueryClientProvider` → `CurrencyProvider`
+    → `App`. Don't invert these.
+26. **`CardThumbnail` uses a runtime type guard to skip individual
+    `useMarketPrice` calls when price is already embedded.** When
+    `CardsPage` passes `ArtworkSearchResult` objects (from `useCardSearch`),
+    the `isSearchResult` guard detects `market_price_jpy` on the card and
+    calls `useMarketPrice` with `enabled: false`. If you add a new page
+    that feeds `ArtworkDetail` without embedded prices, the individual
+    fetch path is used automatically (with skeleton). Don't break the
+    `enabled` param on `useMarketPrice`.
+27. **`useMarketPrice` accepts an `enabled` boolean param (default `true`).**
+    This was added specifically for the embedded-price optimization. Always
+    pass `!hasEmbedded` when you know price data is already available on
+    the card object.
 
 ---
 
