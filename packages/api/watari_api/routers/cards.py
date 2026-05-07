@@ -8,11 +8,11 @@ from typing import Annotated, Any
 from fastapi import APIRouter, Depends, HTTPException, Query, Response, status
 from watari_core.catalog import pad_local_id
 from watari_core.models import Artwork, Card, Set
-from sqlalchemy import Integer, String, column, func, or_, select, table
+from sqlalchemy import Integer, String, and_, column, func, or_, select, table
 from sqlalchemy.ext.asyncio import AsyncSession
 
 from watari_api.deps import get_session
-from watari_api.schemas import ArtworkDetail, ArtworkSearchResult, VariantRef
+from watari_api.schemas import ArtworkDetail, ArtworkSearchResult, CardBatchItem, VariantRef
 
 router = APIRouter(tags=["cards"])
 
@@ -58,6 +58,168 @@ def _variant_sort_key(variant: str) -> tuple[int, str]:
 
 def _row_to_artwork_detail(row: Any, variants: list[VariantRef]) -> ArtworkDetail:
     return ArtworkDetail.model_validate({**dict(row._mapping), "variants": variants})
+
+
+def _parse_code_token(raw: str) -> tuple[str | None, str] | None:
+    """Parse one comma-split token into ``(set_code_upper_or_None, padded_local_id)``.
+
+    Accepts:
+    - ``"sv3a 066/062"``  → ``("SV3A", "066")``
+    - ``"sv2a 170"``      → ``("SV2A", "170")``
+    - ``"223/193"``        → ``(None, "223")``
+    - ``"089"``            → ``(None, "089")``
+
+    The denominator in fraction notation (``066/062``) is stripped — only the
+    numerator (card number) is used.  Returns ``None`` when the token is empty
+    or produces an empty local_id after stripping.
+    """
+    token = raw.strip()
+    if not token:
+        return None
+    parts = token.split(None, 1)
+    if len(parts) == 2:
+        set_code: str | None = parts[0].upper()
+        raw_id = parts[1]
+    else:
+        set_code = None
+        raw_id = parts[0]
+    raw_id = raw_id.split("/")[0].strip()
+    if not raw_id:
+        return None
+    return set_code, pad_local_id(raw_id)
+
+
+@router.get("/cards/batch", response_model=list[CardBatchItem])
+async def get_cards_batch(
+    lang: str,
+    session: SessionDep,
+    response: Response,
+    codes: str = Query(
+        ...,
+        description=(
+            "Comma-separated card codes. Each token is either "
+            "``set_code local_id`` (e.g. ``sv3a 066/062``) for a precise lookup, "
+            "or ``local_id`` only (e.g. ``223/193``) to search across all sets. "
+            "The denominator in fraction notation is ignored — only the numerator "
+            "(card number) is used."
+        ),
+    ),
+) -> list[CardBatchItem]:
+    """Resolve a comma-separated list of card codes to artwork details.
+
+    Unsupported / unknown cards are returned with ``error='not_found'``.
+    Local-id-only tokens that match multiple sets are returned with
+    ``error='ambiguous'`` and a populated ``candidates`` list so the caller
+    can re-query with the full ``set_code local_id`` form.
+    """
+    tokens = [t.strip() for t in codes.split(",") if t.strip()]
+    if not tokens:
+        return []
+
+    parsed: list[tuple[str | None, str] | None] = [_parse_code_token(t) for t in tokens]
+    results: list[CardBatchItem] = [CardBatchItem(input=t) for t in tokens]
+
+    for i, p in enumerate(parsed):
+        if p is None:
+            results[i].error = "parse_error"
+
+    paired_items: list[tuple[int, str, str]] = []  # (result_idx, set_code, local_id)
+    id_only_items: list[tuple[int, str]] = []       # (result_idx, local_id)
+    for i, p in enumerate(parsed):
+        if p is None:
+            continue
+        set_code, local_id = p
+        if set_code is not None:
+            paired_items.append((i, set_code, local_id))
+        else:
+            id_only_items.append((i, local_id))
+
+    # artwork_id → raw DB row; populated by the two lookup queries below.
+    artwork_rows: dict[str, Any] = {}
+    # Mappings used to fill results after the variants query.
+    result_single: dict[int, str] = {}          # result_idx → artwork_id (exact match)
+    result_candidates: dict[int, list[str]] = {}  # result_idx → [artwork_ids] (ambiguous)
+
+    # --- Query 1: precise (set_code + local_id) lookups ---
+    if paired_items:
+        conditions = [
+            and_(func.upper(Artwork.set_code) == sc, Artwork.local_id == lid)
+            for _, sc, lid in paired_items
+        ]
+        stmt = (
+            select(*_artwork_columns())
+            .join(Set, Set.set_code == Artwork.set_code)
+            .where(Set.language == lang, or_(*conditions))
+        )
+        rows = (await session.execute(stmt)).all()
+        found_map = {(r.set_code.upper(), r.local_id): r for r in rows}
+        for idx, sc, lid in paired_items:
+            row = found_map.get((sc, lid))
+            if row is None:
+                results[idx].error = "not_found"
+            else:
+                artwork_rows[row.artwork_id] = row
+                result_single[idx] = row.artwork_id
+
+    # --- Query 2: local_id-only lookups (may match multiple sets) ---
+    if id_only_items:
+        local_ids = list({lid for _, lid in id_only_items})
+        stmt = (
+            select(*_artwork_columns())
+            .join(Set, Set.set_code == Artwork.set_code)
+            .where(Set.language == lang, Artwork.local_id.in_(local_ids))
+        )
+        rows = (await session.execute(stmt)).all()
+        rows_by_lid: dict[str, list[Any]] = defaultdict(list)
+        for row in rows:
+            rows_by_lid[row.local_id].append(row)
+        for idx, lid in id_only_items:
+            matches = rows_by_lid.get(lid, [])
+            if not matches:
+                results[idx].error = "not_found"
+            elif len(matches) == 1:
+                row = matches[0]
+                artwork_rows[row.artwork_id] = row
+                result_single[idx] = row.artwork_id
+            else:
+                for row in matches:
+                    artwork_rows[row.artwork_id] = row
+                result_candidates[idx] = [row.artwork_id for row in matches]
+                results[idx].error = "ambiguous"
+
+    if not artwork_rows:
+        return results
+
+    # --- Query 3: fetch variants for all resolved artwork_ids in one shot ---
+    variant_stmt = (
+        select(Card.artwork_id, Card.variant, Card.card_id, Card.is_tracked)
+        .where(Card.artwork_id.in_(list(artwork_rows)))
+        .order_by(Card.artwork_id, Card.variant)
+    )
+    variant_rows = (await session.execute(variant_stmt)).all()
+    variants_by_artwork: dict[str, list[VariantRef]] = defaultdict(list)
+    for vrow in variant_rows:
+        variants_by_artwork[vrow.artwork_id].append(
+            VariantRef.model_validate(
+                {"variant": vrow.variant, "card_id": vrow.card_id, "is_tracked": vrow.is_tracked}
+            )
+        )
+
+    def _build(artwork_id: str) -> ArtworkDetail:
+        row = artwork_rows[artwork_id]
+        variants = sorted(
+            variants_by_artwork[artwork_id], key=lambda v: _variant_sort_key(v.variant)
+        )
+        return _row_to_artwork_detail(row, variants)
+
+    for idx, artwork_id in result_single.items():
+        results[idx].card = _build(artwork_id)
+
+    for idx, artwork_ids in result_candidates.items():
+        results[idx].candidates = [_build(aid) for aid in artwork_ids]
+
+    response.headers["Cache-Control"] = _CATALOG_CACHE
+    return results
 
 
 @router.get("/cards/search", response_model=list[ArtworkSearchResult])

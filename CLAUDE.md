@@ -6,7 +6,7 @@
 > Update it whenever the architecture changes — especially after a
 > destructive migration, a new source, or a schema split.
 >
-> Last updated: 2026-05-07 (Data layer: graded card (PSA/BGS/CGC) price tracker — `graded_price_points` table (migration 008), SNKRDUNK+Cardrush parsers now split sales history into ungraded + graded rows, two new API endpoints `/graded-prices` + `/graded-history`; smoke test captured 8798 PSA10 + 661 PSA9 rows from M2A SNKRDUNK scrape).
+> Last updated: 2026-05-07 (Bronze: gzip compression ≥1 KB + 90-day lifecycle rule, ~71% storage savings; UI: `GradedPriceHistoryChart` + `useGradedPriceHistory` on CardDetailPage — graded chart fully live; CI: run_id in ephemeral machine names; 376 tests passing).
 
 ---
 
@@ -40,7 +40,7 @@ apps/
       components/
         layout/        ← Header, ThemeToggle, CurrencyToggle
         cards/         ← CardThumbnail, SearchCardThumbnail, CardGrid, CardSkeleton, …
-        prices/        ← PriceTable, SpreadTable, PriceHistoryChart
+        prices/        ← PriceTable, SpreadTable, PriceHistoryChart, GradedPriceHistoryChart
         sets/          ← SetCard, SetsFilterBar, …
         ui/            ← Badge, Skeleton, Pagination, ErrorMessage, …
       pages/           ← SetsPage, CardsPage, CardsSearchPage, CardDetailPage, AdminPage
@@ -265,39 +265,18 @@ Catalog bootstrap helpers: `test_catalog_bootstrap_helpers.py` 18,
 
 ### 3.6 Post-scrape MV refresh hook (`packages/core/watari_core/mvs.py`)
 
-The read API's price/spread endpoints query materialized views, not
-`price_points`. Those views must be refreshed after each scrape run or
-readers see stale data.
+Price/spread endpoints read MVs, not `price_points` — MVs must be refreshed after each scrape.
 
-**Contract:**
+- `refresh_price_mvs(session, *, concurrently=True)` — refreshes all four views in dependency
+  order (`mv_latest_price` → `mv_median_7d` → `mv_cross_source_spread` → `mv_market_price`),
+  one COMMIT per view so locks release between them.
+- `refresh_price_mvs_if_needed(*, rows_written, dry_run=False)` — guard called from scrapers.
+  Opens its own session, skips on `dry_run=True` or `rows_written==0`, **swallows + logs** any
+  exception. A failed refresh must never abort a successful scrape.
 
-- `refresh_price_mvs(session, *, concurrently=True)` — async; issues
-  `REFRESH MATERIALIZED VIEW [CONCURRENTLY] mv_…` + `COMMIT` for each of
-  the four views in dependency order (`mv_latest_price` →
-  `mv_median_7d` → `mv_cross_source_spread` → `mv_market_price`). One
-  commit per view so locks release between views and downstream MVs read
-  the already-refreshed upstream views. Returns the list of names refreshed.
-- `refresh_price_mvs_if_needed(*, rows_written, dry_run=False)` — thin
-  guard called from scraper orchestrators. Opens its **own** fresh
-  session from `async_session_factory` (so it doesn't inherit an open
-  transaction from the scrape), skips when `dry_run=True` or
-  `rows_written == 0`, and **swallows + logs** any exception. A failed
-  refresh must never abort a successful scrape or mask a real error.
-
-**Call sites:**
-
-- `packages/scraper_cardrush/watari_cardrush/run.py::scrape_set` —
-  called once after the scrape session closes (after `finish_scrape_run`
-  commits). Honors `dry_run`.
-- `packages/scraper_snkrdunk/watari_snkrdunk/run.py::scrape_era` —
-  same pattern, outside the scrape `async with`.
-- `watari-api refresh-mvs` — manual ops command (§3.5).
-
-**Why `CONCURRENTLY`:** each MV has a `UNIQUE` index (added in 005 for
-the first two, 006 for `mv_cross_source_spread`, 007 for
-`mv_market_price`) so Postgres takes only a `SHARE UPDATE EXCLUSIVE`
-lock — readers stay online. If you ever add a fifth MV, **create its
-unique index in the same migration** or `CONCURRENTLY` will fail.
+**Call sites:** `scrape_set` (Cardrush), `scrape_era` (SNKRDUNK) — both after `finish_scrape_run`
+commits; and `watari-api refresh-mvs` for manual use. Each MV needs a UNIQUE index for
+`CONCURRENTLY` (005: first two, 006: spread, 007: market_price).
 
 ### 3.7 Frontend architecture (`apps/web/`)
 
@@ -309,7 +288,7 @@ Stack: Vite + React 18 + TypeScript + Tailwind CSS + React Query + Recharts. `bu
 |-------|------|-------------|
 | `/` | `SetsPage` | Grid of all 98 sets with era/sort/search filters, pagination |
 | `/sets/:setCode` | `CardsPage` | Cards for one set (uses `useCardSearch` for embedded prices) |
-| `/sets/:setCode/:localId` | `CardDetailPage` | Card detail: image, variants, PriceTable, SpreadTable, PriceHistoryChart |
+| `/sets/:setCode/:localId` | `CardDetailPage` | Card detail: image, variants, PriceTable, SpreadTable, PriceHistoryChart, GradedPriceHistoryChart |
 | `/cards` | `CardsSearchPage` | Cross-set card search with name/set/rarity/illustrator/sort filters |
 | `/admin` | `AdminPage` | Scrape health dashboard (GET /admin/scrape-health) |
 
@@ -326,6 +305,7 @@ Stack: Vite + React 18 + TypeScript + Tailwind CSS + React Query + Recharts. `bu
 | `useLatestPrices` | `GET /jp/cards/{set}/{id}/prices` | All condition rows from `mv_latest_price` |
 | `useSpread` | `GET /jp/cards/{set}/{id}/spread` | Cross-source spread from `mv_cross_source_spread` |
 | `usePriceHistory` | `GET /jp/cards/{set}/{id}/history` | Raw `price_points` for chart |
+| `useGradedPriceHistory` | `GET /jp/cards/{set}/{id}/graded-history` | Raw `graded_price_points`; default 365 days, limit 2000 |
 
 **Currency system** (`src/contexts/CurrencyContext.tsx`):
 
@@ -349,6 +329,7 @@ This eliminates 60+ individual market-price requests per set-gallery page load.
 - `PriceTable` (detail page): Condition + Price only (no "Updated" date column)
 - `SpreadTable`: CR Floor, SD Median 7d, Spread, Spread % — all currency-converted
 - `PriceHistoryChart`: Y-axis and tooltip both call `formatPrice`
+- `GradedPriceHistoryChart`: multi-line Recharts chart; one line per grade (PSA10/9/8, BGS10/9.5); SNKRDUNK sold comps preferred over Cardrush per day; day-range toggle (90/180/365)
 - `SetCard` (sets page): `total_value_jpy` currency-converted
 
 ---
@@ -367,8 +348,8 @@ This eliminates 60+ individual market-price requests per set-gallery page load.
 | `make scrape-cardrush ERA=sv` + `ERA=me`           | ~12.7k Cardrush rows across SV+ME sets. SM/SW: scheduled weekly via CI.                       |
 | `make scrape-snkrdunk ERA=<code>` × SV+ME          | ~104k SNKRDUNK rows. **SV1 still 0 rows** (upstream uses `sv1v` namespace). SM/SW: scheduled weekly via CI. |
 | `watari-api refresh-mvs` (CONCURRENTLY)            | mv_latest_price, mv_median_7d, mv_cross_source_spread, mv_market_price — refreshed             |
-| `uv run pytest`                                    | **232 passed**                                                                                 |
-| `make web-dev`                                     | Currency toggle ¥/$/₫ in header; all price surfaces convert correctly; localStorage persists   |
+| `uv run pytest`                                    | **376 passed**                                                                                 |
+| `make web-dev`                                     | Currency toggle ¥/$/₫ in header; all price surfaces convert correctly; GradedPriceHistoryChart live on CardDetailPage |
 
 ### 4.2 Data that's already committed
 
@@ -422,23 +403,11 @@ SV1 remains Cardrush-only (SNKRDUNK lists it under `sv1v`).
 - Option B: wait for Cardrush to list them, re-bootstrap.
 - Option C: hand-fill with `# manual: true`.
 
-3. **Re-run the weakly-covered rarities in SV3.**
+3. **Tracked-listings coverage is uneven between Cardrush and SNKRDUNK.**
 
-- The initial `ERA=sv` run hit a transient DNS failure during SV3
-  (5 rarities dropped). A follow-up `make scrape-cardrush SET=SV3`
-  backfilled them (493 new rows), so current state is fine, but future
-  full-era runs should consider adding an auto-retry on DNS / Cloudflare
-  timeouts at the rarity level before moving on.
-
-4. **Tracked-listings coverage is uneven between Cardrush and SNKRDUNK.**
-
-- Cardrush finds listings for most prints (often 86–516 cards per set)
-  but only the actively-listed ones have an in-stock `price_points` row.
-- SNKRDUNK resolves ~20–90 apparel IDs per set (you only get rows for
-  cards that have actually been sold on SNKRDUNK). That's expected —
-  SNKRDUNK is sold-comps only.
-- Don't "fix" this by lowering Cardrush's set-disambiguation filter
-  (`listings_dropped_wrong_set`); that filter is doing its job.
+- Cardrush: only actively-listed prints have a `price_points` row.
+- SNKRDUNK: only cards that have actually sold appear (~20–90 per set). That's expected — SNKRDUNK is sold-comps only.
+- Don't lower Cardrush's set-disambiguation filter (`listings_dropped_wrong_set`); it's working correctly.
 
 ### 5.2 Medium-term
 
@@ -489,6 +458,10 @@ SV1 remains Cardrush-only (SNKRDUNK lists it under `sv1v`).
 7. **Bronze mirroring is required.** Both scrapers and Pokellector write raw
    payloads to MinIO (`bronze/{source}/{set_code}/...`). Don't skip it for
    "just one" source — we rely on bronze for re-parses and audits.
+   Payloads ≥1 KB are **gzip-compressed** (level 6) before upload; `ContentType`
+   and `ContentEncoding: gzip` are set automatically via `_compress_opts` in
+   `bronze.py`. Run `make bronze-setup-lifecycle` once per bucket to install the
+   90-day expiry rule.
 8. `**curl_cffi` is mandatory for Cardrush.\*\* Don't "simplify" to `httpx`:
    Cardrush is behind Cloudflare TLS fingerprint checks. Playwright is a
    last resort (slow + heavy).
@@ -524,17 +497,11 @@ SV1 remains Cardrush-only (SNKRDUNK lists it under `sv1v`).
     Alembic migration that creates the MV. 005 covers
     `mv_latest_price` + `mv_median_7d`; 006 covers `mv_cross_source_spread`;
     007 covers `mv_market_price`.
-16. **Use the official JP set abbreviation (the one printed on the card
-    / used by `jp.pokellector.com` and SNKRDUNK), not a guess.** The ME
-    era tripped this twice: Mega Brave is **M1L** (not `M1`) and Mega
-    Symphonia is **M1S**. Setting `set_code: M1` made Cardrush work
-    (Cardrush is lenient) but SNKRDUNK returned 0 rows on every card
-    because its product numbers are `pkmn-tcg-M1L-NNN`. If a new set's
-    SNKRDUNK run yields `succeeded=0 not_found=N`, **stop and probe the
-    product-number namespace manually** before assuming SNKRDUNK just
-    hasn't indexed it. The rename was destructive (drop + reseed +
-    re-scrape) — cheap at 5839 rows, potentially expensive at 50k+.
-    See also §4.2 for the M1 → M1L history.
+16. **Use the official JP set abbreviation** (card-printed / SNKRDUNK product number),
+    not a guess. ME era tripped this: Mega Brave is **M1L**, Mega Symphonia is **M1S**.
+    Wrong `set_code` → Cardrush works (lenient) but SNKRDUNK returns 0 rows (`pkmn-tcg-M1L-NNN`).
+    If a new set's SNKRDUNK run yields `succeeded=0 not_found=N`, **probe the product-number
+    namespace manually** before assuming SNKRDUNK hasn't indexed it. Rename is destructive.
 17. **Every API lookup path is locale-prefixed (`/{lang}/...`).**
     `sets.language` is the source of truth for locale routing. Keep
     `/healthz` and `/admin/*` outside locale routing, and keep unsupported
@@ -548,40 +515,22 @@ SV1 remains Cardrush-only (SNKRDUNK lists it under `sv1v`).
     `artworks.name_ja` to filter results to the correct set. Don't
     remove the name index or the alias map — without them, aliased sets
     get 0 valid listings.
-19. **SV1S/SV1V/SV2D/SV2P rarity tiers are manually patched.** Pokellector
-    labels all high-rarity cards in these 4 early SV sets as "Secret
-    Rare" (unlike SV1A+ which have granular labels). The rarity was
-    corrected using local_id tier boundaries (e.g. 079-090→AR,
-    091-100→SR, etc.). If re-bootstrapping these sets, verify the
-    pipeline doesn't regress them back to UR. **Phase 7 of the audit
-    pipeline now generalizes this fix:** when Pokellector raw rarity is
-    `"Secret Rare"` or `"Super Secret Rare"` and `data/audit/<SET>.yml`
-    has a more specific TCGCollector `rarity_canon`, the audit value
-    wins automatically (`_audit_overrides_pokellector` in
-    `bootstrap.py`).
-20. **TCGCollector audit data lives in `data/audit/<SET>.yml`.** Treat
-    it as bronze-tier truth. The schema is owned by
-    `audit_fetch.fetch_one`; **never edit by hand — re-run
-    `make catalog-audit-fetch SET=<code>`** (curl_cffi + bronze
-    mirroring) instead. Phase-4 fallbacks (`pokellector_jpn`,
-    `bulbapedia`) append into the same file under their own top-level
-    keys; bootstrap (§Phase 7) reads only the keys it knows about.
-21. **`# manual: true` is binding for `audit-apply` too.** Both `--auto`
-    and `--review` skip files whose first line is `# manual: true`.
-    `--review` *prepends* the marker on every file it writes so
-    operator-chosen values can never be silently undone by a subsequent
-    `--auto` run or by re-bootstrapping.
-22. **TCGCollector has no `name_ja`.** It publishes only the
-    international/EN name on JP cards. `audit-diff` therefore always
-    emits `NO_ORACLE` for `name_ja` rows — Phase 4 (`audit-fallback
-    --field name_ja`, Pokellector JPN field) is the only oracle for
-    this column. Don't try to extend `tcgcollector_client.py` to
-    recover JA names; it's not on the page.
-23. **When adding a new audit oracle, register its slug in
-    `data/sets/<SET>.yml`** under a top-level field (e.g.
-    `bulbapedia_slug`) and update `seed_sets._normalize` to surface it
-    inside `source_refs`. Add canonicalization to `rarities.py` if the
-    new oracle reports rarities in a new shape.
+19. **SV1S/SV1V/SV2D/SV2P rarity tiers are patched via audit pipeline.** Pokellector
+    labels all high-rarity cards in these 4 sets as "Secret Rare". Phase 7 of the audit
+    pipeline auto-corrects this: when Pokellector raw is `"Secret Rare"` / `"Super Secret Rare"`
+    and `data/audit/<SET>.yml` has a more specific TCGCollector `rarity_canon`, the audit
+    value wins (`_audit_overrides_pokellector` in `bootstrap.py`). If re-bootstrapping,
+    verify no regression back to UR.
+20. **TCGCollector audit data lives in `data/audit/<SET>.yml`** — never edit by hand.
+    Re-run `make catalog-audit-fetch SET=<code>` to refresh. Phase-4 fallbacks
+    (`pokellector_jpn`, `bulbapedia`) append under their own keys in the same file.
+    `audit-apply --auto` and `--review` both honour `# manual: true` (line 1);
+    `--review` prepends the marker so operator values survive future bootstrap runs.
+21. **TCGCollector has no `name_ja`** — `audit-diff` always emits `NO_ORACLE` for those
+    rows. Phase 4 (`audit-fallback --field name_ja`) uses the Pokellector JPN field.
+    Don't extend `tcgcollector_client.py` for JA names; they're not on the page.
+22. **When adding a new audit oracle,** register its slug in `data/sets/<SET>.yml` and
+    update `seed_sets._normalize`. Add canonicalization to `rarities.py` if needed.
 24. **All price display must go through `formatPrice` from `useCurrency()`.**
     Never call `formatJPY` directly in components — it bypasses the currency
     toggle. `formatJPY` is an internal helper used only inside `formatPrice`.
@@ -592,21 +541,12 @@ SV1 remains Cardrush-only (SNKRDUNK lists it under `sv1v`).
     `main.tsx` is: `StrictMode` → `QueryClientProvider` → `CurrencyProvider`
     → `App`. Don't invert these.
 26. **`CardThumbnail` uses a runtime type guard to skip individual
-    `useMarketPrice` calls when price is already embedded.** When
-    `CardsPage` passes `ArtworkSearchResult` objects (from `useCardSearch`),
-    the `isSearchResult` guard detects `market_price_jpy` on the card and
-    calls `useMarketPrice` with `enabled: false`. If you add a new page
-    that feeds `ArtworkDetail` without embedded prices, the individual
-    fetch path is used automatically (with skeleton). Don't break the
-    `enabled` param on `useMarketPrice`.
-28. **`graded_price_points` is fed by SNKRDUNK (primary) and Cardrush (secondary).** SNKRDUNK's sales-history feed includes graded condition strings (`"PSA10"`, `"PSA9"`, `"BGS9.5"`) directly in the same JSON as ungraded entries. The SNKRDUNK parser splits them: standard S/A/B/C go to `price_points` via `insert_price_points`; parseable grade strings go to `graded_price_points` via `upsert_graded_price_points`. `"PSA8以下"` and `"BGS10 BL"` are silently dropped (ambiguous). On Cardrush, graded listings use `【PSA10】` brackets — these are captured via `extract_cardrush_grade` + `parse_grade_company_score`.
-29. **`GradeCompany` covers PSA/BGS/CGC only. SGC is deferred.** `parse_grade_company_score("SGC10")` returns `None` by design so SGC entries are detected (not misclassified as ungraded) but not stored.
-30. **No MV for graded prices.** Both `/graded-prices` and `/graded-history` read directly from `graded_price_points`. Volume is much lower than ungraded. If volume grows and latency becomes a concern, add an MV for the "latest per grade+source" query.
-
-27. **`useMarketPrice` accepts an `enabled` boolean param (default `true`).**
-    This was added specifically for the embedded-price optimization. Always
-    pass `!hasEmbedded` when you know price data is already available on
-    the card object.
+    `useMarketPrice` calls when price is already embedded.** The `isSearchResult`
+    guard detects `market_price_jpy` and calls `useMarketPrice` with `enabled: false`.
+    Don't break the `enabled` param on `useMarketPrice` — pass `!hasEmbedded` when
+    price data is already available on the card object.
+27. **`graded_price_points` is fed by SNKRDUNK (primary) and Cardrush (secondary).** SNKRDUNK's sales-history feed includes graded strings (`"PSA10"`, `"PSA9"`, `"BGS9.5"`) alongside ungraded entries; the parser splits them. `"PSA8以下"` and `"BGS10 BL"` are silently dropped. Cardrush graded listings use `【PSA10】` brackets — captured via `extract_cardrush_grade` + `parse_grade_company_score`. `GradeCompany` covers PSA/BGS/CGC only; SGC deferred (`parse_grade_company_score("SGC10")` → `None`).
+28. **No MV for graded prices.** Both `/graded-prices` and `/graded-history` read directly from `graded_price_points`. If volume grows, add an MV for the "latest per grade+source" query.
 
 ---
 
@@ -616,6 +556,7 @@ SV1 remains Cardrush-only (SNKRDUNK lists it under `sv1v`).
 # Bring up infra
 make up                      # postgres + minio
 make migrate                 # alembic upgrade head
+make bronze-setup-lifecycle  # install 90-day expiry rule on bronze bucket (once per bucket)
 
 # Catalog (metadata pipeline)
 make catalog-seed-sets                       # load data/sets/*.yml → sets
@@ -689,7 +630,7 @@ make db-dump-data                            # data-only dump for prod rollout
 CONFIRM=yes DUMP_FILE=/tmp/watari-data-<UTC>.sql.gz make db-prod-bootstrap
 
 # Dev loop
-make test                                    # 196 tests
+make test                                    # 376 tests
 make lint
 make format
 
@@ -718,18 +659,8 @@ uv run python -m watari_cardrush --set SV2A --rarity SAR --max-pages 1
 
 ## 10. Production deployment
 
-Goal: deploy schema + catalog deterministically, then import mutable price
-history from a narrow dump.
-
-### Why this shape
-
-- Schema should always come from Alembic (`migrate`), not from dump files.
-- Catalog (`sets` / `artworks` / `cards`) is already source-controlled in
-  `packages/catalog/data/**`, so we reseed it from YML.
-- Only price history (`price_points`, `graded_price_points`, `card_scrape_state`, `scrape_runs`)
-  needs a dump for fast rollout/backfill.
-- Excluded from dump: `api_keys` (environment-specific), MVs (rebuild), and
-  `alembic_version` (owned by Alembic).
+Schema from Alembic, catalog re-seeded from YML, only price history dumped.
+Excluded from dump: `api_keys`, MVs, `alembic_version`.
 
 ### Scripts
 

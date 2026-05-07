@@ -399,6 +399,126 @@ def test_get_card_404(client_factory) -> None:  # type: ignore[no-untyped-def]
     assert resp.status_code == 404
 
 
+# --- Batch card lookup ---------------------------------------------------
+
+
+def test_batch_full_code_found(client_factory) -> None:  # type: ignore[no-untyped-def]
+    # "sv2a 089/210" → one artwork, one variant
+    artwork_rows = FakeResult(rows=[_fake_artwork_row("089")])
+    variant_rows = FakeResult(rows=[_fake_variant_row("jp-sv2a-089", "normal")])
+    client, _ = client_factory([artwork_rows, variant_rows])
+    resp = client.get("/jp/cards/batch?codes=sv2a+089%2F210")
+    assert resp.status_code == 200
+    data = resp.json()
+    assert len(data) == 1
+    item = data[0]
+    assert item["error"] is None
+    assert item["card"]["artwork_id"] == "jp-sv2a-089"
+    assert item["candidates"] == []
+
+
+def test_batch_full_code_not_found(client_factory) -> None:  # type: ignore[no-untyped-def]
+    # paired query returns no rows
+    client, _ = client_factory([FakeResult(rows=[])])
+    resp = client.get("/jp/cards/batch?codes=sv2a+999")
+    assert resp.status_code == 200
+    item = resp.json()[0]
+    assert item["error"] == "not_found"
+    assert item["card"] is None
+
+
+def test_batch_id_only_unique(client_factory) -> None:  # type: ignore[no-untyped-def]
+    # "089" matches exactly one artwork across all sets
+    artwork_rows = FakeResult(rows=[_fake_artwork_row("089")])
+    variant_rows = FakeResult(rows=[_fake_variant_row("jp-sv2a-089", "normal")])
+    client, _ = client_factory([artwork_rows, variant_rows])
+    resp = client.get("/jp/cards/batch?codes=089")
+    assert resp.status_code == 200
+    item = resp.json()[0]
+    assert item["error"] is None
+    assert item["card"]["local_id"] == "089"
+    assert item["candidates"] == []
+
+
+def test_batch_id_only_ambiguous(client_factory) -> None:  # type: ignore[no-untyped-def]
+    # "089" matches two artworks in different sets
+    row_a = {**_fake_artwork_row("089"), "artwork_id": "jp-sv2a-089", "set_code": "SV2A"}
+    row_b = {**_fake_artwork_row("089"), "artwork_id": "jp-sv3a-089", "set_code": "SV3A"}
+    artwork_rows = FakeResult(rows=[row_a, row_b])
+    variant_rows = FakeResult(
+        rows=[
+            _fake_variant_row("jp-sv2a-089", "normal"),
+            _fake_variant_row("jp-sv3a-089", "normal"),
+        ]
+    )
+    client, _ = client_factory([artwork_rows, variant_rows])
+    resp = client.get("/jp/cards/batch?codes=089")
+    assert resp.status_code == 200
+    item = resp.json()[0]
+    assert item["error"] == "ambiguous"
+    assert item["card"] is None
+    assert len(item["candidates"]) == 2
+    candidate_ids = {c["artwork_id"] for c in item["candidates"]}
+    assert candidate_ids == {"jp-sv2a-089", "jp-sv3a-089"}
+
+
+def test_batch_id_only_not_found(client_factory) -> None:  # type: ignore[no-untyped-def]
+    client, _ = client_factory([FakeResult(rows=[])])
+    resp = client.get("/jp/cards/batch?codes=999")
+    assert resp.status_code == 200
+    assert resp.json()[0]["error"] == "not_found"
+
+
+def test_batch_parse_error(client_factory) -> None:  # type: ignore[no-untyped-def]
+    # token "sv3a /" has no usable local_id after stripping the denominator
+    client, _ = client_factory([])  # no DB calls expected
+    resp = client.get("/jp/cards/batch?codes=sv3a+%2F")
+    assert resp.status_code == 200
+    assert resp.json()[0]["error"] == "parse_error"
+
+
+def test_batch_mixed_found_and_not_found(client_factory) -> None:  # type: ignore[no-untyped-def]
+    # "sv2a 089" found, "sv2a 999" not found — both are paired items, one query
+    artwork_rows = FakeResult(rows=[_fake_artwork_row("089")])
+    variant_rows = FakeResult(rows=[_fake_variant_row("jp-sv2a-089", "normal")])
+    client, _ = client_factory([artwork_rows, variant_rows])
+    resp = client.get("/jp/cards/batch?codes=sv2a+089,sv2a+999")
+    assert resp.status_code == 200
+    data = resp.json()
+    assert len(data) == 2
+    found = next(d for d in data if d["input"] == "sv2a 089")
+    missing = next(d for d in data if d["input"] == "sv2a 999")
+    assert found["error"] is None
+    assert found["card"]["artwork_id"] == "jp-sv2a-089"
+    assert missing["error"] == "not_found"
+
+
+def test_batch_fraction_notation_strips_denominator(client_factory) -> None:  # type: ignore[no-untyped-def]
+    # "sv2a 089/210" should resolve the same as "sv2a 089"
+    artwork_rows = FakeResult(rows=[_fake_artwork_row("089")])
+    variant_rows = FakeResult(rows=[_fake_variant_row("jp-sv2a-089", "normal")])
+    client, _ = client_factory([artwork_rows, variant_rows])
+    resp = client.get("/jp/cards/batch?codes=sv2a+089%2F210")
+    item = resp.json()[0]
+    assert item["error"] is None
+    assert item["card"]["local_id"] == "089"
+
+
+def test_batch_empty_codes_returns_empty_list(client_factory) -> None:  # type: ignore[no-untyped-def]
+    client, _ = client_factory([])
+    resp = client.get("/jp/cards/batch?codes=")
+    assert resp.status_code == 200
+    assert resp.json() == []
+
+
+def test_batch_cache_header_set(client_factory) -> None:  # type: ignore[no-untyped-def]
+    artwork_rows = FakeResult(rows=[_fake_artwork_row("089")])
+    variant_rows = FakeResult(rows=[_fake_variant_row("jp-sv2a-089", "normal")])
+    client, _ = client_factory([artwork_rows, variant_rows])
+    resp = client.get("/jp/cards/batch?codes=sv2a+089")
+    assert "max-age=3600" in resp.headers["Cache-Control"]
+
+
 def test_search_cards_matches_name_ja(client_factory) -> None:  # type: ignore[no-untyped-def]
     count = FakeResult(scalar=1)
     artworks = FakeResult(

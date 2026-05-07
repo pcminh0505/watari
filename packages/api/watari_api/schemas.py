@@ -37,6 +37,22 @@ class ArtworkDetail(BaseModel):
     variants: list[VariantRef]
 
 
+class CardBatchItem(BaseModel):
+    """One result entry from ``GET /cards/batch``.
+
+    ``error`` is ``None`` when the card was found unambiguously.
+    ``"not_found"`` means no artwork matched the input in this language.
+    ``"ambiguous"`` means a local_id-only token matched multiple sets;
+    ``candidates`` carries those matches so the caller can disambiguate.
+    ``"parse_error"`` means the token could not be parsed at all.
+    """
+
+    input: str
+    card: ArtworkDetail | None = None
+    candidates: list[ArtworkDetail] = []
+    error: str | None = None
+
+
 class ArtworkSearchResult(ArtworkDetail):
     """Artwork search result with set + floor price enrichment."""
 
