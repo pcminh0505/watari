@@ -2,9 +2,10 @@ import { useMemo, useState } from "react";
 import { Link, useParams } from "react-router";
 import { useCard } from "../api/cards";
 import { useSet } from "../api/sets";
-import { useLatestPrices, usePriceHistory, useSpread } from "../api/prices";
+import { useGradedPriceHistory, useLatestPrices, usePriceHistory, useSpread } from "../api/prices";
 import { CardPlaceholder } from "../components/cards/CardPlaceholder";
 import { CardDetailSkeleton } from "../components/cards/CardDetailSkeleton";
+import { GradedPriceHistoryChart } from "../components/prices/GradedPriceHistoryChart";
 import { PriceHistoryChart } from "../components/prices/PriceHistoryChart";
 import { PriceTable } from "../components/prices/PriceTable";
 import { SpreadTable } from "../components/prices/SpreadTable";
@@ -23,6 +24,7 @@ export function CardDetailPage() {
   const { data: set } = useSet(setCode);
   const [selectedVariant, setSelectedVariant] = useState<string | null>(null);
   const [historyDays, setHistoryDays] = useState(30);
+  const [gradedHistoryDays, setGradedHistoryDays] = useState(365);
   const variant = selectedVariant ?? card?.variants[0]?.variant ?? "normal";
 
   const { data: prices, isPending: isPricesPending } = useLatestPrices(setCode, localId, variant);
@@ -67,6 +69,12 @@ export function CardDetailPage() {
         ? [...(history ?? []), ...(historyAlt ?? [])]
         : (history ?? []),
     [history, historyAlt, activeCondition]
+  );
+  const { data: gradedHistory, isPending: isGradedHistoryPending } = useGradedPriceHistory(
+    setCode,
+    localId,
+    variant,
+    gradedHistoryDays
   );
 
   if (isPending) return <CardDetailSkeleton />;
@@ -166,7 +174,7 @@ export function CardDetailPage() {
           <section className="glass-panel p-5">
             <div className="mb-4 flex items-center justify-between gap-3">
               <h3 className="text-sm font-semibold text-slate-800 dark:text-slate-200">
-                Price History
+                Ungraded Price History
               </h3>
               <div className="flex items-center gap-2">
                 {/* Period selector */}
@@ -210,6 +218,34 @@ export function CardDetailPage() {
                 history={chartHistory}
                 condition={activeCondition}
               />
+            )}
+          </section>
+
+          <section className="mt-8 glass-panel p-5">
+            <div className="mb-4 flex items-center justify-between gap-3">
+              <h3 className="text-sm font-semibold text-slate-800 dark:text-slate-200">
+                Graded Price History
+              </h3>
+              <div className="flex gap-1 bg-slate-100 dark:bg-black/20 p-1 rounded-lg border border-slate-200 dark:border-white/5">
+                {([{ days: 30, label: "1M" }, { days: 90, label: "3M" }, { days: 180, label: "6M" }, { days: 365, label: "1Y" }] as const).map(({ days, label }) => (
+                  <button
+                    key={days}
+                    onClick={() => setGradedHistoryDays(days)}
+                    aria-pressed={days === gradedHistoryDays}
+                    className={`rounded-md border px-3 py-1 text-xs font-medium transition-all ${days === gradedHistoryDays
+                      ? "bg-white text-primary-600 border-slate-200 shadow-sm dark:bg-primary-900/40 dark:text-primary-300 dark:border-primary-500/50"
+                      : "bg-transparent text-slate-500 border-transparent hover:text-slate-900 dark:text-slate-400 dark:hover:text-white"
+                      }`}
+                  >
+                    {label}
+                  </button>
+                ))}
+              </div>
+            </div>
+            {isGradedHistoryPending ? (
+              <ChartSkeleton />
+            ) : (
+              <GradedPriceHistoryChart history={gradedHistory ?? []} />
             )}
           </section>
         </div>

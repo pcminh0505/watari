@@ -1,5 +1,5 @@
 import { useQuery } from "@tanstack/react-query";
-import type { LatestPrice, MarketPriceOut, PricePointOut, SpreadRow } from "../types/api";
+import type { GradedPricePointOut, LatestPrice, MarketPriceOut, PricePointOut, SpreadRow } from "../types/api";
 import { apiFetch } from "./client";
 
 export function useLatestPrices(
@@ -34,6 +34,23 @@ export function usePriceHistory(
       ),
     staleTime: 0,
     enabled: enabled && setCode.length > 0 && localId.length > 0,
+  });
+}
+
+export function useGradedPriceHistory(
+  setCode: string,
+  localId: string,
+  variant: string,
+  days = 365
+) {
+  return useQuery<GradedPricePointOut[]>({
+    queryKey: ["graded-history", setCode, localId, variant, days],
+    queryFn: () =>
+      apiFetch<GradedPricePointOut[]>(
+        `/jp/cards/${setCode}/${localId}/graded-history?variant=${variant}&days=${days}&limit=2000`
+      ),
+    staleTime: 0,
+    enabled: setCode.length > 0 && localId.length > 0,
   });
 }
 

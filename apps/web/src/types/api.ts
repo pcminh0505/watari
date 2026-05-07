@@ -82,6 +82,19 @@ export interface PricePointOut {
   created_at: string;
 }
 
+/** Mirrors packages/api/watari_api/schemas.py: GradedPricePointOut */
+export interface GradedPricePointOut {
+  id: number;
+  card_id: string;
+  source: string;
+  source_type: string;
+  grade_company: "PSA" | "BGS" | "CGC";
+  grade_score: number;
+  price_jpy: number;
+  observed_at: string;
+  external_url: string | null;
+}
+
 /** Mirrors packages/api/watari_api/schemas.py: MarketPriceOut */
 export interface MarketPriceOut {
   card_id: string;
