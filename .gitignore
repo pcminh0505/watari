@@ -61,3 +61,4 @@ apps/web/.env.*.local
 
 # Catalog — generated TCGCollector audit sidecars (from `audit-fetch`; regenerate locally)
 packages/catalog/data/audit/*.yml
+/.wrangler
