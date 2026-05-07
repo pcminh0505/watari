@@ -42,15 +42,18 @@ class CardBatchItem(BaseModel):
 
     ``error`` is ``None`` when the card was found unambiguously.
     ``"not_found"`` means no artwork matched the input in this language.
-    ``"ambiguous"`` means a local_id-only token matched multiple sets;
-    ``candidates`` carries those matches so the caller can disambiguate.
-    ``"parse_error"`` means the token could not be parsed at all.
+    ``"missing_set_code"`` means the token had no set code prefix; each token
+    must be in ``set_code local_id`` form (e.g. ``sv3a 066/062``).
+    ``"parse_error"`` means the token could not be parsed at all (e.g. empty
+    local_id after stripping the denominator).
+
+    ``candidates`` is reserved for future disambiguation support (see
+    ``plans/batch-card-set-disambiguation.md``) and is always empty today.
 
     ``market_price_jpy`` / ``market_price_source_used`` / ``market_price_variant``
-    are populated only for unambiguous matches that have price data in
-    ``mv_market_price``.  ``market_price_variant`` is the print variant that
-    was priced (``"normal"`` when available, otherwise the first tracked variant
-    alphabetically).
+    are populated only for found cards that have price data in ``mv_market_price``.
+    ``market_price_variant`` is the print variant that was priced (``"normal"``
+    when available, otherwise the first tracked variant alphabetically).
     """
 
     input: str

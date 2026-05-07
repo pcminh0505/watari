@@ -107,10 +107,11 @@ async def get_cards_batch(
 ) -> list[CardBatchItem]:
     """Resolve a comma-separated list of card codes to artwork details.
 
-    Unsupported / unknown cards are returned with ``error='not_found'``.
-    Local-id-only tokens that match multiple sets are returned with
-    ``error='ambiguous'`` and a populated ``candidates`` list so the caller
-    can re-query with the full ``set_code local_id`` form.
+    Every token must include a set code prefix: ``set_code local_id``
+    (e.g. ``sv3a 066/062``).  Tokens without a set code are rejected
+    immediately with ``error='missing_set_code'`` — no DB query is issued
+    for them.  See ``plans/batch-card-set-disambiguation.md`` for the
+    planned approach to support set-code-free lookups in the future.
     """
     tokens = [t.strip() for t in codes.split(",") if t.strip()]
     if not tokens:
@@ -119,26 +120,18 @@ async def get_cards_batch(
     parsed: list[tuple[str | None, str] | None] = [_parse_code_token(t) for t in tokens]
     results: list[CardBatchItem] = [CardBatchItem(input=t) for t in tokens]
 
+    paired_items: list[tuple[int, str, str]] = []  # (result_idx, set_code, local_id)
     for i, p in enumerate(parsed):
         if p is None:
             results[i].error = "parse_error"
-
-    paired_items: list[tuple[int, str, str]] = []  # (result_idx, set_code, local_id)
-    id_only_items: list[tuple[int, str]] = []       # (result_idx, local_id)
-    for i, p in enumerate(parsed):
-        if p is None:
-            continue
-        set_code, local_id = p
-        if set_code is not None:
-            paired_items.append((i, set_code, local_id))
+        elif p[0] is None:
+            results[i].error = "missing_set_code"
         else:
-            id_only_items.append((i, local_id))
+            paired_items.append((i, p[0], p[1]))
 
-    # artwork_id → raw DB row; populated by the two lookup queries below.
+    # artwork_id → raw DB row; populated by query 1 below.
     artwork_rows: dict[str, Any] = {}
-    # Mappings used to fill results after the variants query.
-    result_single: dict[int, str] = {}          # result_idx → artwork_id (exact match)
-    result_candidates: dict[int, list[str]] = {}  # result_idx → [artwork_ids] (ambiguous)
+    result_single: dict[int, str] = {}  # result_idx → artwork_id
 
     # --- Query 1: precise (set_code + local_id) lookups ---
     if paired_items:
@@ -160,32 +153,6 @@ async def get_cards_batch(
             else:
                 artwork_rows[row.artwork_id] = row
                 result_single[idx] = row.artwork_id
-
-    # --- Query 2: local_id-only lookups (may match multiple sets) ---
-    if id_only_items:
-        local_ids = list({lid for _, lid in id_only_items})
-        stmt = (
-            select(*_artwork_columns())
-            .join(Set, Set.set_code == Artwork.set_code)
-            .where(Set.language == lang, Artwork.local_id.in_(local_ids))
-        )
-        rows = (await session.execute(stmt)).all()
-        rows_by_lid: dict[str, list[Any]] = defaultdict(list)
-        for row in rows:
-            rows_by_lid[row.local_id].append(row)
-        for idx, lid in id_only_items:
-            matches = rows_by_lid.get(lid, [])
-            if not matches:
-                results[idx].error = "not_found"
-            elif len(matches) == 1:
-                row = matches[0]
-                artwork_rows[row.artwork_id] = row
-                result_single[idx] = row.artwork_id
-            else:
-                for row in matches:
-                    artwork_rows[row.artwork_id] = row
-                result_candidates[idx] = [row.artwork_id for row in matches]
-                results[idx].error = "ambiguous"
 
     if not artwork_rows:
         return results
@@ -246,9 +213,6 @@ async def get_cards_batch(
             if price:
                 results[idx].market_price_jpy = price[0]
                 results[idx].market_price_source_used = price[1]
-
-    for idx, artwork_ids in result_candidates.items():
-        results[idx].candidates = [_build(aid) for aid in artwork_ids]
 
     response.headers["Cache-Control"] = _CATALOG_CACHE
     return results

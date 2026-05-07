@@ -428,47 +428,22 @@ def test_batch_full_code_not_found(client_factory) -> None:  # type: ignore[no-u
     assert item["card"] is None
 
 
-def test_batch_id_only_unique(client_factory) -> None:  # type: ignore[no-untyped-def]
-    # "089" matches exactly one artwork across all sets
-    artwork_rows = FakeResult(rows=[_fake_artwork_row("089")])
-    variant_rows = FakeResult(rows=[_fake_variant_row("jp-sv2a-089", "normal")])
-    market_rows = FakeResult(rows=[])
-    client, _ = client_factory([artwork_rows, variant_rows, market_rows])
+def test_batch_id_only_returns_missing_set_code(client_factory) -> None:  # type: ignore[no-untyped-def]
+    # Tokens without a set code are rejected immediately — no DB queries issued
+    client, _ = client_factory([])  # empty queue confirms no DB calls
     resp = client.get("/jp/cards/batch?codes=089")
     assert resp.status_code == 200
     item = resp.json()[0]
-    assert item["error"] is None
-    assert item["card"]["local_id"] == "089"
-    assert item["candidates"] == []
-
-
-def test_batch_id_only_ambiguous(client_factory) -> None:  # type: ignore[no-untyped-def]
-    # "089" matches two artworks in different sets
-    row_a = {**_fake_artwork_row("089"), "artwork_id": "jp-sv2a-089", "set_code": "SV2A"}
-    row_b = {**_fake_artwork_row("089"), "artwork_id": "jp-sv3a-089", "set_code": "SV3A"}
-    artwork_rows = FakeResult(rows=[row_a, row_b])
-    variant_rows = FakeResult(
-        rows=[
-            _fake_variant_row("jp-sv2a-089", "normal"),
-            _fake_variant_row("jp-sv3a-089", "normal"),
-        ]
-    )
-    client, _ = client_factory([artwork_rows, variant_rows])
-    resp = client.get("/jp/cards/batch?codes=089")
-    assert resp.status_code == 200
-    item = resp.json()[0]
-    assert item["error"] == "ambiguous"
+    assert item["error"] == "missing_set_code"
     assert item["card"] is None
-    assert len(item["candidates"]) == 2
-    candidate_ids = {c["artwork_id"] for c in item["candidates"]}
-    assert candidate_ids == {"jp-sv2a-089", "jp-sv3a-089"}
 
 
-def test_batch_id_only_not_found(client_factory) -> None:  # type: ignore[no-untyped-def]
-    client, _ = client_factory([FakeResult(rows=[])])
-    resp = client.get("/jp/cards/batch?codes=999")
+def test_batch_fraction_only_returns_missing_set_code(client_factory) -> None:  # type: ignore[no-untyped-def]
+    # "066/062" without a set code prefix is also rejected
+    client, _ = client_factory([])
+    resp = client.get("/jp/cards/batch?codes=066%2F062")
     assert resp.status_code == 200
-    assert resp.json()[0]["error"] == "not_found"
+    assert resp.json()[0]["error"] == "missing_set_code"
 
 
 def test_batch_parse_error(client_factory) -> None:  # type: ignore[no-untyped-def]
@@ -552,23 +527,22 @@ def test_batch_market_price_none_when_no_price_data(client_factory) -> None:  # 
     assert item["market_price_variant"] == "normal"  # variant still reported
 
 
-def test_batch_ambiguous_has_no_market_price(client_factory) -> None:  # type: ignore[no-untyped-def]
-    # Ambiguous results skip the market price query entirely
-    row_a = {**_fake_artwork_row("089"), "artwork_id": "jp-sv2a-089", "set_code": "SV2A"}
-    row_b = {**_fake_artwork_row("089"), "artwork_id": "jp-sv3a-089", "set_code": "SV3A"}
-    artwork_rows = FakeResult(rows=[row_a, row_b])
-    variant_rows = FakeResult(
-        rows=[
-            _fake_variant_row("jp-sv2a-089", "normal"),
-            _fake_variant_row("jp-sv3a-089", "normal"),
-        ]
-    )
-    # No market_rows in the queue — confirms query 4 is NOT issued for ambiguous
-    client, _ = client_factory([artwork_rows, variant_rows])
-    resp = client.get("/jp/cards/batch?codes=089")
-    item = resp.json()[0]
-    assert item["error"] == "ambiguous"
-    assert item["market_price_jpy"] is None
+def test_batch_mixed_set_code_and_missing_set_code(client_factory) -> None:  # type: ignore[no-untyped-def]
+    # One token has a set code (queried), the other does not (rejected immediately)
+    artwork_rows = FakeResult(rows=[_fake_artwork_row("089")])
+    variant_rows = FakeResult(rows=[_fake_variant_row("jp-sv2a-089", "normal")])
+    market_rows = FakeResult(rows=[])
+    client, _ = client_factory([artwork_rows, variant_rows, market_rows])
+    resp = client.get("/jp/cards/batch?codes=sv2a+089,089")
+    assert resp.status_code == 200
+    data = resp.json()
+    assert len(data) == 2
+    found = next(d for d in data if d["input"] == "sv2a 089")
+    missing = next(d for d in data if d["input"] == "089")
+    assert found["error"] is None
+    assert found["card"]["artwork_id"] == "jp-sv2a-089"
+    assert missing["error"] == "missing_set_code"
+    assert missing["market_price_jpy"] is None
 
 
 def test_search_cards_matches_name_ja(client_factory) -> None:  # type: ignore[no-untyped-def]
