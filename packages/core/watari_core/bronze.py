@@ -1,5 +1,6 @@
 """Bronze layer — raw HTML/JSON storage in MinIO (S3-compatible)."""
 
+import gzip
 from datetime import datetime
 from typing import Any
 
@@ -7,6 +8,25 @@ import boto3
 from botocore.exceptions import ClientError
 
 from watari_core.config import settings
+
+_MIN_COMPRESS_BYTES = 1024  # skip gzip for tiny payloads (overhead > savings)
+
+
+def _compress_opts(body: bytes, key_suffix: str) -> tuple[bytes, dict[str, str]]:
+    """Return (body, extra_put_kwargs) with gzip compression and ContentType."""
+    if key_suffix.endswith(".html"):
+        content_type = "text/html; charset=utf-8"
+    elif key_suffix.endswith(".json"):
+        content_type = "application/json"
+    else:
+        content_type = "application/octet-stream"
+
+    extra: dict[str, str] = {"ContentType": content_type}
+    if len(body) >= _MIN_COMPRESS_BYTES:
+        body = gzip.compress(body, compresslevel=6)
+        extra["ContentEncoding"] = "gzip"
+    return body, extra
+
 
 # Reuse a single client for the process lifetime. boto3 clients hold circular
 # references (event system, credential chain, connection pools) that prevent
@@ -58,7 +78,8 @@ def write_bronze(
 
     s3 = _get_s3_client()
     body = payload.encode("utf-8") if isinstance(payload, str) else payload
-    s3.put_object(Bucket=bucket, Key=key, Body=body)
+    body, extra = _compress_opts(body, key_suffix)
+    s3.put_object(Bucket=bucket, Key=key, Body=body, **extra)
     return key
 
 
@@ -83,5 +104,29 @@ def write_bronze_set(
 
     s3 = _get_s3_client()
     body = payload.encode("utf-8") if isinstance(payload, str) else payload
-    s3.put_object(Bucket=bucket, Key=key, Body=body)
+    body, extra = _compress_opts(body, key_suffix)
+    s3.put_object(Bucket=bucket, Key=key, Body=body, **extra)
     return key
+
+
+def setup_lifecycle(bucket: str | None = None, *, days: int = 90) -> None:
+    """Install an expiration lifecycle rule on the bronze bucket.
+
+    Idempotent — safe to run multiple times (overwrites the existing rule).
+    Call once after provisioning a new bucket or changing the retention period.
+    """
+    bucket = bucket or settings.s3_bucket_bronze
+    s3 = _get_s3_client()
+    s3.put_bucket_lifecycle_configuration(
+        Bucket=bucket,
+        LifecycleConfiguration={
+            "Rules": [
+                {
+                    "ID": f"expire-bronze-{days}d",
+                    "Status": "Enabled",
+                    "Prefix": "bronze/",
+                    "Expiration": {"Days": days},
+                }
+            ]
+        },
+    )

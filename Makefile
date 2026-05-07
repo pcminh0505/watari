@@ -130,6 +130,9 @@ web-preview:
 	cd apps/web && bun run preview
 
 # --- Ops / deployment helpers ---
+bronze-setup-lifecycle:  ## Set 90-day expiry on the R2 bronze bucket (run once per env)
+	uv run python -c "from watari_core.bronze import setup_lifecycle; setup_lifecycle(); print('lifecycle rule set')"
+
 db-dump-data:
 	./scripts/dump_prod_data.sh
 
