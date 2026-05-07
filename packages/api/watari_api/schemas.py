@@ -37,6 +37,12 @@ class ArtworkDetail(BaseModel):
     variants: list[VariantRef]
 
 
+class CardBatchRequest(BaseModel):
+    """Request body for ``POST /cards/batch``."""
+
+    codes: list[str]
+
+
 class CardBatchItem(BaseModel):
     """One result entry from ``GET /cards/batch``.
 

@@ -5,14 +5,14 @@ from __future__ import annotations
 from collections import defaultdict
 from typing import Annotated, Any
 
-from fastapi import APIRouter, Depends, HTTPException, Query, Response, status
+from fastapi import APIRouter, Body, Depends, HTTPException, Query, Response, status
 from watari_core.catalog import pad_local_id
 from watari_core.models import Artwork, Card, Set
 from sqlalchemy import Integer, String, and_, column, func, or_, select, table
 from sqlalchemy.ext.asyncio import AsyncSession
 
 from watari_api.deps import get_session
-from watari_api.schemas import ArtworkDetail, ArtworkSearchResult, CardBatchItem, VariantRef
+from watari_api.schemas import ArtworkDetail, ArtworkSearchResult, CardBatchItem, CardBatchRequest, VariantRef
 
 router = APIRouter(tags=["cards"])
 
@@ -89,31 +89,31 @@ def _parse_code_token(raw: str) -> tuple[str | None, str] | None:
     return set_code, pad_local_id(raw_id)
 
 
-@router.get("/cards/batch", response_model=list[CardBatchItem])
-async def get_cards_batch(
-    lang: str,
-    session: SessionDep,
-    response: Response,
-    codes: str = Query(
-        ...,
-        description=(
-            "Comma-separated card codes. Each token is either "
-            "``set_code local_id`` (e.g. ``sv3a 066/062``) for a precise lookup, "
-            "or ``local_id`` only (e.g. ``223/193``) to search across all sets. "
-            "The denominator in fraction notation is ignored — only the numerator "
-            "(card number) is used."
-        ),
-    ),
-) -> list[CardBatchItem]:
-    """Resolve a comma-separated list of card codes to artwork details.
+def _split_code_tokens(values: list[str]) -> list[str]:
+    """Normalize user-provided code values into individual non-empty tokens.
 
-    Every token must include a set code prefix: ``set_code local_id``
-    (e.g. ``sv3a 066/062``).  Tokens without a set code are rejected
-    immediately with ``error='missing_set_code'`` — no DB query is issued
-    for them.  See ``plans/batch-card-set-disambiguation.md`` for the
+    Accept both styles:
+    - ``["sv2a 089/210", "m1l 066/063"]``
+    - ``["sv2a 089/210,m1l 066/063"]``
+    """
+    tokens: list[str] = []
+    for value in values:
+        tokens.extend(part.strip() for part in value.split(",") if part.strip())
+    return tokens
+
+
+async def _resolve_batch(
+    tokens: list[str],
+    lang: str,
+    session: AsyncSession,
+) -> list[CardBatchItem]:
+    """Core batch resolution logic shared by GET and POST handlers.
+
+    Every token must be in ``set_code local_id`` form (e.g. ``sv3a 066/062``).
+    Tokens without a set code return ``error='missing_set_code'`` immediately
+    with no DB query.  See ``plans/batch-card-set-disambiguation.md`` for the
     planned approach to support set-code-free lookups in the future.
     """
-    tokens = [t.strip() for t in codes.split(",") if t.strip()]
     if not tokens:
         return []
 
@@ -157,7 +157,7 @@ async def get_cards_batch(
     if not artwork_rows:
         return results
 
-    # --- Query 3: fetch variants for all resolved artwork_ids in one shot ---
+    # --- Query 2: variants for all resolved artwork_ids ---
     variant_stmt = (
         select(Card.artwork_id, Card.variant, Card.card_id, Card.is_tracked)
         .where(Card.artwork_id.in_(list(artwork_rows)))
@@ -179,19 +179,33 @@ async def get_cards_batch(
         )
         return _row_to_artwork_detail(row, variants)
 
-    # --- Query 4: market price for each single-match artwork ---
-    # Pick the default tracked variant (normal preferred, else first alphabetically)
-    # and do a single IN query against mv_market_price.
-    default_card_id_for_artwork: dict[str, tuple[str, str]] = {}  # artwork_id → (card_id, variant)
+    # --- Query 3: market price for each resolved artwork (single IN query) ---
+    default_card_id_for_artwork: dict[str, tuple[str, str]] = {}
     for artwork_id in result_single.values():
         tracked = [v for v in variants_by_artwork[artwork_id] if v.is_tracked]
         if tracked:
             best = min(tracked, key=lambda v: _variant_sort_key(v.variant))
             default_card_id_for_artwork[artwork_id] = (best.card_id, best.variant)
 
-    market_prices: dict[str, tuple[int, str]] = {}  # card_id → (price_jpy, source_used)
+    # Prefer Cardrush condition-A floor when present; fallback to mv_market_price.
+    cardrush_floor_by_card_id: dict[str, int] = {}
+    market_prices: dict[str, tuple[int, str]] = {}
     if default_card_id_for_artwork:
         card_ids = [cid for cid, _ in default_card_id_for_artwork.values()]
+        floor_stmt = select(
+            mv_latest_price.c.card_id,
+            mv_latest_price.c.price_jpy,
+        ).where(
+            mv_latest_price.c.card_id.in_(card_ids),
+            mv_latest_price.c.source.cast(String) == "cardrush",
+            mv_latest_price.c.condition.cast(String) == "A",
+            mv_latest_price.c.stock_qty > 0,
+        )
+        floor_rows = (await session.execute(floor_stmt)).all()
+        cardrush_floor_by_card_id = {
+            str(r.card_id): int(r.price_jpy) for r in floor_rows if r.price_jpy is not None
+        }
+
         mp_stmt = select(
             mv_market_price.c.card_id,
             mv_market_price.c.market_price_jpy,
@@ -208,13 +222,63 @@ async def get_cards_batch(
         results[idx].card = _build(artwork_id)
         if artwork_id in default_card_id_for_artwork:
             card_id, variant = default_card_id_for_artwork[artwork_id]
-            price = market_prices.get(card_id)
             results[idx].market_price_variant = variant
+            floor = cardrush_floor_by_card_id.get(card_id)
+            if floor is not None:
+                results[idx].market_price_jpy = floor
+                results[idx].market_price_source_used = "cardrush"
+                continue
+            price = market_prices.get(card_id)
             if price:
                 results[idx].market_price_jpy = price[0]
                 results[idx].market_price_source_used = price[1]
 
-    response.headers["Cache-Control"] = _CATALOG_CACHE
+    return results
+
+
+@router.get("/cards/batch", response_model=list[CardBatchItem])
+async def get_cards_batch(
+    lang: str,
+    session: SessionDep,
+    response: Response,
+    codes: str = Query(
+        ...,
+        description=(
+            "Comma-separated card codes in ``set_code local_id`` form "
+            "(e.g. ``sv3a 066/062,m1l 066/063``).  Use the POST variant "
+            "for large batches to avoid URL length limits."
+        ),
+    ),
+) -> list[CardBatchItem]:
+    """Resolve a comma-separated list of card codes (GET variant for small batches)."""
+    tokens = _split_code_tokens([codes])
+    results = await _resolve_batch(tokens, lang, session)
+    if results:
+        response.headers["Cache-Control"] = _CATALOG_CACHE
+    return results
+
+
+@router.post("/cards/batch", response_model=list[CardBatchItem])
+async def post_cards_batch(
+    lang: str,
+    session: SessionDep,
+    response: Response,
+    body: CardBatchRequest = Body(...),
+) -> list[CardBatchItem]:
+    """Resolve a list of card codes (POST variant — no URL length limit).
+
+    Request body::
+
+        {"codes": ["sv3a 066/062", "m1l 066/063", "sv2a 170/165"]}
+
+    Each element is a single token in ``set_code local_id`` form.
+    The denominator in fraction notation is stripped automatically.
+    Response shape is identical to ``GET /cards/batch``.
+    """
+    tokens = _split_code_tokens(body.codes)
+    results = await _resolve_batch(tokens, lang, session)
+    if results:
+        response.headers["Cache-Control"] = _CATALOG_CACHE
     return results
 
 
