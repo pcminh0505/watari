@@ -45,12 +45,21 @@ class CardBatchItem(BaseModel):
     ``"ambiguous"`` means a local_id-only token matched multiple sets;
     ``candidates`` carries those matches so the caller can disambiguate.
     ``"parse_error"`` means the token could not be parsed at all.
+
+    ``market_price_jpy`` / ``market_price_source_used`` / ``market_price_variant``
+    are populated only for unambiguous matches that have price data in
+    ``mv_market_price``.  ``market_price_variant`` is the print variant that
+    was priced (``"normal"`` when available, otherwise the first tracked variant
+    alphabetically).
     """
 
     input: str
     card: ArtworkDetail | None = None
     candidates: list[ArtworkDetail] = []
     error: str | None = None
+    market_price_jpy: int | None = None
+    market_price_source_used: str | None = None
+    market_price_variant: str | None = None
 
 
 class ArtworkSearchResult(ArtworkDetail):

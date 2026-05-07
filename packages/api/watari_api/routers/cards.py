@@ -212,8 +212,40 @@ async def get_cards_batch(
         )
         return _row_to_artwork_detail(row, variants)
 
+    # --- Query 4: market price for each single-match artwork ---
+    # Pick the default tracked variant (normal preferred, else first alphabetically)
+    # and do a single IN query against mv_market_price.
+    default_card_id_for_artwork: dict[str, tuple[str, str]] = {}  # artwork_id → (card_id, variant)
+    for artwork_id in result_single.values():
+        tracked = [v for v in variants_by_artwork[artwork_id] if v.is_tracked]
+        if tracked:
+            best = min(tracked, key=lambda v: _variant_sort_key(v.variant))
+            default_card_id_for_artwork[artwork_id] = (best.card_id, best.variant)
+
+    market_prices: dict[str, tuple[int, str]] = {}  # card_id → (price_jpy, source_used)
+    if default_card_id_for_artwork:
+        card_ids = [cid for cid, _ in default_card_id_for_artwork.values()]
+        mp_stmt = select(
+            mv_market_price.c.card_id,
+            mv_market_price.c.market_price_jpy,
+            mv_market_price.c.source_used,
+        ).where(mv_market_price.c.card_id.in_(card_ids))
+        mp_rows = (await session.execute(mp_stmt)).all()
+        market_prices = {
+            str(r.card_id): (int(r.market_price_jpy), str(r.source_used))
+            for r in mp_rows
+            if r.market_price_jpy is not None
+        }
+
     for idx, artwork_id in result_single.items():
         results[idx].card = _build(artwork_id)
+        if artwork_id in default_card_id_for_artwork:
+            card_id, variant = default_card_id_for_artwork[artwork_id]
+            price = market_prices.get(card_id)
+            results[idx].market_price_variant = variant
+            if price:
+                results[idx].market_price_jpy = price[0]
+                results[idx].market_price_source_used = price[1]
 
     for idx, artwork_ids in result_candidates.items():
         results[idx].candidates = [_build(aid) for aid in artwork_ids]
