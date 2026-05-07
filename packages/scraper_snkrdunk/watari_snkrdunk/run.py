@@ -22,6 +22,7 @@ from watari_core.ingestion import (
     insert_price_points,
     start_scrape_run,
     upsert_card_state,
+    upsert_graded_price_points,
 )
 from watari_core.models import SourceEnum
 from watari_core.mvs import refresh_price_mvs_if_needed
@@ -105,21 +106,27 @@ async def scrape_era(
                             )
                             entries.extend(page_entries)
 
-                        rows = parse_sales_history(
+                        ungraded_rows, graded_rows_parsed = parse_sales_history(
                             entries,
                             card_id=card_id,
                             apparel_id=apparel["apparel_id"],
                             scrape_run_id=run_id,
                             reference_now=observed_at,
                         )
-                        inserted = await insert_price_points(session, rows)
+                        inserted = await insert_price_points(session, ungraded_rows)
                         rows_written += inserted
-                        succeeded += 1
 
+                        graded_inserted = 0
+                        if graded_rows_parsed:
+                            graded_inserted = await upsert_graded_price_points(
+                                session, graded_rows_parsed
+                            )
+
+                        succeeded += 1
                         await upsert_card_state(session, card_id, SOURCE, success=True)
                         print(
                             f"  [{attempted:3}/{len(cards)}] {card_id}: "
-                            f"{len(entries)} sales -> {inserted} new rows"
+                            f"{len(entries)} sales -> {inserted} new + {graded_inserted} graded"
                         )
                     except Exception as exc:  # noqa: BLE001 - log & keep going
                         await session.rollback()

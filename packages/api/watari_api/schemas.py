@@ -83,6 +83,36 @@ class MarketPriceOut(BaseModel):
     source_used: str
 
 
+# --- Graded (slab) price shapes ------------------------------------------
+
+
+class GradedPricePointOut(BaseModel):
+    """One row from ``graded_price_points``, as returned by ``/graded-history``."""
+
+    id: int
+    card_id: str
+    source: str
+    source_type: str
+    grade_company: str
+    grade_score: float
+    price_jpy: int
+    observed_at: datetime
+    external_url: str | None = None
+
+    model_config = {"from_attributes": True}
+
+
+class LatestGradedPrice(BaseModel):
+    """Most recent listing per (grade_company, grade_score, source), as returned by
+    ``/graded-prices``."""
+
+    grade_company: str
+    grade_score: float
+    source: str
+    price_jpy: int
+    observed_at: datetime
+
+
 # --- Admin / scrape-health shapes ----------------------------------------
 
 

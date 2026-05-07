@@ -2,7 +2,9 @@
 
 from watari_core.conditions import (
     Condition,
+    GradeCompany,
     parse_cardrush_condition,
+    parse_grade_company_score,
     parse_snkrdunk_condition,
 )
 
@@ -98,6 +100,68 @@ class TestCardrushCondition:
         cond, graded = parse_cardrush_condition("リザードンex 〔状態Z〕")
         assert cond is None
         assert graded is False
+
+
+class TestParseGradeCompanyScore:
+    """parse_grade_company_score: valid grades, invalid input, edge cases."""
+
+    def test_psa10(self):
+        result = parse_grade_company_score("PSA10")
+        assert result is not None
+        company, score = result
+        assert company == GradeCompany.PSA
+        assert score == 10.0
+
+    def test_bgs95(self):
+        result = parse_grade_company_score("BGS9.5")
+        assert result is not None
+        company, score = result
+        assert company == GradeCompany.BGS
+        assert score == 9.5
+
+    def test_cgc10(self):
+        result = parse_grade_company_score("CGC10")
+        assert result is not None
+        company, score = result
+        assert company == GradeCompany.CGC
+        assert score == 10.0
+
+    def test_psa9(self):
+        result = parse_grade_company_score("PSA9")
+        assert result is not None
+        assert result[1] == 9.0
+
+    def test_case_insensitive(self):
+        result = parse_grade_company_score("psa10")
+        assert result is not None
+        assert result[0] == GradeCompany.PSA
+
+    def test_whitespace_stripped(self):
+        result = parse_grade_company_score("  PSA10  ")
+        assert result is not None
+        assert result[0] == GradeCompany.PSA
+        assert result[1] == 10.0
+
+    def test_sgc_returns_none(self):
+        """SGC is deferred — not in GradeCompany."""
+        assert parse_grade_company_score("SGC10") is None
+
+    def test_unknown_company_returns_none(self):
+        assert parse_grade_company_score("XYZ10") is None
+
+    def test_no_score_returns_none(self):
+        assert parse_grade_company_score("PSA") is None
+
+    def test_empty_returns_none(self):
+        assert parse_grade_company_score("") is None
+
+    def test_only_digits_returns_none(self):
+        assert parse_grade_company_score("10") is None
+
+    def test_bgs_decimal_score(self):
+        result = parse_grade_company_score("BGS8.5")
+        assert result is not None
+        assert result[1] == 8.5
 
 
 class TestSnkrdunkCondition:

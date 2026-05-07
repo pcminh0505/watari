@@ -18,13 +18,13 @@ from typing import Annotated, Any
 
 from fastapi import APIRouter, Depends, HTTPException, Query, Request, Response
 from watari_core.catalog import pad_local_id
-from watari_core.models import Card, PricePoint, Set
+from watari_core.models import Card, GradedPricePoint, PricePoint, Set
 from watari_core.schemas import PricePointOut
 from sqlalchemy import Integer, bindparam, func, select, text
 from sqlalchemy.ext.asyncio import AsyncSession
 
 from watari_api.deps import get_session
-from watari_api.schemas import LatestPrice, MarketPriceOut, SpreadRow
+from watari_api.schemas import GradedPricePointOut, LatestGradedPrice, LatestPrice, MarketPriceOut, SpreadRow
 
 router = APIRouter(
     prefix="/cards/{set_code}/{local_id}",
@@ -215,6 +215,83 @@ async def market_price(
     response.headers["Cache-Control"] = _PRICE_CACHE
     response.headers["ETag"] = etag
     return data
+
+
+@router.get("/graded-prices", response_model=list[LatestGradedPrice])
+async def latest_graded_prices(
+    lang: str,
+    set_code: str,
+    local_id: str,
+    session: SessionDep,
+    response: Response,
+    variant: str = Query("normal", description="Variant slug (default: normal)"),
+) -> Any:
+    """Most recent listing per (grade_company, grade_score, source) for a card.
+
+    Reads directly from ``graded_price_points`` (no MV — graded data volume is
+    much smaller than ungraded).
+    """
+    card = await _resolve_card(
+        session,
+        lang=lang,
+        set_code=set_code,
+        local_id=local_id,
+        variant=variant,
+    )
+    stmt = text(
+        "SELECT DISTINCT ON (grade_company, grade_score, source) "
+        "    grade_company, grade_score, source, price_jpy, observed_at "
+        "FROM graded_price_points "
+        "WHERE card_id = :card_id "
+        "ORDER BY grade_company, grade_score, source, observed_at DESC"
+    ).bindparams(bindparam("card_id", type_=None))
+    rows = (
+        await session.execute(stmt, {"card_id": card.card_id})
+    ).mappings().all()
+    response.headers["Cache-Control"] = "no-store"
+    return [LatestGradedPrice.model_validate(dict(r)) for r in rows]
+
+
+@router.get("/graded-history", response_model=list[GradedPricePointOut])
+async def graded_history(
+    lang: str,
+    set_code: str,
+    local_id: str,
+    session: SessionDep,
+    response: Response,
+    variant: str = Query("normal", description="Variant slug (default: normal)"),
+    days: int = Query(365, ge=1, le=365, description="Look back this many days"),
+    company: str | None = Query(
+        None, description="Filter by grading company (PSA|BGS|CGC)"
+    ),
+    limit: int = Query(2000, ge=1, le=2000),
+) -> list[GradedPricePoint]:
+    """Raw graded price history for a card, newest first.
+
+    Reads directly from ``graded_price_points``.
+    """
+    card = await _resolve_card(
+        session,
+        lang=lang,
+        set_code=set_code,
+        local_id=local_id,
+        variant=variant,
+    )
+    since = datetime.now(UTC) - timedelta(days=days)
+    stmt = (
+        select(GradedPricePoint)
+        .where(
+            GradedPricePoint.card_id == card.card_id,
+            GradedPricePoint.observed_at >= since,
+        )
+        .order_by(GradedPricePoint.observed_at.desc())
+        .limit(limit)
+    )
+    if company is not None:
+        stmt = stmt.where(GradedPricePoint.grade_company == company.upper())
+    result = await session.execute(stmt)
+    response.headers["Cache-Control"] = "no-store"
+    return list(result.scalars().all())
 
 
 @router.get("/spread", response_model=list[SpreadRow])

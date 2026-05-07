@@ -678,6 +678,90 @@ def test_prices_404_when_artwork_missing(client_factory) -> None:  # type: ignor
     assert resp.status_code == 404
 
 
+# --- Graded prices / history ---------------------------------------------
+
+
+def test_graded_prices_returns_list(client_factory) -> None:  # type: ignore[no-untyped-def]
+    now = datetime(2025, 4, 1, tzinfo=UTC)
+    resolve = _fake_card_scalars("normal")
+    graded_rows = FakeResult(
+        rows=[
+            {
+                "grade_company": "PSA",
+                "grade_score": 10.0,
+                "source": "cardrush",
+                "price_jpy": 95000,
+                "observed_at": now,
+            }
+        ]
+    )
+    client, _ = client_factory([resolve, graded_rows])
+    resp = client.get("/jp/cards/SV2A/089/graded-prices")
+    assert resp.status_code == 200
+    data = resp.json()
+    assert len(data) == 1
+    assert data[0]["grade_company"] == "PSA"
+    assert data[0]["grade_score"] == 10.0
+    assert data[0]["price_jpy"] == 95000
+    assert data[0]["source"] == "cardrush"
+
+
+def test_graded_prices_empty(client_factory) -> None:  # type: ignore[no-untyped-def]
+    resolve = _fake_card_scalars("normal")
+    graded_rows = FakeResult(rows=[])
+    client, _ = client_factory([resolve, graded_rows])
+    resp = client.get("/jp/cards/SV2A/089/graded-prices")
+    assert resp.status_code == 200
+    assert resp.json() == []
+
+
+def test_graded_prices_no_store_cache(client_factory) -> None:  # type: ignore[no-untyped-def]
+    resolve = _fake_card_scalars("normal")
+    graded_rows = FakeResult(rows=[])
+    client, _ = client_factory([resolve, graded_rows])
+    resp = client.get("/jp/cards/SV2A/089/graded-prices")
+    assert resp.headers["Cache-Control"] == "no-store"
+
+
+def test_graded_history_empty(client_factory) -> None:  # type: ignore[no-untyped-def]
+    resolve = _fake_card_scalars("normal")
+    history_rows = FakeResult(scalars=[])
+    client, _ = client_factory([resolve, history_rows])
+    resp = client.get("/jp/cards/SV2A/089/graded-history")
+    assert resp.status_code == 200
+    assert resp.json() == []
+
+
+def test_graded_history_no_store_cache(client_factory) -> None:  # type: ignore[no-untyped-def]
+    resolve = _fake_card_scalars("normal")
+    history_rows = FakeResult(scalars=[])
+    client, _ = client_factory([resolve, history_rows])
+    resp = client.get("/jp/cards/SV2A/089/graded-history")
+    assert resp.headers["Cache-Control"] == "no-store"
+
+
+def test_graded_history_company_filter_accepted(client_factory) -> None:  # type: ignore[no-untyped-def]
+    resolve = _fake_card_scalars("normal")
+    history_rows = FakeResult(scalars=[])
+    client, _ = client_factory([resolve, history_rows])
+    resp = client.get("/jp/cards/SV2A/089/graded-history?company=PSA")
+    assert resp.status_code == 200
+
+
+def test_graded_history_days_param_accepted(client_factory) -> None:  # type: ignore[no-untyped-def]
+    resolve = _fake_card_scalars("normal")
+    history_rows = FakeResult(scalars=[])
+    client, _ = client_factory([resolve, history_rows])
+    resp = client.get("/jp/cards/SV2A/089/graded-history?days=30")
+    assert resp.status_code == 200
+
+
+def test_graded_prices_404_for_missing_card(client_factory) -> None:  # type: ignore[no-untyped-def]
+    client, _ = client_factory([FakeResult(scalars=[])])
+    resp = client.get("/jp/cards/SV2A/999/graded-prices")
+    assert resp.status_code == 404
+
+
 # --- Locale --------------------------------------------------------------
 
 

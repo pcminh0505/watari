@@ -25,7 +25,7 @@ from sqlalchemy import func, select, update
 from sqlalchemy.dialects.postgresql import insert as pg_insert
 from sqlalchemy.ext.asyncio import AsyncSession
 
-from watari_core.models import CardScrapeState, PricePoint, ScrapeRun
+from watari_core.models import CardScrapeState, GradedPricePoint, PricePoint, ScrapeRun
 
 
 async def start_scrape_run(
@@ -91,6 +91,29 @@ async def insert_price_points(
     for i in range(0, len(rows), chunk_size):
         chunk = rows[i : i + chunk_size]
         stmt = pg_insert(PricePoint).values(chunk).on_conflict_do_nothing()
+        result = await session.execute(stmt)
+        await session.commit()
+        inserted += int(result.rowcount or 0)  # type: ignore[attr-defined]
+    return inserted
+
+
+async def upsert_graded_price_points(
+    session: AsyncSession,
+    rows: list[dict[str, Any]],
+    chunk_size: int = 1000,
+) -> int:
+    """Append-only insert of graded price points with ON CONFLICT DO NOTHING.
+
+    Follows the same bulk-upsert pattern as :func:`insert_price_points`.
+    Returns the number of rows actually inserted (duplicates are silently
+    suppressed by ``uq_graded_price_points_idem``).
+    """
+    if not rows:
+        return 0
+    inserted = 0
+    for i in range(0, len(rows), chunk_size):
+        chunk = rows[i : i + chunk_size]
+        stmt = pg_insert(GradedPricePoint).values(chunk).on_conflict_do_nothing()
         result = await session.execute(stmt)
         await session.commit()
         inserted += int(result.rowcount or 0)  # type: ignore[attr-defined]

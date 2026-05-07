@@ -24,6 +24,7 @@ from sqlalchemy import (
     ForeignKey,
     Index,
     Integer,
+    Numeric,
     Text,
     func,
 )
@@ -277,6 +278,57 @@ class PricePoint(Base):
             "idx_price_points_card_cond_time",
             "card_id",
             "condition",
+            observed_at.desc(),
+        ),
+    )
+
+
+class GradedPricePoint(Base):
+    """One row per graded (PSA/BGS/CGC) card listing observation.
+
+    Kept separate from ``price_points`` so the four existing materialized views
+    are not touched.  Grade company and score are stored as plain text / numeric
+    rather than enums so new grades can be added without a schema migration.
+    """
+
+    __tablename__ = "graded_price_points"
+
+    id: Mapped[int] = mapped_column(BigInteger, primary_key=True, autoincrement=True)
+    card_id: Mapped[str] = mapped_column(
+        Text, ForeignKey("cards.card_id"), nullable=False
+    )
+    source: Mapped[str] = mapped_column(Text, nullable=False)
+    source_type: Mapped[str] = mapped_column(Text, nullable=False)
+    grade_company: Mapped[str] = mapped_column(Text, nullable=False)
+    grade_score: Mapped[float] = mapped_column(Numeric(3, 1), nullable=False)
+    price_jpy: Mapped[int] = mapped_column(Integer, nullable=False)
+    stock_qty: Mapped[int | None] = mapped_column(Integer)
+    observed_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), nullable=False)
+    external_url: Mapped[str | None] = mapped_column(Text)
+    scrape_run_id: Mapped[int | None] = mapped_column(
+        BigInteger, ForeignKey("scrape_runs.id")
+    )
+    created_at: Mapped[datetime] = mapped_column(
+        DateTime(timezone=True), nullable=False, server_default=func.now()
+    )
+
+    __table_args__ = (
+        Index(
+            "uq_graded_price_points_idem",
+            "card_id",
+            "source",
+            "grade_company",
+            "grade_score",
+            "price_jpy",
+            "observed_at",
+            func.coalesce(external_url, ""),
+            unique=True,
+        ),
+        Index(
+            "idx_graded_price_points_card_grade_time",
+            "card_id",
+            "grade_company",
+            "grade_score",
             observed_at.desc(),
         ),
     )

@@ -5,7 +5,9 @@ from __future__ import annotations
 from datetime import UTC, datetime
 
 from watari_cardrush.parser import (
+    GradedListingRow,
     ListingRow,
+    graded_listing_row_to_graded_price_point,
     listing_row_to_price_point,
     parse_listing_rows,
 )
@@ -52,21 +54,26 @@ SAMPLE_HTML = """
 
 
 class TestParseListingRows:
-    def test_produces_four_rows(self):
-        # 3 valid SAR listings (A/A-/B) + 1 master-ball Pikachu.
-        # Graded, unknown-condition, and no-price-no-local rows are dropped.
-        rows = parse_listing_rows(SAMPLE_HTML)
+    def test_produces_four_ungraded_rows(self):
+        # 3 valid SAR listings (A/A-/B) + 1 master-ball Pikachu = 4 ungraded.
+        # Unknown-condition and no-price-no-local rows are dropped.
+        rows, _ = parse_listing_rows(SAMPLE_HTML)
         assert len(rows) == 4
 
+    def test_produces_one_graded_row(self):
+        # PSA10 listing captured as graded, not dropped.
+        _, graded_rows = parse_listing_rows(SAMPLE_HTML)
+        assert len(graded_rows) == 1
+
     def test_set_and_local_id(self):
-        rows = parse_listing_rows(SAMPLE_HTML)
+        rows, _ = parse_listing_rows(SAMPLE_HTML)
         for r in rows[:3]:
             assert r.set_code == "sv2a"
             assert r.local_id_padded == "183"
         assert rows[3].local_id_padded == "025"
 
     def test_conditions(self):
-        rows = parse_listing_rows(SAMPLE_HTML)
+        rows, _ = parse_listing_rows(SAMPLE_HTML)
         assert [r.condition for r in rows[:3]] == [
             Condition.A,
             Condition.A_MINUS,
@@ -74,33 +81,75 @@ class TestParseListingRows:
         ]
 
     def test_prices(self):
-        rows = parse_listing_rows(SAMPLE_HTML)
+        rows, _ = parse_listing_rows(SAMPLE_HTML)
         assert [r.price_jpy for r in rows[:3]] == [12800, 10000, 7500]
 
     def test_stock(self):
-        rows = parse_listing_rows(SAMPLE_HTML)
+        rows, _ = parse_listing_rows(SAMPLE_HTML)
         assert [r.stock_qty for r in rows[:3]] == [3, 1, 0]
 
     def test_rarity(self):
-        rows = parse_listing_rows(SAMPLE_HTML)
+        rows, _ = parse_listing_rows(SAMPLE_HTML)
         assert all(r.rarity_code == "SAR" for r in rows[:3])
         assert rows[3].rarity_code == "C"
 
     def test_variant_default_is_normal(self):
-        rows = parse_listing_rows(SAMPLE_HTML)
+        rows, _ = parse_listing_rows(SAMPLE_HTML)
         assert all(r.variant == "normal" for r in rows[:3])
 
     def test_variant_master_ball_mirror(self):
-        rows = parse_listing_rows(SAMPLE_HTML)
+        rows, _ = parse_listing_rows(SAMPLE_HTML)
         assert rows[3].variant == "master_ball_mirror"
 
     def test_external_url_absolute_or_prefixed(self):
-        rows = parse_listing_rows(SAMPLE_HTML)
+        rows, _ = parse_listing_rows(SAMPLE_HTML)
         assert rows[0].external_url == "https://www.cardrush-pokemon.jp/products/abc"
         assert rows[1].external_url == "https://www.cardrush-pokemon.jp/products/def"
 
     def test_empty_html(self):
-        assert parse_listing_rows("") == []
+        rows, graded_rows = parse_listing_rows("")
+        assert rows == []
+        assert graded_rows == []
+
+    def test_graded_row_fields(self):
+        _, graded_rows = parse_listing_rows(SAMPLE_HTML)
+        g = graded_rows[0]
+        assert g.grade_company == "PSA"
+        assert g.grade_score == 10.0
+        assert g.price_jpy == 95000
+        assert g.stock_qty == 1
+        assert g.local_id_padded == "183"
+        assert g.external_url == "https://www.cardrush-pokemon.jp/products/jkl"
+
+
+class TestGradedListingRowToPricePoint:
+    def test_basic_mapping(self):
+        row = GradedListingRow(
+            raw_name="sv2a 183 【PSA10】 SAR",
+            set_code="sv2a",
+            local_id_padded="183",
+            variant="normal",
+            name_ja=None,
+            grade_company="PSA",
+            grade_score=10.0,
+            price_jpy=95000,
+            stock_qty=1,
+            external_url="https://example.test/psa",
+        )
+        ts = datetime(2026, 5, 7, 12, 0, tzinfo=UTC)
+        out = graded_listing_row_to_graded_price_point(
+            row, card_id="jp-sv2a-183-normal", scrape_run_id=99, observed_at=ts
+        )
+        assert out["card_id"] == "jp-sv2a-183-normal"
+        assert out["source"] == SourceEnum.cardrush.value
+        assert out["source_type"] == SourceTypeEnum.listing.value
+        assert out["grade_company"] == "PSA"
+        assert out["grade_score"] == 10.0
+        assert out["price_jpy"] == 95000
+        assert out["stock_qty"] == 1
+        assert out["observed_at"] == ts
+        assert out["external_url"] == "https://example.test/psa"
+        assert out["scrape_run_id"] == 99
 
 
 class TestListingRowToPricePoint:

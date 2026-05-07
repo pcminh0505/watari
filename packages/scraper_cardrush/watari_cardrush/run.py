@@ -17,6 +17,7 @@ from watari_core.ingestion import (
     insert_price_points,
     start_scrape_run,
     upsert_card_state,
+    upsert_graded_price_points,
 )
 from watari_core.models import Card, Set, SourceEnum
 from watari_core.mvs import refresh_price_mvs_if_needed
@@ -25,7 +26,9 @@ from sqlalchemy.ext.asyncio import AsyncSession
 
 from watari_cardrush.client import CardrushClient
 from watari_cardrush.parser import (
+    GradedListingRow,
     ListingRow,
+    graded_listing_row_to_graded_price_point,
     listing_row_to_price_point,
     parse_listing_rows,
 )
@@ -121,6 +124,7 @@ class ScrapeSetResult:
     listings_in_stock: int = 0
     listings_sold_out: int = 0
     rows_written: int = 0
+    graded_rows_written: int = 0
     cards_touched: set[str] = field(default_factory=set)
     cards_all_sold_out: set[str] = field(default_factory=set)
     _cards_ever_in_stock: set[str] = field(default_factory=set, repr=False)
@@ -138,6 +142,7 @@ class ScrapeSetResult:
             "listings_in_stock": self.listings_in_stock,
             "listings_sold_out": self.listings_sold_out,
             "rows_written": self.rows_written,
+            "graded_rows_written": self.graded_rows_written,
             "cards_touched": len(self.cards_touched),
             "cards_all_sold_out": len(self.cards_all_sold_out),
             "per_rarity_pages": dict(self.per_rarity_pages),
@@ -218,7 +223,8 @@ async def _crawl_rarity(
     max_pages: int,
     dry_run: bool,
     result: ScrapeSetResult,
-) -> list[dict[str, object]]:
+) -> tuple[list[dict[str, object]], list[dict[str, object]]]:
+    """Return ``(ungraded_price_rows, graded_price_rows)`` for one rarity bucket."""
     # Use base code for search if this set has an alias (Cardrush doesn't
     # recognize sub-set codes like "S1W" — only the base "S1").
     search_code = _CARDRUSH_BASE_ALIAS.get(set_code.upper(), set_code)
@@ -228,6 +234,7 @@ async def _crawl_rarity(
     result.pages_fetched += len(pages)
 
     price_rows: list[dict[str, object]] = []
+    graded_price_rows: list[dict[str, object]] = []
 
     for page_num, _url, html in pages:
         if not dry_run:
@@ -240,7 +247,7 @@ async def _crawl_rarity(
                 key_suffix=f"{rarity_code}-p{page_num}.html",
             )
 
-        listings = parse_listing_rows(html)
+        listings, graded_listings = parse_listing_rows(html)
         result.listings_seen += len(listings)
 
         for listing in listings:
@@ -271,12 +278,31 @@ async def _crawl_rarity(
                 if card_id not in result._cards_ever_in_stock:
                     result.cards_all_sold_out.add(card_id)
 
+        for glisting in graded_listings:
+            card_id = _match_listing_to_card(
+                glisting,
+                expected_set_code=set_code,
+                card_index=card_index,
+                name_index=name_index,
+                result=result,
+            )
+            if card_id is None:
+                continue
+            graded_price_rows.append(
+                graded_listing_row_to_graded_price_point(
+                    glisting,
+                    card_id=card_id,
+                    scrape_run_id=run_id,
+                    observed_at=observed_at,
+                )
+            )
+
     result.per_rarity_rows[rarity_code] = len(price_rows)
-    return price_rows
+    return price_rows, graded_price_rows
 
 
 def _match_listing_to_card(
-    listing: ListingRow,
+    listing: ListingRow | GradedListingRow,
     *,
     expected_set_code: str,
     card_index: dict[tuple[str, str], str],
@@ -401,7 +427,7 @@ async def scrape_set(
                 for rarity in rarities:
                     logger.info("set=%s rarity=%s", set_code, rarity)
                     try:
-                        price_rows = await _crawl_rarity(
+                        price_rows, graded_rows = await _crawl_rarity(
                             set_code=set_code,
                             rarity_code=rarity,
                             client=client,
@@ -423,20 +449,42 @@ async def scrape_set(
                         await session.rollback()
                         continue
 
-                    if dry_run or not price_rows:
+                    if dry_run:
                         continue
 
-                    try:
-                        inserted = await insert_price_points(session, price_rows)
-                        result.rows_written += inserted
-                    except Exception as exc:  # noqa: BLE001
-                        await session.rollback()
-                        logger.exception(
-                            "insert_price_points failed set=%s rarity=%s: %s",
-                            set_code,
-                            rarity,
-                            exc,
-                        )
+                    if price_rows:
+                        try:
+                            inserted = await insert_price_points(session, price_rows)
+                            result.rows_written += inserted
+                        except Exception as exc:  # noqa: BLE001
+                            await session.rollback()
+                            logger.exception(
+                                "insert_price_points failed set=%s rarity=%s: %s",
+                                set_code,
+                                rarity,
+                                exc,
+                            )
+
+                    if graded_rows:
+                        try:
+                            graded_inserted = await upsert_graded_price_points(
+                                session, graded_rows
+                            )
+                            result.graded_rows_written += graded_inserted
+                            logger.info(
+                                "set=%s rarity=%s graded_rows_inserted=%d",
+                                set_code,
+                                rarity,
+                                graded_inserted,
+                            )
+                        except Exception as exc:  # noqa: BLE001
+                            await session.rollback()
+                            logger.exception(
+                                "upsert_graded_price_points failed set=%s rarity=%s: %s",
+                                set_code,
+                                rarity,
+                                exc,
+                            )
         except Exception as exc:  # noqa: BLE001
             status = "failed"
             error_summary = f"{type(exc).__name__}: {exc}"

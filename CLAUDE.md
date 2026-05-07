@@ -6,7 +6,7 @@
 > Update it whenever the architecture changes — especially after a
 > destructive migration, a new source, or a schema split.
 >
-> Last updated: 2026-05-06 (Frontend: currency toggle (JPY/USD/VND) with Frankfurter.app live rates + localStorage persistence; N+1 price fetch eliminated via embedded `ArtworkSearchResult` price data; price skeleton; SetCard currency; UI cleanup — removed sold/listed labels and Updated column).
+> Last updated: 2026-05-07 (Data layer: graded card (PSA/BGS/CGC) price tracker — `graded_price_points` table (migration 008), SNKRDUNK+Cardrush parsers now split sales history into ungraded + graded rows, two new API endpoints `/graded-prices` + `/graded-history`; smoke test captured 8798 PSA10 + 661 PSA9 rows from M2A SNKRDUNK scrape).
 
 ---
 
@@ -59,10 +59,10 @@ packages/
   dispatcher/          ← job dispatch (placeholder)
   scheduler/           ← cron/apscheduler shell (placeholder; live schedule is in CI)
   api/                 ← FastAPI read layer
-migrations/            ← Alembic (current head: 007_mv_market_price)
+migrations/            ← Alembic (current head: 008_graded_price_points)
 scripts/               ← gen_sm/sw_set_metadata.py, update_set_symbols.py, dump/bootstrap scripts
 plans/                 ← design docs, one per major change
-tests/unit/            ← 232 tests, all passing
+tests/unit/            ← 362 tests, all passing
 ```
 
 Config knobs: `.env` (DB URL, MinIO creds, SNKRDUNK cookies). `docker-compose.yml`
@@ -72,7 +72,7 @@ brings up Postgres + MinIO.
 
 ## 3. Current architecture — Catalog v3 (shipped)
 
-### 3.1 Schema (post-migration `007_mv_market_price`)
+### 3.1 Schema (post-migration `008_graded_price_points`)
 
 ```
 sets        ── 1 row per set (set_code PK). source_refs.pokellector_slug is required for bootstrap.
@@ -84,6 +84,9 @@ price_points, card_scrape_state, scrape_runs ← unchanged in shape.
 mv_latest_price, mv_median_7d, mv_cross_source_spread, mv_market_price
              ← all four have a UNIQUE index so REFRESH MATERIALIZED VIEW
              CONCURRENTLY works (005/006/007).
+graded_price_points ← separate table for PSA/BGS/CGC sold comps.
+             Unique index on (card_id, source, grade_company, grade_score,
+             price_jpy, observed_at, COALESCE(external_url,'')) (008).
              mv_market_price: one row per card_id, picks SNKRDUNK 7-day median
              if available, else Cardrush condition-A floor.
 ```
@@ -200,6 +203,8 @@ Routers (all under `packages/api/watari_api/routers/`):
 | `GET /{lang}/cards/{set_code}/{local_id}/history` (`?variant=normal&days=&source=&condition=&limit=`) | `list[PricePointOut]` | `price_points` |
 | `GET /{lang}/cards/{set_code}/{local_id}/spread` (`?variant=normal`) | `list[SpreadRow]` | `**mv_cross_source_spread**` |
 | `GET /{lang}/cards/{set_code}/{local_id}/market-price` (`?variant=normal`) | `MarketPriceOut` / 404 | `**mv_market_price**` |
+| `GET /{lang}/cards/{set_code}/{local_id}/graded-prices` (`?variant=normal`) | `list[LatestGradedPrice]` | `graded_price_points` (DISTINCT ON per grade+source) |
+| `GET /{lang}/cards/{set_code}/{local_id}/graded-history` (`?variant=&days=365&company=PSA&limit=2000`) | `list[GradedPricePointOut]` | `graded_price_points` (raw, newest first) |
 | `GET /admin/scrape-health` | `list[ScrapeHealthRow]` | `scrape_runs ⋈ card_scrape_state` |
 
 **Rules:**
@@ -354,7 +359,7 @@ This eliminates 60+ individual market-price requests per set-gallery page load.
 
 | Step                                               | Result                                                                                         |
 | -------------------------------------------------- | ---------------------------------------------------------------------------------------------- |
-| `alembic upgrade head`                             | clean (head = `007_mv_market_price`)                                                           |
+| `alembic upgrade head`                             | clean (head = `008_graded_price_points`)                                                       |
 | `make catalog-seed-sets`                           | 98 sets upserted (25 SV + 6 ME + 30 SWSH/S + 37 SM)                                           |
 | `make catalog-bootstrap SET=<code>` × 98           | all 98 sets bootstrapped; 10 787 card YMLs on disk; **0 null rarity_codes**                    |
 | `make catalog-seed-cards`                          | artworks + prints seeded across all 98 sets                                                    |
@@ -594,6 +599,10 @@ SV1 remains Cardrush-only (SNKRDUNK lists it under `sv1v`).
     that feeds `ArtworkDetail` without embedded prices, the individual
     fetch path is used automatically (with skeleton). Don't break the
     `enabled` param on `useMarketPrice`.
+28. **`graded_price_points` is fed by SNKRDUNK (primary) and Cardrush (secondary).** SNKRDUNK's sales-history feed includes graded condition strings (`"PSA10"`, `"PSA9"`, `"BGS9.5"`) directly in the same JSON as ungraded entries. The SNKRDUNK parser splits them: standard S/A/B/C go to `price_points` via `insert_price_points`; parseable grade strings go to `graded_price_points` via `upsert_graded_price_points`. `"PSA8以下"` and `"BGS10 BL"` are silently dropped (ambiguous). On Cardrush, graded listings use `【PSA10】` brackets — these are captured via `extract_cardrush_grade` + `parse_grade_company_score`.
+29. **`GradeCompany` covers PSA/BGS/CGC only. SGC is deferred.** `parse_grade_company_score("SGC10")` returns `None` by design so SGC entries are detected (not misclassified as ungraded) but not stored.
+30. **No MV for graded prices.** Both `/graded-prices` and `/graded-history` read directly from `graded_price_points`. Volume is much lower than ungraded. If volume grows and latency becomes a concern, add an MV for the "latest per grade+source" query.
+
 27. **`useMarketPrice` accepts an `enabled` boolean param (default `true`).**
     This was added specifically for the embedded-price optimization. Always
     pass `!hasEmbedded` when you know price data is already available on
@@ -717,7 +726,7 @@ history from a narrow dump.
 - Schema should always come from Alembic (`migrate`), not from dump files.
 - Catalog (`sets` / `artworks` / `cards`) is already source-controlled in
   `packages/catalog/data/**`, so we reseed it from YML.
-- Only price history (`price_points`, `card_scrape_state`, `scrape_runs`)
+- Only price history (`price_points`, `graded_price_points`, `card_scrape_state`, `scrape_runs`)
   needs a dump for fast rollout/backfill.
 - Excluded from dump: `api_keys` (environment-specific), MVs (rebuild), and
   `alembic_version` (owned by Alembic).

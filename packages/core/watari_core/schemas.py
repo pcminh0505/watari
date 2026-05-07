@@ -74,3 +74,16 @@ class PricePointOut(PricePointBase):
     created_at: datetime
 
     model_config = {"from_attributes": True}
+
+
+class GradedPricePointCreate(BaseModel):
+    card_id: str
+    source: str
+    source_type: str
+    grade_company: str
+    grade_score: float
+    price_jpy: int
+    stock_qty: int | None = None
+    observed_at: datetime
+    external_url: str | None = None
+    scrape_run_id: int | None = None

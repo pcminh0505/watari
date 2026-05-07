@@ -70,7 +70,7 @@ SAMPLE_ENTRIES = [
 
 class TestParseSalesHistory:
     def test_maps_valid_entries(self):
-        rows = parse_sales_history(
+        rows, graded = parse_sales_history(
             SAMPLE_ENTRIES,
             card_id="jp-sv2a-183",
             apparel_id=12345,
@@ -81,9 +81,10 @@ class TestParseSalesHistory:
         assert conds == [
             Condition.A, Condition.A, Condition.B, Condition.C,
         ]
+        assert graded == []
 
     def test_sets_source_and_type(self):
-        rows = parse_sales_history(
+        rows, _ = parse_sales_history(
             SAMPLE_ENTRIES[:1],
             card_id="jp-sv2a-183",
             apparel_id=1,
@@ -94,7 +95,7 @@ class TestParseSalesHistory:
         assert rows[0]["stock_qty"] is None
 
     def test_external_url_built_from_apparel_id(self):
-        rows = parse_sales_history(
+        rows, _ = parse_sales_history(
             SAMPLE_ENTRIES[:1],
             card_id="jp-sv2a-183",
             apparel_id=555,
@@ -103,28 +104,99 @@ class TestParseSalesHistory:
         assert rows[0]["external_url"] == "https://snkrdunk.com/apparels/555"
 
     def test_drops_unknown_condition(self):
-        rows = parse_sales_history(
+        rows, graded = parse_sales_history(
             [{"condition": "X", "price": 100, "date": "2026/03/21"}],
             card_id="jp-sv2a-183",
             apparel_id=1,
             scrape_run_id=None,
         )
         assert rows == []
+        assert graded == []
 
     def test_drops_nonint_price(self):
-        rows = parse_sales_history(
+        rows, graded = parse_sales_history(
             [{"condition": "A", "price": "100", "date": "2026/03/21"}],
             card_id="jp-sv2a-183",
             apparel_id=1,
             scrape_run_id=None,
         )
         assert rows == []
+        assert graded == []
 
     def test_scrape_run_id_passed_through(self):
-        rows = parse_sales_history(
+        rows, _ = parse_sales_history(
             SAMPLE_ENTRIES[:1],
             card_id="jp-sv2a-183",
             apparel_id=1,
             scrape_run_id=42,
         )
         assert rows[0]["scrape_run_id"] == 42
+
+    # --- Graded path ---------------------------------------------------------
+
+    def test_psa10_entry_goes_to_graded(self):
+        entries = [{"condition": "PSA10", "price": 9900, "date": "2026/03/21"}]
+        rows, graded = parse_sales_history(
+            entries, card_id="jp-sv9a-070-normal", apparel_id=544501, scrape_run_id=1
+        )
+        assert rows == []
+        assert len(graded) == 1
+        g = graded[0]
+        assert g["grade_company"] == "PSA"
+        assert g["grade_score"] == 10.0
+        assert g["price_jpy"] == 9900
+        assert g["source"] == SourceEnum.snkrdunk.value
+        assert g["source_type"] == SourceTypeEnum.sold.value
+        assert g["stock_qty"] is None
+        assert g["external_url"] == "https://snkrdunk.com/apparels/544501"
+
+    def test_psa9_entry_goes_to_graded(self):
+        entries = [{"condition": "PSA9", "price": 5000, "date": "2026/03/21"}]
+        _, graded = parse_sales_history(
+            entries, card_id="jp-sv9a-070-normal", apparel_id=1, scrape_run_id=None
+        )
+        assert len(graded) == 1
+        assert graded[0]["grade_score"] == 9.0
+
+    def test_bgs95_entry_goes_to_graded(self):
+        entries = [{"condition": "BGS9.5", "price": 8000, "date": "2026/03/21"}]
+        _, graded = parse_sales_history(
+            entries, card_id="jp-sv9a-070-normal", apparel_id=1, scrape_run_id=None
+        )
+        assert len(graded) == 1
+        assert graded[0]["grade_company"] == "BGS"
+        assert graded[0]["grade_score"] == 9.5
+
+    def test_psa8_ijou_dropped(self):
+        """'PSA8以下' is ambiguous — dropped, not stored in either table."""
+        entries = [{"condition": "PSA8以下", "price": 3000, "date": "2026/03/21"}]
+        rows, graded = parse_sales_history(
+            entries, card_id="jp-sv9a-070-normal", apparel_id=1, scrape_run_id=None
+        )
+        assert rows == []
+        assert graded == []
+
+    def test_bgs10_bl_dropped(self):
+        """'BGS10 BL' (Black Label) has a non-numeric suffix — dropped."""
+        entries = [{"condition": "BGS10 BL", "price": 50000, "date": "2026/03/21"}]
+        rows, graded = parse_sales_history(
+            entries, card_id="jp-sv9a-070-normal", apparel_id=1, scrape_run_id=None
+        )
+        assert rows == []
+        assert graded == []
+
+    def test_mixed_ungraded_and_graded(self):
+        """Both condition types in same entry list are split correctly."""
+        entries = [
+            {"condition": "A", "price": 1200, "date": "2026/03/21"},
+            {"condition": "PSA10", "price": 9900, "date": "2026/03/21"},
+            {"condition": "B", "price": 800, "date": "2026/03/21"},
+            {"condition": "PSA9", "price": 5000, "date": "2026/03/21"},
+            {"condition": "PSA8以下", "price": 3000, "date": "2026/03/21"},  # dropped
+        ]
+        rows, graded = parse_sales_history(
+            entries, card_id="jp-sv9a-070-normal", apparel_id=1, scrape_run_id=None
+        )
+        assert len(rows) == 2
+        assert len(graded) == 2
+        assert {g["grade_score"] for g in graded} == {10.0, 9.0}

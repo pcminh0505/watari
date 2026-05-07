@@ -17,6 +17,7 @@ docker compose exec -T postgres pg_dump \
   --no-owner \
   --no-acl \
   --table=price_points \
+  --table=graded_price_points \
   --table=card_scrape_state \
   --table=scrape_runs > "${OUTFILE}"
 
