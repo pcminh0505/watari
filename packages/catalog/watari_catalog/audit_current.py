@@ -22,7 +22,7 @@ from __future__ import annotations
 import dataclasses
 import logging
 import pathlib
-from collections import Counter, defaultdict
+from collections import Counter
 from datetime import UTC, datetime
 from typing import Any
 

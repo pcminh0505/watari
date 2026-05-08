@@ -6,13 +6,20 @@ from collections import defaultdict
 from typing import Annotated, Any
 
 from fastapi import APIRouter, Body, Depends, HTTPException, Query, Response, status
-from watari_core.catalog import pad_local_id
-from watari_core.models import Artwork, Card, Set
 from sqlalchemy import Integer, String, and_, column, func, or_, select, table
 from sqlalchemy.ext.asyncio import AsyncSession
+from watari_core.catalog import pad_local_id
+from watari_core.models import Artwork, Card, Set
 
 from watari_api.deps import get_session
-from watari_api.schemas import ArtworkDetail, ArtworkSearchResult, CardBatchItem, CardBatchRequest, SetsBatchRequest, VariantRef
+from watari_api.schemas import (
+    ArtworkDetail,
+    ArtworkSearchResult,
+    CardBatchItem,
+    CardBatchRequest,
+    SetsBatchRequest,
+    VariantRef,
+)
 
 router = APIRouter(tags=["cards"])
 

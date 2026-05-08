@@ -291,21 +291,6 @@ export const SET_SYMBOL_URLS: Record<string, string> = {
   SV9: "https://archives.bulbagarden.net/wiki/Special:FilePath/SetSymbolBattle_Partners.png",
   SV9A: "https://archives.bulbagarden.net/wiki/Special:FilePath/SetSymbolHot_Wind_Arena.png",
 };
-export const ERA_LABELS: Record<string, string> = {
-  sv: "Scarlet & Violet",
-  me: "Mega Evolution",
-  sm: "Sun & Moon",
-  sw: "Sword & Shield",
-};
-
-export const CONDITION_LABELS: Record<string, string> = {
-  S: "S",
-  A: "A",
-  B: "B",
-  D: "D",
-  new: "New",
-  used: "Used",
-};
 
 // Rarity sort order — higher = rarer. Unknown rarities default to 99 in the
 // sort helper so they always sort to the top when sorting rarest-first.

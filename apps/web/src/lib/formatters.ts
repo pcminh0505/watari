@@ -1,6 +1,4 @@
-import { CONDITION_LABELS } from "./constants";
-
-export function formatJPY(amount: number): string {
+function formatJPY(amount: number): string {
   return `¥${amount.toLocaleString("ja-JP")}`;
 }
 
@@ -26,10 +24,3 @@ export function formatDate(iso: string): string {
   });
 }
 
-export function formatCondition(condition: string): string {
-  return CONDITION_LABELS[condition] ?? condition;
-}
-
-export function normalizeCondition(condition: string): string {
-  return condition === "A-" ? "B" : condition;
-}
