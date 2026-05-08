@@ -12,7 +12,7 @@ from sqlalchemy import Integer, String, and_, column, func, or_, select, table
 from sqlalchemy.ext.asyncio import AsyncSession
 
 from watari_api.deps import get_session
-from watari_api.schemas import ArtworkDetail, ArtworkSearchResult, CardBatchItem, CardBatchRequest, VariantRef
+from watari_api.schemas import ArtworkDetail, ArtworkSearchResult, CardBatchItem, CardBatchRequest, SetsBatchRequest, VariantRef
 
 router = APIRouter(tags=["cards"])
 
@@ -279,6 +279,178 @@ async def post_cards_batch(
     results = await _resolve_batch(tokens, lang, session)
     if results:
         response.headers["Cache-Control"] = _CATALOG_CACHE
+    return results
+
+
+async def _resolve_cards_by_sets(
+    set_codes: list[str],
+    lang: str,
+    session: AsyncSession,
+    limit: int,
+    offset: int,
+) -> tuple[int, list[ArtworkSearchResult]]:
+    """Fetch artworks with prices for the given set codes (already uppercased)."""
+    if not set_codes:
+        return 0, []
+
+    # --- Count ---
+    count_stmt = (
+        select(func.count(func.distinct(Artwork.artwork_id)))
+        .join(Card, Card.artwork_id == Artwork.artwork_id)
+        .join(Set, Set.set_code == Artwork.set_code)
+        .where(
+            Set.language == lang,
+            func.upper(Artwork.set_code).in_(set_codes),
+            Card.is_tracked.is_(True),
+        )
+    )
+    total: int = (await session.execute(count_stmt)).scalar_one()
+    if total == 0:
+        return 0, []
+
+    # --- Artworks ---
+    stmt = (
+        select(
+            *_artwork_columns(),
+            Set.name_ja.label("set_name_ja"),
+            Set.name_en.label("set_name_en"),
+            Set.release_date.label("set_release_date"),
+        )
+        .join(Card, Card.artwork_id == Artwork.artwork_id)
+        .join(Set, Set.set_code == Artwork.set_code)
+        .where(
+            Set.language == lang,
+            func.upper(Artwork.set_code).in_(set_codes),
+            Card.is_tracked.is_(True),
+        )
+        .order_by(Set.release_date.desc().nulls_last(), Artwork.set_code, Artwork.local_id)
+        .distinct()
+        .limit(limit)
+        .offset(offset)
+    )
+    artwork_rows = (await session.execute(stmt)).all()
+    if not artwork_rows:
+        return total, []
+
+    artwork_ids = [row.artwork_id for row in artwork_rows]
+
+    # --- Variants ---
+    variant_stmt = (
+        select(Card.artwork_id, Card.variant, Card.card_id, Card.is_tracked)
+        .where(Card.artwork_id.in_(artwork_ids), Card.is_tracked.is_(True))
+        .order_by(Card.artwork_id, Card.variant)
+    )
+    variant_rows = (await session.execute(variant_stmt)).all()
+    variants_by_artwork: dict[str, list[VariantRef]] = defaultdict(list)
+    for row in variant_rows:
+        variants_by_artwork[row.artwork_id].append(
+            VariantRef.model_validate(
+                {"variant": row.variant, "card_id": row.card_id, "is_tracked": row.is_tracked}
+            )
+        )
+
+    default_card_id_by_artwork: dict[str, str] = {}
+    for artwork_id, variants in variants_by_artwork.items():
+        if not variants:
+            continue
+        first_variant = min(variants, key=lambda v: _variant_sort_key(v.variant))
+        default_card_id_by_artwork[artwork_id] = first_variant.card_id
+
+    # --- Cardrush condition-A floor ---
+    floor_stmt = (
+        select(Card.artwork_id, mv_latest_price.c.price_jpy)
+        .join(mv_latest_price, mv_latest_price.c.card_id == Card.card_id)
+        .where(
+            Card.artwork_id.in_(artwork_ids),
+            Card.variant == "normal",
+            Card.is_tracked.is_(True),
+            mv_latest_price.c.source.cast(String) == "cardrush",
+            mv_latest_price.c.condition.cast(String) == "A",
+            mv_latest_price.c.stock_qty > 0,
+        )
+    )
+    floor_rows = (await session.execute(floor_stmt)).all()
+    floor_by_artwork = {row.artwork_id: int(row.price_jpy) for row in floor_rows}
+
+    # --- Market prices ---
+    market_by_card_id: dict[str, tuple[int, str]] = {}
+    default_card_ids = list(default_card_id_by_artwork.values())
+    if default_card_ids:
+        market_stmt = select(
+            mv_market_price.c.card_id,
+            mv_market_price.c.market_price_jpy,
+            mv_market_price.c.source_used,
+        ).where(mv_market_price.c.card_id.in_(default_card_ids))
+        market_rows = (await session.execute(market_stmt)).all()
+        market_by_card_id = {
+            str(row.card_id): (int(row.market_price_jpy), str(row.source_used))
+            for row in market_rows
+            if row.market_price_jpy is not None and row.source_used is not None
+        }
+
+    results: list[ArtworkSearchResult] = []
+    for row in artwork_rows:
+        variants = sorted(
+            variants_by_artwork[row.artwork_id], key=lambda v: _variant_sort_key(v.variant)
+        )
+        default_card_id = default_card_id_by_artwork.get(row.artwork_id)
+        market = market_by_card_id.get(default_card_id) if default_card_id else None
+        results.append(
+            ArtworkSearchResult.model_validate(
+                {
+                    **dict(row._mapping),
+                    "variants": variants,
+                    "cardrush_a_floor_jpy": floor_by_artwork.get(row.artwork_id),
+                    "market_price_jpy": market[0] if market else None,
+                    "market_price_source_used": market[1] if market else None,
+                }
+            )
+        )
+    return total, results
+
+
+@router.get("/cards/by-sets", response_model=list[ArtworkSearchResult])
+async def get_cards_by_sets(
+    lang: str,
+    session: SessionDep,
+    response: Response,
+    codes: str = Query(..., description="Comma-separated set codes (e.g. ``SV2A,M1L``)"),
+    limit: int = Query(100, ge=1, le=500),
+    offset: int = Query(0, ge=0),
+) -> list[ArtworkSearchResult]:
+    """List all tracked cards with prices across one or more sets.
+
+    ``X-Total-Count`` carries the total distinct artwork count for pagination.
+    Use the POST variant for large set lists to avoid URL length limits.
+    """
+    set_codes = [c.strip().upper() for c in codes.split(",") if c.strip()]
+    total, results = await _resolve_cards_by_sets(set_codes, lang, session, limit, offset)
+    response.headers["X-Total-Count"] = str(total)
+    response.headers["Cache-Control"] = _CATALOG_CACHE
+    return results
+
+
+@router.post("/cards/by-sets", response_model=list[ArtworkSearchResult])
+async def post_cards_by_sets(
+    lang: str,
+    session: SessionDep,
+    response: Response,
+    body: SetsBatchRequest = Body(...),
+    limit: int = Query(100, ge=1, le=500),
+    offset: int = Query(0, ge=0),
+) -> list[ArtworkSearchResult]:
+    """List all tracked cards with prices across one or more sets (POST variant).
+
+    Request body::
+
+        {"codes": ["SV2A", "M1L", "M2A"]}
+
+    Response shape is identical to ``GET /cards/by-sets``.
+    """
+    set_codes = [c.strip().upper() for c in body.codes if c.strip()]
+    total, results = await _resolve_cards_by_sets(set_codes, lang, session, limit, offset)
+    response.headers["X-Total-Count"] = str(total)
+    response.headers["Cache-Control"] = _CATALOG_CACHE
     return results
 
 

@@ -626,6 +626,128 @@ def test_batch_mixed_set_code_and_missing_set_code(client_factory) -> None:  # t
     assert missing["market_price_jpy"] is None
 
 
+# --- Cards by sets -------------------------------------------------------
+
+
+def _fake_search_row(local_id: str = "089", set_code: str = "SV2A") -> dict[str, Any]:
+    return {
+        **_fake_artwork_row(local_id),
+        "set_code": set_code,
+        "artwork_id": f"jp-{set_code.lower()}-{local_id}",
+        "set_name_ja": "テストセット",
+        "set_name_en": "Test Set",
+        "set_release_date": None,
+    }
+
+
+def test_by_sets_returns_cards_with_prices(client_factory) -> None:  # type: ignore[no-untyped-def]
+    count = FakeResult(scalar=1)
+    artworks = FakeResult(rows=[_fake_search_row("089")])
+    variants = FakeResult(rows=[_fake_variant_row("jp-sv2a-089", "normal")])
+    floors = FakeResult(rows=[{"artwork_id": "jp-sv2a-089", "price_jpy": 1500}])
+    market = FakeResult(
+        rows=[{"card_id": "jp-sv2a-089-normal", "market_price_jpy": 1800, "source_used": "snkrdunk"}]
+    )
+    client, _ = client_factory([count, artworks, variants, floors, market])
+    resp = client.get("/jp/cards/by-sets?codes=SV2A")
+    assert resp.status_code == 200
+    data = resp.json()
+    assert len(data) == 1
+    assert data[0]["artwork_id"] == "jp-sv2a-089"
+    assert data[0]["cardrush_a_floor_jpy"] == 1500
+    assert data[0]["market_price_jpy"] == 1800
+    assert data[0]["market_price_source_used"] == "snkrdunk"
+
+
+def test_by_sets_returns_total_count_header(client_factory) -> None:  # type: ignore[no-untyped-def]
+    count = FakeResult(scalar=42)
+    artworks = FakeResult(rows=[_fake_search_row("089")])
+    variants = FakeResult(rows=[_fake_variant_row("jp-sv2a-089", "normal")])
+    floors = FakeResult(rows=[])
+    market = FakeResult(rows=[])
+    client, _ = client_factory([count, artworks, variants, floors, market])
+    resp = client.get("/jp/cards/by-sets?codes=SV2A")
+    assert resp.headers["X-Total-Count"] == "42"
+
+
+def test_by_sets_returns_cache_header(client_factory) -> None:  # type: ignore[no-untyped-def]
+    count = FakeResult(scalar=1)
+    artworks = FakeResult(rows=[_fake_search_row("089")])
+    variants = FakeResult(rows=[_fake_variant_row("jp-sv2a-089", "normal")])
+    floors = FakeResult(rows=[])
+    market = FakeResult(rows=[])
+    client, _ = client_factory([count, artworks, variants, floors, market])
+    resp = client.get("/jp/cards/by-sets?codes=SV2A")
+    assert "max-age=3600" in resp.headers["Cache-Control"]
+
+
+def test_by_sets_empty_codes_returns_empty_with_zero_total(client_factory) -> None:  # type: ignore[no-untyped-def]
+    client, _ = client_factory([])  # no DB queries issued
+    resp = client.get("/jp/cards/by-sets?codes=")
+    assert resp.status_code == 200
+    assert resp.json() == []
+    assert resp.headers["X-Total-Count"] == "0"
+
+
+def test_by_sets_unknown_set_returns_empty(client_factory) -> None:  # type: ignore[no-untyped-def]
+    # count = 0 → short-circuit, no further queries
+    client, _ = client_factory([FakeResult(scalar=0)])
+    resp = client.get("/jp/cards/by-sets?codes=NOPE")
+    assert resp.status_code == 200
+    assert resp.json() == []
+    assert resp.headers["X-Total-Count"] == "0"
+
+
+def test_by_sets_multi_set(client_factory) -> None:  # type: ignore[no-untyped-def]
+    count = FakeResult(scalar=2)
+    artworks = FakeResult(
+        rows=[
+            _fake_search_row("089", "SV2A"),
+            _fake_search_row("066", "M1L"),
+        ]
+    )
+    variants = FakeResult(
+        rows=[
+            _fake_variant_row("jp-sv2a-089", "normal"),
+            _fake_variant_row("jp-m1l-066", "normal"),
+        ]
+    )
+    floors = FakeResult(rows=[])
+    market = FakeResult(rows=[])
+    client, _ = client_factory([count, artworks, variants, floors, market])
+    resp = client.get("/jp/cards/by-sets?codes=SV2A,M1L")
+    assert resp.status_code == 200
+    data = resp.json()
+    assert len(data) == 2
+    assert {d["set_code"] for d in data} == {"SV2A", "M1L"}
+    assert resp.headers["X-Total-Count"] == "2"
+
+
+def test_post_by_sets_resolves_from_body(client_factory) -> None:  # type: ignore[no-untyped-def]
+    count = FakeResult(scalar=1)
+    artworks = FakeResult(rows=[_fake_search_row("089")])
+    variants = FakeResult(rows=[_fake_variant_row("jp-sv2a-089", "normal")])
+    floors = FakeResult(rows=[])
+    market = FakeResult(
+        rows=[{"card_id": "jp-sv2a-089-normal", "market_price_jpy": 2500, "source_used": "cardrush"}]
+    )
+    client, _ = client_factory([count, artworks, variants, floors, market])
+    resp = client.post("/jp/cards/by-sets", json={"codes": ["SV2A"]})
+    assert resp.status_code == 200
+    data = resp.json()
+    assert len(data) == 1
+    assert data[0]["artwork_id"] == "jp-sv2a-089"
+    assert data[0]["market_price_jpy"] == 2500
+
+
+def test_post_by_sets_empty_body_returns_empty(client_factory) -> None:  # type: ignore[no-untyped-def]
+    client, _ = client_factory([])
+    resp = client.post("/jp/cards/by-sets", json={"codes": []})
+    assert resp.status_code == 200
+    assert resp.json() == []
+    assert resp.headers["X-Total-Count"] == "0"
+
+
 def test_search_cards_matches_name_ja(client_factory) -> None:  # type: ignore[no-untyped-def]
     count = FakeResult(scalar=1)
     artworks = FakeResult(

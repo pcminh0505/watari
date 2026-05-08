@@ -43,6 +43,12 @@ class CardBatchRequest(BaseModel):
     codes: list[str]
 
 
+class SetsBatchRequest(BaseModel):
+    """Request body for ``POST /cards/by-sets``."""
+
+    codes: list[str]
+
+
 class CardBatchItem(BaseModel):
     """One result entry from ``GET /cards/batch``.
 
