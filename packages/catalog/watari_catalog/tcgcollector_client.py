@@ -66,7 +66,8 @@ class TcgCollectorIndexEntry:
     detail_path: str        # ``/cards/43384/oddish-shiny-treasure-ex-001-190``
     title: str              # ``"Oddish (Shiny Treasure ex 001/190)"``
     local_id: str           # zero-padded ``"001"``
-    set_total: str          # ``"190"`` (denominator)
+    set_total: str | None   # ``"190"`` (denominator); ``None`` for promo sets
+    image_url: str | None   # highest-resolution image from the grid tile
 
 
 @dataclasses.dataclass(frozen=True)
@@ -86,9 +87,26 @@ class TcgCollectorCardDetail:
 # ---------------------------------------------------------------------------
 
 
-_INDEX_LINK_RE = re.compile(r"^/cards/(\d+)/[a-z0-9-]+-(\d+)-(\d+)$")
-# "Oddish (Shiny Treasure ex 001/190)"
-_TITLE_RE = re.compile(r"^(?P<name>.+?)\s+\(.+?(?P<num>\d+)/(?P<total>\d+)\)\s*$")
+# Normal sets:  /cards/43350/bulbasaur-pokemon-tcg-classic-venusaur-001-032
+# Promo sets:   /cards/50436/chikorita-mega-evolution-promos-001-m-p
+#               (trailing segment is series code like "m-p", not a number)
+_INDEX_LINK_RE = re.compile(
+    r"^/cards/(\d+)/[a-z0-9-]+-(\d{3})-(?:(\d+)|[a-z][a-z0-9-]*)$"
+)
+
+# Highest resolution image from srcset: pick the last (widest) source.
+_SRCSET_RE = re.compile(r"(https://\S+)\s+\d+w")
+
+
+def _best_image(img_tag: Any) -> str | None:
+    """Extract the highest-resolution image URL from an <img> tag."""
+    srcset = img_tag.get("srcset", "") if img_tag else ""
+    if srcset:
+        matches = _SRCSET_RE.findall(str(srcset))
+        if matches:
+            return matches[-1]  # last entry in srcset = widest
+    src = img_tag.get("src", "") if img_tag else ""
+    return str(src) if src else None
 
 
 def parse_set_index(html: str) -> list[TcgCollectorIndexEntry]:
@@ -108,9 +126,12 @@ def parse_set_index(html: str) -> list[TcgCollectorIndexEntry]:
             continue
         card_id = m.group(1)
         local_id = m.group(2).zfill(3)
-        set_total = m.group(3)
+        set_total: str | None = m.group(3)  # None for promo sets
 
         title = unescape((link.get("title") or "").strip())
+
+        img = link.select_one("img.card-image-grid-item-image")
+        image_url = _best_image(img)
 
         # Avoid duplicates (TCGCollector renders some cards twice when both
         # 1st-edition and reprint are listed in the same set view).
@@ -125,6 +146,7 @@ def parse_set_index(html: str) -> list[TcgCollectorIndexEntry]:
                 title=title,
                 local_id=local_id,
                 set_total=set_total,
+                image_url=image_url,
             )
         )
     return entries

@@ -1,0 +1,15 @@
+# Japanese Pokémon TCG set entry. Edit with care: used by seed-sets.
+# Pokémon Card Classic — Blastoise box. Released 2023-10-31.
+# Not on Pokellector or TCGdex. Bootstrap via TCGCollector (id=11600).
+
+set_code: CLK
+era_block: cl
+language: jp
+name_ja: ポケモンカードゲームクラシック（カメックス）
+name_en: Pokémon Card Classic (Blastoise)
+release_date: 2023-10-31
+total: 34
+tcgdex_id:
+pokellector_slug:
+tcgcollector_id: 11600
+tcgcollector_slug: pokemon-tcg-classic-blastoise

@@ -132,6 +132,10 @@ async def _run_totals(session: AsyncSession) -> dict[str, int]:
 _STRICT_EXEMPT_SETS: frozenset[str] = frozenset({
     "SMP2",  # 名探偵ピカチュウ promo set — many cards lack JA names upstream
     "SM0",   # ピカチュウと新しい仲間たち promo set
+    "MP",    # M-P promo series — many cards lack JA names / rarity upstream
+    "SMPR",  # SM-P promo series — 400+ cards, large name_ja gaps upstream
+    "SP",    # S-P promo series — ~300 cards, large name_ja gaps upstream
+    "SVP",   # SV-P promo series — ongoing, many cards lack JA names upstream
 })
 
 

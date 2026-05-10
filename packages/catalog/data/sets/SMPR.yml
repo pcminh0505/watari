@@ -1,0 +1,17 @@
+# Japanese Pokémon TCG set entry. Edit with care: used by seed-sets.
+# SM-P Promotional Cards (Sun & Moon era promos, 400+ cards). Open-ended series.
+# "SMP" was taken (collides with SMP2), so SM-P becomes SMPR.
+# TCGCollector calls this "Sun & Moon Promos" (001/SM-P numbering).
+# Cardrush format: "297/SM-P" — internal set_code must be hyphen-free.
+# SNKRDUNK product-number era: "sm-p" (pkmn-tcg-sm-p-297).
+
+set_code: SMPR
+era_block: sm
+language: jp
+name_ja: SM-P プロモーションカード
+name_en: SM-P Promotional Cards
+release_date: 2016-11-18
+tcgdex_id:
+pokellector_slug:
+tcgcollector_id: 11175
+tcgcollector_slug: sun-and-moon-promos

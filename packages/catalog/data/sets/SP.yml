@@ -1,0 +1,16 @@
+# Japanese Pokémon TCG set entry. Edit with care: used by seed-sets.
+# S-P Promotional Cards (Sword & Shield era promos, ~360 cards). Open-ended series.
+# TCGCollector calls this "Sword & Shield Promos" (001/S-P numbering).
+# Cardrush format: "001/S-P" — internal set_code must be hyphen-free.
+# SNKRDUNK product-number era: "s-p" (pkmn-tcg-s-p-001).
+
+set_code: SP
+era_block: sw
+language: jp
+name_ja: S-P プロモーションカード
+name_en: S-P Promotional Cards
+release_date: 2019-11-01
+tcgdex_id:
+pokellector_slug:
+tcgcollector_id: 11373
+tcgcollector_slug: sword-and-shield-promos

@@ -213,6 +213,7 @@ TCGCOLLECTOR_EN_RARITY_MAP: dict[str, str] = {
     "Masterball Rare": "MA",
     "Prism Star": "SR",
     "Black Star Promo": "PR",
+    "Promo": "PR",
 }
 
 

@@ -37,6 +37,23 @@ logger = logging.getLogger(__name__)
 
 SOURCE = SourceEnum.cardrush.value
 
+# -- Cardrush promo keyword map -----------------------------------------------
+#
+# Promo sets use a keyword search by series suffix instead of the standard
+# rarity-bucket crawl. The keyword is the official hyphenated series notation
+# (e.g. "SM-P"), which appears after the "/" in Cardrush product names
+# ("297/SM-P イーブイ&カビゴン").
+#
+# When ``__main__.py`` dispatches a set_code that appears in this map, it calls
+# ``scrape_promo_set`` instead of ``scrape_set``.
+
+_CARDRUSH_PROMO_KEYWORD: dict[str, str] = {
+    "MP":   "M-P",
+    "SMPR": "SM-P",
+    "SP":   "S-P",
+    "SVP":  "SV-P",
+}
+
 # -- Cardrush base-code aliases -----------------------------------------------
 #
 # Cardrush product names use a shorter "base" set code for some SM/SW era sets.
@@ -507,6 +524,225 @@ async def scrape_set(
                 )
 
     # Writes are committed; refresh the read-side MVs in a fresh session.
+    await refresh_price_mvs_if_needed(
+        rows_written=result.rows_written,
+        dry_run=dry_run,
+    )
+
+    return result.summary()
+
+
+async def _crawl_promo(
+    *,
+    set_code: str,
+    promo_keyword: str,
+    client: CardrushClient,
+    card_index: dict[tuple[str, str], str],
+    run_id: int,
+    observed_at: datetime,
+    max_pages: int,
+    dry_run: bool,
+    result: ScrapeSetResult,
+) -> tuple[list[dict[str, object]], list[dict[str, object]]]:
+    """Return ``(ungraded_price_rows, graded_price_rows)`` for a promo series.
+
+    Searches Cardrush with ``promo_keyword`` (e.g. ``"SM-P"``) directly —
+    no set-code prefix or rarity suffix.  Bronze key uses ``"promo"`` prefix
+    instead of a rarity code.
+    """
+    pages = await client.paginate(promo_keyword, max_pages=max_pages)
+    result.per_rarity_pages["promo"] = len(pages)
+    result.pages_fetched += len(pages)
+
+    price_rows: list[dict[str, object]] = []
+    graded_price_rows: list[dict[str, object]] = []
+
+    for page_num, _url, html in pages:
+        if not dry_run:
+            write_bronze_set(
+                source=SOURCE,
+                set_code=set_code,
+                run_id=run_id,
+                observed_at=observed_at,
+                payload=html,
+                key_suffix=f"promo-p{page_num}.html",
+            )
+
+        listings, graded_listings = parse_listing_rows(html)
+        result.listings_seen += len(listings)
+
+        for listing in listings:
+            card_id = _match_listing_to_card(
+                listing,
+                expected_set_code=set_code,
+                card_index=card_index,
+                name_index={},
+                result=result,
+            )
+            if card_id is None:
+                continue
+            price_rows.append(
+                listing_row_to_price_point(
+                    listing,
+                    card_id=card_id,
+                    scrape_run_id=run_id,
+                    observed_at=observed_at,
+                )
+            )
+            result.cards_touched.add(card_id)
+            if listing.stock_qty > 0:
+                result.listings_in_stock += 1
+                result.cards_all_sold_out.discard(card_id)
+                result._cards_ever_in_stock.add(card_id)
+            else:
+                result.listings_sold_out += 1
+                if card_id not in result._cards_ever_in_stock:
+                    result.cards_all_sold_out.add(card_id)
+
+        for glisting in graded_listings:
+            card_id = _match_listing_to_card(
+                glisting,
+                expected_set_code=set_code,
+                card_index=card_index,
+                name_index={},
+                result=result,
+            )
+            if card_id is None:
+                continue
+            graded_price_rows.append(
+                graded_listing_row_to_graded_price_point(
+                    glisting,
+                    card_id=card_id,
+                    scrape_run_id=run_id,
+                    observed_at=observed_at,
+                )
+            )
+
+    result.per_rarity_rows["promo"] = len(price_rows)
+    return price_rows, graded_price_rows
+
+
+async def scrape_promo_set(
+    set_code: str,
+    *,
+    max_pages: int = 50,
+    dry_run: bool = False,
+    impersonate: str = "chrome124",
+) -> dict[str, object]:
+    """Scrape a promo series set (MP/SMPR/SP/SVP) from Cardrush.
+
+    Uses a single keyword search (e.g. ``"SM-P"``) instead of the
+    rarity-bucket loop used by ``scrape_set``.  Returns a summary dict.
+    """
+    set_code = set_code.upper()
+    promo_keyword = _CARDRUSH_PROMO_KEYWORD.get(set_code)
+    if promo_keyword is None:
+        logger.error(
+            "set %s is not a known promo set; call scrape_set instead", set_code
+        )
+        return ScrapeSetResult(set_code=set_code).summary()
+
+    result = ScrapeSetResult(set_code=set_code)
+
+    if not dry_run:
+        ensure_bucket()
+
+    async with async_session_factory() as session:
+        set_row = await _load_set(session, set_code)
+        if set_row is None:
+            logger.error("set %s not found in catalog; run seed-sets first", set_code)
+            return result.summary()
+
+        card_index = await _load_card_index(session, set_code)
+        if not card_index:
+            logger.warning(
+                "set %s has no tracked cards in catalog; run catalog-seed-cards first",
+                set_code,
+            )
+            return result.summary()
+
+        run_id: int | None = None
+        if not dry_run:
+            run_id = await start_scrape_run(
+                session,
+                source=SOURCE,
+                metadata={
+                    "set_code": set_code,
+                    "promo_keyword": promo_keyword,
+                    "max_pages": max_pages,
+                },
+            )
+            result.run_id = run_id
+
+        observed_at = datetime.now(UTC)
+        status = "completed"
+        error_summary: str | None = None
+
+        try:
+            async with CardrushClient(impersonate=impersonate) as client:
+                logger.info("set=%s promo_keyword=%s", set_code, promo_keyword)
+                price_rows, graded_rows = await _crawl_promo(
+                    set_code=set_code,
+                    promo_keyword=promo_keyword,
+                    client=client,
+                    card_index=card_index,
+                    run_id=run_id or 0,
+                    observed_at=observed_at,
+                    max_pages=max_pages,
+                    dry_run=dry_run,
+                    result=result,
+                )
+
+                if not dry_run:
+                    if price_rows:
+                        try:
+                            inserted = await insert_price_points(session, price_rows)
+                            result.rows_written += inserted
+                        except Exception as exc:  # noqa: BLE001
+                            await session.rollback()
+                            logger.exception(
+                                "insert_price_points failed set=%s: %s", set_code, exc
+                            )
+
+                    if graded_rows:
+                        try:
+                            graded_inserted = await upsert_graded_price_points(
+                                session, graded_rows
+                            )
+                            result.graded_rows_written += graded_inserted
+                            logger.info(
+                                "set=%s graded_rows_inserted=%d",
+                                set_code,
+                                graded_inserted,
+                            )
+                        except Exception as exc:  # noqa: BLE001
+                            await session.rollback()
+                            logger.exception(
+                                "upsert_graded_price_points failed set=%s: %s",
+                                set_code,
+                                exc,
+                            )
+        except Exception as exc:  # noqa: BLE001
+            status = "failed"
+            error_summary = f"{type(exc).__name__}: {exc}"
+            raise
+        finally:
+            if run_id is not None:
+                try:
+                    for card_id in result.cards_touched:
+                        await upsert_card_state(session, card_id, SOURCE, success=True)
+                except Exception:  # noqa: BLE001
+                    await session.rollback()
+                await finish_scrape_run(
+                    session,
+                    run_id=run_id,
+                    status=status,
+                    cards_attempted=len(card_index),
+                    cards_succeeded=len(result.cards_touched),
+                    rows_written=result.rows_written,
+                    error_summary=error_summary,
+                )
+
     await refresh_price_mvs_if_needed(
         rows_written=result.rows_written,
         dry_run=dry_run,

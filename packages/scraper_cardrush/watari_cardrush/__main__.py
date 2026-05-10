@@ -23,8 +23,10 @@ import logging
 import sys
 
 from watari_cardrush.run import (
+    _CARDRUSH_PROMO_KEYWORD,
     list_all_sets,
     list_sets_for_era,
+    scrape_promo_set,
     scrape_sets,
 )
 
@@ -109,13 +111,36 @@ async def _dispatch(args: argparse.Namespace) -> int:
         return 2
 
     max_pages = args.limit_pages or args.max_pages
-    summaries = await scrape_sets(
-        set_codes,
-        rarities_filter=args.rarities,
-        max_pages=max_pages,
-        dry_run=args.dry_run,
-        impersonate=args.impersonate,
-    )
+
+    # Route promo sets (MP/SMPR/SP/SVP) to scrape_promo_set; normal sets to
+    # scrape_sets.  Both functions are safe to call with no items.
+    promo_codes = [c for c in set_codes if c.upper() in _CARDRUSH_PROMO_KEYWORD]
+    normal_codes = [c for c in set_codes if c.upper() not in _CARDRUSH_PROMO_KEYWORD]
+
+    summaries: list[dict] = []
+
+    if normal_codes:
+        normal_summaries = await scrape_sets(
+            normal_codes,
+            rarities_filter=args.rarities,
+            max_pages=max_pages,
+            dry_run=args.dry_run,
+            impersonate=args.impersonate,
+        )
+        summaries.extend(normal_summaries)
+
+    for code in promo_codes:
+        try:
+            summary = await scrape_promo_set(
+                code,
+                max_pages=max_pages,
+                dry_run=args.dry_run,
+                impersonate=args.impersonate,
+            )
+        except Exception as exc:  # noqa: BLE001
+            summary = {"set_code": code.upper(), "error": f"{type(exc).__name__}: {exc}"}
+        summaries.append(summary)
+
     print(json.dumps(summaries, indent=2, ensure_ascii=False, default=str))
     return 0
 

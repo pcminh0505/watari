@@ -32,6 +32,18 @@ from watari_snkrdunk.parser import parse_sales_history
 
 SOURCE = SourceEnum.snkrdunk.value
 
+# SNKRDUNK product-number era slugs for sets whose internal set_code does not
+# match SNKRDUNK's namespace.  Populated after probing known promo product
+# numbers (pkmn-tcg-{era}-{local_id}).
+#
+# Internal set_code → SNKRDUNK era slug
+_SNKRDUNK_ERA_SLUG_OVERRIDE: dict[str, str] = {
+    "MP":   "m-p",   # pkmn-tcg-m-p-020
+    "SMPR": "sm-p",  # pkmn-tcg-sm-p-297
+    "SP":   "s-p",   # pkmn-tcg-s-p-001
+    "SVP":  "sv-p",  # pkmn-tcg-sv-p-001
+}
+
 
 async def scrape_era(
     era: str,
@@ -64,6 +76,10 @@ async def scrape_era(
         )
         print(f"[snkrdunk] run_id={run_id} era={era} cards={len(cards)}")
 
+        # Use the override slug for SNKRDUNK product-number construction if the
+        # internal set_code does not match SNKRDUNK's namespace (e.g. SMPR → sm-p).
+        era_slug = _SNKRDUNK_ERA_SLUG_OVERRIDE.get(era.upper(), era.lower())
+
         attempted = succeeded = rows_written = not_found = 0
         status = "completed"
         error_summary: str | None = None
@@ -75,7 +91,7 @@ async def scrape_era(
                     card_id = card["card_id"]
                     local_id = card["local_id"]
                     try:
-                        apparel = await client.resolve_apparel(era, local_id)
+                        apparel = await client.resolve_apparel(era_slug, local_id)
                         if apparel is None:
                             not_found += 1
                             await upsert_card_state(

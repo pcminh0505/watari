@@ -1,0 +1,15 @@
+# Japanese Pokémon TCG set entry. Edit with care: used by seed-sets.
+# Pokémon Card Classic — Charizard box. Released 2023-10-31.
+# Not on Pokellector or TCGdex. Bootstrap via TCGCollector (id=11599).
+
+set_code: CLL
+era_block: cl
+language: jp
+name_ja: ポケモンカードゲームクラシック（リザードン）
+name_en: Pokémon Card Classic (Charizard)
+release_date: 2023-10-31
+total: 34
+tcgdex_id:
+pokellector_slug:
+tcgcollector_id: 11599
+tcgcollector_slug: pokemon-tcg-classic-charizard

@@ -1,0 +1,16 @@
+# Japanese Pokémon TCG set entry. Edit with care: used by seed-sets.
+# SV-P Promotional Cards (Scarlet & Violet era promos, 300+ cards, ongoing).
+# TCGCollector calls this "Scarlet & Violet Promos" (001/SV-P numbering).
+# Cardrush format: "001/SV-P" — internal set_code must be hyphen-free.
+# SNKRDUNK product-number era: "sv-p" (pkmn-tcg-sv-p-001).
+
+set_code: SVP
+era_block: sv
+language: jp
+name_ja: SV-P プロモーションカード
+name_en: SV-P Promotional Cards
+release_date: 2022-11-18
+tcgdex_id:
+pokellector_slug:
+tcgcollector_id: 11502
+tcgcollector_slug: scarlet-and-violet-promos

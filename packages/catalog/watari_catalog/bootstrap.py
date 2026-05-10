@@ -49,7 +49,12 @@ from watari_catalog.pokellector_client import (
 from watari_catalog.rarities import (
     canonicalize_cardrush,
     canonicalize_pokellector,
+    canonicalize_tcgcollector,
     canonicalize_tcgdex,
+)
+from watari_catalog.tcgcollector_client import (
+    TcgCollectorClient,
+    fetch_full_set as fetch_full_set_tcgcollector,
 )
 from watari_catalog.tcgdex_client import TcgdexClient
 from watari_catalog.variants import DEFAULT_VARIANT
@@ -135,11 +140,13 @@ def _likely_legacy_double_rare(name_en: str | None) -> bool:
 
 @dataclass
 class BootstrapSetCtx:
-    set_code: str                 # "SV2A"
-    era_block: str | None          # sm | sv | sw | me
-    name_ja: str | None           # "ポケモンカード151"
-    tcgdex_id: str | None         # "sv2a" or None for ME sets
-    pokellector_slug: str | None  # "Pokemon-151-Expansion"
+    set_code: str                  # "SV2A"
+    era_block: str | None          # sm | sv | sw | me | cl
+    name_ja: str | None            # "ポケモンカード151"
+    tcgdex_id: str | None          # "sv2a" or None for ME sets
+    pokellector_slug: str | None   # "Pokemon-151-Expansion"
+    tcgcollector_id: str | None    # "11598" (numeric, stored as str)
+    tcgcollector_slug: str | None  # "pokemon-tcg-classic-venusaur"
 
 
 async def _load_set_ctx(session: AsyncSession, set_code: str) -> BootstrapSetCtx:
@@ -154,13 +161,19 @@ async def _load_set_ctx(session: AsyncSession, set_code: str) -> BootstrapSetCtx
             f"Set {set_code} not found — run `seed-sets` first."
         )
     set_code_db, era_block, name_ja, tcgdex_id, source_refs = row
-    pokellector_slug = (source_refs or {}).get("pokellector_slug")
+    refs = source_refs or {}
+    pokellector_slug = refs.get("pokellector_slug")
+    tcgc = refs.get("tcgcollector") or {}
+    tcgcollector_id = str(tcgc["id"]) if tcgc.get("id") else None
+    tcgcollector_slug = tcgc.get("slug") or None
     return BootstrapSetCtx(
         set_code=set_code_db,
         era_block=era_block,
         name_ja=name_ja,
         tcgdex_id=tcgdex_id,
         pokellector_slug=pokellector_slug,
+        tcgcollector_id=tcgcollector_id,
+        tcgcollector_slug=tcgcollector_slug,
     )
 
 
@@ -703,12 +716,181 @@ async def bootstrap_set(
     )
 
 
+async def bootstrap_set_from_tcgcollector(
+    set_code: str,
+    *,
+    run_id: int | None = None,
+    with_tcgdex: bool = True,
+    with_cardrush: bool = True,
+    cardrush_rarities: list[str] | None = None,
+    cardrush_max_pages: int = 15,
+    detail_concurrency: int = 2,
+    bronze: bool = True,
+) -> BootstrapSetResult:
+    """Fetch + merge + emit YMLs using TCGCollector as the primary card source.
+
+    Used for sets not available on Pokellector (Classic sets CLF/CLL/CLK and
+    promo series MP/SMPR/SP/SVP). Requires ``tcgcollector_id`` and
+    ``tcgcollector_slug`` to be present in the set YML.
+
+    Field precedence:
+    - name_en / rarity / illustrator: TCGCollector
+    - name_ja:                         TCGdex → Cardrush
+    - category:                        TCGdex → keyword heuristic
+    - variants:                        Cardrush (normal only by default)
+    - image:                           None (not available from TCGCollector)
+    """
+    observed_at = datetime.now(UTC)
+
+    async with async_session_factory() as session:
+        ctx = await _load_set_ctx(session, set_code)
+        if run_id is None:
+            run_id = await start_scrape_run(
+                session,
+                "catalog.bootstrap",
+                metadata={"set_code": ctx.set_code},
+            )
+
+    if not ctx.tcgcollector_id or not ctx.tcgcollector_slug:
+        raise RuntimeError(
+            f"Set {ctx.set_code} has no tcgcollector_id/tcgcollector_slug in sets YML"
+        )
+
+    # --- 1. TCGCollector (primary: card list + name_en + rarity + illustrator) --
+    async with TcgCollectorClient() as tc:
+        index_entries, details = await fetch_full_set_tcgcollector(
+            tc,
+            set_id=ctx.tcgcollector_id,
+            slug=ctx.tcgcollector_slug,
+            set_code=ctx.set_code,
+            run_id=run_id,
+            observed_at=observed_at,
+            detail_concurrency=detail_concurrency,
+            bronze=bronze,
+        )
+
+    logger.info(
+        "tcgcollector %s: %d indexed, %d details",
+        ctx.set_code,
+        len(index_entries),
+        len(details),
+    )
+
+    # --- 2. TCGdex (optional, for name_ja) ------------------------------------
+    tcgdex_by_id: dict[str, TcgdexCardMeta] = {}
+    if with_tcgdex and ctx.tcgdex_id:
+        try:
+            tcgdex_by_id = await _fetch_tcgdex_set(ctx.tcgdex_id)
+            logger.info("tcgdex %s: %d entries", ctx.tcgdex_id, len(tcgdex_by_id))
+        except Exception as exc:  # pragma: no cover
+            logger.warning("tcgdex fetch failed for %s: %s", ctx.tcgdex_id, exc)
+
+    # --- 3. Cardrush (optional, variant + name_ja hints) ----------------------
+    cardrush_hints: dict[str, CardrushCardHints] = {}
+    if with_cardrush:
+        rarities = cardrush_rarities or _DEFAULT_DISCOVERY_RARITIES
+        cardrush_hints = await _fetch_cardrush_variants(
+            ctx.set_code, rarities=rarities, max_pages=cardrush_max_pages
+        )
+        logger.info(
+            "cardrush %s: variant hints for %d cards", ctx.set_code, len(cardrush_hints)
+        )
+
+    # --- 4. Merge + emit -------------------------------------------------------
+    emit_result = EmitResult()
+    for entry in index_entries:
+        padded = entry.local_id  # already zero-padded by parse_set_index
+        detail = details.get(padded)
+
+        # TCGdex keyed by non-padded local_id (e.g. "1", not "001")
+        tcgdex = tcgdex_by_id.get(str(int(padded))) or tcgdex_by_id.get(padded)
+        cardrush = cardrush_hints.get(padded)
+
+        name_en = detail.name_en if detail else None
+        rarity_raw = detail.rarity_raw if detail else None
+        rarity_code = canonicalize_tcgcollector(rarity_raw) or (
+            cardrush.rarity_code if cardrush else None
+        )
+        illustrator = (detail.illustrator if detail else None) or (
+            tcgdex.illustrator if tcgdex else None
+        )
+
+        name_ja = (tcgdex.name_ja if tcgdex else None) or _strip_variant_suffix_ja(
+            cardrush.name_ja if cardrush else None
+        )
+
+        category = _infer_category(tcgdex=tcgdex, name_ja=name_ja, name_en=name_en)
+
+        variants: set[str] = {DEFAULT_VARIANT}
+        if cardrush and cardrush.variants:
+            variants |= cardrush.variants
+        prints = [DEFAULT_VARIANT] + sorted(v for v in variants if v != DEFAULT_VARIANT)
+
+        sources: dict[str, Any] = {
+            "tcgcollector": {
+                "id": entry.card_id,
+                "rarity_raw": rarity_raw,
+            }
+        }
+        if tcgdex:
+            sources["tcgdex"] = {
+                "id": str(int(padded)),
+                "rarity_raw": tcgdex.rarity_raw,
+            }
+        if cardrush and (
+            cardrush.name_ja
+            or cardrush.variants - {DEFAULT_VARIANT}
+            or cardrush.rarity_code is not None
+        ):
+            sources["cardrush"] = {
+                "name_ja": cardrush.name_ja,
+                "variants_seen": sorted(cardrush.variants),
+                "rarity_code": cardrush.rarity_code,
+            }
+
+        payload = CardYamlPayload(
+            set_code=ctx.set_code,
+            local_id=padded,
+            name_ja=name_ja,
+            name_en=name_en,
+            rarity_code=rarity_code,
+            category=category,
+            image=entry.image_url,  # extracted from TCGCollector grid tile
+            illustrator=illustrator,
+            prints=prints,
+            sources=sources,
+        )
+        write_card_yaml(payload, emit_result)
+
+    async with async_session_factory() as session:
+        await finish_scrape_run(
+            session,
+            run_id=run_id,
+            status="completed",
+            cards_attempted=len(index_entries),
+            cards_succeeded=len(index_entries),
+            rows_written=emit_result.written,
+        )
+
+    return BootstrapSetResult(
+        set_code=ctx.set_code,
+        cards_total=len(index_entries),
+        yml_written=emit_result.written,
+        yml_unchanged=emit_result.unchanged,
+        yml_skipped_manual=emit_result.skipped_manual,
+    )
+
+
 async def run(
     sets: list[str],
     *,
     no_fetch: bool = False,
 ) -> list[dict[str, Any]]:
-    """CLI entrypoint: bootstrap every requested set."""
+    """CLI entrypoint: bootstrap every requested set.
+
+    Auto-routes to ``bootstrap_set_from_tcgcollector`` when the set has
+    ``tcgcollector_id`` + ``tcgcollector_slug`` but no ``pokellector_slug``.
+    """
     if no_fetch:
         raise NotImplementedError(
             "--no-fetch (rebuild from bronze) is not implemented yet; "
@@ -718,7 +900,21 @@ async def run(
     summaries: list[dict[str, Any]] = []
     for set_code in sets:
         logger.info("=== bootstrap set %s ===", set_code)
-        result = await bootstrap_set(set_code)
+
+        async with async_session_factory() as session:
+            ctx = await _load_set_ctx(session, set_code)
+
+        if ctx.pokellector_slug:
+            result = await bootstrap_set(set_code)
+        elif ctx.tcgcollector_id and ctx.tcgcollector_slug:
+            result = await bootstrap_set_from_tcgcollector(set_code)
+        else:
+            raise RuntimeError(
+                f"Set {set_code} has neither pokellector_slug nor "
+                f"tcgcollector_id+tcgcollector_slug — cannot bootstrap. "
+                f"Fill in data/sets/{set_code}.yml first."
+            )
+
         summaries.append(result.summary())
         logger.info(
             "%s: total=%d written=%d unchanged=%d skipped_manual=%d",

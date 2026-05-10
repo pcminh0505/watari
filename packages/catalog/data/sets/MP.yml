@@ -1,0 +1,16 @@
+# Japanese Pokémon TCG set entry. Edit with care: used by seed-sets.
+# M-P Promotional Cards (Mega Evolution era promos). Open-ended series.
+# TCGCollector calls this "Mega Evolution Promos" (001/M-P numbering).
+# Cardrush format: "020/M-P" — internal set_code must be hyphen-free (parse_artwork_id invariant).
+# SNKRDUNK product-number era: "m-p" (pkmn-tcg-m-p-020).
+
+set_code: MP
+era_block: me
+language: jp
+name_ja: M-P プロモーションカード
+name_en: M-P Promotional Cards
+release_date: 2014-01-01
+tcgdex_id:
+pokellector_slug:
+tcgcollector_id: 11665
+tcgcollector_slug: mega-evolution-promos

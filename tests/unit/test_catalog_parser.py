@@ -63,3 +63,56 @@ class TestParseCardrushProductName:
         assert "￥" not in r.name_ja
         assert "SAR" not in r.name_ja
         assert "リザードン" in r.name_ja
+
+    # -- normal "163/165" must NOT be mistaken for a promo code ---------------
+
+    def test_normal_fraction_not_promo(self):
+        r = parse_cardrush_product_name("sv2a 163/165 ミュウツー ex SAR")
+        assert r.set_code == "sv2a"
+        assert r.local_id == "163"
+        assert r.total == 165
+
+
+class TestPromoProductName:
+    """parse_cardrush_product_name handles promo-format names correctly."""
+
+    def test_sm_p_product(self):
+        r = parse_cardrush_product_name("297/SM-P イーブイ&カビゴン")
+        assert r.set_code == "smpr"
+        assert r.local_id == "297"
+        assert r.total is None  # promo series have no fixed total
+
+    def test_mp_product(self):
+        r = parse_cardrush_product_name("020/M-P ピカチュウ")
+        assert r.set_code == "mp"
+        assert r.local_id == "020"
+
+    def test_svp_product(self):
+        r = parse_cardrush_product_name("001/SV-P カイリュー")
+        assert r.set_code == "svp"
+        assert r.local_id == "001"
+
+    def test_sp_product(self):
+        r = parse_cardrush_product_name("001/S-P リザードン")
+        assert r.set_code == "sp"
+        assert r.local_id == "001"
+
+    def test_promo_name_ja_stripped(self):
+        """The promo code (e.g. '020/M-P') is stripped from the name_ja result."""
+        r = parse_cardrush_product_name("020/M-P ピカチュウ")
+        assert r.name_ja is not None
+        assert "020" not in r.name_ja
+        assert "M-P" not in r.name_ja
+        assert "ピカチュウ" in r.name_ja
+
+    def test_promo_with_condition_bracket(self):
+        r = parse_cardrush_product_name("297/SM-P イーブイ&カビゴン 〔状態A〕")
+        assert r.set_code == "smpr"
+        assert r.local_id == "297"
+
+    def test_normal_format_still_works_after_promo_check(self):
+        """Standard sv2a format is unaffected by the promo branch."""
+        r = parse_cardrush_product_name("sv2a 163/165 ミュウツー ex SAR")
+        assert r.set_code == "sv2a"
+        assert r.local_id == "163"
+        assert r.total == 165

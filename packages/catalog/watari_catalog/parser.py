@@ -26,6 +26,20 @@ from watari_catalog.variants import (
 
 # -- Regex building blocks ------------------------------------------------
 
+# Promo format: "020/M-P", "297/SM-P", "001/S-P", "001/SV-P"
+# Must be checked BEFORE _SET_LOCAL_RE since those strings have no standard
+# set-code token and would otherwise fall through to the bracket fallback.
+_PROMO_LOCAL_RE = re.compile(
+    r"(?P<local>\d{1,4})/(?P<series>SV-P|SM-P|S-P|M-P)"
+)
+
+_PROMO_SERIES_TO_SET_CODE: dict[str, str] = {
+    "M-P":  "mp",
+    "SM-P": "smpr",
+    "S-P":  "sp",
+    "SV-P": "svp",
+}
+
 _SET_LOCAL_RE = re.compile(
     r"""
     (?P<set>[A-Za-z]{1,5}\d[A-Za-z]?)   # set code (sv2a, s12a, m2a, pmcl, ...)
@@ -52,9 +66,10 @@ _NAME_NOISE_RE = re.compile(
     r"""
     ポケモンカード
   | ポケカ
-  | [〔【][^〕】]*[〕】]          # any bracketed tag (condition, rarity, ...)
-  | [{(]\d{1,4}/\d{1,4}[})]       # bracketed codes
-  | \d{1,4}/\d{1,4}               # bare local/total
+  | [〔【][^〕】]*[〕】]              # any bracketed tag (condition, rarity, ...)
+  | [{(]\d{1,4}/\d{1,4}[})]           # bracketed codes
+  | \d{1,4}/(?:SV-P|SM-P|S-P|M-P)   # promo codes like "020/M-P"
+  | \d{1,4}/\d{1,4}                   # bare local/total
   | ￥[\d,]+|¥[\d,]+|[\d,]+円
   | \b(?:PSA|BGS|CGC|SGC)\d+\b
     """,
@@ -79,11 +94,15 @@ def parse_cardrush_product_name(name: str) -> ParsedCardrushName:
     if not name:
         return ParsedCardrushName(None, None, None, None, DEFAULT_VARIANT, None)
 
-    # 1) set + local (preferred: `sv2a 163/165`)
+    # 1) set + local — promo format first ("020/M-P"), then standard ("sv2a 163/165")
     set_code: str | None = None
     local_id: str | None = None
     total: int | None = None
-    if m := _SET_LOCAL_RE.search(name):
+    if m := _PROMO_LOCAL_RE.search(name):
+        set_code = _PROMO_SERIES_TO_SET_CODE[m.group("series")]
+        local_id = m.group("local")
+        # total is not applicable for promo series (no fixed card count)
+    elif m := _SET_LOCAL_RE.search(name):
         set_code = m.group("set").lower()
         local_id = m.group("local")
         if t := m.group("total"):

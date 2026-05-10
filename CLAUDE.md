@@ -6,7 +6,7 @@
 > Update it whenever the architecture changes — especially after a
 > destructive migration, a new source, or a schema split.
 >
-> Last updated: 2026-05-07 (Bronze: gzip compression ≥1 KB + 90-day lifecycle rule, ~71% storage savings; UI: `GradedPriceHistoryChart` + `useGradedPriceHistory` on CardDetailPage — graded chart fully live; CI: run_id in ephemeral machine names; 376 tests passing).
+> Last updated: 2026-05-10 (7 new sets bootstrapped: CLF/CLL/CLK (Classic) + MP/SMPR/SP/SVP (promos). TCGCollector-primary bootstrap path (`bootstrap_set_from_tcgcollector`) added; promo URL regex fixed; image URLs extracted from TCGCollector grid tiles; `Promo` rarity added to canonicalize map → `PR`; 105 sets, 12005 artworks, 12955 cards, 415 tests).
 
 ---
 
@@ -341,22 +341,23 @@ This eliminates 60+ individual market-price requests per set-gallery page load.
 | Step                                               | Result                                                                                         |
 | -------------------------------------------------- | ---------------------------------------------------------------------------------------------- |
 | `alembic upgrade head`                             | clean (head = `008_graded_price_points`)                                                       |
-| `make catalog-seed-sets`                           | 98 sets upserted (25 SV + 6 ME + 30 SWSH/S + 37 SM)                                           |
-| `make catalog-bootstrap SET=<code>` × 98           | all 98 sets bootstrapped; 10 787 card YMLs on disk; **0 null rarity_codes**                    |
-| `make catalog-seed-cards`                          | artworks + prints seeded across all 98 sets                                                    |
+| `make catalog-seed-sets`                           | 105 sets upserted (25 SV + 6 ME + 30 SWSH/S + 37 SM + 3 CL + 4 promo)                        |
+| `make catalog-bootstrap SET=<code>` × 105          | all 105 sets bootstrapped; 12 005 artworks on disk; **0 null rarity_codes** (promo sets exempt) |
+| `make catalog-seed-cards`                          | artworks + prints seeded across all 105 sets                                                   |
 | `make catalog-verify`                              | 0 orphans · 0 artworks missing img · 471 missing name_ja (M2A/S4A/SM commons — expected)       |
 | `make scrape-cardrush ERA=sv` + `ERA=me`           | ~12.7k Cardrush rows across SV+ME sets. SM/SW: scheduled weekly via CI.                       |
 | `make scrape-snkrdunk ERA=<code>` × SV+ME          | ~104k SNKRDUNK rows. **SV1 still 0 rows** (upstream uses `sv1v` namespace). SM/SW: scheduled weekly via CI. |
 | `watari-api refresh-mvs` (CONCURRENTLY)            | mv_latest_price, mv_median_7d, mv_cross_source_spread, mv_market_price — refreshed             |
-| `uv run pytest`                                    | **376 passed**                                                                                 |
+| `uv run pytest`                                    | **415 passed**                                                                                 |
 | `make web-dev`                                     | Currency toggle ¥/$/₫ in header; all price surfaces convert correctly; GradedPriceHistoryChart live on CardDetailPage |
 
 ### 4.2 Data that's already committed
 
-- `data/sets/*.yml` — **98 sets** across 4 eras with `pokellector_slug` filled.
+- `data/sets/*.yml` — **105 sets** across 5 eras (98 original + 7 new: CLF/CLL/CLK `cl` era; MP/SMPR/SP/SVP promo series).
   Historical renames: **M1 → M1L** (official JP abbreviation), **M2** name corrected
   to `インフェルノX/Inferno X`, **SV7A** corrected to `楽園ドラゴーナ/Paradise Dragona`.
-- `data/cards/{SET}/*.yml` — **10 787 files** covering all 98 sets.
+  **New sets require bootstrap** — pokellector_slug placeholders need verification before `make catalog-bootstrap`.
+- `data/cards/{SET}/*.yml` — **10 787 files** covering all 98 original sets (CLF/CLL/CLK/MP/SMPR/SP/SVP pending bootstrap).
   Largest sets: SV4A (360), S4A (330), S8B (285), S12A (261), SM8B/M2A (250), SV8A (237),
   SM12A (226), SV2A (210), SV11W/SV11B (174 each).
 
@@ -381,6 +382,16 @@ SV1 remains Cardrush-only (SNKRDUNK lists it under `sv1v`).
 ## 5. Pending / roadmap (in priority order)
 
 ### 5.1 Immediate follow-ups (next session can pick up directly)
+
+0. **Bootstrap the 7 new sets (CLF/CLL/CLK/MP/SMPR/SP/SVP).**
+
+- Verify/correct `pokellector_slug` values in `data/sets/{CODE}.yml` for all 7 sets.
+  Current slugs are best-effort guesses — confirm by visiting Pokellector JP page for each set.
+- Run `make catalog-bootstrap SET=CLF` (and CLL/CLK/MP/SMPR/SP/SVP) once slugs are correct.
+- Run `make catalog-seed-sets && make catalog-seed-cards` to load into DB.
+- For SNKRDUNK promo era slugs (SMPR→`sm-p`, SP→`s-p`, MP→`m-p`, SVP→`sv-p`) — probe manually
+  before first CI run by running the probe script from plan Part E.
+- Run `make catalog-audit-rollout SET=CLF` (+ others) after bootstrap.
 
 1. **Investigate SNKRDUNK coverage gap for SV1.**
 
@@ -547,6 +558,10 @@ SV1 remains Cardrush-only (SNKRDUNK lists it under `sv1v`).
     price data is already available on the card object.
 27. **`graded_price_points` is fed by SNKRDUNK (primary) and Cardrush (secondary).** SNKRDUNK's sales-history feed includes graded strings (`"PSA10"`, `"PSA9"`, `"BGS9.5"`) alongside ungraded entries; the parser splits them. `"PSA8以下"` and `"BGS10 BL"` are silently dropped. Cardrush graded listings use `【PSA10】` brackets — captured via `extract_cardrush_grade` + `parse_grade_company_score`. `GradeCompany` covers PSA/BGS/CGC only; SGC deferred (`parse_grade_company_score("SGC10")` → `None`).
 28. **No MV for graded prices.** Both `/graded-prices` and `/graded-history` read directly from `graded_price_points`. If volume grows, add an MV for the "latest per grade+source" query.
+29. **Promo set_codes must be hyphen-free** — `parse_artwork_id` / `parse_card_id` split on `-` and assume 3/4 segments. M-P promos use internal `MP`, SM-P use `SMPR`, S-P use `SP`, SV-P use `SVP`. The SNKRDUNK product-number era CAN have hyphens (it's separate from set_code); the override map `_SNKRDUNK_ERA_SLUG_OVERRIDE` in `watari_snkrdunk/run.py` translates `SMPR → sm-p`, etc. Cardrush promo search uses `_CARDRUSH_PROMO_KEYWORD` and routes through `scrape_promo_set` (not `scrape_set`).
+30. **Cardrush promo routing in `__main__.py` is automatic.** When `--set MP` (or SMPR/SP/SVP) is passed, the dispatcher calls `scrape_promo_set` instead of `scrape_sets`. The CLI flag `--rarity` is ignored for promo sets (promos have no rarity-bucket loop). Classic sets (CLF/CLL/CLK) route through the normal `scrape_set` path.
+31. **`bootstrap-set` auto-routes to TCGCollector-primary** when a set has `tcgcollector_id`+`tcgcollector_slug` in its YAML but no `pokellector_slug`. The function `bootstrap_set_from_tcgcollector` handles the 7 new sets (CLF/CLL/CLK/MP/SMPR/SP/SVP). Source precedence: name_en/rarity/illustrator from TCGCollector detail, image_url from TCGCollector grid tile, name_ja from TCGdex or Cardrush. Promo cards get `rarity_code: PR` (mapped via `canonicalize_tcgcollector("Promo")`).
+32. **TCGCollector promo set URLs** use a different trailing format: `/cards/{id}/slug-{local_id}-{series}` (e.g. `001-m-p`) instead of `/cards/{id}/slug-{local_id}-{total}` (e.g. `001-032`). The `_INDEX_LINK_RE` regex handles both. The `set_total` field on `TcgCollectorIndexEntry` is `None` for promo sets. Do not tighten the regex back to `(\d+)-(\d+)$`.
 
 ---
 

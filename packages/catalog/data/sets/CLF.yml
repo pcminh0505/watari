@@ -1,0 +1,15 @@
+# Japanese Pokémon TCG set entry. Edit with care: used by seed-sets.
+# Pokémon Card Classic — Venusaur box. Released 2023-10-31.
+# Not on Pokellector or TCGdex. Bootstrap via TCGCollector (id=11598).
+
+set_code: CLF
+era_block: cl
+language: jp
+name_ja: ポケモンカードゲームクラシック（フシギバナ）
+name_en: Pokémon Card Classic (Venusaur)
+release_date: 2023-10-31
+total: 34
+tcgdex_id:
+pokellector_slug:
+tcgcollector_id: 11598
+tcgcollector_slug: pokemon-tcg-classic-venusaur
