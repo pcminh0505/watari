@@ -3,14 +3,14 @@
 set_code: smpr
 local_id: '334'
 name_ja:
-name_en:
-rarity_code:
+name_en: Judge
+rarity_code: PR
 category: card
 image: https://static.tcgcollector.com/content/images/a5/3d/42/a53d42fea931a2a2c822367351d0e2113887cf075345f9293adba01e84722e49.jpg
-illustrator:
+illustrator: Sanosuke Sakuma
 prints:
   - normal
 sources:
   tcgcollector:
     id: '30890'
-    rarity_raw:
+    rarity_raw: Promo

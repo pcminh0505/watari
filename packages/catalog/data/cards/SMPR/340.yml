@@ -3,14 +3,14 @@
 set_code: smpr
 local_id: '340'
 name_ja:
-name_en:
-rarity_code:
+name_en: Victini
+rarity_code: PR
 category: card
 image: https://static.tcgcollector.com/content/images/6d/a6/a2/6da6a2af7c75a95d916c3178500b95c51232b7acaffb7c5317b3bdb880d15053.jpg
-illustrator:
+illustrator: nagimiso
 prints:
   - normal
 sources:
   tcgcollector:
     id: '30896'
-    rarity_raw:
+    rarity_raw: Promo

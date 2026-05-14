@@ -3,14 +3,14 @@
 set_code: smpr
 local_id: '342'
 name_ja:
-name_en:
-rarity_code:
+name_en: Mew
+rarity_code: PR
 category: card
 image: https://static.tcgcollector.com/content/images/f0/2c/36/f02c363e3fbdf34a605eff14d328d6a8772c9243028fe0f4c28cd73eb51d171a.jpg
-illustrator:
+illustrator: sui
 prints:
   - normal
 sources:
   tcgcollector:
     id: '30898'
-    rarity_raw:
+    rarity_raw: Promo

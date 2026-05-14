@@ -3,14 +3,14 @@
 set_code: smpr
 local_id: '323'
 name_ja:
-name_en:
-rarity_code:
+name_en: Sylveon-GX
+rarity_code: PR
 category: card
 image: https://static.tcgcollector.com/content/images/11/a0/99/11a099b264b530a210b53bcab3e91d54dc79c896453ca0934a5500a0382e7d6f.jpg
-illustrator:
+illustrator: 5ban Graphics
 prints:
   - normal
 sources:
   tcgcollector:
     id: '30879'
-    rarity_raw:
+    rarity_raw: Promo

@@ -3,14 +3,14 @@
 set_code: smpr
 local_id: '326'
 name_ja:
-name_en:
-rarity_code:
+name_en: Eevee
+rarity_code: PR
 category: card
 image: https://static.tcgcollector.com/content/images/3e/ef/80/3eef809ed77b3ba0e22d979994d9bf98c9d8a97df8ed04f229ef1baef9a76f5c.jpg
-illustrator:
+illustrator: kirisAki
 prints:
   - normal
 sources:
   tcgcollector:
     id: '30882'
-    rarity_raw:
+    rarity_raw: Promo

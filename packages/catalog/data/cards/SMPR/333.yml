@@ -3,14 +3,14 @@
 set_code: smpr
 local_id: '333'
 name_ja:
-name_en:
-rarity_code:
+name_en: Kahili
+rarity_code: PR
 category: card
 image: https://static.tcgcollector.com/content/images/1e/94/5a/1e945a8161c3ff585b84cd3ab8108e9d59ec7d7bffaf7177bd28e5a6b71880d2.jpg
-illustrator:
+illustrator: Ken Sugimori
 prints:
   - normal
 sources:
   tcgcollector:
     id: '30889'
-    rarity_raw:
+    rarity_raw: Promo

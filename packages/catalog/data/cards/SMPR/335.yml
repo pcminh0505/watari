@@ -3,14 +3,14 @@
 set_code: smpr
 local_id: '335'
 name_ja:
-name_en:
-rarity_code:
+name_en: Cynthia
+rarity_code: PR
 category: card
 image: https://static.tcgcollector.com/content/images/a2/2b/82/a22b829a751e094fba157b5e0877aace730ae590967968bb7d23ab64fa2c2bd9.jpg
-illustrator:
+illustrator: Ken Sugimori
 prints:
   - normal
 sources:
   tcgcollector:
     id: '30891'
-    rarity_raw:
+    rarity_raw: Promo

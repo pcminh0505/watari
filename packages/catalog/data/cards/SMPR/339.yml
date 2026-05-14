@@ -3,14 +3,14 @@
 set_code: smpr
 local_id: '339'
 name_ja:
-name_en:
-rarity_code:
+name_en: Detective Pikachu
+rarity_code: PR
 category: card
 image: https://static.tcgcollector.com/content/images/39/47/0d/39470d6913eb6e71fe115522351053994d04cdf0abd3a8e29ee7545d83a6d582.jpg
-illustrator:
+illustrator: Framestore
 prints:
   - normal
 sources:
   tcgcollector:
     id: '30895'
-    rarity_raw:
+    rarity_raw: Promo

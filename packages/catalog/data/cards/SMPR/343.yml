@@ -3,14 +3,14 @@
 set_code: smpr
 local_id: '343'
 name_ja:
-name_en:
-rarity_code:
+name_en: Yveltal
+rarity_code: PR
 category: card
 image: https://static.tcgcollector.com/content/images/78/7b/85/787b859cbe44628f54c4682568e490e879af961682b923a69c9463dc14e84212.jpg
-illustrator:
+illustrator: Misa Tsutsui
 prints:
   - normal
 sources:
   tcgcollector:
     id: '30899'
-    rarity_raw:
+    rarity_raw: Promo

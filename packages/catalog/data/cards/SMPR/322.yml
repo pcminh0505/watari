@@ -3,14 +3,14 @@
 set_code: smpr
 local_id: '322'
 name_ja:
-name_en:
-rarity_code:
+name_en: Jirachi
+rarity_code: PR
 category: card
 image: https://static.tcgcollector.com/content/images/19/ab/18/19ab1883684998e21af515c213965bc41244bf1dfd4155b04f7d92a095c8f9d3.jpg
-illustrator:
+illustrator: Mizue
 prints:
   - normal
 sources:
   tcgcollector:
     id: '30878'
-    rarity_raw:
+    rarity_raw: Promo

@@ -3,14 +3,14 @@
 set_code: smpr
 local_id: '324'
 name_ja:
-name_en:
-rarity_code:
+name_en: Erika's Hospitality
+rarity_code: PR
 category: card
 image: https://static.tcgcollector.com/content/images/11/fc/42/11fc420bd68fc84e68657a8c2a51037d012820f177b757b73a866eff14d940b2.jpg
-illustrator:
+illustrator: Sanosuke Sakuma
 prints:
   - normal
 sources:
   tcgcollector:
     id: '30880'
-    rarity_raw:
+    rarity_raw: Promo

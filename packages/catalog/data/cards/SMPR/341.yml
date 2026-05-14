@@ -3,14 +3,14 @@
 set_code: smpr
 local_id: '341'
 name_ja:
-name_en:
-rarity_code:
+name_en: Janine
+rarity_code: PR
 category: card
 image: https://static.tcgcollector.com/content/images/df/91/0b/df910bec48fe9abc2ab18a2a9569bb5e52737cb4cefa97cd5c45c10981472c34.jpg
-illustrator:
+illustrator: Ken Sugimori
 prints:
   - normal
 sources:
   tcgcollector:
     id: '30897'
-    rarity_raw:
+    rarity_raw: Promo

@@ -3,14 +3,14 @@
 set_code: smpr
 local_id: '330'
 name_ja:
-name_en:
-rarity_code:
+name_en: Pokémon Communication
+rarity_code: PR
 category: card
 image: https://static.tcgcollector.com/content/images/01/32/8d/01328d887cde6f5b1239db3d33daf1ddb0001ec90fc72276f5fda241abf2fff9.jpg
-illustrator:
+illustrator: Ayaka Yoshida
 prints:
   - normal
 sources:
   tcgcollector:
     id: '30886'
-    rarity_raw:
+    rarity_raw: Promo

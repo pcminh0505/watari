@@ -3,14 +3,14 @@
 set_code: smpr
 local_id: '328'
 name_ja:
-name_en:
-rarity_code:
+name_en: Order Pad
+rarity_code: PR
 category: card
 image: https://static.tcgcollector.com/content/images/31/bd/aa/31bdaab9e3742c04049c7efa7f9963a995661c9eec124a8632310b08b056af1c.jpg
-illustrator:
+illustrator: Eske Yoshinob
 prints:
   - normal
 sources:
   tcgcollector:
     id: '30884'
-    rarity_raw:
+    rarity_raw: Promo

@@ -3,14 +3,14 @@
 set_code: smpr
 local_id: '327'
 name_ja:
-name_en:
-rarity_code:
+name_en: Chandelure
+rarity_code: PR
 category: card
 image: https://static.tcgcollector.com/content/images/c9/e9/eb/c9e9eb76bce841afefa4961035fba0758b01b9f1bd4f659fddd1dda24218992d.jpg
-illustrator:
+illustrator: Anesaki Dynamic
 prints:
   - normal
 sources:
   tcgcollector:
     id: '30883'
-    rarity_raw:
+    rarity_raw: Promo

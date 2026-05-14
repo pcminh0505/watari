@@ -3,14 +3,14 @@
 set_code: smpr
 local_id: '336'
 name_ja:
-name_en:
-rarity_code:
+name_en: Pokémon Fan Club
+rarity_code: PR
 category: card
 image: https://static.tcgcollector.com/content/images/45/ed/63/45ed63678a4d34387c44888f881905b7e75009d88317115a0663c2c6b797cdfb.jpg
-illustrator:
+illustrator: Sanosuke Sakuma
 prints:
   - normal
 sources:
   tcgcollector:
     id: '30892'
-    rarity_raw:
+    rarity_raw: Promo
