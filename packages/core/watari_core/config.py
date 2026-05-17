@@ -34,7 +34,7 @@ class Settings(BaseSettings):
         new_query = urlencode({k: vals[0] for k, vals in clean_params.items()})
         return urlunparse(parsed._replace(query=new_query))
 
-    redis_url: str = "redis://localhost:6379/0"
+    redis_url: str = ""  # empty = memory-only; set REDIS_URL env var to enable L2 cache
     s3_endpoint_url: str = "http://localhost:9000"
     s3_bucket_bronze: str = "watari-bronze"
     aws_access_key_id: str = "watari"

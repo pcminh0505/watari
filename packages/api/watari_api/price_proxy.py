@@ -4,11 +4,18 @@ Replaces the DB materialized-views for online mode. Each card's price data is
 fetched live on first request and cached for ``CACHE_TTL`` (default 30 min).
 Concurrent requests for the same card are coalesced via per-key asyncio locks
 so the upstream is not hit more than once per TTL window.
+
+Optional Redis L2 cache: set ``REDIS_URL`` in the environment to enable a
+shared cache that survives process restarts and is shared across instances.
+L1 (in-process dict) is always checked first; Redis is only consulted when L1
+misses. Errors on Redis are swallowed so a Redis outage degrades gracefully to
+memory-only mode.
 """
 
 from __future__ import annotations
 
 import asyncio
+import json
 import logging
 import statistics
 from dataclasses import dataclass, field
@@ -27,6 +34,8 @@ logger = logging.getLogger(__name__)
 
 CACHE_TTL = timedelta(minutes=30)
 _SNKRDUNK_7D = timedelta(days=7)
+# Redis key TTL = cache TTL + small buffer so Redis auto-expires stale entries.
+_REDIS_TTL_SEC = int(CACHE_TTL.total_seconds()) + 120
 
 
 @dataclass
@@ -49,47 +58,127 @@ CardrushRow = dict[str, Any]
 SnkrdunkResult = tuple[list[dict[str, Any]], list[dict[str, Any]]]
 
 
-class PriceProxy:
-    """On-demand price fetcher with per-card TTL cache."""
+# --- JSON serialization helpers (handle datetime round-trip) -----------------
 
-    def __init__(self) -> None:
+
+def _serialize(data: Any) -> str:
+    """Serialize to JSON, encoding datetime as ``{"__dt__": "<ISO>"}}``."""
+
+    def _default(obj: Any) -> Any:
+        if isinstance(obj, datetime):
+            return {"__dt__": obj.isoformat()}
+        raise TypeError(f"Not JSON serializable: {type(obj)!r}")
+
+    return json.dumps(data, default=_default)
+
+
+def _deserialize(raw: str | bytes) -> Any:
+    """Deserialize JSON, converting ``{"__dt__": "..."}`` back to datetime."""
+
+    def _hook(d: dict) -> Any:
+        if "__dt__" in d and len(d) == 1:
+            return datetime.fromisoformat(d["__dt__"])
+        return d
+
+    return json.loads(raw, object_hook=_hook)
+
+
+class PriceProxy:
+    """On-demand price fetcher with per-card TTL cache (L1 memory + optional L2 Redis)."""
+
+    def __init__(self, redis: Any | None = None) -> None:
         self._cr_cache: dict[str, _CacheEntry] = {}
         self._sd_cache: dict[str, _CacheEntry] = {}
         self._cr_locks: dict[str, asyncio.Lock] = {}
         self._sd_locks: dict[str, asyncio.Lock] = {}
+        self._redis = redis  # optional aioredis client; None = memory-only
+
+    # --- Redis helpers -------------------------------------------------------
+
+    async def _redis_get(self, key: str) -> _CacheEntry | None:
+        if self._redis is None:
+            return None
+        try:
+            raw = await self._redis.get(key)
+            if raw is None:
+                return None
+            payload = _deserialize(raw)
+            fetched_at: datetime = payload["fetched_at"]
+            entry = _CacheEntry(data=payload["data"], fetched_at=fetched_at)
+            if _is_stale(entry):
+                return None
+            return entry
+        except Exception:
+            logger.debug("price_proxy: redis get failed for %s", key)
+            return None
+
+    async def _redis_set(self, key: str, entry: _CacheEntry) -> None:
+        if self._redis is None:
+            return
+        try:
+            payload = {"fetched_at": entry.fetched_at, "data": entry.data}
+            await self._redis.set(key, _serialize(payload), ex=_REDIS_TTL_SEC)
+        except Exception:
+            logger.debug("price_proxy: redis set failed for %s", key)
 
     # --- public API ----------------------------------------------------------
 
     async def fetch_cardrush(self, set_code: str, local_id: str) -> list[CardrushRow]:
         """Return Cardrush listing rows for a card, from cache or live fetch."""
         key = _cr_key(set_code, local_id)
+
+        # L1 hit
         entry = self._cr_cache.get(key)
         if entry and not _is_stale(entry):
             return entry.data
 
         lock = self._cr_locks.setdefault(key, asyncio.Lock())
         async with lock:
+            # L1 re-check (another coroutine may have fetched while we waited)
             entry = self._cr_cache.get(key)
             if entry and not _is_stale(entry):
                 return entry.data
+
+            # L2 (Redis)
+            entry = await self._redis_get(key)
+            if entry is not None:
+                self._cr_cache[key] = entry
+                return entry.data
+
+            # Live fetch
             data = await _do_fetch_cardrush(set_code, pad_local_id(local_id))
-            self._cr_cache[key] = _CacheEntry(data=data)
+            entry = _CacheEntry(data=data)
+            self._cr_cache[key] = entry
+            await self._redis_set(key, entry)
             return data
 
     async def fetch_snkrdunk(self, set_code: str, local_id: str) -> SnkrdunkResult:
         """Return (ungraded, graded) Snkrdunk rows for a card."""
         key = _sd_key(set_code, local_id)
+
+        # L1 hit
         entry = self._sd_cache.get(key)
         if entry and not _is_stale(entry):
             return entry.data
 
         lock = self._sd_locks.setdefault(key, asyncio.Lock())
         async with lock:
+            # L1 re-check
             entry = self._sd_cache.get(key)
             if entry and not _is_stale(entry):
                 return entry.data
+
+            # L2 (Redis)
+            entry = await self._redis_get(key)
+            if entry is not None:
+                self._sd_cache[key] = entry
+                return entry.data
+
+            # Live fetch
             data = await _do_fetch_snkrdunk(set_code, pad_local_id(local_id))
-            self._sd_cache[key] = _CacheEntry(data=data)
+            entry = _CacheEntry(data=data)
+            self._sd_cache[key] = entry
+            await self._redis_set(key, entry)
             return data
 
     # --- derived aggregates used by price endpoints --------------------------
