@@ -9,6 +9,7 @@ No PostgreSQL or Redis required.
 
 from __future__ import annotations
 
+import asyncio
 from collections.abc import AsyncIterator
 from contextlib import asynccontextmanager
 
@@ -27,7 +28,9 @@ from watari_api.routers import admin, cards, prices, sets
 @asynccontextmanager
 async def lifespan(app: FastAPI) -> AsyncIterator[None]:
     """Process-scoped setup: load YAML catalog + install price proxy + rate limiter."""
-    app.state.catalog = MemCatalog.load()
+    # Run the synchronous catalog loader off the event loop so other coroutines
+    # (e.g. /healthz) remain responsive during the 1–3 s startup I/O burst.
+    app.state.catalog = await asyncio.to_thread(MemCatalog.load)
     app.state.price_proxy = PriceProxy()
     app.state.rate_limiter = RateLimiter(
         parse_rate_limits(settings.api_rate_limits),

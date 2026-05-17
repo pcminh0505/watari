@@ -8,9 +8,11 @@ process.
 
 from __future__ import annotations
 
+import concurrent.futures
 import logging
 from dataclasses import dataclass, field
 from datetime import UTC, date, datetime
+from pathlib import Path
 from typing import Any
 
 import yaml
@@ -19,6 +21,15 @@ from watari_catalog.seed_sets import load_sets_yaml
 from watari_core.catalog import make_artwork_id, make_card_id, pad_local_id
 
 logger = logging.getLogger(__name__)
+
+
+def _read_card_yaml(path: Path) -> dict[str, Any] | None:
+    """Read and parse one card YAML. Returns None on any error."""
+    try:
+        raw = yaml.safe_load(path.read_text(encoding="utf-8"))
+        return raw if isinstance(raw, dict) else None
+    except Exception:
+        return None
 
 
 @dataclass(frozen=True)
@@ -108,50 +119,58 @@ class MemCatalog:
         artworks: list[MemArtwork] = []
         cards_base = cards_dir()
 
+        # Collect (path, set_code) pairs in sorted order so results are stable.
+        card_files: list[tuple[Path, str]] = []
         for set_dir in sorted(cards_base.iterdir()):
             if not set_dir.is_dir():
                 continue
             sc = set_dir.name.upper()
+            card_files.extend((p, sc) for p in sorted(set_dir.glob("*.yml")))
+
+        # Read and parse all YAMLs in parallel using a thread pool.
+        # Sequential reads of ~12 000 files blocks the event loop for 5–15 s;
+        # parallel I/O cuts that to ~1–3 s on typical hardware.
+        paths = [p for p, _ in card_files]
+        with concurrent.futures.ThreadPoolExecutor(
+            max_workers=min(8, len(paths) or 1)
+        ) as pool:
+            raw_list = list(pool.map(_read_card_yaml, paths))
+
+        for (card_yaml_path, sc), raw in zip(card_files, raw_list):
+            if raw is None:
+                logger.warning("catalog_mem: failed to load %s", card_yaml_path)
+                continue
+
             mem_set = set_map.get(sc)
-
-            for card_yaml_path in sorted(set_dir.glob("*.yml")):
-                try:
-                    raw: Any = yaml.safe_load(card_yaml_path.read_text(encoding="utf-8"))
-                except Exception:
-                    logger.warning("catalog_mem: failed to load %s", card_yaml_path)
-                    continue
-                if not isinstance(raw, dict):
-                    continue
-
-                local_id = pad_local_id(str(raw.get("local_id", card_yaml_path.stem)))
-                artwork_id = make_artwork_id(sc, local_id)
-                prints: list[str] = raw.get("prints") or ["normal"]
-                variants = [
-                    MemVariant(
-                        variant=v,
-                        card_id=make_card_id(artwork_id, v),
-                        is_tracked=True,
-                    )
-                    for v in prints
-                ]
-                artworks.append(
-                    MemArtwork(
-                        artwork_id=artwork_id,
-                        set_code=sc,
-                        local_id=local_id,
-                        name_ja=raw.get("name_ja") or None,
-                        name_en=raw.get("name_en") or None,
-                        rarity_code=raw.get("rarity_code") or None,
-                        image_url=raw.get("image") or None,
-                        illustrator=raw.get("illustrator") or None,
-                        category=str(raw.get("category") or "card"),
-                        language=mem_set.language if mem_set else "jp",
-                        variants=variants,
-                        set_name_ja=mem_set.name_ja if mem_set else None,
-                        set_name_en=mem_set.name_en if mem_set else None,
-                        set_release_date=mem_set.release_date if mem_set else None,
-                    )
+            local_id = pad_local_id(str(raw.get("local_id", card_yaml_path.stem)))
+            artwork_id = make_artwork_id(sc, local_id)
+            prints: list[str] = raw.get("prints") or ["normal"]
+            variants = [
+                MemVariant(
+                    variant=v,
+                    card_id=make_card_id(artwork_id, v),
+                    is_tracked=True,
                 )
+                for v in prints
+            ]
+            artworks.append(
+                MemArtwork(
+                    artwork_id=artwork_id,
+                    set_code=sc,
+                    local_id=local_id,
+                    name_ja=raw.get("name_ja") or None,
+                    name_en=raw.get("name_en") or None,
+                    rarity_code=raw.get("rarity_code") or None,
+                    image_url=raw.get("image") or None,
+                    illustrator=raw.get("illustrator") or None,
+                    category=str(raw.get("category") or "card"),
+                    language=mem_set.language if mem_set else "jp",
+                    variants=variants,
+                    set_name_ja=mem_set.name_ja if mem_set else None,
+                    set_name_en=mem_set.name_en if mem_set else None,
+                    set_release_date=mem_set.release_date if mem_set else None,
+                )
+            )
 
         logger.info(
             "catalog_mem: loaded %d sets, %d artworks", len(sets), len(artworks)

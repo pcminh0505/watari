@@ -314,7 +314,11 @@ async def _do_fetch_cardrush(set_code: str, local_id: str) -> list[CardrushRow]:
 
     try:
         async with CardrushClient() as client:
-            pages = await client.paginate(keyword, max_pages=3)
+            # max_pages=1: a specific card ID fits on one result page. The
+            # multi-page loop was designed for broad rarity-bucket scrapes; for
+            # per-card online mode fetches it just adds a wasted HTTP round-trip
+            # plus 0.3–0.8 s jitter before discovering the second page is empty.
+            pages = await client.paginate(keyword, max_pages=1)
 
         for _, _, html in pages:
             ungraded, _ = parse_listing_rows(html)
@@ -355,7 +359,11 @@ async def _do_fetch_snkrdunk(set_code: str, local_id: str) -> SnkrdunkResult:
                 return [], []
 
             apparel_id: int = apparel["apparel_id"]
-            entries, _ = await client.fetch_sales_history(apparel_id)
+            # Cap at 500 entries (~5 pages × 100). Full history is not needed
+            # for market price (7-day window) or the history chart (365-day
+            # display). Without a limit, popular cards with 10k+ sales trigger
+            # 100+ sequential HTTP pages and 25+ seconds of polite delays.
+            entries, _ = await client.fetch_sales_history(apparel_id, limit=500)
 
         artwork_id = make_artwork_id(sc, local_id)
         card_id = make_card_id(artwork_id, "normal")
