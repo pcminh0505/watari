@@ -12,7 +12,8 @@ from __future__ import annotations
 from collections.abc import AsyncIterator
 from contextlib import asynccontextmanager
 
-from fastapi import APIRouter, Depends, FastAPI
+import httpx
+from fastapi import APIRouter, Depends, FastAPI, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
 from watari_core.config import settings
 
@@ -55,6 +56,24 @@ def create_app() -> FastAPI:
     @app.get("/healthz", tags=["health"])
     async def healthz() -> dict[str, str]:
         return {"status": "ok"}
+
+    @app.get("/rates", tags=["utility"])
+    async def exchange_rates() -> dict[str, float]:
+        """Proxy JPY→USD/VND exchange rates from Frankfurter.
+
+        Runs server-side so the browser is never blocked by Frankfurter's
+        missing CORS headers.
+        """
+        try:
+            async with httpx.AsyncClient(timeout=5.0) as client:
+                resp = await client.get(
+                    "https://api.frankfurter.app/latest?from=JPY&to=USD,VND"
+                )
+                resp.raise_for_status()
+                data = resp.json()
+            return {"USD": data["rates"]["USD"], "VND": data["rates"]["VND"]}
+        except Exception as exc:
+            raise HTTPException(status_code=502, detail="exchange rate service unavailable") from exc
 
     lang_router = APIRouter(
         prefix="/{lang}",

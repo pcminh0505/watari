@@ -5,6 +5,7 @@ import {
   useState,
   type ReactNode,
 } from "react";
+import { apiFetch } from "../api/client";
 import { formatPrice } from "../lib/formatters";
 
 export type Currency = "JPY" | "USD" | "VND";
@@ -18,14 +19,7 @@ const FALLBACK_RATES: ExchangeRates = { USD: 0.0065, VND: 163 };
 function useExchangeRates(): ExchangeRates {
   const { data } = useQuery<ExchangeRates>({
     queryKey: ["exchange-rates"],
-    queryFn: async () => {
-      const res = await fetch(
-        "https://api.frankfurter.app/latest?from=JPY&to=USD,VND"
-      );
-      if (!res.ok) throw new Error("Failed to fetch rates");
-      const json = await res.json();
-      return { USD: json.rates.USD, VND: json.rates.VND };
-    },
+    queryFn: () => apiFetch<ExchangeRates>("/rates"),
     staleTime: 60 * 60 * 1000,
     retry: 1,
   });
