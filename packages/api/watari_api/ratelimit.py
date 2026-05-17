@@ -1,75 +1,24 @@
-"""Per-tier token-bucket rate limiting, backed by Redis.
+"""Per-tier token-bucket rate limiting — in-memory implementation.
 
-Why a bucket per *tier × caller*:
-    We want abusive free-tier traffic to hurt only that caller, and we want
-    paid tiers to have headroom for bursts without permanently locking out
-    free users. Keys look like ``rl:{tier}:{identifier}`` where
-    ``identifier`` is ``key:{api_key_id}`` for authenticated calls and
-    ``ip:{client_ip}`` for anonymous ones (see :mod:`watari_api.auth`).
+Replaces the Redis-backed version for online mode. The same
+``tier:capacity:rate`` config format and ``Decision`` interface are preserved
+so callers do not change.
 
-Config:
-    ``settings.api_rate_limits`` is a comma-separated ``tier:capacity:rate``
-    spec. ``capacity`` is the burst size (tokens at full bucket) and
-    ``rate`` is tokens refilled per second. A ``free`` tier is always
-    required because it doubles as the fallback when a key's tier is
-    unknown to this process.
-
-Implementation:
-    A single Redis Lua script advances the bucket and performs the admit
-    decision atomically. ``HMSET`` + ``EXPIRE`` cap idle keys so Redis
-    reclaims memory for one-shot clients.
+All state is process-local: limits reset on restart and are NOT shared across
+multiple API instances. For a personal project running one process this is
+fine; add Redis back if horizontal scaling is ever needed.
 """
 
 from __future__ import annotations
 
+import asyncio
 import time
-from dataclasses import dataclass
+from dataclasses import dataclass, field
 from typing import Annotated
 
-import redis.asyncio as aioredis
 from fastapi import Depends, HTTPException, Request, Response, status
 
 from watari_api.auth import AuthContext, get_auth_context
-
-# Lua is the atomicity primitive here. We read (tokens, ts), refill by
-# (now - ts) * rate, try to deduct cost, write back. Returning the retry
-# delay lets callers render a correct Retry-After even under race conditions.
-TOKEN_BUCKET_SCRIPT = """
-local key       = KEYS[1]
-local capacity  = tonumber(ARGV[1])
-local rate      = tonumber(ARGV[2])
-local now       = tonumber(ARGV[3])
-local cost      = tonumber(ARGV[4])
-
-local data   = redis.call('HMGET', key, 'tokens', 'ts')
-local tokens = tonumber(data[1])
-local ts     = tonumber(data[2])
-if tokens == nil then
-  tokens = capacity
-  ts     = now
-end
-
-local delta = math.max(0, now - ts)
-tokens = math.min(capacity, tokens + delta * rate)
-
-local allowed = 0
-local retry_after = 0
-if tokens >= cost then
-  tokens = tokens - cost
-  allowed = 1
-else
-  -- seconds until enough tokens are back
-  if rate > 0 then
-    retry_after = math.ceil((cost - tokens) / rate)
-  else
-    retry_after = 1
-  end
-end
-
-redis.call('HMSET', key, 'tokens', tokens, 'ts', now)
-redis.call('EXPIRE', key, math.ceil(capacity / math.max(rate, 0.001)) + 1)
-return {allowed, tokens, retry_after}
-"""
 
 
 @dataclass(frozen=True)
@@ -87,10 +36,9 @@ class Decision:
 
 
 def parse_rate_limits(spec: str) -> dict[str, Bucket]:
-    """Parse a ``tier:capacity:rate,tier:capacity:rate,…`` spec.
+    """Parse a ``tier:capacity:rate,…`` spec.
 
-    ``free`` is mandatory — it's both the anonymous tier and the fallback
-    when a key's ``tier`` string isn't known to this process.
+    ``free`` is mandatory — it's both the anonymous tier and the fallback.
     """
     out: dict[str, Bucket] = {}
     for raw in spec.split(","):
@@ -109,17 +57,19 @@ def parse_rate_limits(spec: str) -> dict[str, Bucket]:
     return out
 
 
-class RateLimiter:
-    """Redis token-bucket limiter. One instance per process is plenty."""
+@dataclass
+class _BucketState:
+    tokens: float
+    ts: float
 
-    def __init__(
-        self,
-        redis_client: aioredis.Redis,
-        buckets: dict[str, Bucket],
-    ) -> None:
-        self.redis = redis_client
+
+class RateLimiter:
+    """In-memory token-bucket limiter. One instance per process."""
+
+    def __init__(self, buckets: dict[str, Bucket]) -> None:
         self.buckets = buckets
-        self._script = redis_client.register_script(TOKEN_BUCKET_SCRIPT)
+        self._states: dict[str, _BucketState] = {}
+        self._lock = asyncio.Lock()
 
     def _bucket_for(self, tier: str) -> Bucket:
         return self.buckets.get(tier) or self.buckets["free"]
@@ -127,29 +77,38 @@ class RateLimiter:
     async def check(self, tier: str, identifier: str, cost: int = 1) -> Decision:
         bucket = self._bucket_for(tier)
         key = f"rl:{tier}:{identifier}"
-        now = time.time()
-        raw = await self._script(
-            keys=[key],
-            args=[bucket.capacity, bucket.rate, now, cost],
-        )
-        # redis-py returns ints/bytes depending on connection settings; coerce.
-        allowed = int(raw[0]) == 1
-        remaining = max(int(float(raw[1])), 0)
-        retry_after = max(int(raw[2]), 0)
-        return Decision(
-            allowed=allowed,
-            remaining=remaining,
-            retry_after=retry_after,
-            bucket=bucket,
-        )
+        now = time.monotonic()
+
+        async with self._lock:
+            state = self._states.get(key)
+            if state is None:
+                state = _BucketState(tokens=float(bucket.capacity), ts=now)
+                self._states[key] = state
+
+            delta = max(0.0, now - state.ts)
+            state.tokens = min(float(bucket.capacity), state.tokens + delta * bucket.rate)
+            state.ts = now
+
+            if state.tokens >= cost:
+                state.tokens -= cost
+                return Decision(
+                    allowed=True,
+                    remaining=int(state.tokens),
+                    retry_after=0,
+                    bucket=bucket,
+                )
+
+            retry_after = max(1, int((cost - state.tokens) / max(bucket.rate, 0.001)))
+            return Decision(
+                allowed=False,
+                remaining=0,
+                retry_after=retry_after,
+                bucket=bucket,
+            )
 
 
 def get_rate_limiter(request: Request) -> RateLimiter:
-    """Fetch the process-wide :class:`RateLimiter` from ``app.state``.
-
-    Tests override this dep to install a fake; production installs the real
-    one in the FastAPI lifespan.
-    """
+    """Fetch the process-wide :class:`RateLimiter` from ``app.state``."""
     limiter: RateLimiter | None = getattr(request.app.state, "rate_limiter", None)
     if limiter is None:
         raise RuntimeError("rate limiter not installed on app.state; check the FastAPI lifespan")
@@ -161,11 +120,7 @@ async def rate_limit_dep(
     auth: Annotated[AuthContext, Depends(get_auth_context)],
     limiter: Annotated[RateLimiter, Depends(get_rate_limiter)],
 ) -> AuthContext:
-    """Rate-limit the current request and stamp ``X-RateLimit-*`` headers.
-
-    Returns the :class:`AuthContext` so routers that depend on this can
-    reuse the resolved identity without re-running the auth lookup.
-    """
+    """Rate-limit the current request and stamp ``X-RateLimit-*`` headers."""
     decision = await limiter.check(auth.tier, auth.identifier)
     response.headers["X-RateLimit-Tier"] = auth.tier
     response.headers["X-RateLimit-Limit"] = str(decision.bucket.capacity)

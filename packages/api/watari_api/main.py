@@ -1,9 +1,10 @@
-"""FastAPI application factory for the watari read API.
+"""FastAPI application factory for the watari read API — online mode.
 
-The API is read-only and sits on top of the v3 catalog (``sets`` /
-``artworks`` / ``cards``) plus the three materialized views that aggregate
-``price_points``. See ``CLAUDE.md`` §3.1 for the schema and §5.2 for the
-endpoint list.
+Catalog (sets / artworks / cards) is loaded from YAML at startup.
+Prices are fetched on demand from Cardrush and Snkrdunk and cached in memory
+for :data:`watari_api.price_proxy.CACHE_TTL` (default 30 min).
+
+No PostgreSQL or Redis required.
 """
 
 from __future__ import annotations
@@ -11,33 +12,26 @@ from __future__ import annotations
 from collections.abc import AsyncIterator
 from contextlib import asynccontextmanager
 
-import redis.asyncio as aioredis
 from fastapi import APIRouter, Depends, FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from watari_core.config import settings
 
+from watari_api.catalog_mem import MemCatalog
 from watari_api.deps import validate_lang
+from watari_api.price_proxy import PriceProxy
 from watari_api.ratelimit import RateLimiter, parse_rate_limits, rate_limit_dep
 from watari_api.routers import admin, cards, prices, sets
 
 
 @asynccontextmanager
 async def lifespan(app: FastAPI) -> AsyncIterator[None]:
-    """Process-scoped setup: open a Redis pool + install the rate limiter.
-
-    Both live on ``app.state`` so dependencies and tests can swap them. The
-    pool is closed on shutdown; individual requests don't own connections.
-    """
-    redis_client = aioredis.from_url(settings.redis_url, decode_responses=False)
-    app.state.redis = redis_client
+    """Process-scoped setup: load YAML catalog + install price proxy + rate limiter."""
+    app.state.catalog = MemCatalog.load()
+    app.state.price_proxy = PriceProxy()
     app.state.rate_limiter = RateLimiter(
-        redis_client,
         parse_rate_limits(settings.api_rate_limits),
     )
-    try:
-        yield
-    finally:
-        await redis_client.aclose()
+    yield
 
 
 def create_app() -> FastAPI:

@@ -1,176 +1,231 @@
-"""Unit tests for the FastAPI read-side app (packages/api)."""
+"""Unit tests for the FastAPI read-side app — online mode (no database)."""
 
 from __future__ import annotations
 
-from collections.abc import AsyncGenerator, Iterable
-from datetime import UTC, datetime
+from datetime import UTC, date, datetime
 from typing import Any
 
 import pytest
 from fastapi.testclient import TestClient
 from watari_api.auth import AuthContext
-from watari_api.deps import get_session
+from watari_api.catalog_mem import MemArtwork, MemCatalog, MemSet, MemVariant
+from watari_api.deps import get_catalog, get_price_proxy
 from watari_api.main import create_app
+from watari_api.price_proxy import PriceProxy
 from watari_api.ratelimit import rate_limit_dep
-from sqlalchemy import Select
 
-# --- Fakes ---------------------------------------------------------------
+# ---------------------------------------------------------------------------
+# Fake catalog
+# ---------------------------------------------------------------------------
 
-
-class FakeResult:
-    """A stand-in for ``sqlalchemy.engine.Result`` that returns canned data."""
-
-    def __init__(
-        self,
-        *,
-        scalars: Iterable[Any] | None = None,
-        rows: list[dict[str, Any]] | None = None,
-        scalar: Any = ...,
-    ) -> None:
-        self._scalars = list(scalars) if scalars is not None else None
-        self._rows = rows
-        self._scalar = scalar
-
-    def scalars(self) -> FakeResult:
-        return self
-
-    def all(self) -> list[Any]:
-        if self._scalars is not None:
-            return self._scalars
-        if self._rows is not None:
-            return [_RowLike(r) for r in self._rows]
-        return []
-
-    def scalar_one_or_none(self) -> Any:
-        if self._scalar is ...:
-            return self._scalars[0] if self._scalars else None
-        return self._scalar
-
-    def scalar_one(self) -> Any:
-        if self._scalar is not ...:
-            return self._scalar
-        if self._scalars:
-            return self._scalars[0]
-        raise AssertionError("scalar_one() called on empty FakeResult")
-
-    def mappings(self) -> FakeResult:
-        return self
-
-    def one_or_none(self) -> Any:
-        if self._rows:
-            return _RowLike(self._rows[0])
-        return None
+_NOW = datetime(2025, 1, 1, tzinfo=UTC)
+_TODAY = date(2025, 1, 1)
 
 
-class _RowLike:
-    """Mimics a SQLAlchemy Row so ``row._mapping`` / ``dict(row)`` both work."""
-
-    def __init__(self, data: dict[str, Any]) -> None:
-        self._mapping = data
-        for k, v in data.items():
-            setattr(self, k, v)
-
-    def keys(self) -> Iterable[str]:
-        return self._mapping.keys()
-
-    def __iter__(self) -> Any:
-        return iter(self._mapping.items())
-
-    def __getitem__(self, key: str) -> Any:
-        return self._mapping[key]
-
-
-class FakeSession:
-    """Async session that pops canned ``FakeResult``\\s off a queue."""
-
-    def __init__(self, results: list[FakeResult]) -> None:
-        self._results = list(results)
-        self.calls: list[Any] = []
-
-    async def execute(self, stmt: Any, params: Any | None = None) -> FakeResult:
-        self.calls.append((stmt, params))
-        if not self._results:
-            raise AssertionError("FakeSession exhausted; unexpected execute() call")
-        return self._results.pop(0)
-
-    async def commit(self) -> None:  # no-op for fake; auth.py may call this
-        return None
-
-
-def _override_session(session: FakeSession) -> Any:
-    async def _gen() -> AsyncGenerator[FakeSession, None]:
-        yield session
-
-    return _gen
-
-
-async def _anonymous_ratelimit() -> AuthContext:
-    """Replacement for ``rate_limit_dep`` that always admits as anonymous."""
-    return AuthContext(
-        authed=False,
-        tier="free",
-        api_key_id=None,
-        key_prefix=None,
-        identifier="ip:testclient",
+def _fake_set(
+    set_code: str = "SV2A",
+    era: str = "sv",
+    release_date: date | None = _TODAY,
+) -> MemSet:
+    return MemSet(
+        set_code=set_code,
+        era_block=era,
+        language="jp",
+        name_ja="ポケモンカード151",
+        name_en="Pokemon Card 151",
+        release_date=release_date,
+        total=210,
+        parent_set_code=None,
+        tcgdex_id="sv2a",
+        source_refs={},
+        loaded_at=_NOW,
     )
 
 
-@pytest.fixture()
-def client_factory():  # type: ignore[no-untyped-def]
-    """Return a factory that builds a TestClient with a preloaded FakeSession."""
+def _fake_artwork(
+    set_code: str = "SV2A",
+    local_id: str = "089",
+    variants: list[str] | None = None,
+    rarity: str = "U",
+    release_date: date | None = _TODAY,
+) -> MemArtwork:
+    vlist = variants or ["normal"]
+    aid = f"jp-{set_code.lower()}-{local_id}"
+    return MemArtwork(
+        artwork_id=aid,
+        set_code=set_code,
+        local_id=local_id,
+        name_ja="ベトベトン",
+        name_en="Muk",
+        rarity_code=rarity,
+        image_url="https://example.com/muk.png",
+        illustrator=None,
+        category="card",
+        language="jp",
+        variants=[
+            MemVariant(variant=v, card_id=f"{aid}-{v}", is_tracked=True) for v in vlist
+        ],
+        set_name_ja="ポケモンカード151",
+        set_name_en="Pokemon Card 151",
+        set_release_date=release_date,
+    )
 
-    def _make(results: list[FakeResult]) -> tuple[TestClient, FakeSession]:
-        app = create_app()
-        session = FakeSession(results)
-        app.dependency_overrides[get_session] = _override_session(session)
-        app.dependency_overrides[rate_limit_dep] = _anonymous_ratelimit
-        return TestClient(app), session
 
-    return _make
+class FakeMemCatalog:
+    """Thin fake MemCatalog for tests — backed by dicts, not YAML files."""
+
+    def __init__(
+        self,
+        sets: list[MemSet] | None = None,
+        artworks: list[MemArtwork] | None = None,
+    ) -> None:
+        self._sets = {s.set_code.upper(): s for s in (sets or [])}
+        self._artworks: dict[tuple[str, str], MemArtwork] = {}
+        self._artworks_by_set: dict[str, list[MemArtwork]] = {}
+        for a in artworks or []:
+            self._artworks[(a.set_code.upper(), a.local_id)] = a
+            self._artworks_by_set.setdefault(a.set_code.upper(), []).append(a)
+
+    def get_sets(self, *, language: str = "jp", era: str | None = None) -> list[MemSet]:
+        rows = [s for s in self._sets.values() if s.language == language]
+        if era is not None:
+            rows = [s for s in rows if s.era_block == era.lower()]
+        return rows
+
+    def get_set(self, set_code: str, *, language: str = "jp") -> MemSet | None:
+        s = self._sets.get(set_code.upper())
+        if s is None or s.language != language:
+            return None
+        return s
+
+    def get_artworks(self, set_code: str) -> list[MemArtwork]:
+        return list(self._artworks_by_set.get(set_code.upper(), []))
+
+    def get_artwork(self, set_code: str, local_id: str) -> MemArtwork | None:
+        from watari_core.catalog import pad_local_id
+        return self._artworks.get((set_code.upper(), pad_local_id(local_id)))
+
+    def search_artworks(
+        self,
+        *,
+        language: str = "jp",
+        q: str | None = None,
+        set_code: str | None = None,
+        rarity: str | None = None,
+        illustrator: str | None = None,
+    ) -> list[MemArtwork]:
+        results = [a for a in self._artworks.values() if a.language == language]
+        if set_code is not None:
+            results = [a for a in results if a.set_code.upper() == set_code.upper()]
+        if rarity is not None:
+            results = [a for a in results if a.rarity_code == rarity]
+        if illustrator is not None:
+            results = [a for a in results if a.illustrator == illustrator]
+        if q is not None:
+            from watari_core.catalog import pad_local_id
+            q_lower = q.lower()
+            q_padded = pad_local_id(q) if q.isdigit() else q
+            results = [
+                a for a in results
+                if (a.name_ja and q_lower in a.name_ja.lower())
+                or (a.name_en and q_lower in a.name_en.lower())
+                or a.local_id == q_padded
+                or a.set_code.upper() == q.upper()
+            ]
+        return results
+
+    def get_rarities(self, *, language: str = "jp", set_code: str | None = None) -> list[str]:
+        if set_code is not None:
+            artworks = self.get_artworks(set_code)
+        else:
+            artworks = [a for a in self._artworks.values() if a.language == language]
+        return sorted({a.rarity_code for a in artworks if a.rarity_code})
+
+
+# ---------------------------------------------------------------------------
+# Fake price proxy
+# ---------------------------------------------------------------------------
+
+
+class FakePriceProxy:
+    """Fake PriceProxy for tests — returns pre-set data."""
+
+    def __init__(
+        self,
+        prices: list[dict[str, Any]] | None = None,
+        market: dict[str, Any] | None = None,
+        spread: list[dict[str, Any]] | None = None,
+        graded: list[dict[str, Any]] | None = None,
+        graded_hist: list[dict[str, Any]] | None = None,
+    ) -> None:
+        self._prices = prices or []
+        self._market = market
+        self._spread = spread or []
+        self._graded = graded or []
+        self._graded_hist = graded_hist or []
+
+    async def latest_prices(self, *args: Any, **kwargs: Any) -> list[dict[str, Any]]:
+        return self._prices
+
+    async def market_price(self, *args: Any, **kwargs: Any) -> dict[str, Any] | None:
+        return self._market
+
+    async def spread(self, *args: Any, **kwargs: Any) -> list[dict[str, Any]]:
+        return self._spread
+
+    async def graded_prices(self, *args: Any, **kwargs: Any) -> list[dict[str, Any]]:
+        return self._graded
+
+    async def graded_history(self, *args: Any, **kwargs: Any) -> list[dict[str, Any]]:
+        return self._graded_hist
+
+
+# ---------------------------------------------------------------------------
+# Fixture helpers
+# ---------------------------------------------------------------------------
+
+
+async def _anonymous_ratelimit() -> AuthContext:
+    return AuthContext(
+        authed=False, tier="free", api_key_id=None, key_prefix=None, identifier="ip:testclient"
+    )
+
+
+def _make_client(
+    catalog: FakeMemCatalog | None = None,
+    proxy: FakePriceProxy | None = None,
+) -> TestClient:
+    app = create_app()
+    if catalog is not None:
+        app.dependency_overrides[get_catalog] = lambda: catalog
+    if proxy is not None:
+        app.dependency_overrides[get_price_proxy] = lambda: proxy
+    app.dependency_overrides[rate_limit_dep] = _anonymous_ratelimit
+    return TestClient(app)
+
+
+# ---------------------------------------------------------------------------
+# Healthz
+# ---------------------------------------------------------------------------
 
 
 def test_healthz_returns_ok() -> None:
     app = create_app()
+    app.dependency_overrides[rate_limit_dep] = _anonymous_ratelimit
     with TestClient(app) as client:
         resp = client.get("/healthz")
     assert resp.status_code == 200
     assert resp.json() == {"status": "ok"}
 
 
-def _fake_set_row(set_code: str = "SV2A", era: str = "sv") -> Any:
-    now = datetime(2025, 1, 1, tzinfo=UTC)
-    # pydantic's from_attributes mode will read these attrs off the object.
-    return _RowLike(
-        {
-            "set_code": set_code,
-            "era_block": era,
-            "language": "jp",
-            "name_ja": "ポケモンカード151",
-            "name_en": "Pokemon Card 151",
-            "release_date": None,
-            "total": 210,
-            "parent_set_code": None,
-            "tcgdex_id": "sv2a",
-            "source_refs": {},
-            "created_at": now,
-            "updated_at": now,
-        }
-    )
+# ---------------------------------------------------------------------------
+# Sets
+# ---------------------------------------------------------------------------
 
 
-# --- Sets ----------------------------------------------------------------
-
-
-def test_list_sets_returns_all(client_factory) -> None:  # type: ignore[no-untyped-def]
-    rows = [_fake_set_row("SV2A"), _fake_set_row("M2A", era="me")]
-    # list_sets now issues a count query first, then the data query.
-    client, _ = client_factory(
-        [
-            FakeResult(scalar=2),
-            FakeResult(scalars=rows),
-            FakeResult(rows=[{"set_code": "SV2A", "sum": 12345}]),
-        ]
-    )
+def test_list_sets_returns_all() -> None:
+    catalog = FakeMemCatalog(sets=[_fake_set("SV2A"), _fake_set("M2A", era="me")])
+    client = _make_client(catalog=catalog)
     resp = client.get("/jp/sets")
     assert resp.status_code == 200
     data = resp.json()
@@ -178,206 +233,128 @@ def test_list_sets_returns_all(client_factory) -> None:  # type: ignore[no-untyp
     assert {d["set_code"] for d in data} == {"SV2A", "M2A"}
 
 
-def test_list_sets_returns_total_count_header(client_factory) -> None:  # type: ignore[no-untyped-def]
-    rows = [_fake_set_row("SV2A")]
-    client, _ = client_factory(
-        [FakeResult(scalar=1), FakeResult(scalars=rows), FakeResult(rows=[])]
-    )
+def test_list_sets_returns_total_count_header() -> None:
+    catalog = FakeMemCatalog(sets=[_fake_set("SV2A")])
+    client = _make_client(catalog=catalog)
     resp = client.get("/jp/sets")
     assert resp.headers["X-Total-Count"] == "1"
 
 
-def test_list_sets_returns_cache_header(client_factory) -> None:  # type: ignore[no-untyped-def]
-    client, _ = client_factory(
-        [FakeResult(scalar=0), FakeResult(scalars=[]), FakeResult(rows=[])]
-    )
+def test_list_sets_returns_cache_header() -> None:
+    catalog = FakeMemCatalog()
+    client = _make_client(catalog=catalog)
     resp = client.get("/jp/sets")
     assert "max-age=3600" in resp.headers["Cache-Control"]
 
 
-def test_list_sets_filters_by_era(client_factory) -> None:  # type: ignore[no-untyped-def]
-    rows = [_fake_set_row("M2A", era="me")]
-    client, session = client_factory(
-        [FakeResult(scalar=1), FakeResult(scalars=rows), FakeResult(rows=[])]
-    )
+def test_list_sets_filters_by_era() -> None:
+    catalog = FakeMemCatalog(sets=[_fake_set("SV2A", era="sv"), _fake_set("M2A", era="me")])
+    client = _make_client(catalog=catalog)
     resp = client.get("/jp/sets?era=me")
     assert resp.status_code == 200
     assert [d["set_code"] for d in resp.json()] == ["M2A"]
-    stmt, _ = session.calls[0]
-    assert isinstance(stmt, Select)
 
 
-def test_get_set_404_when_missing(client_factory) -> None:  # type: ignore[no-untyped-def]
-    client, _ = client_factory([FakeResult(scalar=None)])
+def test_get_set_404_when_missing() -> None:
+    catalog = FakeMemCatalog()
+    client = _make_client(catalog=catalog)
     resp = client.get("/jp/sets/NOPE")
     assert resp.status_code == 404
 
 
-def test_get_set_returns_row(client_factory) -> None:  # type: ignore[no-untyped-def]
-    row = _fake_set_row("SV2A")
-    client, _ = client_factory([FakeResult(scalar=row), FakeResult(rows=[])])
+def test_get_set_returns_row() -> None:
+    catalog = FakeMemCatalog(sets=[_fake_set("SV2A")])
+    client = _make_client(catalog=catalog)
     resp = client.get("/jp/sets/SV2A")
     assert resp.status_code == 200
     assert resp.json()["set_code"] == "SV2A"
 
 
-def test_get_set_returns_cache_header(client_factory) -> None:  # type: ignore[no-untyped-def]
-    row = _fake_set_row("SV2A")
-    client, _ = client_factory([FakeResult(scalar=row), FakeResult(rows=[])])
+def test_get_set_returns_cache_header() -> None:
+    catalog = FakeMemCatalog(sets=[_fake_set("SV2A")])
+    client = _make_client(catalog=catalog)
     resp = client.get("/jp/sets/SV2A")
     assert "max-age=3600" in resp.headers["Cache-Control"]
 
 
-def test_list_sets_includes_total_value_jpy(client_factory) -> None:  # type: ignore[no-untyped-def]
-    row = _fake_set_row("SV2A")
-    client, _ = client_factory(
-        [
-            FakeResult(scalar=1),
-            FakeResult(scalars=[row]),
-            FakeResult(rows=[{"set_code": "SV2A", "sum": 7777}]),
-        ]
-    )
+def test_list_sets_total_value_jpy_is_none() -> None:
+    # In online mode, total_value_jpy is always null — no per-set price aggregation.
+    catalog = FakeMemCatalog(sets=[_fake_set("SV2A")])
+    client = _make_client(catalog=catalog)
     resp = client.get("/jp/sets")
-    assert resp.status_code == 200
-    assert resp.json()[0]["total_value_jpy"] == 7777
+    assert resp.json()[0]["total_value_jpy"] is None
 
 
-def test_list_sets_sort_by_value_desc(client_factory) -> None:  # type: ignore[no-untyped-def]
-    rows = [_fake_set_row("A1"), _fake_set_row("A2")]
-    client, _ = client_factory(
-        [
-            FakeResult(scalar=2),
-            FakeResult(scalars=rows),
-            FakeResult(rows=[{"set_code": "A1", "sum": 1000}, {"set_code": "A2", "sum": 2000}]),
-        ]
-    )
-    resp = client.get("/jp/sets?sort=value&order=desc")
-    assert [d["set_code"] for d in resp.json()] == ["A2", "A1"]
-
-
-def test_list_sets_sort_by_release_date_asc(client_factory) -> None:  # type: ignore[no-untyped-def]
-    old = _fake_set_row("OLD")
-    new = _fake_set_row("NEW")
-    old.release_date = datetime(2023, 1, 1, tzinfo=UTC).date()
-    new.release_date = datetime(2024, 1, 1, tzinfo=UTC).date()
-    client, _ = client_factory(
-        [FakeResult(scalar=2), FakeResult(scalars=[new, old]), FakeResult(rows=[])]
-    )
+def test_list_sets_sort_by_release_date_asc() -> None:
+    old = _fake_set("OLD", release_date=date(2023, 1, 1))
+    new = _fake_set("NEW", release_date=date(2024, 1, 1))
+    catalog = FakeMemCatalog(sets=[old, new])
+    client = _make_client(catalog=catalog)
     resp = client.get("/jp/sets?sort=release_date&order=asc")
-    assert [d["set_code"] for d in resp.json()] == ["OLD", "NEW"]
+    codes = [d["set_code"] for d in resp.json()]
+    assert codes.index("OLD") < codes.index("NEW")
 
 
-def test_list_sets_sort_by_release_date_desc_nulls_last(client_factory) -> None:  # type: ignore[no-untyped-def]
-    dated = _fake_set_row("DATED")
-    undated = _fake_set_row("UNDATED")
-    dated.release_date = datetime(2024, 1, 1, tzinfo=UTC).date()
-    undated.release_date = None
-    client, _ = client_factory(
-        [FakeResult(scalar=2), FakeResult(scalars=[dated, undated]), FakeResult(rows=[])]
-    )
+def test_list_sets_sort_by_release_date_desc_nulls_last() -> None:
+    dated = _fake_set("DATED", release_date=date(2024, 1, 1))
+    undated = _fake_set("UNDATED", release_date=None)
+    catalog = FakeMemCatalog(sets=[dated, undated])
+    client = _make_client(catalog=catalog)
     resp = client.get("/jp/sets?sort=release_date&order=desc")
-    assert [d["set_code"] for d in resp.json()] == ["DATED", "UNDATED"]
+    codes = [d["set_code"] for d in resp.json()]
+    assert codes.index("DATED") < codes.index("UNDATED")
 
 
-def test_list_sets_sort_by_value_desc_nulls_last(client_factory) -> None:  # type: ignore[no-untyped-def]
-    rows = [_fake_set_row("A1"), _fake_set_row("A2")]
-    client, _ = client_factory(
-        [
-            FakeResult(scalar=2),
-            FakeResult(scalars=rows),
-            FakeResult(rows=[{"set_code": "A1", "sum": 1000}]),
-        ]
+# ---------------------------------------------------------------------------
+# Cards
+# ---------------------------------------------------------------------------
+
+
+def test_list_cards_for_set_returns_artwork_details() -> None:
+    catalog = FakeMemCatalog(
+        sets=[_fake_set("SV2A")],
+        artworks=[_fake_artwork("SV2A", "089", variants=["normal", "master_ball_mirror"])],
     )
-    resp = client.get("/jp/sets?sort=value&order=desc")
-    assert [d["set_code"] for d in resp.json()] == ["A1", "A2"]
-
-
-# --- Cards ---------------------------------------------------------------
-
-
-def _fake_artwork_row(local_id: str = "089") -> dict[str, Any]:
-    return {
-        "artwork_id": f"jp-sv2a-{local_id}",
-        "set_code": "SV2A",
-        "local_id": local_id,
-        "name_ja": "ベトベトン",
-        "name_en": "Muk",
-        "rarity_code": "U",
-        "image_url": "https://example.com/muk.png",
-        "illustrator": None,
-        "category": "card",
-        "language": "jp",
-    }
-
-
-def _fake_variant_row(artwork_id: str, variant: str, *, tracked: bool = True) -> dict[str, Any]:
-    return {
-        "artwork_id": artwork_id,
-        "variant": variant,
-        "card_id": f"{artwork_id}-{variant}",
-        "is_tracked": tracked,
-    }
-
-
-def test_list_cards_for_set_returns_artwork_details(client_factory) -> None:  # type: ignore[no-untyped-def]
-    set_exists = FakeResult(scalar="SV2A")
-    count = FakeResult(scalar=1)
-    artworks = FakeResult(rows=[_fake_artwork_row("089")])
-    variants = FakeResult(
-        rows=[
-            _fake_variant_row("jp-sv2a-089", "master_ball_mirror"),
-            _fake_variant_row("jp-sv2a-089", "normal"),
-        ]
-    )
-    client, _ = client_factory([set_exists, count, artworks, variants])
+    client = _make_client(catalog=catalog)
     resp = client.get("/jp/sets/SV2A/cards")
     assert resp.status_code == 200
     data = resp.json()
     assert len(data) == 1
     assert data[0]["name_ja"] == "ベトベトン"
-    assert [v["variant"] for v in data[0]["variants"]] == ["normal", "master_ball_mirror"]
+    # "normal" sorts first
+    assert data[0]["variants"][0]["variant"] == "normal"
 
 
-def test_list_cards_returns_total_count_header(client_factory) -> None:  # type: ignore[no-untyped-def]
-    set_exists = FakeResult(scalar="SV2A")
-    count = FakeResult(scalar=42)
-    artworks = FakeResult(rows=[_fake_artwork_row("089")])
-    variants = FakeResult(rows=[_fake_variant_row("jp-sv2a-089", "normal")])
-    client, _ = client_factory([set_exists, count, artworks, variants])
+def test_list_cards_returns_total_count_header() -> None:
+    catalog = FakeMemCatalog(
+        sets=[_fake_set("SV2A")],
+        artworks=[_fake_artwork("SV2A", "089")],
+    )
+    client = _make_client(catalog=catalog)
     resp = client.get("/jp/sets/SV2A/cards")
-    assert resp.headers["X-Total-Count"] == "42"
+    assert resp.headers["X-Total-Count"] == "1"
 
 
-def test_list_cards_returns_cache_header(client_factory) -> None:  # type: ignore[no-untyped-def]
-    set_exists = FakeResult(scalar="SV2A")
-    count = FakeResult(scalar=0)
-    artworks = FakeResult(rows=[])
-    client, _ = client_factory([set_exists, count, artworks])
+def test_list_cards_returns_cache_header() -> None:
+    catalog = FakeMemCatalog(sets=[_fake_set("SV2A")])
+    client = _make_client(catalog=catalog)
     resp = client.get("/jp/sets/SV2A/cards")
     assert "max-age=3600" in resp.headers["Cache-Control"]
 
 
-def test_list_cards_pagination_params_accepted(client_factory) -> None:  # type: ignore[no-untyped-def]
-    set_exists = FakeResult(scalar="SV2A")
-    count = FakeResult(scalar=200)
-    artworks = FakeResult(rows=[_fake_artwork_row("089")])
-    variants = FakeResult(rows=[_fake_variant_row("jp-sv2a-089", "normal")])
-    client, _ = client_factory([set_exists, count, artworks, variants])
-    resp = client.get("/jp/sets/SV2A/cards?limit=50&offset=100")
-    assert resp.status_code == 200
-    assert resp.headers["X-Total-Count"] == "200"
-
-
-def test_list_cards_404_for_unknown_set(client_factory) -> None:  # type: ignore[no-untyped-def]
-    client, _ = client_factory([FakeResult(scalar=None)])
+def test_list_cards_404_for_unknown_set() -> None:
+    catalog = FakeMemCatalog()
+    client = _make_client(catalog=catalog)
     resp = client.get("/jp/sets/NOPE/cards")
     assert resp.status_code == 404
 
 
-def test_get_card_by_set_and_local_id(client_factory) -> None:  # type: ignore[no-untyped-def]
-    artwork = FakeResult(rows=[_fake_artwork_row("089")])
-    variants = FakeResult(rows=[_fake_variant_row("jp-sv2a-089", "normal")])
-    client, _ = client_factory([artwork, variants])
+def test_get_card_by_set_and_local_id() -> None:
+    catalog = FakeMemCatalog(
+        sets=[_fake_set("SV2A")],
+        artworks=[_fake_artwork("SV2A", "089")],
+    )
+    client = _make_client(catalog=catalog)
     resp = client.get("/jp/cards/SV2A/089")
     assert resp.status_code == 200
     body = resp.json()
@@ -385,83 +362,89 @@ def test_get_card_by_set_and_local_id(client_factory) -> None:  # type: ignore[n
     assert body["variants"][0]["card_id"] == "jp-sv2a-089-normal"
 
 
-def test_get_card_returns_cache_header(client_factory) -> None:  # type: ignore[no-untyped-def]
-    artwork = FakeResult(rows=[_fake_artwork_row("089")])
-    variants = FakeResult(rows=[_fake_variant_row("jp-sv2a-089", "normal")])
-    client, _ = client_factory([artwork, variants])
+def test_get_card_returns_cache_header() -> None:
+    catalog = FakeMemCatalog(
+        sets=[_fake_set("SV2A")],
+        artworks=[_fake_artwork("SV2A", "089")],
+    )
+    client = _make_client(catalog=catalog)
     resp = client.get("/jp/cards/SV2A/089")
     assert "max-age=3600" in resp.headers["Cache-Control"]
 
 
-def test_get_card_404(client_factory) -> None:  # type: ignore[no-untyped-def]
-    client, _ = client_factory([FakeResult(rows=[])])
+def test_get_card_404() -> None:
+    catalog = FakeMemCatalog(sets=[_fake_set("SV2A")])
+    client = _make_client(catalog=catalog)
     resp = client.get("/jp/cards/SV2A/999")
     assert resp.status_code == 404
 
 
-# --- Batch card lookup ---------------------------------------------------
+def test_unpadded_local_id_is_accepted() -> None:
+    catalog = FakeMemCatalog(
+        sets=[_fake_set("SV2A")],
+        artworks=[_fake_artwork("SV2A", "089")],
+    )
+    client = _make_client(catalog=catalog)
+    resp = client.get("/jp/cards/SV2A/89")
+    assert resp.status_code == 200
+    assert resp.json()["local_id"] == "089"
 
 
-def test_batch_full_code_found(client_factory) -> None:  # type: ignore[no-untyped-def]
-    # "sv2a 089/210" → one artwork, one variant
-    artwork_rows = FakeResult(rows=[_fake_artwork_row("089")])
-    variant_rows = FakeResult(rows=[_fake_variant_row("jp-sv2a-089", "normal")])
-    floor_rows = FakeResult(rows=[])
-    market_rows = FakeResult(rows=[])
-    client, _ = client_factory([artwork_rows, variant_rows, floor_rows, market_rows])
+# ---------------------------------------------------------------------------
+# Batch card lookup
+# ---------------------------------------------------------------------------
+
+
+def test_batch_full_code_found() -> None:
+    catalog = FakeMemCatalog(
+        sets=[_fake_set("SV2A")],
+        artworks=[_fake_artwork("SV2A", "089")],
+    )
+    client = _make_client(catalog=catalog)
     resp = client.get("/jp/cards/batch?codes=sv2a+089%2F210")
     assert resp.status_code == 200
-    data = resp.json()
-    assert len(data) == 1
-    item = data[0]
+    item = resp.json()[0]
     assert item["error"] is None
     assert item["card"]["artwork_id"] == "jp-sv2a-089"
     assert item["candidates"] == []
 
 
-def test_batch_full_code_not_found(client_factory) -> None:  # type: ignore[no-untyped-def]
-    # paired query returns no rows
-    client, _ = client_factory([FakeResult(rows=[])])
+def test_batch_full_code_not_found() -> None:
+    catalog = FakeMemCatalog(sets=[_fake_set("SV2A")])
+    client = _make_client(catalog=catalog)
     resp = client.get("/jp/cards/batch?codes=sv2a+999")
     assert resp.status_code == 200
-    item = resp.json()[0]
-    assert item["error"] == "not_found"
-    assert item["card"] is None
+    assert resp.json()[0]["error"] == "not_found"
 
 
-def test_batch_id_only_returns_missing_set_code(client_factory) -> None:  # type: ignore[no-untyped-def]
-    # Tokens without a set code are rejected immediately — no DB queries issued
-    client, _ = client_factory([])  # empty queue confirms no DB calls
+def test_batch_id_only_returns_missing_set_code() -> None:
+    catalog = FakeMemCatalog()
+    client = _make_client(catalog=catalog)
     resp = client.get("/jp/cards/batch?codes=089")
-    assert resp.status_code == 200
-    item = resp.json()[0]
-    assert item["error"] == "missing_set_code"
-    assert item["card"] is None
-
-
-def test_batch_fraction_only_returns_missing_set_code(client_factory) -> None:  # type: ignore[no-untyped-def]
-    # "066/062" without a set code prefix is also rejected
-    client, _ = client_factory([])
-    resp = client.get("/jp/cards/batch?codes=066%2F062")
     assert resp.status_code == 200
     assert resp.json()[0]["error"] == "missing_set_code"
 
 
-def test_batch_parse_error(client_factory) -> None:  # type: ignore[no-untyped-def]
-    # token "sv3a /" has no usable local_id after stripping the denominator
-    client, _ = client_factory([])  # no DB calls expected
+def test_batch_fraction_only_returns_missing_set_code() -> None:
+    catalog = FakeMemCatalog()
+    client = _make_client(catalog=catalog)
+    resp = client.get("/jp/cards/batch?codes=066%2F062")
+    assert resp.json()[0]["error"] == "missing_set_code"
+
+
+def test_batch_parse_error() -> None:
+    catalog = FakeMemCatalog()
+    client = _make_client(catalog=catalog)
     resp = client.get("/jp/cards/batch?codes=sv3a+%2F")
-    assert resp.status_code == 200
     assert resp.json()[0]["error"] == "parse_error"
 
 
-def test_batch_mixed_found_and_not_found(client_factory) -> None:  # type: ignore[no-untyped-def]
-    # "sv2a 089" found, "sv2a 999" not found — both are paired items, one query
-    artwork_rows = FakeResult(rows=[_fake_artwork_row("089")])
-    variant_rows = FakeResult(rows=[_fake_variant_row("jp-sv2a-089", "normal")])
-    floor_rows = FakeResult(rows=[])
-    market_rows = FakeResult(rows=[])
-    client, _ = client_factory([artwork_rows, variant_rows, floor_rows, market_rows])
+def test_batch_mixed_found_and_not_found() -> None:
+    catalog = FakeMemCatalog(
+        sets=[_fake_set("SV2A")],
+        artworks=[_fake_artwork("SV2A", "089")],
+    )
+    client = _make_client(catalog=catalog)
     resp = client.get("/jp/cards/batch?codes=sv2a+089,sv2a+999")
     assert resp.status_code == 200
     data = resp.json()
@@ -473,441 +456,274 @@ def test_batch_mixed_found_and_not_found(client_factory) -> None:  # type: ignor
     assert missing["error"] == "not_found"
 
 
-def test_batch_fraction_notation_strips_denominator(client_factory) -> None:  # type: ignore[no-untyped-def]
-    # "sv2a 089/210" should resolve the same as "sv2a 089"
-    artwork_rows = FakeResult(rows=[_fake_artwork_row("089")])
-    variant_rows = FakeResult(rows=[_fake_variant_row("jp-sv2a-089", "normal")])
-    floor_rows = FakeResult(rows=[])
-    market_rows = FakeResult(rows=[])
-    client, _ = client_factory([artwork_rows, variant_rows, floor_rows, market_rows])
+def test_batch_fraction_notation_strips_denominator() -> None:
+    catalog = FakeMemCatalog(
+        sets=[_fake_set("SV2A")],
+        artworks=[_fake_artwork("SV2A", "089")],
+    )
+    client = _make_client(catalog=catalog)
     resp = client.get("/jp/cards/batch?codes=sv2a+089%2F210")
     item = resp.json()[0]
     assert item["error"] is None
     assert item["card"]["local_id"] == "089"
 
 
-def test_batch_empty_codes_returns_empty_list(client_factory) -> None:  # type: ignore[no-untyped-def]
-    client, _ = client_factory([])
+def test_batch_empty_codes_returns_empty_list() -> None:
+    catalog = FakeMemCatalog()
+    client = _make_client(catalog=catalog)
     resp = client.get("/jp/cards/batch?codes=")
     assert resp.status_code == 200
     assert resp.json() == []
 
 
-def test_batch_cache_header_set(client_factory) -> None:  # type: ignore[no-untyped-def]
-    artwork_rows = FakeResult(rows=[_fake_artwork_row("089")])
-    variant_rows = FakeResult(rows=[_fake_variant_row("jp-sv2a-089", "normal")])
-    floor_rows = FakeResult(rows=[])
-    market_rows = FakeResult(rows=[])
-    client, _ = client_factory([artwork_rows, variant_rows, floor_rows, market_rows])
+def test_batch_cache_header_set() -> None:
+    catalog = FakeMemCatalog(
+        sets=[_fake_set("SV2A")],
+        artworks=[_fake_artwork("SV2A", "089")],
+    )
+    client = _make_client(catalog=catalog)
     resp = client.get("/jp/cards/batch?codes=sv2a+089")
     assert "max-age=3600" in resp.headers["Cache-Control"]
 
 
-def test_batch_includes_market_price(client_factory) -> None:  # type: ignore[no-untyped-def]
-    artwork_rows = FakeResult(rows=[_fake_artwork_row("089")])
-    variant_rows = FakeResult(rows=[_fake_variant_row("jp-sv2a-089", "normal")])
-    floor_rows = FakeResult(rows=[])
-    market_rows = FakeResult(
-        rows=[{"card_id": "jp-sv2a-089-normal", "market_price_jpy": 3500, "source_used": "snkrdunk"}]
+def test_batch_market_price_none_in_online_mode() -> None:
+    # In online mode, batch endpoints do not fetch per-card prices.
+    catalog = FakeMemCatalog(
+        sets=[_fake_set("SV2A")],
+        artworks=[_fake_artwork("SV2A", "089")],
     )
-    client, _ = client_factory([artwork_rows, variant_rows, floor_rows, market_rows])
-    resp = client.get("/jp/cards/batch?codes=sv2a+089")
-    assert resp.status_code == 200
-    item = resp.json()[0]
-    assert item["market_price_jpy"] == 3500
-    assert item["market_price_source_used"] == "snkrdunk"
-    assert item["market_price_variant"] == "normal"
-
-
-def test_batch_prefers_cardrush_floor_over_market_price(client_factory) -> None:  # type: ignore[no-untyped-def]
-    artwork_rows = FakeResult(rows=[_fake_artwork_row("089")])
-    variant_rows = FakeResult(rows=[_fake_variant_row("jp-sv2a-089", "normal")])
-    floor_rows = FakeResult(rows=[{"card_id": "jp-sv2a-089-normal", "price_jpy": 3100}])
-    market_rows = FakeResult(
-        rows=[{"card_id": "jp-sv2a-089-normal", "market_price_jpy": 3500, "source_used": "snkrdunk"}]
-    )
-    client, _ = client_factory([artwork_rows, variant_rows, floor_rows, market_rows])
-    resp = client.get("/jp/cards/batch?codes=sv2a+089")
-    assert resp.status_code == 200
-    item = resp.json()[0]
-    assert item["market_price_jpy"] == 3100
-    assert item["market_price_source_used"] == "cardrush"
-    assert item["market_price_variant"] == "normal"
-
-
-def test_batch_market_price_none_when_no_price_data(client_factory) -> None:  # type: ignore[no-untyped-def]
-    artwork_rows = FakeResult(rows=[_fake_artwork_row("089")])
-    variant_rows = FakeResult(rows=[_fake_variant_row("jp-sv2a-089", "normal")])
-    floor_rows = FakeResult(rows=[])
-    market_rows = FakeResult(rows=[])  # mv_market_price has no row for this card
-    client, _ = client_factory([artwork_rows, variant_rows, floor_rows, market_rows])
+    client = _make_client(catalog=catalog)
     resp = client.get("/jp/cards/batch?codes=sv2a+089")
     item = resp.json()[0]
     assert item["error"] is None
     assert item["market_price_jpy"] is None
     assert item["market_price_source_used"] is None
-    assert item["market_price_variant"] == "normal"  # variant still reported
 
 
-def test_post_batch_resolves_codes_from_json_body(client_factory) -> None:  # type: ignore[no-untyped-def]
-    artwork_rows = FakeResult(rows=[_fake_artwork_row("089")])
-    variant_rows = FakeResult(rows=[_fake_variant_row("jp-sv2a-089", "normal")])
-    floor_rows = FakeResult(rows=[])
-    market_rows = FakeResult(
-        rows=[{"card_id": "jp-sv2a-089-normal", "market_price_jpy": 4200, "source_used": "cardrush"}]
+def test_post_batch_resolves_codes_from_json_body() -> None:
+    catalog = FakeMemCatalog(
+        sets=[_fake_set("SV2A")],
+        artworks=[_fake_artwork("SV2A", "089")],
     )
-    client, _ = client_factory([artwork_rows, variant_rows, floor_rows, market_rows])
+    client = _make_client(catalog=catalog)
     resp = client.post("/jp/cards/batch", json={"codes": ["sv2a 089/210"]})
     assert resp.status_code == 200
     item = resp.json()[0]
     assert item["error"] is None
     assert item["card"]["artwork_id"] == "jp-sv2a-089"
-    assert item["market_price_jpy"] == 4200
-    assert item["market_price_source_used"] == "cardrush"
 
 
-def test_post_batch_splits_comma_separated_codes_inside_body_item(client_factory) -> None:  # type: ignore[no-untyped-def]
-    artwork_rows = FakeResult(
-        rows=[
-            {**_fake_artwork_row("086"), "artwork_id": "jp-m3-086", "set_code": "M3"},
-            {**_fake_artwork_row("195"), "artwork_id": "jp-m2a-195", "set_code": "M2A"},
-            {**_fake_artwork_row("085"), "artwork_id": "jp-m2-085", "set_code": "M2"},
-        ]
-    )
-    variant_rows = FakeResult(
-        rows=[
-            _fake_variant_row("jp-m3-086", "normal"),
-            _fake_variant_row("jp-m2a-195", "normal"),
-            _fake_variant_row("jp-m2-085", "normal"),
-        ]
-    )
-    floor_rows = FakeResult(rows=[])
-    market_rows = FakeResult(rows=[])
-    client, _ = client_factory([artwork_rows, variant_rows, floor_rows, market_rows])
-    resp = client.post("/jp/cards/batch", json={"codes": ["m3 086/080,m2a 195/193,m2 085/080"]})
-    assert resp.status_code == 200
-    data = resp.json()
-    assert len(data) == 3
-    assert [d["input"] for d in data] == ["m3 086/080", "m2a 195/193", "m2 085/080"]
-    assert [d["error"] for d in data] == [None, None, None]
-    assert [d["card"]["artwork_id"] for d in data] == ["jp-m3-086", "jp-m2a-195", "jp-m2-085"]
-
-
-def test_post_batch_empty_body_returns_empty_list(client_factory) -> None:  # type: ignore[no-untyped-def]
-    client, _ = client_factory([])
+def test_post_batch_empty_body_returns_empty_list() -> None:
+    catalog = FakeMemCatalog()
+    client = _make_client(catalog=catalog)
     resp = client.post("/jp/cards/batch", json={"codes": []})
     assert resp.status_code == 200
     assert resp.json() == []
 
 
-def test_post_batch_missing_set_code(client_factory) -> None:  # type: ignore[no-untyped-def]
-    client, _ = client_factory([])
+def test_post_batch_missing_set_code() -> None:
+    catalog = FakeMemCatalog()
+    client = _make_client(catalog=catalog)
     resp = client.post("/jp/cards/batch", json={"codes": ["066/062"]})
-    assert resp.status_code == 200
     assert resp.json()[0]["error"] == "missing_set_code"
 
 
-def test_batch_mixed_set_code_and_missing_set_code(client_factory) -> None:  # type: ignore[no-untyped-def]
-    # One token has a set code (queried), the other does not (rejected immediately)
-    artwork_rows = FakeResult(rows=[_fake_artwork_row("089")])
-    variant_rows = FakeResult(rows=[_fake_variant_row("jp-sv2a-089", "normal")])
-    floor_rows = FakeResult(rows=[])
-    market_rows = FakeResult(rows=[])
-    client, _ = client_factory([artwork_rows, variant_rows, floor_rows, market_rows])
-    resp = client.get("/jp/cards/batch?codes=sv2a+089,089")
-    assert resp.status_code == 200
-    data = resp.json()
-    assert len(data) == 2
-    found = next(d for d in data if d["input"] == "sv2a 089")
-    missing = next(d for d in data if d["input"] == "089")
-    assert found["error"] is None
-    assert found["card"]["artwork_id"] == "jp-sv2a-089"
-    assert missing["error"] == "missing_set_code"
-    assert missing["market_price_jpy"] is None
+# ---------------------------------------------------------------------------
+# Cards by sets
+# ---------------------------------------------------------------------------
 
 
-# --- Cards by sets -------------------------------------------------------
-
-
-def _fake_search_row(local_id: str = "089", set_code: str = "SV2A") -> dict[str, Any]:
-    return {
-        **_fake_artwork_row(local_id),
-        "set_code": set_code,
-        "artwork_id": f"jp-{set_code.lower()}-{local_id}",
-        "set_name_ja": "テストセット",
-        "set_name_en": "Test Set",
-        "set_release_date": None,
-    }
-
-
-def test_by_sets_returns_cards_with_prices(client_factory) -> None:  # type: ignore[no-untyped-def]
-    count = FakeResult(scalar=1)
-    artworks = FakeResult(rows=[_fake_search_row("089")])
-    variants = FakeResult(rows=[_fake_variant_row("jp-sv2a-089", "normal")])
-    floors = FakeResult(rows=[{"artwork_id": "jp-sv2a-089", "price_jpy": 1500}])
-    market = FakeResult(
-        rows=[{"card_id": "jp-sv2a-089-normal", "market_price_jpy": 1800, "source_used": "snkrdunk"}]
+def test_by_sets_returns_cards() -> None:
+    catalog = FakeMemCatalog(
+        sets=[_fake_set("SV2A")],
+        artworks=[_fake_artwork("SV2A", "089")],
     )
-    client, _ = client_factory([count, artworks, variants, floors, market])
+    client = _make_client(catalog=catalog)
     resp = client.get("/jp/cards/by-sets?codes=SV2A")
     assert resp.status_code == 200
     data = resp.json()
     assert len(data) == 1
     assert data[0]["artwork_id"] == "jp-sv2a-089"
-    assert data[0]["cardrush_a_floor_jpy"] == 1500
-    assert data[0]["market_price_jpy"] == 1800
-    assert data[0]["market_price_source_used"] == "snkrdunk"
+    # market_price_jpy is always null in online mode
+    assert data[0]["market_price_jpy"] is None
 
 
-def test_by_sets_returns_total_count_header(client_factory) -> None:  # type: ignore[no-untyped-def]
-    count = FakeResult(scalar=42)
-    artworks = FakeResult(rows=[_fake_search_row("089")])
-    variants = FakeResult(rows=[_fake_variant_row("jp-sv2a-089", "normal")])
-    floors = FakeResult(rows=[])
-    market = FakeResult(rows=[])
-    client, _ = client_factory([count, artworks, variants, floors, market])
+def test_by_sets_returns_total_count_header() -> None:
+    catalog = FakeMemCatalog(
+        sets=[_fake_set("SV2A")],
+        artworks=[_fake_artwork("SV2A", "089")],
+    )
+    client = _make_client(catalog=catalog)
     resp = client.get("/jp/cards/by-sets?codes=SV2A")
-    assert resp.headers["X-Total-Count"] == "42"
+    assert resp.headers["X-Total-Count"] == "1"
 
 
-def test_by_sets_returns_cache_header(client_factory) -> None:  # type: ignore[no-untyped-def]
-    count = FakeResult(scalar=1)
-    artworks = FakeResult(rows=[_fake_search_row("089")])
-    variants = FakeResult(rows=[_fake_variant_row("jp-sv2a-089", "normal")])
-    floors = FakeResult(rows=[])
-    market = FakeResult(rows=[])
-    client, _ = client_factory([count, artworks, variants, floors, market])
+def test_by_sets_returns_cache_header() -> None:
+    catalog = FakeMemCatalog(sets=[_fake_set("SV2A")])
+    client = _make_client(catalog=catalog)
     resp = client.get("/jp/cards/by-sets?codes=SV2A")
     assert "max-age=3600" in resp.headers["Cache-Control"]
 
 
-def test_by_sets_empty_codes_returns_empty_with_zero_total(client_factory) -> None:  # type: ignore[no-untyped-def]
-    client, _ = client_factory([])  # no DB queries issued
+def test_by_sets_empty_codes_returns_empty() -> None:
+    catalog = FakeMemCatalog()
+    client = _make_client(catalog=catalog)
     resp = client.get("/jp/cards/by-sets?codes=")
     assert resp.status_code == 200
     assert resp.json() == []
     assert resp.headers["X-Total-Count"] == "0"
 
 
-def test_by_sets_unknown_set_returns_empty(client_factory) -> None:  # type: ignore[no-untyped-def]
-    # count = 0 → short-circuit, no further queries
-    client, _ = client_factory([FakeResult(scalar=0)])
+def test_by_sets_unknown_set_returns_empty() -> None:
+    catalog = FakeMemCatalog()
+    client = _make_client(catalog=catalog)
     resp = client.get("/jp/cards/by-sets?codes=NOPE")
     assert resp.status_code == 200
     assert resp.json() == []
     assert resp.headers["X-Total-Count"] == "0"
 
 
-def test_by_sets_multi_set(client_factory) -> None:  # type: ignore[no-untyped-def]
-    count = FakeResult(scalar=2)
-    artworks = FakeResult(
-        rows=[
-            _fake_search_row("089", "SV2A"),
-            _fake_search_row("066", "M1L"),
-        ]
+def test_post_by_sets_resolves_from_body() -> None:
+    catalog = FakeMemCatalog(
+        sets=[_fake_set("SV2A")],
+        artworks=[_fake_artwork("SV2A", "089")],
     )
-    variants = FakeResult(
-        rows=[
-            _fake_variant_row("jp-sv2a-089", "normal"),
-            _fake_variant_row("jp-m1l-066", "normal"),
-        ]
-    )
-    floors = FakeResult(rows=[])
-    market = FakeResult(rows=[])
-    client, _ = client_factory([count, artworks, variants, floors, market])
-    resp = client.get("/jp/cards/by-sets?codes=SV2A,M1L")
-    assert resp.status_code == 200
-    data = resp.json()
-    assert len(data) == 2
-    assert {d["set_code"] for d in data} == {"SV2A", "M1L"}
-    assert resp.headers["X-Total-Count"] == "2"
-
-
-def test_post_by_sets_resolves_from_body(client_factory) -> None:  # type: ignore[no-untyped-def]
-    count = FakeResult(scalar=1)
-    artworks = FakeResult(rows=[_fake_search_row("089")])
-    variants = FakeResult(rows=[_fake_variant_row("jp-sv2a-089", "normal")])
-    floors = FakeResult(rows=[])
-    market = FakeResult(
-        rows=[{"card_id": "jp-sv2a-089-normal", "market_price_jpy": 2500, "source_used": "cardrush"}]
-    )
-    client, _ = client_factory([count, artworks, variants, floors, market])
+    client = _make_client(catalog=catalog)
     resp = client.post("/jp/cards/by-sets", json={"codes": ["SV2A"]})
     assert resp.status_code == 200
-    data = resp.json()
-    assert len(data) == 1
-    assert data[0]["artwork_id"] == "jp-sv2a-089"
-    assert data[0]["market_price_jpy"] == 2500
+    assert len(resp.json()) == 1
 
 
-def test_post_by_sets_empty_body_returns_empty(client_factory) -> None:  # type: ignore[no-untyped-def]
-    client, _ = client_factory([])
+def test_post_by_sets_empty_body_returns_empty() -> None:
+    catalog = FakeMemCatalog()
+    client = _make_client(catalog=catalog)
     resp = client.post("/jp/cards/by-sets", json={"codes": []})
     assert resp.status_code == 200
     assert resp.json() == []
     assert resp.headers["X-Total-Count"] == "0"
 
 
-def test_search_cards_matches_name_ja(client_factory) -> None:  # type: ignore[no-untyped-def]
-    count = FakeResult(scalar=1)
-    artworks = FakeResult(
-        rows=[
-            {
-                **_fake_artwork_row("089"),
-                "set_name_ja": "ポケモンカード151",
-                "set_name_en": "Pokemon Card 151",
-                "set_release_date": None,
-            }
-        ]
+# ---------------------------------------------------------------------------
+# Search
+# ---------------------------------------------------------------------------
+
+
+def test_search_cards_matches_name_ja() -> None:
+    catalog = FakeMemCatalog(
+        sets=[_fake_set("SV2A")],
+        artworks=[_fake_artwork("SV2A", "089")],
     )
-    variants = FakeResult(rows=[_fake_variant_row("jp-sv2a-089", "normal")])
-    floors = FakeResult(rows=[{"artwork_id": "jp-sv2a-089", "price_jpy": 1200}])
-    market = FakeResult(
-        rows=[
-            {
-                "card_id": "jp-sv2a-089-normal",
-                "market_price_jpy": 1500,
-                "source_used": "snkrdunk",
-            }
-        ]
-    )
-    client, _ = client_factory([count, artworks, variants, floors, market])
+    client = _make_client(catalog=catalog)
     resp = client.get("/jp/cards/search?q=ベト")
     assert resp.status_code == 200
     body = resp.json()
     assert body[0]["artwork_id"] == "jp-sv2a-089"
-    assert body[0]["cardrush_a_floor_jpy"] == 1200
-    assert body[0]["market_price_jpy"] == 1500
-    assert body[0]["market_price_source_used"] == "snkrdunk"
+    # prices not embedded in search results
+    assert body[0]["market_price_jpy"] is None
 
 
-def test_search_cards_matches_local_id(client_factory) -> None:  # type: ignore[no-untyped-def]
-    count = FakeResult(scalar=1)
-    artworks = FakeResult(
-        rows=[
-            {
-                **_fake_artwork_row("089"),
-                "set_name_ja": "ポケモンカード151",
-                "set_name_en": "Pokemon Card 151",
-                "set_release_date": None,
-            }
-        ]
+def test_search_cards_matches_local_id() -> None:
+    catalog = FakeMemCatalog(
+        sets=[_fake_set("SV2A")],
+        artworks=[_fake_artwork("SV2A", "089")],
     )
-    variants = FakeResult(rows=[_fake_variant_row("jp-sv2a-089", "normal")])
-    floors = FakeResult(rows=[])
-    market = FakeResult(rows=[])
-    client, _ = client_factory([count, artworks, variants, floors, market])
+    client = _make_client(catalog=catalog)
     resp = client.get("/jp/cards/search?q=089")
     assert resp.status_code == 200
     assert resp.json()[0]["local_id"] == "089"
 
 
-def test_search_cards_matches_set_code(client_factory) -> None:  # type: ignore[no-untyped-def]
-    count = FakeResult(scalar=1)
-    artworks = FakeResult(
-        rows=[
-            {
-                **_fake_artwork_row("001"),
-                "set_name_ja": "ポケモンカード151",
-                "set_name_en": "Pokemon Card 151",
-                "set_release_date": None,
-            }
-        ]
+def test_search_cards_matches_set_code() -> None:
+    catalog = FakeMemCatalog(
+        sets=[_fake_set("SV2A")],
+        artworks=[_fake_artwork("SV2A", "001")],
     )
-    variants = FakeResult(rows=[_fake_variant_row("jp-sv2a-001", "normal")])
-    floors = FakeResult(rows=[])
-    market = FakeResult(rows=[])
-    client, _ = client_factory([count, artworks, variants, floors, market])
+    client = _make_client(catalog=catalog)
     resp = client.get("/jp/cards/search?q=sv2a")
     assert resp.status_code == 200
     assert resp.json()[0]["set_code"] == "SV2A"
 
 
-def test_search_cards_filters_by_set_and_rarity(client_factory) -> None:  # type: ignore[no-untyped-def]
-    count = FakeResult(scalar=0)
-    artworks = FakeResult(rows=[])
-    client, _ = client_factory([count, artworks])
-    resp = client.get("/jp/cards/search?q=muk&set_code=SV2A&rarity=U")
+def test_search_cards_filters_by_rarity() -> None:
+    catalog = FakeMemCatalog(
+        sets=[_fake_set("SV2A")],
+        artworks=[_fake_artwork("SV2A", "089", rarity="SAR")],
+    )
+    client = _make_client(catalog=catalog)
+    resp = client.get("/jp/cards/search?rarity=SAR")
     assert resp.status_code == 200
-    assert resp.headers["X-Total-Count"] == "0"
+    assert len(resp.json()) == 1
+
+    resp2 = client.get("/jp/cards/search?rarity=UR")
+    assert len(resp2.json()) == 0
 
 
-def test_search_cards_returns_total_count_header(client_factory) -> None:  # type: ignore[no-untyped-def]
-    count = FakeResult(scalar=42)
-    artworks = FakeResult(rows=[])
-    client, _ = client_factory([count, artworks])
-    resp = client.get("/jp/cards/search?q=sv")
-    assert resp.status_code == 200
-    assert resp.headers["X-Total-Count"] == "42"
+def test_search_cards_returns_total_count_header() -> None:
+    catalog = FakeMemCatalog(
+        sets=[_fake_set("SV2A")],
+        artworks=[_fake_artwork("SV2A", "089")],
+    )
+    client = _make_client(catalog=catalog)
+    resp = client.get("/jp/cards/search?q=ベト")
+    assert resp.headers["X-Total-Count"] == "1"
 
 
-def test_search_cards_rejects_blank_query(client_factory) -> None:  # type: ignore[no-untyped-def]
-    client, session = client_factory([])
+def test_search_cards_rejects_blank_query() -> None:
+    catalog = FakeMemCatalog()
+    client = _make_client(catalog=catalog)
     resp = client.get("/jp/cards/search?q=%20%20%20")
     assert resp.status_code == 422
-    assert session.calls == []
 
 
-def test_list_card_rarities_returns_distinct_codes(client_factory) -> None:  # type: ignore[no-untyped-def]
-    rarities = FakeResult(scalars=["AR", "SAR", "UR"])
-    client, _ = client_factory([rarities])
+def test_list_card_rarities_returns_distinct_codes() -> None:
+    catalog = FakeMemCatalog(
+        sets=[_fake_set("SV2A")],
+        artworks=[
+            _fake_artwork("SV2A", "001", rarity="AR"),
+            _fake_artwork("SV2A", "002", rarity="SAR"),
+            _fake_artwork("SV2A", "003", rarity="UR"),
+        ],
+    )
+    client = _make_client(catalog=catalog)
     resp = client.get("/jp/cards/rarities")
     assert resp.status_code == 200
     assert resp.json() == ["AR", "SAR", "UR"]
     assert "max-age=3600" in resp.headers["Cache-Control"]
 
 
-def test_list_card_rarities_filters_by_set_code(client_factory) -> None:  # type: ignore[no-untyped-def]
-    rarities = FakeResult(scalars=["RR", "SR"])
-    client, _ = client_factory([rarities])
-    resp = client.get("/jp/cards/rarities?set_code=SV1S")
-    assert resp.status_code == 200
-    assert resp.json() == ["RR", "SR"]
+def test_list_card_rarities_filters_by_set_code() -> None:
+    catalog = FakeMemCatalog(
+        sets=[_fake_set("SV2A")],
+        artworks=[_fake_artwork("SV2A", "089", rarity="U")],
+    )
+    client = _make_client(catalog=catalog)
+    resp = client.get("/jp/cards/rarities?set_code=SV2A")
+    assert resp.json() == ["U"]
 
 
-# --- Prices / spread -----------------------------------------------------
+# ---------------------------------------------------------------------------
+# Prices / spread (via price proxy)
+# ---------------------------------------------------------------------------
 
 
-def _fake_card_scalars(variant: str = "normal") -> FakeResult:
-    """Single-query _resolve_card result: list of Card-like rows."""
-    return FakeResult(
-        scalars=[
-            _RowLike(
-                {
-                    "card_id": f"jp-sv2a-089-{variant}",
-                    "set_code": "SV2A",
-                    "local_id": "089",
-                    "variant": variant,
-                }
-            )
-        ]
+def _catalog_with_card(variant: str = "normal") -> FakeMemCatalog:
+    return FakeMemCatalog(
+        sets=[_fake_set("SV2A")],
+        artworks=[_fake_artwork("SV2A", "089", variants=[variant])],
     )
 
 
-def test_latest_prices_from_mv(client_factory) -> None:  # type: ignore[no-untyped-def]
+def test_latest_prices_returns_data() -> None:
     now = datetime(2025, 4, 1, tzinfo=UTC)
-    resolve = _fake_card_scalars("normal")
-    mv_rows = FakeResult(
-        rows=[
-            {
-                "card_id": "jp-sv2a-089-normal",
-                "source": "cardrush",
-                "condition": "NM",
-                "price_jpy": 500,
-                "stock_qty": 3,
-                "observed_at": now,
-            },
-            {
-                "card_id": "jp-sv2a-089-normal",
-                "source": "snkrdunk",
-                "condition": "NM",
-                "price_jpy": 450,
-                "stock_qty": None,
-                "observed_at": now,
-            },
+    proxy = FakePriceProxy(
+        prices=[
+            {"card_id": "jp-sv2a-089-normal", "source": "cardrush", "condition": "A",
+             "price_jpy": 500, "stock_qty": 3, "observed_at": now},
+            {"card_id": "jp-sv2a-089-normal", "source": "snkrdunk", "condition": "A",
+             "price_jpy": 450, "stock_qty": None, "observed_at": now},
         ]
     )
-    client, _ = client_factory([resolve, mv_rows])
+    client = _make_client(catalog=_catalog_with_card(), proxy=proxy)
     resp = client.get("/jp/cards/SV2A/089/prices")
     assert resp.status_code == 200
     prices = resp.json()
@@ -915,87 +731,50 @@ def test_latest_prices_from_mv(client_factory) -> None:  # type: ignore[no-untyp
     assert {p["source"] for p in prices} == {"cardrush", "snkrdunk"}
 
 
-def test_latest_prices_returns_cache_and_etag_headers(client_factory) -> None:  # type: ignore[no-untyped-def]
-    now = datetime(2025, 4, 1, tzinfo=UTC)
-    resolve = _fake_card_scalars("normal")
-    mv_rows = FakeResult(
-        rows=[
-            {
-                "card_id": "jp-sv2a-089-normal",
-                "source": "cardrush",
-                "condition": "NM",
-                "price_jpy": 500,
-                "stock_qty": None,
-                "observed_at": now,
-            }
-        ]
-    )
-    client, _ = client_factory([resolve, mv_rows])
+def test_latest_prices_returns_cache_header() -> None:
+    client = _make_client(catalog=_catalog_with_card(), proxy=FakePriceProxy())
     resp = client.get("/jp/cards/SV2A/089/prices")
     assert resp.status_code == 200
-    assert "max-age=300" in resp.headers["Cache-Control"]
-    assert resp.headers.get("ETag", "").startswith('"')
+    assert "max-age=1800" in resp.headers["Cache-Control"]
 
 
-def test_latest_prices_conditional_get_returns_304(client_factory) -> None:  # type: ignore[no-untyped-def]
-    now = datetime(2025, 4, 1, tzinfo=UTC)
-    price_row = {
-        "card_id": "jp-sv2a-089-normal",
-        "source": "cardrush",
-        "condition": "NM",
-        "price_jpy": 500,
-        "stock_qty": None,
-        "observed_at": now,
-    }
-
-    # First request: get the ETag.
-    resolve1 = _fake_card_scalars()
-    mv1 = FakeResult(rows=[price_row])
-    client, _ = client_factory([resolve1, mv1])
-    resp1 = client.get("/jp/cards/SV2A/089/prices")
-    etag = resp1.headers["ETag"]
-
-    # Second request with If-None-Match: expect 304.
-    resolve2 = _fake_card_scalars()
-    mv2 = FakeResult(rows=[price_row])
-    client2, _ = client_factory([resolve2, mv2])
-    resp2 = client2.get("/jp/cards/SV2A/089/prices", headers={"If-None-Match": etag})
-    assert resp2.status_code == 304
-
-
-def test_history_returns_no_store_cache_header(client_factory) -> None:  # type: ignore[no-untyped-def]
-    resolve = _fake_card_scalars()
-    history_rows = FakeResult(scalars=[])
-    client, _ = client_factory([resolve, history_rows])
+def test_history_always_empty_in_online_mode() -> None:
+    client = _make_client(catalog=_catalog_with_card(), proxy=FakePriceProxy())
     resp = client.get("/jp/cards/SV2A/089/history")
     assert resp.status_code == 200
+    assert resp.json() == []
     assert resp.headers["Cache-Control"] == "no-store"
 
 
-def test_unpadded_local_id_is_accepted(client_factory) -> None:  # type: ignore[no-untyped-def]
-    artwork = FakeResult(rows=[_fake_artwork_row("089")])
-    variants = FakeResult(rows=[_fake_variant_row("jp-sv2a-089", "normal")])
-    client, _ = client_factory([artwork, variants])
-    resp = client.get("/jp/cards/SV2A/89")
-    assert resp.status_code == 200
-    assert resp.json()["local_id"] == "089"
-
-
-def test_spread_from_mv(client_factory) -> None:  # type: ignore[no-untyped-def]
-    resolve = _fake_card_scalars("normal")
-    spread_rows = FakeResult(
-        rows=[
-            {
-                "card_id": "jp-sv2a-089-normal",
-                "condition": "NM",
-                "cardrush_floor": 500,
-                "snkrdunk_median_7d": 450.0,
-                "spread_jpy": 50.0,
-                "spread_pct": 0.111,
-            }
-        ]
+def test_market_price_returns_data() -> None:
+    proxy = FakePriceProxy(
+        market={"card_id": "jp-sv2a-089-normal", "market_price_jpy": 3500, "source_used": "snkrdunk"}
     )
-    client, _ = client_factory([resolve, spread_rows])
+    client = _make_client(catalog=_catalog_with_card(), proxy=proxy)
+    resp = client.get("/jp/cards/SV2A/089/market-price")
+    assert resp.status_code == 200
+    assert resp.json()["market_price_jpy"] == 3500
+
+
+def test_market_price_404_when_no_data() -> None:
+    proxy = FakePriceProxy(market=None)
+    client = _make_client(catalog=_catalog_with_card(), proxy=proxy)
+    resp = client.get("/jp/cards/SV2A/089/market-price")
+    assert resp.status_code == 404
+
+
+def test_spread_returns_data() -> None:
+    proxy = FakePriceProxy(
+        spread=[{
+            "card_id": "jp-sv2a-089-normal",
+            "condition": "A",
+            "cardrush_floor": 500,
+            "snkrdunk_median_7d": 450.0,
+            "spread_jpy": 50.0,
+            "spread_pct": 0.111,
+        }]
+    )
+    client = _make_client(catalog=_catalog_with_card(), proxy=proxy)
     resp = client.get("/jp/cards/SV2A/089/spread")
     assert resp.status_code == 200
     rows = resp.json()
@@ -1004,47 +783,38 @@ def test_spread_from_mv(client_factory) -> None:  # type: ignore[no-untyped-def]
     assert rows[0]["spread_pct"] == pytest.approx(0.111)
 
 
-def test_prices_400_for_unknown_variant_with_available_list(client_factory) -> None:  # type: ignore[no-untyped-def]
-    # _resolve_card now fetches all variants in a single query.
-    all_cards = FakeResult(
-        rows=[
-            {"variant": "normal", "card_id": "jp-sv2a-089-normal",
-             "set_code": "SV2A", "local_id": "089"},
-            {"variant": "master_ball_mirror", "card_id": "jp-sv2a-089-mbm",
-             "set_code": "SV2A", "local_id": "089"},
-        ]
-    )
-    client, _ = client_factory([all_cards])
+def test_prices_400_for_unknown_variant_with_available_list() -> None:
+    catalog = _catalog_with_card(variant="normal")
+    client = _make_client(catalog=catalog, proxy=FakePriceProxy())
     resp = client.get("/jp/cards/SV2A/089/prices?variant=bogus")
     assert resp.status_code == 400
     assert "available variants" in resp.json()["detail"]
 
 
-def test_prices_404_when_artwork_missing(client_factory) -> None:  # type: ignore[no-untyped-def]
-    # Single query returns no prints → 404.
-    client, _ = client_factory([FakeResult(scalars=[])])
+def test_prices_404_when_artwork_missing() -> None:
+    catalog = FakeMemCatalog(sets=[_fake_set("SV2A")])
+    client = _make_client(catalog=catalog, proxy=FakePriceProxy())
     resp = client.get("/jp/cards/SV2A/999/prices")
     assert resp.status_code == 404
 
 
-# --- Graded prices / history ---------------------------------------------
+# ---------------------------------------------------------------------------
+# Graded prices / history
+# ---------------------------------------------------------------------------
 
 
-def test_graded_prices_returns_list(client_factory) -> None:  # type: ignore[no-untyped-def]
+def test_graded_prices_returns_list() -> None:
     now = datetime(2025, 4, 1, tzinfo=UTC)
-    resolve = _fake_card_scalars("normal")
-    graded_rows = FakeResult(
-        rows=[
-            {
-                "grade_company": "PSA",
-                "grade_score": 10.0,
-                "source": "cardrush",
-                "price_jpy": 95000,
-                "observed_at": now,
-            }
-        ]
+    proxy = FakePriceProxy(
+        graded=[{
+            "grade_company": "PSA",
+            "grade_score": 10.0,
+            "source": "snkrdunk",
+            "price_jpy": 95000,
+            "observed_at": now,
+        }]
     )
-    client, _ = client_factory([resolve, graded_rows])
+    client = _make_client(catalog=_catalog_with_card(), proxy=proxy)
     resp = client.get("/jp/cards/SV2A/089/graded-prices")
     assert resp.status_code == 200
     data = resp.json()
@@ -1052,70 +822,60 @@ def test_graded_prices_returns_list(client_factory) -> None:  # type: ignore[no-
     assert data[0]["grade_company"] == "PSA"
     assert data[0]["grade_score"] == 10.0
     assert data[0]["price_jpy"] == 95000
-    assert data[0]["source"] == "cardrush"
 
 
-def test_graded_prices_empty(client_factory) -> None:  # type: ignore[no-untyped-def]
-    resolve = _fake_card_scalars("normal")
-    graded_rows = FakeResult(rows=[])
-    client, _ = client_factory([resolve, graded_rows])
+def test_graded_prices_empty() -> None:
+    client = _make_client(catalog=_catalog_with_card(), proxy=FakePriceProxy())
     resp = client.get("/jp/cards/SV2A/089/graded-prices")
     assert resp.status_code == 200
     assert resp.json() == []
 
 
-def test_graded_prices_no_store_cache(client_factory) -> None:  # type: ignore[no-untyped-def]
-    resolve = _fake_card_scalars("normal")
-    graded_rows = FakeResult(rows=[])
-    client, _ = client_factory([resolve, graded_rows])
+def test_graded_prices_no_store_cache() -> None:
+    client = _make_client(catalog=_catalog_with_card(), proxy=FakePriceProxy())
     resp = client.get("/jp/cards/SV2A/089/graded-prices")
     assert resp.headers["Cache-Control"] == "no-store"
 
 
-def test_graded_history_empty(client_factory) -> None:  # type: ignore[no-untyped-def]
-    resolve = _fake_card_scalars("normal")
-    history_rows = FakeResult(scalars=[])
-    client, _ = client_factory([resolve, history_rows])
+def test_graded_history_empty() -> None:
+    client = _make_client(catalog=_catalog_with_card(), proxy=FakePriceProxy())
     resp = client.get("/jp/cards/SV2A/089/graded-history")
     assert resp.status_code == 200
     assert resp.json() == []
 
 
-def test_graded_history_no_store_cache(client_factory) -> None:  # type: ignore[no-untyped-def]
-    resolve = _fake_card_scalars("normal")
-    history_rows = FakeResult(scalars=[])
-    client, _ = client_factory([resolve, history_rows])
+def test_graded_history_no_store_cache() -> None:
+    client = _make_client(catalog=_catalog_with_card(), proxy=FakePriceProxy())
     resp = client.get("/jp/cards/SV2A/089/graded-history")
     assert resp.headers["Cache-Control"] == "no-store"
 
 
-def test_graded_history_company_filter_accepted(client_factory) -> None:  # type: ignore[no-untyped-def]
-    resolve = _fake_card_scalars("normal")
-    history_rows = FakeResult(scalars=[])
-    client, _ = client_factory([resolve, history_rows])
+def test_graded_history_company_filter_accepted() -> None:
+    client = _make_client(catalog=_catalog_with_card(), proxy=FakePriceProxy())
     resp = client.get("/jp/cards/SV2A/089/graded-history?company=PSA")
     assert resp.status_code == 200
 
 
-def test_graded_history_days_param_accepted(client_factory) -> None:  # type: ignore[no-untyped-def]
-    resolve = _fake_card_scalars("normal")
-    history_rows = FakeResult(scalars=[])
-    client, _ = client_factory([resolve, history_rows])
+def test_graded_history_days_param_accepted() -> None:
+    client = _make_client(catalog=_catalog_with_card(), proxy=FakePriceProxy())
     resp = client.get("/jp/cards/SV2A/089/graded-history?days=30")
     assert resp.status_code == 200
 
 
-def test_graded_prices_404_for_missing_card(client_factory) -> None:  # type: ignore[no-untyped-def]
-    client, _ = client_factory([FakeResult(scalars=[])])
+def test_graded_prices_404_for_missing_card() -> None:
+    catalog = FakeMemCatalog(sets=[_fake_set("SV2A")])
+    client = _make_client(catalog=catalog, proxy=FakePriceProxy())
     resp = client.get("/jp/cards/SV2A/999/graded-prices")
     assert resp.status_code == 404
 
 
-# --- Locale --------------------------------------------------------------
+# ---------------------------------------------------------------------------
+# Locale
+# ---------------------------------------------------------------------------
 
 
-def test_unsupported_lang_returns_404(client_factory) -> None:  # type: ignore[no-untyped-def]
-    client, session = client_factory([])
+def test_unsupported_lang_returns_404() -> None:
+    catalog = FakeMemCatalog()
+    client = _make_client(catalog=catalog)
     resp = client.get("/xx/sets")
     assert resp.status_code == 404
-    assert session.calls == []

@@ -1,12 +1,7 @@
 name: Scheduled scrapers
 on:
-  schedule:
-    # Cardrush: 09:00 + 17:00 JST (= 00:00 + 08:00 UTC)
-    - cron: "0 0,8 * * *"
-    # SNKRDUNK: 03:00 JST (= 18:00 UTC previous day)
-    - cron: "0 18 * * *"
-    # Legacy SM/SW + promos weekly: Saturday 06:00 JST (= 21:00 UTC Friday)
-    - cron: "0 21 * * 6"
+  # Scheduled scrapers disabled — API now fetches prices on demand (online mode).
+  # Manual runs still available via workflow_dispatch if needed.
   workflow_dispatch:
     inputs:
       job:

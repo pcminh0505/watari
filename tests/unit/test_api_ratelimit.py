@@ -1,21 +1,20 @@
 """Unit tests for rate limiting: config parsing + end-to-end dep wiring.
 
-The Redis-backed :class:`~watari_api.ratelimit.RateLimiter` itself is
-exercised via a fake limiter that records calls and returns canned
-:class:`~watari_api.ratelimit.Decision` objects — we don't need the
-token-bucket Lua correctness in the unit suite (it's tiny and covered by
-the config-parse + integration-style tests).
+The in-memory :class:`~watari_api.ratelimit.RateLimiter` is exercised via a
+fake limiter that records calls and returns canned
+:class:`~watari_api.ratelimit.Decision` objects. We verify the token-bucket
+config parsing and the FastAPI dependency wiring, not the Lua/Redis details
+(there are none in online mode).
 """
 
 from __future__ import annotations
 
-from collections.abc import AsyncGenerator
 from typing import Any
 
 import pytest
 from fastapi.testclient import TestClient
 from watari_api.auth import AuthContext, get_auth_context
-from watari_api.deps import get_session
+from watari_api.deps import get_catalog
 from watari_api.main import create_app
 from watari_api.ratelimit import (
     Bucket,
@@ -55,18 +54,8 @@ def test_parse_rate_limits_rejects_malformed() -> None:
 # --- bucket lookup -------------------------------------------------------
 
 
-class _MinimalRedisStub:
-    """Just enough of an aioredis.Redis surface for RateLimiter.__init__."""
-
-    def register_script(self, _: str) -> Any:  # pragma: no cover — never invoked
-        return None
-
-
 def test_bucket_for_unknown_tier_falls_back_to_free() -> None:
-    limiter = RateLimiter(
-        _MinimalRedisStub(),  # type: ignore[arg-type]
-        {"free": Bucket(10, 1.0), "paid": Bucket(100, 10.0)},
-    )
+    limiter = RateLimiter({"free": Bucket(10, 1.0), "paid": Bucket(100, 10.0)})
     assert limiter._bucket_for("nonsense") == Bucket(10, 1.0)  # noqa: SLF001
     assert limiter._bucket_for("paid") == Bucket(100, 10.0)  # noqa: SLF001
 
@@ -93,6 +82,29 @@ class FakeLimiter:
         return self._decisions.pop(0)
 
 
+class _EmptyCatalog:
+    """Returns empty results for all catalog lookups — rate-limit tests only
+    care about response headers, not handler body shape."""
+
+    def get_sets(self, *, language: str = "jp", era: str | None = None) -> list[Any]:
+        return []
+
+    def get_set(self, set_code: str, *, language: str = "jp") -> None:
+        return None
+
+    def get_artworks(self, set_code: str) -> list[Any]:
+        return []
+
+    def get_artwork(self, set_code: str, local_id: str) -> None:
+        return None
+
+    def search_artworks(self, **kwargs: Any) -> list[Any]:
+        return []
+
+    def get_rarities(self, *, language: str, set_code: str | None = None) -> list[str]:
+        return []
+
+
 async def _fake_anonymous_auth() -> AuthContext:
     return AuthContext(
         authed=False,
@@ -103,55 +115,15 @@ async def _fake_anonymous_auth() -> AuthContext:
     )
 
 
-def _session_gen(session: Any) -> Any:
-    async def _gen() -> AsyncGenerator[Any, None]:
-        yield session
-
-    return _gen
-
-
-class _EmptyResult:
-    """Returns zero rows for whatever the handler asks of it."""
-
-    def scalars(self) -> _EmptyResult:
-        return self
-
-    def all(self) -> list[Any]:
-        return []
-
-    def scalar_one(self) -> int:
-        return 0
-
-    def scalar_one_or_none(self) -> Any:
-        return None
-
-    def mappings(self) -> _EmptyResult:
-        return self
-
-    def one_or_none(self) -> Any:
-        return None
-
-
-class _NoopSession:
-    """Stand-in DB that returns empty results — rate-limit tests don't care
-    about handler shape, they only care about headers/status codes."""
-
-    async def execute(self, *_: Any, **__: Any) -> _EmptyResult:
-        return _EmptyResult()
-
-    async def commit(self) -> None:  # pragma: no cover
-        return None
-
-
 @pytest.fixture()
 def rl_client():  # type: ignore[no-untyped-def]
     def _make(decisions: list[Decision]) -> tuple[TestClient, FakeLimiter]:
         app = create_app()
         limiter = FakeLimiter(decisions)
-        # Override the rate-limiter + auth so we don't need Redis or DB.
+        # Override rate-limiter + auth so we don't need Redis or a DB.
         app.dependency_overrides[get_rate_limiter] = lambda: limiter
         app.dependency_overrides[get_auth_context] = _fake_anonymous_auth
-        app.dependency_overrides[get_session] = _session_gen(_NoopSession())
+        app.dependency_overrides[get_catalog] = lambda: _EmptyCatalog()
         return TestClient(app), limiter
 
     return _make
@@ -165,7 +137,7 @@ def test_allowed_request_sets_rate_limit_headers(rl_client) -> None:  # type: ig
         bucket=Bucket(60, 1.0),
     )
     client, limiter = rl_client([decision])
-    # Handler runs with _NoopSession returning 0 rows, so 200 + [].
+    # Handler runs with empty catalog, returns 200 + [].
     resp = client.get("/jp/sets")
     assert resp.status_code == 200
     assert resp.json() == []

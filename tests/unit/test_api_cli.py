@@ -1,21 +1,18 @@
-"""Unit tests for the API CLI parser + subcommand wiring.
+"""Unit tests for the API CLI parser + subcommand wiring — online mode.
 
-We don't exercise the DB-touching branches (``create-key`` / ``revoke-key``
-/ ``list-keys``) here — those need a live Postgres and belong in the
-integration suite. Instead we verify:
+In online mode the CLI only exposes the ``serve`` subcommand (key-management
+and MV-refresh commands have been removed). We verify:
 
-    1. Legacy ``--host/--port/--reload`` still parses without a subcommand.
-    2. Each subcommand is registered with its own required/optional args.
-    3. ``serve`` is the implicit default when no subcommand is supplied.
-    4. ``main(argv)`` dispatches to uvicorn for ``serve`` without actually
-       binding a port (we stub uvicorn.run).
+    1. Legacy ``--host/--port/--reload`` top-level flags still parse.
+    2. The ``serve`` subcommand registers its own flags.
+    3. ``main(argv)`` dispatches to uvicorn without actually binding a port
+       (uvicorn.run is stubbed).
 """
 
 from __future__ import annotations
 
 from typing import Any
 
-import pytest
 from watari_api import cli
 
 
@@ -33,62 +30,6 @@ def test_parser_serve_subcommand_has_flags() -> None:
     args = cli.build_parser().parse_args(["serve", "--port", "8080"])
     assert args.cmd == "serve"
     assert args.port == 8080
-
-
-def test_parser_create_key_requires_owner() -> None:
-    with pytest.raises(SystemExit):
-        cli.build_parser().parse_args(["create-key"])
-
-
-def test_parser_create_key_accepts_tier() -> None:
-    args = cli.build_parser().parse_args(
-        ["create-key", "--owner", "dev@example.com", "--tier", "paid"],
-    )
-    assert args.cmd == "create-key"
-    assert args.owner == "dev@example.com"
-    assert args.tier == "paid"
-
-
-def test_parser_revoke_key_requires_prefix() -> None:
-    with pytest.raises(SystemExit):
-        cli.build_parser().parse_args(["revoke-key"])
-    args = cli.build_parser().parse_args(["revoke-key", "pk_abc123"])
-    assert args.cmd == "revoke-key"
-    assert args.prefix == "pk_abc123"
-
-
-def test_parser_list_keys_include_revoked_flag() -> None:
-    args = cli.build_parser().parse_args(["list-keys"])
-    assert args.cmd == "list-keys"
-    assert args.include_revoked is False
-
-    args2 = cli.build_parser().parse_args(["list-keys", "--include-revoked"])
-    assert args2.include_revoked is True
-
-
-def test_parser_refresh_mvs_defaults_to_concurrent() -> None:
-    args = cli.build_parser().parse_args(["refresh-mvs"])
-    assert args.cmd == "refresh-mvs"
-    assert args.no_concurrently is False
-
-    args2 = cli.build_parser().parse_args(["refresh-mvs", "--no-concurrently"])
-    assert args2.no_concurrently is True
-
-
-def test_main_dispatches_refresh_mvs(monkeypatch) -> None:  # type: ignore[no-untyped-def]
-    captured: dict[str, Any] = {}
-
-    async def _fake_refresh(concurrently: bool) -> None:
-        captured["concurrently"] = concurrently
-
-    monkeypatch.setattr(cli, "_refresh_mvs", _fake_refresh)
-
-    cli.main(["refresh-mvs"])
-    assert captured == {"concurrently": True}
-
-    captured.clear()
-    cli.main(["refresh-mvs", "--no-concurrently"])
-    assert captured == {"concurrently": False}
 
 
 def test_main_defaults_to_serve_and_calls_uvicorn(monkeypatch) -> None:  # type: ignore[no-untyped-def]

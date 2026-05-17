@@ -1,6 +1,6 @@
 # Watari
 
-Japanese Pokémon TCG price API and web UI. Scrapes live listings from [Cardrush](https://www.cardrush-pokemon.jp/) and sold history from [SNKRDUNK](https://snkrdunk.com/), normalises them into a unified schema, and exposes a read-only REST API — covering **98 sets across SV, ME, SWSH, and SM eras** (~10 800 card prints).
+Japanese Pokémon TCG price API and web UI. Fetches live listings from [Cardrush](https://www.cardrush-pokemon.jp/) and sold history from [SNKRDUNK](https://snkrdunk.com/) on demand, normalises them into a unified schema, and exposes a read-only REST API — covering **105 sets across SV, ME, CL, SWSH, and SM eras** (~12 000 card prints).
 
 **Live API:** `https://watari-api.fly.dev`
 
@@ -15,10 +15,15 @@ GET /healthz
 GET /jp/sets
 GET /jp/sets/{set_code}
 GET /jp/sets/{set_code}/cards
+GET /jp/cards/search
+GET /jp/cards/batch
+GET /jp/cards/by-sets
 GET /jp/cards/{set_code}/{local_id}
 GET /jp/cards/{set_code}/{local_id}/prices
-GET /jp/cards/{set_code}/{local_id}/history
 GET /jp/cards/{set_code}/{local_id}/spread
+GET /jp/cards/{set_code}/{local_id}/market-price
+GET /jp/cards/{set_code}/{local_id}/graded-prices
+GET /jp/cards/{set_code}/{local_id}/graded-history
 ```
 
 ### Examples
@@ -30,37 +35,43 @@ curl https://watari-api.fly.dev/jp/sets
 # Cards in a set
 curl https://watari-api.fly.dev/jp/sets/SV2A/cards
 
-# Latest price for a card
+# Latest price for a card (fetched live, cached 30 min)
 curl "https://watari-api.fly.dev/jp/cards/SV2A/089/prices?variant=normal"
 # → [{"card_id":"jp-sv2a-089-normal","source":"cardrush","condition":"A","price_jpy":50,...}]
 
 # Cross-source price spread
 curl "https://watari-api.fly.dev/jp/cards/SV2A/089/spread?variant=normal"
 
-# Price history
-curl "https://watari-api.fly.dev/jp/cards/SV2A/089/history?variant=normal&days=30"
+# Market price (Snkrdunk 7d median preferred, Cardrush floor fallback)
+curl "https://watari-api.fly.dev/jp/cards/SV2A/089/market-price?variant=normal"
+
+# Graded card history (PSA/BGS/CGC)
+curl "https://watari-api.fly.dev/jp/cards/SV2A/089/graded-history?company=PSA&days=365"
 ```
 
-### Authentication
+> **Note:** Price endpoints (`/prices`, `/spread`, `/market-price`, `/graded-*`) fetch
+> live from Cardrush and Snkrdunk. The first request per card may take 2–5 s; subsequent
+> requests within 30 minutes are served from cache.
 
-Requests without an API key are rate-limited to **60 req/min** (free tier). Pass a key via header:
+### Rate limiting
 
-```
-X-API-Key: your_key_here
-```
+All requests are rate-limited to **60 req/min** (free tier). Responses include
+`X-RateLimit-Tier`, `X-RateLimit-Limit`, and `X-RateLimit-Remaining` headers.
+Exceeded limits return HTTP 429 with a `Retry-After` header.
 
 ---
 
 ## Coverage
 
-| Era | Sets | Scrape schedule |
-|-----|------|-----------------|
-| Scarlet & Violet (SV1S–SV11) | 25 sets | Cardrush 2×/day · SNKRDUNK nightly |
-| Mask Expansion (M1L–M4) | 6 sets | Cardrush 2×/day · SNKRDUNK nightly |
-| Sword & Shield (S1W–S12A) | 30 sets | Cardrush + SNKRDUNK weekly (Sun 06:00 JST) |
-| Sun & Moon (SM0–SM12A, SMP2) | 37 sets | Cardrush + SNKRDUNK weekly (Sun 06:00 JST) |
+| Era | Sets | Notes |
+|-----|------|-------|
+| Scarlet & Violet (SV1S–SV11W) + SVP promos | 26 sets | — |
+| Mask Expansion (M1L–M4) + MP promos | 7 sets | — |
+| Pokémon Card Classic (CLF/CLL/CLK) | 3 sets | — |
+| Sword & Shield (S1W–S12A) + SP promos | 31 sets | — |
+| Sun & Moon (SM0–SM12A, SMP2) + SMPR promos | 38 sets | — |
 
-Scrapers run via Fly.io ephemeral machines triggered by GitHub Actions.
+Prices are fetched on demand from Cardrush (listings) and Snkrdunk (sold history).
 
 ---
 
@@ -70,10 +81,10 @@ Scrapers run via Fly.io ephemeral machines triggered by GitHub Actions.
 |-------|------|
 | Language | Python 3.13, uv workspaces |
 | API | FastAPI + uvicorn |
+| Catalog | In-memory (`MemCatalog` from YAML) |
+| Price fetching | `PriceProxy` — Cardrush + Snkrdunk, 30-min in-process cache |
+| Rate limiting | In-memory token bucket (per process) |
 | Frontend | Vite + React + TypeScript, Bun |
-| Database | PostgreSQL 17 (Neon serverless) |
-| Cache / rate-limit | Redis (Upstash) |
-| Object storage | Cloudflare R2 (bronze layer) |
 | Hosting | Fly.io (Singapore, `sin`) |
 | CI/CD | GitHub Actions |
 
@@ -82,51 +93,40 @@ Scrapers run via Fly.io ephemeral machines triggered by GitHub Actions.
 ## Architecture
 
 ```
-Pokellector + TCGdex + Cardrush
-        │
-        ▼
-  bootstrap-set → data/cards/{SET}/*.yml   ← git-versioned card metadata
-        │
-        ▼
-   seed-cards → artworks + cards tables
-        │
-  cardrush-scrape ──┐
-  snkrdunk-scrape ──┼──→ price_points + R2 bronze
-                    │
-                    ▼
-          refresh materialized views
-          (mv_latest_price, mv_median_7d,
-           mv_cross_source_spread)
-                    │
-                    ▼
-              FastAPI read layer
+data/sets/*.yml + data/cards/{SET}/*.yml
+          │
+          ▼ (loaded at startup)
+       MemCatalog (in-memory)
+          │
+          ▼
+    FastAPI read layer
+          │
+    per-request (cache 30 min)
+          │
+    ┌─────┴─────┐
+    ▼           ▼
+Cardrush    Snkrdunk
+(listings)  (sold history)
 ```
+
+The PostgreSQL schema, Alembic migrations, and scraper packages still exist and
+can be re-enabled, but are not exercised in the current online-mode deployment.
 
 ---
 
 ## Local development
 
-**Prerequisites:** Docker, [uv](https://docs.astral.sh/uv/), [Bun](https://bun.sh/) (frontend only)
+**Prerequisites:** [uv](https://docs.astral.sh/uv/), [Bun](https://bun.sh/) (frontend only)
+
+No database setup required for the API.
 
 ```bash
-# Start Postgres + MinIO
-make up
-
-# Run migrations
-make migrate
-
-# Seed catalog (sets + cards)
-make catalog-seed-sets
-make catalog-seed-cards
-
 # Run the API (dev mode with reload)
 make api-dev
 
 # Run tests
 make test
 ```
-
-Copy `.env.example` to `.env` and adjust credentials as needed.
 
 ### Frontend
 
@@ -137,39 +137,42 @@ make web-dev              # http://localhost:5173 (proxies to http://127.0.0.1:8
 
 Copy `apps/web/.env.example` to `apps/web/.env.local` and set `VITE_API_BASE_URL`.
 
-### Scraping locally
+### Catalog pipeline (optional)
+
+The in-memory catalog is loaded from the YAML files checked into the repo. To
+bootstrap or update the catalog data:
 
 ```bash
-# Single set
+# Bootstrap card data for a set (requires Pokellector/TCGCollector access)
+make catalog-bootstrap SET=SV2A
+
+# Run bootstrap tests
+make test
+```
+
+### Running scrapers manually
+
+Scrapers are not scheduled in CI but can be triggered via `workflow_dispatch`
+or run locally (requires `.env` with Cardrush/Snkrdunk credentials):
+
+```bash
 make scrape-cardrush SET=SV2A
 make scrape-snkrdunk ERA=sv2a
-
-# Full era (SV | ME | SM | SW)
-make scrape-cardrush ERA=SV
-make scrape-snkrdunk ERA=ME
 ```
 
 ---
 
 ## Deployment
 
-Deployed on [Fly.io](https://fly.io). Migrations run automatically on each deploy via an ephemeral machine.
+Deployed on [Fly.io](https://fly.io). No migrations or database provisioning
+required for online mode.
 
 ```bash
 # Deploy
 fly deploy --remote-only
 
-# Run scrapers manually on Fly
-IMAGE=$(fly image show --app watari-api --json | python3 -c \
-  "import sys,json; d=json.load(sys.stdin)[0]; print(d['Registry']+'/'+d['Repository']+':'+d['Tag'])")
-
-fly machine run "$IMAGE" \
-  --app watari-api --name scraper-cardrush-sv --rm \
-  --vm-size shared-cpu-2x --region sin \
-  -- uv run python -m watari_cardrush --era SV
-
-# Issue an API key
-uv run watari-api create-key --owner you@example.com --tier free
+# View logs
+fly logs -a watari-api
 ```
 
 ---
@@ -180,14 +183,17 @@ uv run watari-api create-key --owner you@example.com --tier free
 apps/
   web/               ← Vite + React frontend (Bun)
 packages/
-  core/              ← models, config, DB session, catalog helpers
+  core/              ← models, config, catalog helpers (DB layer kept for reference)
   catalog/           ← YML data tree + bootstrap/seed pipeline
-    data/sets/       ← 98 set definitions (SV, ME, SWSH, SM)
-    data/cards/      ← ~10 800 card YML files (source of truth)
+    data/sets/       ← 105 set definitions (SV, ME, CL, SWSH, SM + promos)
+    data/cards/      ← ~12 000 card YML files (source of truth)
   scraper_cardrush/  ← curl_cffi scraper (Cloudflare-bypass)
   scraper_snkrdunk/  ← sold-price scraper
-  api/               ← FastAPI read layer
-migrations/          ← Alembic (head: 006)
+  api/               ← FastAPI read layer (online mode)
+    watari_api/
+      catalog_mem.py ← MemCatalog (in-memory catalog from YAML)
+      price_proxy.py ← PriceProxy (on-demand price fetching + cache)
+migrations/          ← Alembic (head: 008_graded_price_points, inactive)
 scripts/             ← set metadata generators, symbol sync, prod dump/bootstrap
-.github/workflows/   ← deploy + scheduled scraper CI (daily SV/ME, weekly SM/SW)
+.github/workflows/   ← deploy CI; scraper schedule disabled (workflow_dispatch only)
 ```

@@ -4,9 +4,11 @@ version = "0.1.0"
 requires-python = ">=3.12"
 dependencies = [
     "watari-core",
+    "watari-catalog",
+    "watari-cardrush",
+    "watari-snkrdunk",
     "fastapi>=0.115",
     "uvicorn[standard]>=0.32",
-    "redis>=5.0",
 ]
 
 [project.scripts]
@@ -14,6 +16,9 @@ watari-api = "watari_api.__main__:main"
 
 [tool.uv.sources]
 watari-core = { workspace = true }
+watari-catalog = { workspace = true }
+watari-cardrush = { workspace = true }
+watari-snkrdunk = { workspace = true }
 
 [build-system]
 requires = ["hatchling"]

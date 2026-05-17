@@ -1,94 +1,72 @@
-"""Price + spread endpoints.
+"""Price endpoints — fetch live from Cardrush and Snkrdunk (online mode).
 
-Uses materialized views for latency:
+Results are cached in :class:`~watari_api.price_proxy.PriceProxy` for
+:data:`~watari_api.price_proxy.CACHE_TTL` (default 30 min) so repeated
+requests for the same card are fast.
 
-- ``mv_latest_price``: most recent observation per (card_id, source, condition).
-- ``mv_cross_source_spread``: per-condition cardrush-floor vs snkrdunk-median-7d.
+**What changes vs the DB-backed version:**
 
-The raw ``price_points`` table is only hit for the optional ``history``
-endpoint, which is bounded by ``days`` and ``limit``.
+- ``/prices`` and ``/market-price``: fetched on demand; first call may take
+  2–5 s (Cardrush HTML scrape + Snkrdunk JSON API).
+- ``/history``: always returns an empty list — no historical DB rows.
+- ``/spread``: computed from the live fetch, only condition 'A' available.
+- ``/graded-prices`` / ``/graded-history``: from Snkrdunk sales history.
 """
 
 from __future__ import annotations
 
-import hashlib
-import json
-from datetime import UTC, datetime, timedelta
 from typing import Annotated, Any
 
-from fastapi import APIRouter, Depends, HTTPException, Query, Request, Response
+from fastapi import APIRouter, Depends, HTTPException, Query, Response
 from watari_core.catalog import pad_local_id
-from watari_core.models import Card, GradedPricePoint, PricePoint, Set
 from watari_core.schemas import PricePointOut
-from sqlalchemy import Integer, bindparam, func, select, text
-from sqlalchemy.ext.asyncio import AsyncSession
 
-from watari_api.deps import get_session
-from watari_api.schemas import GradedPricePointOut, LatestGradedPrice, LatestPrice, MarketPriceOut, SpreadRow
+from watari_api.catalog_mem import MemCatalog
+from watari_api.deps import get_catalog, get_price_proxy
+from watari_api.price_proxy import PriceProxy
+from watari_api.schemas import (
+    GradedPricePointOut,
+    LatestGradedPrice,
+    LatestPrice,
+    MarketPriceOut,
+    SpreadRow,
+)
 
 router = APIRouter(
     prefix="/cards/{set_code}/{local_id}",
     tags=["prices"],
 )
 
-SessionDep = Annotated[AsyncSession, Depends(get_session)]
+CatalogDep = Annotated[MemCatalog, Depends(get_catalog)]
+PriceProxyDep = Annotated[PriceProxy, Depends(get_price_proxy)]
 
-# MV data refreshes only after a scrape run (a few times per day).
-_PRICE_CACHE = "public, max-age=300, stale-while-revalidate=60"
-_LATEST_PRICE_MAX_AGE_DAYS = 90
-
-
-def _compute_etag(data: list[Any]) -> str:
-    """Deterministic ETag from a list of Pydantic models."""
-    payload = json.dumps(
-        [row.model_dump(mode="json") for row in data],
-        sort_keys=True,
-        default=str,
-    )
-    return f'"{hashlib.sha256(payload.encode()).hexdigest()[:24]}"'
+# Cache hint for clients — matches the server-side TTL
+_PRICE_CACHE = "public, max-age=1800, stale-while-revalidate=60"
 
 
-async def _resolve_card(
-    session: AsyncSession,
+def _resolve_card_id(
+    catalog: MemCatalog,
     *,
     lang: str,
     set_code: str,
     local_id: str,
     variant: str,
-) -> Card:
-    """Resolve (lang, set_code, local_id, variant) → Card in a single query.
-
-    Fetches all prints for the artwork in one round-trip, then selects the
-    requested variant in Python.  If the variant is absent but siblings exist
-    the caller gets a 400 with an available-variants hint; if the artwork has
-    no prints at all the caller gets a 404.
-    """
-    normalized = pad_local_id(local_id)
-    stmt = (
-        select(Card)
-        .join(Set, Set.set_code == Card.set_code)
-        .where(
-            Set.language == lang,
-            func.upper(Card.set_code) == set_code.upper(),
-            Card.local_id == normalized,
+) -> str:
+    """Resolve (lang, set_code, local_id, variant) → card_id or raise HTTP 400/404."""
+    artwork = catalog.get_artwork(set_code, local_id)
+    if artwork is None or artwork.language != lang:
+        raise HTTPException(
+            status_code=404,
+            detail=f"card not found: {set_code}/{pad_local_id(local_id)}",
         )
-    )
-    cards = (await session.execute(stmt)).scalars().all()
-
-    match = next((c for c in cards if c.variant == variant), None)
-    if match is not None:
-        return match
-
-    if cards:
-        available = sorted(c.variant for c in cards)
+    match = next((v for v in artwork.variants if v.variant == variant), None)
+    if match is None:
+        available = sorted(v.variant for v in artwork.variants)
         raise HTTPException(
             status_code=400,
             detail=f"unknown variant {variant!r}; available variants: {available}",
         )
-    raise HTTPException(
-        status_code=404,
-        detail=f"card not found: {set_code}/{normalized}",
-    )
+    return match.card_id
 
 
 @router.get("/prices", response_model=list[LatestPrice])
@@ -96,41 +74,16 @@ async def latest_prices(
     lang: str,
     set_code: str,
     local_id: str,
-    session: SessionDep,
-    request: Request,
+    catalog: CatalogDep,
+    proxy: PriceProxyDep,
     response: Response,
-    variant: str = Query("normal", description="Variant slug (default: normal)"),
+    variant: str = Query("normal"),
 ) -> Any:
-    """Recent observation per (source, condition) for a card, from ``mv_latest_price``.
-
-    Supports conditional GET via ``If-None-Match`` / ``ETag``.
-    """
-    card = await _resolve_card(
-        session,
-        lang=lang,
-        set_code=set_code,
-        local_id=local_id,
-        variant=variant,
-    )
-    stmt = text(
-        "SELECT card_id, source, condition, price_jpy, stock_qty, observed_at "
-        "FROM mv_latest_price WHERE card_id = :card_id "
-        "AND observed_at >= now() - make_interval(days => :max_age_days) "
-        "ORDER BY source, condition"
-    ).bindparams(bindparam("card_id", type_=None), bindparam("max_age_days", type_=Integer))
-    rows = (
-        await session.execute(
-            stmt, {"card_id": card.card_id, "max_age_days": _LATEST_PRICE_MAX_AGE_DAYS}
-        )
-    ).mappings().all()
-    data = [LatestPrice.model_validate(dict(r)) for r in rows]
-
-    etag = _compute_etag(data)
-    if request.headers.get("if-none-match") == etag:
-        return Response(status_code=304, headers={"ETag": etag})
+    """Current listings per (source, condition) — fetched live, cached 30 min."""
+    card_id = _resolve_card_id(catalog, lang=lang, set_code=set_code, local_id=local_id, variant=variant)
+    rows = await proxy.latest_prices(set_code, local_id, variant, card_id)
     response.headers["Cache-Control"] = _PRICE_CACHE
-    response.headers["ETag"] = etag
-    return data
+    return [LatestPrice.model_validate(r) for r in rows]
 
 
 @router.get("/history", response_model=list[PricePointOut])
@@ -138,42 +91,20 @@ async def price_history(
     lang: str,
     set_code: str,
     local_id: str,
-    session: SessionDep,
+    catalog: CatalogDep,
     response: Response,
-    variant: str = Query("normal", description="Variant slug (default: normal)"),
-    days: int = Query(30, ge=1, le=365, description="Look back this many days"),
-    source: str | None = Query(None, description="Filter by source (cardrush|snkrdunk)"),
-    condition: str | None = Query(None, description="Filter by condition short-code"),
+    variant: str = Query("normal"),
+    days: int = Query(30, ge=1, le=365),
+    source: str | None = Query(None),
+    condition: str | None = Query(None),
     limit: int = Query(500, ge=1, le=5000),
-    offset: int = Query(0, ge=0, description="Pagination offset"),
-) -> list[PricePoint]:
-    """Raw price_points for a card over the last ``days`` days, newest first."""
-    card = await _resolve_card(
-        session,
-        lang=lang,
-        set_code=set_code,
-        local_id=local_id,
-        variant=variant,
-    )
-    since = datetime.now(UTC) - timedelta(days=days)
-    stmt = (
-        select(PricePoint)
-        .where(
-            PricePoint.card_id == card.card_id,
-            PricePoint.observed_at >= since,
-        )
-        .order_by(PricePoint.observed_at.desc())
-        .limit(limit)
-        .offset(offset)
-    )
-    if source is not None:
-        stmt = stmt.where(PricePoint.source == source)
-    if condition is not None:
-        stmt = stmt.where(PricePoint.condition == condition)
-    result = await session.execute(stmt)
-    # Raw time-windowed data: never cache.
+    offset: int = Query(0, ge=0),
+) -> list[PricePointOut]:
+    """Historical price points — always empty in online mode (no database)."""
+    # Validate the card exists so callers still get 404 on bad IDs.
+    _resolve_card_id(catalog, lang=lang, set_code=set_code, local_id=local_id, variant=variant)
     response.headers["Cache-Control"] = "no-store"
-    return list(result.scalars().all())
+    return []
 
 
 @router.get("/market-price", response_model=MarketPriceOut)
@@ -181,40 +112,18 @@ async def market_price(
     lang: str,
     set_code: str,
     local_id: str,
-    session: SessionDep,
-    request: Request,
+    catalog: CatalogDep,
+    proxy: PriceProxyDep,
     response: Response,
-    variant: str = Query("normal", description="Variant slug (default: normal)"),
+    variant: str = Query("normal"),
 ) -> Any:
-    """Unified best-price for a card from ``mv_market_price`` (condition='A').
-
-    Prefers the SNKRDUNK 7-day median; falls back to Cardrush floor.
-    Returns 404 when neither source has data for the card.
-
-    Supports conditional GET via ``If-None-Match`` / ``ETag``.
-    """
-    card = await _resolve_card(
-        session,
-        lang=lang,
-        set_code=set_code,
-        local_id=local_id,
-        variant=variant,
-    )
-    stmt = text(
-        "SELECT card_id, market_price_jpy, source_used "
-        "FROM mv_market_price WHERE card_id = :card_id"
-    ).bindparams(bindparam("card_id", type_=None))
-    row = (await session.execute(stmt, {"card_id": card.card_id})).mappings().first()
-    if row is None:
+    """Unified best-price — Snkrdunk 7d median preferred, Cardrush floor fallback."""
+    card_id = _resolve_card_id(catalog, lang=lang, set_code=set_code, local_id=local_id, variant=variant)
+    result = await proxy.market_price(set_code, local_id, variant, card_id)
+    if result is None:
         raise HTTPException(status_code=404, detail="no market price data for this card")
-    data = MarketPriceOut.model_validate(dict(row))
-
-    etag = _compute_etag([data])
-    if request.headers.get("if-none-match") == etag:
-        return Response(status_code=304, headers={"ETag": etag})
     response.headers["Cache-Control"] = _PRICE_CACHE
-    response.headers["ETag"] = etag
-    return data
+    return MarketPriceOut.model_validate(result)
 
 
 @router.get("/graded-prices", response_model=list[LatestGradedPrice])
@@ -222,34 +131,16 @@ async def latest_graded_prices(
     lang: str,
     set_code: str,
     local_id: str,
-    session: SessionDep,
+    catalog: CatalogDep,
+    proxy: PriceProxyDep,
     response: Response,
-    variant: str = Query("normal", description="Variant slug (default: normal)"),
+    variant: str = Query("normal"),
 ) -> Any:
-    """Most recent listing per (grade_company, grade_score, source) for a card.
-
-    Reads directly from ``graded_price_points`` (no MV — graded data volume is
-    much smaller than ungraded).
-    """
-    card = await _resolve_card(
-        session,
-        lang=lang,
-        set_code=set_code,
-        local_id=local_id,
-        variant=variant,
-    )
-    stmt = text(
-        "SELECT DISTINCT ON (grade_company, grade_score, source) "
-        "    grade_company, grade_score, source, price_jpy, observed_at "
-        "FROM graded_price_points "
-        "WHERE card_id = :card_id "
-        "ORDER BY grade_company, grade_score, source, observed_at DESC"
-    ).bindparams(bindparam("card_id", type_=None))
-    rows = (
-        await session.execute(stmt, {"card_id": card.card_id})
-    ).mappings().all()
+    """Most recent graded listing per (grade_company, grade_score, source)."""
+    card_id = _resolve_card_id(catalog, lang=lang, set_code=set_code, local_id=local_id, variant=variant)
+    rows = await proxy.graded_prices(set_code, local_id, card_id)
     response.headers["Cache-Control"] = "no-store"
-    return [LatestGradedPrice.model_validate(dict(r)) for r in rows]
+    return [LatestGradedPrice.model_validate(r) for r in rows]
 
 
 @router.get("/graded-history", response_model=list[GradedPricePointOut])
@@ -257,41 +148,21 @@ async def graded_history(
     lang: str,
     set_code: str,
     local_id: str,
-    session: SessionDep,
+    catalog: CatalogDep,
+    proxy: PriceProxyDep,
     response: Response,
-    variant: str = Query("normal", description="Variant slug (default: normal)"),
-    days: int = Query(365, ge=1, le=365, description="Look back this many days"),
-    company: str | None = Query(
-        None, description="Filter by grading company (PSA|BGS|CGC)"
-    ),
+    variant: str = Query("normal"),
+    days: int = Query(365, ge=1, le=365),
+    company: str | None = Query(None),
     limit: int = Query(2000, ge=1, le=2000),
-) -> list[GradedPricePoint]:
-    """Raw graded price history for a card, newest first.
-
-    Reads directly from ``graded_price_points``.
-    """
-    card = await _resolve_card(
-        session,
-        lang=lang,
-        set_code=set_code,
-        local_id=local_id,
-        variant=variant,
+) -> Any:
+    """Raw graded price history from Snkrdunk, newest first."""
+    card_id = _resolve_card_id(catalog, lang=lang, set_code=set_code, local_id=local_id, variant=variant)
+    rows = await proxy.graded_history(
+        set_code, local_id, card_id, days=days, company=company
     )
-    since = datetime.now(UTC) - timedelta(days=days)
-    stmt = (
-        select(GradedPricePoint)
-        .where(
-            GradedPricePoint.card_id == card.card_id,
-            GradedPricePoint.observed_at >= since,
-        )
-        .order_by(GradedPricePoint.observed_at.desc())
-        .limit(limit)
-    )
-    if company is not None:
-        stmt = stmt.where(GradedPricePoint.grade_company == company.upper())
-    result = await session.execute(stmt)
     response.headers["Cache-Control"] = "no-store"
-    return list(result.scalars().all())
+    return [GradedPricePointOut.model_validate(r) for r in rows[:limit]]
 
 
 @router.get("/spread", response_model=list[SpreadRow])
@@ -299,34 +170,13 @@ async def cross_source_spread(
     lang: str,
     set_code: str,
     local_id: str,
-    session: SessionDep,
-    request: Request,
+    catalog: CatalogDep,
+    proxy: PriceProxyDep,
     response: Response,
-    variant: str = Query("normal", description="Variant slug (default: normal)"),
+    variant: str = Query("normal"),
 ) -> Any:
-    """Cardrush-floor vs SNKRDUNK-median-7d spread per condition, from MV.
-
-    Supports conditional GET via ``If-None-Match`` / ``ETag``.
-    """
-    card = await _resolve_card(
-        session,
-        lang=lang,
-        set_code=set_code,
-        local_id=local_id,
-        variant=variant,
-    )
-    stmt = text(
-        "SELECT card_id, condition, cardrush_floor, snkrdunk_median_7d, "
-        "       spread_jpy, spread_pct "
-        "FROM mv_cross_source_spread WHERE card_id = :card_id "
-        "ORDER BY condition"
-    )
-    rows = (await session.execute(stmt, {"card_id": card.card_id})).mappings().all()
-    data = [SpreadRow.model_validate(dict(r)) for r in rows]
-
-    etag = _compute_etag(data)
-    if request.headers.get("if-none-match") == etag:
-        return Response(status_code=304, headers={"ETag": etag})
+    """Cardrush floor vs Snkrdunk 7d median spread for condition 'A'."""
+    card_id = _resolve_card_id(catalog, lang=lang, set_code=set_code, local_id=local_id, variant=variant)
+    rows = await proxy.spread(set_code, local_id, variant, card_id)
     response.headers["Cache-Control"] = _PRICE_CACHE
-    response.headers["ETag"] = etag
-    return data
+    return [SpreadRow.model_validate(r) for r in rows]

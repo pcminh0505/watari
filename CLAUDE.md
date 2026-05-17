@@ -6,7 +6,7 @@
 > Update it whenever the architecture changes — especially after a
 > destructive migration, a new source, or a schema split.
 >
-> Last updated: 2026-05-10 (7 new sets bootstrapped: CLF/CLL/CLK (Classic) + MP/SMPR/SP/SVP (promos). TCGCollector-primary bootstrap path (`bootstrap_set_from_tcgcollector`) added; promo URL regex fixed; image URLs extracted from TCGCollector grid tiles; `Promo` rarity added to canonicalize map → `PR`; 105 sets, 12005 artworks, 12955 cards, 415 tests).
+> Last updated: 2026-05-17 (**Online mode** — API now fetches prices on-demand from Cardrush/Snkrdunk; PostgreSQL and Redis removed from the API layer; in-memory catalog (`MemCatalog`) + in-memory rate limiter; CI scrapers disabled (schedule removed, `workflow_dispatch` only); 399 tests passing).
 
 ---
 
@@ -16,17 +16,27 @@ Universal Pokémon TCG price API for the **Japanese** market.
 
 Three concerns, cleanly separated:
 
-| Layer       | Responsibility                                                           | Code                                        |
-| ----------- | ------------------------------------------------------------------------ | ------------------------------------------- |
-| **Catalog** | What cards exist (sets, artworks, print variants). Source of truth: YML. | `packages/catalog/`, `data/`                |
-| **Prices**  | Listings (`cardrush`) + sold comps (`snkrdunk`) → `price_points`.        | `packages/scraper_cardrush/`, `…_snkrdunk/` |
-| **API**     | Read-side (FastAPI). Uses materialized views for latency.                | `packages/api/`                             |
+| Layer       | Responsibility                                                                     | Code                                        |
+| ----------- | ---------------------------------------------------------------------------------- | ------------------------------------------- |
+| **Catalog** | What cards exist (sets, artworks, print variants). Source of truth: YML.           | `packages/catalog/`, `data/`                |
+| **Prices**  | Fetched **on-demand** from Cardrush (HTML) + Snkrdunk (JSON) at request time.     | `packages/api/watari_api/price_proxy.py`    |
+| **API**     | Read-side (FastAPI). In-memory catalog; no DB required.                            | `packages/api/`                             |
 
-Stack: Python 3.13, `uv` workspaces, PostgreSQL, SQLAlchemy async, Alembic,
-MinIO (S3-compatible) for the **bronze layer** of raw scrape payloads,
-`curl_cffi` for Cloudflare-fronted sites, `httpx` for everything else.
+**Online mode (current):** The API no longer requires PostgreSQL or Redis.
+- `MemCatalog` loads all YAML files into memory at startup (sets + cards).
+- `PriceProxy` fetches prices live from Cardrush/Snkrdunk, cached 30 min in-process.
+- Rate limiting uses an in-memory token bucket (no Redis).
+- All requests are anonymous/free-tier (no API-key DB).
+- CI scraper schedule is disabled; scrapers still work via `workflow_dispatch`.
+
+Stack: Python 3.13, `uv` workspaces, `curl_cffi` for Cloudflare-fronted sites,
+`httpx` for everything else.
 Frontend: Vite + React + TypeScript, `bun` package manager (`apps/web/`).
 React Query (`@tanstack/react-query`) for all data fetching and exchange-rate caching.
+
+The PostgreSQL schema + Alembic migrations still exist in `packages/core/` and
+`migrations/` for historical reference and potential future re-enablement, but
+they are not exercised by the API in online mode.
 
 ---
 
@@ -185,83 +195,68 @@ Helpers live in `packages/core/watari_core/catalog.py`
 exactly 3 / 4 segments. If a set_code ever contains a hyphen (e.g. `"sv-p"`)
 they will misparse. None of the current 98 set codes contain hyphens.
 
-### 3.5 API layer (`packages/api/`, read-only)
+### 3.5 API layer (`packages/api/`, read-only, online mode)
 
-Built on FastAPI. Thin read layer over the v3 catalog + materialized views.
-The ORM session is provided per-request via `Annotated[AsyncSession, Depends(get_session)]` aliased as `SessionDep`.
+Built on FastAPI. **No PostgreSQL or Redis required.** Catalog served from
+memory; prices fetched live and cached in-process.
+
+**Key new files:**
+
+| File | Role |
+|------|------|
+| `watari_api/catalog_mem.py` | `MemCatalog` — loads all YAML at startup; indexed by `(set_code, local_id)` |
+| `watari_api/price_proxy.py` | `PriceProxy` — on-demand Cardrush + Snkrdunk fetch; 30-min TTL per-key cache |
 
 Routers (all under `packages/api/watari_api/routers/`):
 
-| Route                                                               | Returns                 | Source                          |
-| ------------------------------------------------------------------- | ----------------------- | ------------------------------- |
+| Route | Returns | Source |
+| ----- | ------- | ------ |
 | `GET /healthz` | `{"status": "ok"}` | — |
-| `GET /{lang}/sets` (`?era=sv`) | `list[SetOut]` | `sets` table (filtered by `sets.language`) |
-| `GET /{lang}/sets/{set_code}` | `SetOut` / 404 | `sets` table (case-insensitive `set_code`) |
-| `GET /{lang}/sets/{set_code}/cards` (`?variant=&rarity=&tracked_only=`) | `list[ArtworkDetail]` | `artworks ⋈ cards` |
-| `GET /{lang}/cards/{set_code}/{local_id}` | `ArtworkDetail` / 404 | `artworks ⋈ cards` |
-| `GET /{lang}/cards/{set_code}/{local_id}/prices` (`?variant=normal`) | `list[LatestPrice]` | `**mv_latest_price`\*\* |
-| `GET /{lang}/cards/{set_code}/{local_id}/history` (`?variant=normal&days=&source=&condition=&limit=`) | `list[PricePointOut]` | `price_points` |
-| `GET /{lang}/cards/{set_code}/{local_id}/spread` (`?variant=normal`) | `list[SpreadRow]` | `**mv_cross_source_spread**` |
-| `GET /{lang}/cards/{set_code}/{local_id}/market-price` (`?variant=normal`) | `MarketPriceOut` / 404 | `**mv_market_price**` |
-| `GET /{lang}/cards/{set_code}/{local_id}/graded-prices` (`?variant=normal`) | `list[LatestGradedPrice]` | `graded_price_points` (DISTINCT ON per grade+source) |
-| `GET /{lang}/cards/{set_code}/{local_id}/graded-history` (`?variant=&days=365&company=PSA&limit=2000`) | `list[GradedPricePointOut]` | `graded_price_points` (raw, newest first) |
-| `GET /admin/scrape-health` | `list[ScrapeHealthRow]` | `scrape_runs ⋈ card_scrape_state` |
+| `GET /{lang}/sets` (`?era=sv`) | `list[SetOut]` | `MemCatalog` |
+| `GET /{lang}/sets/{set_code}` | `SetOut` / 404 | `MemCatalog` |
+| `GET /{lang}/sets/{set_code}/cards` (`?variant=&rarity=&tracked_only=`) | `list[ArtworkDetail]` | `MemCatalog` |
+| `GET /{lang}/cards/{set_code}/{local_id}` | `ArtworkDetail` / 404 | `MemCatalog` |
+| `GET /{lang}/cards/search` | `list[ArtworkSearchResult]` | `MemCatalog` (`market_price_jpy=null`) |
+| `GET /{lang}/cards/batch` / `POST` | `list[CardBatchItem]` | `MemCatalog` |
+| `GET /{lang}/cards/by-sets` / `POST` | `list[ArtworkSearchResult]` | `MemCatalog` |
+| `GET /{lang}/cards/{set_code}/{local_id}/prices` (`?variant=normal`) | `list[LatestPrice]` | `PriceProxy` (live; 30-min cache) |
+| `GET /{lang}/cards/{set_code}/{local_id}/history` | `[]` (always empty) | — (no DB) |
+| `GET /{lang}/cards/{set_code}/{local_id}/spread` (`?variant=normal`) | `list[SpreadRow]` | `PriceProxy` |
+| `GET /{lang}/cards/{set_code}/{local_id}/market-price` (`?variant=normal`) | `MarketPriceOut` / 404 | `PriceProxy` |
+| `GET /{lang}/cards/{set_code}/{local_id}/graded-prices` (`?variant=normal`) | `list[LatestGradedPrice]` | `PriceProxy` |
+| `GET /{lang}/cards/{set_code}/{local_id}/graded-history` (`?days=365&company=PSA`) | `list[GradedPricePointOut]` | `PriceProxy` |
+| `GET /admin/scrape-health` | `[]` (always empty) | — (no DB) |
 
-**Rules:**
+**Online mode trade-offs:**
 
-- Latency-sensitive endpoints (`/{lang}/.../prices`, `/{lang}/.../spread`) read
-  from MVs, not
-  `price_points` directly. If you add a new aggregate, add an MV in the
-  same Alembic migration that creates it, and refresh it post-scrape.
-- Artwork endpoints (`/{lang}/sets/{set}/cards`, `/{lang}/cards/{set}/{local_id}`)
-  return artwork-level payloads (`ArtworkDetail`) with nested
-  `variants[]` (`variant`, `card_id`, `is_tracked`).
-- Variant-specific endpoints (`prices`, `history`, `spread`) resolve
-  `(set_code, local_id, variant)` → `card_id` internally; callers no longer
-  need to know the opaque `card_id` format.
+- `/prices`, `/spread`, `/market-price`, `/graded-*` — first call per card takes
+  2–5 s (live HTML scrape + JSON API). Cached for 30 min thereafter.
+- `/history` — always returns `[]` (no price_points table).
+- `market_price_jpy` — always `null` in `/search`, `/batch`, `/by-sets` results.
+- `total_value_jpy` — always `null` on set objects.
+- `/admin/scrape-health` — always returns `[]`.
 
 **Auth + rate limiting** (`auth.py`, `ratelimit.py`):
 
-- `X-API-Key` header (name configurable via `settings.api_key_header`).
-  Missing → anonymous, `free` tier, rate-limit bucket is `ip:{client_ip}`.
-  Present but unknown/revoked → 401. Present and valid → authenticated,
-  bucket is `key:{api_key_id}`, tier comes from the DB row.
-- `api_keys` stores only `(key_hash = sha256(plaintext), key_prefix, owner_email, tier, last_used_at, revoked_at)`. The plaintext is never
-  persisted — CLI issuance prints it once and the caller stores it.
-  `last_used_at` is bumped at most once per minute per key.
-- Rate limiter: Redis token bucket (Lua script for atomicity). Config:
-  `settings.api_rate_limits = "free:60:1.0,paid:600:10.0,admin:6000:100.0"`
-  (`tier:capacity:tokens_per_sec`; `free` is mandatory). Installed on
-  `app.state.rate_limiter` in the FastAPI lifespan.
-- Applied on the top-level locale router (`/{lang}`) as a shared dependency
-  (with `validate_lang`) so every non-healthz request is uniformly limited.
-  Every rate-limited
-  response carries `X-RateLimit-{Tier,Limit,Remaining}`; denied requests
-  return **429** with `Retry-After`.
+- All requests are anonymous/free-tier. `X-API-Key` header is ignored.
+- Rate limiter: in-memory token bucket (per-process, resets on restart).
+  Config: `settings.api_rate_limits = "free:60:1.0,..."` (same format as before).
+  Responses carry `X-RateLimit-{Tier,Limit,Remaining}`; denied → **429** + `Retry-After`.
 
 **Run:** `make api` (prod) or `make api-dev` (reload). Entry point is
-`watari-api` console script → `watari_api/__main__.py:main` →
-`watari_api.cli:main`.
+`watari-api` console script → `watari_api.cli:main`.
 
-**CLI subcommands:**
+**CLI subcommands (online mode):**
 
-- `watari-api serve [--host --port --reload]` — run uvicorn (also the
-  implicit default, so legacy top-level flags still work).
-- `watari-api create-key --owner EMAIL [--tier free|paid|admin]` —
-  mints a key; prints the plaintext exactly once. Store only the hash.
-- `watari-api revoke-key PREFIX` — sets `revoked_at` by key prefix.
-- `watari-api list-keys [--include-revoked]` — metadata-only listing.
-- `watari-api refresh-mvs [--no-concurrently]` — manually refresh the
-  four price MVs. Handy after a catalog reseed, after importing a
-  historical dump, or when a scrape hook failure left the MVs stale.
+- `watari-api serve [--host --port --reload]` — run uvicorn (default).
+  Key-management (`create-key`, `revoke-key`, `list-keys`) and `refresh-mvs`
+  commands have been removed.
 
-**Tests:** `tests/unit/test_api.py` (36) uses `dependency_overrides` to
-swap `get_session` and `rate_limit_dep` for a FakeSession + anonymous
-no-op, keeping endpoint-shape tests infra-free. Auth / rate-limit /
-CLI / MV helpers have their own files (`test_api_auth.py` 9,
-`test_api_ratelimit.py` 8, `test_api_cli.py` 9, `test_mvs.py` 5).
-Catalog bootstrap helpers: `test_catalog_bootstrap_helpers.py` 18,
-`test_verify_pokellector.py` 2. None of the API or MV tests require Postgres or Redis.
+**Tests:** `tests/unit/test_api.py` (36) uses `dependency_overrides` to inject
+`FakeMemCatalog` + `FakePriceProxy` + anonymous rate-limit no-op. Auth / rate-limit /
+CLI tests have their own files (`test_api_auth.py` 4, `test_api_ratelimit.py` 8,
+`test_api_cli.py` 3, `test_mvs.py` 5 — MVs still tested since `watari_core.mvs` is
+unchanged). None of the API tests require Postgres or Redis.
 
 ### 3.6 Post-scrape MV refresh hook (`packages/core/watari_core/mvs.py`)
 
@@ -348,7 +343,7 @@ This eliminates 60+ individual market-price requests per set-gallery page load.
 | `make scrape-cardrush ERA=sv` + `ERA=me`           | ~12.7k Cardrush rows across SV+ME sets. SM/SW: scheduled weekly via CI.                       |
 | `make scrape-snkrdunk ERA=<code>` × SV+ME          | ~104k SNKRDUNK rows. **SV1 still 0 rows** (upstream uses `sv1v` namespace). SM/SW: scheduled weekly via CI. |
 | `watari-api refresh-mvs` (CONCURRENTLY)            | mv_latest_price, mv_median_7d, mv_cross_source_spread, mv_market_price — refreshed             |
-| `uv run pytest`                                    | **415 passed**                                                                                 |
+| `uv run pytest`                                    | **399 passed** (online mode; DB/Redis API tests replaced with in-memory fakes)                 |
 | `make web-dev`                                     | Currency toggle ¥/$/₫ in header; all price surfaces convert correctly; GradedPriceHistoryChart live on CardDetailPage |
 
 ### 4.2 Data that's already committed
@@ -562,6 +557,10 @@ SV1 remains Cardrush-only (SNKRDUNK lists it under `sv1v`).
 30. **Cardrush promo routing in `__main__.py` is automatic.** When `--set MP` (or SMPR/SP/SVP) is passed, the dispatcher calls `scrape_promo_set` instead of `scrape_sets`. The CLI flag `--rarity` is ignored for promo sets (promos have no rarity-bucket loop). Classic sets (CLF/CLL/CLK) route through the normal `scrape_set` path.
 31. **`bootstrap-set` auto-routes to TCGCollector-primary** when a set has `tcgcollector_id`+`tcgcollector_slug` in its YAML but no `pokellector_slug`. The function `bootstrap_set_from_tcgcollector` handles the 7 new sets (CLF/CLL/CLK/MP/SMPR/SP/SVP). Source precedence: name_en/rarity/illustrator from TCGCollector detail, image_url from TCGCollector grid tile, name_ja from TCGdex or Cardrush. Promo cards get `rarity_code: PR` (mapped via `canonicalize_tcgcollector("Promo")`).
 32. **TCGCollector promo set URLs** use a different trailing format: `/cards/{id}/slug-{local_id}-{series}` (e.g. `001-m-p`) instead of `/cards/{id}/slug-{local_id}-{total}` (e.g. `001-032`). The `_INDEX_LINK_RE` regex handles both. The `set_total` field on `TcgCollectorIndexEntry` is `None` for promo sets. Do not tighten the regex back to `(\d+)-(\d+)$`.
+33. **Online mode: the API has no DB session.** `deps.py` now exposes `get_catalog` (returns `app.state.catalog: MemCatalog`) and `get_price_proxy` (returns `app.state.price_proxy: PriceProxy`). There is no `get_session`. Do not add `SessionDep` or SQLAlchemy imports back to routers without also re-wiring the lifespan and dependencies.
+34. **`PriceProxy` is the sole I/O layer in online mode.** It reuses the existing `CardrushClient` / `SnkrdunkClient` — no new HTTP clients. The 30-min TTL cache is keyed on `(set_code, local_id)`. Do not bypass it by calling the scrapers directly from routers.
+35. **`MemCatalog` is loaded once at lifespan startup and never mutated.** To reflect new catalog data (after a `make catalog-seed-*` run) the process must restart. Do not attempt live-reload of the in-memory catalog without also resetting the `PriceProxy` cache.
+36. **CI scraper schedule is disabled.** `.github/workflows/scrape.yml` has no `schedule:` trigger — only `workflow_dispatch`. Scrapers still work (packages unchanged); re-enable via `on.schedule` when PostgreSQL is restored.
 
 ---
 
@@ -612,20 +611,12 @@ make scrape-cardrush SET=SV2A                # one set
 make scrape-cardrush ERA=SV                  # all sets in era (SV | ME | SM | SW)
 make scrape-snkrdunk ERA=sv2a                # one era slug
 
-# API (read layer)
+# API (read layer — online mode, no DB or Redis required)
 make api                                     # prod: 0.0.0.0:8000
 make api-dev                                 # dev: 127.0.0.1:8000, reload
 curl "http://127.0.0.1:8000/jp/cards/SV2A/089/prices?variant=normal"
-
-# API-key management (writes to the `api_keys` table)
-uv run watari-api create-key --owner dev@example.com --tier free
-uv run watari-api revoke-key pk_ab12cd
-uv run watari-api list-keys [--include-revoked]
-
-# Manual MV refresh (only needed if the post-scrape hook failed or
-# you imported data out-of-band)
-uv run watari-api refresh-mvs             # CONCURRENTLY (default)
-uv run watari-api refresh-mvs --no-concurrently  # fallback
+# Note: first request per card takes 2–5 s (live scrape); cached 30 min thereafter.
+# Key-management (create-key/revoke-key/list-keys) and refresh-mvs removed in online mode.
 
 # Frontend (Vite + React)
 make web-install                             # bun install
