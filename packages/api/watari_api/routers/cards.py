@@ -86,6 +86,15 @@ def _mem_artwork_to_search_result(a: MemArtwork) -> ArtworkSearchResult:
 
 # --- batch endpoint ----------------------------------------------------------
 
+# Official promo denomination suffixes → internal set_code.
+# Handles inputs like "P 020/M-P" (M-era promo) and "P 297/SM-P" (SM-era promo).
+_PROMO_DENOM: dict[str, str] = {
+    "M-P": "MP",
+    "SM-P": "SMPR",
+    "S-P": "SP",
+    "SV-P": "SVP",
+}
+
 
 def _parse_code_token(raw: str) -> tuple[str | None, str] | None:
     token = raw.strip()
@@ -98,6 +107,13 @@ def _parse_code_token(raw: str) -> tuple[str | None, str] | None:
     else:
         set_code = None
         raw_id = parts[0]
+
+    # Resolve promo denomination: "P 020/M-P" → set_code=MP, local_id=020
+    if set_code == "P" and "/" in raw_id:
+        denom = raw_id.split("/", 1)[1].strip().upper()
+        if denom in _PROMO_DENOM:
+            set_code = _PROMO_DENOM[denom]
+
     raw_id = raw_id.split("/")[0].strip()
     if not raw_id:
         return None
