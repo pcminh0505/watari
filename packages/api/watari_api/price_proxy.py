@@ -25,7 +25,7 @@ from typing import Any
 from watari_cardrush.client import CardrushClient
 from watari_cardrush.parser import ListingRow, parse_listing_rows
 from watari_cardrush.run import _CARDRUSH_BASE_ALIAS, _CARDRUSH_PROMO_KEYWORD
-from watari_core.catalog import make_artwork_id, make_card_id, pad_local_id
+from watari_core.catalog import make_card_id, pad_local_id
 from watari_snkrdunk.client import SnkrdunkClient
 from watari_snkrdunk.parser import parse_sales_history
 from watari_snkrdunk.run import _SNKRDUNK_ERA_SLUG_OVERRIDE
@@ -454,8 +454,7 @@ async def _do_fetch_snkrdunk(set_code: str, local_id: str) -> SnkrdunkResult:
             # 100+ sequential HTTP pages and 25+ seconds of polite delays.
             entries, _ = await client.fetch_sales_history(apparel_id, limit=500)
 
-        artwork_id = make_artwork_id(sc, local_id)
-        card_id = make_card_id(artwork_id, "normal")
+        card_id = make_card_id(sc, local_id)
         ungraded, graded = parse_sales_history(
             entries,
             card_id=card_id,
