@@ -7,13 +7,15 @@ fetch from Cardrush and Snkrdunk on demand.
 
 from __future__ import annotations
 
+import asyncio
 from typing import Annotated, Any
 
 from fastapi import APIRouter, Body, Depends, HTTPException, Query, Response, status
 from watari_core.catalog import pad_local_id
 
 from watari_api.catalog_mem import MemArtwork, MemCatalog, MemVariant
-from watari_api.deps import get_catalog
+from watari_api.deps import get_catalog, get_price_proxy
+from watari_api.price_proxy import PriceProxy
 from watari_api.schemas import (
     ArtworkDetail,
     ArtworkSearchResult,
@@ -26,8 +28,11 @@ from watari_api.schemas import (
 router = APIRouter(tags=["cards"])
 
 CatalogDep = Annotated[MemCatalog, Depends(get_catalog)]
+PriceProxyDep = Annotated[PriceProxy, Depends(get_price_proxy)]
 
 _CATALOG_CACHE = "public, max-age=3600, stale-while-revalidate=300"
+_PRICE_CACHE = "public, max-age=1800, stale-while-revalidate=60"
+_BATCH_PRICE_CONCURRENCY = 8  # max simultaneous Cardrush+Snkrdunk fetches
 
 
 def _variant_sort_key(variant: str) -> tuple[int, str]:
@@ -82,6 +87,38 @@ def _mem_artwork_to_search_result(a: MemArtwork) -> ArtworkSearchResult:
         market_price_jpy=None,
         market_price_source_used=None,
     )
+
+
+# --- price enrichment --------------------------------------------------------
+
+
+async def _enrich_batch_with_prices(
+    items: list[CardBatchItem], proxy: PriceProxy
+) -> None:
+    """Fetch market_price_jpy for all found items in parallel (bounded concurrency)."""
+    sem = asyncio.Semaphore(_BATCH_PRICE_CONCURRENCY)
+
+    async def _fetch_one(item: CardBatchItem) -> None:
+        if item.card is None:
+            return
+        sc = item.card.set_code
+        lid = item.card.local_id
+        # Prefer "normal" variant; fall back to the first tracked variant.
+        variant = "normal"
+        if item.card.variants and not any(v.variant == "normal" for v in item.card.variants):
+            variant = item.card.variants[0].variant
+        card_id = next(
+            (v.card_id for v in item.card.variants if v.variant == variant),
+            f"jp-{sc.lower()}-{lid}-{variant}",
+        )
+        async with sem:
+            result = await proxy.market_price(sc, lid, variant, card_id)
+        if result:
+            item.market_price_jpy = result["market_price_jpy"]
+            item.market_price_source_used = result["source_used"]
+            item.market_price_variant = variant
+
+    await asyncio.gather(*[_fetch_one(item) for item in items])
 
 
 # --- batch endpoint ----------------------------------------------------------
@@ -153,14 +190,16 @@ def _resolve_batch(tokens: list[str], lang: str, catalog: MemCatalog) -> list[Ca
 async def get_cards_batch(
     lang: str,
     catalog: CatalogDep,
+    proxy: PriceProxyDep,
     response: Response,
     codes: str = Query(..., description="Comma-separated card codes in ``set_code local_id`` form"),
 ) -> list[CardBatchItem]:
-    """Resolve a comma-separated list of card codes."""
+    """Resolve a comma-separated list of card codes and fetch market prices."""
     tokens = _split_code_tokens([codes])
     results = _resolve_batch(tokens, lang, catalog)
+    await _enrich_batch_with_prices(results, proxy)
     if results:
-        response.headers["Cache-Control"] = _CATALOG_CACHE
+        response.headers["Cache-Control"] = _PRICE_CACHE
     return results
 
 
@@ -168,14 +207,20 @@ async def get_cards_batch(
 async def post_cards_batch(
     lang: str,
     catalog: CatalogDep,
+    proxy: PriceProxyDep,
     response: Response,
     body: CardBatchRequest = Body(...),
 ) -> list[CardBatchItem]:
-    """Resolve a list of card codes (POST variant)."""
+    """Resolve a list of card codes and fetch market prices.
+
+    ``body.codes`` accepts a JSON array **or** a single comma-separated string,
+    e.g. ``{"codes": "sv2a 204, m2a 195"}`` or ``{"codes": ["sv2a 204", "m2a 195"]}``.
+    """
     tokens = _split_code_tokens(body.codes)
     results = _resolve_batch(tokens, lang, catalog)
+    await _enrich_batch_with_prices(results, proxy)
     if results:
-        response.headers["Cache-Control"] = _CATALOG_CACHE
+        response.headers["Cache-Control"] = _PRICE_CACHE
     return results
 
 

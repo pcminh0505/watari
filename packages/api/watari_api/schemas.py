@@ -9,8 +9,9 @@ the admin scrape-health endpoint, which have no ORM model.
 from __future__ import annotations
 
 from datetime import date, datetime
+from typing import Any
 
-from pydantic import BaseModel
+from pydantic import BaseModel, model_validator
 
 
 class VariantRef(BaseModel):
@@ -38,9 +39,21 @@ class ArtworkDetail(BaseModel):
 
 
 class CardBatchRequest(BaseModel):
-    """Request body for ``POST /cards/batch``."""
+    """Request body for ``POST /cards/batch``.
+
+    ``codes`` accepts either a JSON array or a comma-separated string so
+    spreadsheet clients can use whichever is easier to construct.
+    """
 
     codes: list[str]
+
+    @model_validator(mode="before")
+    @classmethod
+    def _coerce_codes(cls, data: Any) -> Any:
+        if isinstance(data, dict) and isinstance(data.get("codes"), str):
+            data = dict(data)
+            data["codes"] = [data["codes"]]
+        return data
 
 
 class SetsBatchRequest(BaseModel):
