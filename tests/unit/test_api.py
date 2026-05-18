@@ -9,7 +9,7 @@ import pytest
 from fastapi.testclient import TestClient
 from watari_api.auth import AuthContext
 from watari_api.catalog_mem import MemArtwork, MemCatalog, MemSet, MemVariant
-from watari_api.deps import get_catalog, get_price_proxy
+from watari_api.deps import get_catalog, get_price_proxy, get_session
 from watari_api.main import create_app
 from watari_api.price_proxy import PriceProxy
 from watari_api.ratelimit import rate_limit_dep
@@ -143,35 +143,61 @@ class FakeMemCatalog:
 
 
 # ---------------------------------------------------------------------------
+# Fake DB session
+# ---------------------------------------------------------------------------
+
+
+class FakeResult:
+    """Minimal SQLAlchemy result stand-in for tests."""
+
+    def __init__(self, rows: list[dict[str, Any]] | None = None) -> None:
+        self._rows = rows or []
+
+    def mappings(self) -> "FakeResult":
+        return self
+
+    def first(self) -> dict[str, Any] | None:
+        return self._rows[0] if self._rows else None
+
+    def __iter__(self):  # type: ignore[override]
+        return iter(self._rows)
+
+
+class FakeSession:
+    """Fake AsyncSession for tests — returns preset rows for any execute()."""
+
+    def __init__(self, rows: list[dict[str, Any]] | None = None) -> None:
+        self._rows = rows or []
+
+    async def execute(self, stmt: Any, params: Any = None) -> FakeResult:
+        return FakeResult(self._rows)
+
+
+# ---------------------------------------------------------------------------
 # Fake price proxy
 # ---------------------------------------------------------------------------
 
 
 class FakePriceProxy:
-    """Fake PriceProxy for tests — returns pre-set data."""
+    """Fake PriceProxy for tests — returns pre-set Snkrdunk data."""
 
     def __init__(
         self,
-        prices: list[dict[str, Any]] | None = None,
-        market: dict[str, Any] | None = None,
-        spread: list[dict[str, Any]] | None = None,
+        sd_prices: list[dict[str, Any]] | None = None,
+        sd_market: int | None = None,
         graded: list[dict[str, Any]] | None = None,
         graded_hist: list[dict[str, Any]] | None = None,
     ) -> None:
-        self._prices = prices or []
-        self._market = market
-        self._spread = spread or []
+        self._sd_prices = sd_prices or []
+        self._sd_market = sd_market
         self._graded = graded or []
         self._graded_hist = graded_hist or []
 
-    async def latest_prices(self, *args: Any, **kwargs: Any) -> list[dict[str, Any]]:
-        return self._prices
+    async def snkrdunk_latest_prices(self, *args: Any, **kwargs: Any) -> list[dict[str, Any]]:
+        return self._sd_prices
 
-    async def market_price(self, *args: Any, **kwargs: Any) -> dict[str, Any] | None:
-        return self._market
-
-    async def spread(self, *args: Any, **kwargs: Any) -> list[dict[str, Any]]:
-        return self._spread
+    async def snkrdunk_market_price(self, *args: Any, **kwargs: Any) -> int | None:
+        return self._sd_market
 
     async def graded_prices(self, *args: Any, **kwargs: Any) -> list[dict[str, Any]]:
         return self._graded
@@ -194,12 +220,14 @@ async def _anonymous_ratelimit() -> AuthContext:
 def _make_client(
     catalog: FakeMemCatalog | None = None,
     proxy: FakePriceProxy | None = None,
+    session: FakeSession | None = None,
 ) -> TestClient:
     app = create_app()
     if catalog is not None:
         app.dependency_overrides[get_catalog] = lambda: catalog
     if proxy is not None:
         app.dependency_overrides[get_price_proxy] = lambda: proxy
+    app.dependency_overrides[get_session] = lambda: (session or FakeSession())
     app.dependency_overrides[rate_limit_dep] = _anonymous_ratelimit
     return TestClient(app)
 
@@ -486,8 +514,8 @@ def test_batch_cache_header_set() -> None:
     assert "max-age=3600" in resp.headers["Cache-Control"]
 
 
-def test_batch_market_price_none_in_online_mode() -> None:
-    # In online mode, batch endpoints do not fetch per-card prices.
+def test_batch_market_price_none_when_db_empty() -> None:
+    # FakeSession returns no rows → market_price_jpy stays null.
     catalog = FakeMemCatalog(
         sets=[_fake_set("SV2A")],
         artworks=[_fake_artwork("SV2A", "089")],
@@ -715,15 +743,17 @@ def _catalog_with_card(variant: str = "normal") -> FakeMemCatalog:
 
 def test_latest_prices_returns_data() -> None:
     now = datetime(2025, 4, 1, tzinfo=UTC)
+    # CR rows come from FakeSession; SD rows come from FakePriceProxy.snkrdunk_latest_prices
+    session = FakeSession(rows=[
+        {"source": "cardrush", "condition": "A", "price_jpy": 500, "stock_qty": 3, "observed_at": now},
+    ])
     proxy = FakePriceProxy(
-        prices=[
-            {"card_id": "jp-sv2a-089-normal", "source": "cardrush", "condition": "A",
-             "price_jpy": 500, "stock_qty": 3, "observed_at": now},
+        sd_prices=[
             {"card_id": "jp-sv2a-089-normal", "source": "snkrdunk", "condition": "A",
              "price_jpy": 450, "stock_qty": None, "observed_at": now},
         ]
     )
-    client = _make_client(catalog=_catalog_with_card(), proxy=proxy)
+    client = _make_client(catalog=_catalog_with_card(), proxy=proxy, session=session)
     resp = client.get("/jp/cards/SV2A/089/prices")
     assert resp.status_code == 200
     prices = resp.json()
@@ -747,40 +777,35 @@ def test_history_always_empty_in_online_mode() -> None:
 
 
 def test_market_price_returns_data() -> None:
-    proxy = FakePriceProxy(
-        market={"card_id": "jp-sv2a-089-normal", "market_price_jpy": 3500, "source_used": "snkrdunk"}
-    )
+    # SD proxy returns 7d median → preferred over DB
+    proxy = FakePriceProxy(sd_market=3500)
     client = _make_client(catalog=_catalog_with_card(), proxy=proxy)
     resp = client.get("/jp/cards/SV2A/089/market-price")
     assert resp.status_code == 200
     assert resp.json()["market_price_jpy"] == 3500
+    assert resp.json()["source_used"] == "snkrdunk"
 
 
 def test_market_price_404_when_no_data() -> None:
-    proxy = FakePriceProxy(market=None)
+    # No SD data and FakeSession returns empty → 404
+    proxy = FakePriceProxy(sd_market=None)
     client = _make_client(catalog=_catalog_with_card(), proxy=proxy)
     resp = client.get("/jp/cards/SV2A/089/market-price")
     assert resp.status_code == 404
 
 
 def test_spread_returns_data() -> None:
-    proxy = FakePriceProxy(
-        spread=[{
-            "card_id": "jp-sv2a-089-normal",
-            "condition": "A",
-            "cardrush_floor": 500,
-            "snkrdunk_median_7d": 450.0,
-            "spread_jpy": 50.0,
-            "spread_pct": 0.111,
-        }]
-    )
-    client = _make_client(catalog=_catalog_with_card(), proxy=proxy)
+    # CR floor from FakeSession; SD median from FakePriceProxy.snkrdunk_market_price
+    session = FakeSession(rows=[{"cardrush_floor": 500}])
+    proxy = FakePriceProxy(sd_market=550)
+    client = _make_client(catalog=_catalog_with_card(), proxy=proxy, session=session)
     resp = client.get("/jp/cards/SV2A/089/spread")
     assert resp.status_code == 200
     rows = resp.json()
     assert len(rows) == 1
     assert rows[0]["cardrush_floor"] == 500
-    assert rows[0]["spread_pct"] == pytest.approx(0.111)
+    assert rows[0]["snkrdunk_median_7d"] == pytest.approx(550.0)
+    assert rows[0]["spread_jpy"] == pytest.approx(50.0)
 
 
 def test_prices_400_for_unknown_variant_with_available_list() -> None:

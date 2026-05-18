@@ -1,21 +1,21 @@
-"""Artwork-oriented card endpoints — served from in-memory catalog (online mode).
+"""Artwork-oriented card endpoints — served from in-memory catalog (hybrid mode).
 
-``market_price_jpy`` is always ``null`` in search/list results; per-card price
-data is available via the ``/prices`` and ``/market-price`` endpoints which
-fetch from Cardrush and Snkrdunk on demand.
+``market_price_jpy`` in batch results is populated from ``mv_market_price``
+(Cardrush DB, instant). Search/list results still return ``null`` — use the
+``/prices`` and ``/market-price`` endpoints for per-card price details.
 """
 
 from __future__ import annotations
 
-import asyncio
 from typing import Annotated, Any
 
 from fastapi import APIRouter, Body, Depends, HTTPException, Query, Response, status
+from sqlalchemy import text
+from sqlalchemy.ext.asyncio import AsyncSession
 from watari_core.catalog import pad_local_id
 
 from watari_api.catalog_mem import MemArtwork, MemCatalog, MemVariant
-from watari_api.deps import get_catalog, get_price_proxy
-from watari_api.price_proxy import PriceProxy
+from watari_api.deps import get_catalog, get_session
 from watari_api.schemas import (
     ArtworkDetail,
     ArtworkSearchResult,
@@ -28,11 +28,9 @@ from watari_api.schemas import (
 router = APIRouter(tags=["cards"])
 
 CatalogDep = Annotated[MemCatalog, Depends(get_catalog)]
-PriceProxyDep = Annotated[PriceProxy, Depends(get_price_proxy)]
+SessionDep = Annotated[AsyncSession, Depends(get_session)]
 
 _CATALOG_CACHE = "public, max-age=3600, stale-while-revalidate=300"
-_PRICE_CACHE = "public, max-age=1800, stale-while-revalidate=60"
-_BATCH_PRICE_CONCURRENCY = 8  # max simultaneous Cardrush+Snkrdunk fetches
 
 
 def _variant_sort_key(variant: str) -> tuple[int, str]:
@@ -92,33 +90,39 @@ def _mem_artwork_to_search_result(a: MemArtwork) -> ArtworkSearchResult:
 # --- price enrichment --------------------------------------------------------
 
 
-async def _enrich_batch_with_prices(
-    items: list[CardBatchItem], proxy: PriceProxy
-) -> None:
-    """Fetch market_price_jpy for all found items in parallel (bounded concurrency)."""
-    sem = asyncio.Semaphore(_BATCH_PRICE_CONCURRENCY)
-
-    async def _fetch_one(item: CardBatchItem) -> None:
+async def _enrich_batch_from_db(items: list[CardBatchItem], session: AsyncSession) -> None:
+    """Fetch market_price_jpy for all found items via a single mv_market_price query."""
+    cid_to_item: dict[str, CardBatchItem] = {}
+    for item in items:
         if item.card is None:
-            return
-        sc = item.card.set_code
-        lid = item.card.local_id
+            continue
         # Prefer "normal" variant; fall back to the first tracked variant.
         variant = "normal"
         if item.card.variants and not any(v.variant == "normal" for v in item.card.variants):
             variant = item.card.variants[0].variant
         card_id = next(
             (v.card_id for v in item.card.variants if v.variant == variant),
-            f"jp-{sc.lower()}-{lid}-{variant}",
+            None,
         )
-        async with sem:
-            result = await proxy.market_price(sc, lid, variant, card_id)
-        if result:
-            item.market_price_jpy = result["market_price_jpy"]
-            item.market_price_source_used = result["source_used"]
+        if card_id:
+            cid_to_item[card_id] = item
             item.market_price_variant = variant
 
-    await asyncio.gather(*[_fetch_one(item) for item in items])
+    if not cid_to_item:
+        return
+
+    result = await session.execute(
+        text(
+            "SELECT card_id, market_price_jpy, source_used "
+            "FROM mv_market_price WHERE card_id = ANY(:ids)"
+        ),
+        {"ids": list(cid_to_item.keys())},
+    )
+    for row in result.mappings():
+        item = cid_to_item.get(row["card_id"])
+        if item:
+            item.market_price_jpy = row["market_price_jpy"]
+            item.market_price_source_used = row["source_used"]
 
 
 # --- batch endpoint ----------------------------------------------------------
@@ -190,16 +194,16 @@ def _resolve_batch(tokens: list[str], lang: str, catalog: MemCatalog) -> list[Ca
 async def get_cards_batch(
     lang: str,
     catalog: CatalogDep,
-    proxy: PriceProxyDep,
+    session: SessionDep,
     response: Response,
     codes: str = Query(..., description="Comma-separated card codes in ``set_code local_id`` form"),
 ) -> list[CardBatchItem]:
-    """Resolve a comma-separated list of card codes and fetch market prices."""
+    """Resolve a comma-separated list of card codes and fetch market prices from mv_market_price."""
     tokens = _split_code_tokens([codes])
     results = _resolve_batch(tokens, lang, catalog)
-    await _enrich_batch_with_prices(results, proxy)
+    await _enrich_batch_from_db(results, session)
     if results:
-        response.headers["Cache-Control"] = _PRICE_CACHE
+        response.headers["Cache-Control"] = _CATALOG_CACHE
     return results
 
 
@@ -207,20 +211,20 @@ async def get_cards_batch(
 async def post_cards_batch(
     lang: str,
     catalog: CatalogDep,
-    proxy: PriceProxyDep,
+    session: SessionDep,
     response: Response,
     body: CardBatchRequest = Body(...),
 ) -> list[CardBatchItem]:
-    """Resolve a list of card codes and fetch market prices.
+    """Resolve a list of card codes and fetch market prices from mv_market_price.
 
     ``body.codes`` accepts a JSON array **or** a single comma-separated string,
     e.g. ``{"codes": "sv2a 204, m2a 195"}`` or ``{"codes": ["sv2a 204", "m2a 195"]}``.
     """
     tokens = _split_code_tokens(body.codes)
     results = _resolve_batch(tokens, lang, catalog)
-    await _enrich_batch_with_prices(results, proxy)
+    await _enrich_batch_from_db(results, session)
     if results:
-        response.headers["Cache-Control"] = _PRICE_CACHE
+        response.headers["Cache-Control"] = _CATALOG_CACHE
     return results
 
 

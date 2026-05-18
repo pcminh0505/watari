@@ -1,11 +1,12 @@
-"""FastAPI application factory for the watari read API — online mode.
+"""FastAPI application factory for the watari read API — hybrid mode.
 
 Catalog (sets / artworks / cards) is loaded from YAML at startup.
-Prices are fetched on demand from Cardrush and Snkrdunk and cached in memory
-for :data:`watari_api.price_proxy.CACHE_TTL` (default 30 min).
+Cardrush prices are read from the DB (mv_* materialized views); Snkrdunk
+prices are fetched on demand and cached in memory for
+:data:`watari_api.price_proxy.CACHE_TTL` (default 30 min).
 
-No PostgreSQL required. Redis is optional: set REDIS_URL to enable a shared
-L2 cache that survives process restarts. If unset, memory-only mode is used.
+Requires DATABASE_URL pointing to Neon PostgreSQL.
+Redis is optional: set REDIS_URL to enable a shared L2 cache.
 """
 
 from __future__ import annotations
@@ -18,7 +19,9 @@ from contextlib import asynccontextmanager
 import httpx
 from fastapi import APIRouter, Depends, FastAPI, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
+from sqlalchemy import text
 from watari_core.config import settings
+from watari_core.db import engine as db_engine
 
 from watari_api.catalog_mem import MemCatalog
 from watari_api.deps import validate_lang
@@ -31,7 +34,12 @@ logger = logging.getLogger(__name__)
 
 @asynccontextmanager
 async def lifespan(app: FastAPI) -> AsyncIterator[None]:
-    """Process-scoped setup: load YAML catalog + install price proxy + rate limiter."""
+    """Process-scoped setup: verify DB + load YAML catalog + install price proxy + rate limiter."""
+    # Verify DB connection before serving traffic.
+    async with db_engine.begin() as conn:
+        await conn.execute(text("SELECT 1"))
+    logger.info("lifespan: DB connection verified (%s)", settings.database_url.split("@")[-1])
+
     # Run the synchronous catalog loader off the event loop so other coroutines
     # (e.g. /healthz) remain responsive during the 1–3 s startup I/O burst.
     app.state.catalog = await asyncio.to_thread(MemCatalog.load)
@@ -76,7 +84,7 @@ def create_app() -> FastAPI:
         CORSMiddleware,
         allow_origins=origins or ["*"],
         allow_credentials=False,
-        allow_methods=["GET"],
+        allow_methods=["GET", "POST"],
         allow_headers=["*"],
     )
 

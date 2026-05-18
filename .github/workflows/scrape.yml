@@ -1,7 +1,11 @@
 name: Scheduled scrapers
 on:
-  # Scheduled scrapers disabled — API now fetches prices on demand (online mode).
-  # Manual runs still available via workflow_dispatch if needed.
+  schedule:
+    # Cardrush: SV + ME + CL daily at 00:00 and 08:00 UTC
+    - cron: '0 0,8 * * *'
+    # Cardrush: SW + SM + promos weekly on Saturday at 21:00 UTC
+    - cron: '0 21 * * 6'
+  # Snkrdunk jobs are workflow_dispatch only (not stored in DB; fetched on-demand by API)
   workflow_dispatch:
     inputs:
       job:
