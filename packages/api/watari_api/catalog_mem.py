@@ -90,7 +90,88 @@ class MemCatalog:
 
     @classmethod
     def load(cls) -> MemCatalog:
-        """Load all YAMLs from the catalog data directory."""
+        """Load catalog — from binary cache if available, otherwise from YAML."""
+        cached = cls._load_from_cache()
+        if cached is not None:
+            return cached
+        return cls._load_from_yaml()
+
+    @classmethod
+    def _load_from_cache(cls) -> MemCatalog | None:
+        """Try to load from the pre-compiled pickle (written at Docker build time)."""
+        try:
+            import pickle
+
+            from watari_catalog.paths import data_dir
+
+            cache_path = data_dir() / ".catalog_cache.pkl"
+            if not cache_path.exists():
+                return None
+            logger.info("catalog_mem: loading from binary cache (%s)...", cache_path)
+            cache = pickle.loads(cache_path.read_bytes())
+            loaded_at = datetime.now(UTC)
+
+            sets: list[MemSet] = []
+            for s in cache["sets"]:
+                sets.append(
+                    MemSet(
+                        set_code=s["set_code"],
+                        era_block=s["era_block"],
+                        language=s["language"],
+                        name_ja=s.get("name_ja"),
+                        name_en=s.get("name_en"),
+                        release_date=s.get("release_date"),
+                        total=s.get("total"),
+                        parent_set_code=s.get("parent_set_code"),
+                        tcgdex_id=s.get("tcgdex_id"),
+                        source_refs=s.get("source_refs", {}),
+                        loaded_at=loaded_at,
+                    )
+                )
+
+            set_map = {s.set_code: s for s in sets}
+            artworks: list[MemArtwork] = []
+            for sc, stem, raw in cache["cards"]:
+                mem_set = set_map.get(sc)
+                local_id = pad_local_id(str(raw.get("local_id", stem)))
+                artwork_id = make_artwork_id(sc, local_id)
+                prints: list[str] = raw.get("prints") or ["normal"]
+                variants = [
+                    MemVariant(variant=v, card_id=make_card_id(artwork_id, v), is_tracked=True)
+                    for v in prints
+                ]
+                artworks.append(
+                    MemArtwork(
+                        artwork_id=artwork_id,
+                        set_code=sc,
+                        local_id=local_id,
+                        name_ja=raw.get("name_ja") or None,
+                        name_en=raw.get("name_en") or None,
+                        rarity_code=raw.get("rarity_code") or None,
+                        image_url=raw.get("image") or None,
+                        illustrator=raw.get("illustrator") or None,
+                        category=str(raw.get("category") or "card"),
+                        language=mem_set.language if mem_set else "jp",
+                        variants=variants,
+                        set_name_ja=mem_set.name_ja if mem_set else None,
+                        set_name_en=mem_set.name_en if mem_set else None,
+                        set_release_date=mem_set.release_date if mem_set else None,
+                    )
+                )
+
+            logger.info(
+                "catalog_mem: loaded %d sets, %d artworks from cache",
+                len(sets),
+                len(artworks),
+            )
+            return cls(sets, artworks)
+        except Exception:
+            logger.warning("catalog_mem: cache load failed, falling back to YAML", exc_info=True)
+            return None
+
+    @classmethod
+    def _load_from_yaml(cls) -> MemCatalog:
+        """Load all YAMLs from the catalog data directory (slow fallback)."""
         logger.info("catalog_mem: loading sets from YAML...")
         raw_sets = load_sets_yaml()
         loaded_at = datetime.now(UTC)

@@ -1556,7 +1556,7 @@ dependencies = [
 [package.metadata]
 requires-dist = [
     { name = "fastapi", specifier = ">=0.115" },
-    { name = "redis", extras = ["asyncio"], specifier = ">=5.0" },
+    { name = "redis", specifier = ">=5.0" },
     { name = "uvicorn", extras = ["standard"], specifier = ">=0.32" },
     { name = "watari-cardrush", editable = "packages/scraper_cardrush" },
     { name = "watari-catalog", editable = "packages/catalog" },
