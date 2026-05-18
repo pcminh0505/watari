@@ -137,7 +137,7 @@ class MemCatalog:
                 artwork_id = make_artwork_id(sc, local_id)
                 prints: list[str] = raw.get("prints") or ["normal"]
                 variants = [
-                    MemVariant(variant=v, card_id=make_card_id(artwork_id, v), is_tracked=True)
+                    MemVariant(variant=v, card_id=make_card_id(sc, local_id, v), is_tracked=True)
                     for v in prints
                 ]
                 artworks.append(
@@ -229,7 +229,7 @@ class MemCatalog:
             variants = [
                 MemVariant(
                     variant=v,
-                    card_id=make_card_id(artwork_id, v),
+                    card_id=make_card_id(sc, local_id, v),
                     is_tracked=True,
                 )
                 for v in prints
