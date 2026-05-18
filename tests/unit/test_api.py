@@ -240,8 +240,11 @@ def _make_client(
 def test_healthz_returns_ok() -> None:
     app = create_app()
     app.dependency_overrides[rate_limit_dep] = _anonymous_ratelimit
-    with TestClient(app) as client:
-        resp = client.get("/healthz")
+    # Do not use context manager: lifespan now verifies DB connection and would
+    # fail in CI where DATABASE_URL points to localhost (no DB running).
+    # /healthz has no dependency on app.state so the lifespan is not needed.
+    client = TestClient(app)
+    resp = client.get("/healthz")
     assert resp.status_code == 200
     assert resp.json() == {"status": "ok"}
 
