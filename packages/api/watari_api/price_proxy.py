@@ -476,7 +476,9 @@ def _cr_matches(row: ListingRow, set_code: str, local_id: str) -> bool:
     if row.local_id_padded is None or row.local_id_padded != local_id:
         return False
     if row.set_code is None:
-        return False
+        # No set code in product name (bracket-only format e.g. {204/165}).
+        # The HTTP keyword already filtered by set, so local_id match suffices.
+        return True
     row_sc = row.set_code.upper()
     if row_sc == set_code:
         return True
