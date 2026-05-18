@@ -22,7 +22,13 @@ def _connect_args() -> dict:
     return {"ssl": ssl.create_default_context()}
 
 
-engine = create_async_engine(settings.database_url, echo=False, connect_args=_connect_args())
+engine = create_async_engine(
+    settings.database_url,
+    echo=False,
+    connect_args=_connect_args(),
+    pool_pre_ping=True,
+    pool_recycle=300,
+)
 async_session_factory = async_sessionmaker(engine, expire_on_commit=False)
 
 
