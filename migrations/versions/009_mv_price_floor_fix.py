@@ -13,9 +13,10 @@ so the API returned prices far above the true market floor.
 Changes
 -------
 * ``mv_latest_price``: add ``price_jpy ASC`` as secondary sort so DISTINCT ON
-  always resolves to the cheapest row when timestamps tie.
-* ``mv_market_price``: add ``AND stock_qty > 0`` to the Cardrush sub-select so
-  zero-stock aspirational prices are never used as the market price.
+  always resolves to the cheapest row when timestamps tie.  This is the only
+  fix needed — ``mv_market_price`` definition is otherwise unchanged (out-of-stock
+  condition A is still a valid reference price for cards where no in-stock copy
+  exists).
 
 Revision ID: 009_mv_price_floor_fix
 Revises: 008_graded_price_points
@@ -80,7 +81,9 @@ def upgrade() -> None:
         "ON mv_cross_source_spread (card_id, condition)"
     )
 
-    # Recreate mv_market_price — stock_qty > 0 guard on the Cardrush branch.
+    # Recreate mv_market_price (definition unchanged — the price_jpy ASC fix in
+    # mv_latest_price is sufficient; no stock_qty guard needed here since
+    # out-of-stock condition A is still a valid reference price).
     op.execute("""
         CREATE MATERIALIZED VIEW mv_market_price AS
         SELECT
@@ -98,9 +101,7 @@ def upgrade() -> None:
         FULL OUTER JOIN (
             SELECT card_id, price_jpy AS price
             FROM mv_latest_price
-            WHERE source = 'cardrush'
-              AND condition = 'A'
-              AND stock_qty > 0
+            WHERE source = 'cardrush' AND condition = 'A'
         ) cr ON sd.card_id = cr.card_id
     """)
     op.execute(
