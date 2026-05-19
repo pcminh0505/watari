@@ -20,6 +20,7 @@ GET /jp/cards/batch
 GET /jp/cards/by-sets
 GET /jp/cards/{set_code}/{local_id}
 GET /jp/cards/{set_code}/{local_id}/prices
+GET /jp/cards/{set_code}/{local_id}/history
 GET /jp/cards/{set_code}/{local_id}/spread
 GET /jp/cards/{set_code}/{local_id}/market-price
 GET /jp/cards/{set_code}/{local_id}/graded-prices
@@ -46,12 +47,16 @@ curl "https://watari-api.fly.dev/jp/cards/SV2A/089/spread?variant=normal"
 curl "https://watari-api.fly.dev/jp/cards/SV2A/089/market-price?variant=normal"
 
 # Graded card history (PSA/BGS/CGC)
-curl "https://watari-api.fly.dev/jp/cards/SV2A/089/graded-history?company=PSA&days=365"
+curl "https://watari-api.fly.dev/jp/cards/SV2A/089/graded-history?company=PSA&days=90"
+
+# Ungraded price history (Snkrdunk sold comps, up to 90 days)
+curl "https://watari-api.fly.dev/jp/cards/SV2A/089/history?variant=normal&days=30"
 ```
 
-> **Note:** Price endpoints (`/prices`, `/spread`, `/market-price`, `/graded-*`) fetch
+> **Note:** Price endpoints (`/prices`, `/spread`, `/market-price`, `/graded-*`, `/history`) fetch
 > live from Cardrush and Snkrdunk. The first request per card may take 2–5 s; subsequent
-> requests within 30 minutes are served from cache.
+> requests within 30 minutes are served from cache. `/history` returns Snkrdunk ungraded
+> sold comps only (max 90 days).
 
 ### Rate limiting
 

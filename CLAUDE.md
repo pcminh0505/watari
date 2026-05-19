@@ -6,7 +6,7 @@
 > Update it whenever the architecture changes — especially after a
 > destructive migration, a new source, or a schema split.
 >
-> Last updated: 2026-05-17 (**Online mode** — API now fetches prices on-demand from Cardrush/Snkrdunk; PostgreSQL and Redis removed from the API layer; in-memory catalog (`MemCatalog`) + in-memory rate limiter; CI scrapers disabled (schedule removed, `workflow_dispatch` only); 399 tests passing).
+> Last updated: 2026-05-19 (**Online mode** — API fetches prices on-demand from Cardrush/Snkrdunk; in-memory catalog (`MemCatalog`) + in-memory rate limiter; CI scrapers disabled (schedule removed, `workflow_dispatch` only); 399 tests passing. Recent: `/history` wired to Snkrdunk on-demand (90d cap); card number denominator display; card detail info grid).
 
 ---
 
@@ -61,7 +61,7 @@ packages/
   core/                ← SQLAlchemy models, Pydantic DTOs, catalog.py helpers, bronze writer
   catalog/             ← YML data tree + bootstrap/seed pipeline + CLI
     data/
-      sets/*.yml       ← 98 set files (source of truth for set metadata, 4 eras)
+      sets/*.yml       ← 105 set files (source of truth for set metadata, 5 eras)
       cards/{SET}/*.yml← one file per (set, local_id); 10 787 files total
     watari_catalog/    ← Python package (bootstrap.py, seed_cards.py, clients, verify_pokellector.py, …)
   scraper_cardrush/    ← curl_cffi-based scraper, rarity-bucket crawling
@@ -72,7 +72,7 @@ packages/
 migrations/            ← Alembic (current head: 008_graded_price_points)
 scripts/               ← gen_sm/sw_set_metadata.py, update_set_symbols.py, dump/bootstrap scripts
 plans/                 ← design docs, one per major change
-tests/unit/            ← 362 tests, all passing
+tests/unit/            ← 399 tests, all passing
 ```
 
 Config knobs: `.env` (DB URL, MinIO creds, SNKRDUNK cookies). `docker-compose.yml`
@@ -220,7 +220,7 @@ Routers (all under `packages/api/watari_api/routers/`):
 | `GET /{lang}/cards/batch` / `POST` | `list[CardBatchItem]` | `MemCatalog` |
 | `GET /{lang}/cards/by-sets` / `POST` | `list[ArtworkSearchResult]` | `MemCatalog` |
 | `GET /{lang}/cards/{set_code}/{local_id}/prices` (`?variant=normal`) | `list[LatestPrice]` | `PriceProxy` (live; 30-min cache) |
-| `GET /{lang}/cards/{set_code}/{local_id}/history` | `[]` (always empty) | — (no DB) |
+| `GET /{lang}/cards/{set_code}/{local_id}/history` (`?variant=&days=30&condition=`) | `list[PricePointOut]` | `PriceProxy` (Snkrdunk ungraded sold comps; 90d max; 30-min cache) |
 | `GET /{lang}/cards/{set_code}/{local_id}/spread` (`?variant=normal`) | `list[SpreadRow]` | `PriceProxy` |
 | `GET /{lang}/cards/{set_code}/{local_id}/market-price` (`?variant=normal`) | `MarketPriceOut` / 404 | `PriceProxy` |
 | `GET /{lang}/cards/{set_code}/{local_id}/graded-prices` (`?variant=normal`) | `list[LatestGradedPrice]` | `PriceProxy` |
@@ -229,9 +229,10 @@ Routers (all under `packages/api/watari_api/routers/`):
 
 **Online mode trade-offs:**
 
-- `/prices`, `/spread`, `/market-price`, `/graded-*` — first call per card takes
+- `/prices`, `/spread`, `/market-price`, `/graded-*`, `/history` — first call per card takes
   2–5 s (live HTML scrape + JSON API). Cached for 30 min thereafter.
-- `/history` — always returns `[]` (no price_points table).
+- `/history` — Snkrdunk ungraded sold comps only; max 90 days; no Cardrush history.
+  `days` param capped at `le=90`. Returns `[]` for cards with no Snkrdunk data.
 - `market_price_jpy` — always `null` in `/search`, `/batch`, `/by-sets` results.
 - `total_value_jpy` — always `null` on set objects.
 - `/admin/scrape-health` — always returns `[]`.
@@ -299,8 +300,8 @@ Stack: Vite + React 18 + TypeScript + Tailwind CSS + React Query + Recharts. `bu
 | `useMarketPrice` | `GET /jp/cards/{set}/{id}/market-price` | Per-variant market price; accepts `enabled` param |
 | `useLatestPrices` | `GET /jp/cards/{set}/{id}/prices` | All condition rows from `mv_latest_price` |
 | `useSpread` | `GET /jp/cards/{set}/{id}/spread` | Cross-source spread from `mv_cross_source_spread` |
-| `usePriceHistory` | `GET /jp/cards/{set}/{id}/history` | Raw `price_points` for chart |
-| `useGradedPriceHistory` | `GET /jp/cards/{set}/{id}/graded-history` | Raw `graded_price_points`; default 365 days, limit 2000 |
+| `usePriceHistory` | `GET /jp/cards/{set}/{id}/history` | Snkrdunk ungraded sold comps; period buttons 30d/60d/90d |
+| `useGradedPriceHistory` | `GET /jp/cards/{set}/{id}/graded-history` | Raw `graded_price_points`; default 90 days, limit 2000 |
 
 **Currency system** (`src/contexts/CurrencyContext.tsx`):
 
@@ -319,13 +320,30 @@ Stack: Vite + React 18 + TypeScript + Tailwind CSS + React Query + Recharts. `bu
 
 This eliminates 60+ individual market-price requests per set-gallery page load.
 
+**Card detail info grid** (`CardDetailPage`):
+
+3-column grid replacing the old badge row, mimicking TCGCollector layout:
+- **Expansion**: set symbol + set name link + set_code badge
+- **Card number**: `{local_id}/{set.total}` (e.g. `183/165`); denominator omitted if `set.total` is null
+- **Rarity**: `Badge variant="rarity"` (omitted if no rarity_code)
+- **Illustrators**: link to `/cards?illustrator=...` (spans full width; omitted if no illustrator)
+
+**`SetOut.total` semantics:** the official base-set denomination printed on the physical card
+(e.g., 165 for SV2A; 193 for M2A). Sources in priority order:
+1. YAML `total:` field (ME era: M1L=63, M1S=63, M2=80, M2A=193, M3=80, M4=83; S11=100, SM10A=50, SM11=90; CL sets=34)
+2. TCGdex Japanese locale `cardCount.official` — fetched at startup via `_populate_official_totals()` for all sets with `tcgdex_id` and no YAML `total`. Uses `/v2/ja/sets` (NOT `/v2/en/sets` — English locale IDs don't match our `tcgdex_id` format).
+3. `None` — denominator is hidden (CL/promo sets; any set not yet in YAML or TCGdex).
+
+**Do NOT fall back to `count_artworks()`** for `SetOut.total` — it gives the total
+artwork count including secret rares (e.g., 250 for M2A), which is wrong as a denominator.
+
 **Price display rules (current):**
 - Card gallery thumbnails: price only (no "sold"/"listed" source label)
 - `PriceTable` (detail page): Condition + Price only (no "Updated" date column)
 - `SpreadTable`: CR Floor, SD Median 7d, Spread, Spread % — all currency-converted
-- `PriceHistoryChart`: Y-axis and tooltip both call `formatPrice`
-- `GradedPriceHistoryChart`: multi-line Recharts chart; one line per grade (PSA10/9/8, BGS10/9.5); SNKRDUNK sold comps preferred over Cardrush per day; day-range toggle (90/180/365)
-- `SetCard` (sets page): `total_value_jpy` currency-converted
+- `PriceHistoryChart`: Snkrdunk ungraded sold comps; period buttons 30d / 60d / 90d; Y-axis and tooltip both call `formatPrice`
+- `GradedPriceHistoryChart`: multi-line Recharts chart; one line per grade (PSA10/9/8, BGS10/9.5); SNKRDUNK sold comps preferred over Cardrush per day; day-range toggle (1M / 3M); default 90 days
+- `SetCard` (sets page): `total_value_jpy` currency-converted; `set.total` shown as "X cards" (uses official base-set count)
 
 ---
 
@@ -344,7 +362,7 @@ This eliminates 60+ individual market-price requests per set-gallery page load.
 | `make scrape-snkrdunk ERA=<code>` × SV+ME          | ~104k SNKRDUNK rows. **SV1 still 0 rows** (upstream uses `sv1v` namespace). SM/SW: scheduled weekly via CI. |
 | `watari-api refresh-mvs` (CONCURRENTLY)            | mv_latest_price, mv_median_7d, mv_cross_source_spread, mv_market_price — refreshed             |
 | `uv run pytest`                                    | **399 passed** (online mode; DB/Redis API tests replaced with in-memory fakes)                 |
-| `make web-dev`                                     | Currency toggle ¥/$/₫ in header; all price surfaces convert correctly; GradedPriceHistoryChart live on CardDetailPage |
+| `make web-dev`                                     | Currency toggle ¥/$/₫ in header; all price surfaces convert correctly; GradedPriceHistoryChart live; PriceHistoryChart shows Snkrdunk sold comps; card detail info grid shows Expansion/Card number/Rarity/Illustrators |
 
 ### 4.2 Data that's already committed
 
@@ -425,10 +443,6 @@ SV1 remains Cardrush-only (SNKRDUNK lists it under `sv1v`).
 - **API polish.** Add E-Tag / `Cache-Control` headers on `/cards/{card_id}/prices`
   and `/spread`. Add OpenAPI examples. `/cards/search` already exists (powers
   `CardsSearchPage` + `CardsPage`).
-- **Live rate-limit integration test.** The unit suite stubs Redis via a
-  fake limiter. We don't yet have a smoke test that drives the real Lua
-  token-bucket against the `docker-compose` Redis. Worth adding once CI
-  has service containers.
 - **Frontend: card detail market price banner.** The detail page shows
   `PriceTable` (all conditions per source) but no single prominent "market
   price" figure. Consider adding a hero price using `useMarketPrice` at the
@@ -561,6 +575,9 @@ SV1 remains Cardrush-only (SNKRDUNK lists it under `sv1v`).
 34. **`PriceProxy` is the sole I/O layer in online mode.** It reuses the existing `CardrushClient` / `SnkrdunkClient` — no new HTTP clients. The 30-min TTL cache is keyed on `(set_code, local_id)`. Do not bypass it by calling the scrapers directly from routers.
 35. **`MemCatalog` is loaded once at lifespan startup and never mutated.** To reflect new catalog data (after a `make catalog-seed-*` run) the process must restart. Do not attempt live-reload of the in-memory catalog without also resetting the `PriceProxy` cache.
 36. **CI scraper schedule is disabled.** `.github/workflows/scrape.yml` has no `schedule:` trigger — only `workflow_dispatch`. Scrapers still work (packages unchanged); re-enable via `on.schedule` when PostgreSQL is restored.
+37. **`SetOut.total` = official denominator, not total card count.** It is the number printed on physical cards as the set denominator (e.g., 165 for SV2A, 193 for M2A). It comes from: YAML `total:` field (ME era + S11/SM10A/SM11/CL sets) or TCGdex `cardCount.official` fetched at startup via `_populate_official_totals()`. Never fall back to `count_artworks()` — that returns the total artwork count including secret rares, which is always ≥ the denominator and therefore wrong.
+38. **`_populate_official_totals()` must use the Japanese TCGdex locale.** Call `TcgdexClient(language="ja")` — the English locale uses different ID formats (e.g., `sv03.5` instead of `sv2a`) that don't match our YAML `tcgdex_id` values. Japanese locale IDs match after `.upper()` normalization.
+39. **`/history` is Snkrdunk-only, 90-day max.** `PriceProxy.snkrdunk_raw_history()` reuses the existing `fetch_snkrdunk()` cache — no extra HTTP call if prices were already fetched. The `days` param is capped at `le=90` in the router. `created_at` is synthesised as `observed_at` (no DB row). Do not remove the 90-day cap or route `/history` to `price_points` — there is no `price_points` table in online mode.
 
 ---
 
@@ -636,7 +653,7 @@ make db-dump-data                            # data-only dump for prod rollout
 CONFIRM=yes DUMP_FILE=/tmp/watari-data-<UTC>.sql.gz make db-prod-bootstrap
 
 # Dev loop
-make test                                    # 376 tests
+make test                                    # 399 tests
 make lint
 make format
 
