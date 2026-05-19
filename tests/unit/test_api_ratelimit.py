@@ -14,7 +14,7 @@ from typing import Any
 import pytest
 from fastapi.testclient import TestClient
 from watari_api.auth import AuthContext, get_auth_context
-from watari_api.deps import get_catalog
+from watari_api.deps import get_catalog, get_session
 from watari_api.main import create_app
 from watari_api.ratelimit import (
     Bucket,
@@ -105,6 +105,20 @@ class _EmptyCatalog:
         return []
 
 
+class _FakeSession:
+    """Returns empty rows for all DB queries — rate-limit tests don't exercise prices."""
+
+    async def execute(self, stmt: Any, params: Any = None) -> Any:
+        class _R:
+            def mappings(self) -> "_R":
+                return self
+
+            def __iter__(self):  # type: ignore[override]
+                return iter([])
+
+        return _R()
+
+
 async def _fake_anonymous_auth() -> AuthContext:
     return AuthContext(
         authed=False,
@@ -124,6 +138,7 @@ def rl_client():  # type: ignore[no-untyped-def]
         app.dependency_overrides[get_rate_limiter] = lambda: limiter
         app.dependency_overrides[get_auth_context] = _fake_anonymous_auth
         app.dependency_overrides[get_catalog] = lambda: _EmptyCatalog()
+        app.dependency_overrides[get_session] = lambda: _FakeSession()
         return TestClient(app), limiter
 
     return _make

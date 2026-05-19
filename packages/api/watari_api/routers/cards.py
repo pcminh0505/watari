@@ -90,6 +90,36 @@ def _mem_artwork_to_search_result(a: MemArtwork) -> ArtworkSearchResult:
 # --- price enrichment --------------------------------------------------------
 
 
+async def _enrich_search_results_from_db(
+    results: list[ArtworkSearchResult], session: AsyncSession
+) -> None:
+    """Populate market_price_jpy on search results via a single mv_market_price query."""
+    cid_to_result: dict[str, ArtworkSearchResult] = {}
+    for r in results:
+        variant = "normal"
+        if r.variants and not any(v.variant == "normal" for v in r.variants):
+            variant = r.variants[0].variant
+        card_id = next((v.card_id for v in r.variants if v.variant == variant), None)
+        if card_id:
+            cid_to_result[card_id] = r
+
+    if not cid_to_result:
+        return
+
+    db_result = await session.execute(
+        text(
+            "SELECT card_id, market_price_jpy, source_used "
+            "FROM mv_market_price WHERE card_id = ANY(:ids)"
+        ),
+        {"ids": list(cid_to_result.keys())},
+    )
+    for row in db_result.mappings():
+        r = cid_to_result.get(row["card_id"])
+        if r:
+            r.market_price_jpy = row["market_price_jpy"]
+            r.market_price_source_used = row["source_used"]
+
+
 async def _enrich_batch_from_db(items: list[CardBatchItem], session: AsyncSession) -> None:
     """Fetch market_price_jpy for all found items via a single mv_market_price query."""
     cid_to_item: dict[str, CardBatchItem] = {}
@@ -294,6 +324,7 @@ async def post_cards_by_sets(
 async def search_cards(
     lang: str,
     catalog: CatalogDep,
+    session: SessionDep,
     response: Response,
     q: str | None = Query(None, min_length=1, max_length=80),
     set_code: str | None = Query(None),
@@ -320,7 +351,9 @@ async def search_cards(
     response.headers["X-Total-Count"] = str(total)
     response.headers["Cache-Control"] = _CATALOG_CACHE
     page = all_artworks[offset : offset + limit]
-    return [_mem_artwork_to_search_result(a) for a in page]
+    results = [_mem_artwork_to_search_result(a) for a in page]
+    await _enrich_search_results_from_db(results, session)
+    return results
 
 
 @router.get("/cards/rarities", response_model=list[str])

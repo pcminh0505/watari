@@ -6,14 +6,30 @@ from datetime import date
 from typing import Annotated, Any, Literal
 
 from fastapi import APIRouter, Depends, HTTPException, Query, Response
+from sqlalchemy import text
+from sqlalchemy.ext.asyncio import AsyncSession
 from watari_core.schemas import SetOut
 
 from watari_api.catalog_mem import MemCatalog, MemSet
-from watari_api.deps import get_catalog
+from watari_api.deps import SessionDep, get_catalog
 
 router = APIRouter(prefix="/sets", tags=["sets"])
 
 CatalogDep = Annotated[MemCatalog, Depends(get_catalog)]
+
+
+async def _fetch_set_totals(session: AsyncSession) -> dict[str, int]:
+    """Return {SET_CODE_UPPER: total_value_jpy} from mv_market_price (normal variants)."""
+    result = await session.execute(
+        text(
+            "SELECT UPPER(split_part(card_id, '-', 2)) AS set_code, "
+            "SUM(market_price_jpy)::bigint AS total_value "
+            "FROM mv_market_price "
+            "WHERE card_id LIKE '%-normal' "
+            "GROUP BY 1"
+        )
+    )
+    return {row["set_code"]: int(row["total_value"]) for row in result.mappings()}
 
 # Catalog data changes only on explicit operator reseed / process restart.
 _CATALOG_CACHE = "public, max-age=3600, stale-while-revalidate=300"
@@ -62,6 +78,7 @@ def _sort_sets(
 async def list_sets(
     lang: str,
     catalog: CatalogDep,
+    session: SessionDep,
     response: Response,
     era: str | None = Query(None, description="Filter by era_block (e.g. 'sv', 'me', 'sm', 'sw')"),
     sort: Literal["release_date", "value", "set_code"] = Query("release_date"),
@@ -71,7 +88,8 @@ async def list_sets(
 ) -> list[SetOut]:
     """List sets, optionally filtered by ``era_block``."""
     mem_sets = catalog.get_sets(language=lang, era=era)
-    rows = [_mem_set_to_out(s) for s in mem_sets]
+    set_totals = await _fetch_set_totals(session)
+    rows = [_mem_set_to_out(s, total_value_jpy=set_totals.get(s.set_code.upper())) for s in mem_sets]
     sorted_rows = _sort_sets(rows, sort, order)
     response.headers["X-Total-Count"] = str(len(sorted_rows))
     response.headers["Cache-Control"] = _CATALOG_CACHE
