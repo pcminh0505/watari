@@ -46,7 +46,7 @@ async def _populate_official_totals(catalog: MemCatalog) -> None:
     if not sets_needing_total:
         return
     try:
-        async with TcgdexClient(language="en", timeout_sec=10.0, request_delay_sec=0.0) as client:
+        async with TcgdexClient(language="ja", timeout_sec=10.0, request_delay_sec=0.0) as client:
             all_sets = await client.get_all_sets()
         totals: dict[str, int] = {}
         for entry in all_sets:
