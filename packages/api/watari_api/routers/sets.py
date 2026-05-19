@@ -39,7 +39,6 @@ def _mem_set_to_out(
     s: MemSet,
     *,
     total_value_jpy: int | None = None,
-    total_card_count: int | None = None,
 ) -> SetOut:
     return SetOut.model_validate(
         {
@@ -49,7 +48,7 @@ def _mem_set_to_out(
             "name_ja": s.name_ja,
             "name_en": s.name_en,
             "release_date": s.release_date,
-            "total": s.total if s.total is not None else total_card_count,
+            "total": s.total,
             "total_value_jpy": total_value_jpy,
             "parent_set_code": s.parent_set_code,
             "tcgdex_id": s.tcgdex_id,
@@ -95,11 +94,7 @@ async def list_sets(
     mem_sets = catalog.get_sets(language=lang, era=era)
     set_totals = await _fetch_set_totals(session)
     rows = [
-        _mem_set_to_out(
-            s,
-            total_value_jpy=set_totals.get(s.set_code.upper()),
-            total_card_count=catalog.count_artworks(s.set_code),
-        )
+        _mem_set_to_out(s, total_value_jpy=set_totals.get(s.set_code.upper()))
         for s in mem_sets
     ]
     sorted_rows = _sort_sets(rows, sort, order)
@@ -120,4 +115,4 @@ async def get_set(
     if s is None:
         raise HTTPException(status_code=404, detail=f"set not found: {set_code!r}")
     response.headers["Cache-Control"] = _CATALOG_CACHE
-    return _mem_set_to_out(s, total_card_count=catalog.count_artworks(s.set_code))
+    return _mem_set_to_out(s)
