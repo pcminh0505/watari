@@ -105,17 +105,6 @@ export function CardDetailPage() {
           ) : (
             <CardPlaceholder />
           )}
-          {card.illustrator && (
-            <p className="mt-3 text-center text-xs text-slate-500">
-              Illus.{" "}
-              <Link
-                to={`/cards?illustrator=${encodeURIComponent(card.illustrator)}`}
-                className="hover:text-primary-500 dark:hover:text-primary-400 hover:underline transition-colors"
-              >
-                {card.illustrator}
-              </Link>
-            </p>
-          )}
         </div>
 
         <div>
@@ -125,15 +114,45 @@ export function CardDetailPage() {
               <span className="mt-2 text-base text-slate-500 dark:text-slate-400">{card.name_en}</span>
             )}
           </div>
-          <div className="mb-5 flex flex-wrap items-center gap-2">
-            <SetSymbol
-              setCode={card.set_code}
-              className="h-5 max-h-5 w-auto max-w-16 object-contain dark:filter dark:invert dark:opacity-80 drop-shadow-sm"
-            />
-            <Badge label={card.set_code.toLowerCase()} />
-            <Badge label={`#${card.local_id}`} />
-            {card.rarity_code && (
-              <Badge label={card.rarity_code} variant="rarity" />
+          <div className="mb-5 grid grid-cols-3 gap-x-6 gap-y-4 border-t border-slate-200 dark:border-white/10 pt-4 text-sm">
+            <div>
+              <p className="mb-1 text-xs font-semibold uppercase tracking-wide text-slate-500 dark:text-slate-400">Expansion</p>
+              <div className="flex flex-wrap items-center gap-1.5">
+                <SetSymbol
+                  setCode={card.set_code}
+                  className="h-4 max-h-4 w-auto max-w-13 shrink-0 object-contain dark:filter dark:invert dark:opacity-80"
+                />
+                <Link
+                  to={`/sets/${card.set_code}`}
+                  className="text-primary-500 dark:text-primary-400 hover:underline transition-colors"
+                >
+                  {setName}
+                </Link>
+                <Badge label={card.set_code.toLowerCase()} />
+              </div>
+            </div>
+            <div>
+              <p className="mb-1 text-xs font-semibold uppercase tracking-wide text-slate-500 dark:text-slate-400">Card number</p>
+              <p className="text-slate-900 dark:text-slate-100">
+                {card.local_id}{set?.total != null ? `/${set.total}` : ""}
+              </p>
+            </div>
+            {card.rarity_code ? (
+              <div>
+                <p className="mb-1 text-xs font-semibold uppercase tracking-wide text-slate-500 dark:text-slate-400">Rarity</p>
+                <Badge label={card.rarity_code} variant="rarity" />
+              </div>
+            ) : <div />}
+            {card.illustrator && (
+              <div className="col-span-3">
+                <p className="mb-1 text-xs font-semibold uppercase tracking-wide text-slate-500 dark:text-slate-400">Illustrators</p>
+                <Link
+                  to={`/cards?illustrator=${encodeURIComponent(card.illustrator)}`}
+                  className="text-primary-500 dark:text-primary-400 hover:underline transition-colors"
+                >
+                  {card.illustrator}
+                </Link>
+              </div>
             )}
           </div>
 
