@@ -23,6 +23,8 @@ from sqlalchemy import text
 from watari_core.config import settings
 from watari_core.db import engine as db_engine
 
+from watari_catalog.tcgdex_client import TcgdexClient
+
 from watari_api.catalog_mem import MemCatalog
 from watari_api.deps import validate_lang
 from watari_api.price_proxy import PriceProxy
@@ -30,6 +32,38 @@ from watari_api.ratelimit import RateLimiter, parse_rate_limits, rate_limit_dep
 from watari_api.routers import admin, cards, prices, sets
 
 logger = logging.getLogger(__name__)
+
+
+async def _populate_official_totals(catalog: MemCatalog) -> None:
+    """Fetch official card counts from TCGdex and store on MemSet.total.
+
+    One HTTP call returns all sets including cardCount.official (the number
+    printed on cards as the denominator, e.g. 165 for SV2A where secret
+    rares are numbered above 165).  Runs once at startup; errors are
+    non-fatal — affected sets fall back to catalog artwork count.
+    """
+    sets_needing_total = [s for s in catalog._sets.values() if s.total is None and s.tcgdex_id]
+    if not sets_needing_total:
+        return
+    try:
+        async with TcgdexClient(language="en", timeout_sec=10.0, request_delay_sec=0.0) as client:
+            all_sets = await client.get_all_sets()
+        totals: dict[str, int] = {}
+        for entry in all_sets:
+            sid = (entry.get("id") or "").upper()
+            cc = entry.get("cardCount")
+            official = cc.get("official") if isinstance(cc, dict) else None
+            if sid and isinstance(official, int) and official > 0:
+                totals[sid] = official
+        filled = 0
+        for s in sets_needing_total:
+            official = totals.get(s.tcgdex_id.upper())
+            if official:
+                s.total = official
+                filled += 1
+        logger.info("lifespan: populated official totals for %d/%d sets from TCGdex", filled, len(sets_needing_total))
+    except Exception:
+        logger.warning("lifespan: could not fetch official totals from TCGdex — card numbers will lack denominators", exc_info=True)
 
 
 @asynccontextmanager
@@ -43,6 +77,9 @@ async def lifespan(app: FastAPI) -> AsyncIterator[None]:
     # Run the synchronous catalog loader off the event loop so other coroutines
     # (e.g. /healthz) remain responsive during the 1–3 s startup I/O burst.
     app.state.catalog = await asyncio.to_thread(MemCatalog.load)
+
+    # Backfill official set totals from TCGdex (one HTTP call, non-fatal).
+    await _populate_official_totals(app.state.catalog)
 
     # Optional Redis L2 cache — gracefully degrades to memory-only on failure.
     redis = None

@@ -51,6 +51,11 @@ class TcgdexClient:
         await asyncio.sleep(self._delay)
         return resp.json()
 
+    async def get_all_sets(self) -> list[dict[str, Any]]:
+        """Return the TCGdex set list (each entry includes ``cardCount``)."""
+        data = await self._get("/sets")
+        return data if isinstance(data, list) else []
+
     async def get_set(self, set_id: str) -> dict[str, Any] | None:
         """Return full set payload (incl. card list) or ``None`` on 404."""
         return await self._get(f"/sets/{set_id}")
