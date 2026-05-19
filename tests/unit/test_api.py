@@ -101,6 +101,9 @@ class FakeMemCatalog:
     def get_artworks(self, set_code: str) -> list[MemArtwork]:
         return list(self._artworks_by_set.get(set_code.upper(), []))
 
+    def count_artworks(self, set_code: str) -> int:
+        return len(self._artworks_by_set.get(set_code.upper(), []))
+
     def get_artwork(self, set_code: str, local_id: str) -> MemArtwork | None:
         from watari_core.catalog import pad_local_id
         return self._artworks.get((set_code.upper(), pad_local_id(local_id)))
