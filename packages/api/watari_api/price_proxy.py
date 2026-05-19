@@ -239,6 +239,41 @@ class PriceProxy:
             for i, r in enumerate(rows)
         ]
 
+    async def snkrdunk_raw_history(
+        self,
+        set_code: str,
+        local_id: str,
+        card_id: str,
+        *,
+        days: int = 90,
+        condition: str | None = None,
+    ) -> list[dict[str, Any]]:
+        """Snkrdunk ungraded price history, newest first. 90-day max."""
+        sd_rows, _ = await self.fetch_snkrdunk(set_code, local_id)
+
+        cutoff = datetime.now(UTC) - timedelta(days=days)
+        rows = [r for r in sd_rows if r["observed_at"] >= cutoff]
+        if condition is not None:
+            rows = [r for r in rows if r.get("condition", "").upper() == condition.upper()]
+
+        rows.sort(key=lambda r: r["observed_at"], reverse=True)
+        return [
+            {
+                "id": i + 1,
+                "card_id": card_id,
+                "source": r.get("source", "snkrdunk"),
+                "source_type": r.get("source_type", "sold"),
+                "condition": r.get("condition", "A"),
+                "price_jpy": r["price_jpy"],
+                "stock_qty": None,
+                "observed_at": r["observed_at"],
+                "created_at": r["observed_at"],
+                "external_url": r.get("external_url"),
+                "scrape_run_id": None,
+            }
+            for i, r in enumerate(rows)
+        ]
+
 
 # --- internal helpers --------------------------------------------------------
 

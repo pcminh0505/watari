@@ -24,7 +24,7 @@ export function CardDetailPage() {
   const { data: set } = useSet(setCode);
   const [selectedVariant, setSelectedVariant] = useState<string | null>(null);
   const [historyDays, setHistoryDays] = useState(30);
-  const [gradedHistoryDays, setGradedHistoryDays] = useState(365);
+  const [gradedHistoryDays, setGradedHistoryDays] = useState(90);
   const variant = selectedVariant ?? card?.variants[0]?.variant ?? "normal";
 
   const { data: prices, isPending: isPricesPending } = useLatestPrices(setCode, localId, variant);
@@ -179,7 +179,7 @@ export function CardDetailPage() {
               <div className="flex items-center gap-2">
                 {/* Period selector */}
                 <div className="flex gap-1 bg-slate-100 dark:bg-black/20 p-1 rounded-lg border border-slate-200 dark:border-white/5">
-                  {([{ days: 30, label: "30d" }, { days: 60, label: "60d" }, { days: 90, label: "90d" }, { days: 365, label: "1y" }] as const).map(({ days, label }) => (
+                  {([{ days: 30, label: "30d" }, { days: 60, label: "60d" }, { days: 90, label: "90d" }] as const).map(({ days, label }) => (
                     <button
                       key={days}
                       onClick={() => setHistoryDays(days)}
@@ -227,7 +227,7 @@ export function CardDetailPage() {
                 Graded Price History
               </h3>
               <div className="flex gap-1 bg-slate-100 dark:bg-black/20 p-1 rounded-lg border border-slate-200 dark:border-white/5">
-                {([{ days: 30, label: "1M" }, { days: 90, label: "3M" }, { days: 180, label: "6M" }, { days: 365, label: "1Y" }] as const).map(({ days, label }) => (
+                {([{ days: 30, label: "1M" }, { days: 90, label: "3M" }] as const).map(({ days, label }) => (
                   <button
                     key={days}
                     onClick={() => setGradedHistoryDays(days)}

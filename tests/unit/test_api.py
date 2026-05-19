@@ -205,6 +205,9 @@ class FakePriceProxy:
     async def graded_history(self, *args: Any, **kwargs: Any) -> list[dict[str, Any]]:
         return self._graded_hist
 
+    async def snkrdunk_raw_history(self, *args: Any, **kwargs: Any) -> list[dict[str, Any]]:
+        return []
+
 
 # ---------------------------------------------------------------------------
 # Fixture helpers
@@ -771,12 +774,12 @@ def test_latest_prices_returns_cache_header() -> None:
     assert "max-age=1800" in resp.headers["Cache-Control"]
 
 
-def test_history_always_empty_in_online_mode() -> None:
+def test_history_returns_empty_from_fake_proxy() -> None:
     client = _make_client(catalog=_catalog_with_card(), proxy=FakePriceProxy())
     resp = client.get("/jp/cards/SV2A/089/history")
     assert resp.status_code == 200
     assert resp.json() == []
-    assert resp.headers["Cache-Control"] == "no-store"
+    assert resp.headers["Cache-Control"] == "public, max-age=1800, stale-while-revalidate=60"
 
 
 def test_market_price_returns_data() -> None:

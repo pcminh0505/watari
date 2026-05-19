@@ -111,19 +111,21 @@ async def price_history(
     set_code: str,
     local_id: str,
     catalog: CatalogDep,
+    proxy: PriceProxyDep,
     response: Response,
     variant: str = Query("normal"),
-    days: int = Query(30, ge=1, le=365),
-    source: str | None = Query(None),
+    days: int = Query(30, ge=1, le=90),
     condition: str | None = Query(None),
-    limit: int = Query(500, ge=1, le=5000),
-    offset: int = Query(0, ge=0),
 ) -> list[PricePointOut]:
-    """Historical price points — always empty (price_points not served via API)."""
-    # Validate the card exists so callers still get 404 on bad IDs.
-    _resolve_card_id(catalog, lang=lang, set_code=set_code, local_id=local_id, variant=variant)
-    response.headers["Cache-Control"] = "no-store"
-    return []
+    """Snkrdunk ungraded sold-comp history, on-demand (90-day max)."""
+    card_id = _resolve_card_id(
+        catalog, lang=lang, set_code=set_code, local_id=local_id, variant=variant
+    )
+    rows = await proxy.snkrdunk_raw_history(
+        set_code, local_id, card_id, days=days, condition=condition
+    )
+    response.headers["Cache-Control"] = _PRICE_CACHE
+    return [PricePointOut.model_validate(r) for r in rows]
 
 
 @router.get("/market-price", response_model=MarketPriceOut)
