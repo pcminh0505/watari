@@ -6,7 +6,7 @@
 > Update it whenever the architecture changes — especially after a
 > destructive migration, a new source, or a schema split.
 >
-> Last updated: 2026-05-19 (**Online mode** — API fetches prices on-demand from Cardrush/Snkrdunk; in-memory catalog (`MemCatalog`) + in-memory rate limiter; CI scrapers disabled (schedule removed, `workflow_dispatch` only); 404 tests passing. Recent: `/international-prices` endpoint (TCGPlayer/Cardmarket via TCGdex EN + PriceCharting eBay via curl_cffi scrape); `InternationalPriceTable` on CardDetailPage; Frankfurter FX rates (1h cache) for USD/EUR→JPY conversion).
+> Last updated: 2026-05-21 (**Online mode** — API fetches prices on-demand from Cardrush/Snkrdunk; in-memory catalog (`MemCatalog`) + in-memory rate limiter; CI scrapers disabled (schedule removed, `workflow_dispatch` only); 404 tests passing. Recent: `/international-prices` endpoint — TCGPlayer USD via pokemontcg.io + Cardmarket EUR via TCGdex EN; `InternationalPriceTable` on CardDetailPage; Frankfurter FX rates (1h cache) for USD/EUR→JPY; `_JP_TO_PTCGIO_ID` + `_JP_TO_EN_TCGDEX_ID` mappings in `PriceProxy`).
 
 ---
 
@@ -225,11 +225,12 @@ Routers (all under `packages/api/watari_api/routers/`):
 | `GET /{lang}/cards/{set_code}/{local_id}/market-price` (`?variant=normal`) | `MarketPriceOut` / 404 | `PriceProxy` |
 | `GET /{lang}/cards/{set_code}/{local_id}/graded-prices` (`?variant=normal`) | `list[LatestGradedPrice]` | `PriceProxy` |
 | `GET /{lang}/cards/{set_code}/{local_id}/graded-history` (`?days=365&company=PSA`) | `list[GradedPricePointOut]` | `PriceProxy` |
+| `GET /{lang}/cards/{set_code}/{local_id}/international-prices` (`?variant=normal`) | `list[InternationalPrice]` | `PriceProxy` (pokemontcg.io TCGPlayer USD + TCGdex EN Cardmarket EUR; 30-min cache) |
 | `GET /admin/scrape-health` | `[]` (always empty) | — (no DB) |
 
 **Online mode trade-offs:**
 
-- `/prices`, `/spread`, `/market-price`, `/graded-*`, `/history` — first call per card takes
+- `/prices`, `/spread`, `/market-price`, `/graded-*`, `/history`, `/international-prices` — first call per card takes
   2–5 s (live HTML scrape + JSON API). Cached for 30 min thereafter.
 - `/history` — Snkrdunk ungraded sold comps only; max 90 days; no Cardrush history.
   `days` param capped at `le=90`. Returns `[]` for cards with no Snkrdunk data.
@@ -284,7 +285,7 @@ Stack: Vite + React 18 + TypeScript + Tailwind CSS + React Query + Recharts. `bu
 |-------|------|-------------|
 | `/` | `SetsPage` | Grid of all 98 sets with era/sort/search filters, pagination |
 | `/sets/:setCode` | `CardsPage` | Cards for one set (uses `useCardSearch` for embedded prices) |
-| `/sets/:setCode/:localId` | `CardDetailPage` | Card detail: image, variants, PriceTable, SpreadTable, PriceHistoryChart, GradedPriceHistoryChart |
+| `/sets/:setCode/:localId` | `CardDetailPage` | Card detail: image, variants, PriceTable, SpreadTable, InternationalPriceTable, PriceHistoryChart, GradedPriceHistoryChart |
 | `/cards` | `CardsSearchPage` | Cross-set card search with name/set/rarity/illustrator/sort filters |
 | `/admin` | `AdminPage` | Scrape health dashboard (GET /admin/scrape-health) |
 
@@ -302,6 +303,7 @@ Stack: Vite + React 18 + TypeScript + Tailwind CSS + React Query + Recharts. `bu
 | `useSpread` | `GET /jp/cards/{set}/{id}/spread` | Cross-source spread from `mv_cross_source_spread` |
 | `usePriceHistory` | `GET /jp/cards/{set}/{id}/history` | Snkrdunk ungraded sold comps; period buttons 30d/60d/90d |
 | `useGradedPriceHistory` | `GET /jp/cards/{set}/{id}/graded-history` | Raw `graded_price_points`; default 90 days, limit 2000 |
+| `useInternationalPrices` | `GET /jp/cards/{set}/{id}/international-prices` | `InternationalPrice[]`; grouped by market in `InternationalPriceTable` |
 
 **Currency system** (`src/contexts/CurrencyContext.tsx`):
 
@@ -341,6 +343,7 @@ artwork count including secret rares (e.g., 250 for M2A), which is wrong as a de
 - Card gallery thumbnails: price only (no "sold"/"listed" source label)
 - `PriceTable` (detail page): Condition + Price only (no "Updated" date column)
 - `SpreadTable`: CR Floor, SD Median 7d, Spread, Spread % — all currency-converted
+- `InternationalPriceTable` (detail page): rows grouped by market (TCGPlayer/Cardmarket/PriceCharting); each group shows `price_jpy` via `formatPrice` + `price_raw` in original currency (USD/EUR); graded rows under a "Graded" sub-header inside PriceCharting section; hidden when `/international-prices` returns `[]`
 - `PriceHistoryChart`: Snkrdunk ungraded sold comps; period buttons 30d / 60d / 90d; Y-axis and tooltip both call `formatPrice`
 - `GradedPriceHistoryChart`: multi-line Recharts chart; one line per grade (PSA10/9/8, BGS10/9.5); SNKRDUNK sold comps preferred over Cardrush per day; day-range toggle (1M / 3M); default 90 days
 - `SetCard` (sets page): `total_value_jpy` currency-converted; `set.total` shown as "X cards" (uses official base-set count)
@@ -361,8 +364,8 @@ artwork count including secret rares (e.g., 250 for M2A), which is wrong as a de
 | `make scrape-cardrush ERA=sv` + `ERA=me`           | ~12.7k Cardrush rows across SV+ME sets. SM/SW: scheduled weekly via CI.                       |
 | `make scrape-snkrdunk ERA=<code>` × SV+ME          | ~104k SNKRDUNK rows. **SV1 still 0 rows** (upstream uses `sv1v` namespace). SM/SW: scheduled weekly via CI. |
 | `watari-api refresh-mvs` (CONCURRENTLY)            | mv_latest_price, mv_median_7d, mv_cross_source_spread, mv_market_price — refreshed             |
-| `uv run pytest`                                    | **399 passed** (online mode; DB/Redis API tests replaced with in-memory fakes)                 |
-| `make web-dev`                                     | Currency toggle ¥/$/₫ in header; all price surfaces convert correctly; GradedPriceHistoryChart live; PriceHistoryChart shows Snkrdunk sold comps; card detail info grid shows Expansion/Card number/Rarity/Illustrators |
+| `uv run pytest`                                    | **404 passed** (online mode; DB/Redis API tests replaced with in-memory fakes)                 |
+| `make web-dev`                                     | Currency toggle ¥/$/₫ in header; all price surfaces convert correctly; GradedPriceHistoryChart live; PriceHistoryChart shows Snkrdunk sold comps; card detail info grid shows Expansion/Card number/Rarity/Illustrators; InternationalPriceTable shows TCGPlayer USD + Cardmarket EUR prices |
 
 ### 4.2 Data that's already committed
 
@@ -577,7 +580,12 @@ SV1 remains Cardrush-only (SNKRDUNK lists it under `sv1v`).
 36. **CI scraper schedule is disabled.** `.github/workflows/scrape.yml` has no `schedule:` trigger — only `workflow_dispatch`. Scrapers still work (packages unchanged); re-enable via `on.schedule` when PostgreSQL is restored.
 37. **`SetOut.total` = official denominator, not total card count.** It is the number printed on physical cards as the set denominator (e.g., 165 for SV2A, 193 for M2A). It comes from: YAML `total:` field (ME era + S11/SM10A/SM11/CL sets) or TCGdex `cardCount.official` fetched at startup via `_populate_official_totals()`. Never fall back to `count_artworks()` — that returns the total artwork count including secret rares, which is always ≥ the denominator and therefore wrong.
 38. **`_populate_official_totals()` must use the Japanese TCGdex locale.** Call `TcgdexClient(language="ja")` — the English locale uses different ID formats (e.g., `sv03.5` instead of `sv2a`) that don't match our YAML `tcgdex_id` values. Japanese locale IDs match after `.upper()` normalization.
-39. **`/history` is Snkrdunk-only, 90-day max.** `PriceProxy.snkrdunk_raw_history()` reuses the existing `fetch_snkrdunk()` cache — no extra HTTP call if prices were already fetched. The `days` param is capped at `le=90` in the router. `created_at` is synthesised as `observed_at` (no DB row). Do not remove the 90-day cap or route `/history` to `price_points` — there is no `price_points` table in online mode.
+39. **`/international-prices` uses two mappings in `PriceProxy`:**
+    - `_JP_TO_EN_TCGDEX_ID` — translates JP `tcgdex_id` (e.g. `sv2a`) → EN locale ID (`sv03.5`) for TCGdex EN price fetch (Cardmarket EUR). Without this, TCGdex returns 404 for almost all SV sets.
+    - `_JP_TO_PTCGIO_ID` — translates JP `tcgdex_id` → pokemontcg.io set ID (e.g. `sv2a → sv3pt5`) for TCGPlayer USD prices. Note the `pt5` notation (not `.5`). Some SV11W/SV11B use `rsv10pt5`/`zsv10pt5` prefixes.
+    When adding EN coverage for new sets, update **both** dicts. `tcgdex_id` in set YAML is JP locale only.
+
+40. **`/history` is Snkrdunk-only, 90-day max.** `PriceProxy.snkrdunk_raw_history()` reuses the existing `fetch_snkrdunk()` cache — no extra HTTP call if prices were already fetched. The `days` param is capped at `le=90` in the router. `created_at` is synthesised as `observed_at` (no DB row). Do not remove the 90-day cap or route `/history` to `price_points` — there is no `price_points` table in online mode.
 
 ---
 

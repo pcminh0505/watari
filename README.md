@@ -1,6 +1,6 @@
 # Watari
 
-Japanese Pokémon TCG price API and web UI. Fetches live listings from [Cardrush](https://www.cardrush-pokemon.jp/) and sold history from [SNKRDUNK](https://snkrdunk.com/) on demand, normalises them into a unified schema, and exposes a read-only REST API — covering **105 sets across SV, ME, CL, SWSH, and SM eras** (~12 000 card prints).
+Japanese Pokémon TCG price API and web UI. Fetches live listings from [Cardrush](https://www.cardrush-pokemon.jp/) and sold history from [SNKRDUNK](https://snkrdunk.com/) on demand, and cross-references international prices from [pokemontcg.io](https://pokemontcg.io/) (TCGPlayer USD) and [TCGdex EN](https://tcgdex.net/) (Cardmarket EUR). Covers **105 sets across SV, ME, CL, SWSH, and SM eras** (~12 000 card prints).
 
 **Live API:** `https://watari-api.fly.dev`
 
@@ -25,6 +25,7 @@ GET /jp/cards/{set_code}/{local_id}/spread
 GET /jp/cards/{set_code}/{local_id}/market-price
 GET /jp/cards/{set_code}/{local_id}/graded-prices
 GET /jp/cards/{set_code}/{local_id}/graded-history
+GET /jp/cards/{set_code}/{local_id}/international-prices
 ```
 
 ### Examples
@@ -51,12 +52,16 @@ curl "https://watari-api.fly.dev/jp/cards/SV2A/089/graded-history?company=PSA&da
 
 # Ungraded price history (Snkrdunk sold comps, up to 90 days)
 curl "https://watari-api.fly.dev/jp/cards/SV2A/089/history?variant=normal&days=30"
+
+# International & reference prices (TCGPlayer USD + Cardmarket EUR)
+curl "https://watari-api.fly.dev/jp/cards/SV2A/203/international-prices?variant=normal"
+# → [{"market":"tcgplayer","condition_label":"Market","price_jpy":13175,"price_raw":85.64,"currency":"USD",...},...]
 ```
 
-> **Note:** Price endpoints (`/prices`, `/spread`, `/market-price`, `/graded-*`, `/history`) fetch
-> live from Cardrush and Snkrdunk. The first request per card may take 2–5 s; subsequent
-> requests within 30 minutes are served from cache. `/history` returns Snkrdunk ungraded
-> sold comps only (max 90 days).
+> **Note:** Price endpoints (`/prices`, `/spread`, `/market-price`, `/graded-*`, `/history`, `/international-prices`) fetch
+> live from Cardrush, Snkrdunk, pokemontcg.io, and TCGdex EN. The first request per card may take 2–5 s;
+> subsequent requests within 30 minutes are served from cache. `/history` returns Snkrdunk ungraded
+> sold comps only (max 90 days). `/international-prices` returns `[]` for sets with no EN coverage.
 
 ### Rate limiting
 
@@ -87,7 +92,7 @@ Prices are fetched on demand from Cardrush (listings) and Snkrdunk (sold history
 | Language | Python 3.13, uv workspaces |
 | API | FastAPI + uvicorn |
 | Catalog | In-memory (`MemCatalog` from YAML) |
-| Price fetching | `PriceProxy` — Cardrush + Snkrdunk, 30-min in-process cache |
+| Price fetching | `PriceProxy` — Cardrush + Snkrdunk (JP) + pokemontcg.io (TCGPlayer USD) + TCGdex EN (Cardmarket EUR); 30-min in-process cache |
 | Rate limiting | In-memory token bucket (per process) |
 | Frontend | Vite + React + TypeScript, Bun |
 | Hosting | Fly.io (Singapore, `sin`) |
@@ -108,10 +113,11 @@ data/sets/*.yml + data/cards/{SET}/*.yml
           │
     per-request (cache 30 min)
           │
-    ┌─────┴─────┐
-    ▼           ▼
-Cardrush    Snkrdunk
-(listings)  (sold history)
+    ┌─────┴──────┬──────────────┬─────────────┐
+    ▼            ▼              ▼              ▼
+Cardrush    Snkrdunk    pokemontcg.io    TCGdex EN
+(listings)  (sold       (TCGPlayer USD)  (Cardmarket EUR)
+             history)
 ```
 
 The PostgreSQL schema, Alembic migrations, and scraper packages still exist and
