@@ -1,5 +1,5 @@
 import { useQuery } from "@tanstack/react-query";
-import type { GradedPricePointOut, LatestPrice, MarketPriceOut, PricePointOut, SpreadRow } from "../types/api";
+import type { GradedPricePointOut, InternationalPrice, LatestPrice, MarketPriceOut, PricePointOut, SpreadRow } from "../types/api";
 import { apiFetch } from "./client";
 
 export function useLatestPrices(
@@ -72,6 +72,22 @@ export function useMarketPrice(
       }),
     staleTime: 5 * 60 * 1000,
     enabled: enabled && setCode.length > 0 && localId.length > 0,
+  });
+}
+
+export function useInternationalPrices(
+  setCode: string,
+  localId: string,
+  variant: string
+) {
+  return useQuery<InternationalPrice[]>({
+    queryKey: ["international-prices", setCode, localId, variant],
+    queryFn: () =>
+      apiFetch<InternationalPrice[]>(
+        `/jp/cards/${setCode}/${localId}/international-prices?variant=${variant}`
+      ),
+    staleTime: 5 * 60 * 1000,
+    enabled: setCode.length > 0 && localId.length > 0,
   });
 }
 

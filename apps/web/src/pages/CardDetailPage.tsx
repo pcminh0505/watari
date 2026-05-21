@@ -2,10 +2,11 @@ import { useMemo, useState } from "react";
 import { Link, useParams } from "react-router";
 import { useCard } from "../api/cards";
 import { useSet } from "../api/sets";
-import { useGradedPriceHistory, useLatestPrices, usePriceHistory, useSpread } from "../api/prices";
+import { useGradedPriceHistory, useInternationalPrices, useLatestPrices, usePriceHistory, useSpread } from "../api/prices";
 import { CardPlaceholder } from "../components/cards/CardPlaceholder";
 import { CardDetailSkeleton } from "../components/cards/CardDetailSkeleton";
 import { GradedPriceHistoryChart } from "../components/prices/GradedPriceHistoryChart";
+import { InternationalPriceTable } from "../components/prices/InternationalPriceTable";
 import { PriceHistoryChart } from "../components/prices/PriceHistoryChart";
 import { PriceTable } from "../components/prices/PriceTable";
 import { SpreadTable } from "../components/prices/SpreadTable";
@@ -70,6 +71,7 @@ export function CardDetailPage() {
         : (history ?? []),
     [history, historyAlt, activeCondition]
   );
+  const { data: intlPrices, isPending: isIntlPending } = useInternationalPrices(setCode, localId, variant);
   const { data: gradedHistory, isPending: isGradedHistoryPending } = useGradedPriceHistory(
     setCode,
     localId,
@@ -187,6 +189,22 @@ export function CardDetailPage() {
           ) : spread && spread.length > 0 ? (
             <section className="mb-8 glass-panel p-5">
               <SpreadTable rows={spread} />
+            </section>
+          ) : null}
+
+          {isIntlPending ? (
+            <section className="mb-8 glass-panel p-5">
+              <h3 className="mb-3 text-sm font-semibold text-slate-800 dark:text-slate-200">
+                International &amp; Reference Prices
+              </h3>
+              <TableSkeleton columns={3} rows={4} />
+            </section>
+          ) : intlPrices && intlPrices.length > 0 ? (
+            <section className="mb-8 glass-panel p-5">
+              <h3 className="mb-3 text-sm font-semibold text-slate-800 dark:text-slate-200">
+                International &amp; Reference Prices
+              </h3>
+              <InternationalPriceTable prices={intlPrices} />
             </section>
           ) : null}
 

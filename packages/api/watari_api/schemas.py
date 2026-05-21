@@ -166,6 +166,22 @@ class LatestGradedPrice(BaseModel):
     observed_at: datetime
 
 
+# --- International / western market prices --------------------------------
+
+
+class InternationalPrice(BaseModel):
+    """One western-market price row from TCGPlayer, Cardmarket, or PriceCharting."""
+
+    card_id: str
+    market: str           # "tcgplayer" | "cardmarket" | "pricecharting"
+    condition_label: str  # "Market" | "Mid" | "Low" | "Avg Sell" | "Trend" | "Ungraded" | "PSA 10" …
+    price_jpy: int        # converted at fetch time using Frankfurter rates
+    price_raw: float      # original value in source currency
+    currency: str         # "USD" | "EUR"
+    observed_at: datetime
+    external_url: str | None = None
+
+
 # --- Admin / scrape-health shapes ----------------------------------------
 
 

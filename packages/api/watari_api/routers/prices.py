@@ -29,6 +29,7 @@ from watari_api.deps import get_catalog, get_price_proxy, get_session
 from watari_api.price_proxy import PriceProxy
 from watari_api.schemas import (
     GradedPricePointOut,
+    InternationalPrice,
     LatestGradedPrice,
     LatestPrice,
     MarketPriceOut,
@@ -261,6 +262,43 @@ async def graded_history(
 
     response.headers["Cache-Control"] = "no-store"
     return [GradedPricePointOut.model_validate(r) for r in all_rows]
+
+
+@router.get("/international-prices", response_model=list[InternationalPrice])
+async def international_prices(
+    lang: str,
+    set_code: str,
+    local_id: str,
+    catalog: CatalogDep,
+    proxy: PriceProxyDep,
+    response: Response,
+    variant: str = Query("normal"),
+) -> Any:
+    """TCGPlayer + Cardmarket (via TCGdex EN) + PriceCharting (eBay), in parallel.
+
+    All prices are converted to JPY server-side using Frankfurter exchange rates.
+    Returns [] when no western price data is available (e.g. ME/SM cards not
+    indexed by TCGdex EN or PriceCharting).
+    """
+    card_id = _resolve_card_id(
+        catalog, lang=lang, set_code=set_code, local_id=local_id, variant=variant
+    )
+    artwork = catalog.get_artwork(set_code, local_id)
+    mem_set = catalog.get_set(set_code, language=lang)
+
+    tcgdex_id = mem_set.tcgdex_id if mem_set else None
+    name_en = artwork.name_en if artwork else None
+    set_name_en = mem_set.name_en if mem_set else None
+
+    tcgdex_rows, pc_rows = await asyncio.gather(
+        proxy.tcgdex_international(set_code, local_id, tcgdex_id, card_id),
+        proxy.pricecharting_international(set_code, local_id, name_en, set_name_en, card_id),
+    )
+
+    response.headers["Cache-Control"] = _PRICE_CACHE
+    return [
+        InternationalPrice.model_validate(r) for r in [*tcgdex_rows, *pc_rows]
+    ]
 
 
 @router.get("/spread", response_model=list[SpreadRow])

@@ -182,7 +182,7 @@ class FakeSession:
 
 
 class FakePriceProxy:
-    """Fake PriceProxy for tests — returns pre-set Snkrdunk data."""
+    """Fake PriceProxy for tests — returns pre-set data."""
 
     def __init__(
         self,
@@ -190,11 +190,13 @@ class FakePriceProxy:
         sd_market: int | None = None,
         graded: list[dict[str, Any]] | None = None,
         graded_hist: list[dict[str, Any]] | None = None,
+        intl_rows: list[dict[str, Any]] | None = None,
     ) -> None:
         self._sd_prices = sd_prices or []
         self._sd_market = sd_market
         self._graded = graded or []
         self._graded_hist = graded_hist or []
+        self._intl_rows = intl_rows or []
 
     async def snkrdunk_latest_prices(self, *args: Any, **kwargs: Any) -> list[dict[str, Any]]:
         return self._sd_prices
@@ -209,6 +211,12 @@ class FakePriceProxy:
         return self._graded_hist
 
     async def snkrdunk_raw_history(self, *args: Any, **kwargs: Any) -> list[dict[str, Any]]:
+        return []
+
+    async def tcgdex_international(self, *args: Any, **kwargs: Any) -> list[dict[str, Any]]:
+        return self._intl_rows
+
+    async def pricecharting_international(self, *args: Any, **kwargs: Any) -> list[dict[str, Any]]:
         return []
 
 
@@ -901,6 +909,63 @@ def test_graded_prices_404_for_missing_card() -> None:
     client = _make_client(catalog=catalog, proxy=FakePriceProxy())
     resp = client.get("/jp/cards/SV2A/999/graded-prices")
     assert resp.status_code == 404
+
+
+# ---------------------------------------------------------------------------
+# International prices
+# ---------------------------------------------------------------------------
+
+
+def test_international_prices_returns_rows() -> None:
+    now = datetime(2025, 4, 1, tzinfo=UTC)
+    intl = [
+        {
+            "card_id": "jp-sv2a-089-normal",
+            "market": "tcgplayer",
+            "condition_label": "Market",
+            "price_jpy": 50,
+            "price_raw": 0.32,
+            "currency": "USD",
+            "observed_at": now,
+            "external_url": None,
+        }
+    ]
+    proxy = FakePriceProxy(intl_rows=intl)
+    client = _make_client(catalog=_catalog_with_card(), proxy=proxy)
+    resp = client.get("/jp/cards/SV2A/089/international-prices")
+    assert resp.status_code == 200
+    rows = resp.json()
+    assert len(rows) == 1
+    assert rows[0]["market"] == "tcgplayer"
+    assert rows[0]["condition_label"] == "Market"
+    assert rows[0]["price_jpy"] == 50
+    assert rows[0]["currency"] == "USD"
+
+
+def test_international_prices_empty_when_proxy_returns_nothing() -> None:
+    client = _make_client(catalog=_catalog_with_card(), proxy=FakePriceProxy())
+    resp = client.get("/jp/cards/SV2A/089/international-prices")
+    assert resp.status_code == 200
+    assert resp.json() == []
+
+
+def test_international_prices_404_for_missing_card() -> None:
+    catalog = FakeMemCatalog(sets=[_fake_set("SV2A")])
+    client = _make_client(catalog=catalog, proxy=FakePriceProxy())
+    resp = client.get("/jp/cards/SV2A/999/international-prices")
+    assert resp.status_code == 404
+
+
+def test_international_prices_400_for_unknown_variant() -> None:
+    client = _make_client(catalog=_catalog_with_card(), proxy=FakePriceProxy())
+    resp = client.get("/jp/cards/SV2A/089/international-prices?variant=bogus")
+    assert resp.status_code == 400
+
+
+def test_international_prices_returns_cache_header() -> None:
+    client = _make_client(catalog=_catalog_with_card(), proxy=FakePriceProxy())
+    resp = client.get("/jp/cards/SV2A/089/international-prices")
+    assert "max-age=1800" in resp.headers["Cache-Control"]
 
 
 # ---------------------------------------------------------------------------

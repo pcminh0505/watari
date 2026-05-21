@@ -102,6 +102,18 @@ export interface MarketPriceOut {
   source_used: "snkrdunk" | "cardrush";
 }
 
+/** Mirrors packages/api/watari_api/schemas.py: InternationalPrice */
+export interface InternationalPrice {
+  card_id: string;
+  market: "tcgplayer" | "cardmarket" | "pricecharting";
+  condition_label: string;
+  price_jpy: number;
+  price_raw: number;
+  currency: "USD" | "EUR";
+  observed_at: string;
+  external_url: string | null;
+}
+
 /** Mirrors packages/api/watari_api/schemas.py: ScrapeRunSummary */
 export interface ScrapeRunSummary {
   started_at: string | null;

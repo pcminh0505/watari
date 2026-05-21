@@ -6,7 +6,7 @@
 > Update it whenever the architecture changes — especially after a
 > destructive migration, a new source, or a schema split.
 >
-> Last updated: 2026-05-19 (**Online mode** — API fetches prices on-demand from Cardrush/Snkrdunk; in-memory catalog (`MemCatalog`) + in-memory rate limiter; CI scrapers disabled (schedule removed, `workflow_dispatch` only); 399 tests passing. Recent: `/history` wired to Snkrdunk on-demand (90d cap); card number denominator display; card detail info grid).
+> Last updated: 2026-05-19 (**Online mode** — API fetches prices on-demand from Cardrush/Snkrdunk; in-memory catalog (`MemCatalog`) + in-memory rate limiter; CI scrapers disabled (schedule removed, `workflow_dispatch` only); 404 tests passing. Recent: `/international-prices` endpoint (TCGPlayer/Cardmarket via TCGdex EN + PriceCharting eBay via curl_cffi scrape); `InternationalPriceTable` on CardDetailPage; Frankfurter FX rates (1h cache) for USD/EUR→JPY conversion).
 
 ---
 
