@@ -50,6 +50,30 @@ _PC_PRICE_IDS: dict[str, str] = {
     "graded-price-PSA-7": "PSA 7",
 }
 
+# Maps JP TCGdex locale set IDs → EN TCGdex locale set IDs.
+# EN uses different IDs for many sets (e.g. sv2a JP → sv03.5 EN for Card 151).
+# Sets whose JP and EN IDs are identical (sv01, sv10) do not need an entry.
+# JP-exclusive sets with no EN equivalent are omitted → tcgdex_international returns [].
+_JP_TO_EN_TCGDEX_ID: dict[str, str] = {
+    "sv01v": "sv01",    # Violet ex (JP) → Scarlet & Violet (EN)
+    "sv2a": "sv03.5",   # Pokémon Card 151 (JP) → 151 (EN)
+    "sv3": "sv03",      # Ruler of the Black Flame (JP) → Obsidian Flames (EN)
+    "sv4k": "sv04",     # Ancient Roar (JP) → Paradox Rift (EN)
+    "sv4m": "sv04",     # Future Flash (JP) → Paradox Rift (EN)
+    "sv4a": "sv04.5",   # Shiny Treasure ex (JP) → Paldean Fates (EN)
+    "sv5k": "sv05",     # Wild Force (JP) → Temporal Forces (EN)
+    "sv5m": "sv05",     # Cyber Judge (JP) → Temporal Forces (EN)
+    "sv5a": "sv05",     # Crimson Haze (JP) → Temporal Forces (EN)
+    "sv6": "sv06",      # Mask of Change (JP) → Twilight Masquerade (EN)
+    "sv6a": "sv06.5",   # Night Wanderer (JP) → Shrouded Fable (EN)
+    "sv7": "sv07",      # Stellar Miracle (JP) → Stellar Crown (EN)
+    "sv8": "sv08",      # Super Electric Breaker (JP) → Surging Sparks (EN)
+    "sv8a": "sv08.5",   # Terastal Festival ex (JP) → Prismatic Evolutions (EN)
+    "sv9": "sv09",      # Battle Partners (JP) → Journey Together (EN)
+    "sv11w": "sv10.5w", # White Flare (JP) → White Flare (EN)
+    "sv11b": "sv10.5b", # Black Bolt (JP) → Black Bolt (EN)
+}
+
 
 @dataclass
 class _CacheEntry:
@@ -373,21 +397,25 @@ class PriceProxy:
         if not tcgdex_id:
             return []
 
-        data = await self.fetch_tcgdex_prices(set_code, local_id, tcgdex_id)
+        # Resolve JP locale ID → EN locale ID (may differ, e.g. sv2a → sv03.5).
+        en_id = _JP_TO_EN_TCGDEX_ID.get(tcgdex_id, tcgdex_id)
+
+        data = await self.fetch_tcgdex_prices(set_code, local_id, en_id)
         if not data:
             return []
 
+        # TCGdex EN API nests all price data under "pricing".
+        pricing: dict[str, Any] = data.get("pricing") or {}
         rates = await self._fetch_fx_rates()
         results: list[dict[str, Any]] = []
 
         # --- TCGPlayer (USD) -------------------------------------------------
-        tcp: dict[str, Any] = data.get("tcgplayer") or {}
+        tcp: dict[str, Any] = pricing.get("tcgplayer") or {}
         if tcp:
-            tcp_url = tcp.get("url")
-            tcp_updated = _parse_tcgdex_date(tcp.get("updatedAt") or {})
-            tcp_prices: dict[str, Any] = (tcp.get("prices") or {}).get("normal") or {}
+            tcp_updated = _parse_tcgdex_date(tcp.get("updated") or "")
+            # New format: prices are direct fields on the tcgplayer block.
             for field_key, label in [("market", "Market"), ("mid", "Mid"), ("low", "Low")]:
-                price = tcp_prices.get(field_key)
+                price = tcp.get(field_key)
                 if isinstance(price, (int, float)) and price > 0:
                     results.append({
                         "card_id": card_id,
@@ -397,21 +425,20 @@ class PriceProxy:
                         "price_raw": float(price),
                         "currency": "USD",
                         "observed_at": tcp_updated,
-                        "external_url": tcp_url,
+                        "external_url": None,
                     })
 
         # --- Cardmarket (EUR) ------------------------------------------------
-        cm: dict[str, Any] = data.get("cardmarket") or {}
+        cm: dict[str, Any] = pricing.get("cardmarket") or {}
         if cm:
-            cm_url = cm.get("url")
-            cm_updated = _parse_tcgdex_date(cm.get("updatedAt") or {})
-            cm_prices: dict[str, Any] = cm.get("prices") or {}
+            cm_updated = _parse_tcgdex_date(cm.get("updated") or "")
+            # New format: avg/trend/low are direct fields on the cardmarket block.
             for field_key, label in [
-                ("averageSellPrice", "Avg Sell"),
-                ("trendPrice", "Trend"),
-                ("lowPrice", "Low"),
+                ("avg", "Avg"),
+                ("trend", "Trend"),
+                ("low", "Low"),
             ]:
-                price = cm_prices.get(field_key)
+                price = cm.get(field_key)
                 if isinstance(price, (int, float)) and price > 0:
                     results.append({
                         "card_id": card_id,
@@ -421,7 +448,7 @@ class PriceProxy:
                         "price_raw": float(price),
                         "currency": "EUR",
                         "observed_at": cm_updated,
-                        "external_url": cm_url,
+                        "external_url": None,
                     })
 
         return results
@@ -539,24 +566,35 @@ def _to_jpy(price: float, currency: str, rates: dict[str, float]) -> int:
 # --- TCGdex helpers ----------------------------------------------------------
 
 
-def _parse_tcgdex_date(d: dict[str, Any]) -> datetime:
-    """Parse TCGdex ``updatedAt`` dict ``{year, month, day}`` → UTC datetime."""
+def _parse_tcgdex_date(value: Any) -> datetime:
+    """Parse a TCGdex date value → UTC datetime.
+
+    Accepts an ISO-8601 string (``"2026-05-21T00:45:48.000Z"``) or the legacy
+    dict form ``{year, month, day}``.  Falls back to now() on any parse error.
+    """
     try:
-        return datetime(int(d["year"]), int(d["month"]), int(d["day"]), tzinfo=UTC)
+        if isinstance(value, str) and value:
+            return datetime.fromisoformat(value.replace("Z", "+00:00"))
+        if isinstance(value, dict):
+            return datetime(int(value["year"]), int(value["month"]), int(value["day"]), tzinfo=UTC)
     except (KeyError, ValueError, TypeError):
-        return datetime.now(UTC)
+        pass
+    return datetime.now(UTC)
 
 
 async def _do_fetch_tcgdex(tcgdex_id: str, local_id: str) -> dict[str, Any] | None:
-    """Fetch an EN TCGdex card payload. Returns None on 404 or any error."""
-    # TCGdex uses stripped IDs: "089" → "89", "001" → "1".
-    stripped = local_id.lstrip("0") or "0"
-    logger.info("price_proxy: tcgdex fetch %s-%s", tcgdex_id, stripped)
+    """Fetch an EN TCGdex card payload. Returns None on 404 or any error.
+
+    ``tcgdex_id`` must already be the EN locale set ID (caller resolves via
+    _JP_TO_EN_TCGDEX_ID).  ``local_id`` is passed as-is (zero-padded, e.g.
+    "089") — EN locale uses padded IDs unlike JP which strips leading zeros.
+    """
+    logger.info("price_proxy: tcgdex fetch %s-%s", tcgdex_id, local_id)
     try:
         async with TcgdexClient(language="en", timeout_sec=10.0, request_delay_sec=0.0) as client:
-            return await client.get_card(tcgdex_id, stripped)
+            return await client.get_card(tcgdex_id, local_id)
     except Exception:
-        logger.exception("price_proxy: tcgdex fetch failed for %s-%s", tcgdex_id, stripped)
+        logger.exception("price_proxy: tcgdex fetch failed for %s-%s", tcgdex_id, local_id)
         return None
 
 
