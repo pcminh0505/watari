@@ -589,6 +589,7 @@ class PriceProxy:
         card_id: str,
         *,
         jp_set_total: int | None = None,
+        jp_rarity_code: str | None = None,
     ) -> list[dict[str, Any]]:
         """Return InternationalPrice-like dicts for TCGPlayer via pokemontcg.io.
 
@@ -596,6 +597,14 @@ class PriceProxy:
         98 for SV10).  When the card's ``local_id`` exceeds this value the card
         is a secret/special rare (SAR/SR/UR), and we instruct the fetch to pick
         the highest-numbered EN result rather than the closest-numbered one.
+
+        ``jp_rarity_code`` is used to skip the lookup for cards whose rarity
+        does not translate meaningfully to EN market prices.  Specifically,
+        shiny-common cards (rarity ``S``) beyond the base set are skipped:
+        the EN equivalent's TCGPlayer price reflects EN-market scarcity, not
+        the JP shiny card's value (the two markets differ by 10–50×).
+        SAR/SR/UR rares are still looked up — their EN equivalents are directly
+        comparable.
         """
         if not name_en or not tcgdex_id:
             return []
@@ -604,7 +613,14 @@ class PriceProxy:
             local_id_int = int(local_id.lstrip("0") or "0")
         except ValueError:
             local_id_int = 0
-        prefer_highest = jp_set_total is not None and local_id_int > jp_set_total
+        is_beyond_base = jp_set_total is not None and local_id_int > jp_set_total
+        prefer_highest = is_beyond_base
+
+        # Shiny commons (rarity "S") in shiny-focused sets like SV4A have EN
+        # equivalents in PAF at wildly different prices — skip to avoid misleading
+        # cross-market comparisons.  High-rarity cards (SAR, SR, UR) are kept.
+        if is_beyond_base and jp_rarity_code == "S":
+            return []
 
         ptcgio_id = _JP_TO_PTCGIO_ID.get(tcgdex_id, tcgdex_id)
         tcp = await self.fetch_ptcgio_prices(

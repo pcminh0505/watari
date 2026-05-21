@@ -290,6 +290,7 @@ async def international_prices(
     name_en = artwork.name_en if artwork else None
     set_name_en = mem_set.name_en if mem_set else None
     jp_set_total = mem_set.total if mem_set else None
+    jp_rarity_code = artwork.rarity_code if artwork else None
 
     # For secret/special rares (local_id > set total), TCGdex EN fetches the
     # wrong card (it uses the JP local_id literally in the EN set, which maps
@@ -304,7 +305,7 @@ async def international_prices(
     tcgdex_rows, pc_rows, ptcgio_rows = await asyncio.gather(
         proxy.tcgdex_international(set_code, local_id, None if _is_secret else tcgdex_id, card_id),
         proxy.pricecharting_international(set_code, local_id, name_en, set_name_en, card_id),
-        proxy.ptcgio_international(set_code, local_id, name_en, tcgdex_id, card_id, jp_set_total=jp_set_total),
+        proxy.ptcgio_international(set_code, local_id, name_en, tcgdex_id, card_id, jp_set_total=jp_set_total, jp_rarity_code=jp_rarity_code),
     )
 
     response.headers["Cache-Control"] = _PRICE_CACHE
