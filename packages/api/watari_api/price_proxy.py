@@ -647,8 +647,8 @@ async def _do_fetch_fx_rates() -> dict[str, float]:
                     "price_proxy: fx rates USD=%s EUR=%s", rates["USD"], rates["EUR"]
                 )
                 return {"USD": float(rates["USD"]), "EUR": float(rates["EUR"])}
-    except Exception:
-        logger.warning("price_proxy: fx rate fetch failed, using fallback")
+    except Exception as exc:
+        logger.warning("price_proxy: fx rate fetch failed (%s), using fallback", exc)
     return dict(_FX_FALLBACK)
 
 
@@ -814,8 +814,8 @@ async def _do_fetch_pricecharting(
         rows = _parse_pc_detail(detail_html, product_url)
         logger.debug("price_proxy: pricecharting %r → %d rows", query, len(rows))
         return rows
-    except Exception:
-        logger.exception("price_proxy: pricecharting fetch failed for %r", name_en)
+    except Exception as exc:
+        logger.warning("price_proxy: pricecharting fetch failed for %r: %s", name_en, exc)
         return []
 
 
