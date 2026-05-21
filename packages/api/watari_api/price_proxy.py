@@ -12,6 +12,7 @@ from __future__ import annotations
 import asyncio
 import json
 import logging
+import os
 import statistics
 from dataclasses import dataclass, field
 from datetime import UTC, datetime, timedelta
@@ -48,6 +49,26 @@ _PC_PRICE_IDS: dict[str, str] = {
     "graded-price-PSA-9": "PSA 9",
     "graded-price-PSA-8": "PSA 8",
     "graded-price-PSA-7": "PSA 7",
+}
+
+# Maps JP TCGdex locale set IDs → pokemontcg.io set IDs for TCGPlayer price lookup.
+# pokemontcg.io uses a compact notation (no leading zeros, "pt5" instead of ".5").
+# Sets whose JP tcgdex_id already matches pokemontcg.io need no entry here
+# (e.g. sv3, sv6, sv7, sv8, sv9, sv10 are identical in both systems).
+_JP_TO_PTCGIO_ID: dict[str, str] = {
+    "sv01": "sv1",       # Scarlet ex (JP) → Scarlet & Violet (EN)
+    "sv01v": "sv1",      # Violet ex (JP) → Scarlet & Violet (EN)
+    "sv2a": "sv3pt5",    # Pokémon Card 151 (JP) → 151 (EN)
+    "sv4k": "sv4",       # Ancient Roar (JP) → Paradox Rift (EN)
+    "sv4m": "sv4",       # Future Flash (JP) → Paradox Rift (EN)
+    "sv4a": "sv4pt5",    # Shiny Treasure ex (JP) → Paldean Fates (EN)
+    "sv5k": "sv5",       # Wild Force (JP) → Temporal Forces (EN)
+    "sv5m": "sv5",       # Cyber Judge (JP) → Temporal Forces (EN)
+    "sv5a": "sv5",       # Crimson Haze (JP) → Temporal Forces (EN)
+    "sv6a": "sv6pt5",    # Night Wanderer (JP) → Shrouded Fable (EN)
+    "sv8a": "sv8pt5",    # Terastal Festival ex (JP) → Prismatic Evolutions (EN)
+    "sv11w": "rsv10pt5", # White Flare (JP) → White Flare (EN)
+    "sv11b": "zsv10pt5", # Black Bolt (JP) → Black Bolt (EN)
 }
 
 # Maps JP TCGdex locale set IDs → EN TCGdex locale set IDs.
@@ -142,6 +163,8 @@ class PriceProxy:
         self._pc_cache: dict[str, _CacheEntry] = {}
         self._pc_locks: dict[str, asyncio.Lock] = {}
         self._pc_sem: asyncio.Semaphore = asyncio.Semaphore(10)
+        self._ptcgio_cache: dict[str, _CacheEntry] = {}
+        self._ptcgio_locks: dict[str, asyncio.Lock] = {}
 
     # --- Redis helpers -------------------------------------------------------
 
@@ -521,6 +544,84 @@ class PriceProxy:
         return results
 
 
+    # --- pokemontcg.io (TCGPlayer) -------------------------------------------
+
+    async def fetch_ptcgio_prices(
+        self,
+        set_code: str,
+        local_id: str,
+        name_en: str,
+        ptcgio_set_id: str,
+    ) -> dict[str, Any] | None:
+        """Fetch the TCGPlayer price block from pokemontcg.io. Cached 30 min.
+
+        Returns the ``tcgplayer`` dict (url, updatedAt, prices) of the
+        best-matching card, or None if no match is found.
+        """
+        key = f"ptcgio:{set_code.upper()}/{pad_local_id(local_id)}"
+
+        entry = self._ptcgio_cache.get(key)
+        if entry and not _is_stale(entry):
+            return entry.data  # type: ignore[return-value]
+
+        lock = self._ptcgio_locks.setdefault(key, asyncio.Lock())
+        async with lock:
+            entry = self._ptcgio_cache.get(key)
+            if entry and not _is_stale(entry):
+                return entry.data  # type: ignore[return-value]
+
+            data = await _do_fetch_ptcgio(name_en, ptcgio_set_id, local_id)
+            self._ptcgio_cache[key] = _CacheEntry(data=data)
+            return data
+
+    async def ptcgio_international(
+        self,
+        set_code: str,
+        local_id: str,
+        name_en: str | None,
+        tcgdex_id: str | None,
+        card_id: str,
+    ) -> list[dict[str, Any]]:
+        """Return InternationalPrice-like dicts for TCGPlayer via pokemontcg.io."""
+        if not name_en or not tcgdex_id:
+            return []
+
+        ptcgio_id = _JP_TO_PTCGIO_ID.get(tcgdex_id, tcgdex_id)
+        tcp = await self.fetch_ptcgio_prices(set_code, local_id, name_en, ptcgio_id)
+        if not tcp:
+            return []
+
+        rates = await self._fetch_fx_rates()
+        updated = _parse_ptcgio_date(tcp.get("updatedAt") or "")
+        tcp_url = tcp.get("url")
+
+        # Price buckets in preference order: holofoil cards (ex/V/VMAX) are
+        # most common in JP; fall back to normal or first available bucket.
+        prices: dict[str, Any] = tcp.get("prices") or {}
+        bucket: dict[str, Any] = (
+            prices.get("holofoil")
+            or prices.get("normal")
+            or prices.get("reverseHolofoil")
+            or (next(iter(prices.values()), None) or {})
+        )
+
+        results: list[dict[str, Any]] = []
+        for field_key, label in [("market", "Market"), ("low", "Low")]:
+            price = bucket.get(field_key)
+            if isinstance(price, (int, float)) and price > 0:
+                results.append({
+                    "card_id": card_id,
+                    "market": "tcgplayer",
+                    "condition_label": label,
+                    "price_jpy": _to_jpy(float(price), "USD", rates),
+                    "price_raw": float(price),
+                    "currency": "USD",
+                    "observed_at": updated,
+                    "external_url": tcp_url,
+                })
+        return results
+
+
 # --- internal helpers --------------------------------------------------------
 
 
@@ -716,6 +817,69 @@ async def _do_fetch_pricecharting(
     except Exception:
         logger.exception("price_proxy: pricecharting fetch failed for %r", name_en)
         return []
+
+
+# --- pokemontcg.io helpers ---------------------------------------------------
+
+
+def _parse_ptcgio_date(s: str) -> datetime:
+    """Parse pokemontcg.io date string ``'2026/05/21'`` → UTC datetime."""
+    try:
+        parts = s.split("/")
+        return datetime(int(parts[0]), int(parts[1]), int(parts[2]), tzinfo=UTC)
+    except (ValueError, IndexError, AttributeError):
+        return datetime.now(UTC)
+
+
+def _ptcgio_num(card: dict[str, Any]) -> int:
+    """Extract the numeric part of a pokemontcg.io card number (``'201a'`` → 201)."""
+    raw = str(card.get("number", "0"))
+    digits = "".join(ch for ch in raw if ch.isdigit())
+    return int(digits) if digits else 0
+
+
+async def _do_fetch_ptcgio(
+    name_en: str, ptcgio_set_id: str, local_id: str
+) -> dict[str, Any] | None:
+    """Search pokemontcg.io for the best-matching card and return its TCGPlayer block.
+
+    Picks the result whose card number is numerically closest to the JP
+    ``local_id``.  This reliably matches base-set cards (same number) and
+    reasonably approximates secret-rare positions (e.g. JP #203 → EN #201).
+    Returns None when no results are found or on any HTTP error.
+    """
+    q = f'name:"{name_en}" set.id:{ptcgio_set_id}'
+    url = f"https://api.pokemontcg.io/v2/cards?q={quote(q)}&select=id,name,number,tcgplayer"
+
+    headers: dict[str, str] = {"User-Agent": "watari/1.0"}
+    api_key = os.environ.get("POKEMONTCGIO_API_KEY")
+    if api_key:
+        headers["X-Api-Key"] = api_key
+
+    logger.info("price_proxy: pokemontcg.io search %r in %s", name_en, ptcgio_set_id)
+    try:
+        async with httpx.AsyncClient(timeout=10.0) as client:
+            resp = await client.get(url, headers=headers)
+            if resp.status_code != 200:
+                logger.debug("price_proxy: pokemontcg.io %s for %r", resp.status_code, name_en)
+                return None
+            cards: list[dict[str, Any]] = resp.json().get("data", [])
+    except Exception:
+        logger.exception("price_proxy: pokemontcg.io fetch failed for %r", name_en)
+        return None
+
+    if not cards:
+        return None
+
+    # Pick card with number numerically closest to JP local_id
+    target = int(local_id.lstrip("0") or "0")
+    best = min(cards, key=lambda c: abs(_ptcgio_num(c) - target))
+    tcp = best.get("tcgplayer")
+    logger.debug(
+        "price_proxy: pokemontcg.io best match for %r: #%s (target #%s)",
+        name_en, best.get("number"), local_id,
+    )
+    return tcp if tcp else None
 
 
 # --- Snkrdunk helpers --------------------------------------------------------
