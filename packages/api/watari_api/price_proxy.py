@@ -552,11 +552,15 @@ class PriceProxy:
         local_id: str,
         name_en: str,
         ptcgio_set_id: str,
+        *,
+        prefer_highest: bool = False,
     ) -> dict[str, Any] | None:
         """Fetch the TCGPlayer price block from pokemontcg.io. Cached 30 min.
 
         Returns the ``tcgplayer`` dict (url, updatedAt, prices) of the
         best-matching card, or None if no match is found.
+        ``prefer_highest`` is forwarded to ``_do_fetch_ptcgio`` — set True
+        for secret/special rares so the highest-numbered EN card is picked.
         """
         key = f"ptcgio:{set_code.upper()}/{pad_local_id(local_id)}"
 
@@ -570,7 +574,9 @@ class PriceProxy:
             if entry and not _is_stale(entry):
                 return entry.data  # type: ignore[return-value]
 
-            data = await _do_fetch_ptcgio(name_en, ptcgio_set_id, local_id)
+            data = await _do_fetch_ptcgio(
+                name_en, ptcgio_set_id, local_id, prefer_highest=prefer_highest
+            )
             self._ptcgio_cache[key] = _CacheEntry(data=data)
             return data
 
@@ -581,13 +587,29 @@ class PriceProxy:
         name_en: str | None,
         tcgdex_id: str | None,
         card_id: str,
+        *,
+        jp_set_total: int | None = None,
     ) -> list[dict[str, Any]]:
-        """Return InternationalPrice-like dicts for TCGPlayer via pokemontcg.io."""
+        """Return InternationalPrice-like dicts for TCGPlayer via pokemontcg.io.
+
+        ``jp_set_total`` is the official denominator from the JP set YAML (e.g.
+        98 for SV10).  When the card's ``local_id`` exceeds this value the card
+        is a secret/special rare (SAR/SR/UR), and we instruct the fetch to pick
+        the highest-numbered EN result rather than the closest-numbered one.
+        """
         if not name_en or not tcgdex_id:
             return []
 
+        try:
+            local_id_int = int(local_id.lstrip("0") or "0")
+        except ValueError:
+            local_id_int = 0
+        prefer_highest = jp_set_total is not None and local_id_int > jp_set_total
+
         ptcgio_id = _JP_TO_PTCGIO_ID.get(tcgdex_id, tcgdex_id)
-        tcp = await self.fetch_ptcgio_prices(set_code, local_id, name_en, ptcgio_id)
+        tcp = await self.fetch_ptcgio_prices(
+            set_code, local_id, name_en, ptcgio_id, prefer_highest=prefer_highest
+        )
         if not tcp:
             return []
 
@@ -839,13 +861,24 @@ def _ptcgio_num(card: dict[str, Any]) -> int:
 
 
 async def _do_fetch_ptcgio(
-    name_en: str, ptcgio_set_id: str, local_id: str
+    name_en: str,
+    ptcgio_set_id: str,
+    local_id: str,
+    *,
+    prefer_highest: bool = False,
 ) -> dict[str, Any] | None:
     """Search pokemontcg.io for the best-matching card and return its TCGPlayer block.
 
-    Picks the result whose card number is numerically closest to the JP
-    ``local_id``.  This reliably matches base-set cards (same number) and
-    reasonably approximates secret-rare positions (e.g. JP #203 → EN #201).
+    Card selection strategy:
+    - ``prefer_highest=False`` (base/holo cards): pick the card whose number
+      is numerically closest to the JP ``local_id``.  Works reliably when JP
+      and EN numbering are aligned (e.g. JP #089 → EN #089).
+    - ``prefer_highest=True`` (secret/special rares: JP local_id > set total):
+      pick the card with the **highest** number.  In EN sets secret rares are
+      always numbered above the base set, so the highest-numbered result is the
+      SAR/SR/UR equivalent of the JP secret rare.  Using "closest number" for
+      these cards would incorrectly land on a low-rarity base card instead.
+
     Returns None when no results are found or on any HTTP error.
     """
     q = f'name:"{name_en}" set.id:{ptcgio_set_id}'
@@ -856,7 +889,10 @@ async def _do_fetch_ptcgio(
     if api_key:
         headers["X-Api-Key"] = api_key
 
-    logger.info("price_proxy: pokemontcg.io search %r in %s", name_en, ptcgio_set_id)
+    logger.info(
+        "price_proxy: pokemontcg.io search %r in %s (prefer_highest=%s)",
+        name_en, ptcgio_set_id, prefer_highest,
+    )
     try:
         async with httpx.AsyncClient(timeout=10.0) as client:
             resp = await client.get(url, headers=headers)
@@ -871,13 +907,19 @@ async def _do_fetch_ptcgio(
     if not cards:
         return None
 
-    # Pick card with number numerically closest to JP local_id
-    target = int(local_id.lstrip("0") or "0")
-    best = min(cards, key=lambda c: abs(_ptcgio_num(c) - target))
+    if prefer_highest:
+        # Secret/special rare: pick the highest-numbered EN card — that's the
+        # SAR/SR/UR tier, which corresponds to the JP secret rare.
+        best = max(cards, key=_ptcgio_num)
+    else:
+        # Base/holo card: pick the card with number closest to the JP local_id.
+        target = int(local_id.lstrip("0") or "0")
+        best = min(cards, key=lambda c: abs(_ptcgio_num(c) - target))
+
     tcp = best.get("tcgplayer")
     logger.debug(
-        "price_proxy: pokemontcg.io best match for %r: #%s (target #%s)",
-        name_en, best.get("number"), local_id,
+        "price_proxy: pokemontcg.io best match for %r: #%s (target #%s, prefer_highest=%s)",
+        name_en, best.get("number"), local_id, prefer_highest,
     )
     return tcp if tcp else None
 

@@ -289,11 +289,12 @@ async def international_prices(
     tcgdex_id = mem_set.tcgdex_id if mem_set else None
     name_en = artwork.name_en if artwork else None
     set_name_en = mem_set.name_en if mem_set else None
+    jp_set_total = mem_set.total if mem_set else None
 
     tcgdex_rows, pc_rows, ptcgio_rows = await asyncio.gather(
         proxy.tcgdex_international(set_code, local_id, tcgdex_id, card_id),
         proxy.pricecharting_international(set_code, local_id, name_en, set_name_en, card_id),
-        proxy.ptcgio_international(set_code, local_id, name_en, tcgdex_id, card_id),
+        proxy.ptcgio_international(set_code, local_id, name_en, tcgdex_id, card_id, jp_set_total=jp_set_total),
     )
 
     response.headers["Cache-Control"] = _PRICE_CACHE
