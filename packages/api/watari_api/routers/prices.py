@@ -291,8 +291,18 @@ async def international_prices(
     set_name_en = mem_set.name_en if mem_set else None
     jp_set_total = mem_set.total if mem_set else None
 
+    # For secret/special rares (local_id > set total), TCGdex EN fetches the
+    # wrong card (it uses the JP local_id literally in the EN set, which maps
+    # to a base-rarity card).  Skip TCGdex for these; pokemontcg.io already
+    # handles them correctly via prefer_highest.
+    try:
+        _local_id_int = int(local_id.lstrip("0") or "0")
+        _is_secret = jp_set_total is not None and _local_id_int > jp_set_total
+    except ValueError:
+        _is_secret = False
+
     tcgdex_rows, pc_rows, ptcgio_rows = await asyncio.gather(
-        proxy.tcgdex_international(set_code, local_id, tcgdex_id, card_id),
+        proxy.tcgdex_international(set_code, local_id, None if _is_secret else tcgdex_id, card_id),
         proxy.pricecharting_international(set_code, local_id, name_en, set_name_en, card_id),
         proxy.ptcgio_international(set_code, local_id, name_en, tcgdex_id, card_id, jp_set_total=jp_set_total),
     )
