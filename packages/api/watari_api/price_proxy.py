@@ -12,7 +12,6 @@ from __future__ import annotations
 import asyncio
 import json
 import logging
-import os
 import statistics
 from dataclasses import dataclass, field
 from datetime import UTC, datetime, timedelta
@@ -53,122 +52,11 @@ _PC_PRICE_IDS: dict[str, str] = {
 
 # Maps JP TCGdex locale set IDs → pokemontcg.io set IDs for TCGPlayer price lookup.
 # pokemontcg.io uses a compact notation (no leading zeros, "pt5" instead of ".5").
-# Maps JP TCGdex locale set IDs → pokemontcg.io set IDs.
-# pokemontcg.io searches by card name within a set, so JP/EN number misalignment
-# for SWSH/SM era is handled gracefully (multiple results → closest/highest number pick).
-# JP-exclusive sets (ME, CL) and JP promo compilations with no EN counterpart are omitted.
-# Note: Celebrations (S8a→cel25) omitted — content overlap is partial and unreliable.
-_JP_TO_PTCGIO_ID: dict[str, str] = {
-    # ── SV era ────────────────────────────────────────────────────────────────
-    "sv01": "sv1",       # Scarlet ex (JP) → Scarlet & Violet (EN)
-    "sv01v": "sv1",      # Violet ex (JP) → Scarlet & Violet (EN)
-    "sv2a": "sv3pt5",    # Pokémon Card 151 (JP) → 151 (EN)
-    "sv4k": "sv4",       # Ancient Roar (JP) → Paradox Rift (EN)
-    "sv4m": "sv4",       # Future Flash (JP) → Paradox Rift (EN)
-    "sv4a": "sv4pt5",    # Shiny Treasure ex (JP) → Paldean Fates (EN)
-    "sv5k": "sv5",       # Wild Force (JP) → Temporal Forces (EN)
-    "sv5m": "sv5",       # Cyber Judge (JP) → Temporal Forces (EN)
-    "sv5a": "sv5",       # Crimson Haze (JP) → Temporal Forces (EN)
-    "sv6a": "sv6pt5",    # Night Wanderer (JP) → Shrouded Fable (EN)
-    "sv8a": "sv8pt5",    # Terastal Festival ex (JP) → Prismatic Evolutions (EN)
-    "sv11w": "rsv10pt5", # White Flare (JP) → White Flare (EN)
-    "sv11b": "zsv10pt5", # Black Bolt (JP) → Black Bolt (EN)
-    # ── SWSH / S-era ──────────────────────────────────────────────────────────
-    "S1W": "swsh1",      # Sword → Sword & Shield
-    "S1H": "swsh1",      # Shield → Sword & Shield
-    "S1a": "swsh2",      # VMAX Rising → Rebel Clash
-    "S2": "swsh3",       # Rebellion Crash → Darkness Ablaze
-    "S2a": "swsh3",      # Explosive Walker → Darkness Ablaze
-    "S3": "swsh4",       # Infinity Zone → Vivid Voltage
-    "S3a": "swsh4pt5",   # Legendary Heartbeat → Shining Fates
-    "S4": "swsh5",       # Amazing Volt Tackle → Battle Styles
-    "S4a": "swsh4pt5",   # Shiny Star V → Shining Fates (shiny vault)
-    "S5a": "swsh5",      # Matchless Fighters → Battle Styles
-    "S5I": "swsh5",      # Single Strike Master → Battle Styles (Single Strike!)
-    "S5R": "swsh5",      # Rapid Strike Master → Battle Styles (Rapid Strike!)
-    "S6a": "swsh7",      # Eevee Heroes → Evolving Skies (Eevee content match)
-    "S6H": "swsh6",      # Silver Lance → Chilling Reign
-    "S6K": "swsh6",      # Jet-Black Spirit → Chilling Reign
-    "S7D": "swsh7",      # Skyscraping Perfection → Evolving Skies
-    "S7R": "swsh7",      # Blue Sky Stream → Evolving Skies
-    "S8": "swsh8",       # Fusion Arts → Fusion Strike (name match)
-    "S8b": "swsh12pt5",  # VMAX Climax → Crown Zenith (both shiny-vault finales)
-    "S9": "swsh9",       # Star Birth → Brilliant Stars (theme match)
-    "S9a": "swsh10",     # Battle Region → Astral Radiance
-    "S10D": "swsh10",    # Time Gazer → Astral Radiance (Origin Forme theme)
-    "S10P": "swsh10",    # Space Juggler → Astral Radiance (Origin Forme theme)
-    "S10a": "swsh11",    # Dark Phantasma → Lost Origin
-    "S10b": "swsh10pt5", # Pokémon GO → Pokémon GO (exact match)
-    "S11": "swsh11",     # Lost Abyss → Lost Origin (Lost theme match)
-    "S11a": "swsh12",    # Incandescent Arcana → Silver Tempest
-    "S12": "swsh12",     # Paradigm Trigger → Silver Tempest
-    "S12a": "swsh12pt5", # VSTAR Universe → Crown Zenith (SWSH finale match)
-    # ── SM era ────────────────────────────────────────────────────────────────
-    "SM0": "smp",        # Pikachu's New Friends → SM Promos
-    "SM1M": "sm1",       # Collection Moon → Sun & Moon
-    "SM1S": "sm1",       # Collection Sun → Sun & Moon
-    "SM1+": "sm2",       # Enhanced Expansion Pack → Guardians Rising
-    "SM2K": "sm2",       # Islands Await You → Guardians Rising
-    "SM2L": "sm2",       # Alolan Moonlight → Guardians Rising
-    "sm2+": "smp",       # Facing a New Trial → SM Promos
-    "SM3H": "sm3",       # To Have Seen the Battle Rainbow → Burning Shadows
-    "SM3N": "sm3",       # Darkness that Consumes Light → Burning Shadows
-    "SM3+": "sm3pt5",    # Shining Legends (JP) → Shining Legends (EN) (name match)
-    "SM4A": "sm4",       # Ultradimensional Beasts → Crimson Invasion
-    "SM4S": "sm5",       # Awakened Heroes → Ultra Prism
-    "SM5M": "sm5",       # Ultra Moon → Ultra Prism
-    "SM5S": "sm5",       # Ultra Sun → Ultra Prism
-    "SM5+": "sm5",       # Ultra Force → Ultra Prism
-    "SM6": "sm6",        # Forbidden Light → Forbidden Light (name match)
-    "SM6a": "sm7pt5",    # Dragon Storm → Dragon Majesty (dragon theme match)
-    "SM6b": "sm7",       # Champion Road → Celestial Storm
-    "SM7": "sm7",        # Sky-Splitting Charisma → Celestial Storm
-    "SM7a": "sm7",       # Thunderclap Spark → Celestial Storm
-    "SM7b": "sm7",       # Fairy Rise → Celestial Storm
-    "SM8": "sm8",        # Super-Burst Impact → Lost Thunder
-    "SM8a": "sm8",       # Dark Order → Lost Thunder
-    "SM8b": "sm115",     # GX Ultra Shiny → Hidden Fates (shiny vault match)
-    "SM9": "sm9",        # Tag Bolt → Team Up
-    "SM9a": "sm9",       # Night Unison → Team Up
-    "SM9b": "sm9",       # Full Metal Wall → Team Up
-    "SM10": "sm10",      # Double Blaze → Unbroken Bonds
-    "SM10a": "sm10",     # GG End → Unbroken Bonds
-    "SM10b": "sm11",     # Sky Legend → Unified Minds
-    "SM11": "sm11",      # Miracle Twin → Unified Minds
-    "SM11a": "sm11",     # Remix Bout → Unified Minds
-    "SM11b": "sm11",     # Dream League → Unified Minds
-    "SM12": "sm12",      # Alter Genesis → Cosmic Eclipse
-    "SM12a": "sm12",     # Tag All Stars → Cosmic Eclipse
-    "SMP2": "sma",       # Great Detective Pikachu → Detective Pikachu (name match)
-}
-
-# Maps JP TCGdex locale set IDs → EN TCGdex locale set IDs.
-# EN uses different IDs for many sets (e.g. sv2a JP → sv03.5 EN for Card 151).
-# Sets whose JP and EN IDs are identical (sv01, sv10) do not need an entry.
-# JP-exclusive sets with no EN equivalent are omitted → tcgdex_international returns [].
-# SWSH/SM sets are intentionally omitted: TCGdex EN fetches by set+local_id, but JP and EN
-# card numbers don't align for these eras (multiple JP sets merge into one EN set with
-# re-sequenced numbering).  pokemontcg.io (name-search, see _JP_TO_PTCGIO_ID) is used
-# instead for SWSH/SM TCGPlayer USD prices.
-_JP_TO_EN_TCGDEX_ID: dict[str, str] = {
-    "sv01v": "sv01",    # Violet ex (JP) → Scarlet & Violet (EN)
-    "sv2a": "sv03.5",   # Pokémon Card 151 (JP) → 151 (EN)
-    "sv3": "sv03",      # Ruler of the Black Flame (JP) → Obsidian Flames (EN)
-    "sv4k": "sv04",     # Ancient Roar (JP) → Paradox Rift (EN)
-    "sv4m": "sv04",     # Future Flash (JP) → Paradox Rift (EN)
-    "sv4a": "sv04.5",   # Shiny Treasure ex (JP) → Paldean Fates (EN)
-    "sv5k": "sv05",     # Wild Force (JP) → Temporal Forces (EN)
-    "sv5m": "sv05",     # Cyber Judge (JP) → Temporal Forces (EN)
-    "sv5a": "sv05",     # Crimson Haze (JP) → Temporal Forces (EN)
-    "sv6": "sv06",      # Mask of Change (JP) → Twilight Masquerade (EN)
-    "sv6a": "sv06.5",   # Night Wanderer (JP) → Shrouded Fable (EN)
-    "sv7": "sv07",      # Stellar Miracle (JP) → Stellar Crown (EN)
-    "sv8": "sv08",      # Super Electric Breaker (JP) → Surging Sparks (EN)
-    "sv8a": "sv08.5",   # Terastal Festival ex (JP) → Prismatic Evolutions (EN)
-    "sv9": "sv09",      # Battle Partners (JP) → Journey Together (EN)
-    "sv11w": "sv10.5w", # White Flare (JP) → White Flare (EN)
-    "sv11b": "sv10.5b", # Black Bolt (JP) → Black Bolt (EN)
-}
+# NOTE: pokemontcg.io integration was removed — it only indexes English cards,
+# not Japanese cards.  International prices now come from TCGdex JP locale
+# (Cardmarket EUR for JP cards) and PriceCharting (eBay sold comps).
+# TCGPlayer USD prices for JP cards ("pokemon-japan" on TCGPlayer) are not
+# yet implemented; they require the TCGPlayer API or direct scraping.
 
 
 @dataclass
@@ -221,7 +109,7 @@ class PriceProxy:
 
     Sources:
     - Snkrdunk (JP sold comps + graded)
-    - TCGdex EN (TCGPlayer USD + Cardmarket EUR)
+    - TCGdex JP locale (Cardmarket EUR for JP cards)
     - PriceCharting (eBay aggregated raw + PSA graded)
     """
 
@@ -238,8 +126,6 @@ class PriceProxy:
         self._pc_cache: dict[str, _CacheEntry] = {}
         self._pc_locks: dict[str, asyncio.Lock] = {}
         self._pc_sem: asyncio.Semaphore = asyncio.Semaphore(10)
-        self._ptcgio_cache: dict[str, _CacheEntry] = {}
-        self._ptcgio_locks: dict[str, asyncio.Lock] = {}
 
     # --- Redis helpers -------------------------------------------------------
 
@@ -491,14 +377,16 @@ class PriceProxy:
         tcgdex_id: str | None,
         card_id: str,
     ) -> list[dict[str, Any]]:
-        """Return InternationalPrice-like dicts for TCGPlayer and Cardmarket."""
+        """Return InternationalPrice-like dicts for Cardmarket (via TCGdex JP locale).
+
+        Uses the JP locale so prices reflect the Japanese card itself on Cardmarket,
+        not the English equivalent card.  TCGPlayer prices for JP cards are not
+        available via this path (tcgplayer is always null in TCGdex JP responses).
+        """
         if not tcgdex_id:
             return []
 
-        # Resolve JP locale ID → EN locale ID (may differ, e.g. sv2a → sv03.5).
-        en_id = _JP_TO_EN_TCGDEX_ID.get(tcgdex_id, tcgdex_id)
-
-        data = await self.fetch_tcgdex_prices(set_code, local_id, en_id)
+        data = await self.fetch_tcgdex_prices(set_code, local_id, tcgdex_id)
         if not data:
             return []
 
@@ -619,122 +507,6 @@ class PriceProxy:
         return results
 
 
-    # --- pokemontcg.io (TCGPlayer) -------------------------------------------
-
-    async def fetch_ptcgio_prices(
-        self,
-        set_code: str,
-        local_id: str,
-        name_en: str,
-        ptcgio_set_id: str,
-        *,
-        prefer_highest: bool = False,
-    ) -> dict[str, Any] | None:
-        """Fetch the TCGPlayer price block from pokemontcg.io. Cached 30 min.
-
-        Returns the ``tcgplayer`` dict (url, updatedAt, prices) of the
-        best-matching card, or None if no match is found.
-        ``prefer_highest`` is forwarded to ``_do_fetch_ptcgio`` — set True
-        for secret/special rares so the highest-numbered EN card is picked.
-        """
-        key = f"ptcgio:{set_code.upper()}/{pad_local_id(local_id)}"
-
-        entry = self._ptcgio_cache.get(key)
-        if entry and not _is_stale(entry):
-            return entry.data  # type: ignore[return-value]
-
-        lock = self._ptcgio_locks.setdefault(key, asyncio.Lock())
-        async with lock:
-            entry = self._ptcgio_cache.get(key)
-            if entry and not _is_stale(entry):
-                return entry.data  # type: ignore[return-value]
-
-            data = await _do_fetch_ptcgio(
-                name_en, ptcgio_set_id, local_id, prefer_highest=prefer_highest
-            )
-            self._ptcgio_cache[key] = _CacheEntry(data=data)
-            return data
-
-    async def ptcgio_international(
-        self,
-        set_code: str,
-        local_id: str,
-        name_en: str | None,
-        tcgdex_id: str | None,
-        card_id: str,
-        *,
-        jp_set_total: int | None = None,
-        jp_rarity_code: str | None = None,
-    ) -> list[dict[str, Any]]:
-        """Return InternationalPrice-like dicts for TCGPlayer via pokemontcg.io.
-
-        ``jp_set_total`` is the official denominator from the JP set YAML (e.g.
-        98 for SV10).  When the card's ``local_id`` exceeds this value the card
-        is a secret/special rare (SAR/SR/UR), and we instruct the fetch to pick
-        the highest-numbered EN result rather than the closest-numbered one.
-
-        ``jp_rarity_code`` is used to skip the lookup for cards whose rarity
-        does not translate meaningfully to EN market prices.  Specifically,
-        shiny-common cards (rarity ``S``) beyond the base set are skipped:
-        the EN equivalent's TCGPlayer price reflects EN-market scarcity, not
-        the JP shiny card's value (the two markets differ by 10–50×).
-        SAR/SR/UR rares are still looked up — their EN equivalents are directly
-        comparable.
-        """
-        if not name_en or not tcgdex_id:
-            return []
-
-        try:
-            local_id_int = int(local_id.lstrip("0") or "0")
-        except ValueError:
-            local_id_int = 0
-        is_beyond_base = jp_set_total is not None and local_id_int > jp_set_total
-        prefer_highest = is_beyond_base
-
-        # Shiny commons (rarity "S") in shiny-focused sets like SV4A have EN
-        # equivalents in PAF at wildly different prices — skip to avoid misleading
-        # cross-market comparisons.  High-rarity cards (SAR, SR, UR) are kept.
-        if is_beyond_base and jp_rarity_code == "S":
-            return []
-
-        ptcgio_id = _JP_TO_PTCGIO_ID.get(tcgdex_id, tcgdex_id)
-        tcp = await self.fetch_ptcgio_prices(
-            set_code, local_id, name_en, ptcgio_id, prefer_highest=prefer_highest
-        )
-        if not tcp:
-            return []
-
-        rates = await self._fetch_fx_rates()
-        updated = _parse_ptcgio_date(tcp.get("updatedAt") or "")
-        tcp_url = tcp.get("url")
-
-        # Price buckets in preference order: holofoil cards (ex/V/VMAX) are
-        # most common in JP; fall back to normal or first available bucket.
-        prices: dict[str, Any] = tcp.get("prices") or {}
-        bucket: dict[str, Any] = (
-            prices.get("holofoil")
-            or prices.get("normal")
-            or prices.get("reverseHolofoil")
-            or (next(iter(prices.values()), None) or {})
-        )
-
-        results: list[dict[str, Any]] = []
-        for field_key, label in [("market", "Market"), ("low", "Low")]:
-            price = bucket.get(field_key)
-            if isinstance(price, (int, float)) and price > 0:
-                results.append({
-                    "card_id": card_id,
-                    "market": "tcgplayer",
-                    "condition_label": label,
-                    "price_jpy": _to_jpy(float(price), "USD", rates),
-                    "price_raw": float(price),
-                    "currency": "USD",
-                    "observed_at": updated,
-                    "external_url": tcp_url,
-                })
-        return results
-
-
 # --- internal helpers --------------------------------------------------------
 
 
@@ -797,15 +569,15 @@ def _parse_tcgdex_date(value: Any) -> datetime:
 
 
 async def _do_fetch_tcgdex(tcgdex_id: str, local_id: str) -> dict[str, Any] | None:
-    """Fetch an EN TCGdex card payload. Returns None on 404 or any error.
+    """Fetch a JP TCGdex card payload. Returns None on 404 or any error.
 
-    ``tcgdex_id`` must already be the EN locale set ID (caller resolves via
-    _JP_TO_EN_TCGDEX_ID).  ``local_id`` is passed as-is (zero-padded, e.g.
-    "089") — EN locale uses padded IDs unlike JP which strips leading zeros.
+    Uses the Japanese locale so prices (Cardmarket EUR) reflect the Japanese
+    card itself, not the English equivalent.  ``local_id`` is zero-padded
+    (e.g. "089") — TCGdex JP uses padded IDs.
     """
     logger.info("price_proxy: tcgdex fetch %s-%s", tcgdex_id, local_id)
     try:
-        async with TcgdexClient(language="en", timeout_sec=10.0, request_delay_sec=0.0) as client:
+        async with TcgdexClient(language="ja", timeout_sec=10.0, request_delay_sec=0.0) as client:
             return await client.get_card(tcgdex_id, local_id)
     except Exception:
         logger.exception("price_proxy: tcgdex fetch failed for %s-%s", tcgdex_id, local_id)
@@ -930,89 +702,6 @@ async def _do_fetch_pricecharting(
     except Exception as exc:
         logger.warning("price_proxy: pricecharting fetch failed for %r: %s", name_en, exc)
         return []
-
-
-# --- pokemontcg.io helpers ---------------------------------------------------
-
-
-def _parse_ptcgio_date(s: str) -> datetime:
-    """Parse pokemontcg.io date string ``'2026/05/21'`` → UTC datetime."""
-    try:
-        parts = s.split("/")
-        return datetime(int(parts[0]), int(parts[1]), int(parts[2]), tzinfo=UTC)
-    except (ValueError, IndexError, AttributeError):
-        return datetime.now(UTC)
-
-
-def _ptcgio_num(card: dict[str, Any]) -> int:
-    """Extract the numeric part of a pokemontcg.io card number (``'201a'`` → 201)."""
-    raw = str(card.get("number", "0"))
-    digits = "".join(ch for ch in raw if ch.isdigit())
-    return int(digits) if digits else 0
-
-
-async def _do_fetch_ptcgio(
-    name_en: str,
-    ptcgio_set_id: str,
-    local_id: str,
-    *,
-    prefer_highest: bool = False,
-) -> dict[str, Any] | None:
-    """Search pokemontcg.io for the best-matching card and return its TCGPlayer block.
-
-    Card selection strategy:
-    - ``prefer_highest=False`` (base/holo cards): pick the card whose number
-      is numerically closest to the JP ``local_id``.  Works reliably when JP
-      and EN numbering are aligned (e.g. JP #089 → EN #089).
-    - ``prefer_highest=True`` (secret/special rares: JP local_id > set total):
-      pick the card with the **highest** number.  In EN sets secret rares are
-      always numbered above the base set, so the highest-numbered result is the
-      SAR/SR/UR equivalent of the JP secret rare.  Using "closest number" for
-      these cards would incorrectly land on a low-rarity base card instead.
-
-    Returns None when no results are found or on any HTTP error.
-    """
-    q = f'name:"{name_en}" set.id:{ptcgio_set_id}'
-    url = f"https://api.pokemontcg.io/v2/cards?q={quote(q)}&select=id,name,number,tcgplayer"
-
-    headers: dict[str, str] = {"User-Agent": "watari/1.0"}
-    api_key = os.environ.get("POKEMONTCGIO_API_KEY")
-    if api_key:
-        headers["X-Api-Key"] = api_key
-
-    logger.info(
-        "price_proxy: pokemontcg.io search %r in %s (prefer_highest=%s)",
-        name_en, ptcgio_set_id, prefer_highest,
-    )
-    try:
-        async with httpx.AsyncClient(timeout=10.0) as client:
-            resp = await client.get(url, headers=headers)
-            if resp.status_code != 200:
-                logger.debug("price_proxy: pokemontcg.io %s for %r", resp.status_code, name_en)
-                return None
-            cards: list[dict[str, Any]] = resp.json().get("data", [])
-    except Exception:
-        logger.exception("price_proxy: pokemontcg.io fetch failed for %r", name_en)
-        return None
-
-    if not cards:
-        return None
-
-    if prefer_highest:
-        # Secret/special rare: pick the highest-numbered EN card — that's the
-        # SAR/SR/UR tier, which corresponds to the JP secret rare.
-        best = max(cards, key=_ptcgio_num)
-    else:
-        # Base/holo card: pick the card with number closest to the JP local_id.
-        target = int(local_id.lstrip("0") or "0")
-        best = min(cards, key=lambda c: abs(_ptcgio_num(c) - target))
-
-    tcp = best.get("tcgplayer")
-    logger.debug(
-        "price_proxy: pokemontcg.io best match for %r: #%s (target #%s, prefer_highest=%s)",
-        name_en, best.get("number"), local_id, prefer_highest,
-    )
-    return tcp if tcp else None
 
 
 # --- Snkrdunk helpers --------------------------------------------------------

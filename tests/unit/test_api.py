@@ -219,9 +219,6 @@ class FakePriceProxy:
     async def pricecharting_international(self, *args: Any, **kwargs: Any) -> list[dict[str, Any]]:
         return []
 
-    async def ptcgio_international(self, *args: Any, **kwargs: Any) -> list[dict[str, Any]]:
-        return []
-
 
 # ---------------------------------------------------------------------------
 # Fixture helpers

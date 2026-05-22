@@ -274,11 +274,12 @@ async def international_prices(
     response: Response,
     variant: str = Query("normal"),
 ) -> Any:
-    """TCGPlayer + Cardmarket (via TCGdex EN) + PriceCharting (eBay), in parallel.
+    """Cardmarket EUR (via TCGdex JP) + PriceCharting eBay, in parallel.
 
+    Prices reflect the Japanese card itself (not the English equivalent).
     All prices are converted to JPY server-side using Frankfurter exchange rates.
-    Returns [] when no western price data is available (e.g. ME/SM cards not
-    indexed by TCGdex EN or PriceCharting).
+    Returns [] when no western price data is available (e.g. SM/SWSH cards not
+    indexed by TCGdex JP or PriceCharting).
     """
     card_id = _resolve_card_id(
         catalog, lang=lang, set_code=set_code, local_id=local_id, variant=variant
@@ -289,29 +290,16 @@ async def international_prices(
     tcgdex_id = mem_set.tcgdex_id if mem_set else None
     name_en = artwork.name_en if artwork else None
     set_name_en = mem_set.name_en if mem_set else None
-    jp_set_total = mem_set.total if mem_set else None
-    jp_rarity_code = artwork.rarity_code if artwork else None
 
-    # For secret/special rares (local_id > set total), TCGdex EN fetches the
-    # wrong card (it uses the JP local_id literally in the EN set, which maps
-    # to a base-rarity card).  Skip TCGdex for these; pokemontcg.io already
-    # handles them correctly via prefer_highest.
-    try:
-        _local_id_int = int(local_id.lstrip("0") or "0")
-        _is_secret = jp_set_total is not None and _local_id_int > jp_set_total
-    except ValueError:
-        _is_secret = False
-
-    tcgdex_rows, pc_rows, ptcgio_rows = await asyncio.gather(
-        proxy.tcgdex_international(set_code, local_id, None if _is_secret else tcgdex_id, card_id),
+    tcgdex_rows, pc_rows = await asyncio.gather(
+        proxy.tcgdex_international(set_code, local_id, tcgdex_id, card_id),
         proxy.pricecharting_international(set_code, local_id, name_en, set_name_en, card_id),
-        proxy.ptcgio_international(set_code, local_id, name_en, tcgdex_id, card_id, jp_set_total=jp_set_total, jp_rarity_code=jp_rarity_code),
     )
 
     response.headers["Cache-Control"] = _PRICE_CACHE
     return [
         InternationalPrice.model_validate(r)
-        for r in [*ptcgio_rows, *tcgdex_rows, *pc_rows]
+        for r in [*tcgdex_rows, *pc_rows]
     ]
 
 
