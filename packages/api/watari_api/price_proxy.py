@@ -53,9 +53,13 @@ _PC_PRICE_IDS: dict[str, str] = {
 
 # Maps JP TCGdex locale set IDs → pokemontcg.io set IDs for TCGPlayer price lookup.
 # pokemontcg.io uses a compact notation (no leading zeros, "pt5" instead of ".5").
-# Sets whose JP tcgdex_id already matches pokemontcg.io need no entry here
-# (e.g. sv3, sv6, sv7, sv8, sv9, sv10 are identical in both systems).
+# Maps JP TCGdex locale set IDs → pokemontcg.io set IDs.
+# pokemontcg.io searches by card name within a set, so JP/EN number misalignment
+# for SWSH/SM era is handled gracefully (multiple results → closest/highest number pick).
+# JP-exclusive sets (ME, CL) and JP promo compilations with no EN counterpart are omitted.
+# Note: Celebrations (S8a→cel25) omitted — content overlap is partial and unreliable.
 _JP_TO_PTCGIO_ID: dict[str, str] = {
+    # ── SV era ────────────────────────────────────────────────────────────────
     "sv01": "sv1",       # Scarlet ex (JP) → Scarlet & Violet (EN)
     "sv01v": "sv1",      # Violet ex (JP) → Scarlet & Violet (EN)
     "sv2a": "sv3pt5",    # Pokémon Card 151 (JP) → 151 (EN)
@@ -69,12 +73,83 @@ _JP_TO_PTCGIO_ID: dict[str, str] = {
     "sv8a": "sv8pt5",    # Terastal Festival ex (JP) → Prismatic Evolutions (EN)
     "sv11w": "rsv10pt5", # White Flare (JP) → White Flare (EN)
     "sv11b": "zsv10pt5", # Black Bolt (JP) → Black Bolt (EN)
+    # ── SWSH / S-era ──────────────────────────────────────────────────────────
+    "S1W": "swsh1",      # Sword → Sword & Shield
+    "S1H": "swsh1",      # Shield → Sword & Shield
+    "S1a": "swsh2",      # VMAX Rising → Rebel Clash
+    "S2": "swsh3",       # Rebellion Crash → Darkness Ablaze
+    "S2a": "swsh3",      # Explosive Walker → Darkness Ablaze
+    "S3": "swsh4",       # Infinity Zone → Vivid Voltage
+    "S3a": "swsh4pt5",   # Legendary Heartbeat → Shining Fates
+    "S4": "swsh5",       # Amazing Volt Tackle → Battle Styles
+    "S4a": "swsh4pt5",   # Shiny Star V → Shining Fates (shiny vault)
+    "S5a": "swsh5",      # Matchless Fighters → Battle Styles
+    "S5I": "swsh5",      # Single Strike Master → Battle Styles (Single Strike!)
+    "S5R": "swsh5",      # Rapid Strike Master → Battle Styles (Rapid Strike!)
+    "S6a": "swsh7",      # Eevee Heroes → Evolving Skies (Eevee content match)
+    "S6H": "swsh6",      # Silver Lance → Chilling Reign
+    "S6K": "swsh6",      # Jet-Black Spirit → Chilling Reign
+    "S7D": "swsh7",      # Skyscraping Perfection → Evolving Skies
+    "S7R": "swsh7",      # Blue Sky Stream → Evolving Skies
+    "S8": "swsh8",       # Fusion Arts → Fusion Strike (name match)
+    "S8b": "swsh12pt5",  # VMAX Climax → Crown Zenith (both shiny-vault finales)
+    "S9": "swsh9",       # Star Birth → Brilliant Stars (theme match)
+    "S9a": "swsh10",     # Battle Region → Astral Radiance
+    "S10D": "swsh10",    # Time Gazer → Astral Radiance (Origin Forme theme)
+    "S10P": "swsh10",    # Space Juggler → Astral Radiance (Origin Forme theme)
+    "S10a": "swsh11",    # Dark Phantasma → Lost Origin
+    "S10b": "swsh10pt5", # Pokémon GO → Pokémon GO (exact match)
+    "S11": "swsh11",     # Lost Abyss → Lost Origin (Lost theme match)
+    "S11a": "swsh12",    # Incandescent Arcana → Silver Tempest
+    "S12": "swsh12",     # Paradigm Trigger → Silver Tempest
+    "S12a": "swsh12pt5", # VSTAR Universe → Crown Zenith (SWSH finale match)
+    # ── SM era ────────────────────────────────────────────────────────────────
+    "SM0": "smp",        # Pikachu's New Friends → SM Promos
+    "SM1M": "sm1",       # Collection Moon → Sun & Moon
+    "SM1S": "sm1",       # Collection Sun → Sun & Moon
+    "SM1+": "sm2",       # Enhanced Expansion Pack → Guardians Rising
+    "SM2K": "sm2",       # Islands Await You → Guardians Rising
+    "SM2L": "sm2",       # Alolan Moonlight → Guardians Rising
+    "sm2+": "smp",       # Facing a New Trial → SM Promos
+    "SM3H": "sm3",       # To Have Seen the Battle Rainbow → Burning Shadows
+    "SM3N": "sm3",       # Darkness that Consumes Light → Burning Shadows
+    "SM3+": "sm3pt5",    # Shining Legends (JP) → Shining Legends (EN) (name match)
+    "SM4A": "sm4",       # Ultradimensional Beasts → Crimson Invasion
+    "SM4S": "sm5",       # Awakened Heroes → Ultra Prism
+    "SM5M": "sm5",       # Ultra Moon → Ultra Prism
+    "SM5S": "sm5",       # Ultra Sun → Ultra Prism
+    "SM5+": "sm5",       # Ultra Force → Ultra Prism
+    "SM6": "sm6",        # Forbidden Light → Forbidden Light (name match)
+    "SM6a": "sm7pt5",    # Dragon Storm → Dragon Majesty (dragon theme match)
+    "SM6b": "sm7",       # Champion Road → Celestial Storm
+    "SM7": "sm7",        # Sky-Splitting Charisma → Celestial Storm
+    "SM7a": "sm7",       # Thunderclap Spark → Celestial Storm
+    "SM7b": "sm7",       # Fairy Rise → Celestial Storm
+    "SM8": "sm8",        # Super-Burst Impact → Lost Thunder
+    "SM8a": "sm8",       # Dark Order → Lost Thunder
+    "SM8b": "sm115",     # GX Ultra Shiny → Hidden Fates (shiny vault match)
+    "SM9": "sm9",        # Tag Bolt → Team Up
+    "SM9a": "sm9",       # Night Unison → Team Up
+    "SM9b": "sm9",       # Full Metal Wall → Team Up
+    "SM10": "sm10",      # Double Blaze → Unbroken Bonds
+    "SM10a": "sm10",     # GG End → Unbroken Bonds
+    "SM10b": "sm11",     # Sky Legend → Unified Minds
+    "SM11": "sm11",      # Miracle Twin → Unified Minds
+    "SM11a": "sm11",     # Remix Bout → Unified Minds
+    "SM11b": "sm11",     # Dream League → Unified Minds
+    "SM12": "sm12",      # Alter Genesis → Cosmic Eclipse
+    "SM12a": "sm12",     # Tag All Stars → Cosmic Eclipse
+    "SMP2": "sma",       # Great Detective Pikachu → Detective Pikachu (name match)
 }
 
 # Maps JP TCGdex locale set IDs → EN TCGdex locale set IDs.
 # EN uses different IDs for many sets (e.g. sv2a JP → sv03.5 EN for Card 151).
 # Sets whose JP and EN IDs are identical (sv01, sv10) do not need an entry.
 # JP-exclusive sets with no EN equivalent are omitted → tcgdex_international returns [].
+# SWSH/SM sets are intentionally omitted: TCGdex EN fetches by set+local_id, but JP and EN
+# card numbers don't align for these eras (multiple JP sets merge into one EN set with
+# re-sequenced numbering).  pokemontcg.io (name-search, see _JP_TO_PTCGIO_ID) is used
+# instead for SWSH/SM TCGPlayer USD prices.
 _JP_TO_EN_TCGDEX_ID: dict[str, str] = {
     "sv01v": "sv01",    # Violet ex (JP) → Scarlet & Violet (EN)
     "sv2a": "sv03.5",   # Pokémon Card 151 (JP) → 151 (EN)
