@@ -82,6 +82,11 @@ def _build_parser() -> argparse.ArgumentParser:
         action="store_true",
         help="Skip network calls; rebuild from MinIO bronze cache only",
     )
+    b.add_argument(
+        "--no-bronze",
+        action="store_true",
+        help="Skip MinIO bronze mirroring (useful when MinIO is not running)",
+    )
 
     s = sub.add_parser(
         "seed-cards",
@@ -198,7 +203,7 @@ async def _dispatch(args: argparse.Namespace) -> int:
     if args.command == "bootstrap-set":
         from watari_catalog import bootstrap
 
-        await bootstrap.run(args.sets, no_fetch=args.no_fetch)
+        await bootstrap.run(args.sets, no_fetch=args.no_fetch, bronze=not args.no_bronze)
         return 0
     if args.command == "seed-cards":
         from watari_catalog import seed_cards

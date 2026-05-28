@@ -86,6 +86,11 @@ def _build_parser() -> argparse.ArgumentParser:
         help="Fetch and parse, but don't write to DB or MinIO.",
     )
     p.add_argument(
+        "--no-bronze",
+        action="store_true",
+        help="Skip MinIO bronze mirroring (useful when MinIO is not running).",
+    )
+    p.add_argument(
         "--impersonate",
         default="chrome124",
         help="curl_cffi TLS fingerprint to use. Default: chrome124.",
@@ -125,6 +130,7 @@ async def _dispatch(args: argparse.Namespace) -> int:
             rarities_filter=args.rarities,
             max_pages=max_pages,
             dry_run=args.dry_run,
+            bronze=not args.no_bronze,
             impersonate=args.impersonate,
         )
         summaries.extend(normal_summaries)
@@ -135,6 +141,7 @@ async def _dispatch(args: argparse.Namespace) -> int:
                 code,
                 max_pages=max_pages,
                 dry_run=args.dry_run,
+                bronze=not args.no_bronze,
                 impersonate=args.impersonate,
             )
         except Exception as exc:  # noqa: BLE001

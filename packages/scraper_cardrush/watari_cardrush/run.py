@@ -239,6 +239,7 @@ async def _crawl_rarity(
     observed_at: datetime,
     max_pages: int,
     dry_run: bool,
+    bronze: bool = True,
     result: ScrapeSetResult,
 ) -> tuple[list[dict[str, object]], list[dict[str, object]]]:
     """Return ``(ungraded_price_rows, graded_price_rows)`` for one rarity bucket."""
@@ -254,7 +255,7 @@ async def _crawl_rarity(
     graded_price_rows: list[dict[str, object]] = []
 
     for page_num, _url, html in pages:
-        if not dry_run:
+        if not dry_run and bronze:
             write_bronze_set(
                 source=SOURCE,
                 set_code=set_code,
@@ -377,13 +378,14 @@ async def scrape_set(
     rarities_filter: list[str] | None = None,
     max_pages: int = 30,
     dry_run: bool = False,
+    bronze: bool = True,
     impersonate: str = "chrome124",
 ) -> dict[str, object]:
     """Scrape a single set. Returns a summary dict."""
     set_code = set_code.upper()
     result = ScrapeSetResult(set_code=set_code)
 
-    if not dry_run:
+    if not dry_run and bronze:
         ensure_bucket()
 
     async with async_session_factory() as session:
@@ -454,6 +456,7 @@ async def scrape_set(
                             observed_at=observed_at,
                             max_pages=max_pages,
                             dry_run=dry_run,
+                            bronze=bronze,
                             result=result,
                         )
                     except Exception as exc:  # noqa: BLE001
@@ -542,6 +545,7 @@ async def _crawl_promo(
     observed_at: datetime,
     max_pages: int,
     dry_run: bool,
+    bronze: bool = True,
     result: ScrapeSetResult,
 ) -> tuple[list[dict[str, object]], list[dict[str, object]]]:
     """Return ``(ungraded_price_rows, graded_price_rows)`` for a promo series.
@@ -558,7 +562,7 @@ async def _crawl_promo(
     graded_price_rows: list[dict[str, object]] = []
 
     for page_num, _url, html in pages:
-        if not dry_run:
+        if not dry_run and bronze:
             write_bronze_set(
                 source=SOURCE,
                 set_code=set_code,
@@ -627,6 +631,7 @@ async def scrape_promo_set(
     *,
     max_pages: int = 50,
     dry_run: bool = False,
+    bronze: bool = True,
     impersonate: str = "chrome124",
 ) -> dict[str, object]:
     """Scrape a promo series set (MP/SMPR/SP/SVP) from Cardrush.
@@ -644,7 +649,7 @@ async def scrape_promo_set(
 
     result = ScrapeSetResult(set_code=set_code)
 
-    if not dry_run:
+    if not dry_run and bronze:
         ensure_bucket()
 
     async with async_session_factory() as session:
@@ -690,6 +695,7 @@ async def scrape_promo_set(
                     observed_at=observed_at,
                     max_pages=max_pages,
                     dry_run=dry_run,
+                    bronze=bronze,
                     result=result,
                 )
 
@@ -757,6 +763,7 @@ async def scrape_sets(
     rarities_filter: list[str] | None = None,
     max_pages: int = 30,
     dry_run: bool = False,
+    bronze: bool = True,
     impersonate: str = "chrome124",
 ) -> list[dict[str, object]]:
     """Scrape many sets sequentially.
@@ -772,6 +779,7 @@ async def scrape_sets(
                 rarities_filter=rarities_filter,
                 max_pages=max_pages,
                 dry_run=dry_run,
+                bronze=bronze,
                 impersonate=impersonate,
             )
         except Exception as exc:  # noqa: BLE001

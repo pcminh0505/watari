@@ -1,0 +1,13 @@
+# Japanese Pokémon TCG set entry. Edit with care: used by seed-sets.
+
+set_code: M5
+era_block: me
+language: jp
+name_ja: アビスアイ
+name_en: Abyss Eye
+release_date: 2026-05-22
+total: 81
+tcgdex_id:
+pokellector_slug:
+tcgcollector_id: '11810'
+tcgcollector_slug: abyss-eye

@@ -885,6 +885,7 @@ async def run(
     sets: list[str],
     *,
     no_fetch: bool = False,
+    bronze: bool = True,
 ) -> list[dict[str, Any]]:
     """CLI entrypoint: bootstrap every requested set.
 
@@ -907,7 +908,7 @@ async def run(
         if ctx.pokellector_slug:
             result = await bootstrap_set(set_code)
         elif ctx.tcgcollector_id and ctx.tcgcollector_slug:
-            result = await bootstrap_set_from_tcgcollector(set_code)
+            result = await bootstrap_set_from_tcgcollector(set_code, bronze=bronze)
         else:
             raise RuntimeError(
                 f"Set {set_code} has neither pokellector_slug nor "
