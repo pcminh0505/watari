@@ -29,12 +29,13 @@ export const SET_RELEASE_ORDER: Record<string, number> = {
   SV1V: 23,
   SV1S: 24,
   // ME era (newest → oldest)
-  M4: 0,
-  M3: 1,
-  M2A: 2,
-  M2: 3,
-  M1S: 4,
-  M1L: 5,
+  M5: 0,
+  M4: 1,
+  M3: 2,
+  M2A: 3,
+  M2: 4,
+  M1S: 5,
+  M1L: 6,
   MP: 999, // M-P promo series (sort last within ME era)
   // SM era (newest → oldest)
   SM12A: 100,
@@ -145,6 +146,7 @@ export const SET_LOGO_URLS: Record<string, string> = {
   M2A: `${PK}/MEGA-Dream-ex.logo.427.png`,
   M3: `${PK}/Munikis-Zero.logo.428.png`,
   M4: `${PK}/Ninja-Spinner.logo.430.png`,
+  M5: `${PK}/Abyss-Eye.logo.433.png`,
   // Sword & Shield era (jp.pokellector.com)
   S1W: `${PK}/Sword.logo.283.png`,
   S1H: `${PK}/Shield.logo.284.png`,
@@ -233,6 +235,7 @@ export const SET_SYMBOL_URLS: Record<string, string> = {
   M2A: "https://archives.bulbagarden.net/wiki/Special:FilePath/SetSymbolMEGA_Dream_ex.png",
   M3: "https://archives.bulbagarden.net/wiki/Special:FilePath/SetSymbolNihil_Zero.png",
   M4: "https://archives.bulbagarden.net/wiki/Special:FilePath/SetSymbolNinja_Spinner.png",
+  M5: "https://archives.bulbagarden.net/wiki/Special:FilePath/SetSymbolAbyss_Eye.png",
   S10A: "https://archives.bulbagarden.net/wiki/Special:FilePath/SetSymbolDark_Phantasma.png",
   S10B: "https://archives.bulbagarden.net/wiki/Special:FilePath/SetSymbolS10b.png",
   S10D: "https://archives.bulbagarden.net/wiki/Special:FilePath/SetSymbolTime_Gazer.png",
