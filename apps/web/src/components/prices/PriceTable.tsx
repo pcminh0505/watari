@@ -10,13 +10,18 @@ const SOURCE_LABELS: Record<string, string> = {
   snkrdunk: "SNKRDUNK",
 };
 
+const CONDITION_ORDER: Record<string, number> = { A: 0, "A-": 1, B: 2 };
+
 export function PriceTable({ prices }: PriceTableProps) {
   const { formatPrice } = useCurrency();
-  if (prices.length === 0) {
+
+  const filtered = prices.filter((p) => p.condition in CONDITION_ORDER);
+
+  if (filtered.length === 0) {
     return <p className="text-sm text-neutral-500">No price data available.</p>;
   }
 
-  const bySource = prices.reduce<Record<string, LatestPrice[]>>((acc, p) => {
+  const bySource = filtered.reduce<Record<string, LatestPrice[]>>((acc, p) => {
     (acc[p.source] ??= []).push(p);
     return acc;
   }, {});
@@ -24,6 +29,9 @@ export function PriceTable({ prices }: PriceTableProps) {
   return (
     <div className="space-y-6">
       {Object.entries(bySource).map(([source, rows]) => {
+        const sorted = [...rows].sort(
+          (a, b) => CONDITION_ORDER[a.condition] - CONDITION_ORDER[b.condition],
+        );
         return (
           <div key={source}>
             <h4 className="mb-3 text-sm font-semibold text-slate-800 dark:text-slate-200">
@@ -37,7 +45,7 @@ export function PriceTable({ prices }: PriceTableProps) {
                 </tr>
               </thead>
               <tbody>
-                {rows.map((row) => (
+                {sorted.map((row) => (
                   <tr
                     key={`${row.source}-${row.condition}`}
                     className="border-b border-slate-100 dark:border-white/5 last:border-0 hover:bg-slate-50 dark:hover:bg-white/5 transition-colors"
