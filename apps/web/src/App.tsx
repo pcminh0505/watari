@@ -5,6 +5,7 @@ import { CardDetailPage } from "./pages/CardDetailPage";
 import { CardsPage } from "./pages/CardsPage";
 import { CardsSearchPage } from "./pages/CardsSearchPage";
 import { NotFoundPage } from "./pages/NotFoundPage";
+import { PokemonPage } from "./pages/PokemonPage";
 import { SetsPage } from "./pages/SetsPage";
 
 const router = createBrowserRouter([
@@ -21,6 +22,7 @@ const router = createBrowserRouter([
       { path: "cards", element: <CardsSearchPage /> },
       { path: "sets/:setCode", element: <CardsPage /> },
       { path: "sets/:setCode/:localId", element: <CardDetailPage /> },
+      { path: "pokemon/:name", element: <PokemonPage /> },
       { path: "admin", element: <AdminPage /> },
       { path: "*", element: <NotFoundPage /> },
     ],

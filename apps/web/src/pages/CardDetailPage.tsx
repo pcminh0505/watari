@@ -110,12 +110,22 @@ export function CardDetailPage() {
         </div>
 
         <div>
-          <div className="mb-3 flex flex-wrap items-start gap-2">
+          <div className="mb-1 flex flex-wrap items-start gap-2">
             <h1 className="text-3xl font-bold text-slate-900 dark:text-slate-50 text-glow">{displayName}</h1>
             {card.name_ja && card.name_en && (
               <span className="mt-2 text-base text-slate-500 dark:text-slate-400">{card.name_en}</span>
             )}
           </div>
+          {card.name_ja && (
+            <div className="mb-3">
+              <Link
+                to={`/pokemon/${encodeURIComponent(card.name_ja)}`}
+                className="text-sm text-primary-500 dark:text-primary-400 hover:underline"
+              >
+                All {card.name_ja} cards →
+              </Link>
+            </div>
+          )}
           <div className="mb-5 grid grid-cols-3 gap-x-6 gap-y-4 border-t border-slate-200 dark:border-white/10 pt-4 text-sm">
             <div>
               <p className="mb-1 text-xs font-semibold uppercase tracking-wide text-slate-500 dark:text-slate-400">Expansion</p>
