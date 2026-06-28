@@ -1,0 +1,42 @@
+name: DB retention cleanup
+
+on:
+  schedule:
+    # Every Sunday at 02:00 UTC
+    - cron: '0 2 * * 0'
+  workflow_dispatch:
+
+jobs:
+  cleanup:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Install psql
+        run: sudo apt-get install -y --no-install-recommends postgresql-client
+
+      - name: Prune old price data
+        run: |
+          psql "${{ secrets.NEON_DATABASE_URL }}" <<'SQL'
+            -- Keep 30 days of raw listed prices (MVs need ~7 days for the 7d median)
+            DELETE FROM price_points
+            WHERE observed_at < NOW() - INTERVAL '30 days';
+
+            -- Keep 90 days of graded sold comps (PSA/BGS/CGC history charts)
+            DELETE FROM graded_price_points
+            WHERE observed_at < NOW() - INTERVAL '90 days';
+
+            -- Reclaim freed pages so Neon reports lower storage immediately
+            VACUUM ANALYZE price_points;
+            VACUUM ANALYZE graded_price_points;
+          SQL
+
+      - name: Report table sizes
+        run: |
+          psql "${{ secrets.NEON_DATABASE_URL }}" -c "
+            SELECT relname AS tbl,
+                   pg_size_pretty(pg_total_relation_size(oid)) AS size,
+                   n_live_tup AS live_rows
+            FROM pg_class c
+            JOIN pg_stat_user_tables s ON s.relname = c.relname
+            WHERE c.relkind = 'r'
+              AND c.relnamespace = 'public'::regnamespace
+            ORDER BY pg_total_relation_size(oid) DESC;"
