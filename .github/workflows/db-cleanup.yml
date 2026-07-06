@@ -40,9 +40,6 @@ jobs:
 
             DELETE FROM graded_price_points
             WHERE observed_at < NOW() - INTERVAL '90 days';
-
-            VACUUM ANALYZE price_points;
-            VACUUM ANALYZE graded_price_points;
           SQL
 
       - name: Report table sizes
