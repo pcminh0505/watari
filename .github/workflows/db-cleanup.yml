@@ -14,24 +14,46 @@ jobs:
         run: sudo apt-get install -y --no-install-recommends postgresql-client
 
       - name: Prune old price data
+        env:
+          # Strip channel_binding=require — the pooler endpoint rejects SCRAM-SHA-256-PLUS
+          DB_URL: ${{ secrets.NEON_DATABASE_URL }}
         run: |
-          psql "${{ secrets.NEON_DATABASE_URL }}" <<'SQL'
-            -- Keep 30 days of raw listed prices (MVs need ~7 days for the 7d median)
+          CLEAN_URL=$(python3 -c "
+          import sys, urllib.parse
+          url = sys.argv[1]
+          p = urllib.parse.urlparse(url)
+          qs = urllib.parse.parse_qs(p.query, keep_blank_values=True)
+          qs.pop('channel_binding', None)
+          new_query = urllib.parse.urlencode({k: v[0] for k, v in qs.items()})
+          print(urllib.parse.urlunparse(p._replace(query=new_query)))
+          " "$DB_URL")
+
+          psql "$CLEAN_URL" <<'SQL'
             DELETE FROM price_points
             WHERE observed_at < NOW() - INTERVAL '30 days';
 
-            -- Keep 90 days of graded sold comps (PSA/BGS/CGC history charts)
             DELETE FROM graded_price_points
             WHERE observed_at < NOW() - INTERVAL '90 days';
 
-            -- Reclaim freed pages so Neon reports lower storage immediately
             VACUUM ANALYZE price_points;
             VACUUM ANALYZE graded_price_points;
           SQL
 
       - name: Report table sizes
+        env:
+          DB_URL: ${{ secrets.NEON_DATABASE_URL }}
         run: |
-          psql "${{ secrets.NEON_DATABASE_URL }}" -c "
+          CLEAN_URL=$(python3 -c "
+          import sys, urllib.parse
+          url = sys.argv[1]
+          p = urllib.parse.urlparse(url)
+          qs = urllib.parse.parse_qs(p.query, keep_blank_values=True)
+          qs.pop('channel_binding', None)
+          new_query = urllib.parse.urlencode({k: v[0] for k, v in qs.items()})
+          print(urllib.parse.urlunparse(p._replace(query=new_query)))
+          " "$DB_URL")
+
+          psql "$CLEAN_URL" -c "
             SELECT relname AS tbl,
                    pg_size_pretty(pg_total_relation_size(oid)) AS size,
                    n_live_tup AS live_rows
