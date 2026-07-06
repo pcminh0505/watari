@@ -35,11 +35,13 @@ jobs:
       - name: Prune old price data
         run: |
           psql "${{ steps.conn.outputs.uri }}" <<'SQL'
+            -- 7-day window keeps price data fresh for mv_median_7d while staying well under 512 MB
             DELETE FROM price_points
-            WHERE observed_at < NOW() - INTERVAL '30 days';
+            WHERE observed_at < NOW() - INTERVAL '7 days';
 
+            -- 30-day window for graded comps (PSA/BGS sold prices change slowly)
             DELETE FROM graded_price_points
-            WHERE observed_at < NOW() - INTERVAL '90 days';
+            WHERE observed_at < NOW() - INTERVAL '30 days';
           SQL
 
       - name: Report table sizes
