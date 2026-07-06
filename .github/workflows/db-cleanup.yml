@@ -48,11 +48,11 @@ jobs:
       - name: Report table sizes
         run: |
           psql "${{ steps.conn.outputs.uri }}" -c "
-            SELECT relname AS tbl,
-                   pg_size_pretty(pg_total_relation_size(oid)) AS size,
-                   n_live_tup AS live_rows
+            SELECT c.relname AS tbl,
+                   pg_size_pretty(pg_total_relation_size(c.oid)) AS size,
+                   s.n_live_tup AS live_rows
             FROM pg_class c
             JOIN pg_stat_user_tables s ON s.relname = c.relname
             WHERE c.relkind = 'r'
               AND c.relnamespace = 'public'::regnamespace
-            ORDER BY pg_total_relation_size(oid) DESC;"
+            ORDER BY pg_total_relation_size(c.oid) DESC;"
