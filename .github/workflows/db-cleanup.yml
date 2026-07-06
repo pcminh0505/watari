@@ -6,6 +6,9 @@ on:
     - cron: '0 2 * * 0'
   workflow_dispatch:
 
+env:
+  NEON_PROJECT_ID: fragrant-tooth-47031048
+
 jobs:
   cleanup:
     runs-on: ubuntu-latest
@@ -13,22 +16,25 @@ jobs:
       - name: Install psql
         run: sudo apt-get install -y --no-install-recommends postgresql-client
 
-      - name: Prune old price data
-        env:
-          # Strip channel_binding=require — the pooler endpoint rejects SCRAM-SHA-256-PLUS
-          DB_URL: ${{ secrets.NEON_DATABASE_URL }}
+      - name: Fetch connection string from Neon API
+        id: conn
         run: |
-          CLEAN_URL=$(python3 -c "
+          URI=$(curl -sf \
+            "https://console.neon.tech/api/v2/projects/${NEON_PROJECT_ID}/connection_uri?role_name=neondb_owner&database_name=neondb" \
+            -H "Authorization: Bearer ${{ secrets.NEON_API_KEY }}" \
+            | python3 -c "import json,sys; print(json.load(sys.stdin)['uri'])")
+          # Strip channel_binding — pooler rejects SCRAM-SHA-256-PLUS in some clients
+          CLEAN=$(python3 -c "
           import sys, urllib.parse
-          url = sys.argv[1]
-          p = urllib.parse.urlparse(url)
-          qs = urllib.parse.parse_qs(p.query, keep_blank_values=True)
-          qs.pop('channel_binding', None)
-          new_query = urllib.parse.urlencode({k: v[0] for k, v in qs.items()})
-          print(urllib.parse.urlunparse(p._replace(query=new_query)))
-          " "$DB_URL")
+          p = urllib.parse.urlparse(sys.argv[1])
+          qs = {k: v[0] for k, v in urllib.parse.parse_qs(p.query).items() if k != 'channel_binding'}
+          print(urllib.parse.urlunparse(p._replace(query=urllib.parse.urlencode(qs))))
+          " "$URI")
+          echo "uri=$CLEAN" >> "$GITHUB_OUTPUT"
 
-          psql "$CLEAN_URL" <<'SQL'
+      - name: Prune old price data
+        run: |
+          psql "${{ steps.conn.outputs.uri }}" <<'SQL'
             DELETE FROM price_points
             WHERE observed_at < NOW() - INTERVAL '30 days';
 
@@ -40,20 +46,8 @@ jobs:
           SQL
 
       - name: Report table sizes
-        env:
-          DB_URL: ${{ secrets.NEON_DATABASE_URL }}
         run: |
-          CLEAN_URL=$(python3 -c "
-          import sys, urllib.parse
-          url = sys.argv[1]
-          p = urllib.parse.urlparse(url)
-          qs = urllib.parse.parse_qs(p.query, keep_blank_values=True)
-          qs.pop('channel_binding', None)
-          new_query = urllib.parse.urlencode({k: v[0] for k, v in qs.items()})
-          print(urllib.parse.urlunparse(p._replace(query=new_query)))
-          " "$DB_URL")
-
-          psql "$CLEAN_URL" -c "
+          psql "${{ steps.conn.outputs.uri }}" -c "
             SELECT relname AS tbl,
                    pg_size_pretty(pg_total_relation_size(oid)) AS size,
                    n_live_tup AS live_rows
