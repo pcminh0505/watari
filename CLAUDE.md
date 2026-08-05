@@ -61,8 +61,8 @@ packages/
   core/                ← SQLAlchemy models, Pydantic DTOs, catalog.py helpers, bronze writer
   catalog/             ← YML data tree + bootstrap/seed pipeline + CLI
     data/
-      sets/*.yml       ← 105 set files (source of truth for set metadata, 5 eras)
-      cards/{SET}/*.yml← one file per (set, local_id); 10 787 files total
+      sets/*.yml       ← 106 set files (source of truth for set metadata, 5 eras)
+      cards/{SET}/*.yml← one file per (set, local_id); 10 900 files total
     watari_catalog/    ← Python package (bootstrap.py, seed_cards.py, clients, verify_pokellector.py, …)
   scraper_cardrush/    ← curl_cffi-based scraper, rarity-bucket crawling
   scraper_snkrdunk/    ← cookie-auth snkrdunk sold-price scraper
@@ -357,9 +357,9 @@ artwork count including secret rares (e.g., 250 for M2A), which is wrong as a de
 | Step                                               | Result                                                                                         |
 | -------------------------------------------------- | ---------------------------------------------------------------------------------------------- |
 | `alembic upgrade head`                             | clean (head = `008_graded_price_points`)                                                       |
-| `make catalog-seed-sets`                           | 105 sets upserted (25 SV + 6 ME + 30 SWSH/S + 37 SM + 3 CL + 4 promo)                        |
-| `make catalog-bootstrap SET=<code>` × 105          | all 105 sets bootstrapped; 12 005 artworks on disk; **0 null rarity_codes** (promo sets exempt) |
-| `make catalog-seed-cards`                          | artworks + prints seeded across all 105 sets                                                   |
+| `make catalog-seed-sets`                           | 106 sets upserted (25 SV + 7 ME + 30 SWSH/S + 37 SM + 3 CL + 4 promo)                        |
+| `make catalog-bootstrap SET=<code>` × 106          | all 106 sets bootstrapped; 12 118 artworks on disk; **0 null rarity_codes** (promo sets exempt) |
+| `make catalog-seed-cards`                          | artworks + prints seeded across all 106 sets                                                   |
 | `make catalog-verify`                              | 0 orphans · 0 artworks missing img · 471 missing name_ja (M2A/S4A/SM commons — expected)       |
 | `make scrape-cardrush ERA=sv` + `ERA=me`           | ~12.7k Cardrush rows across SV+ME sets. SM/SW: scheduled weekly via CI.                       |
 | `make scrape-snkrdunk ERA=<code>` × SV+ME          | ~104k SNKRDUNK rows. **SV1 still 0 rows** (upstream uses `sv1v` namespace). SM/SW: scheduled weekly via CI. |
@@ -369,11 +369,11 @@ artwork count including secret rares (e.g., 250 for M2A), which is wrong as a de
 
 ### 4.2 Data that's already committed
 
-- `data/sets/*.yml` — **105 sets** across 5 eras (98 original + 7 new: CLF/CLL/CLK `cl` era; MP/SMPR/SP/SVP promo series).
+- `data/sets/*.yml` — **106 sets** across 5 eras (98 original + 7 new: CLF/CLL/CLK `cl` era; MP/SMPR/SP/SVP promo series + M6 Storm Emeralda).
   Historical renames: **M1 → M1L** (official JP abbreviation), **M2** name corrected
   to `インフェルノX/Inferno X`, **SV7A** corrected to `楽園ドラゴーナ/Paradise Dragona`.
   **New sets require bootstrap** — pokellector_slug placeholders need verification before `make catalog-bootstrap`.
-- `data/cards/{SET}/*.yml` — **10 787 files** covering all 98 original sets (CLF/CLL/CLK/MP/SMPR/SP/SVP pending bootstrap).
+- `data/cards/{SET}/*.yml` — **10 900 files** covering 99 sets (98 original + M6; CLF/CLL/CLK/MP/SMPR/SP/SVP pending bootstrap).
   Largest sets: SV4A (360), S4A (330), S8B (285), S12A (261), SM8B/M2A (250), SV8A (237),
   SM12A (226), SV2A (210), SV11W/SV11B (174 each).
 
