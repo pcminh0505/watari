@@ -35,6 +35,11 @@ GuideDep = Annotated[CardmarketGuide, Depends(get_cardmarket_guide)]
 _CATALOG_CACHE = "public, max-age=3600, stale-while-revalidate=300"
 
 
+def _list_cache_header(guide: CardmarketGuide) -> str:
+    """Don't let browsers cache embedded eu_price=null before the guide lands."""
+    return _CATALOG_CACHE if guide.ready else "no-store"
+
+
 def _variant_sort_key(variant: str) -> tuple[int, str]:
     return (0, variant) if variant == "normal" else (1, variant)
 
@@ -307,7 +312,7 @@ async def get_cards_by_sets(
     total, results = _cards_by_sets(set_codes, lang, catalog, limit, offset)
     _attach_eu_prices(results, guide)
     response.headers["X-Total-Count"] = str(total)
-    response.headers["Cache-Control"] = _CATALOG_CACHE
+    response.headers["Cache-Control"] = _list_cache_header(guide)
     return results
 
 
@@ -325,7 +330,7 @@ async def post_cards_by_sets(
     total, results = _cards_by_sets(set_codes, lang, catalog, limit, offset)
     _attach_eu_prices(results, guide)
     response.headers["X-Total-Count"] = str(total)
-    response.headers["Cache-Control"] = _CATALOG_CACHE
+    response.headers["Cache-Control"] = _list_cache_header(guide)
     return results
 
 
@@ -362,7 +367,7 @@ async def search_cards(
     )
     total = len(all_artworks)
     response.headers["X-Total-Count"] = str(total)
-    response.headers["Cache-Control"] = _CATALOG_CACHE
+    response.headers["Cache-Control"] = _list_cache_header(guide)
     page = all_artworks[offset : offset + limit]
     results = [_mem_artwork_to_search_result(a) for a in page]
     await _enrich_search_results_from_db(results, session)

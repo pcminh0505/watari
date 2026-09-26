@@ -242,8 +242,11 @@ def _eu_price(price: float = 237.66, basis: str = "normal") -> EuPrice:
 class FakeCardmarketGuide:
     """Fake CardmarketGuide — prices keyed by (SET_CODE, local_id, variant)."""
 
-    def __init__(self, prices: dict[tuple[str, str, str], EuPrice] | None = None) -> None:
+    def __init__(
+        self, prices: dict[tuple[str, str, str], EuPrice] | None = None, ready: bool = True
+    ) -> None:
         self._prices = prices or {}
+        self.ready = ready
 
     def lookup(self, set_code: str, local_id: str, variant: str = "normal") -> EuPrice | None:
         return self._prices.get((set_code.upper(), local_id, variant))
@@ -1065,6 +1068,32 @@ def test_by_sets_results_include_eu_price() -> None:
     post_resp = client.post("/jp/cards/by-sets", json={"codes": ["SV2A"]})
     assert get_resp.json()[0]["eu_price"]["price_eur"] == 237.66
     assert post_resp.json()[0]["eu_price"]["price_eur"] == 237.66
+
+
+def test_search_no_store_when_guide_not_ready() -> None:
+    guide = FakeCardmarketGuide(ready=False)
+    client = _make_client(catalog=_catalog_with_card(), guide=guide)
+    resp = client.get("/jp/cards/search?q=Muk")
+    assert resp.headers["Cache-Control"] == "no-store"
+
+
+def test_search_max_age_when_guide_ready() -> None:
+    client = _make_client(catalog=_catalog_with_card())
+    resp = client.get("/jp/cards/search?q=Muk")
+    assert "max-age=3600" in resp.headers["Cache-Control"]
+
+
+def test_by_sets_no_store_when_guide_not_ready() -> None:
+    guide = FakeCardmarketGuide(ready=False)
+    client = _make_client(catalog=_catalog_with_card(), guide=guide)
+    resp = client.get("/jp/cards/by-sets?codes=SV2A")
+    assert resp.headers["Cache-Control"] == "no-store"
+
+
+def test_by_sets_max_age_when_guide_ready() -> None:
+    client = _make_client(catalog=_catalog_with_card())
+    resp = client.get("/jp/cards/by-sets?codes=SV2A")
+    assert "max-age=3600" in resp.headers["Cache-Control"]
 
 
 # ---------------------------------------------------------------------------

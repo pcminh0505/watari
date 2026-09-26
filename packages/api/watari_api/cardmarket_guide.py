@@ -120,6 +120,11 @@ class CardmarketGuide:
         logger.info("cardmarket_guide: %d cards mapped to Cardmarket products", len(mapping))
         return cls(mapping)
 
+    @property
+    def ready(self) -> bool:
+        """True once a price guide has been applied."""
+        return self._guide_date is not None
+
     def apply_guide(self, payload: dict[str, Any]) -> int:
         """Swap in a downloaded price guide, keeping only mapped products."""
         wanted = set(self._mapping.values())
@@ -128,6 +133,8 @@ class CardmarketGuide:
             for row in payload.get("priceGuides") or []
             if row.get("idProduct") in wanted
         }
+        if self._mapping and not rows:
+            raise ValueError(f"price guide matched none of {len(wanted)} mapped products")
         self._rows = rows
         self._guide_date = _parse_created_at(payload.get("createdAt"))
         return len(rows)

@@ -112,6 +112,30 @@ def test_lookup_none_when_unmapped_or_missing_from_guide() -> None:
     assert guide.lookup("SV2A", "205") is None
 
 
+def test_apply_guide_rejects_empty_guide_and_keeps_last_good_data() -> None:
+    guide = _guide()
+    before = guide.lookup("SV2A", "089")
+    assert before is not None
+    before_date = guide._guide_date
+
+    with pytest.raises(ValueError):
+        guide.apply_guide(
+            {"createdAt": "2026-09-27T00:00:00+0200", "priceGuides": []}
+        )
+
+    after = guide.lookup("SV2A", "089")
+    assert after is not None
+    assert after == before
+    assert guide._guide_date == before_date
+
+
+def test_ready_flips_after_apply_guide() -> None:
+    guide = CardmarketGuide({("SV2A", "089"): 719531})
+    assert guide.ready is False
+    guide.apply_guide(_PAYLOAD)
+    assert guide.ready is True
+
+
 class _FakeResp:
     def __init__(self, payload: dict[str, Any]) -> None:
         self.content = json.dumps(payload).encode()
@@ -170,6 +194,14 @@ async def test_refresh_loop_is_noop_without_mappings() -> None:
     # Returns immediately: no download attempt, no scheduling.
     await asyncio.wait_for(CardmarketGuide({}).run_refresh_loop(sleep=fake_sleep), timeout=1)
     assert sleeps == []
+
+
+def test_load_mappings_reads_committed_cardmarket_maps() -> None:
+    from watari_catalog.paths import cardmarket_dir
+
+    mapping = load_mappings(cardmarket_dir())
+    assert mapping
+    assert mapping[("SV2A", "205")] == 719658
 
 
 def test_load_mappings_drops_ids_shared_by_several_cards(tmp_path: Path) -> None:
