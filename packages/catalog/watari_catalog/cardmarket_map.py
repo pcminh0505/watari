@@ -33,17 +33,23 @@ PRODUCT_CATALOG_URL = (
     "https://downloads.s3.cardmarket.com/productCatalog/productList/products_singles_6.json"
 )
 
-# Sets without a YAML tcgdex_id whose TCGdex JP id differs from our set_code
-# (our promo set_codes must stay hyphen-free; TCGdex's are hyphenated).
+# TCGdex JP ids that differ from our set_code (our promo set_codes must stay
+# hyphen-free; TCGdex's are hyphenated).
 _TCGDEX_ID_OVERRIDE: dict[str, str] = {"SVP": "SV-P", "MP": "M-P"}
 
 FetchId = Callable[[str], Awaitable[int | None]]
 
 
-def resolve_tcgdex_id(set_code: str, tcgdex_id: str | None) -> str:
-    """TCGdex JP set id: YAML value, else override, else set_code (ids are case-insensitive)."""
+def resolve_tcgdex_id(set_code: str) -> str:
+    """TCGdex JP set id for one of our set codes.
+
+    TCGdex JP ids are case-insensitive and match our set_code, except the
+    hyphenated promo series. The set YAML ``tcgdex_id`` is deliberately not
+    used: several values there are not TCGdex JP ids (``sv01`` for SV1S,
+    ``SM1+`` for SM1P, ...).
+    """
     code = set_code.upper()
-    return tcgdex_id or _TCGDEX_ID_OVERRIDE.get(code, code)
+    return _TCGDEX_ID_OVERRIDE.get(code, code)
 
 
 def extract_id_product(card: dict[str, Any] | None) -> int | None:
@@ -161,7 +167,7 @@ async def run(*, sets: list[str] | None, refresh: bool = False, concurrency: int
             if not local_ids:
                 logger.info("cardmarket-map: %s has no card YAMLs; skipped", set_code)
                 continue
-            tcgdex_id = resolve_tcgdex_id(set_code, row.get("tcgdex_id"))
+            tcgdex_id = resolve_tcgdex_id(set_code)
             path = cardmarket_yaml_path(set_code)
             existing = read_mapping(path)
 

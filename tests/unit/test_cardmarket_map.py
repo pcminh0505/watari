@@ -14,17 +14,14 @@ from watari_catalog.cardmarket_map import (
 )
 
 
-def test_resolve_tcgdex_id_prefers_yaml_value() -> None:
-    assert resolve_tcgdex_id("SV2A", "sv2a") == "sv2a"
+def test_resolve_tcgdex_id_uses_set_code() -> None:
+    assert resolve_tcgdex_id("SV1S") == "SV1S"
+    assert resolve_tcgdex_id("m2a") == "M2A"
 
 
 def test_resolve_tcgdex_id_promo_override() -> None:
-    assert resolve_tcgdex_id("SVP", None) == "SV-P"
-    assert resolve_tcgdex_id("MP", "") == "M-P"
-
-
-def test_resolve_tcgdex_id_falls_back_to_set_code() -> None:
-    assert resolve_tcgdex_id("M2A", None) == "M2A"
+    assert resolve_tcgdex_id("SVP") == "SV-P"
+    assert resolve_tcgdex_id("MP") == "M-P"
 
 
 def test_extract_id_product() -> None:
