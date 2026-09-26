@@ -37,6 +37,18 @@ export interface ArtworkDetail {
   variants: VariantRef[];
 }
 
+/** Mirrors packages/api/watari_api/schemas.py: EuPrice (native EUR, Cardmarket price guide) */
+export interface EuPrice {
+  id_product: number;
+  url: string;
+  price_eur: number;
+  trend_eur: number | null;
+  avg7_eur: number | null;
+  avg30_eur: number | null;
+  basis: "normal" | "mirror";
+  guide_date: string;
+}
+
 /** Mirrors packages/api/watari_api/schemas.py: ArtworkSearchResult */
 export interface ArtworkSearchResult extends ArtworkDetail {
   set_name_ja: string | null;
@@ -45,6 +57,7 @@ export interface ArtworkSearchResult extends ArtworkDetail {
   cardrush_a_floor_jpy: number | null;
   market_price_jpy: number | null;
   market_price_source_used: "snkrdunk" | "cardrush" | null;
+  eu_price: EuPrice | null;
 }
 
 /** Mirrors packages/api/watari_api/schemas.py: LatestPrice */

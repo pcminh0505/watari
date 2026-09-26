@@ -180,6 +180,8 @@ export function CardsSearchPage() {
               <option value="rarity_asc">Rarity (asc)</option>
               <option value="price_desc">Market price (desc)</option>
               <option value="price_asc">Market price (asc)</option>
+              <option value="eu_price_desc">EU price (desc)</option>
+              <option value="eu_price_asc">EU price (asc)</option>
             </select>
             <svg className="pointer-events-none absolute right-3 top-1/2 -translate-y-1/2 h-4 w-4 text-slate-400" viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="1.8">
               <path d="M4 6l4 4 4-4" strokeLinecap="round" strokeLinejoin="round" />

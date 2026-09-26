@@ -1,5 +1,6 @@
 import { Link } from "react-router";
 import { useCurrency } from "../../contexts/CurrencyContext";
+import { formatEUR } from "../../lib/formatters";
 import type { ArtworkSearchResult } from "../../types/api";
 import { Badge } from "../ui/Badge";
 import { CardPlaceholder } from "./CardPlaceholder";
@@ -50,6 +51,11 @@ export function SearchCardThumbnail({ card }: SearchCardThumbnailProps) {
         <p className="mt-1 text-sm font-semibold text-primary-600 dark:text-primary-400 text-glow">
           {displayPrice != null ? formatPrice(displayPrice) : "—"}
         </p>
+        {card.eu_price && (
+          <p className="text-[11px] text-slate-500 dark:text-slate-400">
+            EU {formatEUR(card.eu_price.price_eur)}
+          </p>
+        )}
       </div>
     </Link>
   );

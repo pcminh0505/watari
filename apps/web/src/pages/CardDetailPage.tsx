@@ -2,9 +2,10 @@ import { useMemo, useState } from "react";
 import { Link, useParams } from "react-router";
 import { useCard } from "../api/cards";
 import { useSet } from "../api/sets";
-import { useGradedPriceHistory, useInternationalPrices, useLatestPrices, usePriceHistory, useSpread } from "../api/prices";
+import { useEuPrice, useGradedPriceHistory, useInternationalPrices, useLatestPrices, usePriceHistory, useSpread } from "../api/prices";
 import { CardPlaceholder } from "../components/cards/CardPlaceholder";
 import { CardDetailSkeleton } from "../components/cards/CardDetailSkeleton";
+import { EuPriceCard } from "../components/prices/EuPriceCard";
 import { GradedPriceHistoryChart } from "../components/prices/GradedPriceHistoryChart";
 import { InternationalPriceTable } from "../components/prices/InternationalPriceTable";
 import { PriceHistoryChart } from "../components/prices/PriceHistoryChart";
@@ -30,6 +31,7 @@ export function CardDetailPage() {
 
   const { data: prices, isPending: isPricesPending } = useLatestPrices(setCode, localId, variant);
   const { data: spread, isPending: isSpreadPending } = useSpread(setCode, localId, variant);
+  const { data: euPrice } = useEuPrice(setCode, localId, variant);
 
   // Derive available conditions from the latest prices data.
   // "A-" (Cardrush) is normalized to "B" (SNKRDUNK equivalent).
@@ -183,6 +185,15 @@ export function CardDetailPage() {
                 </button>
               ))}
             </div>
+          )}
+
+          {euPrice && (
+            <section className="mb-8 glass-panel p-5">
+              <h3 className="mb-3 text-sm font-semibold text-slate-800 dark:text-slate-200">
+                Cardmarket (EU)
+              </h3>
+              <EuPriceCard price={euPrice} />
+            </section>
           )}
 
           <section className="mb-8 glass-panel p-5">

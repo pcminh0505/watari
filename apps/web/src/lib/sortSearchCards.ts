@@ -6,6 +6,10 @@ function displayPrice(c: ArtworkSearchResult): number | null {
   return c.market_price_jpy ?? c.cardrush_a_floor_jpy ?? null;
 }
 
+function euPrice(c: ArtworkSearchResult): number | null {
+  return c.eu_price?.price_eur ?? null;
+}
+
 export function sortSearchCards(cards: ArtworkSearchResult[], sort: SortKey): ArtworkSearchResult[] {
   const rarityOrder = (code: string | null) => RARITY_SORT_ORDER[code ?? ""] ?? 99;
 
@@ -31,6 +35,10 @@ export function sortSearchCards(cards: ArtworkSearchResult[], sort: SortKey): Ar
         return (displayPrice(b) ?? -1) - (displayPrice(a) ?? -1);
       case "price_asc":
         return (displayPrice(a) ?? Infinity) - (displayPrice(b) ?? Infinity);
+      case "eu_price_desc":
+        return (euPrice(b) ?? -1) - (euPrice(a) ?? -1);
+      case "eu_price_asc":
+        return (euPrice(a) ?? Infinity) - (euPrice(b) ?? Infinity);
     }
   });
 }

@@ -1,6 +1,7 @@
 import { Link } from "react-router";
 import { useMarketPrice } from "../../api/prices";
 import { useCurrency } from "../../contexts/CurrencyContext";
+import { formatEUR } from "../../lib/formatters";
 import type { ArtworkDetail, ArtworkSearchResult } from "../../types/api";
 import { Badge } from "../ui/Badge";
 import { CardPlaceholder } from "./CardPlaceholder";
@@ -40,6 +41,7 @@ export function CardThumbnail({ card }: CardThumbnailProps) {
 
   const market = hasEmbedded ? embeddedMarket : fetchedMarket;
   const isLoadingPrice = !hasEmbedded && isPending;
+  const euPrice = hasEmbedded ? card.eu_price ?? null : null;
 
   return (
     <Link
@@ -83,6 +85,11 @@ export function CardThumbnail({ card }: CardThumbnailProps) {
             {formatPrice(market.market_price_jpy)}
           </p>
         ) : null}
+        {euPrice && (
+          <p className="text-[11px] text-slate-500 dark:text-slate-400">
+            EU {formatEUR(euPrice.price_eur)}
+          </p>
+        )}
       </div>
     </Link>
   );

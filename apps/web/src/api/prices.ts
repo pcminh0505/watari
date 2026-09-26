@@ -1,5 +1,5 @@
 import { useQuery } from "@tanstack/react-query";
-import type { GradedPricePointOut, InternationalPrice, LatestPrice, MarketPriceOut, PricePointOut, SpreadRow } from "../types/api";
+import type { EuPrice, GradedPricePointOut, InternationalPrice, LatestPrice, MarketPriceOut, PricePointOut, SpreadRow } from "../types/api";
 import { apiFetch } from "./client";
 
 export function useLatestPrices(
@@ -87,6 +87,22 @@ export function useInternationalPrices(
         `/jp/cards/${setCode}/${localId}/international-prices?variant=${variant}`
       ),
     staleTime: 5 * 60 * 1000,
+    enabled: setCode.length > 0 && localId.length > 0,
+  });
+}
+
+export function useEuPrice(setCode: string, localId: string, variant: string) {
+  return useQuery<EuPrice | null>({
+    queryKey: ["eu-price", setCode, localId, variant],
+    queryFn: () =>
+      apiFetch<EuPrice>(
+        `/jp/cards/${setCode}/${localId}/eu-price?variant=${variant}`
+      ).catch((err: Error) => {
+        // 404 means no Cardmarket mapping/price for this card — treat as null
+        if (err.message.includes("404")) return null;
+        throw err;
+      }),
+    staleTime: 30 * 60 * 1000,
     enabled: setCode.length > 0 && localId.length > 0,
   });
 }
