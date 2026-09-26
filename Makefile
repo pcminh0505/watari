@@ -1,6 +1,6 @@
 .PHONY: up down test lint format migrate \
         catalog-seed-sets catalog-bootstrap catalog-seed-cards catalog-verify catalog-verify-pokellector \
-        catalog-audit catalog-audit-fetch catalog-audit-diff catalog-audit-apply catalog-audit-rollout \
+        catalog-audit catalog-audit-fetch catalog-audit-diff catalog-audit-apply catalog-audit-rollout catalog-cardmarket-map \
         sync-set-symbols \
         scrape-cardrush scrape-snkrdunk \
         api api-dev \
@@ -94,6 +94,11 @@ catalog-audit-rollout:
 	echo "Applying AUTO_FILL from $$TSV"; \
 	uv run python -m watari_catalog audit-apply --tsv "$$TSV" --auto
 	uv run python -m watari_catalog seed-cards --set $(SET)
+
+# Cardmarket idProduct maps (TCGdex JP → data/cardmarket/<SET>.yml). Generated; don't hand-edit.
+#         Usage: make catalog-cardmarket-map [SET=SV2A] [REFRESH=1]
+catalog-cardmarket-map:
+	uv run python -m watari_catalog cardmarket-map $(if $(SET),--set $(SET)) $(if $(REFRESH),--refresh)
 
 # Rebuild apps/web SET_SYMBOL_URLS from Bulbapedia markdown export.
 # Usage: make sync-set-symbols [SYMBOLS_MD=/abs/path/to/List_of_...md]

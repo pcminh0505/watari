@@ -47,6 +47,11 @@ Commands (v3 pipeline):
         ``--auto`` writes only AUTO_FILL rows; ``--auto --conflicts`` also
         applies CONFLICT rows (oracle wins). ``--review`` writes the
         operator-edited TSV and prepends ``# manual: true`` to each file.
+
+    cardmarket-map [--set SV2A ...] [--refresh] [--concurrency 5]
+        Write ``data/cardmarket/<SET>.yml`` (local_id → Cardmarket idProduct,
+        taken from TCGdex JP). Only unmapped cards are fetched unless
+        ``--refresh``. No ``--set`` → every set.
 """
 
 from __future__ import annotations
@@ -191,6 +196,18 @@ def _build_parser() -> argparse.ArgumentParser:
         help="Show what would change without writing",
     )
 
+    cm = sub.add_parser(
+        "cardmarket-map",
+        help="Write data/cardmarket/<SET>.yml (local_id → Cardmarket idProduct via TCGdex JP)",
+    )
+    cm.add_argument("--set", dest="sets", action="append", default=None)
+    cm.add_argument(
+        "--refresh",
+        action="store_true",
+        help="Re-fetch every card instead of only unmapped ones",
+    )
+    cm.add_argument("--concurrency", type=int, default=5)
+
     return p
 
 
@@ -251,6 +268,14 @@ async def _dispatch(args: argparse.Namespace) -> int:
             review=args.review,
             include_conflicts=args.conflicts,
             dry_run=args.dry_run,
+        )
+    if args.command == "cardmarket-map":
+        from watari_catalog import cardmarket_map
+
+        return await cardmarket_map.run(
+            sets=args.sets,
+            refresh=args.refresh,
+            concurrency=args.concurrency,
         )
     return 1
 

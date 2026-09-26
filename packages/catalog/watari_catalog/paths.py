@@ -15,7 +15,10 @@ can edit/diff YML files in reviews without Python caching shenanigans::
         │   │   └── ...
         │   └── M2A/
         │       └── ...
-        └── audit/           ← one YML per set per oracle (TCGCollector etc.)
+        ├── audit/           ← one YML per set per oracle (TCGCollector etc.)
+        │   ├── SV2A.yml
+        │   └── ...
+        └── cardmarket/      ← generated local_id → Cardmarket idProduct maps
             ├── SV2A.yml
             └── ...
 
@@ -62,6 +65,16 @@ def audit_dir() -> pathlib.Path:
 def audit_yaml_path(set_code: str) -> pathlib.Path:
     """Path of a single set's audit sidecar, e.g. ``data/audit/SV2A.yml``."""
     return audit_dir() / f"{set_code.upper()}.yml"
+
+
+def cardmarket_dir() -> pathlib.Path:
+    """Directory holding generated Cardmarket idProduct maps (one YML per set)."""
+    return data_dir() / "cardmarket"
+
+
+def cardmarket_yaml_path(set_code: str) -> pathlib.Path:
+    """Path of a set's Cardmarket map, e.g. ``data/cardmarket/SV2A.yml``."""
+    return cardmarket_dir() / f"{set_code.upper()}.yml"
 
 
 def reports_dir() -> pathlib.Path:
