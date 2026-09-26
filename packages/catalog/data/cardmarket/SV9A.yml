@@ -1,0 +1,14 @@
+set_code: SV9A
+source: tcgdex
+tcgdex_id: SV9A
+fetched_at: '2026-09-26T19:24:56.045590+00:00'
+totals:
+  artworks: 92
+  mapped: 6
+products:
+  '002': 778391
+  '022': 821707
+  039: 699710
+  '064': 778391
+  '071': 821707
+  '074': 699710
