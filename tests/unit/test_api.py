@@ -214,11 +214,8 @@ class FakePriceProxy:
     async def snkrdunk_raw_history(self, *args: Any, **kwargs: Any) -> list[dict[str, Any]]:
         return []
 
-    async def tcgdex_international(self, *args: Any, **kwargs: Any) -> list[dict[str, Any]]:
-        return self._intl_rows
-
     async def pricecharting_international(self, *args: Any, **kwargs: Any) -> list[dict[str, Any]]:
-        return []
+        return self._intl_rows
 
 
 # ---------------------------------------------------------------------------
@@ -950,30 +947,26 @@ def test_graded_prices_404_for_missing_card() -> None:
 # ---------------------------------------------------------------------------
 
 
-def test_international_prices_returns_rows() -> None:
+def test_international_prices_returns_pricecharting_rows() -> None:
     now = datetime(2025, 4, 1, tzinfo=UTC)
     intl = [
         {
             "card_id": "jp-sv2a-089-normal",
-            "market": "tcgplayer",
-            "condition_label": "Market",
-            "price_jpy": 50,
-            "price_raw": 0.32,
+            "market": "pricecharting",
+            "condition_label": "Ungraded",
+            "price_jpy": 1500,
+            "price_raw": 9.5,
             "currency": "USD",
             "observed_at": now,
-            "external_url": None,
+            "external_url": "https://www.pricecharting.com/game/x/muk-89",
         }
     ]
-    proxy = FakePriceProxy(intl_rows=intl)
-    client = _make_client(catalog=_catalog_with_card(), proxy=proxy)
+    client = _make_client(catalog=_catalog_with_card(), proxy=FakePriceProxy(intl_rows=intl))
     resp = client.get("/jp/cards/SV2A/089/international-prices")
     assert resp.status_code == 200
     rows = resp.json()
-    assert len(rows) == 1
-    assert rows[0]["market"] == "tcgplayer"
-    assert rows[0]["condition_label"] == "Market"
-    assert rows[0]["price_jpy"] == 50
-    assert rows[0]["currency"] == "USD"
+    assert [r["market"] for r in rows] == ["pricecharting"]
+    assert rows[0]["condition_label"] == "Ungraded"
 
 
 def test_international_prices_empty_when_proxy_returns_nothing() -> None:

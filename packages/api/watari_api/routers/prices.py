@@ -278,33 +278,24 @@ async def international_prices(
     response: Response,
     variant: str = Query("normal"),
 ) -> Any:
-    """Cardmarket EUR (via TCGdex JP) + PriceCharting eBay, in parallel.
+    """PriceCharting eBay aggregates for the Japanese card, converted to JPY.
 
-    Prices reflect the Japanese card itself (not the English equivalent).
-    All prices are converted to JPY server-side using Frankfurter exchange rates.
-    Returns [] when no western price data is available (e.g. SM/SWSH cards not
-    indexed by TCGdex JP or PriceCharting).
+    Cardmarket (EU) prices moved to ``/eu-price``. Returns [] when PriceCharting
+    has no match.
     """
     card_id = _resolve_card_id(
         catalog, lang=lang, set_code=set_code, local_id=local_id, variant=variant
     )
     artwork = catalog.get_artwork(set_code, local_id)
     mem_set = catalog.get_set(set_code, language=lang)
-
-    tcgdex_id = mem_set.tcgdex_id if mem_set else None
     name_en = artwork.name_en if artwork else None
     set_name_en = mem_set.name_en if mem_set else None
 
-    tcgdex_rows, pc_rows = await asyncio.gather(
-        proxy.tcgdex_international(set_code, local_id, tcgdex_id, card_id),
-        proxy.pricecharting_international(set_code, local_id, name_en, set_name_en, card_id),
+    rows = await proxy.pricecharting_international(
+        set_code, local_id, name_en, set_name_en, card_id
     )
-
     response.headers["Cache-Control"] = _PRICE_CACHE
-    return [
-        InternationalPrice.model_validate(r)
-        for r in [*tcgdex_rows, *pc_rows]
-    ]
+    return [InternationalPrice.model_validate(r) for r in rows]
 
 
 @router.get("/eu-price", response_model=EuPrice)

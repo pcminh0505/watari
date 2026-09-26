@@ -20,7 +20,6 @@ from typing import Any
 from urllib.parse import quote
 
 import httpx
-from watari_catalog.tcgdex_client import TcgdexClient
 from watari_core.catalog import make_card_id, pad_local_id
 from watari_snkrdunk.client import SnkrdunkClient
 from watari_snkrdunk.parser import parse_sales_history
@@ -52,15 +51,6 @@ _PC_PRICE_IDS: dict[str, str] = {
     "graded-price-PSA-8": "PSA 8",
     "graded-price-PSA-7": "PSA 7",
 }
-
-# Maps JP TCGdex locale set IDs → pokemontcg.io set IDs for TCGPlayer price lookup.
-# pokemontcg.io uses a compact notation (no leading zeros, "pt5" instead of ".5").
-# NOTE: pokemontcg.io integration was removed — it only indexes English cards,
-# not Japanese cards.  International prices now come from TCGdex JP locale
-# (Cardmarket EUR for JP cards) and PriceCharting (eBay sold comps).
-# TCGPlayer USD prices for JP cards ("pokemon-japan" on TCGPlayer) are not
-# yet implemented; they require the TCGPlayer API or direct scraping.
-
 
 @dataclass
 class _CacheEntry:
@@ -112,8 +102,9 @@ class PriceProxy:
 
     Sources:
     - Snkrdunk (JP sold comps + graded)
-    - TCGdex JP locale (Cardmarket EUR for JP cards)
     - PriceCharting (eBay aggregated raw + PSA graded)
+
+    Cardmarket (EU) prices live in :mod:`watari_api.cardmarket_guide`.
     """
 
     def __init__(self, redis: Any | None = None) -> None:
@@ -124,8 +115,6 @@ class PriceProxy:
         # International price caches
         self._fx_cache: dict[str, _CacheEntry] = {}
         self._fx_lock: asyncio.Lock = asyncio.Lock()
-        self._tcgdex_cache: dict[str, _CacheEntry] = {}
-        self._tcgdex_locks: dict[str, asyncio.Lock] = {}
         self._pc_cache: dict[str, _CacheEntry] = {}
         self._pc_locks: dict[str, asyncio.Lock] = {}
         self._pc_sem: asyncio.Semaphore = asyncio.Semaphore(10)
@@ -347,101 +336,6 @@ class PriceProxy:
             self._fx_cache[key] = _CacheEntry(data=rates)
             return rates
 
-    # --- TCGdex (TCGPlayer + Cardmarket) -------------------------------------
-
-    async def fetch_tcgdex_prices(
-        self, set_code: str, local_id: str, tcgdex_id: str
-    ) -> dict[str, Any] | None:
-        """Fetch EN TCGdex card payload (contains tcgplayer + cardmarket price blocks).
-
-        Returns None if the card is not found in TCGdex EN or on any error.
-        Result is cached for 30 min.
-        """
-        key = f"tcgdex:{set_code.upper()}/{pad_local_id(local_id)}"
-
-        entry = self._tcgdex_cache.get(key)
-        if entry and not _is_stale(entry):
-            return entry.data  # type: ignore[return-value]
-
-        lock = self._tcgdex_locks.setdefault(key, asyncio.Lock())
-        async with lock:
-            entry = self._tcgdex_cache.get(key)
-            if entry and not _is_stale(entry):
-                return entry.data  # type: ignore[return-value]
-
-            data = await _do_fetch_tcgdex(tcgdex_id, local_id)
-            self._tcgdex_cache[key] = _CacheEntry(data=data)
-            return data
-
-    async def tcgdex_international(
-        self,
-        set_code: str,
-        local_id: str,
-        tcgdex_id: str | None,
-        card_id: str,
-    ) -> list[dict[str, Any]]:
-        """Return InternationalPrice-like dicts for Cardmarket (via TCGdex JP locale).
-
-        Uses the JP locale so prices reflect the Japanese card itself on Cardmarket,
-        not the English equivalent card.  TCGPlayer prices for JP cards are not
-        available via this path (tcgplayer is always null in TCGdex JP responses).
-        """
-        if not tcgdex_id:
-            return []
-
-        data = await self.fetch_tcgdex_prices(set_code, local_id, tcgdex_id)
-        if not data:
-            return []
-
-        # TCGdex EN API nests all price data under "pricing".
-        pricing: dict[str, Any] = data.get("pricing") or {}
-        rates = await self._fetch_fx_rates()
-        results: list[dict[str, Any]] = []
-
-        # --- TCGPlayer (USD) -------------------------------------------------
-        tcp: dict[str, Any] = pricing.get("tcgplayer") or {}
-        if tcp:
-            tcp_updated = _parse_tcgdex_date(tcp.get("updated") or "")
-            # New format: prices are direct fields on the tcgplayer block.
-            for field_key, label in [("market", "Market"), ("mid", "Mid"), ("low", "Low")]:
-                price = tcp.get(field_key)
-                if isinstance(price, (int, float)) and price > 0:
-                    results.append({
-                        "card_id": card_id,
-                        "market": "tcgplayer",
-                        "condition_label": label,
-                        "price_jpy": _to_jpy(float(price), "USD", rates),
-                        "price_raw": float(price),
-                        "currency": "USD",
-                        "observed_at": tcp_updated,
-                        "external_url": None,
-                    })
-
-        # --- Cardmarket (EUR) ------------------------------------------------
-        cm: dict[str, Any] = pricing.get("cardmarket") or {}
-        if cm:
-            cm_updated = _parse_tcgdex_date(cm.get("updated") or "")
-            # New format: avg/trend/low are direct fields on the cardmarket block.
-            for field_key, label in [
-                ("avg", "Avg"),
-                ("trend", "Trend"),
-                ("low", "Low"),
-            ]:
-                price = cm.get(field_key)
-                if isinstance(price, (int, float)) and price > 0:
-                    results.append({
-                        "card_id": card_id,
-                        "market": "cardmarket",
-                        "condition_label": label,
-                        "price_jpy": _to_jpy(float(price), "EUR", rates),
-                        "price_raw": float(price),
-                        "currency": "EUR",
-                        "observed_at": cm_updated,
-                        "external_url": None,
-                    })
-
-        return results
-
     # --- PriceCharting (eBay aggregated) -------------------------------------
 
     async def fetch_pricecharting(
@@ -550,41 +444,6 @@ def _to_jpy(price: float, currency: str, rates: dict[str, float]) -> int:
     if rate <= 0:
         rate = _FX_FALLBACK.get(currency, 0.006)
     return max(1, int(price / rate))
-
-
-# --- TCGdex helpers ----------------------------------------------------------
-
-
-def _parse_tcgdex_date(value: Any) -> datetime:
-    """Parse a TCGdex date value → UTC datetime.
-
-    Accepts an ISO-8601 string (``"2026-05-21T00:45:48.000Z"``) or the legacy
-    dict form ``{year, month, day}``.  Falls back to now() on any parse error.
-    """
-    try:
-        if isinstance(value, str) and value:
-            return datetime.fromisoformat(value.replace("Z", "+00:00"))
-        if isinstance(value, dict):
-            return datetime(int(value["year"]), int(value["month"]), int(value["day"]), tzinfo=UTC)
-    except (KeyError, ValueError, TypeError):
-        pass
-    return datetime.now(UTC)
-
-
-async def _do_fetch_tcgdex(tcgdex_id: str, local_id: str) -> dict[str, Any] | None:
-    """Fetch a JP TCGdex card payload. Returns None on 404 or any error.
-
-    Uses the Japanese locale so prices (Cardmarket EUR) reflect the Japanese
-    card itself, not the English equivalent.  ``local_id`` is zero-padded
-    (e.g. "089") — TCGdex JP uses padded IDs.
-    """
-    logger.info("price_proxy: tcgdex fetch %s-%s", tcgdex_id, local_id)
-    try:
-        async with TcgdexClient(language="ja", timeout_sec=10.0, request_delay_sec=0.0) as client:
-            return await client.get_card(tcgdex_id, local_id)
-    except Exception:
-        logger.exception("price_proxy: tcgdex fetch failed for %s-%s", tcgdex_id, local_id)
-        return None
 
 
 # --- PriceCharting helpers ---------------------------------------------------
