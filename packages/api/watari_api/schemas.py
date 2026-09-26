@@ -9,7 +9,7 @@ the admin scrape-health endpoint, which have no ORM model.
 from __future__ import annotations
 
 from datetime import date, datetime
-from typing import Any
+from typing import Any, Literal
 
 from pydantic import BaseModel, model_validator
 
@@ -88,6 +88,25 @@ class CardBatchItem(BaseModel):
     market_price_jpy: int | None = None
     market_price_source_used: str | None = None
     market_price_variant: str | None = None
+
+
+class EuPrice(BaseModel):
+    """Cardmarket price-guide values for one JP card, in native EUR.
+
+    Source is Cardmarket's public daily price guide, which has no condition or
+    language breakdown. Its ``low`` field (cheapest listing of *any* condition)
+    is deliberately not exposed. ``basis="mirror"`` rows come from the
+    reverse-holo fields, which combine Poké Ball and Master Ball mirrors.
+    """
+
+    id_product: int
+    url: str  # product page pre-filtered to Japanese + Near Mint or better
+    price_eur: float  # headline/sort value: trend → avg30 → avg7
+    trend_eur: float | None = None
+    avg7_eur: float | None = None
+    avg30_eur: float | None = None
+    basis: Literal["normal", "mirror"]
+    guide_date: datetime
 
 
 class ArtworkSearchResult(ArtworkDetail):
