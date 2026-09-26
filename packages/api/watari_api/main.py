@@ -27,7 +27,7 @@ from watari_catalog.tcgdex_client import TcgdexClient
 
 from watari_api.catalog_mem import MemCatalog
 from watari_api.deps import validate_lang
-from watari_api.price_proxy import PriceProxy
+from watari_api.price_proxy import FRANKFURTER_LATEST_URL, PriceProxy
 from watari_api.ratelimit import RateLimiter, parse_rate_limits, rate_limit_dep
 from watari_api.routers import admin, cards, prices, sets
 
@@ -131,19 +131,20 @@ def create_app() -> FastAPI:
 
     @app.get("/rates", tags=["utility"])
     async def exchange_rates() -> dict[str, float]:
-        """Proxy JPY→USD/VND exchange rates from Frankfurter.
+        """Proxy JPY→USD/EUR exchange rates from Frankfurter.
 
         Runs server-side so the browser is never blocked by Frankfurter's
-        missing CORS headers.
+        missing CORS headers. Frankfurter (ECB data) has no VND; the web app
+        keeps its own VND fallback.
         """
         try:
-            async with httpx.AsyncClient(timeout=5.0) as client:
+            async with httpx.AsyncClient(timeout=5.0, follow_redirects=True) as client:
                 resp = await client.get(
-                    "https://api.frankfurter.app/latest?from=JPY&to=USD,VND"
+                    FRANKFURTER_LATEST_URL, params={"from": "JPY", "to": "USD,EUR"}
                 )
                 resp.raise_for_status()
-                data = resp.json()
-            return {"USD": data["rates"]["USD"], "VND": data["rates"]["VND"]}
+                rates = resp.json()["rates"]
+            return {"USD": float(rates["USD"]), "EUR": float(rates["EUR"])}
         except Exception as exc:
             raise HTTPException(status_code=502, detail="exchange rate service unavailable") from exc
 

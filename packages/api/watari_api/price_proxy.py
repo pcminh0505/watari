@@ -36,6 +36,9 @@ _REDIS_TTL_SEC = int(CACHE_TTL.total_seconds()) + 120
 # --- International price constants ----------------------------------------
 
 _FX_TTL = timedelta(hours=1)
+# Frankfurter moved from api.frankfurter.app (now a 301) to this host.
+# ECB data: has USD and EUR, but no VND.
+FRANKFURTER_LATEST_URL = "https://api.frankfurter.dev/v1/latest"
 # Fallback rates: 1 JPY expressed in the foreign currency.
 # To convert foreign price → JPY: foreign_price / rate.
 _FX_FALLBACK: dict[str, float] = {"USD": 0.0065, "EUR": 0.0083}
@@ -520,9 +523,9 @@ def _sd_key(set_code: str, local_id: str) -> str:
 async def _do_fetch_fx_rates() -> dict[str, float]:
     """Fetch JPY→USD,EUR rates from Frankfurter. Falls back to _FX_FALLBACK on error."""
     try:
-        async with httpx.AsyncClient(timeout=5.0) as client:
+        async with httpx.AsyncClient(timeout=5.0, follow_redirects=True) as client:
             resp = await client.get(
-                "https://api.frankfurter.app/latest",
+                FRANKFURTER_LATEST_URL,
                 params={"from": "JPY", "to": "USD,EUR"},
             )
             resp.raise_for_status()
