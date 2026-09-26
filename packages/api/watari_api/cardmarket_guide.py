@@ -15,6 +15,7 @@ from __future__ import annotations
 import asyncio
 import json
 import logging
+from collections import Counter
 from collections.abc import Awaitable, Callable
 from datetime import UTC, datetime
 from pathlib import Path
@@ -44,7 +45,12 @@ CardKey = tuple[str, str]  # (SET_CODE, padded local_id)
 
 
 def load_mappings(directory: Path) -> dict[CardKey, int]:
-    """Read every ``<SET>.yml`` map in ``directory`` into one lookup dict."""
+    """Read every ``<SET>.yml`` map in ``directory`` into one lookup dict.
+
+    Cardmarket has one product per artwork, so an idProduct claimed by more
+    than one card is a TCGdex data error; every card sharing it is dropped
+    (we can't tell which one is right).
+    """
     mapping: dict[CardKey, int] = {}
     if not directory.is_dir():
         return mapping
@@ -53,7 +59,15 @@ def load_mappings(directory: Path) -> dict[CardKey, int]:
         set_code = str(raw.get("set_code") or path.stem).upper()
         for local_id, pid in (raw.get("products") or {}).items():
             mapping[(set_code, pad_local_id(str(local_id)))] = int(pid)
-    return mapping
+    counts = Counter(mapping.values())
+    ambiguous = sorted(key for key, pid in mapping.items() if counts[pid] > 1)
+    if ambiguous:
+        logger.warning(
+            "cardmarket_guide: dropped %d cards sharing an idProduct: %s",
+            len(ambiguous),
+            ", ".join(f"{s}/{local}={mapping[(s, local)]}" for s, local in ambiguous),
+        )
+    return {key: pid for key, pid in mapping.items() if counts[pid] == 1}
 
 
 def _eur(row: dict[str, Any], key: str) -> float | None:

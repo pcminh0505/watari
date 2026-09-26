@@ -170,3 +170,14 @@ async def test_refresh_loop_is_noop_without_mappings() -> None:
     # Returns immediately: no download attempt, no scheduling.
     await asyncio.wait_for(CardmarketGuide({}).run_refresh_loop(sleep=fake_sleep), timeout=1)
     assert sleeps == []
+
+
+def test_load_mappings_drops_ids_shared_by_several_cards(tmp_path: Path) -> None:
+    (tmp_path / "SV9A.yml").write_text(
+        "set_code: SV9A\nproducts:\n  '002': 778391\n  '064': 778391\n  '010': 800001\n",
+        encoding="utf-8",
+    )
+    (tmp_path / "SVP.yml").write_text(
+        "set_code: SVP\nproducts:\n  '262': 800001\n  '100': 900001\n", encoding="utf-8"
+    )
+    assert load_mappings(tmp_path) == {("SVP", "100"): 900001}
