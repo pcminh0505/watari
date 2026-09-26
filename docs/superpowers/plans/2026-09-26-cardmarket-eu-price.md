@@ -12,7 +12,8 @@
 
 ## Global Constraints
 
-- Run Python tests with `uv run python -m pytest` (baseline: **404 passed**). Lint with `make lint` (ruff, line-length 100).
+- Run Python tests with `uv run python -m pytest` (baseline: **404 passed**).
+- Lint: ruff, line-length 100, tests included. The repo baseline already has **46 pre-existing ruff errors** (some in files this plan touches: `main.py`, `routers/prices.py`, `routers/cards.py`, `schemas.py`, `deps.py`, `price_proxy.py`, `tests/unit/test_api.py`). Rule: **introduce no new ruff errors** — run `uv run ruff check <touched files> --output-format concise` before and after your change and compare. Do not fix unrelated pre-existing errors.
 - FastAPI dependencies use `Annotated[..., Depends(...)]` aliases (ruff B008). Never add `Depends(rate_limit_dep)` to sub-routers.
 - Mapping files are generated with PyYAML and never hand-edited.
 - `EuPrice` never exposes Cardmarket's `low` (cheapest listing of any condition/language).
@@ -804,7 +805,14 @@ async def test_refresh_loop_retries_sooner_after_failure(monkeypatch: pytest.Mon
 
 
 async def test_refresh_loop_is_noop_without_mappings() -> None:
-    await CardmarketGuide({}).run_refresh_loop()  # returns immediately
+    sleeps: list[float] = []
+
+    async def fake_sleep(seconds: float) -> None:
+        sleeps.append(seconds)
+
+    # Returns immediately: no download attempt, no scheduling.
+    await asyncio.wait_for(CardmarketGuide({}).run_refresh_loop(sleep=fake_sleep), timeout=1)
+    assert sleeps == []
 ```
 
 - [ ] **Step 2: Run tests to verify they fail**
@@ -1052,7 +1060,10 @@ from watari_api.schemas import EuPrice
 def _eu_price(price: float = 237.66, basis: str = "normal") -> EuPrice:
     return EuPrice(
         id_product=719658,
-        url="https://www.cardmarket.com/en/Pokemon/Products?idProduct=719658&language=7&minCondition=2",
+        url=(
+            "https://www.cardmarket.com/en/Pokemon/Products"
+            "?idProduct=719658&language=7&minCondition=2"
+        ),
         price_eur=price,
         trend_eur=price,
         avg7_eur=260.84,
@@ -1265,8 +1276,8 @@ async def eu_price(
 
 - [ ] **Step 6: Run tests**
 
-Run: `uv run python -m pytest tests/unit/test_api.py -v && uv run python -m pytest && make lint`
-Expected: 8 new PASS; full suite 441 passed; ruff clean.
+Run: `uv run python -m pytest tests/unit/test_api.py -v && uv run python -m pytest` and the before/after ruff comparison on touched files
+Expected: 8 new PASS; full suite 441 passed; no new ruff errors in touched files.
 
 - [ ] **Step 7: Commit**
 
@@ -1381,8 +1392,8 @@ In `schemas.py` `InternationalPrice`, update the docstring to `"""One western-ma
 
 - [ ] **Step 5: Run tests + lint**
 
-Run: `uv run python -m pytest && make lint`
-Expected: 441 passed; ruff clean (no unused imports).
+Run: `uv run python -m pytest` and the before/after ruff comparison on touched files
+Expected: 441 passed; no new ruff errors in touched files (no unused imports left behind).
 
 - [ ] **Step 6: Commit**
 
@@ -1793,7 +1804,7 @@ Update `MEMORY.md` state snapshot line and add a one-line pointer to a new memor
 
 - [ ] **Step 4: Final verification + commit**
 
-Run: `uv run python -m pytest && make lint && (cd apps/web && bun run build)`
+Run: `uv run python -m pytest && (cd apps/web && bun run build)` and `uv run ruff check . --output-format concise | tail -1` (expect 46 errors — unchanged from baseline)
 Expected: all green.
 
 ```bash
