@@ -17,6 +17,7 @@ from typing import Annotated
 from fastapi import Depends, HTTPException, Request
 from sqlalchemy.ext.asyncio import AsyncSession
 
+from watari_api.cardmarket_guide import CardmarketGuide
 from watari_api.catalog_mem import MemCatalog
 from watari_api.price_proxy import PriceProxy
 from watari_core.db import async_session_factory
@@ -38,6 +39,16 @@ def get_price_proxy(request: Request) -> PriceProxy:
     if proxy is None:
         raise RuntimeError("price_proxy not installed on app.state; check the FastAPI lifespan")
     return proxy
+
+
+def get_cardmarket_guide(request: Request) -> CardmarketGuide:
+    """Return the process-wide Cardmarket price guide from ``app.state``."""
+    guide: CardmarketGuide | None = getattr(request.app.state, "cardmarket_guide", None)
+    if guide is None:
+        raise RuntimeError(
+            "cardmarket_guide not installed on app.state; check the FastAPI lifespan"
+        )
+    return guide
 
 
 async def get_session() -> AsyncGenerator[AsyncSession, None]:

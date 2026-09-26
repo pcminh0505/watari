@@ -9,6 +9,7 @@ Snkrdunk prices are fetched on demand from :class:`~watari_api.price_proxy.Price
 ``/market-price`` — SD 7d median preferred; CR floor from ``mv_market_price`` as fallback
 ``/graded-prices``  — CR latest per grade from ``graded_price_points`` + SD on-demand (merged)
 ``/graded-history`` — CR history from ``graded_price_points`` + SD on-demand (merged, sorted)
+``/eu-price``       — Cardmarket price guide (native EUR) from the in-memory CardmarketGuide
 ``/history``      — always empty (no ``price_points`` query; historical data not served)
 """
 
@@ -24,10 +25,12 @@ from sqlalchemy.ext.asyncio import AsyncSession
 from watari_core.catalog import pad_local_id
 from watari_core.schemas import PricePointOut
 
+from watari_api.cardmarket_guide import CardmarketGuide
 from watari_api.catalog_mem import MemCatalog
-from watari_api.deps import get_catalog, get_price_proxy, get_session
+from watari_api.deps import get_cardmarket_guide, get_catalog, get_price_proxy, get_session
 from watari_api.price_proxy import PriceProxy
 from watari_api.schemas import (
+    EuPrice,
     GradedPricePointOut,
     InternationalPrice,
     LatestGradedPrice,
@@ -44,6 +47,7 @@ router = APIRouter(
 CatalogDep = Annotated[MemCatalog, Depends(get_catalog)]
 PriceProxyDep = Annotated[PriceProxy, Depends(get_price_proxy)]
 SessionDep = Annotated[AsyncSession, Depends(get_session)]
+GuideDep = Annotated[CardmarketGuide, Depends(get_cardmarket_guide)]
 
 # Cache hint for clients — matches the server-side TTL
 _PRICE_CACHE = "public, max-age=1800, stale-while-revalidate=60"
@@ -301,6 +305,32 @@ async def international_prices(
         InternationalPrice.model_validate(r)
         for r in [*tcgdex_rows, *pc_rows]
     ]
+
+
+@router.get("/eu-price", response_model=EuPrice)
+async def eu_price(
+    lang: str,
+    set_code: str,
+    local_id: str,
+    catalog: CatalogDep,
+    guide: GuideDep,
+    response: Response,
+    variant: str = Query("normal"),
+) -> EuPrice:
+    """Cardmarket price-guide values (native EUR) for one print.
+
+    Mirror variants use Cardmarket's reverse-holo row, which combines Poké Ball
+    and Master Ball mirrors. 404 when the card has no Cardmarket mapping/price.
+    """
+    _resolve_card_id(catalog, lang=lang, set_code=set_code, local_id=local_id, variant=variant)
+    price = guide.lookup(set_code, local_id, variant)
+    if price is None:
+        raise HTTPException(
+            status_code=404,
+            detail=f"no Cardmarket price for {set_code}/{pad_local_id(local_id)}",
+        )
+    response.headers["Cache-Control"] = _PRICE_CACHE
+    return price
 
 
 @router.get("/spread", response_model=list[SpreadRow])

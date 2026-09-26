@@ -9,10 +9,11 @@ import pytest
 from fastapi.testclient import TestClient
 from watari_api.auth import AuthContext
 from watari_api.catalog_mem import MemArtwork, MemCatalog, MemSet, MemVariant
-from watari_api.deps import get_catalog, get_price_proxy, get_session
+from watari_api.deps import get_cardmarket_guide, get_catalog, get_price_proxy, get_session
 from watari_api.main import create_app
 from watari_api.price_proxy import PriceProxy
 from watari_api.ratelimit import rate_limit_dep
+from watari_api.schemas import EuPrice
 
 # ---------------------------------------------------------------------------
 # Fake catalog
@@ -221,6 +222,37 @@ class FakePriceProxy:
 
 
 # ---------------------------------------------------------------------------
+# Fake Cardmarket guide
+# ---------------------------------------------------------------------------
+
+
+def _eu_price(price: float = 237.66, basis: str = "normal") -> EuPrice:
+    return EuPrice(
+        id_product=719658,
+        url=(
+            "https://www.cardmarket.com/en/Pokemon/Products"
+            "?idProduct=719658&language=7&minCondition=2"
+        ),
+        price_eur=price,
+        trend_eur=price,
+        avg7_eur=260.84,
+        avg30_eur=252.72,
+        basis=basis,
+        guide_date=datetime(2026, 9, 26, tzinfo=UTC),
+    )
+
+
+class FakeCardmarketGuide:
+    """Fake CardmarketGuide — prices keyed by (SET_CODE, local_id, variant)."""
+
+    def __init__(self, prices: dict[tuple[str, str, str], EuPrice] | None = None) -> None:
+        self._prices = prices or {}
+
+    def lookup(self, set_code: str, local_id: str, variant: str = "normal") -> EuPrice | None:
+        return self._prices.get((set_code.upper(), local_id, variant))
+
+
+# ---------------------------------------------------------------------------
 # Fixture helpers
 # ---------------------------------------------------------------------------
 
@@ -235,6 +267,7 @@ def _make_client(
     catalog: FakeMemCatalog | None = None,
     proxy: FakePriceProxy | None = None,
     session: FakeSession | None = None,
+    guide: FakeCardmarketGuide | None = None,
 ) -> TestClient:
     app = create_app()
     if catalog is not None:
@@ -242,6 +275,7 @@ def _make_client(
     if proxy is not None:
         app.dependency_overrides[get_price_proxy] = lambda: proxy
     app.dependency_overrides[get_session] = lambda: (session or FakeSession())
+    app.dependency_overrides[get_cardmarket_guide] = lambda: (guide or FakeCardmarketGuide())
     app.dependency_overrides[rate_limit_dep] = _anonymous_ratelimit
     return TestClient(app)
 
@@ -966,6 +1000,78 @@ def test_international_prices_returns_cache_header() -> None:
     client = _make_client(catalog=_catalog_with_card(), proxy=FakePriceProxy())
     resp = client.get("/jp/cards/SV2A/089/international-prices")
     assert "max-age=1800" in resp.headers["Cache-Control"]
+
+
+# ---------------------------------------------------------------------------
+# EU (Cardmarket) prices
+# ---------------------------------------------------------------------------
+
+
+def test_eu_price_returns_normal_price() -> None:
+    guide = FakeCardmarketGuide({("SV2A", "089", "normal"): _eu_price()})
+    client = _make_client(catalog=_catalog_with_card(), guide=guide)
+    resp = client.get("/jp/cards/SV2A/089/eu-price")
+    assert resp.status_code == 200
+    body = resp.json()
+    assert body["price_eur"] == 237.66
+    assert body["basis"] == "normal"
+    assert "low" not in body and "low_eur" not in body
+    assert "max-age=1800" in resp.headers["Cache-Control"]
+
+
+def test_eu_price_mirror_variant() -> None:
+    catalog = FakeMemCatalog(
+        sets=[_fake_set("SV2A")],
+        artworks=[_fake_artwork("SV2A", "089", variants=["normal", "master_ball_mirror"])],
+    )
+    guide = FakeCardmarketGuide(
+        {("SV2A", "089", "master_ball_mirror"): _eu_price(3.85, basis="mirror")}
+    )
+    client = _make_client(catalog=catalog, guide=guide)
+    resp = client.get("/jp/cards/SV2A/089/eu-price?variant=master_ball_mirror")
+    assert resp.status_code == 200
+    assert resp.json()["basis"] == "mirror"
+
+
+def test_eu_price_404_when_no_price() -> None:
+    client = _make_client(catalog=_catalog_with_card())
+    resp = client.get("/jp/cards/SV2A/089/eu-price")
+    assert resp.status_code == 404
+
+
+def test_eu_price_404_for_missing_card() -> None:
+    client = _make_client(catalog=FakeMemCatalog(sets=[_fake_set("SV2A")]))
+    resp = client.get("/jp/cards/SV2A/999/eu-price")
+    assert resp.status_code == 404
+
+
+def test_eu_price_400_for_unknown_variant() -> None:
+    client = _make_client(catalog=_catalog_with_card())
+    resp = client.get("/jp/cards/SV2A/089/eu-price?variant=bogus")
+    assert resp.status_code == 400
+
+
+def test_search_results_include_eu_price() -> None:
+    guide = FakeCardmarketGuide({("SV2A", "089", "normal"): _eu_price()})
+    client = _make_client(catalog=_catalog_with_card(), guide=guide)
+    resp = client.get("/jp/cards/search?q=Muk")
+    assert resp.status_code == 200
+    assert resp.json()[0]["eu_price"]["price_eur"] == 237.66
+
+
+def test_search_eu_price_null_when_unmapped() -> None:
+    client = _make_client(catalog=_catalog_with_card())
+    resp = client.get("/jp/cards/search?q=Muk")
+    assert resp.json()[0]["eu_price"] is None
+
+
+def test_by_sets_results_include_eu_price() -> None:
+    guide = FakeCardmarketGuide({("SV2A", "089", "normal"): _eu_price()})
+    client = _make_client(catalog=_catalog_with_card(), guide=guide)
+    get_resp = client.get("/jp/cards/by-sets?codes=SV2A")
+    post_resp = client.post("/jp/cards/by-sets", json={"codes": ["SV2A"]})
+    assert get_resp.json()[0]["eu_price"]["price_eur"] == 237.66
+    assert post_resp.json()[0]["eu_price"]["price_eur"] == 237.66
 
 
 # ---------------------------------------------------------------------------

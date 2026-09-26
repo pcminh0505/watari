@@ -14,8 +14,9 @@ from sqlalchemy import text
 from sqlalchemy.ext.asyncio import AsyncSession
 from watari_core.catalog import pad_local_id
 
+from watari_api.cardmarket_guide import CardmarketGuide
 from watari_api.catalog_mem import MemArtwork, MemCatalog, MemVariant
-from watari_api.deps import get_catalog, get_session
+from watari_api.deps import get_cardmarket_guide, get_catalog, get_session
 from watari_api.schemas import (
     ArtworkDetail,
     ArtworkSearchResult,
@@ -29,6 +30,7 @@ router = APIRouter(tags=["cards"])
 
 CatalogDep = Annotated[MemCatalog, Depends(get_catalog)]
 SessionDep = Annotated[AsyncSession, Depends(get_session)]
+GuideDep = Annotated[CardmarketGuide, Depends(get_cardmarket_guide)]
 
 _CATALOG_CACHE = "public, max-age=3600, stale-while-revalidate=300"
 
@@ -153,6 +155,12 @@ async def _enrich_batch_from_db(items: list[CardBatchItem], session: AsyncSessio
         if item:
             item.market_price_jpy = row["market_price_jpy"]
             item.market_price_source_used = row["source_used"]
+
+
+def _attach_eu_prices(results: list[ArtworkSearchResult], guide: CardmarketGuide) -> None:
+    """Embed the normal-print Cardmarket price on each result (in-memory, no I/O)."""
+    for r in results:
+        r.eu_price = guide.lookup(r.set_code, r.local_id, "normal")
 
 
 # --- batch endpoint ----------------------------------------------------------
@@ -289,6 +297,7 @@ def _cards_by_sets(
 async def get_cards_by_sets(
     lang: str,
     catalog: CatalogDep,
+    guide: GuideDep,
     response: Response,
     codes: str = Query(..., description="Comma-separated set codes (e.g. ``SV2A,M1L``)"),
     limit: int = Query(100, ge=1, le=500),
@@ -296,6 +305,7 @@ async def get_cards_by_sets(
 ) -> list[ArtworkSearchResult]:
     set_codes = [c.strip().upper() for c in codes.split(",") if c.strip()]
     total, results = _cards_by_sets(set_codes, lang, catalog, limit, offset)
+    _attach_eu_prices(results, guide)
     response.headers["X-Total-Count"] = str(total)
     response.headers["Cache-Control"] = _CATALOG_CACHE
     return results
@@ -305,6 +315,7 @@ async def get_cards_by_sets(
 async def post_cards_by_sets(
     lang: str,
     catalog: CatalogDep,
+    guide: GuideDep,
     response: Response,
     body: SetsBatchRequest = Body(...),
     limit: int = Query(100, ge=1, le=500),
@@ -312,6 +323,7 @@ async def post_cards_by_sets(
 ) -> list[ArtworkSearchResult]:
     set_codes = [c.strip().upper() for c in body.codes if c.strip()]
     total, results = _cards_by_sets(set_codes, lang, catalog, limit, offset)
+    _attach_eu_prices(results, guide)
     response.headers["X-Total-Count"] = str(total)
     response.headers["Cache-Control"] = _CATALOG_CACHE
     return results
@@ -324,6 +336,7 @@ async def post_cards_by_sets(
 async def search_cards(
     lang: str,
     catalog: CatalogDep,
+    guide: GuideDep,
     session: SessionDep,
     response: Response,
     q: str | None = Query(None, min_length=1, max_length=80),
@@ -353,6 +366,7 @@ async def search_cards(
     page = all_artworks[offset : offset + limit]
     results = [_mem_artwork_to_search_result(a) for a in page]
     await _enrich_search_results_from_db(results, session)
+    _attach_eu_prices(results, guide)
     return results
 
 

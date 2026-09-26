@@ -12,6 +12,7 @@ Redis is optional: set REDIS_URL to enable a shared L2 cache.
 from __future__ import annotations
 
 import asyncio
+import contextlib
 import logging
 from collections.abc import AsyncIterator
 from contextlib import asynccontextmanager
@@ -25,6 +26,7 @@ from watari_core.db import engine as db_engine
 
 from watari_catalog.tcgdex_client import TcgdexClient
 
+from watari_api.cardmarket_guide import CardmarketGuide
 from watari_api.catalog_mem import MemCatalog
 from watari_api.deps import validate_lang
 from watari_api.price_proxy import FRANKFURTER_LATEST_URL, PriceProxy
@@ -81,6 +83,11 @@ async def lifespan(app: FastAPI) -> AsyncIterator[None]:
     # Backfill official set totals from TCGdex (one HTTP call, non-fatal).
     await _populate_official_totals(app.state.catalog)
 
+    # Cardmarket EU prices: idProduct maps from YAML now; the ~15 MB price
+    # guide downloads in the background (lookups return None until it lands).
+    app.state.cardmarket_guide = await asyncio.to_thread(CardmarketGuide.load)
+    guide_task = asyncio.create_task(app.state.cardmarket_guide.run_refresh_loop())
+
     # Optional Redis L2 cache — gracefully degrades to memory-only on failure.
     redis = None
     if settings.redis_url:
@@ -103,6 +110,9 @@ async def lifespan(app: FastAPI) -> AsyncIterator[None]:
     )
     yield
 
+    guide_task.cancel()
+    with contextlib.suppress(asyncio.CancelledError):
+        await guide_task
     if redis is not None:
         await redis.aclose()
 

@@ -118,6 +118,7 @@ class ArtworkSearchResult(ArtworkDetail):
     cardrush_a_floor_jpy: int | None = None
     market_price_jpy: int | None = None
     market_price_source_used: str | None = None
+    eu_price: EuPrice | None = None  # Cardmarket, normal-print basis
 
 
 class LatestPrice(BaseModel):
