@@ -3,6 +3,7 @@ import { type Currency, useCurrency } from "../../contexts/CurrencyContext";
 const OPTIONS: { value: Currency; label: string }[] = [
   { value: "JPY", label: "¥" },
   { value: "USD", label: "$" },
+  { value: "EUR", label: "€" },
   { value: "VND", label: "₫" },
 ];
 

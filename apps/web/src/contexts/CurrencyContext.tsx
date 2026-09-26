@@ -8,18 +8,21 @@ import {
 import { apiFetch } from "../api/client";
 import { formatPrice } from "../lib/formatters";
 
-export type Currency = "JPY" | "USD" | "VND";
+export type Currency = "JPY" | "USD" | "EUR" | "VND";
 export interface ExchangeRates {
   USD: number;
+  EUR: number;
   VND: number;
 }
 
-const FALLBACK_RATES: ExchangeRates = { USD: 0.0065, VND: 163 };
+const FALLBACK_RATES: ExchangeRates = { USD: 0.0065, EUR: 0.0056, VND: 163 };
 
 function useExchangeRates(): ExchangeRates {
   const { data } = useQuery<ExchangeRates>({
     queryKey: ["exchange-rates"],
-    queryFn: () => apiFetch<ExchangeRates>("/rates"),
+    // /rates has USD + EUR only (Frankfurter has no VND) — fill gaps from the fallback.
+    queryFn: () =>
+      apiFetch<Partial<ExchangeRates>>("/rates").then((r) => ({ ...FALLBACK_RATES, ...r })),
     staleTime: 60 * 60 * 1000,
     retry: 1,
   });
@@ -37,7 +40,7 @@ const CurrencyContext = createContext<CurrencyContextValue | null>(null);
 
 function readStoredCurrency(): Currency {
   const stored = localStorage.getItem("currency");
-  if (stored === "USD" || stored === "VND") return stored;
+  if (stored === "USD" || stored === "EUR" || stored === "VND") return stored;
   return "JPY";
 }
 
