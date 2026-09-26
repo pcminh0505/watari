@@ -171,12 +171,7 @@ class EuPrice(BaseModel):
 (`?language=7&minCondition=2`), so the real NM floor is one click away until
 the NM field ships.
 
-**Open item — verify first during implementation:** the exact URL form that
-resolves a product by `idProduct` could not be confirmed (Cloudflare blocked
-automated access). Check candidate forms in a real browser. If none works,
-fall back to an expansion-scoped search link
-(`/en/Pokemon/Products/Search?idExpansion={id}&searchString={name}`), which
-requires also storing `idExpansion` and name in the mapping file.
+Verified 2026-09-26 in a browser: `https://www.cardmarket.com/en/Pokemon/Products?idProduct={id}` resolves to the product page.
 
 ### 3.7 Frontend (`apps/web`)
 
@@ -261,3 +256,34 @@ The web app has no test runner; frontend is verified with `make web-build`
 - Separate Poké Ball vs Master Ball mirror prices.
 - Fees, shipping, and profit/arbitrage math.
 - Server-side sorting for cross-set `/cards` search.
+
+## Amendments (found during implementation)
+
+1. **FX rates were already broken at design time.** `api.frankfurter.app`
+   301-redirects to `api.frankfurter.dev/v1/latest`; httpx doesn't follow
+   redirects by default, so `/rates` and the old FX fetch always failed.
+   Frankfurter also has no VND. Fixed by pointing at the new host with
+   `follow_redirects=True`; `/rates` returns `{USD, EUR}` only and the
+   frontend fills `VND` from its own fallback constant.
+2. **15 set YAMLs have an empty `tcgdex_id`** (all ME sets, CL, promos) —
+   not a blocker. TCGdex JP ids are case-insensitive and match `set_code`
+   directly (e.g. ME sets resolve as `M2A → M2a`), with `SVP → SV-P` /
+   `MP → M-P` overrides. CL, SMPR, SP simply aren't on TCGdex.
+3. **Product-id validation** uses every `idProduct` in
+   `products_singles_6.json` (the file only contains category 51 "Pokémon
+   Single").
+4. **Link form verified:** `Products?idProduct=` resolves — §3.6's open item
+   is closed above.
+5. **`resolve_tcgdex_id(set_code)` never reads the YAML `tcgdex_id` field at
+   all**, not just for the 15 empty ones. Several non-empty YAML values
+   aren't TCGdex JP ids either (`sv01` for SV1S, `sv01v` for SV1V, `sv01a`
+   for SV1A, `SM1+`…`SM5+` for SM1P–SM5P), so the map command always derives
+   the TCGdex id from `set_code` instead. Those YAML `tcgdex_id` values
+   remain in use by `_populate_official_totals` (§3.7 of `CLAUDE.md`), so
+   SV1S/SV1V/SV1A/SM1P–SM5P may lack an official set total — a known,
+   separate issue, not fixed here.
+6. **Ambiguous idProduct guard added.** `CardmarketGuide.load_mappings`
+   drops every card whose idProduct is claimed by more than one card (a
+   TCGdex data error — Cardmarket has one product per artwork) and logs a
+   warning. The full backfill (2026-09-26) drops 7 cards: SV9A
+   002/022/039/064/071/074 and SVP 262.

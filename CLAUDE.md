@@ -6,7 +6,7 @@
 > Update it whenever the architecture changes — especially after a
 > destructive migration, a new source, or a schema split.
 >
-> Last updated: 2026-05-21 (**Online mode** — API fetches prices on-demand from Cardrush/Snkrdunk; in-memory catalog (`MemCatalog`) + in-memory rate limiter; CI scrapers disabled (schedule removed, `workflow_dispatch` only); 404 tests passing. Recent: `/international-prices` endpoint — TCGPlayer USD via pokemontcg.io + Cardmarket EUR via TCGdex EN; `InternationalPriceTable` on CardDetailPage; Frankfurter FX rates (1h cache) for USD/EUR→JPY; `_JP_TO_PTCGIO_ID` + `_JP_TO_EN_TCGDEX_ID` mappings in `PriceProxy`).
+> Last updated: 2026-09-26 (**Cardmarket EU price** — native-EUR eu_price on search/by-sets + /eu-price; generated data/cardmarket/*.yml idProduct maps; price guide held in API memory; € in currency toggle; Frankfurter host fix).
 
 ---
 
@@ -63,6 +63,7 @@ packages/
     data/
       sets/*.yml       ← 106 set files (source of truth for set metadata, 5 eras)
       cards/{SET}/*.yml← one file per (set, local_id); 10 900 files total
+      cardmarket/{SET}.yml ← generated local_id → Cardmarket idProduct maps
     watari_catalog/    ← Python package (bootstrap.py, seed_cards.py, clients, verify_pokellector.py, …)
   scraper_cardrush/    ← curl_cffi-based scraper, rarity-bucket crawling
   scraper_snkrdunk/    ← cookie-auth snkrdunk sold-price scraper
@@ -72,7 +73,7 @@ packages/
 migrations/            ← Alembic (current head: 008_graded_price_points)
 scripts/               ← gen_sm/sw_set_metadata.py, update_set_symbols.py, dump/bootstrap scripts
 plans/                 ← design docs, one per major change
-tests/unit/            ← 399 tests, all passing
+tests/unit/            ← 441 tests, all passing
 ```
 
 Config knobs: `.env` (DB URL, MinIO creds, SNKRDUNK cookies). `docker-compose.yml`
@@ -206,6 +207,7 @@ memory; prices fetched live and cached in-process.
 |------|------|
 | `watari_api/catalog_mem.py` | `MemCatalog` — loads all YAML at startup; indexed by `(set_code, local_id)` |
 | `watari_api/price_proxy.py` | `PriceProxy` — on-demand Cardrush + Snkrdunk fetch; 30-min TTL per-key cache |
+| `watari_api/cardmarket_guide.py` | `CardmarketGuide` — loads `data/cardmarket/*.yml` idProduct maps at startup; downloads Cardmarket's price guide every 6 h (15-min retry, keeps last good data) |
 
 Routers (all under `packages/api/watari_api/routers/`):
 
@@ -225,8 +227,13 @@ Routers (all under `packages/api/watari_api/routers/`):
 | `GET /{lang}/cards/{set_code}/{local_id}/market-price` (`?variant=normal`) | `MarketPriceOut` / 404 | `PriceProxy` |
 | `GET /{lang}/cards/{set_code}/{local_id}/graded-prices` (`?variant=normal`) | `list[LatestGradedPrice]` | `PriceProxy` |
 | `GET /{lang}/cards/{set_code}/{local_id}/graded-history` (`?days=365&company=PSA`) | `list[GradedPricePointOut]` | `PriceProxy` |
-| `GET /{lang}/cards/{set_code}/{local_id}/international-prices` (`?variant=normal`) | `list[InternationalPrice]` | `PriceProxy` (pokemontcg.io TCGPlayer USD + TCGdex EN Cardmarket EUR; 30-min cache) |
+| `GET /{lang}/cards/{set_code}/{local_id}/international-prices` (`?variant=normal`) | `list[InternationalPrice]` | `PriceProxy` (PriceCharting (eBay) only; 30-min cache) |
+| `GET /{lang}/cards/{set_code}/{local_id}/eu-price` (`?variant=normal`) | `EuPrice` / 404 | `CardmarketGuide` (in-memory price guide, refreshed every 6 h) |
 | `GET /admin/scrape-health` | `[]` (always empty) | — (no DB) |
+
+`/cards/search` and `/cards/by-sets` results also carry an embedded `eu_price`
+(`EuPrice \| null`, normal-variant basis) from `CardmarketGuide` — no extra
+request per card.
 
 **Online mode trade-offs:**
 
@@ -303,16 +310,17 @@ Stack: Vite + React 18 + TypeScript + Tailwind CSS + React Query + Recharts. `bu
 | `useSpread` | `GET /jp/cards/{set}/{id}/spread` | Cross-source spread from `mv_cross_source_spread` |
 | `usePriceHistory` | `GET /jp/cards/{set}/{id}/history` | Snkrdunk ungraded sold comps; period buttons 30d/60d/90d |
 | `useGradedPriceHistory` | `GET /jp/cards/{set}/{id}/graded-history` | Raw `graded_price_points`; default 90 days, limit 2000 |
-| `useInternationalPrices` | `GET /jp/cards/{set}/{id}/international-prices` | `InternationalPrice[]`; grouped by market in `InternationalPriceTable` |
+| `useInternationalPrices` | `GET /jp/cards/{set}/{id}/international-prices` | `InternationalPrice[]`; PriceCharting (eBay) only; grouped by market in `InternationalPriceTable` |
+| `useEuPrice` | `GET /jp/cards/{set}/{id}/eu-price` | `EuPrice \| null`; native-EUR Cardmarket price-guide value; 404 → `null` |
 
 **Currency system** (`src/contexts/CurrencyContext.tsx`):
 
 - `CurrencyProvider` wraps the whole app (inside `QueryClientProvider`).
 - Reads initial currency from `localStorage.currency` (JPY default).
-- `useExchangeRates()` — React Query, fetches `https://api.frankfurter.app/latest?from=JPY&to=USD,VND`, `staleTime: 1h`. Falls back to `{ USD: 0.0065, VND: 163 }` on error — never throws to the UI.
+- `useExchangeRates()` — React Query, fetches the backend's `GET /rates` proxy (`{USD, EUR}` only — Frankfurter has no VND), `staleTime: 1h`. The result is merged over `FALLBACK_RATES = { USD: 0.0065, EUR: 0.0056, VND: 163 }`, so `VND` always comes from the fallback — never throws to the UI.
 - `useCurrency()` — returns `{ currency, setCurrency, rates, formatPrice }`. `formatPrice(jpy)` is the single call site for all price display.
-- `formatPrice(jpy, currency, rates)` lives in `src/lib/formatters.ts` (pure function). `formatJPY` is kept as internal helper.
-- `CurrencyToggle` (3-button pill ¥·$·₫) lives in `Header` between nav and ThemeToggle.
+- `formatPrice(jpy, currency, rates)` lives in `src/lib/formatters.ts` (pure function). `formatJPY` is kept as internal helper. `formatEUR(amount)` formats native-EUR Cardmarket values (not currency-converted; bypasses the toggle) — see invariant 24.
+- `CurrencyToggle` (4-button pill ¥·$·€·₫) lives in `Header` between nav and ThemeToggle.
 
 **CardThumbnail performance pattern:**
 
@@ -340,13 +348,15 @@ This eliminates 60+ individual market-price requests per set-gallery page load.
 artwork count including secret rares (e.g., 250 for M2A), which is wrong as a denominator.
 
 **Price display rules (current):**
-- Card gallery thumbnails: price only (no "sold"/"listed" source label)
+- Card gallery thumbnails (`CardThumbnail` / `SearchCardThumbnail`): price only (no "sold"/"listed" source label); second line `EU €x.xx` from the embedded `eu_price`, omitted when `null` — no extra request
+- `EuPriceCard` (detail page, top of the price section): native-EUR Cardmarket price-guide value rendered with `formatEUR` (not currency-converted); headline is trend → avg30 → avg7; shows 7-day/30-day avg, `Basis: Normal` or `Basis: Mirror (Poké Ball + Master Ball combined)`, guide date, and a link to the JP Near-Mint-filtered Cardmarket listing; hidden on 404
 - `PriceTable` (detail page): Condition + Price only (no "Updated" date column)
 - `SpreadTable`: CR Floor, SD Median 7d, Spread, Spread % — all currency-converted
-- `InternationalPriceTable` (detail page): rows grouped by market (TCGPlayer/Cardmarket/PriceCharting); each group shows `price_jpy` via `formatPrice` + `price_raw` in original currency (USD/EUR); graded rows under a "Graded" sub-header inside PriceCharting section; hidden when `/international-prices` returns `[]`
+- `InternationalPriceTable` (detail page): PriceCharting (eBay) rows only (Cardmarket moved to `EuPriceCard`); each group shows `price_jpy` via `formatPrice` + `price_raw` in original currency (USD); graded rows under a "Graded" sub-header; hidden when `/international-prices` returns `[]`
 - `PriceHistoryChart`: Snkrdunk ungraded sold comps; period buttons 30d / 60d / 90d; Y-axis and tooltip both call `formatPrice`
 - `GradedPriceHistoryChart`: multi-line Recharts chart; one line per grade (PSA10/9/8, BGS10/9.5); SNKRDUNK sold comps preferred over Cardrush per day; day-range toggle (1M / 3M); default 90 days
 - `SetCard` (sets page): `total_value_jpy` currency-converted; `set.total` shown as "X cards" (uses official base-set count)
+- Sort: `CardFilterBar` and the `/cards` search dropdown add "EU price (desc)" / "EU price (asc)" (`sortSearchCards`); cards without an `eu_price` sort last in both directions
 
 ---
 
@@ -364,8 +374,8 @@ artwork count including secret rares (e.g., 250 for M2A), which is wrong as a de
 | `make scrape-cardrush ERA=sv` + `ERA=me`           | ~12.7k Cardrush rows across SV+ME sets. SM/SW: scheduled weekly via CI.                       |
 | `make scrape-snkrdunk ERA=<code>` × SV+ME          | ~104k SNKRDUNK rows. **SV1 still 0 rows** (upstream uses `sv1v` namespace). SM/SW: scheduled weekly via CI. |
 | `watari-api refresh-mvs` (CONCURRENTLY)            | mv_latest_price, mv_median_7d, mv_cross_source_spread, mv_market_price — refreshed             |
-| `uv run pytest`                                    | **404 passed** (online mode; DB/Redis API tests replaced with in-memory fakes)                 |
-| `make web-dev`                                     | Currency toggle ¥/$/₫ in header; all price surfaces convert correctly; GradedPriceHistoryChart live; PriceHistoryChart shows Snkrdunk sold comps; card detail info grid shows Expansion/Card number/Rarity/Illustrators; InternationalPriceTable shows TCGPlayer USD + Cardmarket EUR prices |
+| `uv run pytest`                                    | **441 passed** (online mode; DB/Redis API tests replaced with in-memory fakes)                 |
+| `make web-dev`                                     | Currency toggle ¥/$/€/₫ in header; all price surfaces convert correctly; GradedPriceHistoryChart live; PriceHistoryChart shows Snkrdunk sold comps; card detail info grid shows Expansion/Card number/Rarity/Illustrators; `EuPriceCard` shows native-EUR Cardmarket price; InternationalPriceTable shows PriceCharting (eBay) prices |
 
 ### 4.2 Data that's already committed
 
@@ -376,6 +386,10 @@ artwork count including secret rares (e.g., 250 for M2A), which is wrong as a de
 - `data/cards/{SET}/*.yml` — **10 900 files** covering 99 sets (98 original + M6; CLF/CLL/CLK/MP/SMPR/SP/SVP pending bootstrap).
   Largest sets: SV4A (360), S4A (330), S8B (285), S12A (261), SM8B/M2A (250), SV8A (237),
   SM12A (226), SV2A (210), SV11W/SV11B (174 each).
+- `packages/catalog/data/cardmarket/*.yml` — **84 sets mapped** (backfilled 2026-09-26),
+  9,475 of 9,680 artworks with a Cardmarket idProduct. Sets not on TCGdex JP have no
+  file / no EU price: most of S1W–S8A, S10B/S10D, SM0, SMP2, CLF/CLL/CLK, SMPR, SP.
+  SV9A is sparse — TCGdex only carries Cardmarket pricing for 6/92 of its cards.
 
 ### 4.3 Price data in the DB (snapshot: SV + ME fully scraped; SM/SW pending first CI run)
 
@@ -454,6 +468,17 @@ SV1 remains Cardrush-only (SNKRDUNK lists it under `sv1v`).
   `PriceTable` for cleanliness, but stale data (>14 days old) is now
   silently shown without any warning. Consider a subtle badge on the section
   header when all rows are stale rather than per-row opacity.
+- **EU price coverage gaps.** 205 artworks across 84 mapped sets have no
+  Cardmarket idProduct, and sets not on TCGdex JP have no mapping file at all
+  (most of S1W–S8A, S10B/S10D, SM0, SMP2, CLF/CLL/CLK, SMPR, SP); SV9A is
+  especially sparse (6/92 mapped). Find another idProduct source for
+  S-era/SM0/CL sets — TCGdex JP is exhausted for them.
+- **Cardmarket Near Mint floor.** The free price guide has no
+  condition/language breakdown (`low` is deliberately unexposed — see
+  invariant 39). Options for a real NM floor: a headless-browser scrape of
+  the product page's `?language=7&minCondition=2` filter (Cloudflare's JS
+  challenge blocks `curl_cffi`), the official Cardmarket API (closed to new
+  applications), or a paid third-party scraper.
 
 ### 5.3 Nice-to-haves
 
@@ -559,6 +584,8 @@ SV1 remains Cardrush-only (SNKRDUNK lists it under `sv1v`).
     toggle. `formatJPY` is an internal helper used only inside `formatPrice`.
     Every component that shows a JPY value (including set total values) must
     call `useCurrency()` and use the returned `formatPrice` bound function.
+    Exception: native-EUR `EuPrice` fields render with `formatEUR` (they are
+    Cardmarket's own numbers, not converted JPY).
 25. **`CurrencyProvider` must sit inside `QueryClientProvider`** so
     `useExchangeRates()` (which calls `useQuery`) can work. The order in
     `main.tsx` is: `StrictMode` → `QueryClientProvider` → `CurrencyProvider`
@@ -580,12 +607,37 @@ SV1 remains Cardrush-only (SNKRDUNK lists it under `sv1v`).
 36. **CI scraper schedule is disabled.** `.github/workflows/scrape.yml` has no `schedule:` trigger — only `workflow_dispatch`. Scrapers still work (packages unchanged); re-enable via `on.schedule` when PostgreSQL is restored.
 37. **`SetOut.total` = official denominator, not total card count.** It is the number printed on physical cards as the set denominator (e.g., 165 for SV2A, 193 for M2A). It comes from: YAML `total:` field (ME era + S11/SM10A/SM11/CL sets) or TCGdex `cardCount.official` fetched at startup via `_populate_official_totals()`. Never fall back to `count_artworks()` — that returns the total artwork count including secret rares, which is always ≥ the denominator and therefore wrong.
 38. **`_populate_official_totals()` must use the Japanese TCGdex locale.** Call `TcgdexClient(language="ja")` — the English locale uses different ID formats (e.g., `sv03.5` instead of `sv2a`) that don't match our YAML `tcgdex_id` values. Japanese locale IDs match after `.upper()` normalization.
-39. **`/international-prices` uses two mappings in `PriceProxy`:**
-    - `_JP_TO_EN_TCGDEX_ID` — translates JP `tcgdex_id` (e.g. `sv2a`) → EN locale ID (`sv03.5`) for TCGdex EN price fetch (Cardmarket EUR). Without this, TCGdex returns 404 for almost all SV sets.
-    - `_JP_TO_PTCGIO_ID` — translates JP `tcgdex_id` → pokemontcg.io set ID (e.g. `sv2a → sv3pt5`) for TCGPlayer USD prices. Note the `pt5` notation (not `.5`). Some SV11W/SV11B use `rsv10pt5`/`zsv10pt5` prefixes.
-    When adding EN coverage for new sets, update **both** dicts. `tcgdex_id` in set YAML is JP locale only.
+39. **Cardmarket EU prices come from `data/cardmarket/<SET>.yml` + the
+    in-memory price guide.** Map files are generated by
+    `make catalog-cardmarket-map [SET=...]` (TCGdex JP
+    `pricing.cardmarket.idProduct`); never hand-edit, never match by name
+    (Cardmarket names aren't unique per expansion — SV2A has four "Mew ex"
+    products at four different prices). `CardmarketGuide` downloads
+    `price_guide_6.json` every 6 h (15-min retry, last good data kept). The
+    price guide has no condition/language breakdown: `low` is deliberately
+    not exposed, and Poké Ball/Master Ball mirrors share the `*-holo` row
+    (`basis="mirror"`). `resolve_tcgdex_id(set_code)` derives the TCGdex JP
+    set id from `set_code` alone (case-insensitive match, with
+    `SVP→SV-P`/`MP→M-P` overrides) — it **never** reads the YAML
+    `tcgdex_id`, because several YAML values aren't TCGdex JP ids (`sv01`
+    for SV1S, `sv01v` for SV1V, `sv01a` for SV1A, `SM1+`…`SM5+` for
+    SM1P–SM5P). Those YAML `tcgdex_id` values are still used by
+    `_populate_official_totals` in `main.py`, so SV1S/SV1V/SV1A/SM1P–SM5P
+    may lack an official set total — a known, separate issue, not fixed
+    here. `CardmarketGuide.load_mappings` drops every card whose idProduct
+    is claimed by more than one card (a TCGdex data error — Cardmarket has
+    one product per artwork) and logs a warning; currently 7 cards are
+    dropped (SV9A 002/022/039/064/071/074, SVP 262). Run
+    `catalog-cardmarket-map` again after bootstrapping any new set.
 
 40. **`/history` is Snkrdunk-only, 90-day max.** `PriceProxy.snkrdunk_raw_history()` reuses the existing `fetch_snkrdunk()` cache — no extra HTTP call if prices were already fetched. The `days` param is capped at `le=90` in the router. `created_at` is synthesised as `observed_at` (no DB row). Do not remove the 90-day cap or route `/history` to `price_points` — there is no `price_points` table in online mode.
+
+41. **Frankfurter lives at `https://api.frankfurter.dev/v1/latest`**
+    (`FRANKFURTER_LATEST_URL` in `price_proxy.py`, imported by `main.py`'s
+    `GET /rates` proxy). The old `.app` host 301s and httpx doesn't follow
+    redirects by default — keep `follow_redirects=True`. Frankfurter has no
+    VND; `/rates` returns `{USD, EUR}` only and the frontend fills `VND`
+    from its own fallback constant.
 
 ---
 
@@ -605,6 +657,7 @@ make catalog-seed-cards SET=SV2A             # single set
 make catalog-verify                          # health snapshot (orphans, missing img/rarity/ja)
 make catalog-verify STRICT=1                 # exit non-zero on null name_ja / rarity in non-promo sets
 make catalog-verify-pokellector              # cross-check local IDs vs live jp.pokellector.com (network)
+make catalog-cardmarket-map [SET=SV2A] [REFRESH=1]  # Cardmarket idProduct maps (TCGdex JP)
 
 # --- Catalog data-quality audit (TCGCollector-anchored) ---
 # Phase 1: per-set markdown gap report (no data changes).
@@ -661,7 +714,7 @@ make db-dump-data                            # data-only dump for prod rollout
 CONFIRM=yes DUMP_FILE=/tmp/watari-data-<UTC>.sql.gz make db-prod-bootstrap
 
 # Dev loop
-make test                                    # 399 tests
+make test                                    # 441 tests
 make lint
 make format
 
