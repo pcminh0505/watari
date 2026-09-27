@@ -66,6 +66,13 @@ def _normalize(entry: dict[str, Any], *, source_path: pathlib.Path) -> dict[str,
             "id": str(tcgc_id) if tcgc_id is not None else None,
             "slug": tcgc_slug,
         }
+        if entry.get("tcgcollector_code"):
+            source_refs["tcgcollector"]["code"] = entry["tcgcollector_code"]
+    # Set artwork written by ``tcgcollector-sync``; the web app falls back to
+    # these when its hand-curated SET_LOGO_URLS has no entry for the set.
+    for key in ("logo_url", "symbol_url"):
+        if entry.get(key):
+            source_refs[key] = entry[key]
     return {
         "set_code": set_code,
         "era_block": str(entry.get("era_block") or "unknown").lower(),

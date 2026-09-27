@@ -5,16 +5,18 @@ interface SetSymbolProps {
   /** Set code as returned by the API (any casing). */
   setCode: string;
   className?: string;
+  /** Used when the set has no curated Pokellector logo (e.g. `setSymbolUrl(set)`). */
+  fallbackUrl?: string;
 }
 
 /**
- * Small TCG set-symbol image (Bulbagarden Archives). Only renders when
- * `SET_SYMBOL_URLS` has an entry — extend the map per set as needed.
+ * Small TCG set-symbol image, derived from the set's Pokellector logo URL,
+ * else `fallbackUrl`. Renders the set code as text when neither exists.
  */
-export function SetSymbol({ setCode, className }: SetSymbolProps) {
+export function SetSymbol({ setCode, className, fallbackUrl }: SetSymbolProps) {
   const code = setCode.toUpperCase();
   const pokellectorSymbolUrl = SET_LOGO_URLS[code]?.replace(".logo.", ".symbol.");
-  const url = pokellectorSymbolUrl;
+  const url = pokellectorSymbolUrl ?? fallbackUrl;
   const [imageFailed, setImageFailed] = useState(false);
   const imageClassName =
     className ??

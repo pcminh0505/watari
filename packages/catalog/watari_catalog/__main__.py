@@ -52,6 +52,11 @@ Commands (v3 pipeline):
         Write ``data/cardmarket/<SET>.yml`` (local_id → Cardmarket idProduct,
         taken from TCGdex JP). Only unmapped cards are fetched unless
         ``--refresh``. No ``--set`` → every set.
+
+    tcgcollector-sync [--dry-run] [--cache-dir DIR] [--id 11823 ...] [--no-tcgdex] [--no-bronze]
+        Add every JP set listed on https://www.tcgcollector.com/sets/jp that
+        no ``data/sets/*.yml`` references yet: writes the set YML plus one
+        card YML per card (list + image view; TCGdex JP for name_ja).
 """
 
 from __future__ import annotations
@@ -59,6 +64,7 @@ from __future__ import annotations
 import argparse
 import asyncio
 import logging
+import pathlib
 import sys
 
 
@@ -208,6 +214,31 @@ def _build_parser() -> argparse.ArgumentParser:
     )
     cm.add_argument("--concurrency", type=int, default=5)
 
+    ts = sub.add_parser(
+        "tcgcollector-sync",
+        help="Add JP sets (+ cards) that TCGCollector lists but data/sets/ lacks",
+    )
+    ts.add_argument("--dry-run", action="store_true", help="Print the code plan only")
+    ts.add_argument(
+        "--cache-dir",
+        type=pathlib.Path,
+        default=None,
+        help="Read/write fetched TCGCollector HTML here (re-runs skip the network)",
+    )
+    ts.add_argument(
+        "--id",
+        dest="only_ids",
+        action="append",
+        default=None,
+        help="Only sync this TCGCollector set id (repeatable)",
+    )
+    ts.add_argument("--no-tcgdex", action="store_true", help="Skip TCGdex JP enrichment")
+    ts.add_argument(
+        "--no-bronze",
+        action="store_true",
+        help="Skip MinIO bronze mirroring (useful when MinIO is not running)",
+    )
+
     return p
 
 
@@ -276,6 +307,16 @@ async def _dispatch(args: argparse.Namespace) -> int:
             sets=args.sets,
             refresh=args.refresh,
             concurrency=args.concurrency,
+        )
+    if args.command == "tcgcollector-sync":
+        from watari_catalog import tcgcollector_sync
+
+        return await tcgcollector_sync.run(
+            dry_run=args.dry_run,
+            cache_dir=args.cache_dir,
+            only_ids=args.only_ids,
+            with_tcgdex=not args.no_tcgdex,
+            bronze=not args.no_bronze,
         )
     return 1
 

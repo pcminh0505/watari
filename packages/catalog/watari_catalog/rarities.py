@@ -214,6 +214,14 @@ TCGCOLLECTOR_EN_RARITY_MAP: dict[str, str] = {
     "Prism Star": "SR",
     "Black Star Promo": "PR",
     "Promo": "PR",
+    # Legacy-era labels (tcgcollector-sync), folded into the nearest modern
+    # tier; the raw label stays in ``sources.tcgcollector.rarity_raw``.
+    "Rare Holo": "R",
+    "Rare Holo ex": "RR",       # ADV/PCG ex
+    "Rare Holo LV.X": "RR",     # DP/Pt LV.X
+    "Rare Prime": "RR",         # HGSS Prime
+    "Rare Holo ☆": "UR",        # PCG Gold Star
+    "LEGEND": "UR",             # HGSS two-piece LEGEND
 }
 
 

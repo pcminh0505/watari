@@ -29,14 +29,15 @@ export const SET_RELEASE_ORDER: Record<string, number> = {
   SV1V: 23,
   SV1S: 24,
   // ME era (newest → oldest)
-  M6: 0,
-  M5: 1,
-  M4: 2,
-  M3: 3,
-  M2A: 4,
-  M2: 5,
-  M1S: 6,
-  M1L: 7,
+  M6A: 0,
+  M6: 1,
+  M5: 2,
+  M4: 3,
+  M3: 4,
+  M2A: 5,
+  M2: 6,
+  M1S: 7,
+  M1L: 8,
   MP: 999, // M-P promo series (sort last within ME era)
   // SM era (newest → oldest)
   SM12A: 100,
@@ -149,6 +150,7 @@ export const SET_LOGO_URLS: Record<string, string> = {
   M4: `${PK}/Ninja-Spinner.logo.430.png`,
   M5: `${PK}/Abyss-Eye.logo.433.png`,
   M6: `${PK}/Storm-Emeralda.logo.437.png`,
+  M6A: `${PK}/30th-Celebration-Japanese.logo.435.png`,
   // Sword & Shield era (jp.pokellector.com)
   S1W: `${PK}/Sword.logo.283.png`,
   S1H: `${PK}/Shield.logo.284.png`,
@@ -365,3 +367,28 @@ export const RARITY_SORT_ORDER: Record<string, number> = {
   UR: 9,
   MUR: 10,
 };
+
+/** Era filter pills on the sets page (values are `era_block`s), newest first. */
+export const ERA_OPTIONS: { value: string; label: string }[] = [
+  { value: "me", label: "Mega Evolution" },
+  { value: "sv", label: "Scarlet & Violet" },
+  { value: "sw", label: "Sword & Shield" },
+  { value: "sm", label: "Sun & Moon" },
+  { value: "xy", label: "XY" },
+  { value: "bw", label: "Black & White" },
+  { value: "legend", label: "LEGEND" },
+  { value: "pt", label: "Platinum" },
+  { value: "dp", label: "Diamond & Pearl" },
+  { value: "pcg", label: "PCG" },
+  { value: "adv", label: "ADV" },
+  { value: "e", label: "e-Card" },
+  { value: "web", label: "Web" },
+  { value: "vs", label: "VS" },
+  { value: "neo", label: "Neo" },
+  { value: "original", label: "Original" },
+  { value: "cl", label: "Classic" },
+  { value: "vending", label: "Vending Machine" },
+  { value: "movie", label: "Movie" },
+  { value: "energy", label: "Energies" },
+  { value: "other", label: "Other" },
+];

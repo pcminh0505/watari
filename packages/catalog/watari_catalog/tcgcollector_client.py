@@ -285,6 +285,10 @@ class TcgCollectorClient:
         assert last_err is not None
         raise last_err
 
+    async def fetch_page(self, path_or_url: str) -> str:
+        """GET any TCGCollector page (no bronze mirroring — caller decides)."""
+        return await self._fetch(path_or_url)
+
     # --- bronze-mirrored fetches -----------------------------------------
 
     async def fetch_set_index(

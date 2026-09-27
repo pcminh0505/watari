@@ -1,6 +1,6 @@
 .PHONY: up down test lint format migrate \
         catalog-seed-sets catalog-bootstrap catalog-seed-cards catalog-verify catalog-verify-pokellector \
-        catalog-audit catalog-audit-fetch catalog-audit-diff catalog-audit-apply catalog-audit-rollout catalog-cardmarket-map \
+        catalog-audit catalog-audit-fetch catalog-audit-diff catalog-audit-apply catalog-audit-rollout catalog-cardmarket-map catalog-tcgcollector-sync \
         sync-set-symbols \
         scrape-cardrush scrape-snkrdunk \
         api api-dev \
@@ -99,6 +99,11 @@ catalog-audit-rollout:
 #         Usage: make catalog-cardmarket-map [SET=SV2A] [REFRESH=1]
 catalog-cardmarket-map:
 	uv run python -m watari_catalog cardmarket-map $(if $(SET),--set $(SET)) $(if $(REFRESH),--refresh)
+
+# Add every JP set TCGCollector lists that data/sets/ lacks (set YML + card YMLs).
+#         Usage: make catalog-tcgcollector-sync [DRY_RUN=1] [CACHE_DIR=/tmp/tcgc] [NO_BRONZE=1]
+catalog-tcgcollector-sync:
+	uv run python -m watari_catalog tcgcollector-sync $(if $(DRY_RUN),--dry-run) $(if $(CACHE_DIR),--cache-dir $(CACHE_DIR)) $(if $(NO_BRONZE),--no-bronze)
 
 # Rebuild apps/web SET_SYMBOL_URLS from Bulbapedia markdown export.
 # Usage: make sync-set-symbols [SYMBOLS_MD=/abs/path/to/List_of_...md]

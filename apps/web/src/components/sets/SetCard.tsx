@@ -1,7 +1,7 @@
 import { Link } from "react-router";
 import { useCurrency } from "../../contexts/CurrencyContext";
 import { formatDate } from "../../lib/formatters";
-import { SET_LOGO_URLS } from "../../lib/constants";
+import { setLogoUrl, setSymbolUrl } from "../../lib/setArtwork";
 import type { SetOut } from "../../types/api";
 import { SetSymbol } from "../cards/SetSymbol";
 
@@ -12,7 +12,7 @@ interface SetCardProps {
 export function SetCard({ set }: SetCardProps) {
   const { formatPrice } = useCurrency();
   const codeKey = set.set_code.toUpperCase();
-  const logoUrl = SET_LOGO_URLS[codeKey];
+  const logoUrl = setLogoUrl(set);
   const displayName = set.name_en ?? set.name_ja ?? set.set_code.toLowerCase();
 
   return (
@@ -49,6 +49,7 @@ export function SetCard({ set }: SetCardProps) {
           <p className="truncate text-sm font-semibold text-slate-900 dark:text-slate-100">{displayName}</p>
           <SetSymbol
             setCode={set.set_code}
+            fallbackUrl={setSymbolUrl(set)}
             className="h-4 w-auto max-w-10 shrink-0 object-contain dark:filter dark:invert opacity-80 dark:opacity-80"
           />
         </div>

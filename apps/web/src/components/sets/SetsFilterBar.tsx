@@ -1,6 +1,8 @@
 import clsx from "clsx";
+import { ERA_OPTIONS } from "../../lib/constants";
 
-type EraFilter = "all" | "sv" | "me" | "sm" | "sw";
+/** `"all"` or an `era_block` from `ERA_OPTIONS`. */
+type EraFilter = string;
 type SetSort = "release_desc" | "release_asc" | "value_desc" | "value_asc";
 
 interface SetsFilterBarProps {
@@ -27,26 +29,18 @@ export function SetsFilterBar({
       {/* Era pills */}
       <div className="flex flex-wrap items-center gap-2">
         <span className="mr-2 text-xs font-semibold text-slate-500 uppercase tracking-widest">Era</span>
-        {(["all", "me", "sv", "sw", "sm"] as EraFilter[]).map((e) => (
+        {[{ value: "all", label: "All" }, ...ERA_OPTIONS].map(({ value, label }) => (
           <button
-            key={e}
-            onClick={() => onEraChange(e)}
+            key={value}
+            onClick={() => onEraChange(value)}
             className={clsx(
               "rounded-full px-4 py-1.5 text-xs font-medium transition-all border",
-              era === e
+              era === value
                 ? "bg-primary-50 text-primary-700 border-primary-500 dark:bg-primary-900/40 dark:text-primary-300 dark:border-primary-500/50 shadow-sm dark:shadow-[0_0_10px_rgba(14,165,233,0.3)]"
                 : "bg-white text-slate-600 border-slate-200 hover:bg-slate-50 hover:text-slate-900 dark:bg-white/5 dark:text-slate-400 dark:border-white/5 dark:hover:bg-white/10 dark:hover:text-white"
             )}
           >
-            {e === "all"
-              ? "All"
-              : e === "sv"
-                ? "Scarlet & Violet"
-                : e === "me"
-                  ? "Mega Evolution"
-                  : e === "sm"
-                    ? "Sun & Moon"
-                    : "Sword & Shield"}
+            {label}
           </button>
         ))}
       </div>

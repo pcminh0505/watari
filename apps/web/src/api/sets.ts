@@ -9,7 +9,7 @@ interface SetsParams {
 }
 
 export function useAllSets(params: SetsParams = {}) {
-  const qs = new URLSearchParams({ limit: "500" });
+  const qs = new URLSearchParams({ limit: "1000" });
   if (params.era) qs.set("era", params.era);
   if (params.sort) qs.set("sort", params.sort);
   if (params.order) qs.set("order", params.order);

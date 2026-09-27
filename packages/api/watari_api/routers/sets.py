@@ -87,7 +87,7 @@ async def list_sets(
     era: str | None = Query(None, description="Filter by era_block (e.g. 'sv', 'me', 'sm', 'sw')"),
     sort: Literal["release_date", "value", "set_code"] = Query("release_date"),
     order: Literal["asc", "desc"] = Query("desc"),
-    limit: int = Query(100, ge=1, le=500),
+    limit: int = Query(100, ge=1, le=1000),
     offset: int = Query(0, ge=0),
 ) -> list[SetOut]:
     """List sets, optionally filtered by ``era_block``."""

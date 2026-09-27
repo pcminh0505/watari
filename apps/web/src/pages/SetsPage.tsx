@@ -11,7 +11,7 @@ import type { SetOut } from "../types/api";
 
 export function SetsPage() {
   const [searchParams, setSearchParams] = useSearchParams();
-  const era = (searchParams.get("era") || "all") as "all" | "sv" | "me" | "sm" | "sw";
+  const era = searchParams.get("era") || "all";
   const sort = (searchParams.get("sort") || "release_desc") as "release_desc" | "release_asc" | "value_desc" | "value_asc";
   const q = searchParams.get("q") || "";
   const page = parseInt(searchParams.get("page") || "0", 10);

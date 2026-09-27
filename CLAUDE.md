@@ -6,7 +6,7 @@
 > Update it whenever the architecture changes — especially after a
 > destructive migration, a new source, or a schema split.
 >
-> Last updated: 2026-09-26 (**Cardmarket EU price** — native-EUR eu_price on search/by-sets + /eu-price; generated data/cardmarket/*.yml idProduct maps; price guide held in API memory; € in currency toggle; Frankfurter host fix).
+> Last updated: 2026-09-27 (**TCGCollector set sync** — `tcgcollector-sync` added all 355 JP sets TCGCollector listed but we lacked (462 sets / 28 389 card YMLs, 21 era_blocks back to 1996); set logos/symbols via `source_refs`; data-driven era pills. **M6** metadata: Pokellector slug + logo, `tcgdex_id`, 23 trainer categories + 6 name_ja fixed from TCGdex).
 
 ---
 
@@ -55,16 +55,16 @@ apps/
         ui/            ← Badge, Skeleton, Pagination, ErrorMessage, …
       pages/           ← SetsPage, CardsPage, CardsSearchPage, CardDetailPage, AdminPage
       api/             ← useCards, useCardSearch, useMarketPrice, useLatestPrices, …
-      lib/             ← formatters.ts (formatJPY, formatPrice), constants.ts, sortSearchCards.ts
+      lib/             ← formatters.ts (formatJPY, formatPrice), constants.ts (ERA_OPTIONS, logo maps), setArtwork.ts, sortSearchCards.ts
       types/           ← api.ts (ArtworkDetail, ArtworkSearchResult, SetOut, …)
 packages/
   core/                ← SQLAlchemy models, Pydantic DTOs, catalog.py helpers, bronze writer
   catalog/             ← YML data tree + bootstrap/seed pipeline + CLI
     data/
-      sets/*.yml       ← 106 set files (source of truth for set metadata, 5 eras)
-      cards/{SET}/*.yml← one file per (set, local_id); 10 900 files total
+      sets/*.yml       ← 462 set files (source of truth for set metadata, 21 era_blocks)
+      cards/{SET}/*.yml← one file per (set, local_id); 28 389 files total
       cardmarket/{SET}.yml ← generated local_id → Cardmarket idProduct maps
-    watari_catalog/    ← Python package (bootstrap.py, seed_cards.py, clients, verify_pokellector.py, …)
+    watari_catalog/    ← Python package (bootstrap.py, seed_cards.py, tcgcollector_sync.py, clients, verify_pokellector.py, …)
   scraper_cardrush/    ← curl_cffi-based scraper, rarity-bucket crawling
   scraper_snkrdunk/    ← cookie-auth snkrdunk sold-price scraper
   dispatcher/          ← job dispatch (placeholder)
@@ -73,7 +73,7 @@ packages/
 migrations/            ← Alembic (current head: 008_graded_price_points)
 scripts/               ← gen_sm/sw_set_metadata.py, update_set_symbols.py, dump/bootstrap scripts
 plans/                 ← design docs, one per major change
-tests/unit/            ← 441 tests, all passing
+tests/unit/            ← 487 tests, all passing
 ```
 
 Config knobs: `.env` (DB URL, MinIO creds, SNKRDUNK cookies). `docker-compose.yml`
@@ -140,6 +140,23 @@ Cardrush (variants)    ─┘                        │
 | `prints`      | `{normal}` ∪ Cardrush-observed variants               |
 | `category`    | TCGdex.category → keyword heuristic on name           |
 
+**TCGCollector set sync (`tcgcollector_sync.py`, DB-free).** Adds every set on
+https://www.tcgcollector.com/sets/jp whose numeric id no `data/sets/*.yml`
+`tcgcollector_id` references. Two requests per set — `displayAs=list` (number,
+name_en, rarity, card type) and `displayAs=images` (card image) — plus TCGdex JP
+(`_fetch_tcgdex_set`) when the set has a TCGdex id. Existing sets/YMLs are never
+touched. Precedence for synced cards:
+
+| Field         | Winner                                                              |
+| ------------- | ------------------------------------------------------------------- |
+| `image`       | TCGCollector image view                                             |
+| `name_en`     | TCGCollector                                                        |
+| `name_ja`     | TCGdex (else null)                                                  |
+| `rarity_code` | TCGCollector (`canonicalize_tcgcollector`) → TCGdex                 |
+| `illustrator` | TCGdex (else null — fill later with `audit-fetch`)                  |
+| `prints`      | `[normal]`                                                          |
+| `category`    | TCGdex.category → TCGCollector card type (Trainer/Energy/else card) |
+
 ### 3.3 YML file contract (`data/cards/{SET}/{NNN}.yml`)
 
 ```yaml
@@ -194,7 +211,13 @@ Helpers live in `packages/core/watari_core/catalog.py`
 
 **Watch out:** `parse_artwork_id` / `parse_card_id` split on `"-"` and assume
 exactly 3 / 4 segments. If a set_code ever contains a hyphen (e.g. `"sv-p"`)
-they will misparse. None of the current 98 set codes contain hyphens.
+they will misparse. None of the current 462 set codes contain hyphens
+(`tcgcollector-sync` strips them: `S8a-G` → `S8AG`).
+
+`local_id` is not always numeric: synced sets use `R`/`G`/`B` (M6A Mew RGB),
+4-digit TCGCollector numbers (`1234`), and a `B`/`C` suffix when TCGCollector lists
+two cards under one number (`015B` — 22 cases: Original-era decks + one movie VS pack).
+`pad_local_id` passes non-digit ids through unchanged.
 
 ### 3.5 API layer (`packages/api/`, read-only, online mode)
 
@@ -214,7 +237,7 @@ Routers (all under `packages/api/watari_api/routers/`):
 | Route | Returns | Source |
 | ----- | ------- | ------ |
 | `GET /healthz` | `{"status": "ok"}` | — |
-| `GET /{lang}/sets` (`?era=sv`) | `list[SetOut]` | `MemCatalog` |
+| `GET /{lang}/sets` (`?era=sv`, `limit` ≤ 1000) | `list[SetOut]` | `MemCatalog` |
 | `GET /{lang}/sets/{set_code}` | `SetOut` / 404 | `MemCatalog` |
 | `GET /{lang}/sets/{set_code}/cards` (`?variant=&rarity=&tracked_only=`) | `list[ArtworkDetail]` | `MemCatalog` |
 | `GET /{lang}/cards/{set_code}/{local_id}` | `ArtworkDetail` / 404 | `MemCatalog` |
@@ -322,6 +345,15 @@ Stack: Vite + React 18 + TypeScript + Tailwind CSS + React Query + Recharts. `bu
 - `formatPrice(jpy, currency, rates)` lives in `src/lib/formatters.ts` (pure function). `formatJPY` is kept as internal helper. `formatEUR(amount)` formats native-EUR Cardmarket values (not currency-converted; bypasses the toggle) — see invariant 24.
 - `CurrencyToggle` (4-button pill ¥·$·€·₫) lives in `Header` between nav and ThemeToggle.
 
+**Eras + set artwork:**
+
+- Era pills on `SetsPage` come from `ERA_OPTIONS` in `lib/constants.ts` (21 `era_block`s,
+  newest first). Add an entry there when a new era_block appears.
+- `lib/setArtwork.ts`: `setLogoUrl(set)` = curated `SET_LOGO_URLS[code]` → `set.source_refs.logo_url`
+  (TCGCollector, written by `tcgcollector-sync`); `setSymbolUrl(set)` = `source_refs.symbol_url`,
+  passed to `SetSymbol` as `fallbackUrl` where a `SetOut` is at hand (SetCard, CardDetailPage).
+  Card thumbnails have no set object, so synced sets show the text code badge there.
+
 **CardThumbnail performance pattern:**
 
 `CardThumbnail` accepts `ArtworkDetail` but `CardsPage` passes `ArtworkSearchResult` objects (which extend `ArtworkDetail` with `market_price_jpy` already included). A runtime type guard `isSearchResult` checks for the extra field:
@@ -374,21 +406,33 @@ artwork count including secret rares (e.g., 250 for M2A), which is wrong as a de
 | `make scrape-cardrush ERA=sv` + `ERA=me`           | ~12.7k Cardrush rows across SV+ME sets. SM/SW: scheduled weekly via CI.                       |
 | `make scrape-snkrdunk ERA=<code>` × SV+ME          | ~104k SNKRDUNK rows. **SV1 still 0 rows** (upstream uses `sv1v` namespace). SM/SW: scheduled weekly via CI. |
 | `watari-api refresh-mvs` (CONCURRENTLY)            | mv_latest_price, mv_median_7d, mv_cross_source_spread, mv_market_price — refreshed             |
-| `uv run pytest`                                    | **441 passed** (online mode; DB/Redis API tests replaced with in-memory fakes)                 |
+| `uv run pytest`                                    | **487 passed** (online mode; DB/Redis API tests replaced with in-memory fakes)                 |
 | `make web-dev`                                     | Currency toggle ¥/$/€/₫ in header; all price surfaces convert correctly; GradedPriceHistoryChart live; PriceHistoryChart shows Snkrdunk sold comps; card detail info grid shows Expansion/Card number/Rarity/Illustrators; `EuPriceCard` shows native-EUR Cardmarket price; InternationalPriceTable shows PriceCharting (eBay) prices |
 
 ### 4.2 Data that's already committed
 
-- `data/sets/*.yml` — **106 sets** across 5 eras (98 original + 7 new: CLF/CLL/CLK `cl` era; MP/SMPR/SP/SVP promo series + M6 Storm Emeralda).
+- `data/sets/*.yml` — **462 sets**: every JP set on https://www.tcgcollector.com/sets/jp.
+  107 hand-curated (SV/ME/SWSH/SM boosters, CL, promo series, M6) + **355 added
+  2026-09-27 by `tcgcollector-sync`** (M6A 30th Celebration, all starter decks /
+  deck boxes / special sets of the modern eras, and every legacy era back to 1996:
+  `xy bw legend pt dp pcg adv e web vs neo original` + TCGCollector's
+  `vending movie energy other` groups). Synced YMLs carry a
+  `# Generated by … tcgcollector-sync` banner, `tcgcollector_code` (TCGCollector's
+  verbatim code, e.g. `S8a-G`), `logo_url`, `symbol_url`.
   Historical renames: **M1 → M1L** (official JP abbreviation), **M2** name corrected
   to `インフェルノX/Inferno X`, **SV7A** corrected to `楽園ドラゴーナ/Paradise Dragona`.
-  **New sets require bootstrap** — pokellector_slug placeholders need verification before `make catalog-bootstrap`.
-- `data/cards/{SET}/*.yml` — **10 900 files** covering 99 sets (98 original + M6; CLF/CLL/CLK/MP/SMPR/SP/SVP pending bootstrap).
-  Largest sets: SV4A (360), S4A (330), S8B (285), S12A (261), SM8B/M2A (250), SV8A (237),
-  SM12A (226), SV2A (210), SV11W/SV11B (174 each).
-- `packages/catalog/data/cardmarket/*.yml` — **84 sets mapped** (backfilled 2026-09-26),
-  9,475 of 9,680 artworks with a Cardmarket idProduct. Sets not on TCGdex JP have no
-  file / no EU price: most of S1W–S8A, S10B/S10D, SM0, SMP2, CLF/CLL/CLK, SMPR, SP.
+- `data/cards/{SET}/*.yml` — **28 389 files** covering 461 sets (SX01 "25th Anniversary
+  Creatures Deck" has 0 cards on TCGCollector). Largest: MC (774), SI (430), SMPR (408),
+  SV4A (360), S4A (330), SP (333), MPA (298), S8B (285).
+  Synced sets: name_en / rarity / card type from TCGCollector's list view, image from its
+  image view; name_ja / illustrator / category from TCGdex JP for the 64 TCGdex-indexed
+  sets only (3 309 of their 5 628 cards — TCGdex has set metadata but no card list for
+  most XY/LEGEND/CP sets). Legacy cards have **no illustrator** and deck products mostly
+  have **no rarity** (TCGCollector shows none).
+- `packages/catalog/data/cardmarket/*.yml` — **89 sets mapped** (84 backfilled 2026-09-26
+  + M6A/MC/MF/CP1/CP2 on 2026-09-27). Sets not on TCGdex JP have no file / no EU price:
+  most of S1W–S8A, S10B/S10D, SM0, SMP2, CLF/CLL/CLK, SMPR, SP, and every legacy set
+  (TCGdex has no Cardmarket pricing before XY CP1).
   SV9A is sparse — TCGdex only carries Cardmarket pricing for 6/92 of its cards.
 
 ### 4.3 Price data in the DB (snapshot: SV + ME fully scraped; SM/SW pending first CI run)
@@ -412,6 +456,27 @@ SV1 remains Cardrush-only (SNKRDUNK lists it under `sv1v`).
 ## 5. Pending / roadmap (in priority order)
 
 ### 5.1 Immediate follow-ups (next session can pick up directly)
+
+00. **Finish the 2026-09-27 TCGCollector sync (355 new sets).**
+
+- **Deploy + seed.** Only YMLs changed; no DB was touched. The API reads YAML, so a
+  rebuilt image (fresh `.catalog_cache.pkl`: 462 sets / 28k cards) is all it needs —
+  the uncached YAML fallback now takes ~11 s. The DB-backed scrapers only see the new
+  sets after `make catalog-seed-sets && make catalog-seed-cards`.
+- **M6A (30th Celebration)** is the one new *booster*: synced from TCGCollector,
+  with `pokellector_slug` already set so `make catalog-bootstrap SET=M6A` can
+  re-bootstrap via Pokellector (images, variants) once the DB is up. `m6a` is in
+  the SNKRDUNK CI matrix — probe `pkmn-tcg-m6a-001` before trusting a `not_found=N`.
+  Its Pikachu Rare (017–046) and RGB Rare (Mew R/G/B) tiers have `rarity_code: null`
+  — no canonical code yet; add one (and `RARITY_SORT_ORDER`) once the JP mark is known.
+- **Illustrators** are null for every synced set TCGdex doesn't cover (all DP/Pt/BW,
+  decks, most legacy). `make catalog-audit-fetch SET=<code>` fills them from
+  TCGCollector detail pages (1 request per card — ~10k cards; go set by set).
+- **name_ja** is null outside the 64 TCGdex-linked sets.
+- **Prices:** Cardrush/SNKRDUNK scrapers + `PriceProxy` were never tuned for legacy
+  eras or deck products; expect empty/unfiltered results. Don't add synced deck
+  codes to the SNKRDUNK CI matrix without probing their product namespace.
+- **SX01** (25th Anniversary Creatures Deck) has 0 cards on TCGCollector → empty set.
 
 0. **Bootstrap the 7 new sets (CLF/CLL/CLK/MP/SMPR/SP/SVP).**
 
@@ -639,6 +704,21 @@ SV1 remains Cardrush-only (SNKRDUNK lists it under `sv1v`).
     VND; `/rates` returns `{USD, EUR}` only and the frontend fills `VND`
     from its own fallback constant.
 
+42. **`tcgcollector-sync` set codes are assigned once — never rename them.** The
+    code is persisted in `data/sets/<CODE>.yml` and baked into every artwork/card id;
+    re-runs only process TCGCollector ids no set YML references. Assignment
+    (`assign_set_codes`): TCGCollector code normalized (uppercase, `+`→`P`, other
+    non-alnum dropped) if no other TCGCollector set shares it and it's free → else
+    the TCGdex JP id (`PMCG1`, `NEO1`, `E1`…) → else a letter suffix for a shared
+    code (`SA`×5 → `SAA`…`SAE`; our `MP` clash → Misc Promos `MPA`) or
+    `<era prefix>X<nn>` for code-less products (`ORX01`, `PCGX12`, `MVX03`).
+    TCGCollector→TCGdex links for code-less/mismatched legacy sets live in the
+    reviewed `TCGDEX_ID_BY_TCGCOLLECTOR_ID` table (names match 1:1; release dates
+    differ, so don't auto-match on date). The synced set YMLs are normal YMLs —
+    hand-edit freely (set a `pokellector_slug` to move a set onto `bootstrap-set`);
+    the sync never rewrites a set that already has a YML. Set logos/symbols travel
+    as `source_refs.logo_url` / `symbol_url` (see §3.7), not new SetOut fields.
+
 ---
 
 ## 7. Common commands
@@ -658,6 +738,7 @@ make catalog-verify                          # health snapshot (orphans, missing
 make catalog-verify STRICT=1                 # exit non-zero on null name_ja / rarity in non-promo sets
 make catalog-verify-pokellector              # cross-check local IDs vs live jp.pokellector.com (network)
 make catalog-cardmarket-map [SET=SV2A] [REFRESH=1]  # Cardmarket idProduct maps (TCGdex JP)
+make catalog-tcgcollector-sync [DRY_RUN=1] [CACHE_DIR=/tmp/tcgc] [NO_BRONZE=1]  # add JP sets TCGCollector lists but data/sets/ lacks
 
 # --- Catalog data-quality audit (TCGCollector-anchored) ---
 # Phase 1: per-set markdown gap report (no data changes).
@@ -714,7 +795,7 @@ make db-dump-data                            # data-only dump for prod rollout
 CONFIRM=yes DUMP_FILE=/tmp/watari-data-<UTC>.sql.gz make db-prod-bootstrap
 
 # Dev loop
-make test                                    # 441 tests
+make test                                    # 487 tests
 make lint
 make format
 

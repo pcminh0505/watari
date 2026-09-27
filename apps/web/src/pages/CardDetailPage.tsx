@@ -15,6 +15,7 @@ import { SetSymbol } from "../components/cards/SetSymbol";
 import { Badge } from "../components/ui/Badge";
 import { ErrorMessage } from "../components/ui/ErrorMessage";
 import { ChartSkeleton, TableSkeleton } from "../components/ui/Skeletons";
+import { setSymbolUrl } from "../lib/setArtwork";
 
 export function CardDetailPage() {
   const { setCode = "", localId = "" } = useParams<{
@@ -134,6 +135,7 @@ export function CardDetailPage() {
               <div className="flex flex-wrap items-center gap-1.5">
                 <SetSymbol
                   setCode={card.set_code}
+                  fallbackUrl={set ? setSymbolUrl(set) : undefined}
                   className="h-4 max-h-4 w-auto max-w-13 shrink-0 object-contain dark:filter dark:invert dark:opacity-80"
                 />
                 <Link
