@@ -1,7 +1,7 @@
 # Cardmarket EU price for JP cards — design
 
 - **Date:** 2026-09-26
-- **Status:** approved design, not yet implemented
+- **Status:** implemented 2026-09-26 on branch `feat/cardmarket-eu-price`
 - **Goal:** give every JP card a dedicated, native-EUR Cardmarket price so an
   EU-based seller can rank which cards are worth listing on Cardmarket.
 
@@ -282,7 +282,7 @@ The web app has no test runner; frontend is verified with `make web-build`
    remain in use by `_populate_official_totals` (§3.7 of `CLAUDE.md`), so
    SV1S/SV1V/SV1A/SM1P–SM5P may lack an official set total — a known,
    separate issue, not fixed here.
-6. **Ambiguous idProduct guard added.** `CardmarketGuide.load_mappings`
+6. **Ambiguous idProduct guard added.** `load_mappings` (called by `CardmarketGuide.load()`)
    drops every card whose idProduct is claimed by more than one card (a
    TCGdex data error — Cardmarket has one product per artwork) and logs a
    warning. The full backfill (2026-09-26) drops 7 cards: SV9A

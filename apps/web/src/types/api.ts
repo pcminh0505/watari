@@ -118,11 +118,11 @@ export interface MarketPriceOut {
 /** Mirrors packages/api/watari_api/schemas.py: InternationalPrice */
 export interface InternationalPrice {
   card_id: string;
-  market: "tcgplayer" | "cardmarket" | "pricecharting";
+  market: "pricecharting";
   condition_label: string;
   price_jpy: number;
   price_raw: number;
-  currency: "USD" | "EUR";
+  currency: "USD";
   observed_at: string;
   external_url: string | null;
 }

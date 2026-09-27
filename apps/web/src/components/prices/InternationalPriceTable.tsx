@@ -8,18 +8,6 @@ const MARKET_CONFIG: Record<string, {
   accentClass: string;
   regionClass: string;
 }> = {
-  tcgplayer: {
-    label: "TCGPlayer",
-    region: "US",
-    accentClass: "border-l-2 border-blue-400 dark:border-blue-500 pl-3",
-    regionClass: "bg-blue-50 text-blue-700 dark:bg-blue-950/40 dark:text-blue-300",
-  },
-  cardmarket: {
-    label: "Cardmarket",
-    region: "EU",
-    accentClass: "border-l-2 border-green-400 dark:border-green-500 pl-3",
-    regionClass: "bg-green-50 text-green-700 dark:bg-green-950/40 dark:text-green-300",
-  },
   pricecharting: {
     label: "PriceCharting",
     region: "eBay",
@@ -28,10 +16,10 @@ const MARKET_CONFIG: Record<string, {
   },
 };
 
-const MARKET_ORDER = ["tcgplayer", "cardmarket", "pricecharting"];
+const MARKET_ORDER = ["pricecharting"];
 
-function formatRaw(price: number, currency: string): string {
-  return currency === "EUR" ? `€${price.toFixed(2)}` : `$${price.toFixed(2)}`;
+function formatRaw(price: number): string {
+  return `$${price.toFixed(2)}`;
 }
 
 function isGraded(row: InternationalPrice): boolean {
@@ -55,7 +43,7 @@ function PriceRow({
         {formatPrice(row.price_jpy)}
       </td>
       <td className="py-2.5 text-right text-xs text-slate-400 dark:text-slate-500">
-        {formatRaw(row.price_raw, row.currency)}
+        {formatRaw(row.price_raw)}
       </td>
     </tr>
   );

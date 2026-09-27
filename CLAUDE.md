@@ -624,7 +624,7 @@ SV1 remains Cardrush-only (SNKRDUNK lists it under `sv1v`).
     SM1P–SM5P). Those YAML `tcgdex_id` values are still used by
     `_populate_official_totals` in `main.py`, so SV1S/SV1V/SV1A/SM1P–SM5P
     may lack an official set total — a known, separate issue, not fixed
-    here. `CardmarketGuide.load_mappings` drops every card whose idProduct
+    here. `load_mappings` (called by `CardmarketGuide.load()`) drops every card whose idProduct
     is claimed by more than one card (a TCGdex data error — Cardmarket has
     one product per artwork) and logs a warning; currently 7 cards are
     dropped (SV9A 002/022/039/064/071/074, SVP 262). Run

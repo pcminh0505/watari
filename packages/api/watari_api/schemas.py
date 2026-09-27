@@ -197,7 +197,7 @@ class InternationalPrice(BaseModel):
     condition_label: str  # "Ungraded" | "PSA 10" | …
     price_jpy: int        # converted at fetch time using Frankfurter rates
     price_raw: float      # original value in source currency
-    currency: str         # "USD" | "EUR"
+    currency: str         # "USD"
     observed_at: datetime
     external_url: str | None = None
 
