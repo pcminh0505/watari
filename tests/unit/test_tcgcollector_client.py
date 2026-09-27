@@ -214,3 +214,21 @@ class TestParseCardDetail:
         assert d.illustrator is None
         assert d.card_number_raw == ""
         assert d.expansion_raw == ""
+
+
+def test_parse_set_index_drops_no_scan_placeholder_image() -> None:
+    html = """
+    <div id="card-image-grid">
+      <div class="card-image-grid-item">
+        <a class="card-image-grid-item-link"
+           href="/cards/80990/mega-rayquaza-ex-storm-emeralda-113-076"
+           title="Mega Rayquaza ex (Storm Emeralda 113/076)">
+          <img class="card-image-grid-item-image"
+               src="https://static.tcgcollector.com/build/images/default-card-image-640x892.0d69bedb.png">
+        </a>
+      </div>
+    </div>
+    """
+    (entry,) = parse_set_index(html)
+    assert entry.local_id == "113"
+    assert entry.image_url is None

@@ -96,17 +96,28 @@ _INDEX_LINK_RE = re.compile(
 
 # Highest resolution image from srcset: pick the last (widest) source.
 _SRCSET_RE = re.compile(r"(https://\S+)\s+\d+w")
+# Stock art TCGCollector renders when it has no scan of a card
+# (``/build/images/default-card-image-640x892.<hash>.png``).
+_PLACEHOLDER_IMAGE_RE = re.compile(r"/build/images/default-")
 
 
 def _best_image(img_tag: Any) -> str | None:
-    """Extract the highest-resolution image URL from an <img> tag."""
+    """Extract the highest-resolution image URL from an <img> tag.
+
+    Returns ``None`` for TCGCollector's no-scan placeholder so callers store
+    a missing image (which ``verify`` flags and other sources can fill)
+    instead of a URL that renders a blank card.
+    """
     srcset = img_tag.get("srcset", "") if img_tag else ""
-    if srcset:
-        matches = _SRCSET_RE.findall(str(srcset))
-        if matches:
-            return matches[-1]  # last entry in srcset = widest
-    src = img_tag.get("src", "") if img_tag else ""
-    return str(src) if src else None
+    matches = _SRCSET_RE.findall(str(srcset)) if srcset else []
+    if matches:
+        url: str | None = matches[-1]  # last entry in srcset = widest
+    else:
+        src = img_tag.get("src", "") if img_tag else ""
+        url = str(src) if src else None
+    if url and _PLACEHOLDER_IMAGE_RE.search(url):
+        return None
+    return url
 
 
 def parse_set_index(html: str) -> list[TcgCollectorIndexEntry]:

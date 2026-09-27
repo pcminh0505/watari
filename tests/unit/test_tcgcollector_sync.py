@@ -216,6 +216,18 @@ def test_parse_set_card_list_extracts_fields_and_dedupes() -> None:
     assert energy.card_type == "Energy"
 
 
+def test_parse_card_images_skips_no_scan_placeholder() -> None:
+    html = """
+    <div class="card-image-grid-item">
+      <a class="card-image-grid-item-link" href="/cards/31234/snivy-beginning-set-1-37">
+        <img src="https://static.tcgcollector.com/build/images/default-card-image-640x892.0d69bedb.png"
+             alt="Snivy (Beginning Set 1/37)" class="card-image-grid-item-image">
+      </a>
+    </div>
+    """
+    assert parse_card_images(html) == {}
+
+
 def test_parse_card_images_keys_by_card_id_and_prefers_widest() -> None:
     assert parse_card_images(CARD_IMAGES_PAGE) == {
         "89737": "https://x/c1-large.webp",
