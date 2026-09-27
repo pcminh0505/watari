@@ -2,10 +2,10 @@
 # To freeze a manually-edited value, add `# manual: true` on line 1.
 set_code: m6
 local_id: '073'
-name_ja:
+name_ja: 伝説の山頂
 name_en: Legendary Summit
 rarity_code: U
-category: card
+category: trainer
 image: https://static.tcgcollector.com/content/images/45/2a/a3/452aa3d72364c7ecc351ad6e4206cac3e351e1e4ea83aa7e04dd67e7135ca705.webp
 illustrator: nagimiso
 prints:

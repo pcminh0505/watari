@@ -2,10 +2,10 @@
 # To freeze a manually-edited value, add `# manual: true` on line 1.
 set_code: m6
 local_id: '072'
-name_ja:
+name_ja: 伝説の海溝
 name_en: Legendary Ocean Trench
 rarity_code: U
-category: card
+category: trainer
 image: https://static.tcgcollector.com/content/images/6b/d4/42/6bd44227c187a8dfb0491dec47b7b7ad7f945521b4315d2f56937454cbeaae51.webp
 illustrator: danciao
 prints:

@@ -148,7 +148,7 @@ export const SET_LOGO_URLS: Record<string, string> = {
   M3: `${PK}/Munikis-Zero.logo.428.png`,
   M4: `${PK}/Ninja-Spinner.logo.430.png`,
   M5: `${PK}/Abyss-Eye.logo.433.png`,
-  // M6 logo TBD — Pokellector has not indexed Storm Emeralda yet.
+  M6: `${PK}/Storm-Emeralda.logo.437.png`,
   // Sword & Shield era (jp.pokellector.com)
   S1W: `${PK}/Sword.logo.283.png`,
   S1H: `${PK}/Shield.logo.284.png`,
