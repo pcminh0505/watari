@@ -155,15 +155,6 @@ export function InternationalPriceTable({ prices }: { prices: InternationalPrice
       <p className="mt-4 text-xs text-slate-400 dark:text-slate-500">
         Reference prices via{" "}
         <a
-          href="https://tcgdex.net"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="hover:underline"
-        >
-          TCGdex
-        </a>{" "}
-        ·{" "}
-        <a
           href="https://www.pricecharting.com"
           target="_blank"
           rel="noopener noreferrer"
